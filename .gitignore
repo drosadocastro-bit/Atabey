@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+pytest-cache-files-*/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+data/
+outputs/
+submissions/
+kaggle_kernel/remote_output_*/
+*.zarr/
+*.zip
+*.csv
+!sample_submission.schema-notes.md
+*.geff/

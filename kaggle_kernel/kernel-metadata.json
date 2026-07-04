@@ -1,0 +1,17 @@
+{
+  "id": "drakus74/atabey-adaptive-baseline",
+  "title": "Atabey Adaptive Baseline",
+  "description": "Streaming-first 3D+time cell tracking baseline for BioHub. Version 12 uses the validated refined hybrid route: compact samples use component centroids, merged 44b6 samples stay on v9-style local maxima with motion-mutual linking, and merged 6bba samples use bounded CFAR+sidelobe detection capped at 900 detections per timepoint. Local visible-test packaging reproduced the v19 candidate CSV byte-for-byte before push.",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "",
+  "dataset_sources": [],
+  "competition_sources": ["biohub-cell-tracking-during-development"],
+  "kernel_sources": [],
+  "model_sources": []
+}
