@@ -22,7 +22,7 @@ uncertainty, and the decisions we made after the measurements came back.
 
 Atabey is inspired by Project Lumina's attention to memory traces, phase transitions, local pressure,
 and dormant potential, but it applies those ideas conservatively to 3D+time embryonic cell tracking.
-The goal is not to make an authoritative biological reasoning system. The goal is to preserve
+The goal is not to infer biological meaning beyond the observable data. The goal is to preserve
 observable lineage state while producing a valid, reproducible Kaggle submission.
 
 ## Main Path
