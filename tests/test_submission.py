@@ -1,7 +1,18 @@
+from pathlib import Path
+
 import pytest
 
 from atabey.submission.writer import KAGGLE_SUBMISSION_COLUMNS, graph_to_submission_rows
 from atabey.types import Detection, LineageEdge, LineageGraph
+
+
+def test_submission_columns_match_sample_submission_contract():
+    repo_root = Path(__file__).resolve().parents[1]
+    sample_submission_path = repo_root / "sample_submission.csv"
+    assert sample_submission_path.exists(), "sample_submission.csv must exist at repo root"
+
+    header = sample_submission_path.read_text(encoding="utf-8").splitlines()[0].split(",")
+    assert header == KAGGLE_SUBMISSION_COLUMNS
 
 
 def test_submission_rows_match_official_schema_and_map_node_ids():

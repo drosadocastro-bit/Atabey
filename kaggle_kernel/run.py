@@ -112,6 +112,39 @@ class SampleRunRecord:
     max_timepoints: int | None = None
 
 
+@dataclass(frozen=True)
+class GuardrailSettings:
+    spike_multiplier: float
+    min_history: int
+    history_window: int
+    min_absolute_count: int
+    fallback_threshold: float
+
+
+try:
+    from atabey.hybrid_config import DEFAULT_GUARDRAIL_SETTINGS as _SHARED_GUARDRAIL_SETTINGS
+except Exception:  # pragma: no cover - Kaggle self-contained mode can run without local src package.
+    _SHARED_GUARDRAIL_SETTINGS = None
+
+
+if _SHARED_GUARDRAIL_SETTINGS is None:
+    DEFAULT_GUARDRAIL_SETTINGS = GuardrailSettings(
+        spike_multiplier=1.8,
+        min_history=6,
+        history_window=12,
+        min_absolute_count=1200,
+        fallback_threshold=0.65,
+    )
+else:
+    DEFAULT_GUARDRAIL_SETTINGS = GuardrailSettings(
+        spike_multiplier=float(_SHARED_GUARDRAIL_SETTINGS.spike_multiplier),
+        min_history=int(_SHARED_GUARDRAIL_SETTINGS.min_history),
+        history_window=int(_SHARED_GUARDRAIL_SETTINGS.history_window),
+        min_absolute_count=int(_SHARED_GUARDRAIL_SETTINGS.min_absolute_count),
+        fallback_threshold=float(_SHARED_GUARDRAIL_SETTINGS.fallback_threshold),
+    )
+
+
 def robust_normalize(volume, lower=1.0, upper=99.5):
     low, high = np.percentile(volume, [lower, upper])
     if high <= low:
@@ -793,9 +826,12 @@ def build_graph_cfar_sidelobe(sample_path, max_timepoints=None, threshold=0.50, 
                               cfar_training_radius_voxels=(1, 6, 6),
                               cfar_guard_radius_voxels=(0, 1, 1), cfar_k_sigma=1.1,
                               sidelobe_radius_voxels=(1, 12, 12), sidelobe_floor_ratio=0.85,
-                              guardrail_spike_multiplier=1.8, guardrail_min_history=6,
-                              guardrail_history_window=12, guardrail_min_absolute_count=1200,
-                              guardrail_fallback_threshold=0.65, guardrail_fallback_max_detections=900):
+                              guardrail_spike_multiplier=DEFAULT_GUARDRAIL_SETTINGS.spike_multiplier,
+                              guardrail_min_history=DEFAULT_GUARDRAIL_SETTINGS.min_history,
+                              guardrail_history_window=DEFAULT_GUARDRAIL_SETTINGS.history_window,
+                              guardrail_min_absolute_count=DEFAULT_GUARDRAIL_SETTINGS.min_absolute_count,
+                              guardrail_fallback_threshold=DEFAULT_GUARDRAIL_SETTINGS.fallback_threshold,
+                              guardrail_fallback_max_detections=None):
     dataset = sample_id_from_zarr_path(sample_path)
     array = open_competition_array(sample_path)
     total_timepoints = int(array.shape[0])
@@ -808,6 +844,8 @@ def build_graph_cfar_sidelobe(sample_path, max_timepoints=None, threshold=0.50, 
     predecessor_by_node_id = {}
     recent_counts = []
     spike_fallback_count = 0
+    if guardrail_fallback_max_detections is None:
+        guardrail_fallback_max_detections = max_detections_per_timepoint
     for t in range(total_timepoints):
         volume = read_timepoint(array, t)
         current = threshold_local_maxima_cfar_sidelobe(
@@ -1044,7 +1082,6 @@ def main():
                 graph, cfar_spike_fallback_count = build_graph_cfar_sidelobe(
                     sample_path,
                     max_timepoints=max_timepoints,
-                    guardrail_fallback_max_detections=900,
                 )
                 detector = "cfar_sidelobe"
                 threshold = 0.50

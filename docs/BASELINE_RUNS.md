@@ -1858,3 +1858,54 @@ Decision:
 - Keep the profile-based router and guardrail fallback.
 - Promote `cfar_threshold=0.50`, `cfar_k_sigma=1.1`, `sidelobe_floor=0.85`, cap900 as the new default refined hybrid setting.
 - Cap1200 remains rejected: no output gain, worse runtime.
+
+
+## 2026-07-04 - Post-Score Anchor Freeze (0.505) + Tight Threshold Micro-Sweep
+
+Purpose: freeze the improved official score as the new anchor, then run only narrow deltas around
+the winning CFAR threshold to avoid broad regressions.
+
+Official score update:
+
+- reported competition score: `0.505`
+- this is now the current public anchor for the refined hybrid branch
+
+Anchor freeze (kept unchanged):
+
+- profile-based `merged_6bba_only` routing
+- CFAR+sidelobe only on 6bba-like merged/dim profiles
+- CFAR spike guardrail fallback enabled
+- `cfar_threshold=0.50`, `cfar_k_sigma=1.1`, cap900
+
+Micro-sweep setup (train, bounded):
+
+- samples: `6bba_20852818`, `6bba_05db0fb1`
+- timepoints: full 100
+- fixed: `k_sigma=1.1`, cap900, `merged_6bba_only`
+- swept: `cfar_threshold` in `{0.49, 0.50, 0.51}`
+- artifacts:
+  - `submissions/train_6bba_profile_t049_k11_anchor505_eval_summary.json`
+  - `submissions/train_6bba_profile_t050_k11_anchor505_eval_summary.json`
+  - `submissions/train_6bba_profile_t051_k11_anchor505_eval_summary.json`
+
+Summary results (`hybrid_cfar_sidelobe` route):
+
+| threshold | mean sparse recall | mean sparse edge recall | mean quality | total elapsed s |
+|---:|---:|---:|---:|---:|
+| 0.49 | 0.7102 | 0.8236 | 0.7669 | 173.63 |
+| 0.50 | 0.7025 | 0.8244 | 0.7635 | 171.25 |
+| 0.51 | 0.6887 | 0.8231 | 0.7559 | 174.60 |
+
+Interpretation:
+
+- `0.49` gives slightly higher sparse quality on this bounded train slice, but with slightly higher
+  runtime and higher predicted volume.
+- `0.50` remains the most balanced operating point with the proven public score anchor (`0.505`) and
+  near-best sparse quality.
+- `0.51` is weaker on both sparse quality and runtime envelope and should not be promoted.
+
+Decision:
+
+- Keep `0.50` as the default anchored setting for safe submissions.
+- If an extra challenger slot is available, test `0.49` as a single narrow challenger only.
+- Continue with strict anchor discipline: no broad parameter expansion while `0.505` remains the best public score.

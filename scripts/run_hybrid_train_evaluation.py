@@ -9,8 +9,13 @@ from pathlib import Path
 from atabey.baseline import build_baseline_graph
 from atabey.detection.adaptive import ForegroundProfile, choose_settings_for_sample
 from atabey.evaluation.sparse_ground_truth import evaluate_sparse_ground_truth
+from atabey.hybrid_config import DEFAULT_GUARDRAIL_SETTINGS, DEFAULT_HYBRID_FROZEN_DEFAULTS
 from atabey.io.geff_reader import read_geff_graph
-from run_hybrid_submission import build_graph_cfar_sidelobe
+
+try:
+    from run_hybrid_submission import build_graph_cfar_sidelobe
+except ModuleNotFoundError:  # pragma: no cover - used when imported as scripts.run_hybrid_train_evaluation.
+    from scripts.run_hybrid_submission import build_graph_cfar_sidelobe
 
 
 @dataclass(frozen=True)
@@ -55,6 +60,10 @@ def _parse_int_tuple(spec: str) -> tuple[int, int, int]:
     if len(parts) != 3:
         raise ValueError(f"Expected three comma-separated integers, got: {spec!r}")
     return int(parts[0]), int(parts[1]), int(parts[2])
+
+
+def _format_int_tuple(spec: tuple[int, int, int]) -> str:
+    return f"{spec[0]},{spec[1]},{spec[2]}"
 
 
 def _safe_rate(numerator: float, elapsed_seconds: float) -> float:
@@ -140,11 +149,11 @@ def _build_hybrid_graph(
             sidelobe_radius_voxels=sidelobe_radius_voxels,
             sidelobe_floor_ratio=sidelobe_floor_ratio,
             max_detections_per_timepoint=max_detections_per_timepoint,
-            guardrail_spike_multiplier=1.8,
-            guardrail_min_history=6,
-            guardrail_history_window=12,
-            guardrail_min_absolute_count=1200,
-            guardrail_fallback_threshold=0.65,
+            guardrail_spike_multiplier=DEFAULT_GUARDRAIL_SETTINGS.spike_multiplier,
+            guardrail_min_history=DEFAULT_GUARDRAIL_SETTINGS.min_history,
+            guardrail_history_window=DEFAULT_GUARDRAIL_SETTINGS.history_window,
+            guardrail_min_absolute_count=DEFAULT_GUARDRAIL_SETTINGS.min_absolute_count,
+            guardrail_fallback_threshold=DEFAULT_GUARDRAIL_SETTINGS.fallback_threshold,
             guardrail_fallback_max_detections=max_detections_per_timepoint,
             link_strategy=cfar_link_strategy,
             max_link_distance_um=cfar_max_link_distance_um,
@@ -321,24 +330,65 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-json", default="submissions/train_slice_hybrid_eval.json", help="Output record JSON path.")
     parser.add_argument("--output-summary-json", default="submissions/train_slice_hybrid_eval_summary.json", help="Output summary JSON path.")
     parser.add_argument("--max-timepoints", type=int, default=100, help="Optional timepoint cap.")
-    parser.add_argument("--cfar-threshold", type=float, default=0.50, help="CFAR global normalized floor threshold.")
-    parser.add_argument("--cfar-training-radius", default="1,6,6", help="CFAR training radius as tz,ty,tx.")
-    parser.add_argument("--cfar-guard-radius", default="0,1,1", help="CFAR guard radius as gz,gy,gx.")
-    parser.add_argument("--cfar-k-sigma", type=float, default=1.1, help="CFAR k-sigma multiplier.")
-    parser.add_argument("--sidelobe-radius", default="1,12,12", help="Sidelobe suppression radius as sz,sy,sx.")
-    parser.add_argument("--sidelobe-floor", type=float, default=0.85, help="Sidelobe floor ratio.")
-    parser.add_argument("--max-detections-per-timepoint", type=int, default=900, help="CFAR route detection cap.")
+    parser.add_argument(
+        "--cfar-threshold",
+        type=float,
+        default=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_threshold,
+        help="CFAR global normalized floor threshold.",
+    )
+    parser.add_argument(
+        "--cfar-training-radius",
+        default=_format_int_tuple(DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_training_radius_voxels),
+        help="CFAR training radius as tz,ty,tx.",
+    )
+    parser.add_argument(
+        "--cfar-guard-radius",
+        default=_format_int_tuple(DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_guard_radius_voxels),
+        help="CFAR guard radius as gz,gy,gx.",
+    )
+    parser.add_argument(
+        "--cfar-k-sigma",
+        type=float,
+        default=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_k_sigma,
+        help="CFAR k-sigma multiplier.",
+    )
+    parser.add_argument(
+        "--sidelobe-radius",
+        default=_format_int_tuple(DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_radius_voxels),
+        help="Sidelobe suppression radius as sz,sy,sx.",
+    )
+    parser.add_argument(
+        "--sidelobe-floor",
+        type=float,
+        default=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_floor_ratio,
+        help="Sidelobe floor ratio.",
+    )
+    parser.add_argument(
+        "--max-detections-per-timepoint",
+        type=int,
+        default=DEFAULT_HYBRID_FROZEN_DEFAULTS.max_detections_per_timepoint,
+        help="CFAR route detection cap.",
+    )
     parser.add_argument(
         "--cfar-route-policy",
-        default="merged_all",
+        default=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_route_policy,
         choices=["merged_all", "merged_6bba_only"],
         help=(
             "Which adaptive local-maxima samples should be routed through CFAR+sidelobe; "
             "merged_6bba_only uses profile-based gating (dim/dense merged foreground), not sample prefixes."
         ),
     )
-    parser.add_argument("--cfar-link-strategy", default="motion_mutual", help="CFAR route link strategy.")
-    parser.add_argument("--cfar-max-link-distance-um", type=float, default=9.0, help="CFAR route link distance.")
+    parser.add_argument(
+        "--cfar-link-strategy",
+        default=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_link_strategy,
+        help="CFAR route link strategy.",
+    )
+    parser.add_argument(
+        "--cfar-max-link-distance-um",
+        type=float,
+        default=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_max_link_distance_um,
+        help="CFAR route link distance.",
+    )
     return parser.parse_args()
 
 

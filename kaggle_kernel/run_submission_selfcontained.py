@@ -1,3 +1,9 @@
+"""Deprecated legacy baseline-only Kaggle runner.
+
+This script is retained for historical reproducibility and emergency fallback only.
+The active production candidate path is kaggle_kernel/run.py.
+"""
+
 import csv
 import json
 import math
@@ -8,6 +14,12 @@ from pathlib import Path
 from statistics import median
 
 import numpy as np
+
+
+DEPRECATION_WARNING = (
+    "kaggle_kernel/run_submission_selfcontained.py is deprecated and baseline-only; "
+    "use kaggle_kernel/run.py for the frozen hybrid submission path."
+)
 
 
 @dataclass(frozen=True)
@@ -428,6 +440,7 @@ def default_input_dir():
 
 
 def main():
+    print(json.dumps({"warning": DEPRECATION_WARNING}), flush=True)
     input_dir = Path(os.environ.get("ATABEY_INPUT_DIR", str(default_input_dir())))
     output_csv = Path(os.environ.get("ATABEY_OUTPUT_CSV", "/kaggle/working/submission.csv"))
     report_json = Path(os.environ.get("ATABEY_REPORT_JSON", "/kaggle/working/adaptive_runtime_report.json"))
