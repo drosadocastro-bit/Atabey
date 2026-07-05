@@ -100,6 +100,26 @@ def test_local_maxima_cfar_detects_strong_peak():
     assert (detections[0].z, detections[0].y, detections[0].x) == (1.0, 4.0, 4.0)
 
 
+def test_local_maxima_cfar_detects_peak_with_pfa_mode():
+    volume = np.zeros((3, 9, 9), dtype=np.uint16)
+    volume[1, 4, 4] = 220
+
+    detections = threshold_local_maxima_cfar(
+        "sample",
+        0,
+        volume,
+        threshold=0.1,
+        min_distance_voxels=(0, 1, 1),
+        cfar_training_radius_voxels=(0, 3, 3),
+        cfar_guard_radius_voxels=(0, 1, 1),
+        cfar_threshold_mode="pfa",
+        cfar_pfa=1e-2,
+    )
+
+    assert len(detections) == 1
+    assert (detections[0].z, detections[0].y, detections[0].x) == (1.0, 4.0, 4.0)
+
+
 def test_local_maxima_cfar_sidelobe_suppresses_nearby_weaker_peak():
     volume = np.zeros((3, 11, 11), dtype=np.uint16)
     volume[1, 5, 5] = 220
@@ -134,6 +154,34 @@ def test_local_maxima_cfar_sidelobe_suppresses_nearby_weaker_peak():
     kept_positions = {(d.y, d.x) for d in suppressed}
     assert (2.0, 2.0) in kept_positions
     assert ((5.0, 5.0) in kept_positions) ^ ((6.0, 6.0) in kept_positions)
+
+
+def test_local_maxima_cfar_sidelobe_axial_mode_suppresses_z_stacks():
+    volume = np.zeros((5, 11, 11), dtype=np.uint16)
+    volume[2, 5, 5] = 240
+    volume[3, 5, 5] = 170
+    volume[2, 2, 2] = 200
+
+    suppressed = threshold_local_maxima_cfar_sidelobe(
+        "sample",
+        0,
+        volume,
+        threshold=0.1,
+        min_distance_voxels=(0, 0, 0),
+        cfar_training_radius_voxels=(1, 3, 3),
+        cfar_guard_radius_voxels=(0, 1, 1),
+        cfar_k_sigma=0.5,
+        sidelobe_mode="axial",
+        sidelobe_radius_voxels=(0, 0, 0),
+        sidelobe_axial_z_radius_voxels=2,
+        sidelobe_axial_xy_tolerance_voxels=(0, 0),
+        sidelobe_floor_ratio=0.90,
+    )
+
+    assert len(suppressed) == 2
+    kept_positions = {(d.z, d.y, d.x) for d in suppressed}
+    assert (2.0, 2.0, 2.0) in kept_positions
+    assert ((2.0, 5.0, 5.0) in kept_positions) ^ ((3.0, 5.0, 5.0) in kept_positions)
 
 
 def test_nearest_neighbor_linking_is_one_to_one():
