@@ -5,6 +5,7 @@ The active production candidate path is kaggle_kernel/run.py.
 """
 
 import csv
+import importlib
 import json
 import math
 import os
@@ -124,7 +125,7 @@ def robust_normalize(volume, lower=1.0, upper=99.5):
 
 
 def open_competition_array(sample_path):
-    import zarr
+    zarr = importlib.import_module("zarr")
 
     array_path = Path(sample_path) / "0"
     if not array_path.exists():
@@ -184,7 +185,8 @@ def threshold_connected_components(sample_id, t, volume, threshold=0.65, min_vol
     from scipy import ndimage
 
     normalized = robust_normalize(volume)
-    labels, _ = ndimage.label(normalized >= threshold)
+    label_result = ndimage.label(normalized >= threshold)
+    labels = np.asarray(label_result[0])
     return detections_from_components(sample_id, t, labels, volume, min_volume=min_volume)
 
 
@@ -256,9 +258,9 @@ def link_adjacent_timepoints(previous, current, max_link_distance_um, strategy="
     current_positions = np.array([d.position_um for d in current], dtype=float)
     candidate_pairs = []
 
-    from scipy.spatial import cKDTree
+    from scipy import spatial
 
-    tree = cKDTree(current_positions)
+    tree = spatial.cKDTree(current_positions)
     for source in previous:
         source_position = np.array(source.position_um, dtype=float)
         query_position = source_position
@@ -326,7 +328,9 @@ def profile_sample_foreground(sample_path, threshold=0.65, min_volume=2, sample_
         volume = read_timepoint(array, min(max(0, int(t)), total_timepoints - 1))
         normalized = robust_normalize(volume)
         mask = normalized >= threshold
-        labels, component_count = ndimage.label(mask)
+        label_result = ndimage.label(mask)
+        labels = np.asarray(label_result[0])
+        component_count = int(label_result[1])
         counts = np.bincount(labels.ravel())[1:]
         largest_components.append(int(counts.max()) if counts.size else 0)
         foreground_fractions.append(float(mask.mean()))

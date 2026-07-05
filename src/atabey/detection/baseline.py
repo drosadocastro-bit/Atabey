@@ -1,11 +1,16 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
+from typing import Literal
 
 import numpy as np
 
 from atabey.constants import DEFAULT_VOXEL_SCALE_UM, VoxelScale
 from atabey.types import Detection
+
+
+CFARThresholdMode = Literal["sigma", "pfa"]
+SideLobeSuppressionMode = Literal["isotropic", "axial"]
 
 
 def robust_normalize(volume: np.ndarray, lower: float = 1.0, upper: float = 99.5) -> np.ndarray:
@@ -187,7 +192,9 @@ def threshold_local_maxima_cfar(
     max_detections: int | None = None,
     cfar_training_radius_voxels: tuple[int, int, int] = (1, 7, 7),
     cfar_guard_radius_voxels: tuple[int, int, int] = (0, 1, 1),
+    cfar_threshold_mode: CFARThresholdMode = "sigma",
     cfar_k_sigma: float = 1.0,
+    cfar_pfa: float = 1e-4,
 ) -> list[Detection]:
     """Detect peaks with a simple cell-averaging CFAR-like adaptive threshold.
 
@@ -212,13 +219,20 @@ def threshold_local_maxima_cfar(
     local_max = ndimage.maximum_filter(peak_source, size=peak_size, mode="nearest")
     peak_mask = peak_source == local_max
 
-    background_mean, background_std = _cfar_background_stats_box(
+    background_mean, background_std, ring_count = _cfar_background_stats_box(
         normalized,
         cfar_training_radius_voxels=cfar_training_radius_voxels,
         cfar_guard_radius_voxels=cfar_guard_radius_voxels,
     )
 
-    adaptive_threshold = background_mean + float(cfar_k_sigma) * background_std
+    if cfar_threshold_mode == "sigma":
+        adaptive_threshold = background_mean + float(cfar_k_sigma) * background_std
+    elif cfar_threshold_mode == "pfa":
+        alpha = _cfar_alpha_from_pfa(float(cfar_pfa), float(ring_count))
+        adaptive_threshold = background_mean * alpha
+    else:
+        raise ValueError(f"Unknown CFAR threshold mode: {cfar_threshold_mode}")
+
     keep_mask = peak_mask & (normalized >= float(threshold)) & (normalized >= adaptive_threshold)
     coords = np.argwhere(keep_mask)
     if coords.size == 0:
@@ -277,8 +291,13 @@ def threshold_local_maxima_cfar_sidelobe(
     max_detections: int | None = None,
     cfar_training_radius_voxels: tuple[int, int, int] = (1, 7, 7),
     cfar_guard_radius_voxels: tuple[int, int, int] = (0, 1, 1),
+    cfar_threshold_mode: CFARThresholdMode = "sigma",
     cfar_k_sigma: float = 1.0,
+    cfar_pfa: float = 1e-4,
+    sidelobe_mode: SideLobeSuppressionMode = "isotropic",
     sidelobe_radius_voxels: tuple[int, int, int] = (0, 2, 2),
+    sidelobe_axial_z_radius_voxels: int = 2,
+    sidelobe_axial_xy_tolerance_voxels: tuple[int, int] = (1, 1),
     sidelobe_floor_ratio: float = 0.85,
 ) -> list[Detection]:
     """CFAR peaks with side-lobe-style suppression of nearby weaker neighbors.
@@ -298,14 +317,19 @@ def threshold_local_maxima_cfar_sidelobe(
         max_detections=max_detections,
         cfar_training_radius_voxels=cfar_training_radius_voxels,
         cfar_guard_radius_voxels=cfar_guard_radius_voxels,
+        cfar_threshold_mode=cfar_threshold_mode,
         cfar_k_sigma=cfar_k_sigma,
+        cfar_pfa=cfar_pfa,
     )
     if not detections:
         return []
 
     kept = _sidelobe_suppress_detections(
         detections,
+        sidelobe_mode=sidelobe_mode,
         sidelobe_radius_voxels=sidelobe_radius_voxels,
+        sidelobe_axial_z_radius_voxels=sidelobe_axial_z_radius_voxels,
+        sidelobe_axial_xy_tolerance_voxels=sidelobe_axial_xy_tolerance_voxels,
         sidelobe_floor_ratio=sidelobe_floor_ratio,
     )
 
@@ -318,7 +342,7 @@ def _cfar_background_stats_box(
     *,
     cfar_training_radius_voxels: tuple[int, int, int],
     cfar_guard_radius_voxels: tuple[int, int, int],
-) -> tuple[np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray, float]:
     try:
         from scipy import ndimage
     except ImportError as exc:  # pragma: no cover - exercised when scipy is absent.
@@ -354,13 +378,16 @@ def _cfar_background_stats_box(
     background_sq_mean = (sum_sq_training - sum_sq_guard) / ring_count
     background_var = np.clip(background_sq_mean - background_mean * background_mean, 0.0, None)
     background_std = np.sqrt(background_var)
-    return background_mean, background_std
+    return background_mean, background_std, float(ring_count)
 
 
 def _sidelobe_suppress_detections(
     detections: list[Detection],
     *,
+    sidelobe_mode: SideLobeSuppressionMode,
     sidelobe_radius_voxels: tuple[int, int, int],
+    sidelobe_axial_z_radius_voxels: int,
+    sidelobe_axial_xy_tolerance_voxels: tuple[int, int],
     sidelobe_floor_ratio: float,
 ) -> list[Detection]:
     ordered = sorted(
@@ -369,7 +396,16 @@ def _sidelobe_suppress_detections(
         reverse=True,
     )
     kept: list[Detection] = []
-    rz, ry, rx = (max(0, int(v)) for v in sidelobe_radius_voxels)
+    if sidelobe_mode == "isotropic":
+        rz, ry, rx = (max(0, int(v)) for v in sidelobe_radius_voxels)
+    elif sidelobe_mode == "axial":
+        rz = max(0, int(sidelobe_axial_z_radius_voxels))
+        ay, ax = sidelobe_axial_xy_tolerance_voxels
+        ry = max(0, int(ay))
+        rx = max(0, int(ax))
+    else:
+        raise ValueError(f"Unknown sidelobe suppression mode: {sidelobe_mode}")
+
     floor_ratio = float(np.clip(sidelobe_floor_ratio, 0.0, 1.0))
 
     kept_by_voxel: dict[tuple[int, int, int], list[Detection]] = {}
@@ -410,6 +446,13 @@ def _cfar_margin_confidence(signal: float, adaptive_threshold: float) -> float:
     # compares peaks by CFAR salience, not by global brightness.
     denominator = max(adaptive_threshold, 1e-6)
     return max(0.0, (signal - adaptive_threshold) / denominator)
+
+
+def _cfar_alpha_from_pfa(pfa: float, n_train: float) -> float:
+    # Standard CA-CFAR scale for exponentially distributed clutter.
+    pfa_clamped = min(max(float(pfa), 1e-12), 1.0 - 1e-12)
+    n_train_clamped = max(float(n_train), 1.0)
+    return n_train_clamped * (pfa_clamped ** (-1.0 / n_train_clamped) - 1.0)
 
 def _positive_labels(labels: np.ndarray) -> Iterable[int]:
     return (int(label_id) for label_id in np.unique(labels) if label_id > 0)
