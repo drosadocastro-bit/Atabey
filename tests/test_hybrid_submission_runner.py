@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+import pytest
 
 from atabey.detection.adaptive import ForegroundProfile
 from atabey.hybrid_config import (
@@ -102,8 +103,13 @@ def test_cfar_guardrail_falls_back_on_spike(monkeypatch) -> None:
         threshold=0.50,
         cfar_training_radius_voxels=(1, 6, 6),
         cfar_guard_radius_voxels=(0, 1, 1),
+        cfar_threshold_mode="sigma",
         cfar_k_sigma=1.1,
+        cfar_pfa=1e-4,
+        sidelobe_mode="isotropic",
         sidelobe_radius_voxels=(1, 12, 12),
+        sidelobe_axial_z_radius_voxels=2,
+        sidelobe_axial_xy_tolerance_voxels=(1, 1),
         sidelobe_floor_ratio=0.85,
         max_detections_per_timepoint=900,
         guardrail_spike_multiplier=1.5,
@@ -130,13 +136,20 @@ def test_hybrid_defaults_snapshot(monkeypatch) -> None:
     assert args.cfar_threshold == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_threshold
     assert args.cfar_training_radius == "1,6,6"
     assert args.cfar_guard_radius == "0,1,1"
+    assert args.cfar_threshold_mode == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_threshold_mode
     assert args.cfar_k_sigma == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_k_sigma
+    assert args.cfar_pfa == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_pfa
+    assert args.sidelobe_mode == DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_mode
+    assert args.allow_unsafe_pfa_axial is False
     assert args.sidelobe_radius == "1,12,12"
+    assert args.sidelobe_axial_z_radius == DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_axial_z_radius_voxels
+    assert args.sidelobe_axial_xy_tolerance == "1,1"
     assert args.sidelobe_floor == DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_floor_ratio
     assert args.max_detections_per_timepoint == DEFAULT_HYBRID_FROZEN_DEFAULTS.max_detections_per_timepoint
     assert args.cfar_route_policy == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_route_policy
     assert args.cfar_link_strategy == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_link_strategy
     assert args.cfar_max_link_distance_um == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_max_link_distance_um
+<<<<<<< HEAD
     assert args.enable_kinematic_recovery is False
     assert args.kinematic_max_gap_frames == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.max_gap_frames
     assert (
@@ -181,9 +194,84 @@ def test_hybrid_defaults_snapshot(monkeypatch) -> None:
         args.kinematic_edge_inflation_ceiling_ratio
         == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.edge_inflation_ceiling_ratio
     )
+=======
+    assert args.track_quality_shadow is True
+    assert args.track_quality_beacon_threshold == 0.75
+    assert args.track_quality_min_track_length == 3
+    assert args.latent_shadow is False
+    assert args.latent_shadow_window_frames == DEFAULT_HYBRID_FROZEN_DEFAULTS.latent_shadow_window_frames
+    assert args.latent_shadow_max_link_distance_um == DEFAULT_HYBRID_FROZEN_DEFAULTS.latent_shadow_max_link_distance_um
+    assert args.mitosis_shadow is False
+    assert args.mitosis_shadow_distance_um == DEFAULT_HYBRID_FROZEN_DEFAULTS.mitosis_shadow_distance_um
+    assert args.mitosis_shadow_intensity_tolerance == DEFAULT_HYBRID_FROZEN_DEFAULTS.mitosis_shadow_intensity_tolerance
+    # Experimental merge-gated correlation recovery must default OFF (V13 protection).
+    assert args.enable_correlation_recovery is False
+    assert args.correlation_merge_gate_radius == 3.0
+    assert args.correlation_merge_gate_frame_window == 1
+    assert args.correlation_discount == 0.6
+>>>>>>> origin/main
 
     assert DEFAULT_GUARDRAIL_SETTINGS.spike_multiplier == 1.8
     assert DEFAULT_GUARDRAIL_SETTINGS.min_history == 6
     assert DEFAULT_GUARDRAIL_SETTINGS.history_window == 12
     assert DEFAULT_GUARDRAIL_SETTINGS.min_absolute_count == 1200
     assert DEFAULT_GUARDRAIL_SETTINGS.fallback_threshold == 0.65
+
+
+def test_pfa_axial_combo_requires_explicit_override() -> None:
+    with pytest.raises(ValueError, match="allow-unsafe-pfa-axial"):
+        hybrid_submission._validate_experimental_route_scope(
+            cfar_route_policy="merged_6bba_only",
+            cfar_threshold_mode="pfa",
+            sidelobe_mode="axial",
+            latent_shadow=False,
+            mitosis_shadow=False,
+            allow_unsafe_pfa_axial=False,
+        )
+
+
+def test_pfa_axial_combo_allowed_with_explicit_override() -> None:
+    hybrid_submission._validate_experimental_route_scope(
+        cfar_route_policy="merged_6bba_only",
+        cfar_threshold_mode="pfa",
+        sidelobe_mode="axial",
+        latent_shadow=False,
+        mitosis_shadow=False,
+        allow_unsafe_pfa_axial=True,
+    )
+
+
+def test_experimental_features_restricted_to_merged_6bba_only() -> None:
+    with pytest.raises(ValueError, match="merged_6bba_only"):
+        hybrid_submission.run_hybrid_submission(
+            input_dir=Path("test"),
+            output_csv=Path("submissions/test.csv"),
+            report_json=Path("submissions/test_report.json"),
+            summary_json=None,
+            max_samples=1,
+            max_timepoints=1,
+            cfar_threshold=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_threshold,
+            cfar_training_radius_voxels=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_training_radius_voxels,
+            cfar_guard_radius_voxels=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_guard_radius_voxels,
+            cfar_threshold_mode="pfa",
+            cfar_k_sigma=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_k_sigma,
+            cfar_pfa=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_pfa,
+            sidelobe_mode=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_mode,
+            sidelobe_radius_voxels=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_radius_voxels,
+            sidelobe_axial_z_radius_voxels=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_axial_z_radius_voxels,
+            sidelobe_axial_xy_tolerance_voxels=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_axial_xy_tolerance_voxels,
+            sidelobe_floor_ratio=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_floor_ratio,
+            max_detections_per_timepoint=DEFAULT_HYBRID_FROZEN_DEFAULTS.max_detections_per_timepoint,
+            cfar_link_strategy=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_link_strategy,
+            cfar_max_link_distance_um=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_max_link_distance_um,
+            cfar_route_policy="merged_all",
+            track_quality_shadow=True,
+            track_quality_beacon_threshold=0.75,
+            track_quality_min_track_length=3,
+            latent_shadow=False,
+            latent_shadow_window_frames=DEFAULT_HYBRID_FROZEN_DEFAULTS.latent_shadow_window_frames,
+            latent_shadow_max_link_distance_um=DEFAULT_HYBRID_FROZEN_DEFAULTS.latent_shadow_max_link_distance_um,
+            mitosis_shadow=False,
+            mitosis_shadow_distance_um=DEFAULT_HYBRID_FROZEN_DEFAULTS.mitosis_shadow_distance_um,
+            mitosis_shadow_intensity_tolerance=DEFAULT_HYBRID_FROZEN_DEFAULTS.mitosis_shadow_intensity_tolerance,
+        )
