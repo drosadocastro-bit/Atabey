@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: project-atabey
+Version: 0.1.0
+Summary: Streaming-first experimental lineage tracker for 3D+time embryonic cell videos.
+Requires-Python: >=3.10
+Requires-Dist: numpy>=1.26
+Requires-Dist: pandas>=2.2
+Requires-Dist: scipy>=1.11
+Requires-Dist: zarr>=2.18
+Requires-Dist: networkx>=3.2

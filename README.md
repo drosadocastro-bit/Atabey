@@ -14,7 +14,7 @@ diagnose where it fails, test bounded fixes, measure the runtime and quality tra
 only the branches that improve the calibration story.
 
 In practice, this means the repo shows how we moved from simple component centroids to adaptive
-routing, then tested ideas like Overall System Sensitvity, Target Reinforce, Target Correlation, CFAR, side-lobe suppression, and latent recovery without losing
+routing, then tested ideas like Overall System Sensitivity, Target Reinforce, Target Correlation, CFAR, side-lobe suppression, and latent recovery without losing
 auditability or pretending the tracker knows more than the data supports.
 
 If you want the short version: this repo is about disciplined experimentation, explicit

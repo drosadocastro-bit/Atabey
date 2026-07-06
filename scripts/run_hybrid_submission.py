@@ -9,31 +9,12 @@ from statistics import median
 
 from atabey.baseline import build_baseline_graph
 from atabey.detection.adaptive import ForegroundProfile, choose_settings_for_sample
-from atabey.detection.baseline import (
-    _cfar_background_stats_box,
-    robust_normalize,
-    threshold_local_maxima,
-    threshold_local_maxima_cfar_sidelobe,
-)
-from atabey.hybrid_config import (
-    DEFAULT_GUARDRAIL_SETTINGS,
-    DEFAULT_HYBRID_FROZEN_DEFAULTS,
-    DEFAULT_KINEMATIC_RECOVERY_SETTINGS,
-)
+from atabey.detection.baseline import threshold_local_maxima, threshold_local_maxima_cfar_sidelobe
+from atabey.hybrid_config import DEFAULT_GUARDRAIL_SETTINGS, DEFAULT_HYBRID_FROZEN_DEFAULTS
 from atabey.io.zarr_reader import open_competition_array, read_timepoint
 from atabey.submission.writer import write_submission
-<<<<<<< HEAD
-from atabey.tracking.kinematic_recovery import (
-    KinematicRecoverySettings,
-    KinematicRecoveryTelemetry,
-    age_and_prune_kinematic_tracks,
-    enqueue_kinematic_tracks,
-    recover_kinematic_edges,
-)
-=======
 from atabey.tracking.correlation_active import build_active_graph
 from atabey.tracking.event_shadow import compute_lineage_event_shadow
->>>>>>> origin/main
 from atabey.tracking.nearest_neighbor import link_adjacent_timepoints
 from atabey.tracking.track_quality_shadow import compute_track_quality_shadow
 from atabey.types import Detection, LineageGraph
@@ -70,13 +51,6 @@ class HybridRunRecord:
     max_detections_per_timepoint: int | None
     cfar_spike_fallback_count: int | None
     max_timepoints: int | None
-<<<<<<< HEAD
-    kinematic_recovery_enabled: bool = False
-    kinematic_recovered_edges: int | None = None
-    kinematic_suppressed_by_clean_context: int | None = None
-    kinematic_suppressed_by_edge_ceiling: int | None = None
-    kinematic_overhead_ms: float | None = None
-=======
     track_quality_shadow_enabled: bool
     track_quality_shadow_mean: float | None
     track_quality_shadow_beacon_count: int | None
@@ -91,7 +65,6 @@ class HybridRunRecord:
     correlation_synthetic_count: int | None = None
     correlation_suppressed_by_merge_gate: int | None = None
     correlation_merge_gate_radius_um: float | None = None
->>>>>>> origin/main
 
 
 @dataclass(frozen=True)
@@ -213,10 +186,7 @@ def build_graph_cfar_sidelobe(
     link_strategy: str,
     max_link_distance_um: float,
     max_timepoints: int | None,
-    kinematic_recovery_enabled: bool = False,
-    kinematic_recovery_settings: KinematicRecoverySettings = DEFAULT_KINEMATIC_RECOVERY_SETTINGS,
-    return_kinematic_telemetry: bool = False,
-) -> tuple[LineageGraph, int] | tuple[LineageGraph, int, KinematicRecoveryTelemetry]:
+) -> tuple[LineageGraph, int]:
     sample_id = _sample_id_from_path(sample_path)
     array = open_competition_array(sample_path)
     total_timepoints = int(array.shape[0])
@@ -227,9 +197,6 @@ def build_graph_cfar_sidelobe(
     previous: list[Detection] = []
     detections_by_node_id: dict[str, Detection] = {}
     predecessor_by_node_id: dict[str, Detection] = {}
-    track_length_by_node_id: dict[str, int] = {}
-    latent_tracks = {}
-    kinematic_telemetry = KinematicRecoveryTelemetry()
     recent_counts: list[int] = []
     spike_fallback_count = 0
     if guardrail_fallback_max_detections is None:
@@ -237,16 +204,6 @@ def build_graph_cfar_sidelobe(
 
     for t in range(total_timepoints):
         volume = read_timepoint(array, t)
-        normalized = None
-        background_mean = None
-        background_std = None
-        if kinematic_recovery_enabled:
-            normalized = robust_normalize(volume, upper=99.9)
-            background_mean, background_std = _cfar_background_stats_box(
-                normalized,
-                cfar_training_radius_voxels=cfar_training_radius_voxels,
-                cfar_guard_radius_voxels=cfar_guard_radius_voxels,
-            )
         current = threshold_local_maxima_cfar_sidelobe(
             sample_id,
             t,
@@ -303,53 +260,9 @@ def build_graph_cfar_sidelobe(
         for edge in edges:
             graph.add_edge(edge)
             predecessor_by_node_id[edge.target_id] = detections_by_node_id[edge.source_id]
-            track_length_by_node_id[edge.target_id] = track_length_by_node_id.get(edge.source_id, 0) + 1
-
-        if kinematic_recovery_enabled and normalized is not None and background_mean is not None and background_std is not None:
-            recovery_start = time.perf_counter()
-            matched_source_ids = {edge.source_id for edge in edges}
-            used_target_ids = {edge.target_id for edge in edges}
-            latent_edges, recovered_source_ids = recover_kinematic_edges(
-                latent_tracks=latent_tracks,
-                current=current,
-                used_target_ids=used_target_ids,
-                max_link_distance_um=max_link_distance_um,
-                settings=kinematic_recovery_settings,
-                telemetry=kinematic_telemetry,
-                reference_edge_count=max(len(edges), 1),
-            )
-            for edge in latent_edges:
-                graph.add_edge(edge)
-                predecessor_by_node_id[edge.target_id] = detections_by_node_id[edge.source_id]
-                track_length_by_node_id[edge.target_id] = track_length_by_node_id.get(edge.source_id, 0) + 1
-
-            age_and_prune_kinematic_tracks(
-                latent_tracks,
-                recovered_source_ids=recovered_source_ids,
-                max_gap_frames=kinematic_recovery_settings.max_gap_frames,
-            )
-            enqueue_kinematic_tracks(
-                latent_tracks=latent_tracks,
-                previous=previous,
-                current=current,
-                max_link_distance_um=max_link_distance_um,
-                link_strategy=link_strategy,
-                matched_source_ids=matched_source_ids,
-                predecessor_by_node_id=predecessor_by_node_id,
-                track_length_by_node_id=track_length_by_node_id,
-                normalized=normalized,
-                background_mean=background_mean,
-                background_std=background_std,
-                cfar_k_sigma=cfar_k_sigma,
-                settings=kinematic_recovery_settings,
-                telemetry=kinematic_telemetry,
-            )
-            kinematic_telemetry.overhead_ms += (time.perf_counter() - recovery_start) * 1000.0
 
         previous = current
 
-    if return_kinematic_telemetry:
-        return graph, spike_fallback_count, kinematic_telemetry
     return graph, spike_fallback_count
 
 
@@ -372,10 +285,6 @@ def build_hybrid_graph_for_sample(
     cfar_link_strategy: str,
     cfar_max_link_distance_um: float,
     cfar_route_policy: str,
-<<<<<<< HEAD
-    enable_kinematic_recovery: bool,
-    kinematic_recovery_settings: KinematicRecoverySettings,
-=======
     track_quality_shadow: bool,
     track_quality_beacon_threshold: float,
     track_quality_min_track_length: int,
@@ -389,7 +298,6 @@ def build_hybrid_graph_for_sample(
     correlation_merge_gate_radius_um: float = 3.0,
     correlation_merge_gate_frame_window: int = 1,
     correlation_discount: float = 0.6,
->>>>>>> origin/main
 ) -> tuple[LineageGraph, HybridRunRecord]:
     profile, settings = choose_settings_for_sample(sample_path)
     use_cfar = _should_use_cfar_route(
@@ -400,9 +308,8 @@ def build_hybrid_graph_for_sample(
     route = "cfar_sidelobe" if use_cfar else "adaptive_baseline"
 
     start = time.perf_counter()
-    kinematic_telemetry = KinematicRecoveryTelemetry()
     if use_cfar:
-        graph, cfar_spike_fallback_count, kinematic_telemetry = build_graph_cfar_sidelobe(
+        graph, cfar_spike_fallback_count = build_graph_cfar_sidelobe(
             sample_path=sample_path,
             threshold=cfar_threshold,
             cfar_training_radius_voxels=cfar_training_radius_voxels,
@@ -420,9 +327,6 @@ def build_hybrid_graph_for_sample(
             link_strategy=cfar_link_strategy,
             max_link_distance_um=cfar_max_link_distance_um,
             max_timepoints=max_timepoints,
-            kinematic_recovery_enabled=enable_kinematic_recovery,
-            kinematic_recovery_settings=kinematic_recovery_settings,
-            return_kinematic_telemetry=True,
         )
         detector = "cfar_sidelobe"
         threshold = cfar_threshold
@@ -553,18 +457,6 @@ def build_hybrid_graph_for_sample(
         max_detections_per_timepoint=max_detections_per_timepoint if use_cfar else None,
         cfar_spike_fallback_count=cfar_spike_fallback_count,
         max_timepoints=max_timepoints,
-<<<<<<< HEAD
-        kinematic_recovery_enabled=bool(use_cfar and enable_kinematic_recovery),
-        kinematic_recovered_edges=(kinematic_telemetry.recovered_edges if use_cfar and enable_kinematic_recovery else None),
-        kinematic_suppressed_by_clean_context=(
-            kinematic_telemetry.suppressed_by_clean_context if use_cfar and enable_kinematic_recovery else None
-        ),
-        kinematic_suppressed_by_edge_ceiling=(
-            kinematic_telemetry.suppressed_by_edge_ceiling if use_cfar and enable_kinematic_recovery else None
-        ),
-        kinematic_overhead_ms=(
-            round(kinematic_telemetry.overhead_ms, 2) if use_cfar and enable_kinematic_recovery else None
-=======
         track_quality_shadow_enabled=bool(track_quality_shadow),
         track_quality_shadow_mean=track_quality_shadow_mean,
         track_quality_shadow_beacon_count=track_quality_shadow_beacon_count,
@@ -580,7 +472,6 @@ def build_hybrid_graph_for_sample(
         correlation_suppressed_by_merge_gate=correlation_suppressed_by_merge_gate,
         correlation_merge_gate_radius_um=(
             float(correlation_merge_gate_radius_um) if correlation_applied else None
->>>>>>> origin/main
         ),
     )
     return graph, record
@@ -609,10 +500,6 @@ def run_hybrid_submission(
     cfar_link_strategy: str,
     cfar_max_link_distance_um: float,
     cfar_route_policy: str,
-<<<<<<< HEAD
-    enable_kinematic_recovery: bool,
-    kinematic_recovery_settings: KinematicRecoverySettings,
-=======
     track_quality_shadow: bool,
     track_quality_beacon_threshold: float,
     track_quality_min_track_length: int,
@@ -627,7 +514,6 @@ def run_hybrid_submission(
     correlation_merge_gate_radius_um: float = 3.0,
     correlation_merge_gate_frame_window: int = 1,
     correlation_discount: float = 0.6,
->>>>>>> origin/main
 ) -> tuple[list[HybridRunRecord], HybridRunSummary]:
     _validate_experimental_route_scope(
         cfar_route_policy=cfar_route_policy,
@@ -665,10 +551,6 @@ def run_hybrid_submission(
             cfar_link_strategy=cfar_link_strategy,
             cfar_max_link_distance_um=cfar_max_link_distance_um,
             cfar_route_policy=cfar_route_policy,
-<<<<<<< HEAD
-            enable_kinematic_recovery=enable_kinematic_recovery,
-            kinematic_recovery_settings=kinematic_recovery_settings,
-=======
             track_quality_shadow=track_quality_shadow,
             track_quality_beacon_threshold=track_quality_beacon_threshold,
             track_quality_min_track_length=track_quality_min_track_length,
@@ -682,7 +564,6 @@ def run_hybrid_submission(
             correlation_merge_gate_radius_um=correlation_merge_gate_radius_um,
             correlation_merge_gate_frame_window=correlation_merge_gate_frame_window,
             correlation_discount=correlation_discount,
->>>>>>> origin/main
         )
         graphs.append(graph)
         records.append(record)
@@ -828,90 +709,6 @@ def parse_args() -> argparse.Namespace:
         help="CFAR route link distance.",
     )
     parser.add_argument(
-<<<<<<< HEAD
-        "--enable-kinematic-recovery",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="Enable V16 kinematic soft-link recovery on the CFAR route only. Default OFF preserves V13 behavior.",
-    )
-    parser.add_argument(
-        "--kinematic-max-gap-frames",
-        type=int,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.max_gap_frames,
-        help="Maximum number of missing frames eligible for kinematic recovery.",
-    )
-    parser.add_argument(
-        "--kinematic-min-track-length-edges",
-        type=int,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.min_track_length_edges,
-        help="Minimum accepted track length before a dying track can enter recovery.",
-    )
-    parser.add_argument(
-        "--kinematic-trigger-background-mean-min",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_background_mean_min,
-        help="Minimum local CFAR background mean required to classify a gap as clutter-risk.",
-    )
-    parser.add_argument(
-        "--kinematic-trigger-adaptive-threshold-min",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_adaptive_threshold_min,
-        help="Minimum local adaptive threshold required for clutter-risk authorization.",
-    )
-    parser.add_argument(
-        "--kinematic-trigger-contrast-max",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_contrast_max,
-        help="Maximum allowed local contrast for a recovery-eligible suppressed termination.",
-    )
-    parser.add_argument(
-        "--kinematic-trigger-cfar-margin-max",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_cfar_margin_max,
-        help="Maximum local CFAR margin allowed for recovery authorization.",
-    )
-    parser.add_argument(
-        "--kinematic-base-sigma-um",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.base_sigma_um,
-        help="Base positional uncertainty in microns for the kinematic cone.",
-    )
-    parser.add_argument(
-        "--kinematic-velocity-sigma-scale",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.velocity_sigma_scale,
-        help="How much velocity magnitude expands the cone along the motion axis.",
-    )
-    parser.add_argument(
-        "--kinematic-transverse-sigma-um",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.transverse_sigma_um,
-        help="Cross-axis uncertainty in microns for the kinematic cone.",
-    )
-    parser.add_argument(
-        "--kinematic-mahalanobis-threshold",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.mahalanobis_threshold,
-        help="Mahalanobis gate threshold for virtual gap edges.",
-    )
-    parser.add_argument(
-        "--kinematic-directional-cosine-min",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.directional_cosine_min,
-        help="Minimum cosine agreement between historical motion and the recovered displacement.",
-    )
-    parser.add_argument(
-        "--kinematic-temporal-discount",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.temporal_discount,
-        help="Discount factor applied to gap-edge confidence as missing frames increase.",
-    )
-    parser.add_argument(
-        "--kinematic-edge-inflation-ceiling-ratio",
-        type=float,
-        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.edge_inflation_ceiling_ratio,
-        help="Maximum recovered-edge count as a ratio of adjacent recovered edges in the same frame.",
-=======
         "--track-quality-shadow",
         action=argparse.BooleanOptionalAction,
         default=True,
@@ -991,7 +788,6 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=0.6,
         help="Confidence discount applied to synthetic recovery nodes. Validated default 0.6.",
->>>>>>> origin/main
     )
     return parser.parse_args()
 
@@ -1020,24 +816,6 @@ def main() -> None:
         cfar_link_strategy=str(args.cfar_link_strategy),
         cfar_max_link_distance_um=float(args.cfar_max_link_distance_um),
         cfar_route_policy=str(args.cfar_route_policy),
-<<<<<<< HEAD
-        enable_kinematic_recovery=bool(args.enable_kinematic_recovery),
-        kinematic_recovery_settings=KinematicRecoverySettings(
-            max_gap_frames=int(args.kinematic_max_gap_frames),
-            min_track_length_edges=int(args.kinematic_min_track_length_edges),
-            trigger_background_mean_min=float(args.kinematic_trigger_background_mean_min),
-            trigger_adaptive_threshold_min=float(args.kinematic_trigger_adaptive_threshold_min),
-            trigger_contrast_max=float(args.kinematic_trigger_contrast_max),
-            trigger_cfar_margin_max=float(args.kinematic_trigger_cfar_margin_max),
-            base_sigma_um=float(args.kinematic_base_sigma_um),
-            velocity_sigma_scale=float(args.kinematic_velocity_sigma_scale),
-            transverse_sigma_um=float(args.kinematic_transverse_sigma_um),
-            mahalanobis_threshold=float(args.kinematic_mahalanobis_threshold),
-            directional_cosine_min=float(args.kinematic_directional_cosine_min),
-            temporal_discount=float(args.kinematic_temporal_discount),
-            edge_inflation_ceiling_ratio=float(args.kinematic_edge_inflation_ceiling_ratio),
-        ),
-=======
         track_quality_shadow=bool(args.track_quality_shadow),
         track_quality_beacon_threshold=float(args.track_quality_beacon_threshold),
         track_quality_min_track_length=int(args.track_quality_min_track_length),
@@ -1052,7 +830,6 @@ def main() -> None:
         correlation_merge_gate_radius_um=float(args.correlation_merge_gate_radius),
         correlation_merge_gate_frame_window=int(args.correlation_merge_gate_frame_window),
         correlation_discount=float(args.correlation_discount),
->>>>>>> origin/main
     )
 
 
