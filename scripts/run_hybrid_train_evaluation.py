@@ -9,7 +9,12 @@ from pathlib import Path
 from atabey.baseline import build_baseline_graph
 from atabey.detection.adaptive import ForegroundProfile, choose_settings_for_sample
 from atabey.evaluation.sparse_ground_truth import evaluate_sparse_ground_truth
-from atabey.hybrid_config import DEFAULT_GUARDRAIL_SETTINGS, DEFAULT_HYBRID_FROZEN_DEFAULTS
+from atabey.hybrid_config import (
+    DEFAULT_GUARDRAIL_SETTINGS,
+    DEFAULT_HYBRID_FROZEN_DEFAULTS,
+    DEFAULT_KINEMATIC_RECOVERY_SETTINGS,
+)
+from atabey.tracking.kinematic_recovery import KinematicRecoverySettings
 from atabey.io.geff_reader import read_geff_graph
 
 try:
@@ -39,6 +44,11 @@ class TrainHybridEvalRecord:
     reason: str
     max_detections_per_timepoint: int | None
     max_timepoints: int | None
+    kinematic_recovery_enabled: bool = False
+    kinematic_recovered_edges: int | None = None
+    kinematic_suppressed_by_clean_context: int | None = None
+    kinematic_suppressed_by_edge_ceiling: int | None = None
+    kinematic_overhead_ms: float | None = None
 
 
 @dataclass(frozen=True)
@@ -133,6 +143,8 @@ def _build_hybrid_graph(
     cfar_link_strategy: str,
     cfar_max_link_distance_um: float,
     cfar_route_policy: str,
+    enable_kinematic_recovery: bool,
+    kinematic_recovery_settings: KinematicRecoverySettings,
 ):
     profile, settings = choose_settings_for_sample(sample_path)
     if _should_use_cfar_route(
@@ -140,7 +152,7 @@ def _build_hybrid_graph(
         adaptive_detector=settings.detector,
         cfar_route_policy=cfar_route_policy,
     ):
-        graph, _ = build_graph_cfar_sidelobe(
+        graph, _spike_fallback_count, telemetry = build_graph_cfar_sidelobe(
             sample_path=sample_path,
             threshold=cfar_threshold,
             cfar_training_radius_voxels=cfar_training_radius_voxels,
@@ -158,8 +170,11 @@ def _build_hybrid_graph(
             link_strategy=cfar_link_strategy,
             max_link_distance_um=cfar_max_link_distance_um,
             max_timepoints=max_timepoints,
+            kinematic_recovery_enabled=enable_kinematic_recovery,
+            kinematic_recovery_settings=kinematic_recovery_settings,
+            return_kinematic_telemetry=True,
         )
-        return graph, profile, "cfar_sidelobe", cfar_link_strategy, settings.reason
+        return graph, profile, "cfar_sidelobe", cfar_link_strategy, settings.reason, telemetry
 
     baseline_link_strategy = "motion_mutual" if settings.detector == "local_maxima" else settings.link_strategy
     graph = build_baseline_graph(
@@ -173,7 +188,7 @@ def _build_hybrid_graph(
         peak_min_distance_voxels=settings.peak_min_distance_voxels,
     )
     reason = settings.reason.replace(" with a bounded one-frame latent recovery bridge", "")
-    return graph, profile, settings.detector, baseline_link_strategy, reason
+    return graph, profile, settings.detector, baseline_link_strategy, reason, None
 
 
 def _record_for_graph(
@@ -188,6 +203,11 @@ def _record_for_graph(
     reason: str,
     max_detections_per_timepoint: int | None,
     max_timepoints: int | None,
+    kinematic_recovery_enabled: bool = False,
+    kinematic_recovered_edges: int | None = None,
+    kinematic_suppressed_by_clean_context: int | None = None,
+    kinematic_suppressed_by_edge_ceiling: int | None = None,
+    kinematic_overhead_ms: float | None = None,
 ) -> TrainHybridEvalRecord:
     report = evaluate_sparse_ground_truth(graph, ground_truth, match_radius_um=7.0)
     quality_score = _quality_score(report.sparse_recall, report.sparse_edge_recall)
@@ -211,6 +231,11 @@ def _record_for_graph(
         reason=reason,
         max_detections_per_timepoint=max_detections_per_timepoint,
         max_timepoints=max_timepoints,
+        kinematic_recovery_enabled=bool(kinematic_recovery_enabled),
+        kinematic_recovered_edges=kinematic_recovered_edges,
+        kinematic_suppressed_by_clean_context=kinematic_suppressed_by_clean_context,
+        kinematic_suppressed_by_edge_ceiling=kinematic_suppressed_by_edge_ceiling,
+        kinematic_overhead_ms=kinematic_overhead_ms,
     )
 
 
@@ -256,6 +281,8 @@ def run_train_evaluation(
     cfar_link_strategy: str,
     cfar_max_link_distance_um: float,
     cfar_route_policy: str,
+    enable_kinematic_recovery: bool,
+    kinematic_recovery_settings: KinematicRecoverySettings,
 ) -> list[TrainHybridEvalRecord]:
     records: list[TrainHybridEvalRecord] = []
     for sample_id in sample_ids:
@@ -281,7 +308,7 @@ def run_train_evaluation(
         print(json.dumps(asdict(record)), flush=True)
 
         start = time.perf_counter()
-        graph, profile, detector, link_strategy, reason = _build_hybrid_graph(
+        graph, profile, detector, link_strategy, reason, telemetry = _build_hybrid_graph(
             sample_path=sample_path,
             max_timepoints=max_timepoints,
             cfar_threshold=cfar_threshold,
@@ -294,6 +321,8 @@ def run_train_evaluation(
             cfar_link_strategy=cfar_link_strategy,
             cfar_max_link_distance_um=cfar_max_link_distance_um,
             cfar_route_policy=cfar_route_policy,
+            enable_kinematic_recovery=enable_kinematic_recovery,
+            kinematic_recovery_settings=kinematic_recovery_settings,
         )
         elapsed = time.perf_counter() - start
         record = _record_for_graph(
@@ -307,6 +336,11 @@ def run_train_evaluation(
             reason=reason,
             max_detections_per_timepoint=max_detections_per_timepoint if detector == "cfar_sidelobe" else None,
             max_timepoints=max_timepoints,
+            kinematic_recovery_enabled=bool(detector == "cfar_sidelobe" and enable_kinematic_recovery),
+            kinematic_recovered_edges=(telemetry.recovered_edges if telemetry is not None else None),
+            kinematic_suppressed_by_clean_context=(telemetry.suppressed_by_clean_context if telemetry is not None else None),
+            kinematic_suppressed_by_edge_ceiling=(telemetry.suppressed_by_edge_ceiling if telemetry is not None else None),
+            kinematic_overhead_ms=(round(telemetry.overhead_ms, 2) if telemetry is not None else None),
         )
         records.append(record)
         print(json.dumps(asdict(record)), flush=True)
@@ -389,6 +423,90 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_max_link_distance_um,
         help="CFAR route link distance.",
     )
+    parser.add_argument(
+        "--enable-kinematic-recovery",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Enable V16 kinematic soft-link recovery on the CFAR route only. Default OFF preserves V13 behavior.",
+    )
+    parser.add_argument(
+        "--kinematic-max-gap-frames",
+        type=int,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.max_gap_frames,
+        help="Maximum number of missing frames eligible for kinematic recovery.",
+    )
+    parser.add_argument(
+        "--kinematic-min-track-length-edges",
+        type=int,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.min_track_length_edges,
+        help="Minimum accepted track length before a dying track can enter recovery.",
+    )
+    parser.add_argument(
+        "--kinematic-trigger-background-mean-min",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_background_mean_min,
+        help="Minimum local CFAR background mean required to classify a gap as clutter-risk.",
+    )
+    parser.add_argument(
+        "--kinematic-trigger-adaptive-threshold-min",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_adaptive_threshold_min,
+        help="Minimum local adaptive threshold required for clutter-risk authorization.",
+    )
+    parser.add_argument(
+        "--kinematic-trigger-contrast-max",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_contrast_max,
+        help="Maximum allowed local contrast for a recovery-eligible suppressed termination.",
+    )
+    parser.add_argument(
+        "--kinematic-trigger-cfar-margin-max",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_cfar_margin_max,
+        help="Maximum local CFAR margin allowed for recovery authorization.",
+    )
+    parser.add_argument(
+        "--kinematic-base-sigma-um",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.base_sigma_um,
+        help="Base positional uncertainty in microns for the kinematic cone.",
+    )
+    parser.add_argument(
+        "--kinematic-velocity-sigma-scale",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.velocity_sigma_scale,
+        help="How much velocity magnitude expands the cone along the motion axis.",
+    )
+    parser.add_argument(
+        "--kinematic-transverse-sigma-um",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.transverse_sigma_um,
+        help="Cross-axis uncertainty in microns for the kinematic cone.",
+    )
+    parser.add_argument(
+        "--kinematic-mahalanobis-threshold",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.mahalanobis_threshold,
+        help="Mahalanobis gate threshold for virtual gap edges.",
+    )
+    parser.add_argument(
+        "--kinematic-directional-cosine-min",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.directional_cosine_min,
+        help="Minimum cosine agreement between historical motion and the recovered displacement.",
+    )
+    parser.add_argument(
+        "--kinematic-temporal-discount",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.temporal_discount,
+        help="Discount factor applied to gap-edge confidence as missing frames increase.",
+    )
+    parser.add_argument(
+        "--kinematic-edge-inflation-ceiling-ratio",
+        type=float,
+        default=DEFAULT_KINEMATIC_RECOVERY_SETTINGS.edge_inflation_ceiling_ratio,
+        help="Maximum recovered-edge count as a ratio of adjacent recovered edges in the same frame.",
+    )
     return parser.parse_args()
 
 
@@ -410,6 +528,22 @@ def main() -> None:
         cfar_link_strategy=str(args.cfar_link_strategy),
         cfar_max_link_distance_um=float(args.cfar_max_link_distance_um),
         cfar_route_policy=str(args.cfar_route_policy),
+        enable_kinematic_recovery=bool(args.enable_kinematic_recovery),
+        kinematic_recovery_settings=KinematicRecoverySettings(
+            max_gap_frames=int(args.kinematic_max_gap_frames),
+            min_track_length_edges=int(args.kinematic_min_track_length_edges),
+            trigger_background_mean_min=float(args.kinematic_trigger_background_mean_min),
+            trigger_adaptive_threshold_min=float(args.kinematic_trigger_adaptive_threshold_min),
+            trigger_contrast_max=float(args.kinematic_trigger_contrast_max),
+            trigger_cfar_margin_max=float(args.kinematic_trigger_cfar_margin_max),
+            base_sigma_um=float(args.kinematic_base_sigma_um),
+            velocity_sigma_scale=float(args.kinematic_velocity_sigma_scale),
+            transverse_sigma_um=float(args.kinematic_transverse_sigma_um),
+            mahalanobis_threshold=float(args.kinematic_mahalanobis_threshold),
+            directional_cosine_min=float(args.kinematic_directional_cosine_min),
+            temporal_discount=float(args.kinematic_temporal_discount),
+            edge_inflation_ceiling_ratio=float(args.kinematic_edge_inflation_ceiling_ratio),
+        ),
     )
 
 

@@ -6,7 +6,11 @@ from pathlib import Path
 import numpy as np
 
 from atabey.detection.adaptive import ForegroundProfile
-from atabey.hybrid_config import DEFAULT_GUARDRAIL_SETTINGS, DEFAULT_HYBRID_FROZEN_DEFAULTS
+from atabey.hybrid_config import (
+    DEFAULT_GUARDRAIL_SETTINGS,
+    DEFAULT_HYBRID_FROZEN_DEFAULTS,
+    DEFAULT_KINEMATIC_RECOVERY_SETTINGS,
+)
 from atabey.types import Detection
 from scripts import run_hybrid_submission as hybrid_submission
 
@@ -133,6 +137,50 @@ def test_hybrid_defaults_snapshot(monkeypatch) -> None:
     assert args.cfar_route_policy == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_route_policy
     assert args.cfar_link_strategy == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_link_strategy
     assert args.cfar_max_link_distance_um == DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_max_link_distance_um
+    assert args.enable_kinematic_recovery is False
+    assert args.kinematic_max_gap_frames == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.max_gap_frames
+    assert (
+        args.kinematic_min_track_length_edges
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.min_track_length_edges
+    )
+    assert (
+        args.kinematic_trigger_background_mean_min
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_background_mean_min
+    )
+    assert (
+        args.kinematic_trigger_adaptive_threshold_min
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_adaptive_threshold_min
+    )
+    assert args.kinematic_trigger_contrast_max == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_contrast_max
+    assert (
+        args.kinematic_trigger_cfar_margin_max
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.trigger_cfar_margin_max
+    )
+    assert args.kinematic_base_sigma_um == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.base_sigma_um
+    assert (
+        args.kinematic_velocity_sigma_scale
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.velocity_sigma_scale
+    )
+    assert (
+        args.kinematic_transverse_sigma_um
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.transverse_sigma_um
+    )
+    assert (
+        args.kinematic_mahalanobis_threshold
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.mahalanobis_threshold
+    )
+    assert (
+        args.kinematic_directional_cosine_min
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.directional_cosine_min
+    )
+    assert (
+        args.kinematic_temporal_discount
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.temporal_discount
+    )
+    assert (
+        args.kinematic_edge_inflation_ceiling_ratio
+        == DEFAULT_KINEMATIC_RECOVERY_SETTINGS.edge_inflation_ceiling_ratio
+    )
 
     assert DEFAULT_GUARDRAIL_SETTINGS.spike_multiplier == 1.8
     assert DEFAULT_GUARDRAIL_SETTINGS.min_history == 6

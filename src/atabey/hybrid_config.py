@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Literal
 
+from atabey.tracking.kinematic_recovery import KinematicRecoverySettings
+
 
 CFARRoutePolicy = Literal["merged_all", "merged_6bba_only"]
 
@@ -32,3 +34,4 @@ class HybridFrozenDefaults:
 
 DEFAULT_GUARDRAIL_SETTINGS = GuardrailSettings()
 DEFAULT_HYBRID_FROZEN_DEFAULTS = HybridFrozenDefaults()
+DEFAULT_KINEMATIC_RECOVERY_SETTINGS = KinematicRecoverySettings()
