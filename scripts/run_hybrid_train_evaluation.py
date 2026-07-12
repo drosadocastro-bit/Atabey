@@ -203,6 +203,7 @@ def _build_hybrid_graph(
     cfar_link_strategy: str,
     cfar_max_link_distance_um: float,
     cfar_route_policy: str,
+    enable_watershed_refinement: bool = False,
 ):
     profile, settings = choose_settings_for_sample(sample_path)
     if _should_use_cfar_route(
@@ -233,6 +234,7 @@ def _build_hybrid_graph(
             link_strategy=cfar_link_strategy,
             max_link_distance_um=cfar_max_link_distance_um,
             max_timepoints=max_timepoints,
+            enable_watershed_refinement=enable_watershed_refinement,
         )
         return graph, profile, "cfar_sidelobe", cfar_link_strategy, settings.reason, float(cfar_max_link_distance_um)
 
@@ -419,6 +421,7 @@ def run_train_evaluation(
     mitosis_shadow_distance_um: float,
     mitosis_shadow_intensity_tolerance: float,
     allow_unsafe_pfa_axial: bool = False,
+    enable_watershed_refinement: bool = False,
     correlation_recovery: bool = False,
     correlation_merge_gate_radius_um: float = 3.0,
     correlation_merge_gate_frame_window: int = 1,
@@ -493,6 +496,7 @@ def run_train_evaluation(
             cfar_link_strategy=cfar_link_strategy,
             cfar_max_link_distance_um=cfar_max_link_distance_um,
             cfar_route_policy=cfar_route_policy,
+            enable_watershed_refinement=enable_watershed_refinement,
         )
         # Experimental merge-gated recovery (Phase 3), gated OFF by default; applied
         # only on the CFAR route (validated scope). Never mutates the input graph.
@@ -723,6 +727,12 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--enable-watershed-refinement",
+        action="store_true",
+        default=False,
+        help="Enable experimental V19 Watershed Centroid Refinement",
+    )
+    parser.add_argument(
         "--correlation-merge-gate-radius",
         type=float,
         default=3.0,
@@ -776,6 +786,7 @@ def main() -> None:
         mitosis_shadow_distance_um=float(args.mitosis_shadow_distance_um),
         mitosis_shadow_intensity_tolerance=float(args.mitosis_shadow_intensity_tolerance),
         allow_unsafe_pfa_axial=bool(args.allow_unsafe_pfa_axial),
+        enable_watershed_refinement=bool(args.enable_watershed_refinement),
         correlation_recovery=bool(args.enable_correlation_recovery),
         correlation_merge_gate_radius_um=float(args.correlation_merge_gate_radius),
         correlation_merge_gate_frame_window=int(args.correlation_merge_gate_frame_window),

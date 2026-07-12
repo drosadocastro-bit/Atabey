@@ -2,6 +2,9 @@
 
 ## Purpose
 
+> [!NOTE]
+> **V19 Watershed Addendum:** The "ceiling" mapped in this document applies specifically to the *linking* layer. As proven by the subsequent V19 Watershed sub-voxel refinement GO, the detection and localization layer still had real, fixable headroom. This perfectly validates the core conclusion of this document: the bottleneck was always poor upstream localization in dense clusters, not a lack of linking heuristics.
+
 This document closes the rule-based experimentation chapter by consolidating evidence across four independent branches:
 
 1. bounded-CFAR reformulation,
@@ -9,7 +12,7 @@ This document closes the rule-based experimentation chapter by consolidating evi
 3. kinematic soft-linking with hard exclusion,
 4. bounded global optimization.
 
-The goal is to state, with quantified evidence, where the rule-based ceiling sits on this dataset and why the next lever should move to learned detection.
+The goal is to state, with quantified evidence, where the rule-based ceiling sits on this dataset and why the next lever should move to learned detection (or upstream localization refinement).
 
 ## Source Evidence Map
 
