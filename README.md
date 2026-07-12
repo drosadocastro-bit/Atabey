@@ -39,6 +39,24 @@ Zarr sample
 -> sparse ground-truth evaluation
 ```
 
+V19: Watershed Centroid Refinement — Validated GO
+After four consecutive NO-GOs on the linking layer (V14 pfa-mode CFAR reformulation, V15 track-continuity recovery, V16/V17 kinematic soft-linking, V18 bounded global optimization — each documented with its own diagnostic and root-cause analysis), V19 targeted a different layer entirely: detection-stage localization precision.
+The problem: CFAR's core detection selects the single brightest voxel as a cell's coordinate. The adaptive baseline instead computes an unweighted geometric centroid over a segmented blob. This difference introduces localization noise in CFAR's output relative to the true cell centroid — enough, in dense/high-background samples, to push otherwise-correctly-tracked cells outside Kaggle's official 7.0µm ground-truth matching radius.
+Two intermediate fixes were tried and failed before the working approach was found:
+
+Local bounding-box refinement — failed; a fixed window structurally truncates cell bodies depending on where the peak sits.
+Global blob centroid — failed catastrophically in dense regions; a single connected component was found to merge up to 284 distinct cells into one averaged coordinate.
+
+What worked: marker-based watershed segmentation — CFAR's peaks as markers, a global intensity mask as the segmentation boundary, each resulting region reduced to its own unweighted centroid. This keeps CFAR's sensitivity to dim/crowded cells while correcting the reported coordinate, without merging neighboring cells.
+Validated result (66-sample CFAR-routed cohort, strict A/B against frozen V13, identical evaluator):
+MetricV13V19 WatershedDeltaQuality score0.73030.7558+0.0255Node recall76.96%79.74%+2.78%Edge recall69.10%71.42%+2.32%Runtime overhead—~25s/samplewithin budget
+
+57 of 66 samples improved; 2 flat; 7 regressed (shallow, concentrated in the densest 44b6_ samples where a single connected component exceeds 350,000 voxels — a known, characterized limitation).
+44b6_0c582fdc — the sample that originally motivated the V14 pfa-collapse investigation — improved by +0.1038, the largest single-sample gain in the cohort.
+Isolated behind --enable-watershed-refinement (default off); V13's production path is byte-identical with the flag unset.
+
+Full methodology — including the failed intermediate approaches, the disproven "-4.36µm uniform bias" hypothesis (later shown to be a sample-selection artifact from a 5-sample preview), and a runtime explanation that was proposed, profiled, found incorrect, and retracted — is documented in docs/V19_CFAR_Z_BIAS_ROOT_CAUSE.md.
+
 ## Current Scope
 
 This repository starts with a minimal research scaffold:
