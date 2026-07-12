@@ -10,6 +10,7 @@ from statistics import median
 from atabey.baseline import build_baseline_graph
 from atabey.detection.adaptive import ForegroundProfile, choose_settings_for_sample
 from atabey.detection.baseline import threshold_local_maxima, threshold_local_maxima_cfar_sidelobe
+from atabey.detection.cfar_watershed import threshold_local_maxima_cfar_sidelobe_watershed
 from atabey.hybrid_config import DEFAULT_GUARDRAIL_SETTINGS, DEFAULT_HYBRID_FROZEN_DEFAULTS
 from atabey.io.zarr_reader import open_competition_array, read_timepoint
 from atabey.submission.writer import write_submission
@@ -186,6 +187,7 @@ def build_graph_cfar_sidelobe(
     link_strategy: str,
     max_link_distance_um: float,
     max_timepoints: int | None,
+    enable_watershed_refinement: bool = False,
 ) -> tuple[LineageGraph, int]:
     sample_id = _sample_id_from_path(sample_path)
     array = open_competition_array(sample_path)
@@ -204,7 +206,13 @@ def build_graph_cfar_sidelobe(
 
     for t in range(total_timepoints):
         volume = read_timepoint(array, t)
-        current = threshold_local_maxima_cfar_sidelobe(
+        
+        if enable_watershed_refinement:
+            detection_func = threshold_local_maxima_cfar_sidelobe_watershed
+        else:
+            detection_func = threshold_local_maxima_cfar_sidelobe
+            
+        current = detection_func(
             sample_id,
             t,
             volume,
@@ -298,6 +306,7 @@ def build_hybrid_graph_for_sample(
     correlation_merge_gate_radius_um: float = 3.0,
     correlation_merge_gate_frame_window: int = 1,
     correlation_discount: float = 0.6,
+    enable_watershed_refinement: bool = False,
 ) -> tuple[LineageGraph, HybridRunRecord]:
     profile, settings = choose_settings_for_sample(sample_path)
     use_cfar = _should_use_cfar_route(
@@ -327,6 +336,7 @@ def build_hybrid_graph_for_sample(
             link_strategy=cfar_link_strategy,
             max_link_distance_um=cfar_max_link_distance_um,
             max_timepoints=max_timepoints,
+            enable_watershed_refinement=enable_watershed_refinement,
         )
         detector = "cfar_sidelobe"
         threshold = cfar_threshold
@@ -510,6 +520,7 @@ def run_hybrid_submission(
     mitosis_shadow_distance_um: float,
     mitosis_shadow_intensity_tolerance: float,
     allow_unsafe_pfa_axial: bool = False,
+    enable_watershed_refinement: bool = False,
     correlation_recovery: bool = False,
     correlation_merge_gate_radius_um: float = 3.0,
     correlation_merge_gate_frame_window: int = 1,
@@ -560,6 +571,7 @@ def run_hybrid_submission(
             mitosis_shadow=mitosis_shadow,
             mitosis_shadow_distance_um=mitosis_shadow_distance_um,
             mitosis_shadow_intensity_tolerance=mitosis_shadow_intensity_tolerance,
+            enable_watershed_refinement=enable_watershed_refinement,
             correlation_recovery=correlation_recovery,
             correlation_merge_gate_radius_um=correlation_merge_gate_radius_um,
             correlation_merge_gate_frame_window=correlation_merge_gate_frame_window,
@@ -772,6 +784,12 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--enable-watershed-refinement",
+        action="store_true",
+        default=False,
+        help="Enable experimental V19 Watershed Centroid Refinement",
+    )
+    parser.add_argument(
         "--correlation-merge-gate-radius",
         type=float,
         default=3.0,
@@ -826,6 +844,7 @@ def main() -> None:
         mitosis_shadow_distance_um=float(args.mitosis_shadow_distance_um),
         mitosis_shadow_intensity_tolerance=float(args.mitosis_shadow_intensity_tolerance),
         allow_unsafe_pfa_axial=bool(args.allow_unsafe_pfa_axial),
+        enable_watershed_refinement=bool(args.enable_watershed_refinement),
         correlation_recovery=bool(args.enable_correlation_recovery),
         correlation_merge_gate_radius_um=float(args.correlation_merge_gate_radius),
         correlation_merge_gate_frame_window=int(args.correlation_merge_gate_frame_window),
