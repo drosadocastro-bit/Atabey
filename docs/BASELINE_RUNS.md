@@ -1909,3 +1909,26 @@ Decision:
 - Keep `0.50` as the default anchored setting for safe submissions.
 - If an extra challenger slot is available, test `0.49` as a single narrow challenger only.
 - Continue with strict anchor discipline: no broad parameter expansion while `0.505` remains the best public score.
+
+
+## 2026-07-13 - V19 Watershed Refinement Official Kaggle Score
+
+Purpose: record the official public leaderboard score for V19 watershed refinement.
+
+Official score update:
+
+- reported competition score: `0.515`
+- this is the highest score achieved to date (`+0.010` over the previous best V12 refined hybrid).
+
+Anchor freeze (kept unchanged for V20):
+
+- profile-based `merged_6bba_only` routing
+- CFAR+sidelobe cap900 only on 6bba-like merged/dim profiles
+- CFAR spike guardrail fallback enabled
+- `cfar_threshold=0.50`, `cfar_k_sigma=1.1`
+- `refine_detections_watershed` enabled globally for CFAR routes
+
+Interpretation:
+
+- The marker-based watershed centroid refinement successfully corrected the Z-localization bias without destroying CFAR sensitivity.
+- V19 is now the frozen, protected baseline backbone for future CNN-advisor integration.

@@ -252,3 +252,201 @@ def distance_match_metrics(
         best_distance_um_per_gt=tuple(best_distances),
         distance_threshold_um=threshold_um,
     )
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from typing import List, Tuple
+
+class SparsePeakLoss(nn.Module):
+    """
+    Sparse-Annotation-Aware Peak-Detection Loss.
+    
+    Computes a local Softmax / CrossEntropy loss only around annotated ground-truth centers.
+    Unannotated regions are ignored (zero loss gradient).
+    """
+    def __init__(self, window_shape: Tuple[int, int, int] = (5, 3, 3)):
+        super().__init__()
+        self.window_shape = window_shape
+        self.depth, self.height, self.width = window_shape
+        
+        # We expect window_shape to be odd so there is a defined center
+        assert self.depth % 2 == 1
+        assert self.height % 2 == 1
+        assert self.width % 2 == 1
+        
+        self.target_idx = (self.depth * self.height * self.width) // 2
+        
+    def forward(
+        self, 
+        predictions: torch.Tensor, 
+        gt_centers: List[Tuple[int, int, int, int]]
+    ) -> torch.Tensor:
+        """
+        predictions: Tensor of shape (B, 1, Z, Y, X) containing raw logits
+        gt_centers: List of tuples (batch_idx, z, y, x) indicating annotated cell centers
+        """
+        B, C, Z, Y, X = predictions.shape
+        assert C == 1, "Expected single-channel predictions"
+        
+        if not gt_centers:
+            return predictions.sum() * 0.0  # Zero loss, but keeps grad graph
+            
+        dz = self.depth // 2
+        dy = self.height // 2
+        dx = self.width // 2
+        
+        windows = []
+        for b, z, y, x in gt_centers:
+            # Extract window, padding if near the edge
+            # To handle edges, we pad the prediction tensor first, or dynamically pad
+            z_min = max(0, z - dz)
+            z_max = min(Z, z + dz + 1)
+            y_min = max(0, y - dy)
+            y_max = min(Y, y + dy + 1)
+            x_min = max(0, x - dx)
+            x_max = min(X, x + dx + 1)
+            
+            # For simplicity in this smoke test, we'll assume centers are strictly inside the volume 
+            # by at least the margin, or we pad if necessary.
+            
+            # Let's do dynamic padding
+            pad_z_before = max(0, dz - z)
+            pad_z_after = max(0, z + dz + 1 - Z)
+            pad_y_before = max(0, dy - y)
+            pad_y_after = max(0, y + dy + 1 - Y)
+            pad_x_before = max(0, dx - x)
+            pad_x_after = max(0, x + dx + 1 - X)
+            
+            # PyTorch pad format: (pad_left, pad_right, pad_top, pad_bottom, pad_front, pad_back)
+            pad = (pad_x_before, pad_x_after, pad_y_before, pad_y_after, pad_z_before, pad_z_after)
+            
+            # Extract the actual valid region
+            region = predictions[b, 0, z_min:z_max, y_min:y_max, x_min:x_max]
+            
+            if sum(pad) > 0:
+                region = F.pad(region, pad, value=-1e9)  # Large negative logits for padded areas
+                
+            windows.append(region.reshape(-1))
+            
+        if not windows:
+            return predictions.sum() * 0.0
+            
+        windows_tensor = torch.stack(windows)  # Shape (N, D*H*W)
+        
+        # Target is always the center index
+        targets = torch.full((len(windows),), self.target_idx, dtype=torch.long, device=predictions.device)
+        
+        # Cross entropy computes Softmax and then NLLLoss
+        loss = F.cross_entropy(windows_tensor, targets)
+        
+        return loss
+
+class SimplePeakCNN(nn.Module):
+    """
+    A minimal, memory-conscious 3D CNN for peak detection.
+    """
+    def __init__(self, in_channels: int = 1, base_filters: int = 16):
+        super().__init__()
+        # Very simple fully convolutional network (not even a full U-Net) to keep memory low
+        self.net = nn.Sequential(
+            nn.Conv3d(in_channels, base_filters, kernel_size=3, padding=1),
+            nn.BatchNorm3d(base_filters),
+            nn.ReLU(inplace=True),
+            
+            nn.Conv3d(base_filters, base_filters * 2, kernel_size=3, padding=1),
+            nn.BatchNorm3d(base_filters * 2),
+            nn.ReLU(inplace=True),
+            
+            nn.Conv3d(base_filters * 2, base_filters, kernel_size=3, padding=1),
+            nn.BatchNorm3d(base_filters),
+            nn.ReLU(inplace=True),
+            
+            nn.Conv3d(base_filters, 1, kernel_size=1)
+        )
+        
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return self.net(x)
+
+def train_cnn_advisor_smoke():
+    # Will be implemented in cnn_advisor.py 
+    pass
+
+def detect_cnn_peaks():
+    pass
+import torch
+import torch.nn.functional as F
+import psutil
+import os
+import time
+
+def get_memory_mb():
+    return psutil.Process(os.getpid()).memory_info().rss / 10**6
+
+def train_cnn_advisor_smoke(
+    model: torch.nn.Module,
+    optimizer: torch.optim.Optimizer,
+    loss_fn: torch.nn.Module,
+    volume: torch.Tensor,
+    gt_centers: list,
+    epochs: int = 5
+) -> list:
+    """
+    Minimal, memory-conscious training loop for bounded smoke test.
+    Only trains on a single timepoint volume due to memory constraints.
+    Returns the list of loss values per epoch.
+    """
+    print(f"Starting bounded smoke test on volume shape {volume.shape} with {len(gt_centers)} GT centers.")
+    print(f"Initial RAM: {get_memory_mb():.2f} MB")
+    
+    model.train()
+    loss_history = []
+    
+    for epoch in range(epochs):
+        t0 = time.time()
+        optimizer.zero_grad()
+        
+        # Forward pass
+        predictions = model(volume)
+        
+        # Compute loss
+        loss = loss_fn(predictions, gt_centers)
+        
+        if torch.isnan(loss) or (hasattr(loss, "item") and loss.item() == 0.0 and len(gt_centers) > 0):
+            print(f"Epoch {epoch}: WARNING - Loss is {loss.item()}!")
+            
+        # Backward pass
+        loss.backward()
+        optimizer.step()
+        
+        loss_val = loss.item()
+        loss_history.append(loss_val)
+        
+        t1 = time.time()
+        print(f"Epoch {epoch+1}/{epochs} | Loss: {loss_val:.6f} | Time: {t1-t0:.2f}s | RAM: {get_memory_mb():.2f} MB")
+        
+    return loss_history
+
+def detect_cnn_peaks(
+    model: torch.nn.Module,
+    volume: torch.Tensor,
+    threshold: float = 0.5
+) -> list:
+    """
+    Extract candidate peaks from the CNN advisor.
+    Returns list of (z, y, x) tuples for predicted centers.
+    """
+    model.eval()
+    with torch.no_grad():
+        logits = model(volume)
+        probs = torch.sigmoid(logits)
+        
+    probs_np = probs.squeeze(0).squeeze(0).cpu().numpy() # Shape: (Z, Y, X)
+    
+    from atabey.detection.baseline import threshold_local_maxima
+    # Use the existing local maxima extraction on the CNN probabilities
+    # We pass a dummy sample_id and t
+    detections = threshold_local_maxima(
+        sample_id="cnn_temp", t=0, volume=probs_np, threshold=threshold, min_distance_voxels=(1, 3, 3)
+    )
+    
+    return [(d.z, d.y, d.x) for d in detections]

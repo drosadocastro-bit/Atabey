@@ -1,10 +1,29 @@
 from __future__ import annotations
 
 import argparse
+import sys
+from pathlib import Path
+
+project_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(project_root / "src"))
+
 import json
 import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
+
+
+import torch
+import uuid
+from atabey.experiments.cnn_advisor import SimplePeakCNN, detect_cnn_peaks
+from atabey.evaluation.agreement_maps import compute_multi_source_agreement
+from atabey.constants import DEFAULT_VOXEL_SCALE_UM
+from atabey.types import Detection
+from atabey.tracking.nearest_neighbor import link_adjacent_timepoints
+from atabey.types import LineageGraph
+from atabey.io.zarr_reader import open_competition_array, read_timepoint
+from atabey.detection.baseline import threshold_local_maxima, threshold_local_maxima_cfar_sidelobe
+from atabey.detection.cfar_watershed import threshold_local_maxima_cfar_sidelobe_watershed
 
 from atabey.baseline import build_baseline_graph
 from atabey.detection.adaptive import ForegroundProfile, choose_settings_for_sample
@@ -192,7 +211,8 @@ def _build_v9_style_graph(sample_path: Path, max_timepoints: int | None):
     return graph, profile, settings.detector, link_strategy, reason, float(settings.max_link_distance_um)
 
 
-def _build_hybrid_graph(
+
+def _build_v20_graph(
     *,
     sample_path: Path,
     max_timepoints: int | None,
@@ -212,16 +232,75 @@ def _build_hybrid_graph(
     cfar_max_link_distance_um: float,
     cfar_route_policy: str,
     enable_watershed_refinement: bool = False,
+    cnn_weights_path: Path,
 ):
     profile, settings = choose_settings_for_sample(sample_path)
-    if _should_use_cfar_route(
+    
+    if not _should_use_cfar_route(
         profile=profile,
         adaptive_detector=settings.detector,
         cfar_route_policy=cfar_route_policy,
     ):
-        graph, _ = build_graph_cfar_sidelobe(
-            sample_path=sample_path,
+        baseline_link_strategy = "motion_mutual" if settings.detector == "local_maxima" else settings.link_strategy
+        graph = build_baseline_graph(
+            sample_path,
+            max_timepoints=max_timepoints,
+            threshold=settings.threshold,
+            min_volume=settings.min_volume,
+            max_link_distance_um=settings.max_link_distance_um,
+            link_strategy=baseline_link_strategy,
+            detector=settings.detector,
+            peak_min_distance_voxels=settings.peak_min_distance_voxels,
+        )
+        reason = settings.reason.replace(" with a bounded one-frame latent recovery bridge", "")
+        return graph, profile, settings.detector, baseline_link_strategy, reason, float(settings.max_link_distance_um)
+
+    # V20 Graph Building
+    sample_id = sample_path.name.removesuffix(".zarr")
+    array = open_competition_array(sample_path)
+    total_timepoints = int(array.shape[0])
+    if max_timepoints is not None:
+        total_timepoints = min(total_timepoints, int(max_timepoints))
+
+    graph = LineageGraph(sample_id=sample_id)
+    previous = []
+    detections_by_node_id = {}
+    predecessor_by_node_id = {}
+    
+    model = SimplePeakCNN(in_channels=1, base_filters=16)
+    if cnn_weights_path.exists():
+        model.load_state_dict(torch.load(cnn_weights_path))
+    model.eval()
+
+    import numpy as np
+    from atabey.detection.baseline import robust_normalize
+    
+    for t in range(total_timepoints):
+        vol_np = read_timepoint(array, t)
+        vol_norm = robust_normalize(vol_np)
+        
+        # 1. CNN Advisor
+        vol_float = np.asarray(vol_np, dtype=np.float32)
+        vol_mean, vol_std = vol_float.mean(), vol_float.std()
+        if vol_std > 0:
+            vol_float = (vol_float - vol_mean) / vol_std
+        vol_tensor = torch.from_numpy(vol_float).unsqueeze(0).unsqueeze(0)
+        cnn_peaks = detect_cnn_peaks(model, vol_tensor, threshold=0.5)
+        cnn_points_um = [DEFAULT_VOXEL_SCALE_UM.voxel_to_um(z, y, x) for z, y, x in cnn_peaks]
+        
+        # 2. CFAR Watershed
+        if enable_watershed_refinement:
+            detection_func = threshold_local_maxima_cfar_sidelobe_watershed
+        else:
+            detection_func = threshold_local_maxima_cfar_sidelobe
+            
+        cfar_detections = detection_func(
+            sample_id,
+            t,
+            vol_norm,
             threshold=cfar_threshold,
+            min_distance_voxels=(1, 5, 5),
+            max_detections=max_detections_per_timepoint,
             cfar_training_radius_voxels=cfar_training_radius_voxels,
             cfar_guard_radius_voxels=cfar_guard_radius_voxels,
             cfar_threshold_mode=cfar_threshold_mode,
@@ -232,33 +311,57 @@ def _build_hybrid_graph(
             sidelobe_axial_z_radius_voxels=sidelobe_axial_z_radius_voxels,
             sidelobe_axial_xy_tolerance_voxels=sidelobe_axial_xy_tolerance_voxels,
             sidelobe_floor_ratio=sidelobe_floor_ratio,
-            max_detections_per_timepoint=max_detections_per_timepoint,
-            guardrail_spike_multiplier=DEFAULT_GUARDRAIL_SETTINGS.spike_multiplier,
-            guardrail_min_history=DEFAULT_GUARDRAIL_SETTINGS.min_history,
-            guardrail_history_window=DEFAULT_GUARDRAIL_SETTINGS.history_window,
-            guardrail_min_absolute_count=DEFAULT_GUARDRAIL_SETTINGS.min_absolute_count,
-            guardrail_fallback_threshold=DEFAULT_GUARDRAIL_SETTINGS.fallback_threshold,
-            guardrail_fallback_max_detections=max_detections_per_timepoint,
-            link_strategy=cfar_link_strategy,
-            max_link_distance_um=cfar_max_link_distance_um,
-            max_timepoints=max_timepoints,
-            enable_watershed_refinement=enable_watershed_refinement,
         )
-        return graph, profile, "cfar_sidelobe", cfar_link_strategy, settings.reason, float(cfar_max_link_distance_um)
+        cfar_points_um = [(d.z_um, d.y_um, d.x_um) for d in cfar_detections]
+        
+        # 3. Adaptive Baseline
+        adaptive_detections = threshold_local_maxima(
+            sample_id=sample_id, t=t, volume=vol_norm, threshold=0.65, min_distance_voxels=(1, 5, 5)
+        )
+        adaptive_points_um = [(d.z_um, d.y_um, d.x_um) for d in adaptive_detections]
+        
+        # Triangulate
+        high_conf, flagged, stats = compute_multi_source_agreement(
+            adaptive_points_um, cfar_points_um, cnn_points_um, matching_radius_um=7.0, min_agreement=2
+        )
+        
+        current = []
+        for p_um in high_conf:
+            z_um, y_um, x_um = p_um
+            # Convert back to voxels
+            z = z_um / DEFAULT_VOXEL_SCALE_UM.z
+            y = y_um / DEFAULT_VOXEL_SCALE_UM.y
+            x = x_um / DEFAULT_VOXEL_SCALE_UM.x
+            det = Detection(
+                node_id=str(uuid.uuid4()),
+                sample_id=sample_id,
+                t=t,
+                z=z, y=y, x=x,
+                z_um=z_um, y_um=y_um, x_um=x_um,
+                intensity_mean=0.0,
+                intensity_max=0.0,
+            )
+            current.append(det)
+            
+        for detection in current:
+            graph.add_detection(detection)
+            detections_by_node_id[detection.node_id] = detection
 
-    baseline_link_strategy = "motion_mutual" if settings.detector == "local_maxima" else settings.link_strategy
-    graph = build_baseline_graph(
-        sample_path,
-        max_timepoints=max_timepoints,
-        threshold=settings.threshold,
-        min_volume=settings.min_volume,
-        max_link_distance_um=settings.max_link_distance_um,
-        link_strategy=baseline_link_strategy,
-        detector=settings.detector,
-        peak_min_distance_voxels=settings.peak_min_distance_voxels,
-    )
-    reason = settings.reason.replace(" with a bounded one-frame latent recovery bridge", "")
-    return graph, profile, settings.detector, baseline_link_strategy, reason, float(settings.max_link_distance_um)
+        edges = link_adjacent_timepoints(
+            previous,
+            current,
+            cfar_max_link_distance_um,
+            strategy=cfar_link_strategy,
+            predecessor_by_node_id=predecessor_by_node_id,
+        )
+        for edge in edges:
+            graph.add_edge(edge)
+            predecessor_by_node_id[edge.target_id] = detections_by_node_id[edge.source_id]
+
+        previous = current
+
+    return graph, profile, "v20_firewall", cfar_link_strategy, settings.reason, float(cfar_max_link_distance_um)
+
 
 
 def _record_for_graph(
@@ -330,7 +433,7 @@ def _record_for_graph(
     return TrainHybridEvalRecord(
         sample_id=report.sample_id,
         route=route,
-        elapsed_seconds=elapsed_seconds,
+        elapsed_seconds=round(elapsed_seconds, 2),
         predicted_nodes=report.predicted_nodes,
         predicted_edges=report.predicted_edges,
         sparse_nodes=report.sparse_ground_truth_nodes,
@@ -382,7 +485,6 @@ def _build_summaries(records: list[TrainHybridEvalRecord]) -> list[TrainHybridEv
     for route in routes:
         items = [record for record in records if record.route == route]
         total_elapsed = float(sum(item.elapsed_seconds for item in items))
-        
         recalls = [r.sparse_recall for r in items if r.sparse_recall is not None]
         edge_recalls = [r.sparse_edge_recall for r in items if r.sparse_edge_recall is not None]
         division_jaccards = [r.division_jaccard for r in items if r.division_jaccard is not None]
@@ -398,10 +500,10 @@ def _build_summaries(records: list[TrainHybridEvalRecord]) -> list[TrainHybridEv
             TrainHybridEvalSummary(
                 route=route,
                 samples=len(items),
-                total_elapsed_seconds=total_elapsed,
-                mean_elapsed_seconds=float(mean([r.elapsed_seconds for r in items])) if items else 0.0,
-                total_predicted_nodes=sum(r.predicted_nodes for r in items),
-                total_predicted_edges=sum(r.predicted_edges for r in items),
+                total_elapsed_seconds=round(total_elapsed, 2),
+                mean_elapsed_seconds=round(total_elapsed / len(items), 2),
+                total_predicted_nodes=int(sum(item.predicted_nodes for item in items)),
+                total_predicted_edges=int(sum(item.predicted_edges for item in items)),
                 mean_sparse_recall=mean_recall,
                 mean_sparse_edge_recall=mean_edge_recall,
                 total_division_tp=sum(r.division_tp for r in items),
@@ -505,7 +607,7 @@ def run_train_evaluation(
         print(json.dumps(asdict(record)), flush=True)
 
         start = time.perf_counter()
-        graph, profile, detector, link_strategy, reason, max_link_distance_um = _build_hybrid_graph(
+        graph, profile, detector, link_strategy, reason, max_link_distance_um = _build_v20_graph(
             sample_path=sample_path,
             max_timepoints=max_timepoints,
             cfar_threshold=cfar_threshold,
@@ -524,6 +626,7 @@ def run_train_evaluation(
             cfar_max_link_distance_um=cfar_max_link_distance_um,
             cfar_route_policy=cfar_route_policy,
             enable_watershed_refinement=enable_watershed_refinement,
+            cnn_weights_path=Path("weights/v20_cnn_best.pth"),
         )
         # Experimental merge-gated recovery (Phase 3), gated OFF by default; applied
         # only on the CFAR route (validated scope). Never mutates the input graph.
@@ -782,9 +885,12 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    sample_ids = list(args.sample_ids)
+    if len(sample_ids) == 1 and sample_ids[0].lower() == "all":
+        sample_ids = [p.stem for p in Path(args.train_dir).glob("*.zarr")]
     run_train_evaluation(
         train_dir=Path(args.train_dir),
-        sample_ids=list(args.sample_ids),
+        sample_ids=sample_ids,
         output_json=Path(args.output_json),
         output_summary_json=Path(args.output_summary_json) if args.output_summary_json else None,
         max_timepoints=args.max_timepoints,
