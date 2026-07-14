@@ -70,8 +70,12 @@ def compute_multi_source_agreement(
         
     n = len(points_array)
     # Add self-loops to ensure all nodes are in the graph
-    row = np.array(list(row_ind) + list(col_ind) + list(range(n)))
-    col = np.array(list(col_ind) + list(row_ind) + list(range(n)))
+    if len(row_ind) > 0:
+        row = np.concatenate([row_ind, col_ind, np.arange(n, dtype=np.int32)])
+        col = np.concatenate([col_ind, row_ind, np.arange(n, dtype=np.int32)])
+    else:
+        row = np.arange(n, dtype=np.int32)
+        col = np.arange(n, dtype=np.int32)
     data = np.ones(len(row), dtype=int)
     
     graph = scipy.sparse.csr_matrix((data, (row, col)), shape=(n, n))
