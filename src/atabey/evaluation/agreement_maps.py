@@ -62,7 +62,9 @@ def compute_multi_source_agreement(
     
     # Form sparse adjacency matrix
     if pairs:
-        row_ind, col_ind = zip(*pairs)
+        pairs_arr = np.array(list(pairs), dtype=np.int32)
+        row_ind = pairs_arr[:, 0]
+        col_ind = pairs_arr[:, 1]
     else:
         row_ind, col_ind = [], []
         
