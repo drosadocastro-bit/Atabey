@@ -88,6 +88,8 @@ def _evaluate_single_sample(sample_id: str, cfar_link_strategy: str) -> dict:
         cfar_route_policy=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_route_policy,
         cnn_weights_path=Path("weights/v20_cnn_best.pth")
     )
+    rep_v20 = evaluate_sparse_ground_truth(graph_v20, ground_truth)
+    
     v20_label = "V20 (Bipartite)" if cfar_link_strategy == "bipartite" else "V20"
     results[v20_label] = {
         "tp": rep_v20.division_tp,

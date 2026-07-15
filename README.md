@@ -1,95 +1,98 @@
 # Project Atabey
 
-Project Atabey is an experimental, stateful lineage-tracking scaffold for the Kaggle competition
-[Biohub - Cell Tracking During Development](https://www.kaggle.com/competitions/biohub-cell-tracking-during-development).
+> *"Signal Processing over Brute Force."*
 
-Disclaimer: this repository is experimental research code for a Kaggle competition. It is not a
-production system, it is not a validated biological model, and its outputs should be treated as
-bounded tracking experiments rather than authoritative conclusions.
+Project Atabey is an experimental, stateful lineage-tracking research scaffold built for the Kaggle competition [Biohub - Cell Tracking During Development](https://www.kaggle.com/competitions/biohub-cell-tracking-during-development). 
 
-## Repo Intro
+Unlike traditional black-box deep learning approaches, Atabey treats 3D+time cell tracking as a **signal detection and data association problem**. It heavily borrows thinking frameworks from classical radar engineering—like CFAR (Constant False Alarm Rate) thresholding, sidelobe suppression, and kinematic tracking—to build a highly interpretable, evidence-driven tracking pipeline.
 
-Atabey is a record of an evidence-driven tracking workflow: start with a streaming baseline,
-diagnose where it fails, test bounded fixes, measure the runtime and quality tradeoffs, and keep
-only the branches that improve the calibration story.
+*Disclaimer: This repository is experimental research code. It is a testbed for bounded tracking mechanics, not a validated biological model, and its outputs should be treated as rigorous tracking experiments rather than authoritative conclusions.*
 
-In practice, this means the repo shows how we moved from simple component centroids to adaptive
-routing, then tested ideas like Overall System Sensitivity, Target Reinforce, Target Correlation, CFAR, side-lobe suppression, latent recovery, and marker-based watershed refinement without losing
-auditability or pretending the tracker knows more than the data supports.
+---
 
-If you want the short version: this repo is about disciplined experimentation, explicit
-uncertainty, and the decisions we made after the measurements came back.
+## Table of Contents
+- [Table of Branches (TOB) / Evolution](#table-of-branches-tob--evolution)
+- [Pipeline Architecture](#pipeline-architecture)
+- [Documentation & Deep Dives](#documentation--deep-dives)
+- [Installation & Usage](#installation--usage)
+- [Competition Context](#competition-context)
 
-Atabey is inspired by Project Lumina's attention to memory traces, phase transitions, local pressure,
-and dormant potential, but it applies those ideas conservatively to 3D+time embryonic cell tracking.
-The goal is not to infer biological meaning beyond the observable data. The goal is to preserve
-observable lineage state while producing a valid, reproducible Kaggle submission.
+---
 
-## Main Path
+## Table of Branches (TOB) / Evolution
+
+Atabey is built on disciplined experimentation and explicit uncertainty. We don't just commit code; we formulate hypotheses, run parallel multi-core audits across our cohort, and document the rigorous lessons learned—especially when we're wrong.
+
+Below is the "Table of Branches", tracking the major evolutionary arcs of the scaffold:
+
+| Branch / Arc | Focus & Hypothesis | Outcome & Lesson |
+| :--- | :--- | :--- |
+| **V13: The Baseline** | Establish a fast, CPU-friendly streaming scaffold using basic Otsu thresholding and greedy `motion_mutual` linking. | Formed the auditable baseline. Proved that streaming local voxel blocks was strictly necessary for the 720-min Kaggle limit. |
+| **V14-V18: CFAR & Sidelobes** | Borrow radar concepts to adaptively threshold dense/noisy tissue regions instead of a brittle global cutoff. | **Success/Pivot**: CFAR architecture worked beautifully, but the literal CA-CFAR math caused bounded-domain collapse. Taught us to borrow the framework, not just the equations. |
+| **V19: Watershed & Z-Bias** | Decouple peak detection from sub-voxel bounds localization. Investigated a massive -4.36µm Z-bias anomaly. | **Refutation**: Rigorous testing proved the directional bias was a sample-selection artifact, resolving into symmetric localization variance. |
+| **V20: The Division Jaccard & Bipartite Solver** | Attempted to use the Hough Transform for morphological mitosis precursors. Disproved via statistics, leading to a purely topological 1-to-2 Bipartite Solver. | **Success**: A 3-pass kinematic gate allowed true division tracking natively without breaking the 1-to-1 stability of non-dividing cells. |
+
+---
+
+## Pipeline Architecture
+
+Atabey operates on a strictly streaming-first, deterministic execution path. We never load a full 3D+time video into memory without a documented reason.
 
 ```text
 Zarr sample
--> streamed timepoint IO
--> candidate detection
--> physical-coordinate normalization
--> temporal linking
--> lineage graph
--> optional state and latent-candidate layer
--> submission writer
--> sparse ground-truth evaluation
+ ├─> Streamed timepoint IO (Memory safe)
+ ├─> 3D CFAR + Watershed Detection (Signal vs Noise)
+ ├─> Physical-coordinate normalization (Microns, not Voxels)
+ ├─> Bipartite Topological Linking (Handles 1:1 and 1:2 branches)
+ ├─> Lineage Graph Construction
+ ├─> Optional state / latent-candidate layer
+ ├─> Sparse ground-truth evaluation
+ └─> Kaggle submission.csv writer
 ```
 
-## Current Scope
+---
 
-This repository starts with a minimal research scaffold:
+## Documentation & Deep Dives
 
-- streaming-first Zarr and GEFF adapter boundaries
-- CPU-friendly baseline detection utilities
-- nearest-neighbor tracking over physical coordinates
-- internal lineage graph types
-- a submission writer placeholder that must be reconciled with the real `sample_submission.csv`
-- synthetic tests for core deterministic behavior
-- architecture notes and ADRs
+The true value of this repository is in its documented failures, pivots, and evaluations. For anyone digging into the codebase (future collaborators, reviewers, or recruiters), start here:
 
-## Competition Facts Captured So Far
+- **[RADAR_CONCEPTS_AND_ATABEY.md](docs/RADAR_CONCEPTS_AND_ATABEY.md)**: A conceptual explainer of how radar concepts (CFAR, Sidelobe suppression) mapped to biology, and where they failed.
+- **[MULTI_AI_COLLABORATION_METHODOLOGY.md](MULTI_AI_COLLABORATION_METHODOLOGY.md)**: How we orchestrated multi-agent execution to build this.
+- **[RULE_BASED_CEILING_SUMMARY.md](RULE_BASED_CEILING_SUMMARY.md)**: The ceiling of V14-V18 and the push toward adaptive learning.
+- **[V19_CFAR_Z_BIAS_ROOT_CAUSE.md](V19_CFAR_Z_BIAS_ROOT_CAUSE.md)**: The anatomy of a false anomaly and the value of full-cohort testing.
+- **[DIVISION_JACCARD_INVESTIGATION_SUMMARY.md](DIVISION_JACCARD_INVESTIGATION_SUMMARY.md)**: The arc from the 0% Division score to the bipartite solver.
 
-Live Kaggle metadata was checked on 2026-06-30:
+---
 
-- competition: `biohub-cell-tracking-during-development`
-- task: detect and track zebrafish cells through 3D space and time
-- required output filename: `submission.csv`
-- row id column: `id`
-- notebook submissions only
-- CPU/GPU runtime limit: 720 minutes
-- daily submissions: 5
-- deadline: 2026-09-29 23:59 UTC
+## Installation & Usage
 
-The file listing exposes `sample_submission.csv` and sharded `.zarr` test data, but direct download of
-`sample_submission.csv` returned `403 Forbidden` from the local CLI. See
-[docs/DATASET_NOTES.md](docs/DATASET_NOTES.md) before hardening the writer.
-
-## Install
+Atabey is designed to be lightweight and CPU-friendly, mirroring the Kaggle inference environment.
 
 ```powershell
+# Clone and setup virtual environment
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+
+# Install dependencies and the package in editable mode
 python -m pip install -r requirements.txt
 python -m pip install -e .
 ```
 
-## Run Tests
+### Running Tests
+
+We maintain a strict suite of deterministic synthetic tests and bounded zero-perturbation regression checks.
 
 ```powershell
 python -m pytest
 ```
 
-## Minimum Viable Atabey
+---
 
-1. Read one Zarr timepoint without loading the full video.
-2. Detect candidate centroids.
-3. Link detections across adjacent timepoints.
-4. Generate an internal node and edge graph.
-5. Reconcile the writer with the official `sample_submission.csv`.
-6. Produce `submission.csv` from a Kaggle notebook.
+## Competition Context
 
-Atabey's state layer comes after the baseline submission path is valid.
+- **Competition**: `biohub-cell-tracking-during-development`
+- **Task**: Detect and track zebrafish cells through 3D space and time.
+- **Constraints**: Notebook submissions only. Strict CPU/GPU runtime limit of 720 minutes.
+- **Evaluation**: Custom Jaccard metric combining `edge_jaccard + (0.1 × division_jaccard)`.
+
+*Atabey's primary mandate is producing a valid, reproducible baseline path before polishing elegant state machinery.*
