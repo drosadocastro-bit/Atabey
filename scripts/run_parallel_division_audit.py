@@ -17,7 +17,7 @@ from atabey.hybrid_config import DEFAULT_HYBRID_FROZEN_DEFAULTS
 from run_hybrid_train_evaluation import _build_v9_style_graph, _build_hybrid_graph
 from run_v20_quality_score_ablation import _build_v20_graph
 
-def _evaluate_single_sample(sample_id: str) -> dict:
+def _evaluate_single_sample(sample_id: str, cfar_link_strategy: str) -> dict:
     print(f"--- Evaluating Sample: {sample_id} ---", flush=True)
     train_dir = project_root / "train"
     sample_path = train_dir / f"{sample_id}.zarr"
@@ -53,7 +53,7 @@ def _evaluate_single_sample(sample_id: str) -> dict:
         sidelobe_axial_xy_tolerance_voxels=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_axial_xy_tolerance_voxels,
         sidelobe_floor_ratio=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_floor_ratio,
         max_detections_per_timepoint=DEFAULT_HYBRID_FROZEN_DEFAULTS.max_detections_per_timepoint,
-        cfar_link_strategy=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_link_strategy,
+        cfar_link_strategy=cfar_link_strategy,
         cfar_max_link_distance_um=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_max_link_distance_um,
         cfar_route_policy=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_route_policy,
         enable_watershed_refinement=True
@@ -67,7 +67,7 @@ def _evaluate_single_sample(sample_id: str) -> dict:
         "jaccard": rep_v19.division_jaccard,
     }
     
-    # 3. V20
+    # 3. V20 (with CNN Advisor + Firewall)
     graph_v20, _, _, _, _, _ = _build_v20_graph(
         sample_path=sample_path,
         max_timepoints=max_timepoints,
@@ -83,10 +83,9 @@ def _evaluate_single_sample(sample_id: str) -> dict:
         sidelobe_axial_xy_tolerance_voxels=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_axial_xy_tolerance_voxels,
         sidelobe_floor_ratio=DEFAULT_HYBRID_FROZEN_DEFAULTS.sidelobe_floor_ratio,
         max_detections_per_timepoint=DEFAULT_HYBRID_FROZEN_DEFAULTS.max_detections_per_timepoint,
-        cfar_link_strategy=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_link_strategy,
+        cfar_link_strategy=cfar_link_strategy,
         cfar_max_link_distance_um=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_max_link_distance_um,
         cfar_route_policy=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_route_policy,
-        enable_watershed_refinement=True,
         cnn_weights_path=Path("weights/v20_cnn_best.pth")
     )
     rep_v20 = evaluate_sparse_ground_truth(graph_v20, ground_truth)
@@ -103,9 +102,10 @@ def _evaluate_single_sample(sample_id: str) -> dict:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Run parallel division audit")
     parser.add_argument("--workers", type=int, default=8, help="Number of worker processes")
     parser.add_argument("--sample-ids", nargs="+", default=["bounded"], help="Samples to run")
+    parser.add_argument("--cfar-link-strategy", type=str, default="motion_mutual", help="Linking strategy for CFAR watershed")
     args = parser.parse_args()
     
     if args.sample_ids == ["bounded"]:
@@ -130,7 +130,7 @@ def main():
     start_time = time.time()
     
     with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers) as executor:
-        futures = {executor.submit(_evaluate_single_sample, s_id): s_id for s_id in sample_ids}
+        futures = {executor.submit(_evaluate_single_sample, s_id, args.cfar_link_strategy): s_id for s_id in sample_ids}
         
         for future in concurrent.futures.as_completed(futures):
             sample_id, results = future.result()
