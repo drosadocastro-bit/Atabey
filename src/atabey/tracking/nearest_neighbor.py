@@ -568,6 +568,10 @@ def link_adjacent_timepoints_bipartite(
     current: list[Detection],
     max_link_distance_um: float,
     predecessor_by_node_id: Mapping[str, Detection],
+    *,
+    debug: bool = False,
+    divergence_angle_max_cos: float = 0.0,
+    daughter_distance_ratio: float = 2.0,
 ) -> list[LineageEdge]:
     """Link detections using a bipartite solver to natively support 1-to-2 divisions.
     
@@ -643,19 +647,42 @@ def link_adjacent_timepoints_bipartite(
         for o in local_orphans:
             v2 = np.array(o.position_um) - source_pos
             norm_v2 = np.linalg.norm(v2)
+            dist_primary_to_orphan = np.linalg.norm(np.array(t_primary.position_um) - np.array(o.position_um))
             
-            # Angle constraint is too strict for moving parents. Just use spatial proximity.
-            dist = norm_v2
-            if dist < best_orphan_cost:
-                best_orphan = o
-                best_orphan_cost = dist
+            rejection_reason = None
+            cos_theta = None
+            
+            if norm_v1 < 1e-6 or norm_v2 < 1e-6:
+                rejection_reason = "Zero-length vector"
+            else:
+                cos_theta = np.dot(v1, v2) / (norm_v1 * norm_v2)
+                if cos_theta > divergence_angle_max_cos:
+                    rejection_reason = f"Angle constraint (cos={cos_theta:.3f} > {divergence_angle_max_cos})"
+                elif norm_v2 > max(norm_v1, 1e-6) * daughter_distance_ratio:
+                    rejection_reason = f"Distance ratio ({norm_v2:.2f}/{norm_v1:.2f} > {daughter_distance_ratio})"
+                elif dist_primary_to_orphan > max_link_distance_um:
+                    rejection_reason = f"Daughter separation ({dist_primary_to_orphan:.2f} > {max_link_distance_um})"
+            
+            if debug:
+                angle_deg = math.degrees(math.acos(np.clip(cos_theta, -1.0, 1.0))) if cos_theta is not None else 0.0
+                print(f"[DEBUG Bipartite] Source {source.node_id[:6]} -> Orphan {o.node_id[:6]}: "
+                      f"dist={norm_v2:.2f}um, angle={angle_deg:.1f}deg (cos={cos_theta if cos_theta else 0.0:.3f}), "
+                      f"separation={dist_primary_to_orphan:.2f}um. "
+                      f"Rejected: {rejection_reason or 'No'}")
+            
+            if rejection_reason is None:
+                if norm_v2 < best_orphan_cost:
+                    best_orphan = o
+                    best_orphan_cost = norm_v2
                         
         if best_orphan is not None:
             # Found a valid 1-to-2 branch!
-            # Edge to primary (keep original, but could change relation to 'division')
+            # Edge to primary (keep original, but change relation to 'division')
             final_edges.append(LineageEdge(source.node_id, t_primary.node_id, edge.confidence, "division"))
-            # Edge to orphan
-            final_edges.append(LineageEdge(source.node_id, best_orphan.node_id, best_orphan_cost, "division"))
+            
+            # Edge to orphan (compute proper confidence)
+            orphan_conf = max(0.0, 1.0 - best_orphan_cost / max_link_distance_um)
+            final_edges.append(LineageEdge(source.node_id, best_orphan.node_id, orphan_conf, "division"))
             
             # Remove orphan from global orphans pool
             orphans.remove(best_orphan)
@@ -663,6 +690,7 @@ def link_adjacent_timepoints_bipartite(
             final_edges.append(edge)
 
     if len(final_edges) > len(baseline_edges):
-        print(f"BIPARTITE: found {len(final_edges) - len(baseline_edges)} new division edges!")
+        if debug:
+            print(f"BIPARTITE: found {len(final_edges) - len(baseline_edges)} new division edges!")
     return final_edges
 

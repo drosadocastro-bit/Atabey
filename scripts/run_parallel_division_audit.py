@@ -88,8 +88,8 @@ def _evaluate_single_sample(sample_id: str, cfar_link_strategy: str) -> dict:
         cfar_route_policy=DEFAULT_HYBRID_FROZEN_DEFAULTS.cfar_route_policy,
         cnn_weights_path=Path("weights/v20_cnn_best.pth")
     )
-    rep_v20 = evaluate_sparse_ground_truth(graph_v20, ground_truth)
-    results["V20"] = {
+    v20_label = "V20 (Bipartite)" if cfar_link_strategy == "bipartite" else "V20"
+    results[v20_label] = {
         "tp": rep_v20.division_tp,
         "fp": rep_v20.division_fp,
         "fn": rep_v20.division_fn,
@@ -121,10 +121,12 @@ def main():
     
     print(f"Starting parallel evaluation across {len(sample_ids)} samples using {args.workers} workers...", flush=True)
     
+    v20_label = "V20 (Bipartite)" if args.cfar_link_strategy == "bipartite" else "V20"
+    
     totals = {
         "V13": {"tp": 0, "fp": 0, "fn": 0, "nodes": 0},
         "V19": {"tp": 0, "fp": 0, "fn": 0, "nodes": 0},
-        "V20": {"tp": 0, "fp": 0, "fn": 0, "nodes": 0},
+        v20_label: {"tp": 0, "fp": 0, "fn": 0, "nodes": 0},
     }
     
     start_time = time.time()
@@ -148,7 +150,7 @@ def main():
     end_time = time.time()
     print(f"\n--- Parallel Summary ({len(sample_ids)} Samples) ---", flush=True)
     print(f"Elapsed Time: {end_time - start_time:.2f} seconds", flush=True)
-    for route in ["V13", "V19", "V20"]:
+    for route in ["V13", "V19", v20_label]:
         metrics = totals[route]
         tp = metrics["tp"]
         fp = metrics["fp"]
