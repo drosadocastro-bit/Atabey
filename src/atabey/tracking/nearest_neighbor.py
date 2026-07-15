@@ -570,8 +570,8 @@ def link_adjacent_timepoints_bipartite(
     predecessor_by_node_id: Mapping[str, Detection],
     *,
     debug: bool = False,
-    divergence_angle_max_cos: float = 0.0,
-    daughter_distance_ratio: float = 2.0,
+    divergence_angle_max_cos: float = 0.5,
+    daughter_distance_ratio: float = 4.0,
 ) -> list[LineageEdge]:
     """Link detections using a bipartite solver to natively support 1-to-2 divisions.
     
@@ -660,8 +660,8 @@ def link_adjacent_timepoints_bipartite(
                     rejection_reason = f"Angle constraint (cos={cos_theta:.3f} > {divergence_angle_max_cos})"
                 elif norm_v2 > max(norm_v1, 1e-6) * daughter_distance_ratio:
                     rejection_reason = f"Distance ratio ({norm_v2:.2f}/{norm_v1:.2f} > {daughter_distance_ratio})"
-                elif dist_primary_to_orphan > max_link_distance_um:
-                    rejection_reason = f"Daughter separation ({dist_primary_to_orphan:.2f} > {max_link_distance_um})"
+                elif dist_primary_to_orphan > 15.0:
+                    rejection_reason = f"Daughter separation ({dist_primary_to_orphan:.2f} > 15.0)"
             
             if debug:
                 angle_deg = math.degrees(math.acos(np.clip(cos_theta, -1.0, 1.0))) if cos_theta is not None else 0.0

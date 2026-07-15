@@ -35,6 +35,7 @@ def _evaluate_single_sample(sample_id: str, cfar_link_strategy: str) -> dict:
         "fn": rep_v13.division_fn,
         "nodes": rep_v13.predicted_nodes,
         "jaccard": rep_v13.division_jaccard,
+        "edge_recall": rep_v13.sparse_edge_recall,
     }
     
     # 2. V19
@@ -65,6 +66,7 @@ def _evaluate_single_sample(sample_id: str, cfar_link_strategy: str) -> dict:
         "fn": rep_v19.division_fn,
         "nodes": rep_v19.predicted_nodes,
         "jaccard": rep_v19.division_jaccard,
+        "edge_recall": rep_v19.sparse_edge_recall,
     }
     
     # 3. V20 (with CNN Advisor + Firewall)
@@ -97,6 +99,7 @@ def _evaluate_single_sample(sample_id: str, cfar_link_strategy: str) -> dict:
         "fn": rep_v20.division_fn,
         "nodes": rep_v20.predicted_nodes,
         "jaccard": rep_v20.division_jaccard,
+        "edge_recall": rep_v20.sparse_edge_recall,
     }
     
     print(f"[{sample_id}] Finished.", flush=True)
@@ -144,10 +147,17 @@ def main():
                 totals[version]["fp"] += metrics["fp"]
                 totals[version]["fn"] += metrics["fn"]
                 totals[version]["nodes"] += metrics["nodes"]
+                # For Edge Recall, let's just average them
+                if metrics["edge_recall"] is not None:
+                    if "edge_recall_sum" not in totals[version]:
+                        totals[version]["edge_recall_sum"] = 0.0
+                        totals[version]["edge_recall_count"] = 0
+                    totals[version]["edge_recall_sum"] += metrics["edge_recall"]
+                    totals[version]["edge_recall_count"] += 1
             
             print(f"--- Results for {sample_id} ---", flush=True)
             for version, metrics in results.items():
-                print(f"  {version}: J={metrics['jaccard']} (TP:{metrics['tp']} FP:{metrics['fp']} FN:{metrics['fn']})", flush=True)
+                print(f"  {version}: DivJ={metrics['jaccard']} (TP:{metrics['tp']} FP:{metrics['fp']} FN:{metrics['fn']}) | EdgeRecall={metrics['edge_recall']}", flush=True)
 
     end_time = time.time()
     print(f"\n--- Parallel Summary ({len(sample_ids)} Samples) ---", flush=True)
@@ -158,8 +168,12 @@ def main():
         fp = metrics["fp"]
         fn = metrics["fn"]
         jaccard = tp / (tp + fp + fn) if (tp + fp + fn) > 0 else 0.0
+        
+        avg_edge_recall = (metrics.get("edge_recall_sum", 0.0) / metrics.get("edge_recall_count", 1)) if metrics.get("edge_recall_count", 0) > 0 else 0.0
+        
         print(f"{route}:", flush=True)
         print(f"  Division Jaccard: {jaccard:.4f}", flush=True)
+        print(f"  Average Edge Recall: {avg_edge_recall:.4f}", flush=True)
         print(f"  TP: {tp}, FP: {fp}, FN: {fn}", flush=True)
         print(f"  Total Predicted Nodes: {metrics['nodes']}", flush=True)
 

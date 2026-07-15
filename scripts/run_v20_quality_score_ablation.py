@@ -360,6 +360,10 @@ def _build_v20_graph(
 
         previous = current
 
+    from atabey.tracking.division_firewall import prune_invalid_divisions
+    if cfar_link_strategy == "bipartite":
+        prune_invalid_divisions(graph)
+
     return graph, profile, "v20_firewall", cfar_link_strategy, settings.reason, float(cfar_max_link_distance_um)
 
 
