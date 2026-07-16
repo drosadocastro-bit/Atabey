@@ -178,7 +178,7 @@ def main():
                 print(
                     f"  {version}: detector={metrics.get('detector')} link={metrics.get('link_strategy')} "
                     f"DivJ={metrics['jaccard']} (TP:{metrics['tp']} FP:{metrics['fp']} FN:{metrics['fn']}) "
-                    f"| EdgeRecall={metrics['edge_recall']}",
+                    f"| EdgeRecall={metrics['edge_recall']} | Nodes={metrics['nodes']}",
                     flush=True,
                 )
 
