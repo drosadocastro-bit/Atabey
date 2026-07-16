@@ -22,3 +22,6 @@ where = ["src"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-p no:cacheprovider"
+markers = [
+  "slow: integration tests that need local competition data or trained weights",
+]
