@@ -45,3 +45,6 @@ class LineageGraph:
 
     def add_edge(self, edge: LineageEdge) -> None:
         self.edges.append(edge)
+
+    def remove_edge(self, edge: LineageEdge) -> None:
+        self.edges.remove(edge)
