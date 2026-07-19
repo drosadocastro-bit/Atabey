@@ -74,11 +74,50 @@ Feature contrast from this bounded run:
 
 Interpretation: separation, balance, and density are promising ranking signals on this bounded case. Volume is non-separating here, and intensity conservation is not helpful for this TP. The rank improvement is real but not yet generalized.
 
+
+## Three-Sample Ranking Result
+
+Completed on the three reconstructed V19 true-positive samples at `max_timepoints=100`.
+
+| Sample | GT parent | Candidate parent | Rank | Accepted candidates | Ranking score | Reason |
+| --- | ---: | --- | ---: | ---: | ---: | --- |
+| `6bba_05db0fb1` | `25000381` | `6bba_05db0fb1:t24:cf76` | `24` | `2592` | `0.754457` | `fallback_broad_angle_balanced_split` |
+| `6bba_b329af44` | `83001755` | `6bba_b329af44:t82:cf38` | `1805` | `3006` | `0.479983` | `multi_frame_positive_divergence` |
+| `6bba_ebdf3b34` | `85001151` | `6bba_ebdf3b34:t84:cf39` | `1018` | `2137` | `0.523229` | `fallback_broad_angle_balanced_split` |
+
+Top-N capture:
+
+- Top 10: `0/3`
+- Top 20: `0/3`
+- Top 50: `1/3`
+- Top 100: `1/3`
+- Top 500: `1/3`
+- Top 1000: `1/3`
+- Top 2000: `3/3`
+
+Feature summary across all accepted candidates:
+
+| Feature | TP median | FP-all median |
+| --- | ---: | ---: |
+| ranking score | `0.523229` | `0.503439` |
+| geometry score | `0.568874` | `0.586919` |
+| child separation | `9.029673 um` | `7.420417 um` |
+| local density | `5` | `5` |
+| distance ratio | `1.562232` | `1.609108` |
+| max drift | `11.212534 deg` | `12.773973 deg` |
+| first separation growth | `1.494934 um/frame` | `1.252070 um/frame` |
+| volume conservation error | `1.000000` | `1.000000` |
+| intensity conservation error | `0.623928` | `0.949146` |
+
+Interpretation: the ranking does not generalize from the first bounded case. It keeps `6bba_05db0fb1` reasonably reviewable at rank `24`, but the other two known TPs are still buried at ranks `1805` and `1018`. The feature distributions are heavily overlapped: geometry is not better for TPs than FPs in aggregate, local density has the same median, and volume remains non-separating. Child separation and intensity error show mild aggregate separation, but not enough for useful top-N capture.
+
+This is a Track B ranking NO-GO in its current form for human review. It remains useful as diagnostic evidence: true divisions can be recovered in the side channel, but simple geometric/density/mass ranking is insufficient to surface them reliably.
+
 ## Missed GT Diagnostic
 
 For the bounded `6bba_05db0fb1` window, the two missed GT divisions had no matched sparse GT parent or daughter predictions, so Track B could not recover them as ranking failures. They are upstream detection/matching misses in this bounded context.
 
-The still-open target from the three-sample run is the second GT division in `6bba_ebdf3b34` (`FN=1`). The ranking analyzer's missed-output CSV is designed to classify it as one of:
+The still-open target from the three-sample run is the second GT division in `6bba_ebdf3b34` (`FN=1`). The log reports `missed_gt=1`, but `v21_track_b_missed_gt_divisions_3tp.csv` was not present in the local repo copy when this document was updated. That missing file must be copied or regenerated before the exact cause can be reported. The ranking analyzer is designed to classify it as one of:
 
 - sparse GT nodes unmatched to predictions;
 - candidate exists but Track B gate rejected;
@@ -87,6 +126,7 @@ The still-open target from the three-sample run is the second GT division in `6b
 
 ## Current Assessment
 
-The first bounded result makes Track B more plausible as a human-review candidate list: the known TP moved from rank `179` under the original score to rank `10` under the separation/balance/density ranking. This is not yet a GO. The next evidence must be the full three-known-TP ranking run, followed by full-cohort validation.
+The three-sample result is a NO-GO for the current ranking formula as a practical human-review list: only `1/3` known TPs appears in the top 100, and all three require looking through the top 2000. The next step should be richer candidate evidence or a learned ranker after full-cohort measurement, not a hard threshold or Track A change.
 
 Guardrail remains unchanged: ranking does not touch Track A and does not change the candidate set, only ordering and diagnostics.
+
