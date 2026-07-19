@@ -2,8 +2,20 @@
 from atabey.types import Detection, LineageEdge, LineageGraph
 
 
-def _d(node_id, t, y, x=0.0):
-    return Detection(node_id, "s", t, 0.0, y, x, 0.0, y, x)
+def _d(node_id, t, y, x=0.0, volume=None, intensity=None):
+    return Detection(
+        node_id,
+        "s",
+        t,
+        0.0,
+        y,
+        x,
+        0.0,
+        y,
+        x,
+        intensity_mean=intensity,
+        component_volume=volume,
+    )
 
 
 def _add(graph, *detections):
@@ -15,11 +27,11 @@ def _edge_signature(graph):
     return [(edge.source_id, edge.target_id, edge.confidence, edge.relation) for edge in graph.edges]
 
 
-def test_division_recovery_shadow_logs_candidate_without_mutating_graph():
+def test_division_recovery_shadow_logs_candidate_features_without_mutating_graph():
     graph = LineageGraph("s")
-    parent = _d("p", 0, 0.0, 0.0)
-    child_a = _d("a1", 1, -1.0, 0.0)
-    child_b = _d("b1", 1, 2.1, 0.0)
+    parent = _d("p", 0, 0.0, 0.0, volume=100, intensity=50.0)
+    child_a = _d("a1", 1, -1.0, 0.0, volume=45, intensity=20.0)
+    child_b = _d("b1", 1, 2.1, 0.0, volume=55, intensity=30.0)
     _add(graph, parent, child_a, child_b)
     graph.add_edge(LineageEdge("p", "a1", relation="division"))
     graph.add_edge(LineageEdge("p", "b1", relation="division"))
@@ -38,6 +50,11 @@ def test_division_recovery_shadow_logs_candidate_without_mutating_graph():
     assert candidate.reason == "fallback_broad_angle_balanced_split"
     assert candidate.angle_deg == 180.0
     assert candidate.distance_ratio == 2.1
+    assert candidate.local_density_t1_10um == 2
+    assert candidate.child_separation_um == 3.1
+    assert candidate.volume_conservation_error == 0.0
+    assert candidate.intensity_conservation_error == 0.0
+    assert candidate.ranking_score > 0.0
 
 
 def test_division_recovery_shadow_rejects_narrow_fallback_split():
