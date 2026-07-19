@@ -99,6 +99,26 @@ python -u scripts/run_v21_division_recovery_shadow.py \
   --output v21_division_recovery_shadow_3tp.csv | tee v21_division_recovery_shadow_3tp.log
 ```
 
+
+## Bounded Three-TP Validation
+
+Completed on the three reconstructed V19 true-positive samples at `max_timepoints=100`.
+
+| Sample | Track A EdgeRecall | Track A Div TP/FP/FN | Track B accepted | Track B TP/FP/FN | Zero perturbation |
+| --- | ---: | --- | ---: | --- | --- |
+| `6bba_05db0fb1` | `0.775330396475771` | `0/821/3` | `2592` | `1/2591/2` | `True` |
+| `6bba_b329af44` | `0.7890410958904109` | `0/968/1` | `3006` | `1/3005/0` | `True` |
+| `6bba_ebdf3b34` | `0.7921686746987951` | `0/950/2` | `2137` | `1/2136/1` | `True` |
+
+Aggregate bounded result:
+
+- Track B recovered all `3/3` known V19 sparse-label true-positive divisions.
+- Track B accepted `7,735` candidates, with `3` TP and `7,732` FP.
+- Track B precision on this calibration subset is about `0.039%`.
+- Track A zero-perturbation held for all three samples.
+
+Interpretation: Track B proves the true signal is still recoverable in a side channel, including the `6bba_ebdf3b34` candidate rejected by Track A's strict fallback ratio. It is not yet a deployable policy: the current broad shadow rule reopens thousands of candidate false positives. The next V21 step should be ranking or feature analysis of Track B candidates, not injecting them into the production graph.
+
 ## GO / NO-GO Criteria
 
 V21 GO only if the full-cohort validation shows all of the following:
@@ -122,6 +142,9 @@ Implemented and locally smoke-tested:
 Still open:
 
 - Run bounded V20 node-presence checks for `6bba_b329af44` and possibly `6bba_ebdf3b34` if runtime allows.
-- Run the three-TP Track B validation at `max_timepoints=100`.
+- Three-TP Track B validation completed: recovered `3/3` known V19 TPs but with `7,732` FP.
 - Run full 199-sample Track B validation and aggregate candidate precision/recall.
 - Do not tune Track A. Do not inject Track B candidates into submission output until the shadow validation has a clear GO.
+
+
+
