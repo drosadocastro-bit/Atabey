@@ -117,16 +117,28 @@ This is a Track B ranking NO-GO in its current form for human review. It remains
 
 For the bounded `6bba_05db0fb1` window, the two missed GT divisions had no matched sparse GT parent or daughter predictions, so Track B could not recover them as ranking failures. They are upstream detection/matching misses in this bounded context.
 
-The still-open target from the three-sample run is the second GT division in `6bba_ebdf3b34` (`FN=1`). The log reports `missed_gt=1`, but `v21_track_b_missed_gt_divisions_3tp.csv` was not present in the local repo copy when this document was updated. That missing file must be copied or regenerated before the exact cause can be reported. The ranking analyzer is designed to classify it as one of:
+The three-sample missed-output CSV is now available. It reports three missed GT divisions:
 
-- sparse GT nodes unmatched to predictions;
-- candidate exists but Track B gate rejected;
-- accepted candidate exists but one-to-one TP matching assigned another candidate;
-- no Track B candidate reaches the GT division.
+| Sample | GT parent | Matched prediction nodes | Reachable Track B candidates | Diagnosis |
+| --- | ---: | --- | ---: | --- |
+| `6bba_05db0fb1` | `53001011` | parent=False, child1=False, child2=True | `0` | `sparse_gt_node_unmatched_to_prediction` |
+| `6bba_05db0fb1` | `63001217` | parent=False, child1=False, child2=False | `0` | `sparse_gt_node_unmatched_to_prediction` |
+| `6bba_ebdf3b34` | `14000412` | parent=True, child1=True, child2=True | `0` | `no_track_b_candidate_reaches_gt_division` |
+
+Additional bounded graph inspection for `6bba_ebdf3b34` through frame 20 shows the exact structural miss:
+
+- GT parent prediction: `6bba_ebdf3b34:t13:cf520`
+- GT child predictions: `6bba_ebdf3b34:t14:cf601` and `6bba_ebdf3b34:t14:cf555`
+- The parent is present and has two outgoing division edges, but they are to `t14:cf31` and `t14:cf601`.
+- The matched second daughter `t14:cf555` is present but has no incoming edge.
+- Track B has one candidate for the matched parent, but it is the wrong pair (`cf31`, `cf601`) and is itself rejected by fallback geometry: angle `115.564`, ratio `1.396`.
+
+Interpretation: the extra `6bba_ebdf3b34` FN is not a ranking failure. It is an upstream pairing/linking failure where the candidate graph selects the wrong orphan child and never connects the actual second daughter. Ranking cannot recover a candidate that does not include the correct child pair.
 
 ## Current Assessment
 
 The three-sample result is a NO-GO for the current ranking formula as a practical human-review list: only `1/3` known TPs appears in the top 100, and all three require looking through the top 2000. The next step should be richer candidate evidence or a learned ranker after full-cohort measurement, not a hard threshold or Track A change.
 
 Guardrail remains unchanged: ranking does not touch Track A and does not change the candidate set, only ordering and diagnostics.
+
 
