@@ -33,6 +33,10 @@ class RankedCandidateRow:
     matched_gt_parent_id: int | None
     reason: str
     ranking_score: float
+    calibrated_confidence: float | None
+    confidence_threshold: float
+    decision_mode: str
+    confidence_basis: str
     geometry_score: float
     angle_deg: float | None
     distance_ratio: float | None
@@ -184,6 +188,10 @@ def _label_candidates(
             matched_gt_parent_id=candidate_to_gt.get(candidate.parent_id),
             reason=candidate.reason,
             ranking_score=candidate.ranking_score,
+            calibrated_confidence=candidate.calibrated_confidence,
+            confidence_threshold=candidate.confidence_threshold,
+            decision_mode=candidate.decision_mode,
+            confidence_basis=candidate.confidence_basis,
             geometry_score=candidate.score,
             angle_deg=candidate.angle_deg,
             distance_ratio=candidate.distance_ratio,

@@ -1,11 +1,15 @@
 ﻿from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
+from typing import Mapping
 
 import numpy as np
 
 from atabey.tracking.division_firewall import _angle_between
 from atabey.types import Detection, LineageGraph
+
+
+TRACK_B_CONFIDENCE_THRESHOLD = 0.60
 
 
 @dataclass(frozen=True)
@@ -33,6 +37,10 @@ class DivisionRecoveryCandidate:
     parent_intensity: float | None
     child_intensity_sum: float | None
     intensity_conservation_error: float | None
+    calibrated_confidence: float | None = None
+    confidence_threshold: float = TRACK_B_CONFIDENCE_THRESHOLD
+    decision_mode: str = "extractive_flagged"
+    confidence_basis: str = "uncalibrated"
 
 
 @dataclass(frozen=True)
@@ -41,7 +49,48 @@ class DivisionRecoveryShadowSummary:
     edges: int
     candidate_count: int
     accepted_count: int
+    proposal_count: int
+    flagged_count: int
     candidates: list[DivisionRecoveryCandidate] = field(default_factory=list)
+
+
+def route_division_recovery_candidate(
+    candidate: DivisionRecoveryCandidate,
+    *,
+    calibrated_confidence: float | None,
+    confidence_threshold: float = TRACK_B_CONFIDENCE_THRESHOLD,
+    confidence_basis: str = "external_calibrator",
+) -> DivisionRecoveryCandidate:
+    """Route a Track B candidate without treating its ranking score as confidence.
+
+    The NIC-inspired fallback is intentionally extractive: uncertain candidates
+    retain their measured node IDs and feature values, but are not promoted to a
+    division proposal. A rejected geometric candidate remains rejected.
+    """
+
+    threshold = float(confidence_threshold)
+    if not 0.0 <= threshold <= 1.0:
+        raise ValueError("confidence_threshold must be within [0, 1]")
+    if calibrated_confidence is not None:
+        calibrated_confidence = float(calibrated_confidence)
+        if not 0.0 <= calibrated_confidence <= 1.0:
+            raise ValueError("calibrated_confidence must be within [0, 1]")
+
+    if not candidate.accepted:
+        decision_mode = "rejected"
+    elif calibrated_confidence is not None and calibrated_confidence >= threshold:
+        decision_mode = "division_proposal"
+    else:
+        decision_mode = "extractive_flagged"
+
+    basis = confidence_basis if calibrated_confidence is not None else "uncalibrated_feature_evidence"
+    return replace(
+        candidate,
+        calibrated_confidence=calibrated_confidence,
+        confidence_threshold=threshold,
+        decision_mode=decision_mode,
+        confidence_basis=basis,
+    )
 
 
 def _nodes_by_id(graph: LineageGraph) -> dict[str, Detection]:
@@ -296,6 +345,9 @@ def compute_division_recovery_shadow(
     multi_frame_max_drift_deg: float = 30.0,
     multi_frame_min_separation_growth_um: float = 0.0,
     local_density_radius_um: float = 10.0,
+    calibrated_confidence_by_parent_id: Mapping[str, float] | None = None,
+    confidence_threshold: float = TRACK_B_CONFIDENCE_THRESHOLD,
+    confidence_basis: str = "external_calibrator",
 ) -> DivisionRecoveryShadowSummary:
     """Score division candidates without mutating the production lineage graph.
 
@@ -320,15 +372,27 @@ def compute_division_recovery_shadow(
             local_density_radius_um=local_density_radius_um,
         )
         if candidate is not None:
-            candidates.append(candidate)
+            confidence = None
+            if calibrated_confidence_by_parent_id is not None:
+                confidence = calibrated_confidence_by_parent_id.get(candidate.parent_id)
+            candidates.append(
+                route_division_recovery_candidate(
+                    candidate,
+                    calibrated_confidence=confidence,
+                    confidence_threshold=confidence_threshold,
+                    confidence_basis=confidence_basis,
+                )
+            )
 
     accepted_count = sum(1 for candidate in candidates if candidate.accepted)
+    proposal_count = sum(1 for candidate in candidates if candidate.decision_mode == "division_proposal")
+    flagged_count = sum(1 for candidate in candidates if candidate.decision_mode == "extractive_flagged")
     return DivisionRecoveryShadowSummary(
         nodes=len(graph.detections),
         edges=len(graph.edges),
         candidate_count=len(candidates),
         accepted_count=int(accepted_count),
+        proposal_count=int(proposal_count),
+        flagged_count=int(flagged_count),
         candidates=candidates,
     )
-
-

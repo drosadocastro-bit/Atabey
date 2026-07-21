@@ -1,0 +1,87 @@
+{
+  "battery_name": "Atabey V21 Division Recovery Adversarial Battery",
+  "version": 1,
+  "policy": {
+    "append_only": true,
+    "track_a_frozen": true,
+    "confidence_threshold": 0.6,
+    "uncalibrated_candidates": "extractive_flagged",
+    "full_cohort_requires_battery_pass": true
+  },
+  "cases": [
+    {
+      "case_id": "COLLISION-DRIFT-090",
+      "category": "collision_noise",
+      "max_drift_deg": 90.0,
+      "expected": "rejected"
+    },
+    {
+      "case_id": "COLLISION-DRIFT-100",
+      "category": "collision_noise",
+      "max_drift_deg": 100.0,
+      "expected": "rejected"
+    },
+    {
+      "case_id": "COLLISION-DRIFT-110",
+      "category": "collision_noise",
+      "max_drift_deg": 110.0,
+      "expected": "rejected"
+    },
+    {
+      "case_id": "V19-TP-05DB",
+      "category": "known_true_division",
+      "sample_id": "6bba_05db0fb1",
+      "gt_parent_id": 25000381,
+      "mechanism": "fallback_broad_angle_balanced_split",
+      "angle_deg": 135.896,
+      "distance_ratio": 1.109,
+      "expected": "extractive_flagged"
+    },
+    {
+      "case_id": "V19-TP-B329",
+      "category": "known_true_division",
+      "sample_id": "6bba_b329af44",
+      "gt_parent_id": 83001755,
+      "mechanism": "multi_frame_positive_divergence",
+      "max_drift_deg": 11.213,
+      "v_sep_1_um_per_frame": 1.495,
+      "expected": "extractive_flagged"
+    },
+    {
+      "case_id": "V19-TP-EBDF",
+      "category": "known_true_division",
+      "sample_id": "6bba_ebdf3b34",
+      "gt_parent_id": 85001151,
+      "mechanism": "fallback_broad_angle_balanced_split",
+      "angle_deg": 154.597,
+      "distance_ratio": 2.015,
+      "expected": "extractive_flagged"
+    },
+    {
+      "case_id": "V21-FN-EBDF-PAIRING",
+      "category": "upstream_pairing_loss",
+      "sample_id": "6bba_ebdf3b34",
+      "gt_parent_id": 14000412,
+      "pred_parent_id": "6bba_ebdf3b34:t13:cf520",
+      "correct_child_ids": [
+        "6bba_ebdf3b34:t14:cf601",
+        "6bba_ebdf3b34:t14:cf555"
+      ],
+      "wrong_primary_id": "6bba_ebdf3b34:t14:cf31",
+      "correct_orphan_distance_um": 11.868,
+      "wrong_primary_to_correct_orphan_um": 16.061,
+      "formation_gate_um": 9.0,
+      "evaluation_separation_gate_um": 15.0,
+      "expected": "upstream_missing_candidate"
+    },
+    {
+      "case_id": "LINK-GATE-14-REGRESSION-05DB",
+      "category": "formation_gate_regression",
+      "sample_id": "6bba_05db0fb1",
+      "gt_parent_id": 25000381,
+      "gate_9_tp": 1,
+      "gate_14_tp": 0,
+      "expected": "keep_formation_gate_9um"
+    }
+  ]
+}

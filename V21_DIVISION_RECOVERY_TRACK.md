@@ -146,5 +146,65 @@ Still open:
 - Run full 199-sample Track B validation and aggregate candidate precision/recall.
 - Do not tune Track A. Do not inject Track B candidates into submission output until the shadow validation has a clear GO.
 
+## NIC-Inspired Confidence Gate and Extractive Fallback
 
+NIC's implementation was inspected directly at commit `14649f157554d119106b1c60d8c42bf17893a532` before designing the Atabey analog. The source has two separate controls, not one generic 60% rule:
 
+- a pre-generation retrieval-confidence gate in `core/handlers/query_handler.py`, defaulting to 0.75, which averages retrieved-document confidence and skips LLM generation when evidence is weak;
+- a post-generation grounding gate, defaulting to 0.60, which measures statement-to-source token overlap and replaces weak synthesis with source snippets; confidence below 0.35 plus weak grounding causes abstention;
+- the extractive response contains bounded text from retrieved chunks plus source, page, and document identifiers. It is evidence exposure, not lower-confidence generation.
+
+Atabey adopts the routing shape, not NIC's text-specific confidence calculation.
+
+### Track B Routing
+
+Implemented in `src/atabey/tracking/division_recovery_shadow.py`:
+
+- `division_proposal`: geometrically accepted and supplied with an independently calibrated confidence at or above 0.60;
+- `extractive_flagged`: geometrically accepted but below threshold or missing a calibrated confidence;
+- `rejected`: fails Track B's geometric candidate guardrails, even if a high confidence is supplied.
+
+The extractive equivalent is the unchanged candidate evidence record: parent and child IDs, mechanism, angle or drift, separation growth, distances, density, volume, intensity, and diagnostic ranking score. Flagged candidates are logged but do not become division decisions or graph edges.
+
+The old `ranking_score` is deliberately not reused as confidence. It was designed for ordering, is not probabilistically calibrated, and failed the three-sample ranking test.
+
+### Threshold Calibration Result
+
+The saved three-sample CSV contains 7,735 accepted candidates: 3 TP and 7,732 FP.
+
+Applying the 0.60 hypothesis directly to the old ranking score would retain:
+
+- 1 of 3 known TPs;
+- 1,444 FPs;
+- no usable precision region.
+
+The mechanisms also overlap heavily with their FP populations:
+
+- fallback: 2 TP among 5,835 candidates;
+- multi-frame: 1 TP among 1,900 candidates;
+- fallback TP scores were 0.7545 and 0.5232 while the FP median was 0.5231;
+- the multi-frame TP score was 0.4800 while the FP median was 0.4551.
+
+Conclusion: 0.60 remains the explicit routing threshold, but no current feature score qualifies as calibrated confidence. The production default supplies no calibrated confidence, so accepted candidates route to `extractive_flagged`. This is intentional abstention from overclaiming, not a hidden threshold failure. A future calibrator must be trained and evaluated on more positive divisions before it may populate `calibrated_confidence_by_parent_id`.
+
+The V21 runner now reports broad geometric accepted counts separately from proposal and flagged counts, and computes proposal-only TP/FP/FN without changing the prior diagnostic accounting.
+
+## Fixed Adversarial Battery
+
+Added:
+
+- `ATABEY_ADVERSARIAL_BATTERY.md`
+- `tests/fixtures/atabey_adversarial_battery.json`
+- `tests/test_atabey_adversarial_battery.py`
+
+The battery is append-only and starts with the 90-110 degree collision band, the three known V19/V21 TPs, the newer `6bba_ebdf3b34` upstream pairing FN, and the 9-to-14 um formation-gate regression. The test contains a required baseline ID set, so future cases may be added while removal of an original case fails.
+
+This mirrors the useful part of NIC's checked-in 90-case full-suite runner and report. The inspected NIC source confirms a fixed, version-controlled full-suite rerun with regression accounting; it does not visibly enforce an append-only invariant. Atabey adds that rule explicitly.
+
+Battery command:
+
+```powershell
+python -m pytest tests/test_atabey_adversarial_battery.py tests/test_division_recovery_shadow.py tests/test_division_firewall.py -q
+```
+
+This battery must pass before bounded real-data validation and before any 199-sample Colab run.
