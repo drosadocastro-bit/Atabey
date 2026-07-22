@@ -1,7 +1,26 @@
-﻿# V21 Division Recovery Track
+# V21 Division Recovery Track
 
 Date: 2026-07-19
 Branch: `mitosis_hough_audit`
+
+## Critical Official-Metric Correction (2026-07-22)
+
+The original Atabey Division Jaccard evaluator did not match the host's patched metric. All old
+division FP totals and FP-reduction percentages are withdrawn. Atabey now calls the pinned host
+`score_divisions` implementation directly; the host's 39 patched regression tests pass.
+
+Corrected fixed-battery evidence:
+
+- all three historical V19/Track B TPs remain genuine official TPs;
+- V19 scores `TP=4, FP=6, FN=10` across the 14 registered division windows;
+- V20 scores `TP=0, FP=0, FN=14`, removing all four V19 official TPs;
+- 8,507 Track B accepted forks resolve to 3 official TP, 2 official FP, and 8,502
+  sparse-unsupported/ignored forks; ignored means unknown, not biologically correct;
+- the prior `91%` V19-to-V20 division-FP reduction claim is not official-metric evidence and must
+  not be reused. EdgeRecall findings are separate from this correction.
+
+Full provenance and interpretation are in `OFFICIAL_DIVISION_METRIC_INTEGRATION.md`; corrected
+case counts are in `OFFICIAL_DIVISION_RECALIBRATION.md`. Joint voting remains blocked.
 
 ## Objective
 
@@ -208,3 +227,54 @@ python -m pytest tests/test_atabey_adversarial_battery.py tests/test_division_re
 ```
 
 This battery must pass before bounded real-data validation and before any 199-sample Colab run.
+
+## Counterfactual Pairing Audit
+
+The Juracan-inspired short-horizon hypothesis was tested read-only across four known division cases.
+For each parent, the audit held one sparse-GT-matched daughter fixed, substituted local alternatives
+inside a diagnostic `14 um` observation radius, and followed existing graph continuations for four
+child frames. The production `9 um` gate and both V21 tracks remained unchanged.
+
+Results:
+
+- Correct-pair balanced ranks were `6/11`, `11/21`, `6/21`, and `11/23`.
+- No correct pair ranked in the top five; two of four ranked in the top ten.
+- Two of four correct pairs were on the Pareto front.
+- In the two cases with a specifically known wrong pair, the correct pair beat it under all three
+  sensitivity profiles.
+- Graph zero perturbation held for all three rebuilt samples.
+
+Decision: **NO-GO as an active pair selector; partial positive evidence as a diagnostic feature.**
+Smooth future continuation can demote known bad pairings, but unrelated smooth tracks often outrank
+the true daughters. Any future study needs independent parent-centered evidence rather than another
+reweighting of the same continuation features. Full evidence is in `V21_COUNTERFACTUAL_PAIRING_AUDIT.md`.
+
+## Local Ownership Assignment Audit
+
+The 10 unevaluable cases from the pre-registered 20-sample Phase 2 set were audited before
+designing an assignment solver. The sparse matcher ignores graph edges and only performs
+same-timepoint, greedy one-to-one centroid matching inside `7 um`. Across 12 missing GT nodes:
+
+- seven were localization gaps between `7` and `14 um`;
+- two were detection/localization gaps beyond `14 um`;
+- two were standard sparse-match ordering artifacts recovered by global distance ordering;
+- one was evaluator-level one-to-one contention, in a sample whose parent was also beyond `14 um`.
+
+Thus 8/10 cases were primarily detection/localization failures and 2/10 were matcher-order
+artifacts. A daughter claimed by a parent outside the bounded window cannot explain these misses,
+because ownership edges are not consulted by this evaluation.
+
+A shadow-only Hungarian diagnostic was then scoped to each focal pair's two cells and only the
+separate parents that already owned or mutually claimed those cells. It never performs frame-wide
+or cohort-wide assignment and never mutates Track A, Track B, or graph edges. Pair ranking uses,
+in order: displaced competing-parent count, added continuation cost, then the existing balanced score.
+
+On the fixed Phase 1 four plus Phase 2 ten evaluable cases, correct-pair ranks improved/flat/regressed
+`9/2/3`; top-1 recovery moved from `2/14` to `6/14`; median rank improved from `6` to `3`; and zero
+perturbation held `14/14`. This fails the pre-registered requirement of zero regressions and at least
+`10/14` top-1 recoveries. The three regressions show the limitation directly: real daughter pairs can
+also displace plausible continuations, so exclusivity is informative but not sufficient to select a
+biological division.
+
+Decision: **NO-GO for broader rollout or Track A/B integration.** Full evidence is in
+`V21_LOCAL_ASSIGNMENT_SHADOW_AUDIT.md`.

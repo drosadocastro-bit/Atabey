@@ -15,6 +15,12 @@ dependencies = [
   "networkx>=3.2",
 ]
 
+[project.optional-dependencies]
+official-metrics = [
+  "tracking-cellmot @ git+https://github.com/royerlab/kaggle-cell-tracking-competition.git@075fc5f5a52d11077f9dc2b074644618f26939e2",
+  "tracksdata @ git+https://github.com/royerlab/tracksdata.git@39dccf3a243e44274759468cb31b2ad9e7fc1d09",
+]
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
