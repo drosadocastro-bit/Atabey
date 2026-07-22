@@ -1,7 +1,26 @@
-﻿# V21 Division Recovery Track
+# V21 Division Recovery Track
 
 Date: 2026-07-19
 Branch: `mitosis_hough_audit`
+
+## Critical Official-Metric Correction (2026-07-22)
+
+The original Atabey Division Jaccard evaluator did not match the host's patched metric. All old
+division FP totals and FP-reduction percentages are withdrawn. Atabey now calls the pinned host
+`score_divisions` implementation directly; the host's 39 patched regression tests pass.
+
+Corrected fixed-battery evidence:
+
+- all three historical V19/Track B TPs remain genuine official TPs;
+- V19 scores `TP=4, FP=6, FN=10` across the 14 registered division windows;
+- V20 scores `TP=0, FP=0, FN=14`, removing all four V19 official TPs;
+- 8,507 Track B accepted forks resolve to 3 official TP, 2 official FP, and 8,502
+  sparse-unsupported/ignored forks; ignored means unknown, not biologically correct;
+- the prior `91%` V19-to-V20 division-FP reduction claim is not official-metric evidence and must
+  not be reused. EdgeRecall findings are separate from this correction.
+
+Full provenance and interpretation are in `OFFICIAL_DIVISION_METRIC_INTEGRATION.md`; corrected
+case counts are in `OFFICIAL_DIVISION_RECALIBRATION.md`. Joint voting remains blocked.
 
 ## Objective
 
@@ -146,5 +165,116 @@ Still open:
 - Run full 199-sample Track B validation and aggregate candidate precision/recall.
 - Do not tune Track A. Do not inject Track B candidates into submission output until the shadow validation has a clear GO.
 
+## NIC-Inspired Confidence Gate and Extractive Fallback
 
+NIC's implementation was inspected directly at commit `14649f157554d119106b1c60d8c42bf17893a532` before designing the Atabey analog. The source has two separate controls, not one generic 60% rule:
 
+- a pre-generation retrieval-confidence gate in `core/handlers/query_handler.py`, defaulting to 0.75, which averages retrieved-document confidence and skips LLM generation when evidence is weak;
+- a post-generation grounding gate, defaulting to 0.60, which measures statement-to-source token overlap and replaces weak synthesis with source snippets; confidence below 0.35 plus weak grounding causes abstention;
+- the extractive response contains bounded text from retrieved chunks plus source, page, and document identifiers. It is evidence exposure, not lower-confidence generation.
+
+Atabey adopts the routing shape, not NIC's text-specific confidence calculation.
+
+### Track B Routing
+
+Implemented in `src/atabey/tracking/division_recovery_shadow.py`:
+
+- `division_proposal`: geometrically accepted and supplied with an independently calibrated confidence at or above 0.60;
+- `extractive_flagged`: geometrically accepted but below threshold or missing a calibrated confidence;
+- `rejected`: fails Track B's geometric candidate guardrails, even if a high confidence is supplied.
+
+The extractive equivalent is the unchanged candidate evidence record: parent and child IDs, mechanism, angle or drift, separation growth, distances, density, volume, intensity, and diagnostic ranking score. Flagged candidates are logged but do not become division decisions or graph edges.
+
+The old `ranking_score` is deliberately not reused as confidence. It was designed for ordering, is not probabilistically calibrated, and failed the three-sample ranking test.
+
+### Threshold Calibration Result
+
+The saved three-sample CSV contains 7,735 accepted candidates: 3 TP and 7,732 FP.
+
+Applying the 0.60 hypothesis directly to the old ranking score would retain:
+
+- 1 of 3 known TPs;
+- 1,444 FPs;
+- no usable precision region.
+
+The mechanisms also overlap heavily with their FP populations:
+
+- fallback: 2 TP among 5,835 candidates;
+- multi-frame: 1 TP among 1,900 candidates;
+- fallback TP scores were 0.7545 and 0.5232 while the FP median was 0.5231;
+- the multi-frame TP score was 0.4800 while the FP median was 0.4551.
+
+Conclusion: 0.60 remains the explicit routing threshold, but no current feature score qualifies as calibrated confidence. The production default supplies no calibrated confidence, so accepted candidates route to `extractive_flagged`. This is intentional abstention from overclaiming, not a hidden threshold failure. A future calibrator must be trained and evaluated on more positive divisions before it may populate `calibrated_confidence_by_parent_id`.
+
+The V21 runner now reports broad geometric accepted counts separately from proposal and flagged counts, and computes proposal-only TP/FP/FN without changing the prior diagnostic accounting.
+
+## Fixed Adversarial Battery
+
+Added:
+
+- `ATABEY_ADVERSARIAL_BATTERY.md`
+- `tests/fixtures/atabey_adversarial_battery.json`
+- `tests/test_atabey_adversarial_battery.py`
+
+The battery is append-only and starts with the 90-110 degree collision band, the three known V19/V21 TPs, the newer `6bba_ebdf3b34` upstream pairing FN, and the 9-to-14 um formation-gate regression. The test contains a required baseline ID set, so future cases may be added while removal of an original case fails.
+
+This mirrors the useful part of NIC's checked-in 90-case full-suite runner and report. The inspected NIC source confirms a fixed, version-controlled full-suite rerun with regression accounting; it does not visibly enforce an append-only invariant. Atabey adds that rule explicitly.
+
+Battery command:
+
+```powershell
+python -m pytest tests/test_atabey_adversarial_battery.py tests/test_division_recovery_shadow.py tests/test_division_firewall.py -q
+```
+
+This battery must pass before bounded real-data validation and before any 199-sample Colab run.
+
+## Counterfactual Pairing Audit
+
+The Juracan-inspired short-horizon hypothesis was tested read-only across four known division cases.
+For each parent, the audit held one sparse-GT-matched daughter fixed, substituted local alternatives
+inside a diagnostic `14 um` observation radius, and followed existing graph continuations for four
+child frames. The production `9 um` gate and both V21 tracks remained unchanged.
+
+Results:
+
+- Correct-pair balanced ranks were `6/11`, `11/21`, `6/21`, and `11/23`.
+- No correct pair ranked in the top five; two of four ranked in the top ten.
+- Two of four correct pairs were on the Pareto front.
+- In the two cases with a specifically known wrong pair, the correct pair beat it under all three
+  sensitivity profiles.
+- Graph zero perturbation held for all three rebuilt samples.
+
+Decision: **NO-GO as an active pair selector; partial positive evidence as a diagnostic feature.**
+Smooth future continuation can demote known bad pairings, but unrelated smooth tracks often outrank
+the true daughters. Any future study needs independent parent-centered evidence rather than another
+reweighting of the same continuation features. Full evidence is in `V21_COUNTERFACTUAL_PAIRING_AUDIT.md`.
+
+## Local Ownership Assignment Audit
+
+The 10 unevaluable cases from the pre-registered 20-sample Phase 2 set were audited before
+designing an assignment solver. The sparse matcher ignores graph edges and only performs
+same-timepoint, greedy one-to-one centroid matching inside `7 um`. Across 12 missing GT nodes:
+
+- seven were localization gaps between `7` and `14 um`;
+- two were detection/localization gaps beyond `14 um`;
+- two were standard sparse-match ordering artifacts recovered by global distance ordering;
+- one was evaluator-level one-to-one contention, in a sample whose parent was also beyond `14 um`.
+
+Thus 8/10 cases were primarily detection/localization failures and 2/10 were matcher-order
+artifacts. A daughter claimed by a parent outside the bounded window cannot explain these misses,
+because ownership edges are not consulted by this evaluation.
+
+A shadow-only Hungarian diagnostic was then scoped to each focal pair's two cells and only the
+separate parents that already owned or mutually claimed those cells. It never performs frame-wide
+or cohort-wide assignment and never mutates Track A, Track B, or graph edges. Pair ranking uses,
+in order: displaced competing-parent count, added continuation cost, then the existing balanced score.
+
+On the fixed Phase 1 four plus Phase 2 ten evaluable cases, correct-pair ranks improved/flat/regressed
+`9/2/3`; top-1 recovery moved from `2/14` to `6/14`; median rank improved from `6` to `3`; and zero
+perturbation held `14/14`. This fails the pre-registered requirement of zero regressions and at least
+`10/14` top-1 recoveries. The three regressions show the limitation directly: real daughter pairs can
+also displace plausible continuations, so exclusivity is informative but not sufficient to select a
+biological division.
+
+Decision: **NO-GO for broader rollout or Track A/B integration.** Full evidence is in
+`V21_LOCAL_ASSIGNMENT_SHADOW_AUDIT.md`.

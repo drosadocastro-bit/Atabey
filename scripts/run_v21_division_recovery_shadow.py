@@ -31,10 +31,16 @@ class V21ShadowRow:
     track_a_div_fn: int
     track_b_candidates: int
     track_b_accepted: int
+    track_b_proposals: int
+    track_b_flagged: int
     track_b_tp: int
     track_b_fp: int
     track_b_fn: int
     track_b_jaccard: float | None
+    track_b_proposal_tp: int
+    track_b_proposal_fp: int
+    track_b_proposal_fn: int
+    track_b_proposal_jaccard: float | None
     track_a_zero_perturbation: bool
 
 
@@ -176,6 +182,12 @@ def evaluate_sample(sample_id: str, max_timepoints: int | None) -> V21ShadowRow:
     shadow = compute_division_recovery_shadow(prefirewall)
     accepted_parent_ids = {candidate.parent_id for candidate in shadow.candidates if candidate.accepted}
     track_b_tp, track_b_fp, track_b_fn, track_b_jaccard = _evaluate_track_b(prefirewall, ground_truth, accepted_parent_ids)
+    proposal_parent_ids = {
+        candidate.parent_id for candidate in shadow.candidates if candidate.decision_mode == "division_proposal"
+    }
+    proposal_tp, proposal_fp, proposal_fn, proposal_jaccard = _evaluate_track_b(
+        prefirewall, ground_truth, proposal_parent_ids
+    )
 
     return V21ShadowRow(
         sample_id=sample_id,
@@ -187,10 +199,16 @@ def evaluate_sample(sample_id: str, max_timepoints: int | None) -> V21ShadowRow:
         track_a_div_fn=track_a_report.division_fn,
         track_b_candidates=shadow.candidate_count,
         track_b_accepted=shadow.accepted_count,
+        track_b_proposals=shadow.proposal_count,
+        track_b_flagged=shadow.flagged_count,
         track_b_tp=track_b_tp,
         track_b_fp=track_b_fp,
         track_b_fn=track_b_fn,
         track_b_jaccard=track_b_jaccard,
+        track_b_proposal_tp=proposal_tp,
+        track_b_proposal_fp=proposal_fp,
+        track_b_proposal_fn=proposal_fn,
+        track_b_proposal_jaccard=proposal_jaccard,
         track_a_zero_perturbation=(before_edges == after_edges),
     )
 
@@ -218,6 +236,7 @@ def main() -> None:
             f"  TrackA={row.track_a_detector}/{row.track_a_link_strategy} "
             f"EdgeRecall={row.track_a_edge_recall} DivTP={row.track_a_div_tp} FP={row.track_a_div_fp} "
             f"| TrackB accepted={row.track_b_accepted} TP={row.track_b_tp} FP={row.track_b_fp} FN={row.track_b_fn} "
+            f"proposals={row.track_b_proposals} flagged={row.track_b_flagged} "
             f"zero_perturb={row.track_a_zero_perturbation}",
             flush=True,
         )

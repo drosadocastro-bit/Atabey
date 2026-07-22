@@ -5,6 +5,7 @@ from statistics import mean, median
 
 import numpy as np
 
+from atabey.evaluation.official_division_metric import evaluate_official_divisions
 from atabey.io.geff_reader import SparseGroundTruthGraph
 from atabey.types import Detection, LineageGraph
 
@@ -172,74 +173,8 @@ def compute_division_jaccard(
     gt_to_prediction: dict[int, str],
     time_tolerance: int = 1,
 ) -> tuple[int, int, int]:
-    """Compute (TP, FP, FN) for divisions using the competition spec."""
-    # 1. Find all GT divisions
-    gt_edges_out: dict[int, list[int]] = {}
-    for src, tgt in ground_truth.edges:
-        gt_edges_out.setdefault(src, []).append(tgt)
-    gt_divisions = [src for src, tgts in gt_edges_out.items() if len(tgts) >= 2]
-
-    # 2. Find all Pred divisions
-    pred_edges_out: dict[str, list[str]] = {}
-    for edge in graph.edges:
-        pred_edges_out.setdefault(edge.source_id, []).append(edge.target_id)
-    pred_divisions = [src for src, tgts in pred_edges_out.items() if len(tgts) >= 2]
-
-    # 3. Build reachability map for Pred graph
-    pred_nodes_by_id = {d.node_id: d for d in graph.detections}
-    gt_nodes_by_id = {n.node_id: n for n in ground_truth.nodes}
-
-    def reaches(start_id: str, target_id: str, max_depth: int = 5) -> bool:
-        if start_id == target_id:
-            return True
-        queue = [(start_id, 0)]
-        visited = {start_id}
-        while queue:
-            curr, depth = queue.pop(0)
-            if depth >= max_depth:
-                continue
-            for nxt in pred_edges_out.get(curr, []):
-                if nxt == target_id:
-                    return True
-                if nxt not in visited:
-                    visited.add(nxt)
-                    queue.append((nxt, depth + 1))
-        return False
-
-    tp_gt = set()
-    tp_pred = set()
-
-    for gt_p in gt_divisions:
-        gt_targets = gt_edges_out[gt_p]
-        gt_d1, gt_d2 = gt_targets[0], gt_targets[1]
-
-        pred_p = gt_to_prediction.get(gt_p)
-        pred_d1 = gt_to_prediction.get(gt_d1)
-        pred_d2 = gt_to_prediction.get(gt_d2)
-
-        if not (pred_p and pred_d1 and pred_d2):
-            continue
-
-        matched_pred_div = None
-        for pdiv in pred_divisions:
-            if pdiv in tp_pred:
-                continue
-            
-            pdiv_t = pred_nodes_by_id[pdiv].t
-            gt_t = gt_nodes_by_id[gt_p].t
-            if abs(pdiv_t - gt_t) > time_tolerance + 1:
-                continue
-
-            if reaches(pred_p, pdiv, max_depth=3) and reaches(pdiv, pred_d1, max_depth=3) and reaches(pdiv, pred_d2, max_depth=3):
-                matched_pred_div = pdiv
-                break
-
-        if matched_pred_div:
-            tp_gt.add(gt_p)
-            tp_pred.add(matched_pred_div)
-
-    tp = len(tp_gt)
-    fp = len(pred_divisions) - len(tp_pred)
-    fn = len(gt_divisions) - len(tp_gt)
-    return tp, fp, fn
+    """Compute patched host TP/FP/FN; legacy matching arguments are ignored."""
+    del gt_to_prediction, time_tolerance
+    result = evaluate_official_divisions(graph, ground_truth)
+    return result.tp, result.fp, result.fn
 
