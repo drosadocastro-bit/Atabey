@@ -1,4 +1,4 @@
-# V21 Session Synthesis - 2026-07-22
+﻿# V21 Session Synthesis - 2026-07-22
 
 Branch: `mitosis_hough_audit`
 
@@ -348,6 +348,17 @@ and 7 FP, showing that sparse pair identity alone is not a valid binary target.
 No semantic score, calibrated confidence, assignment solve, production graph mutation, or submission
 behavior has been implemented or authorized.
 
+The outcome-blind development/calibration split and completed prerequisite measurement are documented
+in [V21_SEMANTIC_DATASET_PREREGISTRATION.md](V21_SEMANTIC_DATASET_PREREGISTRATION.md) and
+[V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md](V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md).
+The locked gate failed: development produced 13/46 official-positive actions and calibration 7/47,
+versus the required 20 in each. Development also had 0/6 positives from `44b6`. Zero perturbation
+passed on all 54 source graphs, and the independent 20-sample validation cohort was not opened.
+
+This closes calibrated semantic scoring and assignment integration under the current candidate
+formation path. The result does not show that semantic evidence is useless; it shows that upstream
+parent/daughter detection and official action availability are too sparse to support the registered
+calibration claim.
 ### 3. Independent CFAR-only Sun Check follow-up - pre-registered 2026-07-23
 
 The locked protocol is complete in
@@ -377,6 +388,8 @@ The following questions or approaches are closed unless new independent evidence
 - short-horizon daughter continuity as a standalone selector;
 - exclusivity-only local Hungarian ranking as a rollout candidate;
 - LSAP as a standalone biological scorer;
+- calibrated V21 semantic confidence or assignment integration under the current positive-availability
+  path;
 - bead-free Sun Check measurements as authorization for image correction or drift compensation.
 
 ## Open
@@ -386,8 +399,11 @@ The following remain open research questions:
 - how strongly each diagnostic sparse metric correlates with official score on independently held-out samples;
 - why V20 removes each of the four already-correct official V19 forks;
 - how to form and score parent-daughter alternatives without losing correct candidates upstream;
+- whether upstream parent/daughter detection and action formation can increase official-positive
+  availability without opening the locked validation cohort or degrading official edge tracking;
 - whether parent-centered geometry, continuity, appearance, and calibrated uncertainty can jointly
-  distinguish real divisions from legitimate neighboring continuations;
+  distinguish real divisions from legitimate neighboring continuations if a future independent
+  availability gate becomes supportable;
 - whether a division-capable local assignment constraint improves an independently pre-registered
   official-metric battery after a richer scorer exists;
 - whether Track B confidence can be calibrated with enough official positive and negative evidence;

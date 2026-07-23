@@ -1,4 +1,4 @@
-# Project Atabey
+﻿# Project Atabey
 
 > Signal processing over brute force. Evidence before conclusions.
 
@@ -92,7 +92,7 @@ the relevant audit before promoting one.
 | V14-V18 | Can CFAR, kinematics, and shadow advisers improve difficult local detections? | Mixed. Several useful diagnostics survived, while literal radar transfers and some learned/shadow mechanisms failed their bounded gates. |
 | V19 | Can watershed localization and bipartite formation improve dense tracking and expose divisions? | Partly. It produced four official division TPs in the corrected bounded audit, but ownership and noise remain unresolved. |
 | V20 | Can a strict kinematic firewall clean division topology? | NO-GO in its current form: it suppressed all four corrected V19 TPs. Earlier FP-reduction claims were invalidated by evaluator mismatch. |
-| V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Active research. Track B ranking and standalone Hungarian/continuity selectors are NO-GO. The joint semantic Phase 0 extractor passed its fixed battery; scoring, calibration, and constrained assignment remain unimplemented. |
+| V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Partial research result. The joint semantic Phase 0 extractor passed its fixed battery, but the preregistered availability gate failed at 13/46 development and 7/47 calibration positives. Calibrated scoring and constrained assignment are not authorized under the current formation path. |
 
 ## Start Here
 
@@ -102,7 +102,10 @@ the relevant audit before promoting one.
   shadow-only architecture, abstention rules, and locked validation contract.
 - [V21 Joint Semantic Phase 0 Audit](V21_JOINT_SEMANTIC_PHASE0_AUDIT.md): raw evidence
   extraction, official projected labels, route provenance, and zero-perturbation results.
-- [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
+- [V21 Semantic Dataset Pre-Registration](V21_SEMANTIC_DATASET_PREREGISTRATION.md): frozen
+  development/calibration membership and the positive-availability gate.
+- [V21 Semantic Positive Availability Audit](V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md):
+  full 54-sample prerequisite result and the calibrated-scoring NO-GO.- [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
   adapter design, and parity evidence.

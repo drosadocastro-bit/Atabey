@@ -1,4 +1,4 @@
-# V21 Semantic Development And Calibration Pre-Registration
+﻿# V21 Semantic Development And Calibration Pre-Registration
 
 Date: 2026-07-23
 Status: locked before semantic-feature or projected-official-outcome inspection
@@ -162,6 +162,14 @@ research may continue in development, but every candidate remains abstaining.
 
 ## Decision State
 
-The split and audit contract are pre-registered. The next permitted action is the read-only
-official-positive availability run. Only its aggregate availability result may decide whether model
-development and confidence calibration are statistically supportable.
+The split and audit contract were committed before outcome inspection. The completed read-only audit
+is reported in `V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md`.
+
+The preregistered gate failed:
+
+- development: 13/46 official-positive divisions, including 0/6 from `44b6`;
+- calibration: 7/47 official-positive divisions, including 1/6 from `44b6`;
+- source zero perturbation: 54/54 samples.
+
+Therefore calibrated semantic confidence, assignment solving, graph integration, and production
+mutation remain unauthorized. Split membership remains frozen despite the NO-GO result.

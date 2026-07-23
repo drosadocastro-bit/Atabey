@@ -1,7 +1,7 @@
-# V21 Joint Semantic Scorer And Local Assignment Constraint
+﻿# V21 Joint Semantic Scorer And Local Assignment Constraint
 
 Date: 2026-07-23
-Status: design plus Phase 0 evidence extraction; no semantic scorer or assignment integration
+Status: Phase 0 complete; preregistered positive-availability gate failed; no scorer or assignment integration
 
 No scorer, solver, graph mutation, production integration, or submission behavior is authorized by
 this document.
@@ -438,7 +438,16 @@ all four original official V19 TPs, kept all three Hungarian regressions visible
 decision, and passed 14/14 source zero-perturbation checks.
 
 The 14 projected pairs split into seven official TPs and seven official FPs in current ownership
-context, confirming that sparse pair identity is not a sufficient training label. No semantic score,
-calibration, assignment solve, or graph integration exists. The next action is to pre-register a
-sample-blocked development/calibration pool outside the locked 20-sample validation cohort, then
-measure whether at least 20 official positive actions are available before fitting any model.
+context, confirming that sparse pair identity is not a sufficient training label.
+
+The subsequent sample-blocked availability audit is complete in
+[V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md](V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md).
+Development contained 13/46 official-positive divisions and calibration contained 7/47, below the
+locked minimum of 20 in each pool. Development also contained no official-positive `44b6` action.
+All 54 source graphs passed zero perturbation, and the locked 20-sample validation cohort remained
+unopened.
+
+This is a **NO-GO for calibrated semantic scoring and assignment integration**. The dominant loss
+occurs before confidence estimation: missing parent/daughter detections and unavailable officially
+valid actions. No semantic score, calibrated confidence, assignment solve, graph integration, or
+production mutation exists or is authorized.
