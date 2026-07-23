@@ -123,5 +123,20 @@ official adjusted edge Jaccard, or reopens division FP beyond the locked bound.
 
 ## Decision State
 
-The shadow implementation and tests may be committed before outcomes. The next permitted action is a
-bounded smoke followed by the complete development-only run with the rule unchanged.
+The shadow implementation and tests were committed as `b0e52c1` before outcomes. The completed
+unchanged development-only run is documented in `V22_SAFE_DIVISION_SHADOW_AUDIT.md`.
+
+The frozen rule is a NO-GO as a standalone Atabey transfer:
+
+- 27/27 development samples and 46/46 GT divisions completed;
+- 17,781 eligible proposals produced 1,089 budget-selected additions;
+- new actual official TPs: 0;
+- projected-invalid divisions recovered: 0/8;
+- official division FP increased from 403 to 424;
+- aggregate adjusted edge Jaccard decreased from 0.350810015 to 0.350777724;
+- all 13 previously available positives remained available;
+- source zero perturbation passed 27/27.
+
+No confirmatory shadow, threshold tuning, or production integration is authorized. The result applies
+to the visible post-link rule on Atabey's existing graphs, not to the public notebook's full learned
+U-Net/transformer/ILP pipeline.

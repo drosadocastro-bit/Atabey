@@ -198,6 +198,34 @@ def _write_report(
     zero_perturbation = all(_truthy(row["source_zero_perturbation"]) for row in sample_rows)
     edge_buckets = Counter(str(row["adjusted_edge_delta_bucket"]) for row in sample_rows)
     division_buckets = Counter(str(row["division_delta_bucket"]) for row in sample_rows)
+    route_groups: dict[tuple[str, str], list[dict[str, object]]] = {}
+    for row in sample_rows:
+        route_groups.setdefault(
+            (str(row["source_detector"]), str(row["source_link_strategy"])),
+            [],
+        ).append(row)
+    route_lines = [
+        "| Route | Samples | Proposals | Selected | Division FP baseline | Division FP shadow | Edge I/F/R |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ]
+    for (detector, link_strategy), rows in sorted(route_groups.items()):
+        buckets = Counter(str(row["adjusted_edge_delta_bucket"]) for row in rows)
+        route_lines.append(
+            f"| `{detector}/{link_strategy}` | {len(rows)} | "
+            f"{sum(int(float(str(row['proposal_count']))) for row in rows)} | "
+            f"{sum(int(float(str(row['selected_count']))) for row in rows)} | "
+            f"{sum(int(float(str(row['baseline_division_fp']))) for row in rows)} | "
+            f"{sum(int(float(str(row['shadow_division_fp']))) for row in rows)} | "
+            f"{buckets['improved']}/{buckets['flat']}/{buckets['regressed']} |"
+        )
+    selected_parent_groups = Counter(
+        (str(row["sample_id"]), str(row["parent_id"])) for row in selected
+    )
+    multi_added_parents = [
+        (sample_id, parent_id, count)
+        for (sample_id, parent_id), count in selected_parent_groups.items()
+        if count > 1
+    ]
     complete = (
         completed == EXPECTED_DEVELOPMENT_SAMPLES
         and gt_count == EXPECTED_DEVELOPMENT_DIVISIONS
@@ -261,6 +289,20 @@ def _write_report(
         f"Adjusted-edge per-sample breakdown: improved {edge_buckets['improved']}, flat {edge_buckets['flat']}, regressed {edge_buckets['regressed']}, not comparable {edge_buckets['not_comparable']}.",
         "",
         f"Division per-sample breakdown: improved {division_buckets['improved']}, flat {division_buckets['flat']}, regressed {division_buckets['regressed']}, not comparable {division_buckets['not_comparable']}.",
+        "",
+        "## Route Breakdown",
+        "",
+        *route_lines,
+        "",
+        "Route counts are descriptive, not causal. `Edge I/F/R` means improved/flat/regressed.",
+        "",
+        "## Structural Fidelity",
+        "",
+        f"The exact public rule selected more than one added child for **{len(multi_added_parents)}** parent(s).",
+        "It enforces unique candidate ownership but does not cap each source parent at one added child.",
+        "The patched host consequently warned when a projected parent exceeded two total children and",
+        "retained only two outgoing edges for evaluation. This behavior was preserved rather than fixed",
+        "after outcomes were opened.",
         "",
         "## Availability Contract",
         "",

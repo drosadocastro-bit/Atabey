@@ -93,6 +93,7 @@ the relevant audit before promoting one.
 | V19 | Can watershed localization and bipartite formation improve dense tracking and expose divisions? | Partly. It produced four official division TPs in the corrected bounded audit, but ownership and noise remain unresolved. |
 | V20 | Can a strict kinematic firewall clean division topology? | NO-GO in its current form: it suppressed all four corrected V19 TPs. Earlier FP-reduction claims were invalidated by evaluator mismatch. |
 | V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Partial research result. The joint semantic Phase 0 extractor passed its fixed battery, but the preregistered availability gate failed at 13/46 development and 7/47 calibration positives. Calibrated scoring and constrained assignment are not authorized under the current formation path. |
+| V22 | Can the public notebook's conservative post-link second-child rule improve Atabey division availability? | NO-GO as a standalone transfer: 1,089 selected additions recovered 0 new official TPs, raised official division FP from 403 to 424, and slightly regressed adjusted edge Jaccard. |
 
 ## Start Here
 
@@ -105,7 +106,12 @@ the relevant audit before promoting one.
 - [V21 Semantic Dataset Pre-Registration](V21_SEMANTIC_DATASET_PREREGISTRATION.md): frozen
   development/calibration membership and the positive-availability gate.
 - [V21 Semantic Positive Availability Audit](V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md):
-  full 54-sample prerequisite result and the calibrated-scoring NO-GO.- [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
+  full 54-sample prerequisite result and the calibrated-scoring NO-GO.
+- [V22 Safe-Division Shadow Pre-Registration](V22_SAFE_DIVISION_SHADOW_PREREGISTRATION.md):
+  frozen public-rule transfer, development cohort, and official-metric decision contract.
+- [V22 Safe-Division Shadow Audit](V22_SAFE_DIVISION_SHADOW_AUDIT.md): development-only
+  official outcome and standalone-transfer NO-GO.
+- [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
   adapter design, and parity evidence.

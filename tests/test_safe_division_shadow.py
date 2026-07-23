@@ -129,3 +129,27 @@ def test_safe_division_shadow_global_cap_is_deterministic():
         "selected",
         "global_cap_reached",
     ]
+
+
+def test_safe_division_shadow_faithfully_allows_multiple_additions_per_parent():
+    graph = LineageGraph(
+        "sample",
+        [
+            _d("p", 0, 0.0),
+            _d("a", 1, 1.0),
+            _d("b", 1, 2.0),
+            _d("c", 1, 3.0),
+        ],
+        [LineageEdge("p", "a")],
+    )
+    config = SafeDivisionShadowConfig(
+        frame_fraction_cap=2.0,
+        global_fraction_cap=2.0,
+    )
+
+    shadow = compute_safe_division_shadow(graph, config=config)
+    projected = project_safe_division_shadow(graph, shadow)
+
+    assert shadow.selected_count == 2
+    assert [row.parent_id for row in shadow.candidates if row.selected] == ["p", "p"]
+    assert len([edge for edge in projected.edges if edge.source_id == "p"]) == 3
