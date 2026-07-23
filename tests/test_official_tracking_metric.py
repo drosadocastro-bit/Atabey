@@ -5,7 +5,10 @@ import pytest
 pytest.importorskip("tracking_cellmot")
 pytest.importorskip("tracksdata")
 
-from atabey.evaluation.official_tracking_metric import evaluate_official_tracking
+from atabey.evaluation.official_tracking_metric import (
+    evaluate_official_tracking,
+    summarize_official_tracking,
+)
 from atabey.io.geff_reader import GroundTruthNode, SparseGroundTruthGraph
 from atabey.types import Detection, LineageEdge, LineageGraph
 
@@ -69,3 +72,29 @@ def test_official_tracking_adapter_uses_explicit_node_estimate_override():
     assert result.estimated_total_nodes == 4
     assert result.total_node_ratio == pytest.approx(-0.5)
     assert result.adjusted_edge_jaccard == pytest.approx(1.05)
+
+
+def test_official_tracking_summary_uses_host_edge_denominator_weighting():
+    perfect = evaluate_official_tracking(
+        LineageGraph(
+            "sample",
+            [_d("a", 0, 0.0), _d("b", 1, 0.0)],
+            [LineageEdge("a", "b")],
+        ),
+        _gt(),
+    )
+    penalized = evaluate_official_tracking(
+        LineageGraph(
+            "sample",
+            [_d("a", 0, 0.0), _d("b", 1, 0.0), _d("noise", 0, 100.0)],
+            [LineageEdge("a", "b")],
+        ),
+        _gt(),
+    )
+    summary = summarize_official_tracking([perfect, penalized])
+    assert summary.sample_count == 2
+    assert summary.adjusted_sample_count == 2
+    assert summary.edge_jaccard == pytest.approx(1.0)
+    assert summary.adjusted_edge_jaccard == pytest.approx(0.975)
+    assert summary.node_recall == pytest.approx(1.0)
+    assert summary.score == pytest.approx(0.975)

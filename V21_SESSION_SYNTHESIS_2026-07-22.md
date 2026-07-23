@@ -314,40 +314,47 @@ abstention. It is documented here to prevent conceptual loss, not to authorize i
 
 ## Prioritized Next Steps
 
-### 1. Complete official-evaluator parity inventory
+### 1. Official-evaluator parity inventory - completed 2026-07-23
 
-Highest priority. Audit every remaining local evaluation surface against the current host package.
-Division scoring now has direct parity; do not assume that sparse EdgeRecall or any local edge metric
-is identical to the official adjusted edge Jaccard. Record which metrics are official, approximate,
-diagnostic-only, or missing. Add direct-host adapters and parity tests only where a real gap exists.
+The inventory is complete in
+[OFFICIAL_EVALUATOR_PARITY_INVENTORY.md](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md). Official division,
+per-sample tracking, node-count adjustment, and run-level aggregation now call the pinned host
+directly. The executed host suites pass 39/39 division tests and 44/44 broader metric tests.
 
-Also re-evaluate any surviving division claims only with the official scorer and keep bounded versus
-full-cohort scope explicit.
+Sparse EdgeRecall, sparse node recall, nearest-centroid error, the historical 50/50 quality score,
+multi-source agreement, and the V19 global-greedy matcher are classified as diagnostic or
+experimental rather than competition-equivalent. Surviving division claims remain bounded and use
+the official scorer.
 
-### 2. Design, but do not yet integrate, a joint semantic scorer plus assignment constraint
+### 2. Joint semantic scorer plus assignment constraint design - completed 2026-07-23
 
-Use findings 2-4 to specify a local architecture combining:
+The design and pre-registered validation contract are complete in
+[V21_JOINT_SEMANTIC_ASSIGNMENT_DESIGN.md](V21_JOINT_SEMANTIC_ASSIGNMENT_DESIGN.md).
+The architecture scores parent-centered geometry, daughter continuity/divergence, explicit
+missingness, and only independently validated appearance evidence before applying a local,
+division-capable ownership constraint. Assignment is a safety layer, never a source of semantic
+confidence, and low-margin constraint changes route to abstention.
 
-- parent-centered split geometry;
-- daughter continuity and divergence;
-- validated appearance or mass evidence where available;
-- explicit missing-feature handling and calibrated confidence;
-- local ownership constraints as a safety layer, not as the scorer;
-- division-aware capacity and an abstain/flagged outcome.
+The contract permanently includes the three Hungarian regressions, preserves the four official V19
+TPs, and locks an independent 20-sample/39-division cohort before implementation. This completes the
+design priority only. No scorer, solver, production graph mutation, or submission behavior has been
+implemented or authorized.
 
-The first artifact should be a design and pre-registered validation contract. No production graph
-mutation should occur until the design explains how it avoids the three Hungarian regressions and
-why it addresses an official-metric failure rather than only unsupported candidate noise.
+### 3. Independent CFAR-only Sun Check follow-up - pre-registered 2026-07-23
 
-### 3. Pre-register an independent CFAR-only Sun Check follow-up
+The locked protocol is complete in
+[SUN_CHECK_CFAR_FOLLOWUP_PREREGISTRATION.md](SUN_CHECK_CFAR_FOLLOWUP_PREREGISTRATION.md).
+It fixes a primary cohort of 30 CFAR-routed samples balanced across both families, plus 12
+non-CFAR route controls. Selection used frozen route metadata and deterministic hash ordering before
+opening any Sun Check outcomes.
 
-Lowest of the three priorities because the current signal weakened under within-route analysis.
-Choose independent CFAR samples before inspecting their outcomes, include appropriate non-CFAR
-controls, and test incremental value beyond the existing foreground-density route profile. Continue
-to prohibit image correction and threshold adaptation during this measurement phase.
+The primary endpoint is the official adjusted-edge-Jaccard difference between frozen V19 CFAR and
+V13 adaptive graph copies. The confirmatory test asks whether temporal intensity adds out-of-sample
+value beyond foreground density and component size. No measurement has been run, and no result can
+authorize image correction, threshold adaptation, graph mutation, or production routing.
 
-Vela remains behind these three priorities until it has a precise problem statement and non-overlap
-argument relative to the confidence router.
+Vela remains behind the completed design and pre-registration priorities until it has a precise
+problem statement and non-overlap argument relative to the confidence router.
 
 ## Closed
 
@@ -368,7 +375,7 @@ The following questions or approaches are closed unless new independent evidence
 
 The following remain open research questions:
 
-- whether any local evaluator surfaces besides Division Jaccard still diverge from the official host;
+- how strongly each diagnostic sparse metric correlates with official score on independently held-out samples;
 - why V20 removes each of the four already-correct official V19 forks;
 - how to form and score parent-daughter alternatives without losing correct candidates upstream;
 - whether parent-centered geometry, continuity, appearance, and calibrated uncertainty can jointly
