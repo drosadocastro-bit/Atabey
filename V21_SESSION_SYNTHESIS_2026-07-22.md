@@ -336,9 +336,17 @@ division-capable ownership constraint. Assignment is a safety layer, never a sou
 confidence, and low-margin constraint changes route to abstention.
 
 The contract permanently includes the three Hungarian regressions, preserves the four official V19
-TPs, and locks an independent 20-sample/39-division cohort before implementation. This completes the
-design priority only. No scorer, solver, production graph mutation, or submission behavior has been
-implemented or authorized.
+TPs, and locks an independent 20-sample/39-division cohort before model validation.
+
+Phase 0 raw evidence extraction is now implemented and reported in
+[V21_JOINT_SEMANTIC_PHASE0_AUDIT.md](V21_JOINT_SEMANTIC_PHASE0_AUDIT.md). The fixed battery
+produced 585 abstaining rows and 449 division alternatives; all 14 registered pairs were
+representable, the original four official TPs remained TPs, all three Hungarian regressions
+remained visible and abstaining, and zero perturbation passed 14/14. Projected labels split 7 TP
+and 7 FP, showing that sparse pair identity alone is not a valid binary target.
+
+No semantic score, calibrated confidence, assignment solve, production graph mutation, or submission
+behavior has been implemented or authorized.
 
 ### 3. Independent CFAR-only Sun Check follow-up - pre-registered 2026-07-23
 

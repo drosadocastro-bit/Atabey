@@ -1,7 +1,7 @@
 # V21 Joint Semantic Scorer And Local Assignment Constraint
 
 Date: 2026-07-23
-Status: design and pre-registered validation contract only
+Status: design plus Phase 0 evidence extraction; no semantic scorer or assignment integration
 
 No scorer, solver, graph mutation, production integration, or submission behavior is authorized by
 this document.
@@ -431,6 +431,14 @@ reported separately from official adjusted edge Jaccard.
 
 ## Decision State
 
-The architecture is coherent enough for review, but it is not implemented. The next action is review
-of this design and validation contract. Only after approval may a feature-extraction and scoring
-shadow be built, with the assignment layer still disabled until semantic scoring passes Phase 1.
+The read-only Phase 0 extractor is implemented and validated in
+[V21_JOINT_SEMANTIC_PHASE0_AUDIT.md](V21_JOINT_SEMANTIC_PHASE0_AUDIT.md). Across the fixed
+battery it emitted 585 abstaining evidence rows, represented all 14 registered pairs, preserved
+all four original official V19 TPs, kept all three Hungarian regressions visible without forcing a
+decision, and passed 14/14 source zero-perturbation checks.
+
+The 14 projected pairs split into seven official TPs and seven official FPs in current ownership
+context, confirming that sparse pair identity is not a sufficient training label. No semantic score,
+calibration, assignment solve, or graph integration exists. The next action is to pre-register a
+sample-blocked development/calibration pool outside the locked 20-sample validation cohort, then
+measure whether at least 20 official positive actions are available before fitting any model.
