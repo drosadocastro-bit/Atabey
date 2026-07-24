@@ -67,6 +67,9 @@ def test_official_action_go_requires_all_46_rows():
             ),
             "cohort": "positive_control" if index < 13 else "baseline_unavailable",
             "official_positive_available": index < 20,
+            "division_action_count": 1,
+            "registered_geometric_action_count": 1 if index < 20 else 0,
+            "official_tp_action_count": 1 if index < 20 else 0,
             "source_zero_perturbation": True,
         }
         for index in range(46)

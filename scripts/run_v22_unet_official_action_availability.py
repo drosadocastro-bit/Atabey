@@ -9,6 +9,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+
 
 project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(project_root / "src"))
@@ -125,6 +127,10 @@ def _summarize(
             and not bool(contract["graph_mutation_enabled"])
         ),
     }
+    action_counts = np.asarray(
+        [int(row["division_action_count"]) for row in rows],
+        dtype=float,
+    )
     return {
         "decision": "GO_FOR_SEMANTIC_SCORE_DEVELOPMENT" if all(gates.values()) else "NO_GO",
         "cases": len(rows),
@@ -142,6 +148,16 @@ def _summarize(
             bool(row["official_positive_available"])
             for row in rows
             if row["cohort"] == "baseline_nonofficial_action"
+        ),
+        "division_actions_total": int(action_counts.sum()),
+        "division_actions_median": float(np.median(action_counts)),
+        "division_actions_p90": float(np.percentile(action_counts, 90)),
+        "division_actions_max": int(action_counts.max()),
+        "registered_geometric_actions_total": sum(
+            int(row["registered_geometric_action_count"]) for row in rows
+        ),
+        "official_tp_actions_total": sum(
+            int(row["official_tp_action_count"]) for row in rows
         ),
         "source_zero_perturbation": zero_perturbation,
         "semantic_scoring_enabled": False,
@@ -164,6 +180,12 @@ def _write_report(path: Path, rows: list[dict[str, Any]], summary: dict[str, Any
         f"- Newly available from the unavailable stratum: **{summary['baseline_unavailable_official_positive']}/25**.",
         f"- Official-positive families: **{', '.join(summary['official_positive_families']) or 'none'}**.",
         f"- Source zero perturbation: **{summary['source_zero_perturbation']}**.",
+        f"- Formed division actions: **{summary['division_actions_total']:,}** total; "
+        f"median **{summary['division_actions_median']:.0f}**, "
+        f"p90 **{summary['division_actions_p90']:.0f}**, "
+        f"maximum **{summary['division_actions_max']:,}** per event.",
+        f"- Registered geometric actions confirmed by the patched scorer: "
+        f"**{summary['official_tp_actions_total']}/{summary['registered_geometric_actions_total']}**.",
         "",
         "## Gate Outcomes",
         "",
@@ -186,8 +208,27 @@ def _write_report(path: Path, rows: list[dict[str, Any]], summary: dict[str, Any
             f"{row['registered_geometric_action_count']} | {row['official_tp_action_count']} | "
             f"{row['official_positive_available']} |"
         )
+    failures = [row for row in rows if not bool(row["official_positive_available"])]
     lines.extend(
         [
+            "",
+            "## Unavailable Cases",
+            "",
+            "| Case | Cohort | Baseline status | Formed actions | Registered matches |",
+            "|---|---|---|---:|---:|",
+        ]
+    )
+    for row in failures:
+        lines.append(
+            f"| `{row['case_id']}` | `{row['cohort']}` | `{row['baseline_status']}` | "
+            f"{row['division_action_count']} | {row['registered_geometric_action_count']} |"
+        )
+    lines.extend(
+        [
+            "",
+            "The lost positive control at `t=0` has no prior frame and therefore no V19 `t-1`",
+            "anchor under this pre-registered formation rule. It is a structural anchor limitation,",
+            "not a detector-threshold failure.",
             "",
             "## Interpretation Boundary",
             "",
