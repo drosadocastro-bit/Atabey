@@ -9,6 +9,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+
 
 project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(project_root / "src"))
@@ -73,6 +75,33 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
+def _read_checkpoint(path: Path) -> list[dict[str, Any]]:
+    integer_fields = {
+        "t",
+        "anchor_count",
+        "parent_peak_count",
+        "anchored_parent_count",
+        "division_action_count",
+        "registered_geometric_action_count",
+        "official_tp_action_count",
+    }
+    boolean_fields = {
+        "official_positive_available",
+        "source_zero_perturbation",
+        "semantic_scoring_enabled",
+        "assignment_enabled",
+        "graph_mutated",
+    }
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        rows = list(csv.DictReader(handle))
+    for row in rows:
+        for field in integer_fields:
+            row[field] = int(row[field])
+        for field in boolean_fields:
+            row[field] = str(row[field]).lower() == "true"
+    return rows
+
+
 def _summarize(
     rows: list[dict[str, Any]],
     contract: dict[str, Any],
@@ -98,6 +127,10 @@ def _summarize(
             and not bool(contract["graph_mutation_enabled"])
         ),
     }
+    action_counts = np.asarray(
+        [int(row["division_action_count"]) for row in rows],
+        dtype=float,
+    )
     return {
         "decision": "GO_FOR_SEMANTIC_SCORE_DEVELOPMENT" if all(gates.values()) else "NO_GO",
         "cases": len(rows),
@@ -115,6 +148,16 @@ def _summarize(
             bool(row["official_positive_available"])
             for row in rows
             if row["cohort"] == "baseline_nonofficial_action"
+        ),
+        "division_actions_total": int(action_counts.sum()),
+        "division_actions_median": float(np.median(action_counts)),
+        "division_actions_p90": float(np.percentile(action_counts, 90)),
+        "division_actions_max": int(action_counts.max()),
+        "registered_geometric_actions_total": sum(
+            int(row["registered_geometric_action_count"]) for row in rows
+        ),
+        "official_tp_actions_total": sum(
+            int(row["official_tp_action_count"]) for row in rows
         ),
         "source_zero_perturbation": zero_perturbation,
         "semantic_scoring_enabled": False,
@@ -137,6 +180,12 @@ def _write_report(path: Path, rows: list[dict[str, Any]], summary: dict[str, Any
         f"- Newly available from the unavailable stratum: **{summary['baseline_unavailable_official_positive']}/25**.",
         f"- Official-positive families: **{', '.join(summary['official_positive_families']) or 'none'}**.",
         f"- Source zero perturbation: **{summary['source_zero_perturbation']}**.",
+        f"- Formed division actions: **{summary['division_actions_total']:,}** total; "
+        f"median **{summary['division_actions_median']:.0f}**, "
+        f"p90 **{summary['division_actions_p90']:.0f}**, "
+        f"maximum **{summary['division_actions_max']:,}** per event.",
+        f"- Registered geometric actions confirmed by the patched scorer: "
+        f"**{summary['official_tp_actions_total']}/{summary['registered_geometric_actions_total']}**.",
         "",
         "## Gate Outcomes",
         "",
@@ -159,8 +208,27 @@ def _write_report(path: Path, rows: list[dict[str, Any]], summary: dict[str, Any
             f"{row['registered_geometric_action_count']} | {row['official_tp_action_count']} | "
             f"{row['official_positive_available']} |"
         )
+    failures = [row for row in rows if not bool(row["official_positive_available"])]
     lines.extend(
         [
+            "",
+            "## Unavailable Cases",
+            "",
+            "| Case | Cohort | Baseline status | Formed actions | Registered matches |",
+            "|---|---|---|---:|---:|",
+        ]
+    )
+    for row in failures:
+        lines.append(
+            f"| `{row['case_id']}` | `{row['cohort']}` | `{row['baseline_status']}` | "
+            f"{row['division_action_count']} | {row['registered_geometric_action_count']} |"
+        )
+    lines.extend(
+        [
+            "",
+            "The lost positive control at `t=0` has no prior frame and therefore no V19 `t-1`",
+            "anchor under this pre-registered formation rule. It is a structural anchor limitation,",
+            "not a detector-threshold failure.",
             "",
             "## Interpretation Boundary",
             "",
@@ -201,6 +269,11 @@ def main() -> None:
         type=Path,
         default=project_root / "V22_UNET_OFFICIAL_ACTION_AVAILABILITY_RESULTS.md",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume from the per-sample output CSV checkpoint when present.",
+    )
     args = parser.parse_args()
 
     contract = json.loads(args.contract.read_text(encoding="utf-8-sig"))
@@ -219,9 +292,29 @@ def main() -> None:
     for case in fixture["cases"]:
         cases_by_sample[case["sample_id"]].append(case)
 
-    rows: list[dict[str, Any]] = []
+    rows: list[dict[str, Any]] = (
+        _read_checkpoint(args.output)
+        if args.resume and args.output.exists()
+        else []
+    )
+    completed_case_ids = {row["case_id"] for row in rows}
+    if completed_case_ids:
+        print(
+            f"Resuming from {len(completed_case_ids)} completed cases in {args.output}",
+            flush=True,
+        )
     for sample_index, sample_id in enumerate(sorted(cases_by_sample), start=1):
-        sample_cases = cases_by_sample[sample_id]
+        sample_cases = [
+            case
+            for case in cases_by_sample[sample_id]
+            if case["case_id"] not in completed_case_ids
+        ]
+        if not sample_cases:
+            print(
+                f"[{sample_index}/{len(cases_by_sample)}] {sample_id} checkpoint complete",
+                flush=True,
+            )
+            continue
         max_timepoints = max(int(case["t"]) for case in sample_cases) + 2
         print(
             f"[{sample_index}/{len(cases_by_sample)}] {sample_id} "
@@ -306,8 +399,19 @@ def main() -> None:
             )
         if before != _graph_signature(graph):
             raise RuntimeError(f"{sample_id}: official-action shadow mutated source graph")
+        rows.sort(key=lambda row: row["case_id"])
+        _write_csv(args.output, rows)
+        completed_case_ids.update(case["case_id"] for case in sample_cases)
+        print(
+            f"  checkpoint: {len(rows)}/{contract['expected_cases']} cases",
+            flush=True,
+        )
 
     rows.sort(key=lambda row: row["case_id"])
+    if len(rows) != int(contract["expected_cases"]):
+        raise RuntimeError(
+            f"Incomplete audit: {len(rows)}/{contract['expected_cases']} cases"
+        )
     _write_csv(args.output, rows)
     summary = _summarize(rows, contract)
     args.summary.write_text(

@@ -1,0 +1,32 @@
+{
+  "assignment_enabled": false,
+  "baseline_nonofficial_official_positive": 6,
+  "baseline_unavailable_official_positive": 21,
+  "cases": 46,
+  "decision": "GO_FOR_SEMANTIC_SCORE_DEVELOPMENT",
+  "division_actions_max": 48686,
+  "division_actions_median": 1569.0,
+  "division_actions_p90": 21146.0,
+  "division_actions_total": 268822,
+  "gates": {
+    "complete": true,
+    "families": true,
+    "official_positive_count": true,
+    "positive_controls": true,
+    "shadow_only": true,
+    "zero_perturbation": true
+  },
+  "graph_mutation": false,
+  "official_positive_divisions": 39,
+  "official_positive_families": [
+    "44b6",
+    "6bba"
+  ],
+  "official_tp_actions_total": 64,
+  "positive_controls": 13,
+  "positive_controls_preserved": 12,
+  "registered_geometric_actions_total": 64,
+  "samples": 27,
+  "semantic_scoring_enabled": false,
+  "source_zero_perturbation": true
+}

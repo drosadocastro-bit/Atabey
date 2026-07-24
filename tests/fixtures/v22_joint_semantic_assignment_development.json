@@ -1,0 +1,133 @@
+{
+    "name":  "v22_joint_semantic_assignment_development_v1",
+    "status":  "preregistered_design_only",
+    "source_action_availability_csv":  "v22_unet_official_action_development_46.csv",
+    "source_action_availability_sha256":  "ded32a164be501592e84448cdbcf86a6796661d31c92887b239d03b3b39dbf9b",
+    "source_peak_csv":  "v22_unet_detection_development_46_peaks.csv",
+    "source_peak_sha256":  "58c838d2fa4463c94f75dc0858e7fac239d880c9d91bed006d068e3e6caf1938",
+    "source_contract":  "tests/fixtures/v22_unet_official_action_development_46.json",
+    "source_contract_sha256":  "bbbb8fb647dbb2964ca24e5a66ca166e2e1dc92134ea881343c9717545da6a11",
+    "split_seed":  "v22-semantic-fold-v1",
+    "folds":  [
+                  {
+                      "fold":  1,
+                      "samples":  [
+                                      "44b6_74d0c52e",
+                                      "44b6_aaf8b0ea",
+                                      "6bba_3abfe10a",
+                                      "6bba_3c5691b6",
+                                      "6bba_5c824876",
+                                      "6bba_8b7818bf",
+                                      "6bba_d3da753b",
+                                      "6bba_debd7bfa",
+                                      "6bba_fe670320"
+                                  ],
+                      "registered_events":  15,
+                      "official_positive_events":  13
+                  },
+                  {
+                      "fold":  2,
+                      "samples":  [
+                                      "44b6_706092f0",
+                                      "44b6_c50204e0",
+                                      "6bba_57b7cc1e",
+                                      "6bba_5c039895",
+                                      "6bba_6321a359",
+                                      "6bba_67ebd073",
+                                      "6bba_9e23430b",
+                                      "6bba_d2b9fc0c",
+                                      "6bba_ef7b4f7e"
+                                  ],
+                      "registered_events":  16,
+                      "official_positive_events":  13
+                  },
+                  {
+                      "fold":  3,
+                      "samples":  [
+                                      "44b6_5f15d135",
+                                      "6bba_2312ac41",
+                                      "6bba_2819ca14",
+                                      "6bba_3fda6b25",
+                                      "6bba_7d3058ae",
+                                      "6bba_87289e13",
+                                      "6bba_907271db",
+                                      "6bba_cdcfe533",
+                                      "6bba_fc5f39dc"
+                                  ],
+                      "registered_events":  15,
+                      "official_positive_events":  13
+                  }
+              ],
+    "labels":  {
+                   "positive":  "patched_official_tp",
+                   "negative":  "patched_official_fp_only",
+                   "excluded_from_supervised_loss":  "official_unsupported_or_not_evaluated",
+                   "sparse_absence_is_negative":  false,
+                   "direct_official_scorer_required":  true,
+                   "conflict_negative_cap_per_positive":  64,
+                   "background_negative_hash_sample_per_event":  32
+               },
+    "semantic_model":  {
+                           "primary":  "l2_regularized_pairwise_logistic_ranker",
+                           "nonlinear_model_is_decision_eligible":  false,
+                           "sample_weighting":  "equal_event_weight_then_equal_action_weight",
+                           "missing_features":  "explicit_value_mask_and_reason_stratum",
+                           "appearance_mass_enabled":  false,
+                           "ownership_cost_is_semantic_feature":  false,
+                           "calibration":  "nested_train_fold_platt_with_sampling_weights_on_officially_evaluable_division_actions_only",
+                           "continuation_head":  {
+                                                     "model":  "l2_regularized_pairwise_continuation_ranker",
+                                                     "positive_reference":  "v19_mutual_nearest_single_in_single_out_persistent_3_frames",
+                                                     "exclude_within_frames_of_registered_division":  2,
+                                                     "reference_is_ground_truth":  false,
+                                                     "missing_or_low_margin_outcome":  "abstain"
+                                                 },
+                           "cross_head_alignment":  "nested_train_fold_temperature_and_margin_with_abstention"
+                       },
+    "retrieval":  {
+                      "report_k":  [
+                                       1,
+                                       5,
+                                       10,
+                                       50
+                                   ],
+                      "solver_shortlist_top_per_anchor":  16,
+                      "solver_shortlist_top_per_daughter":  16,
+                      "shortlist_rule":  "union",
+                      "truncation_must_be_logged":  true
+                  },
+    "constraint_layer":  {
+                             "architecture":  "local_coupled_binary_assignment",
+                             "plain_one_to_one_lsap_allowed":  false,
+                             "scope":  "connected_conflict_component_within_one_sample_frame",
+                             "division_consumes_two_daughters_atomically":  true,
+                             "each_anchor_selects_at_most_one_action":  true,
+                             "each_parent_peak_consumed_at_most_once":  true,
+                             "each_daughter_peak_consumed_at_most_once":  true,
+                             "continuation_action_required":  true,
+                             "abstain_action_required":  true,
+                             "assignment_bonus_allowed":  false,
+                             "ground_truth_visible_to_solver":  false,
+                             "source_graph_mutation":  false,
+                             "solver":  "scipy.optimize.milp",
+                             "time_limit_seconds_per_component":  2,
+                             "timeout_outcome":  "abstain"
+                         },
+    "decision_contract":  {
+                              "action_recall_at_50_min":  0.8,
+                              "positive_event_recall_at_50_min":  0.85,
+                              "per_fold_positive_event_recall_at_50_min":  0.7,
+                              "anchorable_positive_controls_at_50_min":  12,
+                              "shortlist_positive_action_retention_min":  0.75,
+                              "ownership_violations_required":  0,
+                              "constraint_tp_event_loss_max":  1,
+                              "constraint_official_jaccard_must_not_regress":  true,
+                              "both_families_required":  true,
+                              "all_source_graphs_zero_perturbation":  true
+                          },
+    "semantic_scoring_enabled":  false,
+    "assignment_enabled":  false,
+    "production_graph_mutation_enabled":  false,
+    "locked_validation_opened":  false,
+    "full_199_authorized":  false
+}
