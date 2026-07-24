@@ -1,0 +1,120 @@
+{
+  "name": "v22_unet_detection_shadow_v1",
+  "selection_rule": "All six 44b6 development divisions, the lexicographically first 6bba development case from each of three availability-failure classes, and the first three 6bba development official-positive controls.",
+  "public_artifact_name": "biohub-tracking-support-pack-400ep-snapshot-v1",
+  "expected_weight_sha256": "12f6881ee3620a831697ca098ff8f48e687a24225f4e048b538deec3562fe771",
+  "official_match_radius_um": 7.0,
+  "det_threshold": 0.97,
+  "pool_kernel_um": 3.0,
+  "tta": "xy_d4_8_view",
+  "cases": [
+    {
+      "case_id": "DEV-44B6-5F15-36",
+      "sample_id": "44b6_5f15d135",
+      "gt_parent_id": 125000000011,
+      "gt_child_ids": [126000000011, 126000000012],
+      "t": 36,
+      "cohort": "target",
+      "baseline_status": "no_parent_detection_within_7um"
+    },
+    {
+      "case_id": "DEV-44B6-7060-49",
+      "sample_id": "44b6_706092f0",
+      "gt_parent_id": 446000000015,
+      "gt_child_ids": [447000000015, 447000000016],
+      "t": 49,
+      "cohort": "target",
+      "baseline_status": "no_parent_detection_within_7um"
+    },
+    {
+      "case_id": "DEV-44B6-74D0-58",
+      "sample_id": "44b6_74d0c52e",
+      "gt_parent_id": 296000000021,
+      "gt_child_ids": [297000000021, 297000000022],
+      "t": 58,
+      "cohort": "target",
+      "baseline_status": "fewer_than_two_daughter_lineages_within_7um"
+    },
+    {
+      "case_id": "DEV-44B6-AAF8-61",
+      "sample_id": "44b6_aaf8b0ea",
+      "gt_parent_id": 390000000000,
+      "gt_child_ids": [391000000000, 391000000001],
+      "t": 61,
+      "cohort": "target",
+      "baseline_status": "no_pair_inside_14um_formation_radius"
+    },
+    {
+      "case_id": "DEV-44B6-C502-28",
+      "sample_id": "44b6_c50204e0",
+      "gt_parent_id": 171000000043,
+      "gt_child_ids": [172000000043, 172000000044],
+      "t": 28,
+      "cohort": "target",
+      "baseline_status": "projected_actions_not_official_tp"
+    },
+    {
+      "case_id": "DEV-44B6-C502-65",
+      "sample_id": "44b6_c50204e0",
+      "gt_parent_id": 208000000033,
+      "gt_child_ids": [209000000033, 209000000034],
+      "t": 65,
+      "cohort": "target",
+      "baseline_status": "projected_actions_not_official_tp"
+    },
+    {
+      "case_id": "DEV-6BBA-2312-PARENT",
+      "sample_id": "6bba_2312ac41",
+      "gt_parent_id": 20000316,
+      "gt_child_ids": [21000329, 21000330],
+      "t": 19,
+      "cohort": "target",
+      "baseline_status": "no_parent_detection_within_7um"
+    },
+    {
+      "case_id": "DEV-6BBA-2312-DAUGHTER",
+      "sample_id": "6bba_2312ac41",
+      "gt_parent_id": 11000190,
+      "gt_child_ids": [12000206, 12000213],
+      "t": 10,
+      "cohort": "target",
+      "baseline_status": "fewer_than_two_daughter_lineages_within_7um"
+    },
+    {
+      "case_id": "DEV-6BBA-7D30-FORMATION",
+      "sample_id": "6bba_7d3058ae",
+      "gt_parent_id": 33000475,
+      "gt_child_ids": [34000492, 34000493],
+      "t": 32,
+      "cohort": "target",
+      "baseline_status": "no_pair_inside_14um_formation_radius"
+    },
+    {
+      "case_id": "DEV-6BBA-2819-CONTROL",
+      "sample_id": "6bba_2819ca14",
+      "gt_parent_id": 62000719,
+      "gt_child_ids": [63000734, 63000735],
+      "t": 61,
+      "cohort": "positive_control",
+      "baseline_status": "official_positive"
+    },
+    {
+      "case_id": "DEV-6BBA-3C56-CONTROL",
+      "sample_id": "6bba_3c5691b6",
+      "gt_parent_id": 23000172,
+      "gt_child_ids": [24000178, 24000183],
+      "t": 22,
+      "cohort": "positive_control",
+      "baseline_status": "official_positive"
+    },
+    {
+      "case_id": "DEV-6BBA-3FDA-CONTROL",
+      "sample_id": "6bba_3fda6b25",
+      "gt_parent_id": 29000542,
+      "gt_child_ids": [30000548, 30000559],
+      "t": 28,
+      "cohort": "positive_control",
+      "baseline_status": "official_positive"
+    }
+  ]
+}

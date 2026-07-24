@@ -140,7 +140,7 @@ fragmentation gate activated on 3/13 samples and abstained on 10/13. The activat
 hard-coded detector route. All four samples containing known official V19 division TPs remained
 inactive, preserving one TP apiece. Every run reported source zero perturbation.
 
-| Keep | Removed nodes | Active-sample weighted adjusted delta | Full-13 weighted adjusted delta | Edge TP delta | Division TP delta | Median active node-recall delta | Decision |
+| Keep | Removed nodes | Active-sample host-weighted adjusted delta | Full-13 host-weighted adjusted delta | Edge TP delta | Division TP delta | Median active node-recall delta | Decision |
 |---:|---:|---:|---:|---:|---:|---:|---|
 | `0.99` | 914 | +0.000211 | +0.000008 | 0 | 0 | -0.00435 | Passes bounded contract |
 | `0.97` | 2,743 | +0.000634 | +0.000024 | 0 | 0 | -0.00435 | Shadow-only GO |
@@ -202,8 +202,8 @@ graphs passed zero-perturbation identity checks.
 | Official division FP | 286 -> 286 |
 | Median activated node-recall delta | -0.00216 |
 | Worst activated node-recall delta | -0.01442 |
-| Active-sample weighted adjusted-edge delta | +0.00831 |
-| Full-20 weighted adjusted-edge delta | +0.00360 |
+| Active-sample host-weighted adjusted-edge delta | +0.00646 |
+| Full-20 host-weighted adjusted-edge delta | +0.00211 |
 
 The independent cohort reproduces the bounded GO contract: adjusted edge Jaccard improved on every
 activated sample, aggregate edge TP did not decline, median node-recall loss remained above the
@@ -285,7 +285,7 @@ perturbation, all four official division TPs were preserved, and no edge TP was 
 |---|---:|---:|
 | Activated samples | 3 | 3 |
 | Removed nodes | 2,743 | 2,743 |
-| Adjusted-edge delta, active weighted | +0.000599 | +0.000599 |
+| Adjusted-edge delta, active host-weighted | +0.000634 | +0.000634 |
 | Edge TP delta | 0 | 0 |
 | Division TP total | 4 -> 4 | 4 -> 4 |
 | Median activated node-recall delta | -0.00435 | -0.01389 |

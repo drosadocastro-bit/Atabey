@@ -1,0 +1,13 @@
+{
+  "decision": "GO_TO_LARGER_SHADOW",
+  "edge_inference_used": false,
+  "graph_mutation": false,
+  "positive_controls": 3,
+  "positive_controls_preserved": 3,
+  "recovered_families": [
+    "44b6",
+    "6bba"
+  ],
+  "target_cases": 9,
+  "target_complete_triplets": 6
+}

@@ -31,6 +31,20 @@ class OfficialTrackingResult:
     score: float | None
 
 
+@dataclass(frozen=True)
+class OfficialTrackingSummary:
+    sample_count: int
+    edge_jaccard: float | None
+    division_jaccard: float | None
+    division_tp: int
+    division_fp: int
+    division_fn: int
+    node_recall: float | None
+    adjusted_edge_jaccard: float | None
+    adjusted_sample_count: int
+    score: float | None
+
+
 def _finite_or_none(value: float) -> float | None:
     return float(value) if math.isfinite(float(value)) else None
 
@@ -108,4 +122,50 @@ def evaluate_official_tracking(
         division_fn=int(official.division_fn),
         division_jaccard=division_jaccard,
         score=score,
+    )
+
+
+def summarize_official_tracking(
+    results: list[OfficialTrackingResult],
+) -> OfficialTrackingSummary:
+    """Call the pinned host's run-level aggregation without local reweighting."""
+    try:
+        from tracking_cellmot.metrics import summarise
+    except ImportError as exc:
+        raise RuntimeError(
+            "The official tracking metric is required. Install Atabey with the "
+            "'official-metrics' extra before running tracking evaluation."
+        ) from exc
+
+    def value_or_nan(value: float | None) -> float:
+        return float("nan") if value is None else float(value)
+
+    rows = [
+        {
+            "edge_tp": result.edge_tp,
+            "edge_fp": result.edge_fp,
+            "edge_fn": result.edge_fn,
+            "division_tp": result.division_tp,
+            "division_fp": result.division_fp,
+            "division_fn": result.division_fn,
+            "num_pred_nodes": result.predicted_nodes,
+            "node_recall": value_or_nan(result.node_recall),
+            "total_node_ratio": value_or_nan(result.total_node_ratio),
+            "edge_jaccard": value_or_nan(result.edge_jaccard),
+            "adj_edge_jaccard": value_or_nan(result.adjusted_edge_jaccard),
+        }
+        for result in results
+    ]
+    summary = summarise(rows)
+    return OfficialTrackingSummary(
+        sample_count=int(summary["n"]),
+        edge_jaccard=_finite_or_none(summary["edge_jaccard"]),
+        division_jaccard=_finite_or_none(summary["division_jaccard"]),
+        division_tp=int(summary["division_tp"]),
+        division_fp=int(summary["division_fp"]),
+        division_fn=int(summary["division_fn"]),
+        node_recall=_finite_or_none(summary["node_recall"]),
+        adjusted_edge_jaccard=_finite_or_none(summary["adj_edge_jaccard"]),
+        adjusted_sample_count=int(summary["n_adj"]),
+        score=_finite_or_none(summary["score"]),
     )

@@ -1,0 +1,20 @@
+{
+  "availability_gate_pass": true,
+  "baseline_nonofficial_cases": 8,
+  "baseline_nonofficial_complete_triplets": 6,
+  "baseline_unavailable_cases": 25,
+  "baseline_unavailable_complete_triplets": 23,
+  "completed_cases": 46,
+  "control_gate_pass": true,
+  "decision": "GO_PENDING_FRAME_INFLATION_AUDIT",
+  "edge_inference_used": false,
+  "expected_cases": 46,
+  "family_gate_pass": true,
+  "graph_mutation": false,
+  "positive_controls": 13,
+  "positive_controls_preserved": 13,
+  "recovered_families": [
+    "44b6",
+    "6bba"
+  ]
+}

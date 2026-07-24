@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import csv
@@ -44,8 +44,11 @@ class V21ShadowRow:
     track_a_zero_perturbation: bool
 
 
-def _build_v19_prefirewall(sample_path: Path, max_timepoints: int | None) -> LineageGraph:
-    graph, *_ = _build_hybrid_graph(
+def _build_v19_prefirewall_with_route(
+    sample_path: Path,
+    max_timepoints: int | None,
+) -> tuple[LineageGraph, str, str]:
+    graph, _profile, detector, link_strategy, _reason, _distance = _build_hybrid_graph(
         sample_path=sample_path,
         max_timepoints=max_timepoints,
         cfar_threshold=defaults.cfar_threshold,
@@ -64,6 +67,14 @@ def _build_v19_prefirewall(sample_path: Path, max_timepoints: int | None) -> Lin
         cfar_max_link_distance_um=defaults.cfar_max_link_distance_um,
         cfar_route_policy=defaults.cfar_route_policy,
         enable_watershed_refinement=True,
+    )
+    return graph, detector, link_strategy
+
+
+def _build_v19_prefirewall(sample_path: Path, max_timepoints: int | None) -> LineageGraph:
+    graph, _detector, _link_strategy = _build_v19_prefirewall_with_route(
+        sample_path,
+        max_timepoints,
     )
     return graph
 

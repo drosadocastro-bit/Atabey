@@ -1,4 +1,4 @@
-# Project Atabey
+﻿# Project Atabey
 
 > Signal processing over brute force. Evidence before conclusions.
 
@@ -42,9 +42,11 @@ The previous claim of approximately 91% official division-FP reduction is withdr
 behind that claim were not evaluable under the sparse official metric. The V20 firewall is closed in
 its current form unless a structural redesign is justified by new evidence.
 
-Separate EdgeRecall and graph-identity findings remain useful diagnostic evidence, but EdgeRecall
-must not be described as the official adjusted edge Jaccard until evaluator parity is established for
-that surface too. The canonical status and full set of preserved and withdrawn claims are recorded in
+Official per-sample and run-level edge/division scoring now call the pinned competition host directly.
+Separate sparse EdgeRecall and graph-identity findings remain useful diagnostic evidence, but they are
+explicitly non-equivalent to official adjusted edge Jaccard. The complete classification is recorded
+in [OFFICIAL_EVALUATOR_PARITY_INVENTORY.md](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md); the canonical
+research status and full set of preserved and withdrawn claims remain in
 [V21_SESSION_SYNTHESIS_2026-07-22.md](V21_SESSION_SYNTHESIS_2026-07-22.md).
 
 ## Design Principles
@@ -90,12 +92,27 @@ the relevant audit before promoting one.
 | V14-V18 | Can CFAR, kinematics, and shadow advisers improve difficult local detections? | Mixed. Several useful diagnostics survived, while literal radar transfers and some learned/shadow mechanisms failed their bounded gates. |
 | V19 | Can watershed localization and bipartite formation improve dense tracking and expose divisions? | Partly. It produced four official division TPs in the corrected bounded audit, but ownership and noise remain unresolved. |
 | V20 | Can a strict kinematic firewall clean division topology? | NO-GO in its current form: it suppressed all four corrected V19 TPs. Earlier FP-reduction claims were invalidated by evaluator mismatch. |
-| V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Active research. Track B ranking and standalone Hungarian/continuity selectors are NO-GO; a richer scorer with assignment as a constraint remains a design hypothesis, not an implementation result. |
+| V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Partial research result. The joint semantic Phase 0 extractor passed its fixed battery, but the preregistered availability gate failed at 13/46 development and 7/47 calibration positives. Calibrated scoring and constrained assignment are not authorized under the current formation path. |
+| V22 | Can the public notebook's conservative post-link second-child rule improve Atabey division availability? | NO-GO as a standalone transfer: 1,089 selected additions recovered 0 new official TPs, raised official division FP from 403 to 424, and slightly regressed adjusted edge Jaccard. |
 
 ## Start Here
 
 - [V21 Session Synthesis](V21_SESSION_SYNTHESIS_2026-07-22.md): canonical current state,
   corrected evidence, open questions, and priorities.
+- [V21 Joint Semantic Scorer and Assignment Design](V21_JOINT_SEMANTIC_ASSIGNMENT_DESIGN.md):
+  shadow-only architecture, abstention rules, and locked validation contract.
+- [V21 Joint Semantic Phase 0 Audit](V21_JOINT_SEMANTIC_PHASE0_AUDIT.md): raw evidence
+  extraction, official projected labels, route provenance, and zero-perturbation results.
+- [V21 Semantic Dataset Pre-Registration](V21_SEMANTIC_DATASET_PREREGISTRATION.md): frozen
+  development/calibration membership and the positive-availability gate.
+- [V21 Semantic Positive Availability Audit](V21_SEMANTIC_POSITIVE_AVAILABILITY_AUDIT.md):
+  full 54-sample prerequisite result and the calibrated-scoring NO-GO.
+- [V22 Safe-Division Shadow Pre-Registration](V22_SAFE_DIVISION_SHADOW_PREREGISTRATION.md):
+  frozen public-rule transfer, development cohort, and official-metric decision contract.
+- [V22 Safe-Division Shadow Audit](V22_SAFE_DIVISION_SHADOW_AUDIT.md): development-only
+  official outcome and standalone-transfer NO-GO.
+- [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
+  classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
   adapter design, and parity evidence.
 - [V21 Division Recovery Track](V21_DIVISION_RECOVERY_TRACK.md): Track A/Track B history and
@@ -106,6 +123,8 @@ the relevant audit before promoting one.
   cannot resolve.
 - [Sun Check Bounded Audit](ATABEY_SUN_CHECK_BOUNDED_AUDIT.md): microscopy QC/routing analogy,
   confounding result, and correction guardrails.
+- [Independent CFAR-Only Sun Check Follow-Up](SUN_CHECK_CFAR_FOLLOWUP_PREREGISTRATION.md):
+  locked cohort, official-metric endpoint, and pre-registered decision rules.
 - [Adversarial Battery](ATABEY_ADVERSARIAL_BATTERY.md): fixed cases that future changes must face
   before expensive cohort runs.
 - [Radar Concepts and Atabey](docs/RADAR_CONCEPTS_AND_ATABEY.md): conceptual transfers and their
