@@ -179,11 +179,78 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
-def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
+def _is_true(value: object) -> bool:
+    return value is True or str(value).lower() == "true"
+
+
+def _summary(
+    rows: list[dict[str, Any]],
+    fixture: dict[str, Any],
+) -> dict[str, Any]:
+    expected_cases = len(fixture["cases"])
+    if any(row["cohort"] == "baseline_unavailable" for row in rows):
+        unavailable = [
+            row for row in rows if row["cohort"] == "baseline_unavailable"
+        ]
+        nonofficial = [
+            row
+            for row in rows
+            if row["cohort"] == "baseline_nonofficial_action"
+        ]
+        controls = [
+            row for row in rows if row["cohort"] == "positive_control"
+        ]
+        recovered = [
+            row for row in unavailable if _is_true(row["complete_triplet"])
+        ]
+        preserved = [
+            row for row in controls if _is_true(row["complete_triplet"])
+        ]
+        recovered_families = sorted(
+            {str(row["sample_id"]).split("_", 1)[0] for row in recovered}
+        )
+        contract = fixture["decision_contract"]
+        availability_pass = len(recovered) >= int(
+            contract["baseline_unavailable_min_complete"]
+        )
+        control_pass = len(preserved) >= int(
+            contract["positive_control_min_preserved"]
+        )
+        family_pass = recovered_families == sorted(
+            contract["required_recovered_families"]
+        )
+        complete = len(rows) == expected_cases
+        go = complete and availability_pass and control_pass and family_pass
+        return {
+            "decision": (
+                "GO_PENDING_FRAME_INFLATION_AUDIT"
+                if go
+                else "IN_PROGRESS"
+                if not complete
+                else "NO_GO"
+            ),
+            "completed_cases": len(rows),
+            "expected_cases": expected_cases,
+            "baseline_unavailable_complete_triplets": len(recovered),
+            "baseline_unavailable_cases": len(unavailable),
+            "baseline_nonofficial_complete_triplets": sum(
+                _is_true(row["complete_triplet"]) for row in nonofficial
+            ),
+            "baseline_nonofficial_cases": len(nonofficial),
+            "positive_controls_preserved": len(preserved),
+            "positive_controls": len(controls),
+            "recovered_families": recovered_families,
+            "availability_gate_pass": availability_pass,
+            "control_gate_pass": control_pass,
+            "family_gate_pass": family_pass,
+            "graph_mutation": False,
+            "edge_inference_used": False,
+        }
+
     targets = [row for row in rows if row["cohort"] == "target"]
     controls = [row for row in rows if row["cohort"] == "positive_control"]
-    recovered = [row for row in targets if row["complete_triplet"]]
-    preserved = [row for row in controls if row["complete_triplet"]]
+    recovered = [row for row in targets if _is_true(row["complete_triplet"])]
+    preserved = [row for row in controls if _is_true(row["complete_triplet"])]
     recovered_families = sorted(
         {str(row["sample_id"]).split("_", 1)[0] for row in recovered}
     )
@@ -322,7 +389,7 @@ def main() -> None:
 
     rows.sort(key=lambda row: row["case_id"])
     _write_csv(args.output_csv, rows)
-    summary = _summary(rows)
+    summary = _summary(rows, fixture)
     args.output_summary.write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",

@@ -1,0 +1,851 @@
+{
+    "name":  "v22_unet_detection_development_46_v1",
+    "selection_rule":  "All 46 GT divisions from the frozen V21 development split; no calibration or locked validation samples.",
+    "source_csv":  "v21_semantic_positive_availability.csv",
+    "public_artifact_name":  "biohub-tracking-support-pack-400ep-snapshot-v1",
+    "expected_weight_sha256":  "12f6881ee3620a831697ca098ff8f48e687a24225f4e048b538deec3562fe771",
+    "official_match_radius_um":  7,
+    "det_threshold":  0.97,
+    "pool_kernel_um":  3,
+    "tta":  "xy_d4_8_view",
+    "decision_contract":  {
+                              "baseline_unavailable_min_complete":  13,
+                              "positive_control_min_preserved":  12,
+                              "required_recovered_families":  [
+                                                                  "44b6",
+                                                                  "6bba"
+                                                              ],
+                              "frame_peak_ratio_median_max":  2,
+                              "frame_peak_ratio_p90_max":  3
+                          },
+    "cases":  [
+                  {
+                      "case_id":  "DEV-44b6_5f15d135-t36-p125000000011",
+                      "sample_id":  "44b6_5f15d135",
+                      "gt_parent_id":  125000000011,
+                      "gt_child_ids":  [
+                                           126000000011,
+                                           126000000012
+                                       ],
+                      "t":  36,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             2,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-44b6_706092f0-t49-p446000000015",
+                      "sample_id":  "44b6_706092f0",
+                      "gt_parent_id":  446000000015,
+                      "gt_child_ids":  [
+                                           447000000015,
+                                           447000000016
+                                       ],
+                      "t":  49,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-44b6_74d0c52e-t58-p296000000021",
+                      "sample_id":  "44b6_74d0c52e",
+                      "gt_parent_id":  296000000021,
+                      "gt_child_ids":  [
+                                           297000000021,
+                                           297000000022
+                                       ],
+                      "t":  58,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             0,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-44b6_aaf8b0ea-t61-p390000000000",
+                      "sample_id":  "44b6_aaf8b0ea",
+                      "gt_parent_id":  390000000000,
+                      "gt_child_ids":  [
+                                           391000000000,
+                                           391000000001
+                                       ],
+                      "t":  61,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_pair_inside_14um_formation_radius",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-44b6_c50204e0-t28-p171000000043",
+                      "sample_id":  "44b6_c50204e0",
+                      "gt_parent_id":  171000000043,
+                      "gt_child_ids":  [
+                                           172000000043,
+                                           172000000044
+                                       ],
+                      "t":  28,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  4,
+                      "baseline_role_candidate_counts":  [
+                                                             2,
+                                                             2,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-44b6_c50204e0-t65-p208000000033",
+                      "sample_id":  "44b6_c50204e0",
+                      "gt_parent_id":  208000000033,
+                      "gt_child_ids":  [
+                                           209000000033,
+                                           209000000034
+                                       ],
+                      "t":  65,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_2312ac41-t10-p11000190",
+                      "sample_id":  "6bba_2312ac41",
+                      "gt_parent_id":  11000190,
+                      "gt_child_ids":  [
+                                           12000206,
+                                           12000213
+                                       ],
+                      "t":  10,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             0,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_2312ac41-t19-p20000316",
+                      "sample_id":  "6bba_2312ac41",
+                      "gt_parent_id":  20000316,
+                      "gt_child_ids":  [
+                                           21000329,
+                                           21000330
+                                       ],
+                      "t":  19,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_2819ca14-t61-p62000719",
+                      "sample_id":  "6bba_2819ca14",
+                      "gt_parent_id":  62000719,
+                      "gt_child_ids":  [
+                                           63000734,
+                                           63000735
+                                       ],
+                      "t":  61,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_3abfe10a-t81-p82001296",
+                      "sample_id":  "6bba_3abfe10a",
+                      "gt_parent_id":  82001296,
+                      "gt_child_ids":  [
+                                           83001334,
+                                           83001350
+                                       ],
+                      "t":  81,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_3c5691b6-t6-p7000054",
+                      "sample_id":  "6bba_3c5691b6",
+                      "gt_parent_id":  7000054,
+                      "gt_child_ids":  [
+                                           8000066,
+                                           8000067
+                                       ],
+                      "t":  6,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             0,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_3c5691b6-t22-p23000172",
+                      "sample_id":  "6bba_3c5691b6",
+                      "gt_parent_id":  23000172,
+                      "gt_child_ids":  [
+                                           24000178,
+                                           24000183
+                                       ],
+                      "t":  22,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  3,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             3
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_3fda6b25-t28-p29000542",
+                      "sample_id":  "6bba_3fda6b25",
+                      "gt_parent_id":  29000542,
+                      "gt_child_ids":  [
+                                           30000548,
+                                           30000559
+                                       ],
+                      "t":  28,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_57b7cc1e-t12-p13000378",
+                      "sample_id":  "6bba_57b7cc1e",
+                      "gt_parent_id":  13000378,
+                      "gt_child_ids":  [
+                                           14000412,
+                                           14000426
+                                       ],
+                      "t":  12,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  18,
+                      "baseline_role_candidate_counts":  [
+                                                             2,
+                                                             3,
+                                                             3
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_57b7cc1e-t23-p24000720",
+                      "sample_id":  "6bba_57b7cc1e",
+                      "gt_parent_id":  24000720,
+                      "gt_child_ids":  [
+                                           25000750,
+                                           25000751
+                                       ],
+                      "t":  23,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             0,
+                                                             2
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_57b7cc1e-t77-p78002270",
+                      "sample_id":  "6bba_57b7cc1e",
+                      "gt_parent_id":  78002270,
+                      "gt_child_ids":  [
+                                           79002293,
+                                           79002316
+                                       ],
+                      "t":  77,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             0,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_5c039895-t10-p11000170",
+                      "sample_id":  "6bba_5c039895",
+                      "gt_parent_id":  11000170,
+                      "gt_child_ids":  [
+                                           12000185,
+                                           12000186
+                                       ],
+                      "t":  10,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  4,
+                      "baseline_role_candidate_counts":  [
+                                                             4,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_5c039895-t52-p53000762",
+                      "sample_id":  "6bba_5c039895",
+                      "gt_parent_id":  53000762,
+                      "gt_child_ids":  [
+                                           54000765,
+                                           54000776
+                                       ],
+                      "t":  52,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             1,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_5c039895-t58-p59000855",
+                      "sample_id":  "6bba_5c039895",
+                      "gt_parent_id":  59000855,
+                      "gt_child_ids":  [
+                                           60000873,
+                                           60000878
+                                       ],
+                      "t":  58,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_5c824876-t2-p3000057",
+                      "sample_id":  "6bba_5c824876",
+                      "gt_parent_id":  3000057,
+                      "gt_child_ids":  [
+                                           4000073,
+                                           4000074
+                                       ],
+                      "t":  2,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             0,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_6321a359-t8-p9000094",
+                      "sample_id":  "6bba_6321a359",
+                      "gt_parent_id":  9000094,
+                      "gt_child_ids":  [
+                                           10000105,
+                                           10000106
+                                       ],
+                      "t":  8,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_67ebd073-t86-p87000772",
+                      "sample_id":  "6bba_67ebd073",
+                      "gt_parent_id":  87000772,
+                      "gt_child_ids":  [
+                                           88000778,
+                                           88000779
+                                       ],
+                      "t":  86,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_7d3058ae-t32-p33000475",
+                      "sample_id":  "6bba_7d3058ae",
+                      "gt_parent_id":  33000475,
+                      "gt_child_ids":  [
+                                           34000492,
+                                           34000493
+                                       ],
+                      "t":  32,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_pair_inside_14um_formation_radius",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             2,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_7d3058ae-t83-p84001401",
+                      "sample_id":  "6bba_7d3058ae",
+                      "gt_parent_id":  84001401,
+                      "gt_child_ids":  [
+                                           85001403,
+                                           85001421
+                                       ],
+                      "t":  83,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_87289e13-t77-p78001026",
+                      "sample_id":  "6bba_87289e13",
+                      "gt_parent_id":  78001026,
+                      "gt_child_ids":  [
+                                           79001049,
+                                           79001050
+                                       ],
+                      "t":  77,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_8b7818bf-t3-p4000023",
+                      "sample_id":  "6bba_8b7818bf",
+                      "gt_parent_id":  4000023,
+                      "gt_child_ids":  [
+                                           5000029,
+                                           5000030
+                                       ],
+                      "t":  3,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_8b7818bf-t33-p34000238",
+                      "sample_id":  "6bba_8b7818bf",
+                      "gt_parent_id":  34000238,
+                      "gt_child_ids":  [
+                                           35000244,
+                                           35000245
+                                       ],
+                      "t":  33,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             0,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_907271db-t96-p97001173",
+                      "sample_id":  "6bba_907271db",
+                      "gt_parent_id":  97001173,
+                      "gt_child_ids":  [
+                                           98001189,
+                                           98001190
+                                       ],
+                      "t":  96,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             0,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_9e23430b-t89-p90001032",
+                      "sample_id":  "6bba_9e23430b",
+                      "gt_parent_id":  90001032,
+                      "gt_child_ids":  [
+                                           91001045,
+                                           91001046
+                                       ],
+                      "t":  89,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_cdcfe533-t28-p29000464",
+                      "sample_id":  "6bba_cdcfe533",
+                      "gt_parent_id":  29000464,
+                      "gt_child_ids":  [
+                                           30000479,
+                                           30000480
+                                       ],
+                      "t":  28,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_cdcfe533-t48-p49000935",
+                      "sample_id":  "6bba_cdcfe533",
+                      "gt_parent_id":  49000935,
+                      "gt_child_ids":  [
+                                           50000962,
+                                           50000963
+                                       ],
+                      "t":  48,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_cdcfe533-t52-p53001039",
+                      "sample_id":  "6bba_cdcfe533",
+                      "gt_parent_id":  53001039,
+                      "gt_child_ids":  [
+                                           54001078,
+                                           54001079
+                                       ],
+                      "t":  52,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             2,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_cdcfe533-t86-p87002049",
+                      "sample_id":  "6bba_cdcfe533",
+                      "gt_parent_id":  87002049,
+                      "gt_child_ids":  [
+                                           88002083,
+                                           88002084
+                                       ],
+                      "t":  86,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             0,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_d2b9fc0c-t72-p73000666",
+                      "sample_id":  "6bba_d2b9fc0c",
+                      "gt_parent_id":  73000666,
+                      "gt_child_ids":  [
+                                           74000680,
+                                           74000687
+                                       ],
+                      "t":  72,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_d2b9fc0c-t78-p79000759",
+                      "sample_id":  "6bba_d2b9fc0c",
+                      "gt_parent_id":  79000759,
+                      "gt_child_ids":  [
+                                           80000776,
+                                           80000779
+                                       ],
+                      "t":  78,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             2,
+                                                             0,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_d3da753b-t63-p64000722",
+                      "sample_id":  "6bba_d3da753b",
+                      "gt_parent_id":  64000722,
+                      "gt_child_ids":  [
+                                           65000738,
+                                           65000748
+                                       ],
+                      "t":  63,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_debd7bfa-t12-p13000353",
+                      "sample_id":  "6bba_debd7bfa",
+                      "gt_parent_id":  13000353,
+                      "gt_child_ids":  [
+                                           14000376,
+                                           14000377
+                                       ],
+                      "t":  12,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_debd7bfa-t26-p27000673",
+                      "sample_id":  "6bba_debd7bfa",
+                      "gt_parent_id":  27000673,
+                      "gt_child_ids":  [
+                                           28000692,
+                                           28000693
+                                       ],
+                      "t":  26,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  2,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             2
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_debd7bfa-t36-p37000853",
+                      "sample_id":  "6bba_debd7bfa",
+                      "gt_parent_id":  37000853,
+                      "gt_child_ids":  [
+                                           38000871,
+                                           38000872
+                                       ],
+                      "t":  36,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             0,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_debd7bfa-t37-p38000863",
+                      "sample_id":  "6bba_debd7bfa",
+                      "gt_parent_id":  38000863,
+                      "gt_child_ids":  [
+                                           39000897,
+                                           39000898
+                                       ],
+                      "t":  37,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_ef7b4f7e-t14-p15000245",
+                      "sample_id":  "6bba_ef7b4f7e",
+                      "gt_parent_id":  15000245,
+                      "gt_child_ids":  [
+                                           16000264,
+                                           16000265
+                                       ],
+                      "t":  14,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "no_parent_detection_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_ef7b4f7e-t89-p90001375",
+                      "sample_id":  "6bba_ef7b4f7e",
+                      "gt_parent_id":  90001375,
+                      "gt_child_ids":  [
+                                           91001391,
+                                           91001392
+                                       ],
+                      "t":  89,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             0
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_fc5f39dc-t24-p25000064",
+                      "sample_id":  "6bba_fc5f39dc",
+                      "gt_parent_id":  25000064,
+                      "gt_child_ids":  [
+                                           26000067,
+                                           26000068
+                                       ],
+                      "t":  24,
+                      "cohort":  "baseline_unavailable",
+                      "baseline_status":  "fewer_than_two_daughter_lineages_within_7um",
+                      "baseline_candidate_action_count":  0,
+                      "baseline_role_candidate_counts":  [
+                                                             2,
+                                                             0,
+                                                             2
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_fc5f39dc-t54-p55000245",
+                      "sample_id":  "6bba_fc5f39dc",
+                      "gt_parent_id":  55000245,
+                      "gt_child_ids":  [
+                                           56000255,
+                                           56000256
+                                       ],
+                      "t":  54,
+                      "cohort":  "baseline_nonofficial_action",
+                      "baseline_status":  "projected_actions_not_official_tp",
+                      "baseline_candidate_action_count":  2,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             2,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_fe670320-t0-p1000014",
+                      "sample_id":  "6bba_fe670320",
+                      "gt_parent_id":  1000014,
+                      "gt_child_ids":  [
+                                           2000029,
+                                           2000030
+                                       ],
+                      "t":  0,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  },
+                  {
+                      "case_id":  "DEV-6bba_fe670320-t66-p67000712",
+                      "sample_id":  "6bba_fe670320",
+                      "gt_parent_id":  67000712,
+                      "gt_child_ids":  [
+                                           68000720,
+                                           68000721
+                                       ],
+                      "t":  66,
+                      "cohort":  "positive_control",
+                      "baseline_status":  "official_positive",
+                      "baseline_candidate_action_count":  1,
+                      "baseline_role_candidate_counts":  [
+                                                             1,
+                                                             1,
+                                                             1
+                                                         ]
+                  }
+              ]
+}
