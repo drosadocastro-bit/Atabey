@@ -73,6 +73,33 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
+def _read_checkpoint(path: Path) -> list[dict[str, Any]]:
+    integer_fields = {
+        "t",
+        "anchor_count",
+        "parent_peak_count",
+        "anchored_parent_count",
+        "division_action_count",
+        "registered_geometric_action_count",
+        "official_tp_action_count",
+    }
+    boolean_fields = {
+        "official_positive_available",
+        "source_zero_perturbation",
+        "semantic_scoring_enabled",
+        "assignment_enabled",
+        "graph_mutated",
+    }
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        rows = list(csv.DictReader(handle))
+    for row in rows:
+        for field in integer_fields:
+            row[field] = int(row[field])
+        for field in boolean_fields:
+            row[field] = str(row[field]).lower() == "true"
+    return rows
+
+
 def _summarize(
     rows: list[dict[str, Any]],
     contract: dict[str, Any],
@@ -201,6 +228,11 @@ def main() -> None:
         type=Path,
         default=project_root / "V22_UNET_OFFICIAL_ACTION_AVAILABILITY_RESULTS.md",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume from the per-sample output CSV checkpoint when present.",
+    )
     args = parser.parse_args()
 
     contract = json.loads(args.contract.read_text(encoding="utf-8-sig"))
@@ -219,9 +251,29 @@ def main() -> None:
     for case in fixture["cases"]:
         cases_by_sample[case["sample_id"]].append(case)
 
-    rows: list[dict[str, Any]] = []
+    rows: list[dict[str, Any]] = (
+        _read_checkpoint(args.output)
+        if args.resume and args.output.exists()
+        else []
+    )
+    completed_case_ids = {row["case_id"] for row in rows}
+    if completed_case_ids:
+        print(
+            f"Resuming from {len(completed_case_ids)} completed cases in {args.output}",
+            flush=True,
+        )
     for sample_index, sample_id in enumerate(sorted(cases_by_sample), start=1):
-        sample_cases = cases_by_sample[sample_id]
+        sample_cases = [
+            case
+            for case in cases_by_sample[sample_id]
+            if case["case_id"] not in completed_case_ids
+        ]
+        if not sample_cases:
+            print(
+                f"[{sample_index}/{len(cases_by_sample)}] {sample_id} checkpoint complete",
+                flush=True,
+            )
+            continue
         max_timepoints = max(int(case["t"]) for case in sample_cases) + 2
         print(
             f"[{sample_index}/{len(cases_by_sample)}] {sample_id} "
@@ -306,8 +358,19 @@ def main() -> None:
             )
         if before != _graph_signature(graph):
             raise RuntimeError(f"{sample_id}: official-action shadow mutated source graph")
+        rows.sort(key=lambda row: row["case_id"])
+        _write_csv(args.output, rows)
+        completed_case_ids.update(case["case_id"] for case in sample_cases)
+        print(
+            f"  checkpoint: {len(rows)}/{contract['expected_cases']} cases",
+            flush=True,
+        )
 
     rows.sort(key=lambda row: row["case_id"])
+    if len(rows) != int(contract["expected_cases"]):
+        raise RuntimeError(
+            f"Incomplete audit: {len(rows)}/{contract['expected_cases']} cases"
+        )
     _write_csv(args.output, rows)
     summary = _summarize(rows, contract)
     args.summary.write_text(

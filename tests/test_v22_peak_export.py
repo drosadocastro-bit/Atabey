@@ -9,7 +9,7 @@ if str(scripts_dir) not in sys.path:
     sys.path.insert(0, str(scripts_dir))
 
 from run_v22_unet_detection_shadow import _peak_rows
-from run_v22_unet_official_action_availability import _summarize
+from run_v22_unet_official_action_availability import _read_checkpoint, _summarize
 
 
 def test_peak_export_is_deterministic_across_frame_and_coordinate_order():
@@ -76,3 +76,22 @@ def test_official_action_go_requires_all_46_rows():
     partial = _summarize(rows[:20], contract)
     assert partial["gates"]["complete"] is False
     assert partial["decision"] == "NO_GO"
+
+def test_checkpoint_reader_restores_numeric_and_boolean_types(tmp_path):
+    checkpoint = tmp_path / "checkpoint.csv"
+    checkpoint.write_text(
+        "case_id,sample_id,t,anchor_count,parent_peak_count,anchored_parent_count,"
+        "division_action_count,registered_geometric_action_count,official_tp_action_count,"
+        "official_positive_available,source_zero_perturbation,semantic_scoring_enabled,"
+        "assignment_enabled,graph_mutated\n"
+        "case,sample,2,3,4,2,5,1,1,True,True,False,False,False\n",
+        encoding="utf-8",
+    )
+
+    row = _read_checkpoint(checkpoint)[0]
+
+    assert row["t"] == 2
+    assert row["division_action_count"] == 5
+    assert row["official_positive_available"] is True
+    assert row["semantic_scoring_enabled"] is False
+    assert row["graph_mutated"] is False
