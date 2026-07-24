@@ -1,0 +1,28 @@
+{
+  "baseline_nonofficial_cases": 8,
+  "baseline_nonofficial_complete_triplets": 6,
+  "baseline_unavailable_cases": 25,
+  "baseline_unavailable_complete_triplets": 23,
+  "cases": 46,
+  "decision": "GO",
+  "edge_inference_used": false,
+  "frame_peak_ratio_median": 1.2,
+  "frame_peak_ratio_p90": 1.7254901960784315,
+  "gates": {
+    "availability": true,
+    "controls": true,
+    "families": true,
+    "frame_ratio_median": true,
+    "frame_ratio_p90": true,
+    "zero_perturbation": true
+  },
+  "graph_mutation": false,
+  "positive_controls": 13,
+  "positive_controls_preserved": 13,
+  "recovered_families": [
+    "44b6",
+    "6bba"
+  ],
+  "samples": 27,
+  "unique_event_frames": 91
+}
