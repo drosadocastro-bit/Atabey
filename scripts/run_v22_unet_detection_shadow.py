@@ -40,38 +40,45 @@ def _load_public_predict_module(support_repo: Path):
 def _d4_detection_logits(model, images, torch):
     """Match the public 0.902 notebook's eight-view spatial TTA."""
 
-    _, logits = model.encode(images)
-    view_count = 1
+    with torch.inference_mode():
+        _, logits = model.encode(images)
+        view_count = 1
 
-    for dims in [(-1,), (-2,), (-2, -1)]:
-        _, transformed = model.encode(images.flip(dims))
+        for dims in [(-1,), (-2,), (-2, -1)]:
+            _, transformed = model.encode(images.flip(dims))
+            for frame_index in range(len(logits)):
+                logits[frame_index] += transformed[frame_index].flip(dims)
+            del transformed
+            view_count += 1
+
+        for quarter_turns in (1, 3):
+            rotated_images = torch.rot90(images, quarter_turns, dims=(-2, -1))
+            _, transformed = model.encode(rotated_images)
+            for frame_index in range(len(logits)):
+                logits[frame_index] += torch.rot90(
+                    transformed[frame_index], -quarter_turns, dims=(-2, -1)
+                )
+            del rotated_images, transformed
+            view_count += 1
+
+        transposed_images = images.transpose(-1, -2)
+        _, transformed = model.encode(transposed_images)
         for frame_index in range(len(logits)):
-            logits[frame_index] += transformed[frame_index].flip(dims)
+            logits[frame_index] += transformed[frame_index].transpose(-1, -2)
+        del transposed_images, transformed
         view_count += 1
 
-    for quarter_turns in (1, 3):
-        rotated_images = torch.rot90(images, quarter_turns, dims=(-2, -1))
-        _, transformed = model.encode(rotated_images)
+        anti_transposed_images = torch.rot90(images, 1, dims=(-2, -1)).transpose(
+            -1, -2
+        )
+        _, transformed = model.encode(anti_transposed_images)
         for frame_index in range(len(logits)):
-            logits[frame_index] += torch.rot90(
-                transformed[frame_index], -quarter_turns, dims=(-2, -1)
-            )
+            restored = transformed[frame_index].transpose(-1, -2)
+            logits[frame_index] += torch.rot90(restored, -1, dims=(-2, -1))
+        del anti_transposed_images, transformed
         view_count += 1
 
-    transposed_images = images.transpose(-1, -2)
-    _, transformed = model.encode(transposed_images)
-    for frame_index in range(len(logits)):
-        logits[frame_index] += transformed[frame_index].transpose(-1, -2)
-    view_count += 1
-
-    anti_transposed_images = torch.rot90(images, 1, dims=(-2, -1)).transpose(-1, -2)
-    _, transformed = model.encode(anti_transposed_images)
-    for frame_index in range(len(logits)):
-        restored = transformed[frame_index].transpose(-1, -2)
-        logits[frame_index] += torch.rot90(restored, -1, dims=(-2, -1))
-    view_count += 1
-
-    return [frame_logits / view_count for frame_logits in logits]
+        return [frame_logits / view_count for frame_logits in logits]
 
 
 def _predict_event_frames(
@@ -96,7 +103,7 @@ def _predict_event_frames(
     zarr_array = zarr.open_group(str(dataset.zarr_path), mode="r")["0"]
     target_shape = list(dataset.image_shape[1:])
 
-    def infer_window(start_t: int):
+    def infer_window_frame(start_t: int, frame_index: int):
         images = torch.stack(
             [
                 public_module._load_frame(
@@ -107,15 +114,10 @@ def _predict_event_frames(
         )
         images = ((images - q_low) / (q_high - q_low + 1e-6)).clamp(0.0)
         images = images.unsqueeze(0).to(device)
-        return _d4_detection_logits(model, images, torch)
-
-    if parent_t == 0:
-        daughter_window_logits = infer_window(0)
-        role_logits = [daughter_window_logits[0], daughter_window_logits[1]]
-    else:
-        parent_window_logits = infer_window(parent_t - 1)
-        daughter_window_logits = infer_window(parent_t)
-        role_logits = [parent_window_logits[1], daughter_window_logits[1]]
+        logits = _d4_detection_logits(model, images, torch)
+        selected = logits[frame_index]
+        del images, logits
+        return selected
 
     voxel_size = tuple(
         float(spacing) * factor
@@ -125,20 +127,20 @@ def _predict_event_frames(
         pool_kernel_um, voxel_size
     )
 
-    peaks: list[DetectionPeak] = []
-    for frame_index, t in enumerate((parent_t, parent_t + 1)):
+    def extract_peaks(frame_logits, t: int) -> list[DetectionPeak]:
         coordinates = public_module._detect_cells_pooled(
-            role_logits[frame_index][0],
+            frame_logits[0],
             t,
             threshold,
             pool_kernel,
         )
-        probabilities = torch.sigmoid(role_logits[frame_index][0, 0])
+        probabilities = torch.sigmoid(frame_logits[0, 0])
+        frame_peaks: list[DetectionPeak] = []
         for _, z_ds, y_ds, x_ds in coordinates:
             z = int(z_ds) * downsample[0]
             y = int(y_ds) * downsample[1]
             x = int(x_ds) * downsample[2]
-            peaks.append(
+            frame_peaks.append(
                 DetectionPeak(
                     t=int(t),
                     z_um=float(z * dataset.scale[0]),
@@ -149,6 +151,19 @@ def _predict_event_frames(
                     ),
                 )
             )
+        return frame_peaks
+
+    parent_start = 0 if parent_t == 0 else parent_t - 1
+    parent_index = 0 if parent_t == 0 else 1
+    parent_logits = infer_window_frame(parent_start, parent_index)
+    peaks = extract_peaks(parent_logits, parent_t)
+    del parent_logits
+    torch.cuda.empty_cache()
+
+    daughter_logits = infer_window_frame(parent_t, 1)
+    peaks.extend(extract_peaks(daughter_logits, parent_t + 1))
+    del daughter_logits
+    torch.cuda.empty_cache()
     return peaks
 
 
