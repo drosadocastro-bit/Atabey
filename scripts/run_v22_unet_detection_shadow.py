@@ -179,6 +179,49 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
+def _peak_rows(
+    peaks_by_location: dict[tuple[str, int, float, float, float], float | None],
+    *,
+    threshold: float,
+    pool_kernel_um: float,
+    tta: str,
+) -> list[dict[str, Any]]:
+    """Create deterministic, deduplicated peak records for downstream shadows."""
+
+    grouped: dict[tuple[str, int], list[tuple[float, float, float, float | None]]] = (
+        defaultdict(list)
+    )
+    for (sample_id, t, z_um, y_um, x_um), confidence in peaks_by_location.items():
+        grouped[(sample_id, t)].append((z_um, y_um, x_um, confidence))
+
+    rows: list[dict[str, Any]] = []
+    for (sample_id, t), frame_peaks in sorted(grouped.items()):
+        frame_peaks.sort(
+            key=lambda peak: (
+                peak[0],
+                peak[1],
+                peak[2],
+                -(peak[3] if peak[3] is not None else -1.0),
+            )
+        )
+        for index, (z_um, y_um, x_um, confidence) in enumerate(frame_peaks):
+            rows.append(
+                {
+                    "peak_id": f"unet:{sample_id}:t{t}:p{index:05d}",
+                    "sample_id": sample_id,
+                    "t": t,
+                    "z_um": z_um,
+                    "y_um": y_um,
+                    "x_um": x_um,
+                    "confidence": confidence,
+                    "det_threshold": threshold,
+                    "pool_kernel_um": pool_kernel_um,
+                    "tta": tta,
+                }
+            )
+    return rows
+
+
 def _is_true(value: object) -> bool:
     return value is True or str(value).lower() == "true"
 
@@ -293,6 +336,15 @@ def main() -> None:
         type=Path,
         default=Path("v22_unet_detection_shadow_summary.json"),
     )
+    parser.add_argument(
+        "--output-peaks",
+        type=Path,
+        default=None,
+        help=(
+            "Optional deterministic CSV of all U-Net peaks in the evaluated "
+            "parent/daughter frames for downstream read-only shadows."
+        ),
+    )
     parser.add_argument("--allow-cpu", action="store_true")
     args = parser.parse_args()
 
@@ -323,6 +375,10 @@ def main() -> None:
 
     rows: list[dict[str, Any]] = []
     peak_cache: dict[tuple[str, int], list[DetectionPeak]] = {}
+    peaks_by_location: dict[
+        tuple[str, int, float, float, float],
+        float | None,
+    ] = {}
     gt_cache: dict[str, Any] = {}
 
     for (sample_id, parent_t), cases in grouped_cases.items():
@@ -338,6 +394,28 @@ def main() -> None:
             device=device,
         )
         peak_cache[(sample_id, parent_t)] = peaks
+        for peak in peaks:
+            location = (
+                sample_id,
+                int(peak.t),
+                float(peak.z_um),
+                float(peak.y_um),
+                float(peak.x_um),
+            )
+            previous_confidence = peaks_by_location.get(location)
+            if (
+                location not in peaks_by_location
+                or previous_confidence is None
+                or (
+                    peak.confidence is not None
+                    and float(peak.confidence) > previous_confidence
+                )
+            ):
+                peaks_by_location[location] = (
+                    float(peak.confidence)
+                    if peak.confidence is not None
+                    else None
+                )
         ground_truth = gt_cache.setdefault(
             sample_id,
             read_geff_graph(args.train_dir / f"{sample_id}.geff"),
@@ -390,12 +468,27 @@ def main() -> None:
     rows.sort(key=lambda row: row["case_id"])
     _write_csv(args.output_csv, rows)
     summary = _summary(rows, fixture)
+    if args.output_peaks is not None:
+        peak_rows = _peak_rows(
+            peaks_by_location,
+            threshold=threshold,
+            pool_kernel_um=pool_kernel_um,
+            tta=str(fixture["tta"]),
+        )
+        _write_csv(args.output_peaks, peak_rows)
+        summary["exported_peak_count"] = len(peak_rows)
+        summary["exported_peak_frames"] = len(
+            {(row["sample_id"], row["t"]) for row in peak_rows}
+        )
     args.output_summary.write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
     print(json.dumps(summary, indent=2, sort_keys=True), flush=True)
-    print(f"Wrote {args.output_csv} and {args.output_summary}", flush=True)
+    outputs = [str(args.output_csv), str(args.output_summary)]
+    if args.output_peaks is not None:
+        outputs.append(str(args.output_peaks))
+    print(f"Wrote {', '.join(outputs)}", flush=True)
 
 
 if __name__ == "__main__":
