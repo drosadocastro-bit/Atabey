@@ -1,4 +1,4 @@
-﻿# Project Atabey
+# Project Atabey
 
 > Signal processing over brute force. Evidence before conclusions.
 
@@ -93,7 +93,7 @@ the relevant audit before promoting one.
 | V19 | Can watershed localization and bipartite formation improve dense tracking and expose divisions? | Partly. It produced four official division TPs in the corrected bounded audit, but ownership and noise remain unresolved. |
 | V20 | Can a strict kinematic firewall clean division topology? | NO-GO in its current form: it suppressed all four corrected V19 TPs. Earlier FP-reduction claims were invalidated by evaluator mismatch. |
 | V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Partial research result. The joint semantic Phase 0 extractor passed its fixed battery, but the preregistered availability gate failed at 13/46 development and 7/47 calibration positives. Calibrated scoring and constrained assignment are not authorized under the current formation path. |
-| V22 | Can the public notebook's conservative post-link second-child rule improve Atabey division availability? | NO-GO as a standalone transfer: 1,089 selected additions recovered 0 new official TPs, raised official division FP from 403 to 424, and slightly regressed adjusted edge Jaccard. |
+| V22 | Can public learned detections repair upstream division availability without weakening epistemic guardrails? | Mixed but promising. The conservative post-link second-child rule remained a standalone NO-GO, while the frozen temporal U-Net raised patched-official action availability from 13/46 to 39/46 with zero graph mutation. Semantic ranking plus coupled local ownership is now pre-registered on development only; locked validation and the full 199 remain closed. |
 
 ## Start Here
 
@@ -111,6 +111,12 @@ the relevant audit before promoting one.
   frozen public-rule transfer, development cohort, and official-metric decision contract.
 - [V22 Safe-Division Shadow Audit](V22_SAFE_DIVISION_SHADOW_AUDIT.md): development-only
   official outcome and standalone-transfer NO-GO.
+- [V22 U-Net Full Development Shadow](V22_UNET_DEVELOPMENT_46_RESULTS.md): frozen detector-only
+  availability result, candidate-load guard, and zero-perturbation GO.
+- [V22 U-Net Official-Action Availability](V22_UNET_OFFICIAL_ACTION_AVAILABILITY_RESULTS.md):
+  patched-official 39/46 action-availability GO and explicit remaining failures.
+- [V22 Joint Semantic Ranking With Local Assignment](V22_JOINT_SEMANTIC_ASSIGNMENT_PREREGISTRATION.md):
+  sample-blocked ranking, unknown-label policy, and coupled ownership constraint contract.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
