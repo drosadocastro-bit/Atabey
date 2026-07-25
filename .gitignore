@@ -15,3 +15,4 @@ kaggle_kernel/remote_output_*/
 *.csv
 !sample_submission.schema-notes.md
 *.geff/
+v22_semantic_action_shards/
