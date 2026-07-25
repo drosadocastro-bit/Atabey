@@ -3,13 +3,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 from itertools import combinations
 from math import dist
-from typing import Iterable, Sequence
+from typing import Iterable, Literal, Sequence
 
 import numpy as np
 from scipy.spatial import cKDTree
 
 from atabey.io.geff_reader import SparseGroundTruthGraph
 from atabey.types import Detection, LineageEdge, LineageGraph
+
+
+OfficialForkLabel = Literal["official_tp", "official_fp", "official_unsupported"]
 
 
 @dataclass(frozen=True)
@@ -211,13 +214,11 @@ def action_matches_registered_division(
     return direct or swapped
 
 
-def evaluate_action_as_official_fork(
+def label_action_as_official_fork(
     action: AnchoredDivisionAction,
     ground_truth: SparseGroundTruthGraph,
-    *,
-    gt_parent_id: int,
-) -> bool:
-    """Project one isolated fork through the patched official scorer."""
+) -> OfficialForkLabel:
+    """Project one isolated fork and return the patched official label."""
 
     from atabey.evaluation.official_division_metric import evaluate_official_divisions
 
@@ -256,7 +257,47 @@ def evaluate_action_as_official_fork(
         ],
     )
     result = evaluate_official_divisions(projected, ground_truth)
-    return (
-        result.gt_scores.get(int(gt_parent_id), 0) == 1
-        and action.parent.peak_id in result.tp_fork_ids
+    if action.parent.peak_id in result.tp_fork_ids:
+        return "official_tp"
+    if action.parent.peak_id in result.fp_fork_ids:
+        return "official_fp"
+    return "official_unsupported"
+
+
+def evaluate_action_as_official_fork(
+    action: AnchoredDivisionAction,
+    ground_truth: SparseGroundTruthGraph,
+    *,
+    gt_parent_id: int,
+) -> bool:
+    """Return whether the isolated fork matches one registered GT division."""
+
+    if label_action_as_official_fork(action, ground_truth) != "official_tp":
+        return False
+    from atabey.evaluation.official_division_metric import evaluate_official_divisions
+
+    # Preserve the registered-parent check used by the availability audit.
+    def detection(peak: UnetShadowPeak) -> Detection:
+        return Detection(
+            node_id=peak.peak_id,
+            sample_id=peak.sample_id,
+            t=peak.t,
+            z=peak.z_um,
+            y=peak.y_um,
+            x=peak.x_um,
+            z_um=peak.z_um,
+            y_um=peak.y_um,
+            x_um=peak.x_um,
+            detection_confidence=peak.confidence,
+        )
+
+    projected = LineageGraph(
+        sample_id=action.sample_id,
+        detections=[detection(action.parent), detection(action.child_1), detection(action.child_2)],
+        edges=[
+            LineageEdge(action.parent.peak_id, action.child_1.peak_id, relation="division"),
+            LineageEdge(action.parent.peak_id, action.child_2.peak_id, relation="division"),
+        ],
     )
+    result = evaluate_official_divisions(projected, ground_truth)
+    return result.gt_scores.get(int(gt_parent_id), 0) == 1

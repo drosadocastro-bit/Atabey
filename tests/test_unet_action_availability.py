@@ -117,6 +117,7 @@ def test_isolated_candidate_fork_matches_the_patched_official_metric():
     from atabey.tracking.unet_action_availability import (
         AnchoredDivisionAction,
         evaluate_action_as_official_fork,
+        label_action_as_official_fork,
     )
 
     def gt(node_id: int, t: int, y: int) -> GroundTruthNode:
@@ -145,8 +146,37 @@ def test_isolated_candidate_fork_matches_the_patched_official_metric():
         estimated_number_of_nodes=6,
     )
 
+    assert label_action_as_official_fork(action, ground_truth) == "official_tp"
     assert evaluate_action_as_official_fork(
         action,
         ground_truth,
         gt_parent_id=2,
+    )
+
+    far_action = AnchoredDivisionAction(
+        sample_id="sample",
+        t=1,
+        anchor_id="anchor",
+        parent=_peak("far_parent", 1, 100.0),
+        child_1=_peak("far_a", 2, 99.0),
+        child_2=_peak("far_b", 2, 101.0),
+        anchor_prediction_distance_um=0.0,
+    )
+    assert (
+        label_action_as_official_fork(far_action, ground_truth)
+        == "official_unsupported"
+    )
+
+    partial_match_action = AnchoredDivisionAction(
+        sample_id="sample",
+        t=1,
+        anchor_id="anchor",
+        parent=_peak("partial_parent", 1, 0.0),
+        child_1=_peak("partial_a", 2, -1.0),
+        child_2=_peak("partial_b", 2, 50.0),
+        anchor_prediction_distance_um=0.0,
+    )
+    assert (
+        label_action_as_official_fork(partial_match_action, ground_truth)
+        == "official_fp"
     )
