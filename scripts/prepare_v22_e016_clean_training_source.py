@@ -13,7 +13,7 @@ def main() -> None:
     args = parser.parse_args()
     text = args.source.read_text(encoding="utf-8")
 
-    seed_import = "import random\n"
+    seed_import = "import random\nimport os\n"
     if seed_import not in text:
         anchor = "import json\n"
         if anchor not in text:
@@ -30,6 +30,16 @@ def main() -> None:
         + "        if torch.cuda.is_available():\n"
         + "            torch.cuda.manual_seed_all(seed)\n"
     )
+    if "BIOHUB_WEIGHTS_DIR" not in text:
+        weights_anchor = "from dataspec import WEIGHTS_PATH\n"
+        if weights_anchor not in text:
+            raise RuntimeError("Could not find weights-path anchor")
+        text = text.replace(
+            weights_anchor,
+            weights_anchor
+            + "WEIGHTS_PATH = Path(os.environ.get(\"BIOHUB_WEIGHTS_DIR\", \"/kaggle/working/weights\"))\n",
+            1,
+        )
     if "random.seed(seed)" not in text:
         if train_anchor not in text:
             raise RuntimeError("Could not find train seed anchor")
