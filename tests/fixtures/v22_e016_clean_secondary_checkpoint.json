@@ -1,0 +1,17 @@
+{
+  "name": "v22_e016_clean_secondary_checkpoint_v1",
+  "status": "preregistered_training_manifest",
+  "source_action_availability": "v22_unet_official_action_development_46.csv",
+  "expected_total_competition_samples": 199,
+  "expected_clean_training_samples": 172,
+  "expected_held_out_development_samples": 27,
+  "expected_held_out_development_events": 46,
+  "training_method": "unet_transformer_clean172_seed314159_v1",
+  "base_seed": 314159,
+  "deterministic": true,
+  "development_labels_used_for_fit_or_selection": false,
+  "hidden_test_labels_used_for_fit_or_selection": false,
+  "graph_mutation": false,
+  "assignment": false,
+  "full_199_authorized": false
+}
