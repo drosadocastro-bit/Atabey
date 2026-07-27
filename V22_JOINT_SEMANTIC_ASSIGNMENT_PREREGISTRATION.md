@@ -122,6 +122,23 @@ All normalization, feature selection, regularization, calibration, and decision
 thresholds are fit inside the two training folds. The held-out fold cannot guide
 changes.
 
+### Local-maxima transfer-only status
+
+The development split contains only one local-maxima sample,
+`44b6_5f15d135`, and it is in fold 3. This creates no in-distribution held-out
+local-maxima estimate in any cross-validation round:
+
+- when fold 1 or fold 2 is held out, local-maxima is present in training through
+  fold 3 but absent from held-out evaluation, so local-maxima performance is
+  untested in 2 of 3 held-out rounds;
+- when fold 3 is held out, local-maxima is absent from training and appears only
+  in held-out evaluation, so the result is zero-shot route transfer.
+
+Every metric involving local-maxima must therefore be reported separately with
+the explicit caveat **unproven generalization**. It may not be silently folded
+into a pooled route-neutral metric. Dedicated local-maxima fitting, calibration,
+or threshold selection is prohibited with one development sample.
+
 ## Label Contract
 
 Every supervised action label comes from the pinned patched official scorer.
@@ -299,6 +316,8 @@ Neither mode mutates the source graph.
 - the three historical Hungarian regressions.
 
 Unsupported actions are reported separately and never folded into FP.
+Pooled metrics must be accompanied by the route breakdown. Local-maxima metrics
+must be shown separately and labeled **unproven generalization**.
 
 ## Decision Contract
 
