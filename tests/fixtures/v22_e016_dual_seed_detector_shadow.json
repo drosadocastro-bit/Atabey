@@ -1,0 +1,67 @@
+{
+  "name": "v22_e016_dual_seed_detector_shadow_v1",
+  "status": "preregistered_external_artifact_not_accepted",
+  "source_action_availability": "v22_unet_official_action_development_46.csv",
+  "source_action_availability_sha256": "ded32a164be501592e84448cdbcf86a6796661d31c92887b239d03b3b39dbf9b",
+  "source_action_contract": "tests/fixtures/v22_unet_official_action_development_46.json",
+  "source_action_contract_sha256": "bbbb8fb647dbb2964ca24e5a66ca166e2e1dc92134ea881343c9717545da6a11",
+  "source_peak_csv": "v22_unet_detection_development_46_peaks.csv",
+  "source_peak_sha256": "58c838d2fa4463c94f75dc0858e7fac239d880c9d91bed006d068e3e6caf1938",
+  "source_event_reference": "v22_v19_event_frame_reference.csv",
+  "population": {
+    "registered_divisions": 46,
+    "development_samples": 27,
+    "families": ["44b6", "6bba"],
+    "existing_official_positive_controls": 13,
+    "currently_unavailable_divisions": 7,
+    "smoke_battery_events": 12
+  },
+  "route_policy": {
+    "44b6": "primary_unchanged",
+    "6bba": "primary_secondary_union_and_low_margin_consensus_logged",
+    "secondary_can_delete_primary_detection": false
+  },
+  "artifact_provenance": {
+    "checkpoint_sha256_required": true,
+    "manifest_sha256_required": true,
+    "architecture_required": true,
+    "training_seed_required": true,
+    "training_data_provenance_required": true,
+    "hidden_test_labels_allowed": false,
+    "development_labels_allowed": false,
+    "offline_load_test_required": true
+  },
+  "measurements": {
+    "official_radius_um": 7.0,
+    "complete_triplet_requires_two_distinct_daughters": true,
+    "views": ["primary", "secondary", "union", "consensus"],
+    "required_strata": ["family", "route", "fold", "sample", "event"],
+    "official_metric_required_for_division_claim": true
+  },
+  "decision": {
+    "existing_official_controls_preserved_min": 13,
+    "new_complete_triplets_min": 3,
+    "both_families_required": true,
+    "44b6_primary_availability_loss_max": 0,
+    "median_union_primary_peak_ratio_max": 1.5,
+    "p90_union_primary_peak_ratio_max": 2.5,
+    "graph_mutations_required": 0,
+    "inferred_edges_required": 0,
+    "states": {
+      "GO_TO_DUAL_SEED_PAIRING_SHADOW": "availability_and_candidate_load_gates_pass",
+      "HOLD_ARTIFACT_NOT_PROVENANCE_COMPLETE": "external_model_provenance_is_incomplete",
+      "HOLD_CANDIDATE_LOAD_OR_ROUTE_UNSTABLE": "availability_signal_exists_but_load_or_strata_gate_fails",
+      "NO_GO_DUAL_SEED_AVAILABILITY": "no_meaningful_new_availability_or_existing_controls_are_lost"
+    }
+  },
+  "secondary_artifact": {
+    "accepted": false,
+    "checkpoint_sha256": null,
+    "manifest_sha256": null
+  },
+  "inference_enabled": false,
+  "pairing_shadow_enabled": false,
+  "assignment_enabled": false,
+  "graph_mutation_enabled": false,
+  "full_199_authorized": false
+}

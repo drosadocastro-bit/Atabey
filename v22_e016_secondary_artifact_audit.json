@@ -1,0 +1,40 @@
+{
+  "artifact": "biohub-temporal-unet3d-seed314159-v1",
+  "checkpoint_sha256": "9bac2fa0dadc4a6fc1899e0caf187f4b553e0a7cd90ba1261a68b35ffe9e305f",
+  "manifest_sha256": "7f01c0b2f9491606a1b543339e072230e25317d9c70fb9a18aea59e002a995eb",
+  "manifest_weight_sha256": "9bac2fa0dadc4a6fc1899e0caf187f4b553e0a7cd90ba1261a68b35ffe9e305f",
+  "expected_public_weight_sha256": "9bac2fa0dadc4a6fc1899e0caf187f4b553e0a7cd90ba1261a68b35ffe9e305f",
+  "weight_hash_matches_manifest": true,
+  "weight_hash_matches_contract": true,
+  "architecture_config": {
+    "unet_out_channels": 32,
+    "unet_layers": [
+      32,
+      64,
+      128
+    ],
+    "downsample": [
+      1,
+      4,
+      4
+    ],
+    "window_size": 2,
+    "pool_kernel_um": 5.0
+  },
+  "training": {
+    "method": "unet_transformer_alltrain_seed314159_v1",
+    "base_seed": 314159,
+    "effective_seed": 314159,
+    "train_datasets": 199,
+    "validation_datasets": 40,
+    "splits_file_sha256": "d1d52843503f014400c22541d27db992ef94c42dfd71b91beb6e09f660acc179"
+  },
+  "offline_load": {
+    "ok": true,
+    "state_dict_keys": 136,
+    "error": null
+  },
+  "development_label_overlap_risk": true,
+  "development_shadow_eligible": false,
+  "decision": "HOLD_ARTIFACT_TRAINED_ON_EVALUATION_COHORT"
+}
