@@ -1,0 +1,81 @@
+{
+  "candidate_set_changed": false,
+  "decision": "DESCRIPTIVE_ONLY_DECODER_ATTACHMENT_PENDING",
+  "decoder_logits_attached": false,
+  "features": {
+    "daughter_mass_balance": {
+      "by_family": {
+        "44b6": {
+          "event_balanced_auc": 0.7763157894736843,
+          "events": 2
+        },
+        "6bba": {
+          "event_balanced_auc": 0.5658094098883573,
+          "events": 5
+        }
+      },
+      "pooled": {
+        "event_balanced_auc": 0.6259540897698793,
+        "events": 7
+      }
+    },
+    "mean_daughter_anisotropy": {
+      "by_family": {
+        "44b6": {
+          "event_balanced_auc": 0.7163742690058479,
+          "events": 2
+        },
+        "6bba": {
+          "event_balanced_auc": 0.5944078947368421,
+          "events": 5
+        }
+      },
+      "pooled": {
+        "event_balanced_auc": 0.6292554302422724,
+        "events": 7
+      }
+    },
+    "mean_daughter_contrast": {
+      "by_family": {
+        "44b6": {
+          "event_balanced_auc": 0.6008771929824561,
+          "events": 2
+        },
+        "6bba": {
+          "event_balanced_auc": 0.5562998405103668,
+          "events": 5
+        }
+      },
+      "pooled": {
+        "event_balanced_auc": 0.5690362269309637,
+        "events": 7
+      }
+    },
+    "mean_detection_confidence": {
+      "by_family": {
+        "44b6": {
+          "event_balanced_auc": 0.24415204678362573,
+          "events": 2
+        },
+        "6bba": {
+          "event_balanced_auc": 0.3487838915470494,
+          "events": 5
+        }
+      },
+      "pooled": {
+        "event_balanced_auc": 0.3188890787574998,
+        "events": 7
+      }
+    }
+  },
+  "graph_mutation": false,
+  "input": "v22_semantic_action_appearance_features.csv.gz",
+  "population": {
+    "cfar_actions": 218024,
+    "cfar_events": 11,
+    "official_fp": 138,
+    "official_tp": 15,
+    "unknown_excluded_from_auc": true
+  },
+  "status": "read_only_cfar_complement_shadow"
+}
