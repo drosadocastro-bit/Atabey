@@ -1,0 +1,133 @@
+{
+  "by_family": {
+    "44b6": {
+      "cases": 6,
+      "control_actions": 55917,
+      "control_availability_rate": 0.5,
+      "control_available": 3,
+      "control_to_unet_action_ratio": 1.3613033603376432,
+      "control_tp_actions": 7,
+      "fallback_actions": 54035,
+      "fallback_availability_rate": 0.6666666666666666,
+      "fallback_available": 4,
+      "fallback_tp_actions": 10,
+      "fallback_used": 3,
+      "fallback_used_rate": 0.5,
+      "unet_actions": 76120,
+      "unet_availability_rate": 0.5,
+      "unet_available": 3,
+      "unet_tp_actions": 8
+    },
+    "6bba": {
+      "cases": 40,
+      "control_actions": 212905,
+      "control_availability_rate": 0.9,
+      "control_available": 36,
+      "control_to_unet_action_ratio": 0.6350625865996571,
+      "control_tp_actions": 57,
+      "fallback_actions": 154140,
+      "fallback_availability_rate": 0.95,
+      "fallback_available": 38,
+      "fallback_tp_actions": 48,
+      "fallback_used": 3,
+      "fallback_used_rate": 0.075,
+      "unet_actions": 135208,
+      "unet_availability_rate": 0.925,
+      "unet_available": 37,
+      "unet_tp_actions": 47
+    }
+  },
+  "by_route": {
+    "cfar_sidelobe/bipartite": {
+      "cases": 11,
+      "control_actions": 218024,
+      "control_availability_rate": 0.6363636363636364,
+      "control_available": 7,
+      "control_to_unet_action_ratio": 0.7330018713536125,
+      "control_tp_actions": 15,
+      "fallback_actions": 156636,
+      "fallback_availability_rate": 0.8181818181818182,
+      "fallback_available": 9,
+      "fallback_tp_actions": 14,
+      "fallback_used": 4,
+      "fallback_used_rate": 0.36363636363636365,
+      "unet_actions": 159812,
+      "unet_availability_rate": 0.6363636363636364,
+      "unet_available": 7,
+      "unet_tp_actions": 11
+    },
+    "components/greedy": {
+      "cases": 34,
+      "control_actions": 44180,
+      "control_availability_rate": 0.9117647058823529,
+      "control_available": 31,
+      "control_to_unet_action_ratio": 0.9098913535536441,
+      "control_tp_actions": 45,
+      "fallback_actions": 40222,
+      "fallback_availability_rate": 0.9411764705882353,
+      "fallback_available": 32,
+      "fallback_tp_actions": 38,
+      "fallback_used": 2,
+      "fallback_used_rate": 0.058823529411764705,
+      "unet_actions": 40199,
+      "unet_availability_rate": 0.9411764705882353,
+      "unet_available": 32,
+      "unet_tp_actions": 38
+    },
+    "local_maxima/motion_mutual": {
+      "cases": 1,
+      "control_actions": 6618,
+      "control_availability_rate": 1.0,
+      "control_available": 1,
+      "control_to_unet_action_ratio": 1.710033242671502,
+      "control_tp_actions": 4,
+      "fallback_actions": 11317,
+      "fallback_availability_rate": 1.0,
+      "fallback_available": 1,
+      "fallback_tp_actions": 6,
+      "fallback_used": 0,
+      "fallback_used_rate": 0.0,
+      "unet_actions": 11317,
+      "unet_availability_rate": 1.0,
+      "unet_available": 1,
+      "unet_tp_actions": 6
+    }
+  },
+  "control_sha256": "ded32a164be501592e84448cdbcf86a6796661d31c92887b239d03b3b39dbf9b",
+  "decision": "HOLD_CFAR_FALLBACK_RETAINED",
+  "graph_mutation": false,
+  "pooled": {
+    "cases": 46,
+    "control_actions": 268822,
+    "control_availability_rate": 0.8478260869565217,
+    "control_available": 39,
+    "control_to_unet_action_ratio": 0.7861261355097425,
+    "control_tp_actions": 64,
+    "fallback_actions": 208175,
+    "fallback_availability_rate": 0.9130434782608695,
+    "fallback_available": 42,
+    "fallback_tp_actions": 58,
+    "fallback_used": 6,
+    "fallback_used_rate": 0.13043478260869565,
+    "unet_actions": 211328,
+    "unet_availability_rate": 0.8695652173913043,
+    "unet_available": 40,
+    "unet_tp_actions": 55
+  },
+  "population": {
+    "cases": 46,
+    "events": 46,
+    "samples": 27
+  },
+  "transitions": {
+    "false": {
+      "false": 4,
+      "true": 2
+    },
+    "true": {
+      "false": 3,
+      "true": 37
+    }
+  },
+  "unet_sha256": "9db82c90d7fa1e61e68acd706b498a0fa3ad2b78c583e00d7ae72ba62c6fd528"
+}
