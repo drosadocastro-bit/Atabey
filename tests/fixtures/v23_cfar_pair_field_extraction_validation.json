@@ -1,0 +1,285 @@
+{
+  "name": "v23_cfar_pair_field_extraction_validation_v1",
+  "status": "preregistered_design_only_no_tensors_extracted",
+  "sources": {
+    "availability_summary": "v23_cfar_pair_field_positive_availability_summary.json",
+    "availability_summary_sha256": "440926ee70de34d494328607c4377fa30c8ef6c5e7123979b39d131085f7a342",
+    "availability_audit_script": "scripts/audit_v23_cfar_pair_field_positive_availability.py",
+    "availability_audit_script_sha256": "9f7e032ddb4e1172019246133ed0d64fe45d457b683f7f8fe1b24cf5e648c92d",
+    "official_metric_commit": "075fc5f5a52d11077f9dc2b074644618f26939e2",
+    "tracksdata_commit": "39dccf3a243e44274759468cb31b2ad9e7fc1d09"
+  },
+  "population": {
+    "route": "cfar_sidelobe/bipartite",
+    "source_gt_events": 48,
+    "available_positive_events": 29,
+    "positive_samples": 22,
+    "official_tp_action_variants": 90,
+    "action_variants_are_independent_events": false,
+    "unavailable_events_are_training_negatives": false,
+    "families": {
+      "44b6": {
+        "events": 9,
+        "samples": 8
+      },
+      "6bba": {
+        "events": 20,
+        "samples": 14
+      }
+    },
+    "folds": [
+      {
+        "fold": 1,
+        "samples": [
+          "44b6_9be80b04",
+          "44b6_d2f34f90",
+          "6bba_0e7c0d07",
+          "6bba_207c6aaf",
+          "6bba_57b7cc1e",
+          "6bba_786893ac",
+          "6bba_f8ffd5e7"
+        ],
+        "events": 9,
+        "44b6_events": 2,
+        "6bba_events": 7
+      },
+      {
+        "fold": 2,
+        "samples": [
+          "44b6_267148e4",
+          "44b6_c50204e0",
+          "44b6_d5e7d891",
+          "6bba_3db54e20",
+          "6bba_474be664",
+          "6bba_4ffd3da3",
+          "6bba_b329af44",
+          "6bba_ebdf3b34"
+        ],
+        "events": 12,
+        "44b6_events": 4,
+        "6bba_events": 8
+      },
+      {
+        "fold": 3,
+        "samples": [
+          "44b6_2a2eff9f",
+          "44b6_7a302da0",
+          "44b6_eb2880fc",
+          "6bba_05db0fb1",
+          "6bba_32db13fc",
+          "6bba_78a7bd97",
+          "6bba_fc5f39dc"
+        ],
+        "events": 8,
+        "44b6_events": 3,
+        "6bba_events": 5
+      }
+    ],
+    "fold_assignment_may_be_rebalanced_after_extraction": false
+  },
+  "candidate_universe": {
+    "parent_anchor": "cfar_parent_within_7um_of_registered_gt_parent",
+    "daughters": "all_distinct_unordered_cfar_pairs_at_t_plus_1_with_each_detection_within_14um_of_candidate_parent",
+    "formation_radius_um": 14,
+    "ordinary_continuation_gate_um": 9,
+    "gates_are_distinct": true,
+    "labeling": "project_isolated_parent_to_two_daughter_fork_through_patched_official_metric",
+    "positive": "patched_official_tp",
+    "supervised_negative": "patched_official_fp_only",
+    "unknown": "official_unsupported_or_not_evaluated",
+    "unknown_in_supervised_loss": false,
+    "unknown_retained_in_full_candidate_ranking": true,
+    "sparse_absence_is_negative": false,
+    "canonical_positive_receives_priority": false
+  },
+  "tensor": {
+    "assembled_shape_czyx": [
+      5,
+      33,
+      33,
+      33
+    ],
+    "dtype": "float32",
+    "spacing_um": [
+      1,
+      1,
+      1
+    ],
+    "offsets_um": {
+      "start": -16,
+      "stop": 16,
+      "inclusive": true
+    },
+    "center": "candidate_parent_physical_coordinate",
+    "channels": [
+      "image_t",
+      "image_t_plus_1",
+      "parent_mask",
+      "symmetric_daughter_pair_mask",
+      "crop_coverage_mask"
+    ],
+    "coordinate_scalar_inputs": false,
+    "family_route_sample_or_node_id_inputs": false,
+    "image_normalization": "independent_full_frame_robust_percentile_1_to_99_9_clipped_0_to_1",
+    "image_interpolation": "trilinear_scipy_map_coordinates_order_1_constant_zero",
+    "coverage_mask": "one_where_physical_query_is_inside_source_volume_else_zero",
+    "parent_mask": "trilinear_splat_total_mass_1",
+    "daughter_pair_mask": "commutative_sum_of_two_trilinear_splats_total_mass_2",
+    "child_order_visible": false,
+    "boundary_padding": "zero_with_explicit_coverage_mask"
+  },
+  "storage": {
+    "parent_field_cache_key": [
+      "sample_id",
+      "t",
+      "parent_peak_id",
+      "normalization_contract_version"
+    ],
+    "cached_parent_channels": [
+      "image_t",
+      "image_t_plus_1",
+      "parent_mask",
+      "crop_coverage_mask"
+    ],
+    "per_action_payload": [
+      "event_id",
+      "parent_cache_key",
+      "child_1_peak_id",
+      "child_2_peak_id",
+      "daughter_pair_sparse_splat",
+      "official_label",
+      "fold",
+      "family"
+    ],
+    "duplicate_dense_parent_field_per_action": false,
+    "output_root": "outputs/v23_cfar_pair_field_v1",
+    "output_root_must_remain_out_of_git": true,
+    "manifest_required": true,
+    "parent_tensor_sha256_required": true,
+    "preflight_before_tensor_write": true,
+    "preflight_limits": {
+      "estimated_uncompressed_gib_max": 20,
+      "actions_per_event_max": 20000,
+      "parent_fields_max": 5000
+    }
+  },
+  "extraction_integrity": {
+    "sample_blocked_folds": true,
+    "heldout_sample_used_for_training_statistics": false,
+    "frame_normalization_uses_training_statistics": false,
+    "finite_values_required": true,
+    "image_range": [
+      0,
+      1
+    ],
+    "coverage_values": [
+      0,
+      1
+    ],
+    "parent_mask_mass_tolerance": 0.00001,
+    "daughter_pair_mask_mass_tolerance": 0.00001,
+    "swap_daughters_tensor_tolerance": 0,
+    "repeated_extraction_hash_match_required": true,
+    "source_graph_mutation": false,
+    "official_metric_relabel_parity_required": true,
+    "expected_positive_events": 29,
+    "expected_positive_action_variants": 90,
+    "expected_folds": [
+      1,
+      2,
+      3
+    ],
+    "both_families_required_each_fold": true
+  },
+  "weighting": {
+    "hierarchy": [
+      "sample",
+      "event",
+      "label_side",
+      "action"
+    ],
+    "samples_equal_within_fold": true,
+    "events_equal_within_sample": true,
+    "positive_and_fp_sides_equal_within_event": true,
+    "actions_equal_within_label_side": true,
+    "raw_action_weighting_allowed": false,
+    "multi_positive_event_success_counted_once": true,
+    "fp_hash_cap_per_event": 64,
+    "fp_hash_seed": "v23-pair-field-fp-v1"
+  },
+  "outer_validation": {
+    "scheme": "three_sample_blocked_folds",
+    "heldout_fold_never_guides_model_or_threshold_selection": true,
+    "inner_selection_uses_outer_training_samples_only": true,
+    "single_calibration_fold_allowed": false,
+    "primary_metric": "equal_event_weighted_recall_at_10_over_full_candidate_ranking",
+    "secondary_metrics": [
+      "equal_event_weighted_recall_at_1",
+      "equal_event_weighted_recall_at_5",
+      "equal_event_weighted_mrr",
+      "equal_event_weighted_tp_vs_official_fp_pairwise_accuracy"
+    ],
+    "full_ranking_includes_unknown_candidates": true,
+    "unknown_candidates_count_as_false_positives": false,
+    "required_strata": [
+      "fold",
+      "family",
+      "sample",
+      "event"
+    ],
+    "pooled_result_requires_all_strata": true
+  },
+  "mandatory_controls": {
+    "nearest_distance": {
+      "description": "rank_by_minimum_parent_child_distance_sum",
+      "uses_images": false
+    },
+    "geometry_only": {
+      "description": "frozen_low_capacity_ranker_on_pair_mask_derived_geometry_only",
+      "uses_images": false
+    },
+    "mask_only": {
+      "description": "same_model_family_with_both_image_channels_zeroed",
+      "uses_images": false
+    },
+    "image_shuffled": {
+      "description": "fixed_hash_permutation_of_parent_image_fields_within_heldout_fold_family_and_crop_coverage_quartile",
+      "masks_unchanged": true
+    },
+    "static_image": {
+      "description": "replace_image_t_plus_1_with_image_t",
+      "masks_unchanged": true
+    }
+  },
+  "control_policy": {
+    "definitions_locked_before_outcomes": true
+  },
+  "future_model_evidence_gates": {
+    "pooled_recall_at_10_min": 0.8,
+    "each_fold_recall_at_10_min": 0.625,
+    "each_family_recall_at_10_min": 0.65,
+    "recall_at_10_max_fold_spread": 0.25,
+    "pooled_mrr_min": 0.4,
+    "pooled_tp_vs_official_fp_pairwise_accuracy_min": 0.75,
+    "recall_at_10_margin_over_best_nonimage_control_min": 0.1,
+    "recall_at_10_margin_over_image_shuffled_min": 0.1,
+    "recall_at_10_margin_over_static_image_min": 0.05,
+    "maximum_fold_event_regression_vs_best_nonimage_control": 1,
+    "official_tp_event_loss_after_future_constraint_layer_max": 0,
+    "graph_mutation_required": false
+  },
+  "decision_states": {
+    "GO_TO_BOUNDED_PAIR_FIELD_MODEL_PREREGISTRATION": "all_extraction_integrity_and_resource_gates_pass",
+    "HOLD_EXTRACTION_RESOURCE_OR_STRATUM_CONCERN": "schema_integrity_passes_but_any_resource_or_fold_family_support_concern_fires",
+    "NO_GO_EXTRACTION": "any_leakage_label_parity_determinism_shape_or_zero_perturbation_gate_fails",
+    "FUTURE_MODEL_GO": "all_future_model_evidence_gates_pass",
+    "FUTURE_MODEL_HOLD": "hard_quality_gates_pass_but_temporal_or_control_margin_is_inconclusive",
+    "FUTURE_MODEL_NO_GO": "any_hard_quality_family_fold_or_independent_image_signal_gate_fails"
+  },
+  "extraction_enabled": false,
+  "tensor_writes_enabled": false,
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "production_graph_mutation_enabled": false,
+  "full_199_authorized": false
+}

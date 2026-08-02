@@ -1,0 +1,157 @@
+{
+  "crops_extracted": false,
+  "decision": "GO_TO_CFAR_PAIR_FIELD_EXTRACTION_CONTRACT",
+  "detector_contract": {
+    "division_formation_radius_um": 14.0,
+    "match_radius_um": 7.0,
+    "max_detections_per_timepoint": 900,
+    "route": "cfar_sidelobe/bipartite",
+    "spike_guardrail_unreachable": true,
+    "watershed_refinement": true
+  },
+  "fold_support": {
+    "1": {
+      "heldout": {
+        "44b6": {
+          "events": 2,
+          "official_tp_actions": 6,
+          "samples": 2
+        },
+        "6bba": {
+          "events": 7,
+          "official_tp_actions": 34,
+          "samples": 5
+        }
+      },
+      "training": {
+        "44b6": {
+          "events": 7,
+          "official_tp_actions": 24,
+          "samples": 6
+        },
+        "6bba": {
+          "events": 13,
+          "official_tp_actions": 26,
+          "samples": 9
+        }
+      }
+    },
+    "2": {
+      "heldout": {
+        "44b6": {
+          "events": 4,
+          "official_tp_actions": 9,
+          "samples": 3
+        },
+        "6bba": {
+          "events": 8,
+          "official_tp_actions": 17,
+          "samples": 5
+        }
+      },
+      "training": {
+        "44b6": {
+          "events": 5,
+          "official_tp_actions": 21,
+          "samples": 5
+        },
+        "6bba": {
+          "events": 12,
+          "official_tp_actions": 43,
+          "samples": 9
+        }
+      }
+    },
+    "3": {
+      "heldout": {
+        "44b6": {
+          "events": 3,
+          "official_tp_actions": 15,
+          "samples": 3
+        },
+        "6bba": {
+          "events": 5,
+          "official_tp_actions": 9,
+          "samples": 4
+        }
+      },
+      "training": {
+        "44b6": {
+          "events": 6,
+          "official_tp_actions": 15,
+          "samples": 5
+        },
+        "6bba": {
+          "events": 15,
+          "official_tp_actions": 51,
+          "samples": 10
+        }
+      }
+    }
+  },
+  "full_199_authorized": false,
+  "gates": {
+    "cfar_positive_samples_min_6": true,
+    "each_family_positive_samples_min_3": true,
+    "each_fold_heldout_events_per_family_min_2": true,
+    "each_fold_training_events_per_family_min_4": true,
+    "pair_field_representation_availability_min_99pct": true
+  },
+  "graph_mutation": false,
+  "model_fitted": false,
+  "official_positive": {
+    "events": 29,
+    "official_tp_actions": 90,
+    "samples": 22
+  },
+  "pair_field_crop_coverage": {
+    "median": 0.9999999999999998,
+    "min": 0.5169270833333335,
+    "p10": 0.7065415151186342
+  },
+  "source_population": {
+    "events": 48,
+    "formed_candidate_actions": 90,
+    "samples": 29
+  },
+  "status": "read_only_v23_cfar_native_official_positive_availability",
+  "status_counts": {
+    "missing_daughter_detection_within_7um": 7,
+    "no_distinct_daughter_pair": 1,
+    "no_pair_inside_14um_formation_radius": 2,
+    "no_parent_detection_within_7um": 9,
+    "official_positive": 29
+  },
+  "strata": {
+    "family": {
+      "44b6": {
+        "events": 9,
+        "official_tp_actions": 30,
+        "samples": 8
+      },
+      "6bba": {
+        "events": 20,
+        "official_tp_actions": 60,
+        "samples": 14
+      }
+    },
+    "fold": {
+      "1": {
+        "events": 9,
+        "official_tp_actions": 40,
+        "samples": 7
+      },
+      "2": {
+        "events": 12,
+        "official_tp_actions": 26,
+        "samples": 8
+      },
+      "3": {
+        "events": 8,
+        "official_tp_actions": 24,
+        "samples": 7
+      }
+    }
+  },
+  "unsupported_candidates_labeled_negative": false
+}
