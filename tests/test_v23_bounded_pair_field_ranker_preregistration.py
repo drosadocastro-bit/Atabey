@@ -24,7 +24,8 @@ def test_bounded_pair_field_ranker_pins_successful_preflight_sources():
         ("pair_field_module", "pair_field_module_sha256"),
     ):
         path = ROOT / sources[path_key]
-        assert hashlib.sha256(path.read_bytes()).hexdigest() == sources[hash_key]
+        canonical_bytes = path.read_bytes().replace(b"\r\n", b"\n")
+        assert hashlib.sha256(canonical_bytes).hexdigest() == sources[hash_key]
 
     preflight = json.loads(
         (ROOT / sources["metadata_preflight_summary"]).read_text()

@@ -3,11 +3,11 @@
   "status": "preregistered_model_not_implemented_or_fit",
   "sources": {
     "metadata_preflight_summary": "v23_pair_field_metadata_preflight_summary.json",
-    "metadata_preflight_summary_sha256": "7f1f7c9f082fff4e13ebdef44c7a79c88754f19fae484b8cdfa77757b4b99b72",
+    "metadata_preflight_summary_sha256": "8562467c4b011d0f8571cf38c1b059b6b35d2f703cbc87a90c0f66d202fcf2f9",
     "extraction_validation_contract": "tests/fixtures/v23_cfar_pair_field_extraction_validation.json",
-    "extraction_validation_contract_sha256": "a70b183b79a53874cd4444e629370f671becfa772306538e4a87669018a36eee",
+    "extraction_validation_contract_sha256": "044200fdad6066748908666907b6f1cd981db61b0f487b00e5997adbca432d3c",
     "pair_field_module": "src/atabey/tracking/pair_field.py",
-    "pair_field_module_sha256": "e0f59885333a4a5b8be65006ba2a62018e4940f55dc15415f94d1cd71e4d44e4",
+    "pair_field_module_sha256": "beafc5455a02c8171c1500c2f7f5c8ec4719ec1ec2f3f29defee11934ce2c080",
     "official_metric_commit": "075fc5f5a52d11077f9dc2b074644618f26939e2",
     "tracksdata_commit": "39dccf3a243e44274759468cb31b2ad9e7fc1d09"
   },
