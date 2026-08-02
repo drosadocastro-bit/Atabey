@@ -37,6 +37,64 @@ class LockedPairFieldData:
     parent_index: dict[str, int]
 
 
+@dataclass(frozen=True)
+class PairwiseFit:
+    coefficients: np.ndarray
+    converged: bool
+    iterations: int
+    objective: float
+
+
+def fit_pairwise_logistic(
+    differences: np.ndarray,
+    weights: np.ndarray,
+    *,
+    c: float,
+    max_iterations: int = 100,
+) -> PairwiseFit:
+    """Fit an L2 pairwise logistic utility with all preferences oriented +1."""
+
+    from scipy.optimize import minimize
+    from scipy.special import expit
+
+    x = np.asarray(differences, dtype=np.float64)
+    pair_weights = np.asarray(weights, dtype=np.float64)
+    if x.ndim != 2 or pair_weights.shape != (x.shape[0],):
+        raise ValueError("Pair differences and weights have incompatible shapes")
+    if x.shape[0] == 0:
+        raise ValueError("At least one preference pair is required")
+    if c <= 0.0:
+        raise ValueError("c must be positive")
+    if np.any(pair_weights < 0.0) or not np.all(np.isfinite(pair_weights)):
+        raise ValueError("Pair weights must be finite and non-negative")
+    weight_sum = float(pair_weights.sum())
+    if weight_sum <= 0.0:
+        raise ValueError("Pair weights must have positive total mass")
+    normalized = pair_weights / weight_sum
+
+    def objective(coefficients: np.ndarray) -> tuple[float, np.ndarray]:
+        margins = x @ coefficients
+        losses = np.logaddexp(0.0, -margins)
+        value = float(np.dot(normalized, losses))
+        value += 0.5 * float(np.dot(coefficients, coefficients)) / float(c)
+        derivative = -expit(-margins) * normalized
+        gradient = x.T @ derivative + coefficients / float(c)
+        return value, np.asarray(gradient, dtype=np.float64)
+
+    result = minimize(
+        objective,
+        np.zeros(x.shape[1], dtype=np.float64),
+        method="L-BFGS-B",
+        jac=True,
+        options={"maxiter": int(max_iterations), "ftol": 1e-10, "gtol": 1e-7},
+    )
+    return PairwiseFit(
+        coefficients=np.asarray(result.x, dtype=np.float64),
+        converged=bool(result.success),
+        iterations=int(result.nit),
+        objective=float(result.fun),
+    )
+
 def load_locked_pair_field_data(root: Path) -> LockedPairFieldData:
     root = Path(root)
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))

@@ -8,6 +8,7 @@ from atabey.tracking.pair_field_ranker import (
     aggregate_event_metrics,
     assemble_action_field,
     build_pair_field_ranker,
+    fit_pairwise_logistic,
     event_ranking_rows,
     geometry_features,
     model_parameter_count,
@@ -123,3 +124,16 @@ def test_geometry_features_are_swap_invariant():
     )
     assert np.array_equal(first, geometry_features(action))
     assert pair_mask_from_sparse(action["daughter_pair_sparse_splat"]).sum() == pytest.approx(2.0)
+
+
+def test_v23_pairwise_logistic_is_self_contained_and_learns_preference():
+    differences = np.asarray(
+        ([1.0, 0.0], [2.0, 0.0], [1.0, 1.0]), dtype=np.float64
+    )
+    fit = fit_pairwise_logistic(
+        differences,
+        np.ones(len(differences), dtype=np.float64),
+        c=10.0,
+    )
+    assert fit.converged is True
+    assert fit.coefficients[0] > 0.0

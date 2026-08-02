@@ -16,13 +16,13 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from atabey.tracking.continuation_head import fit_pairwise_logistic
 from atabey.tracking.pair_field_ranker import (
     aggregate_event_metrics,
     assemble_action_field,
     build_pair_field_ranker,
     event_ranking_rows,
     geometry_features,
+    fit_pairwise_logistic,
     load_locked_pair_field_data,
     model_parameter_count,
     selected_preference_pairs,
