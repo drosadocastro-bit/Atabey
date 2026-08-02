@@ -94,6 +94,7 @@ the relevant audit before promoting one.
 | V20 | Can a strict kinematic firewall clean division topology? | NO-GO in its current form: it suppressed all four corrected V19 TPs. Earlier FP-reduction claims were invalidated by evaluator mismatch. |
 | V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Partial research result. The joint semantic Phase 0 extractor passed its fixed battery, but the preregistered availability gate failed at 13/46 development and 7/47 calibration positives. Calibrated scoring and constrained assignment are not authorized under the current formation path. |
 | V22 | Can public learned detections repair upstream division availability without weakening epistemic guardrails? | Mixed but promising. The conservative post-link second-child rule remained a standalone NO-GO, while the frozen temporal U-Net raised patched-official action availability from 13/46 to 39/46 with zero graph mutation. Semantic ranking plus coupled local ownership is now pre-registered on development only; locked validation and the full 199 remain closed. |
+| V23 | Can detector-native, radar-inspired, or parent-centered pair-field evidence rank division actions beyond explicit geometry? | Closed NO-GO for the learned pair-field path. Across three seeds the image model recovered only 6-10 of 29 events at Recall@10, while geometry-only recovered 26/29. Shuffled and static-image controls found no independent image contribution. CFAR and production graphs remain unchanged. |
 
 ## Start Here
 
@@ -117,6 +118,10 @@ the relevant audit before promoting one.
   patched-official 39/46 action-availability GO and explicit remaining failures.
 - [V22 Joint Semantic Ranking With Local Assignment](V22_JOINT_SEMANTIC_ASSIGNMENT_PREREGISTRATION.md):
   sample-blocked ranking, unknown-label policy, and coupled ownership constraint contract.
+- [V23 Session Closure](V23_SESSION_CLOSURE_2026-08-02.md): final detector-native evidence
+  synthesis, pair-field NO-GO, preserved geometry result, and the boundary for any future version.
+- [V23 Bounded Pair-Field Ranker Results](V23_BOUNDED_PAIR_FIELD_RANKER_RESULTS.md): three-seed
+  sample-blocked results and mandatory control comparison.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
