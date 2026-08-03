@@ -3,7 +3,7 @@
   "status": "runner_implemented_ready_for_smoke",
   "sources": {
     "development_fixture": "tests/fixtures/v22_unet_detection_development_46.json",
-    "development_fixture_sha256": "14d77a14c17224d84b5653b76efa39b962f5172628f155eb7e1a91de9ddc3fb8",
+    "development_fixture_sha256": "ac34986d47dc2412d718b01144c304576c7746255e52b518f0a76c9e13bb13e2",
     "checkpoint_contract": "tests/fixtures/v22_e016_clean_secondary_checkpoint.json",
     "checkpoint_contract_sha256": "9bb7464c9cad534ebb03210227085c41cc97b11e63c300455a275109a7ea2619",
     "official_tracking_metric": "src/atabey/evaluation/official_tracking_metric.py",
