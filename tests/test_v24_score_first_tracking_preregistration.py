@@ -15,11 +15,18 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _sha256_normalized_text(path: Path) -> str:
+    content = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+    return hashlib.sha256(content.encode("utf-8")).hexdigest()
+
+
 def test_v24_sources_are_pinned_before_runner_implementation():
     contract = _contract()
     sources = contract["sources"]
+    assert _sha256_normalized_text(ROOT / sources["development_fixture"]) == sources[
+        "development_fixture_sha256"
+    ]
     for path_key, hash_key in (
-        ("development_fixture", "development_fixture_sha256"),
         ("checkpoint_contract", "checkpoint_contract_sha256"),
         ("official_tracking_metric", "official_tracking_metric_sha256"),
         ("v19_builder", "v19_builder_sha256"),
@@ -29,7 +36,7 @@ def test_v24_sources_are_pinned_before_runner_implementation():
         ("unet_graph_module", "unet_graph_module_sha256"),
         ("runner", "runner_sha256"),
     ):
-        assert _sha256(ROOT / sources[path_key]) == sources[hash_key]
+        assert _sha256_normalized_text(ROOT / sources[path_key]) == sources[hash_key]
     assert sources["predictor_runtime_sha256_required"] is True
 
 
