@@ -65,8 +65,8 @@ def test_v24_kaggle_notebook_preserves_frozen_execution_gates():
     assert 'ROOT = Path("/kaggle/working/Atabey")' not in source
     assert '"--no-deps", *pinned_official_packages' in source
     assert 'f"{ROOT}[official-metrics]"' not in source
-    assert 'RUN_MODE = "smoke"' in source
-    assert "AUTHORIZE_FULL_27 = False" in source
+    assert 'RUN_MODE = "full_27"' in source
+    assert "AUTHORIZE_FULL_27 = True" in source
     assert 'SAMPLE_SELECTOR = "smoke" if RUN_MODE == "smoke" else "all"' in source
     assert '"--verify-determinism"' in source
     assert "--max-timepoints" not in source

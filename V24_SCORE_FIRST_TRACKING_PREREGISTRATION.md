@@ -1,6 +1,6 @@
 # V24 Score-First Tracking Preregistration
 
-Status: **contract frozen; resumable runner and Kaggle notebook implemented; smoke not yet run**.
+Status: **contract frozen; Kaggle smoke passed; frozen 27-sample evaluation authorized**.
 
 ## Purpose
 
@@ -120,7 +120,8 @@ If both challengers pass, choose the larger adjusted-edge improvement. A differe
 ## Current Authorization
 
 The resumable three-arm runner, fail-closed graph conversion tests, and
-`notebooks/V24_score_first_tracking_kaggle.ipynb` are implemented. Authorized next: run the
-three-sample Kaggle smoke, then run the frozen 27-sample evaluation only after the smoke passes.
+`notebooks/V24_score_first_tracking_kaggle.ipynb` are implemented. The three-sample smoke passed
+with deterministic replay; see `V24_SCORE_FIRST_TRACKING_SMOKE_RESULTS.md`. Authorized next: run
+the unchanged frozen 27-sample evaluation.
 
 Not authorized: full 199 execution, hybrid construction, threshold tuning, retraining, submission, or production mutation.
