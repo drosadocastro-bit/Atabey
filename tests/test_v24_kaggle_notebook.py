@@ -45,6 +45,15 @@ def test_v24_kaggle_notebook_preserves_frozen_execution_gates():
     source = "\n".join(_source(cell) for cell in _notebook()["cells"])
     assert f'EXPECTED_COMMIT = "{EXPECTED_COMMIT}"' in source
     assert EXPECTED_CHECKPOINT in source
+    assert "tracksdata.git@39dccf3a243e44274759468cb31b2ad9e7fc1d09" in source
+    assert (
+        "kaggle-cell-tracking-competition.git@075fc5f5a52d11077f9dc2b074644618f26939e2"
+        in source
+    )
+    assert 'ROOT = Path("/tmp/Atabey")' in source
+    assert 'ROOT = Path("/kaggle/working/Atabey")' not in source
+    assert '"--no-deps", *pinned_official_packages' in source
+    assert 'f"{ROOT}[official-metrics]"' not in source
     assert 'RUN_MODE = "smoke"' in source
     assert "AUTHORIZE_FULL_27 = False" in source
     assert 'SAMPLE_SELECTOR = "smoke" if RUN_MODE == "smoke" else "all"' in source
