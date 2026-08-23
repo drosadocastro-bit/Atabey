@@ -1,4 +1,5 @@
 import ast
+import hashlib
 import json
 from pathlib import Path
 
@@ -18,6 +19,16 @@ def _notebook() -> dict:
 def _source(cell: dict) -> str:
     source = cell["source"]
     return "".join(source) if isinstance(source, list) else source
+
+
+def _code_cell_starting(prefix: str) -> str:
+    matches = [
+        _source(cell)
+        for cell in _notebook()["cells"]
+        if cell["cell_type"] == "code" and _source(cell).startswith(prefix)
+    ]
+    assert len(matches) == 1
+    return matches[0]
 
 
 def test_v24_kaggle_notebook_is_clean_and_syntactically_valid():
@@ -63,3 +74,45 @@ def test_v24_kaggle_notebook_preserves_frozen_execution_gates():
     assert 'boundaries["model_retraining"] is False' in source
     assert 'boundaries["hybrid_enabled"] is False' in source
     assert 'boundaries["submission_authorized"] is False' in source
+
+
+def test_v24_kaggle_notebook_finds_deep_auxiliary_mounts(tmp_path):
+    input_root = tmp_path / "input"
+    train_dir = input_root / "competitions/biohub/train"
+    train_dir.mkdir(parents=True)
+    for index in range(199):
+        (train_dir / f"sample_{index:03d}.zarr").mkdir()
+        (train_dir / f"sample_{index:03d}.geff").mkdir()
+
+    support_repo = input_root / "datasets/pilkwang/support/payload/repo"
+    (support_repo / "scripts").mkdir(parents=True)
+    (support_repo / "scripts/predict_unet_transformer.py").write_text(
+        "# fixture\n", encoding="utf-8"
+    )
+    checkpoint_dir = input_root / "datasets/drakus74/checkpoint/artifact"
+    checkpoint_dir.mkdir(parents=True)
+    weights = checkpoint_dir / "edge_predictor_best.pth"
+    weights.write_bytes(b"frozen-checkpoint-fixture")
+    checkpoint_hash = hashlib.sha256(weights.read_bytes()).hexdigest()
+    (checkpoint_dir / "config.json").write_text(
+        json.dumps(
+            {
+                "window_size": 2,
+                "downsample": [1, 4, 4],
+                "unet_out_channels": 32,
+                "pool_kernel_um": 5.0,
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    source = _code_cell_starting('INPUT_ROOT = Path("/kaggle/input")')
+    source = source.replace(
+        'INPUT_ROOT = Path("/kaggle/input")', f"INPUT_ROOT = Path({str(input_root)!r})"
+    ).replace(EXPECTED_CHECKPOINT, checkpoint_hash)
+    namespace = {"Path": Path, "hashlib": hashlib, "json": json}
+    exec(compile(source, "<v24-input-discovery>", "exec"), namespace)
+
+    assert namespace["TRAIN_DIR"] == train_dir
+    assert namespace["SUPPORT_REPO"] == support_repo
+    assert namespace["WEIGHTS"] == weights
