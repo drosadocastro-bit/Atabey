@@ -1,0 +1,22 @@
+{
+  "candidate_set_changed": false,
+  "decision": "HOLD_PARENT_ACTIVATION",
+  "events": 2,
+  "graph_mutation": false,
+  "hold_signals": [
+    "history"
+  ],
+  "diagnostic_signal_ranks": {
+    "inverse_density": [
+      6,
+      6
+    ],
+    "track_age": [
+      95,
+      33
+    ]
+  },
+  "minimum_decoder_coverage": 1.0,
+  "status": "read_only_v23_parent_activation",
+  "zero_perturbation_all": true
+}

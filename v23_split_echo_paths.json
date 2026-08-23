@@ -1,0 +1,78 @@
+{
+  "anchored": [
+    {
+      "candidate_set_changed": false,
+      "case_id": "DEV-44b6_aaf8b0ea-t61-p390000000000",
+      "counterpart_rank_within_parent": 1,
+      "detector": "cfar_sidelobe",
+      "family": "44b6",
+      "global_proposal_rank": 970,
+      "graph_mutated": false,
+      "link_strategy": "bipartite",
+      "parent_seed_count": 124,
+      "parent_seed_rank": 109,
+      "path": "parent_present_anchored_completion",
+      "proposal_count": 2153,
+      "sample_id": "44b6_aaf8b0ea",
+      "t": 61,
+      "useful_parent_proposal_count": 3,
+      "zero_perturbation": true
+    },
+    {
+      "candidate_set_changed": false,
+      "case_id": "DEV-6bba_fc5f39dc-t24-p25000064",
+      "counterpart_rank_within_parent": 2,
+      "detector": "cfar_sidelobe",
+      "family": "6bba",
+      "global_proposal_rank": 109,
+      "graph_mutated": false,
+      "link_strategy": "bipartite",
+      "parent_seed_count": 61,
+      "parent_seed_rank": 22,
+      "path": "parent_present_anchored_completion",
+      "proposal_count": 270,
+      "sample_id": "6bba_fc5f39dc",
+      "t": 24,
+      "useful_parent_proposal_count": 8,
+      "zero_perturbation": true
+    }
+  ],
+  "quarantine": [
+    {
+      "candidate_set_changed": false,
+      "case_id": "DEV-44b6_74d0c52e-t58-p296000000021",
+      "detector": "cfar_sidelobe",
+      "family": "44b6",
+      "graph_mutated": false,
+      "link_strategy": "bipartite",
+      "path": "parent_present_link_identity_quarantine",
+      "prior_pooled_pair_rank": 7,
+      "prior_pooled_seed_rank": 241,
+      "prior_pooled_seed_source": "primary_parent",
+      "reason": "detected_parent_has_no_registered_existing_child_anchor",
+      "registered_parent_child_anchor_count": 0,
+      "registered_parent_detection_count": 1,
+      "sample_id": "44b6_74d0c52e",
+      "t": 58,
+      "zero_perturbation": true
+    },
+    {
+      "candidate_set_changed": false,
+      "case_id": "DEV-6bba_57b7cc1e-t23-p24000720",
+      "detector": "cfar_sidelobe",
+      "family": "6bba",
+      "graph_mutated": false,
+      "link_strategy": "bipartite",
+      "path": "parent_missing_quarantine",
+      "prior_pooled_pair_rank": 83,
+      "prior_pooled_seed_rank": 349,
+      "prior_pooled_seed_source": "echo_parent",
+      "reason": "no_detected_parent_within_official_radius",
+      "registered_parent_child_anchor_count": 0,
+      "registered_parent_detection_count": 0,
+      "sample_id": "6bba_57b7cc1e",
+      "t": 23,
+      "zero_perturbation": true
+    }
+  ]
+}

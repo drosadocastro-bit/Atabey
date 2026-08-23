@@ -1,0 +1,94 @@
+[
+  {
+    "baseline_7um_counts": {
+      "daughter_1": 1,
+      "daughter_2": 1,
+      "parent": 0
+    },
+    "baseline_7um_distinct_roles": false,
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "formed_action_count": 30718,
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids": [],
+    "official_7um_geometric_shadow_actions": 0,
+    "sample_id": "44b6_706092f0",
+    "shadow_14um_counts": {
+      "daughter_1": 1,
+      "daughter_2": 1,
+      "parent": 0
+    },
+    "shadow_14um_distinct_roles": false,
+    "t": 49
+  },
+  {
+    "baseline_7um_counts": {
+      "daughter_1": 0,
+      "daughter_2": 1,
+      "parent": 1
+    },
+    "baseline_7um_distinct_roles": false,
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "formed_action_count": 13779,
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids": [],
+    "official_7um_geometric_shadow_actions": 0,
+    "sample_id": "44b6_74d0c52e",
+    "shadow_14um_counts": {
+      "daughter_1": 2,
+      "daughter_2": 3,
+      "parent": 6
+    },
+    "shadow_14um_distinct_roles": true,
+    "t": 58
+  },
+  {
+    "baseline_7um_counts": {
+      "daughter_1": 1,
+      "daughter_2": 1,
+      "parent": 1
+    },
+    "baseline_7um_distinct_roles": true,
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "formed_action_count": 55641,
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids": [],
+    "official_7um_geometric_shadow_actions": 0,
+    "sample_id": "44b6_aaf8b0ea",
+    "shadow_14um_counts": {
+      "daughter_1": 1,
+      "daughter_2": 2,
+      "parent": 2
+    },
+    "shadow_14um_distinct_roles": true,
+    "t": 61
+  },
+  {
+    "baseline_7um_counts": {
+      "daughter_1": 0,
+      "daughter_2": 2,
+      "parent": 0
+    },
+    "baseline_7um_distinct_roles": false,
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "formed_action_count": 29866,
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids": [],
+    "official_7um_geometric_shadow_actions": 0,
+    "sample_id": "6bba_57b7cc1e",
+    "shadow_14um_counts": {
+      "daughter_1": 8,
+      "daughter_2": 10,
+      "parent": 7
+    },
+    "shadow_14um_distinct_roles": true,
+    "t": 23
+  }
+]

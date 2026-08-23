@@ -1,0 +1,142 @@
+{
+  "name": "v22_continuation_head_oof_v1",
+  "status": "preregistered_training_not_run",
+  "source_feature_contract": "tests/fixtures/v22_continuation_feature_table.json",
+  "source_feature_contract_sha256": "2a8a08e03f0a6ac0bbfb91f64385d214cf4449b3f2b66c636a565e959d77d457",
+  "source_feature_summary": "v22_continuation_feature_table_summary.json",
+  "source_feature_summary_sha256": "13bd11eee3a3619d9107256bc2f0bf07c9bdeb08e8a40a3febecc24520edf1d5",
+  "source_feature_shards": "v22_continuation_feature_shards",
+  "outer_validation": {
+    "scheme": "three_sample_blocked_folds",
+    "folds": [
+      1,
+      2,
+      3
+    ],
+    "heldout_fold_never_guides_model_selection": true,
+    "single_calibration_fold_allowed": false
+  },
+  "training_population": {
+    "pair_definition": "weak_reference_preferred_vs_each_same_group_alternative",
+    "reference_is_ground_truth": false,
+    "alternative_is_biological_negative": false,
+    "singleton_groups_used_for_training": false,
+    "singleton_groups_used_for_decision_metrics": false,
+    "singleton_groups_reported_separately": true
+  },
+  "model": {
+    "type": "l2_regularized_pairwise_logistic_ranker",
+    "regularization_grid_c": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "feature_standardization": "fit_on_outer_training_samples_only",
+    "missing_value_imputation": "outer_training_feature_median",
+    "missing_value_masks_included": true,
+    "route_is_feature": false,
+    "family_is_feature": false,
+    "sample_id_is_feature": false,
+    "parent_frame_is_feature": false,
+    "nonlinear_model_decision_eligible": false
+  },
+  "inner_selection": {
+    "scheme": "swap_the_two_outer_training_folds",
+    "selection_metric": "equal_sample_weighted_nontrivial_group_top1",
+    "tie_break": "stronger_regularization_then_smaller_c",
+    "refit_on_both_outer_training_folds": true
+  },
+  "weighting": {
+    "hierarchy": [
+      "sample",
+      "parent_frame",
+      "reference",
+      "pair"
+    ],
+    "samples_equal_within_each_outer_fold": true,
+    "raw_row_weighting_allowed": false
+  },
+  "evaluation": {
+    "decision_population": "groups_with_at_least_one_alternative",
+    "strict_score_tie_tolerance": 1e-12,
+    "score_tie_counts_as_top1_success": false,
+    "primary_metric": "equal_sample_weighted_reference_top1",
+    "secondary_metrics": [
+      "equal_sample_weighted_pairwise_preference_accuracy",
+      "equal_sample_weighted_reference_mrr"
+    ],
+    "required_strata": [
+      "fold",
+      "family",
+      "route",
+      "sample",
+      "parent_frame"
+    ],
+    "pooled_metric_requires_all_strata": true,
+    "stratum_weighting": "equal_sample_within_each_reported_fold_family_route"
+  },
+  "generalization": {
+    "fold_hard_gates": {
+      "pooled_reference_top1_min": 0.85,
+      "each_fold_reference_top1_min": 0.8,
+      "reference_top1_max_fold_spread": 0.1,
+      "pooled_pairwise_accuracy_min": 0.9,
+      "each_fold_pairwise_accuracy_min": 0.85,
+      "pairwise_accuracy_max_fold_spread": 0.08,
+      "each_fold_mrr_min": 0.9,
+      "maximum_fold_drop_from_other_two_mean": 0.1
+    },
+    "fold_flagged_concerns": {
+      "reference_top1_fold_spread_above": 0.05,
+      "pairwise_accuracy_fold_spread_above": 0.04,
+      "fold_drop_from_other_two_mean_above": 0.05
+    },
+    "route_hard_gates": {
+      "decision_routes": [
+        "cfar_sidelobe/bipartite",
+        "components/greedy"
+      ],
+      "each_route_reference_top1_min": 0.8,
+      "each_route_pairwise_accuracy_min": 0.85,
+      "reference_top1_max_route_gap": 0.1,
+      "pairwise_accuracy_max_route_gap": 0.08,
+      "each_route_fold_reference_top1_min": 0.7,
+      "maximum_route_fold_drop_from_route_oof": 0.15
+    },
+    "route_flagged_concerns": {
+      "reference_top1_route_gap_above": 0.05,
+      "pairwise_accuracy_route_gap_above": 0.04,
+      "route_fold_drop_from_route_oof_above": 0.1
+    },
+    "local_maxima": {
+      "decision_eligible": false,
+      "evaluation_status": "zero_shot_only_in_fold_3",
+      "required_metric_caveat": "unproven generalization",
+      "may_carry_pooled_go": false,
+      "dedicated_fitting_or_calibration_allowed": false
+    }
+  },
+  "diagnostics": {
+    "teacher_derived_feature_ablation_required": true,
+    "teacher_derived_features": [
+      "prediction_error_um",
+      "forward_competitor_margin_um",
+      "reverse_competitor_margin_um",
+      "forward_rank_local_14um",
+      "reverse_rank_local_14um"
+    ],
+    "high_weak_reference_recovery_is_biological_validation": false
+  },
+  "decision_states": {
+    "GO_TO_JOINT_SEMANTIC_SHADOW": "all_hard_gates_pass_and_no_flagged_concern",
+    "HOLD_GENERALIZATION_CONCERN": "all_hard_gates_pass_but_any_flagged_concern_fires",
+    "NO_GO": "any_hard_gate_fails"
+  },
+  "semantic_scoring_enabled": false,
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "production_graph_mutation_enabled": false,
+  "locked_validation_opened": false,
+  "full_199_authorized": false
+}

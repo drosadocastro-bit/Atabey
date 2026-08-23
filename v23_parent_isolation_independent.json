@@ -1,0 +1,407 @@
+[
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      17000000001,
+      17000000002
+    ],
+    "gt_parent_id": 16000000001,
+    "inverse_density_percentile": 0.010869565217391353,
+    "inverse_density_rank": 92,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 7.0,
+    "registered_parent_track_age": 4,
+    "sample_id": "44b6_267148e4",
+    "seed_count": 92,
+    "t": 3,
+    "track_age_rank": 56,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      161000000049,
+      161000000048
+    ],
+    "gt_parent_id": 160000000048,
+    "inverse_density_percentile": 0.6758793969849246,
+    "inverse_density_rank": 130,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 3.0,
+    "registered_parent_track_age": 3,
+    "sample_id": "44b6_2a2eff9f",
+    "seed_count": 398,
+    "t": 11,
+    "track_age_rank": 344,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      447000000015,
+      447000000016
+    ],
+    "gt_parent_id": 446000000015,
+    "link_strategy": "bipartite",
+    "sample_id": "44b6_706092f0",
+    "seed_count": 385,
+    "t": 49,
+    "unevaluable_reason": "missing_parent_detection",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      297000000022,
+      297000000021
+    ],
+    "gt_parent_id": 296000000021,
+    "link_strategy": "bipartite",
+    "sample_id": "44b6_74d0c52e",
+    "seed_count": 77,
+    "t": 58,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      264000000020,
+      264000000019
+    ],
+    "gt_parent_id": 263000000019,
+    "link_strategy": "bipartite",
+    "sample_id": "44b6_7a302da0",
+    "seed_count": 345,
+    "t": 90,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      477000000009,
+      477000000008
+    ],
+    "gt_parent_id": 476000000008,
+    "link_strategy": "bipartite",
+    "sample_id": "44b6_9be80b04",
+    "seed_count": 347,
+    "t": 77,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      172000000043,
+      172000000044
+    ],
+    "gt_parent_id": 171000000043,
+    "link_strategy": "bipartite",
+    "sample_id": "44b6_c50204e0",
+    "seed_count": 290,
+    "t": 28,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      276000000002,
+      276000000003
+    ],
+    "gt_parent_id": 275000000002,
+    "link_strategy": "bipartite",
+    "sample_id": "44b6_d2f34f90",
+    "seed_count": 155,
+    "t": 51,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      174000000010,
+      174000000011
+    ],
+    "gt_parent_id": 173000000010,
+    "inverse_density_percentile": 0.28110599078341014,
+    "inverse_density_rank": 157,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 6.0,
+    "registered_parent_track_age": 5,
+    "sample_id": "44b6_d5e7d891",
+    "seed_count": 217,
+    "t": 12,
+    "track_age_rank": 140,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "44b6",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      161000000049,
+      161000000048
+    ],
+    "gt_parent_id": 160000000048,
+    "inverse_density_percentile": 0.5223880597014925,
+    "inverse_density_rank": 161,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 5.0,
+    "registered_parent_track_age": 20,
+    "sample_id": "44b6_eb2880fc",
+    "seed_count": 335,
+    "t": 72,
+    "track_age_rank": 14,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      26000400,
+      26000403
+    ],
+    "gt_parent_id": 25000381,
+    "link_strategy": "bipartite",
+    "sample_id": "6bba_05db0fb1",
+    "seed_count": 433,
+    "t": 24,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      37000317,
+      37000318
+    ],
+    "gt_parent_id": 36000309,
+    "link_strategy": "bipartite",
+    "sample_id": "6bba_07e24132",
+    "seed_count": 185,
+    "t": 35,
+    "unevaluable_reason": "missing_parent_detection",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      59000348,
+      59000349
+    ],
+    "gt_parent_id": 58000343,
+    "inverse_density_percentile": 0.7226277372262774,
+    "inverse_density_rank": 39,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 1.0,
+    "registered_parent_track_age": 1,
+    "sample_id": "6bba_0e7c0d07",
+    "seed_count": 137,
+    "t": 57,
+    "track_age_rank": 118,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      43000304,
+      43000305
+    ],
+    "gt_parent_id": 42000280,
+    "link_strategy": "bipartite",
+    "sample_id": "6bba_207c6aaf",
+    "seed_count": 92,
+    "t": 41,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      7000244,
+      7000281
+    ],
+    "gt_parent_id": 6000204,
+    "inverse_density_percentile": 0.5030674846625767,
+    "inverse_density_rank": 163,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 4.0,
+    "registered_parent_track_age": 6,
+    "sample_id": "6bba_32db13fc",
+    "seed_count": 326,
+    "t": 5,
+    "track_age_rank": 56,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      83001334,
+      83001350
+    ],
+    "gt_parent_id": 82001296,
+    "link_strategy": "bipartite",
+    "sample_id": "6bba_3abfe10a",
+    "seed_count": 367,
+    "t": 81,
+    "unevaluable_reason": "missing_parent_detection",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      84000737,
+      84000738
+    ],
+    "gt_parent_id": 83000724,
+    "inverse_density_percentile": 0.8847583643122676,
+    "inverse_density_rank": 32,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 2.0,
+    "registered_parent_track_age": 4,
+    "sample_id": "6bba_3db54e20",
+    "seed_count": 269,
+    "t": 82,
+    "track_age_rank": 137,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": false,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      65000355,
+      65000356
+    ],
+    "gt_parent_id": 64000351,
+    "link_strategy": "bipartite",
+    "sample_id": "6bba_474be664",
+    "seed_count": 141,
+    "t": 63,
+    "unevaluable_reason": "missing_single_child_anchor",
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      47000265,
+      47000266
+    ],
+    "gt_parent_id": 46000256,
+    "inverse_density_percentile": 0.3262411347517731,
+    "inverse_density_rank": 96,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 4.0,
+    "registered_parent_track_age": 7,
+    "sample_id": "6bba_4ffd3da3",
+    "seed_count": 141,
+    "t": 45,
+    "track_age_rank": 48,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "evaluable": true,
+    "family": "6bba",
+    "graph_mutated": false,
+    "gt_child_ids": [
+      14000412,
+      14000426
+    ],
+    "gt_parent_id": 13000378,
+    "inverse_density_percentile": 0.8346456692913385,
+    "inverse_density_rank": 64,
+    "link_strategy": "bipartite",
+    "registered_parent_density_14um": 1.0,
+    "registered_parent_track_age": 7,
+    "sample_id": "6bba_57b7cc1e",
+    "seed_count": 381,
+    "t": 12,
+    "track_age_rank": 95,
+    "unevaluable_reason": null,
+    "zero_perturbation": true
+  }
+]

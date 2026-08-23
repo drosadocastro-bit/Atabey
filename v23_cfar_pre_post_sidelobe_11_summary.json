@@ -1,0 +1,15 @@
+{
+  "candidate_set_changed": false,
+  "graph_mutation": false,
+  "official_metric_used": false,
+  "population": {
+    "cases": 11,
+    "unique_frames": 22
+  },
+  "post_official_geometry_available": 4,
+  "pre_official_geometry_available": 4,
+  "roles_lost_from_7um": 0,
+  "roles_preserved_within_7um": 25,
+  "sidelobe_caused_official_loss": 0,
+  "status": "read_only_v23_cfar_pre_post_sidelobe_11"
+}

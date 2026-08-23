@@ -79,6 +79,17 @@ def test_v22_semantic_assignment_sources_and_epistemic_guards_are_frozen():
     assert continuation["missing_or_low_margin_outcome"] == "abstain"
     assert "sampling_weights" in fixture["semantic_model"]["calibration"]
 
+    reporting = fixture["reporting"]
+    assert reporting["pooled_metrics_require_route_breakdown"] is True
+    local_maxima = reporting["local_maxima"]
+    assert local_maxima["development_samples"] == 1
+    assert local_maxima["development_fold"] == 3
+    assert local_maxima["rounds_without_heldout_route_evidence"] == 2
+    assert local_maxima["heldout_round_training_route_status"] == "absent_zero_shot"
+    assert local_maxima["generalization_status"] == "unproven"
+    assert local_maxima["required_metric_caveat"] == "unproven generalization"
+    assert local_maxima["dedicated_training_or_calibration_allowed"] is False
+
     assert fixture["semantic_scoring_enabled"] is False
     assert fixture["assignment_enabled"] is False
     assert fixture["production_graph_mutation_enabled"] is False

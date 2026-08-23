@@ -1,0 +1,70 @@
+[
+  {
+    "after": {
+      "counterpart_rank_within_parent": 1,
+      "global_proposal_rank": 856,
+      "parent_seed_rank": 89
+    },
+    "before": {
+      "counterpart_rank_within_parent": 1,
+      "global_proposal_rank": 970,
+      "parent_seed_rank": 109
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_aaf8b0ea-t61-p390000000000",
+    "correct_coherence": {
+      "coherence_score": 0.6101184540385182,
+      "counterpart_source": "echo",
+      "counterpart_velocity_residual_um": 0.5745242597140698,
+      "distinct": true,
+      "mean_evidence": 0.6399495838481489,
+      "retained_source": "primary",
+      "retained_velocity_residual_um": 3.6787502123683256,
+      "separation_residual_um": 3.72334275215162
+    },
+    "correct_non_tp_percentile": 0.6026951672862454,
+    "correct_parent_velocity_mode": "velocity",
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "proposal_count": 2153,
+    "sample_id": "44b6_aaf8b0ea",
+    "t": 61,
+    "zero_perturbation": true
+  },
+  {
+    "after": {
+      "counterpart_rank_within_parent": 6,
+      "global_proposal_rank": 248,
+      "parent_seed_rank": 39
+    },
+    "before": {
+      "counterpart_rank_within_parent": 2,
+      "global_proposal_rank": 109,
+      "parent_seed_rank": 22
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t24-p25000064",
+    "correct_coherence": {
+      "coherence_score": 0.42833553090599635,
+      "counterpart_source": "primary",
+      "counterpart_velocity_residual_um": 8.200069615447534,
+      "distinct": true,
+      "mean_evidence": 1.0,
+      "retained_source": "primary",
+      "retained_velocity_residual_um": 4.647558239035551,
+      "separation_residual_um": 4.9053613881664795
+    },
+    "correct_non_tp_percentile": 0.08178438661710037,
+    "correct_parent_velocity_mode": "velocity",
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "proposal_count": 270,
+    "sample_id": "6bba_fc5f39dc",
+    "t": 24,
+    "zero_perturbation": true
+  }
+]

@@ -1,0 +1,528 @@
+[
+  {
+    "candidate_details": [
+      {
+        "child_existing_incoming": {
+          "44b6_c50204e0:t29:cf17": [
+            "44b6_c50204e0:t28:cf77"
+          ],
+          "44b6_c50204e0:t29:cf86": [
+            "44b6_c50204e0:t28:cf77"
+          ]
+        },
+        "child_ids": [
+          "44b6_c50204e0:t29:cf17",
+          "44b6_c50204e0:t29:cf86"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "44b6_c50204e0:t28:cf287"
+      },
+      {
+        "child_existing_incoming": {
+          "44b6_c50204e0:t29:cf223": [
+            "44b6_c50204e0:t28:cf105"
+          ],
+          "44b6_c50204e0:t29:cf86": [
+            "44b6_c50204e0:t28:cf77"
+          ]
+        },
+        "child_ids": [
+          "44b6_c50204e0:t29:cf223",
+          "44b6_c50204e0:t29:cf86"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "44b6_c50204e0:t28:cf287"
+      },
+      {
+        "child_existing_incoming": {
+          "44b6_c50204e0:t29:cf17": [
+            "44b6_c50204e0:t28:cf77"
+          ],
+          "44b6_c50204e0:t29:cf86": [
+            "44b6_c50204e0:t28:cf77"
+          ]
+        },
+        "child_ids": [
+          "44b6_c50204e0:t29:cf17",
+          "44b6_c50204e0:t29:cf86"
+        ],
+        "child_ownership_conflict": false,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "44b6_c50204e0:t29:cf17",
+          "44b6_c50204e0:t29:cf86"
+        ],
+        "parent_id": "44b6_c50204e0:t28:cf77"
+      },
+      {
+        "child_existing_incoming": {
+          "44b6_c50204e0:t29:cf223": [
+            "44b6_c50204e0:t28:cf105"
+          ],
+          "44b6_c50204e0:t29:cf86": [
+            "44b6_c50204e0:t28:cf77"
+          ]
+        },
+        "child_ids": [
+          "44b6_c50204e0:t29:cf223",
+          "44b6_c50204e0:t29:cf86"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "44b6_c50204e0:t29:cf17",
+          "44b6_c50204e0:t29:cf86"
+        ],
+        "parent_id": "44b6_c50204e0:t28:cf77"
+      }
+    ],
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_c50204e0-t28-p171000000043",
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "official_tp_actions": 4,
+    "outcome": "official_action_available",
+    "retained_anchored_actions": 4,
+    "sample_id": "44b6_c50204e0",
+    "t": 28,
+    "valid_detector_geometry_triples": 4,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_details": [
+      {
+        "child_existing_incoming": {
+          "44b6_c50204e0:t66:cf5": [
+            "44b6_c50204e0:t65:cf264"
+          ],
+          "44b6_c50204e0:t66:cf9": [
+            "44b6_c50204e0:t65:cf10"
+          ]
+        },
+        "child_ids": [
+          "44b6_c50204e0:t66:cf5",
+          "44b6_c50204e0:t66:cf9"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "44b6_c50204e0:t66:cf9"
+        ],
+        "parent_id": "44b6_c50204e0:t65:cf10"
+      }
+    ],
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_c50204e0-t65-p208000000033",
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "official_tp_actions": 1,
+    "outcome": "official_action_available",
+    "retained_anchored_actions": 1,
+    "sample_id": "44b6_c50204e0",
+    "t": 65,
+    "valid_detector_geometry_triples": 1,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_details": [
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf39": [],
+          "6bba_57b7cc1e:t13:cf575": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf39",
+          "6bba_57b7cc1e:t13:cf575"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf39": [],
+          "6bba_57b7cc1e:t13:cf692": [
+            "6bba_57b7cc1e:t12:cf509"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf39",
+          "6bba_57b7cc1e:t13:cf692"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf50": [
+            "6bba_57b7cc1e:t12:cf129"
+          ],
+          "6bba_57b7cc1e:t13:cf97": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf50",
+          "6bba_57b7cc1e:t13:cf97"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf50": [
+            "6bba_57b7cc1e:t12:cf129"
+          ],
+          "6bba_57b7cc1e:t13:cf692": [
+            "6bba_57b7cc1e:t12:cf509"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf50",
+          "6bba_57b7cc1e:t13:cf692"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf575": [
+            "6bba_57b7cc1e:t12:cf133"
+          ],
+          "6bba_57b7cc1e:t13:cf9": [
+            "6bba_57b7cc1e:t12:cf97"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf575",
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf39": [],
+          "6bba_57b7cc1e:t13:cf575": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf39",
+          "6bba_57b7cc1e:t13:cf575"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf39": [],
+          "6bba_57b7cc1e:t13:cf692": [
+            "6bba_57b7cc1e:t12:cf509"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf39",
+          "6bba_57b7cc1e:t13:cf692"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf50": [
+            "6bba_57b7cc1e:t12:cf129"
+          ],
+          "6bba_57b7cc1e:t13:cf97": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf50",
+          "6bba_57b7cc1e:t13:cf97"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf692": [
+            "6bba_57b7cc1e:t12:cf509"
+          ],
+          "6bba_57b7cc1e:t13:cf9": [
+            "6bba_57b7cc1e:t12:cf97"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf692",
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf39": [],
+          "6bba_57b7cc1e:t13:cf97": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf39",
+          "6bba_57b7cc1e:t13:cf97"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf692": [
+            "6bba_57b7cc1e:t12:cf509"
+          ],
+          "6bba_57b7cc1e:t13:cf9": [
+            "6bba_57b7cc1e:t12:cf97"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf692",
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf50": [
+            "6bba_57b7cc1e:t12:cf129"
+          ],
+          "6bba_57b7cc1e:t13:cf575": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf50",
+          "6bba_57b7cc1e:t13:cf575"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf575": [
+            "6bba_57b7cc1e:t12:cf133"
+          ],
+          "6bba_57b7cc1e:t13:cf9": [
+            "6bba_57b7cc1e:t12:cf97"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf575",
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf9": [
+            "6bba_57b7cc1e:t12:cf97"
+          ],
+          "6bba_57b7cc1e:t13:cf97": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf9",
+          "6bba_57b7cc1e:t13:cf97"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf9": [
+            "6bba_57b7cc1e:t12:cf97"
+          ],
+          "6bba_57b7cc1e:t13:cf97": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf9",
+          "6bba_57b7cc1e:t13:cf97"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf39": [],
+          "6bba_57b7cc1e:t13:cf97": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf39",
+          "6bba_57b7cc1e:t13:cf97"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf50": [
+            "6bba_57b7cc1e:t12:cf129"
+          ],
+          "6bba_57b7cc1e:t13:cf575": [
+            "6bba_57b7cc1e:t12:cf133"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf50",
+          "6bba_57b7cc1e:t13:cf575"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_57b7cc1e:t12:cf310"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_57b7cc1e:t13:cf50": [
+            "6bba_57b7cc1e:t12:cf129"
+          ],
+          "6bba_57b7cc1e:t13:cf692": [
+            "6bba_57b7cc1e:t12:cf509"
+          ]
+        },
+        "child_ids": [
+          "6bba_57b7cc1e:t13:cf50",
+          "6bba_57b7cc1e:t13:cf692"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [
+          "6bba_57b7cc1e:t13:cf9"
+        ],
+        "parent_id": "6bba_57b7cc1e:t12:cf97"
+      }
+    ],
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t12-p13000378",
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "official_tp_actions": 18,
+    "outcome": "official_action_available",
+    "retained_anchored_actions": 18,
+    "sample_id": "6bba_57b7cc1e",
+    "t": 12,
+    "valid_detector_geometry_triples": 18,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_details": [
+      {
+        "child_existing_incoming": {
+          "6bba_fc5f39dc:t55:cf118": [],
+          "6bba_fc5f39dc:t55:cf99": [
+            "6bba_fc5f39dc:t54:cf207"
+          ]
+        },
+        "child_ids": [
+          "6bba_fc5f39dc:t55:cf118",
+          "6bba_fc5f39dc:t55:cf99"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_fc5f39dc:t54:cf148"
+      },
+      {
+        "child_existing_incoming": {
+          "6bba_fc5f39dc:t55:cf148": [
+            "6bba_fc5f39dc:t54:cf162"
+          ],
+          "6bba_fc5f39dc:t55:cf99": [
+            "6bba_fc5f39dc:t54:cf207"
+          ]
+        },
+        "child_ids": [
+          "6bba_fc5f39dc:t55:cf148",
+          "6bba_fc5f39dc:t55:cf99"
+        ],
+        "child_ownership_conflict": true,
+        "parent_anchor_retained": true,
+        "parent_existing_outgoing": [],
+        "parent_id": "6bba_fc5f39dc:t54:cf148"
+      }
+    ],
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t54-p55000245",
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "official_tp_actions": 2,
+    "outcome": "official_action_available",
+    "retained_anchored_actions": 2,
+    "sample_id": "6bba_fc5f39dc",
+    "t": 54,
+    "valid_detector_geometry_triples": 2,
+    "zero_perturbation": true
+  }
+]

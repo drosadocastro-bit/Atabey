@@ -1,0 +1,62 @@
+{
+  "candidate_set_changed": false,
+  "decision": "HOLD",
+  "eligible_signals": [],
+  "graph_mutation": false,
+  "population": {
+    "events": 4,
+    "k1_recoveries": 4
+  },
+  "signals": {
+    "best_echo_score": {
+      "family_top25": {
+        "44b6": 0,
+        "6bba": 0
+      },
+      "top_n_capture": {
+        "10": 0,
+        "25": 0,
+        "5": 0,
+        "50": 1
+      }
+    },
+    "combined_score": {
+      "family_top25": {
+        "44b6": 0,
+        "6bba": 0
+      },
+      "top_n_capture": {
+        "10": 0,
+        "25": 0,
+        "5": 0,
+        "50": 1
+      }
+    },
+    "density_penalized_score": {
+      "family_top25": {
+        "44b6": 1,
+        "6bba": 1
+      },
+      "top_n_capture": {
+        "10": 0,
+        "25": 2,
+        "5": 0,
+        "50": 3
+      }
+    },
+    "gap_score": {
+      "family_top25": {
+        "44b6": 0,
+        "6bba": 0
+      },
+      "top_n_capture": {
+        "10": 0,
+        "25": 0,
+        "5": 0,
+        "50": 1
+      }
+    }
+  },
+  "status": "read_only_v23_track_seed_ranking",
+  "zero_perturbation_all": true
+}

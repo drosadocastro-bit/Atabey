@@ -96,6 +96,25 @@
                       "shortlist_rule":  "union",
                       "truncation_must_be_logged":  true
                   },
+    "reporting":  {
+                       "required_strata":  [
+                                                "fold",
+                                                "family",
+                                                "route",
+                                                "sample",
+                                                "event"
+                                            ],
+                       "pooled_metrics_require_route_breakdown":  true,
+                       "local_maxima":  {
+                                              "development_samples":  1,
+                                              "development_fold":  3,
+                                              "rounds_without_heldout_route_evidence":  2,
+                                              "heldout_round_training_route_status":  "absent_zero_shot",
+                                              "generalization_status":  "unproven",
+                                              "required_metric_caveat":  "unproven generalization",
+                                              "dedicated_training_or_calibration_allowed":  false
+                                          }
+                   },
     "constraint_layer":  {
                              "architecture":  "local_coupled_binary_assignment",
                              "plain_one_to_one_lsap_allowed":  false,

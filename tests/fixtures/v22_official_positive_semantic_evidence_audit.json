@@ -1,0 +1,46 @@
+﻿{
+  "name": "v22_official_positive_semantic_evidence_audit_v1",
+  "status": "preregistered_results_not_opened",
+  "source_peak_csv": "v22_unet_detection_development_46_peaks.csv",
+  "source_peak_sha256": "58c838d2fa4463c94f75dc0858e7fac239d880c9d91bed006d068e3e6caf1938",
+  "source_action_summary": "v22_semantic_action_table_summary.json",
+  "source_action_summary_sha256": "b15796c47f86fe03c86eb2b2d187ed7a5283625da0325bea11a22406868f8732",
+  "source_development_contract": "tests/fixtures/v22_joint_semantic_assignment_development.json",
+  "source_development_contract_sha256": "41414fba9208c66e70b6b03915cfc4aebcf96a2ec724382dcd3227a4ca128f61",
+  "source_proxy_audit": "V22_CONTINUATION_TEACHER_PROXY_AUDIT.md",
+  "source_proxy_audit_sha256": "afd943ef4a99be5eeaff6598a99a8243214252a6235e4db61189e1c9f9e149f8",
+  "population": {"samples": 27, "events": 46, "peaks": 21520, "actions": 268822, "official_tp": 64, "official_fp": 518, "unknown_actions_remain_unknown": true},
+  "patch": {"voxel_scale_um": [1.625, 0.40625, 0.40625], "core_radius_um": 2.5, "shell_inner_radius_um": 3.5, "shell_outer_radius_um": 5.0, "effective_volume_threshold_mad": 3.0},
+  "feature_groups": {
+    "confidence_baseline": ["mean_detection_confidence", "minimum_detection_confidence", "daughter_confidence_balance"],
+    "contrast": ["parent_contrast", "minimum_daughter_contrast", "mean_daughter_contrast", "daughter_contrast_balance", "contrast_conservation_error"],
+    "mass": ["mass_conservation_error", "daughter_mass_balance"],
+    "volume": ["volume_conservation_error", "daughter_volume_balance"],
+    "shape": ["mean_daughter_anisotropy", "daughter_anisotropy_difference", "parent_daughter_anisotropy_change"]
+  },
+  "prohibited_features": ["distance", "angle", "velocity", "prediction_error", "ownership_margin", "rank", "ground_truth_distance"],
+  "labels": {"positive": "official_tp", "negative": "official_fp", "unsupported_and_not_evaluated": "unknown_excluded_from_discriminability", "sparse_absence_is_negative": false},
+  "evaluation": {"folds": [1,2,3], "sign_selection": "training_folds_only", "metric": "equal_event_weighted_auc", "required_strata": ["fold","family","route"], "local_maxima_decision_eligible": false},
+  "decision": {
+    "peak_descriptor_completeness_min": 0.99,
+    "official_tp_action_completeness_min": 0.95,
+    "official_fp_action_completeness_min": 0.95,
+    "raw_feature_group_auc_min": 0.65,
+    "raw_feature_groups_passing_min": 2,
+    "passing_feature_min_fold_auc": 0.55,
+    "passing_feature_min_family_auc": 0.58,
+    "passing_feature_min_route_auc": 0.55,
+    "best_raw_auc_advantage_over_best_confidence_min": 0.02,
+    "states": {
+      "GO_TO_POSITIVE_UNLABELED_RANKER_PREREGISTRATION": "all_availability_and_discriminability_gates_pass",
+      "HOLD_NONMOTION_SIGNAL_UNSTABLE": "availability_passes_and_raw_pooled_auc_exists_but_stability_or_incremental_gate_fails",
+      "NO_GO_NONMOTION_SEMANTIC_EVIDENCE": "availability_fails_or_no_raw_group_reaches_pooled_auc_floor"
+    }
+  },
+  "tta_variance_available": false,
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "graph_mutation_enabled": false,
+  "full_199_authorized": false,
+  "results_opened": false
+}

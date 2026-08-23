@@ -1,0 +1,20 @@
+{
+  "actions": 160,
+  "contract_sha256": "aa6c3fe55048463431420e4cdf131d2081a72ebbdc83c2c3747c95781130eeca",
+  "events": 2,
+  "fold": 1,
+  "official_labels": {
+    "not_evaluated": 86,
+    "official_fp": 9,
+    "official_tp": 3,
+    "official_unsupported": 62
+  },
+  "peak_sha256": "7f99fbba26b9165a2a374df8f57b32ff79bb36acde90880e85c00c4557c95ae9",
+  "sample_id": "6bba_3c5691b6",
+  "selected_for_official_scoring": 74,
+  "shard": "v22_e016_semantic_action_shards\\6bba_3c5691b6.csv.gz",
+  "shard_sha256": "ea8835a16582cc30f45831b91312dd2bd73216ce6524ece3f755e97e32b2b031",
+  "source_detector": "components",
+  "source_link_strategy": "greedy",
+  "source_zero_perturbation": true
+}

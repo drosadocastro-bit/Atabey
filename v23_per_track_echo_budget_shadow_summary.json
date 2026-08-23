@@ -1,0 +1,47 @@
+{
+  "budgets": {
+    "1": {
+      "control_total": 4,
+      "controls_available": 4,
+      "failure_recovered": 4,
+      "failure_total": 7,
+      "family_recovery": {
+        "44b6": 2,
+        "6bba": 2
+      },
+      "ownership_unique_all": true,
+      "selected_per_event_frame": {
+        "max": 964,
+        "median": 292.0,
+        "p90": 860.7000000000008
+      }
+    },
+    "2": {
+      "control_total": 4,
+      "controls_available": 4,
+      "failure_recovered": 4,
+      "failure_total": 7,
+      "family_recovery": {
+        "44b6": 2,
+        "6bba": 2
+      },
+      "ownership_unique_all": true,
+      "selected_per_event_frame": {
+        "max": 1582,
+        "median": 414.0,
+        "p90": 1314.1000000000015
+      }
+    }
+  },
+  "candidate_set_changed": false,
+  "decision": "HOLD",
+  "eligible_budgets": [],
+  "graph_mutation": false,
+  "population": {
+    "cases": 11,
+    "controls": 4,
+    "failures": 7
+  },
+  "status": "read_only_v23_per_track_echo_budget",
+  "zero_perturbation_all": true
+}

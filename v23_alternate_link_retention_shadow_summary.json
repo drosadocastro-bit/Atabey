@@ -1,0 +1,13 @@
+{
+  "candidate_set_changed": false,
+  "decision": "NO_OFFICIAL_RECOVERY_FROM_ALTERNATE_RETENTION",
+  "graph_mutation": false,
+  "official_metric_used": false,
+  "population": {
+    "alternate_pairs": 22,
+    "cases": 4,
+    "official_7um_geometric_matches": 0,
+    "ownership_conflict_pairs": 17
+  },
+  "status": "read_only_v23_alternate_link_retention_shadow"
+}

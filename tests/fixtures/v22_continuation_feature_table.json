@@ -1,0 +1,106 @@
+{
+  "name": "v22_continuation_feature_table_v1",
+  "status": "preregistered_build_only",
+  "source_reference_contract": "tests/fixtures/v22_continuation_reference_audit.json",
+  "source_reference_contract_sha256": "f23808b45a1c9d671ee8211988129d54bcc7cdbba664090310a20165f03cf079",
+  "source_reference_summary": "v22_continuation_reference_audit_summary.json",
+  "source_reference_summary_sha256": "8c777cbe892b0ef7f5eab9dc75f9d5209c7c54afd6f713136bbe8991d61d60a0",
+  "source_reference_shards": "v22_continuation_reference_audit",
+  "max_timepoints": 100,
+  "candidate_definition": {
+    "local_action_radius_um": 14.0,
+    "density_radius_um": 10.0,
+    "include_reference_child": true,
+    "include_all_local_alternatives": true,
+    "alternative_cap": null,
+    "reference_role": "weak_reference_preferred",
+    "alternative_role": "weak_alternative_unknown",
+    "reference_is_ground_truth": false,
+    "alternative_is_negative": false
+  },
+  "feature_contract": {
+    "model_feature_allowlist": [
+      "anchor_parent_distance_um",
+      "parent_child_distance_um",
+      "prediction_error_um",
+      "step_distance_ratio",
+      "radial_speed_change_um_per_frame",
+      "turn_angle_deg",
+      "forward_competitor_margin_um",
+      "reverse_competitor_margin_um",
+      "forward_rank_local_14um",
+      "reverse_rank_local_14um",
+      "parent_density_10um",
+      "child_density_10um",
+      "local_target_count_14um",
+      "local_competing_source_count_14um"
+    ],
+    "missing_features": "explicit_value_mask_and_reason",
+    "route_is_model_feature": false,
+    "family_is_model_feature": false,
+    "detector_confidence_enabled": false,
+    "appearance_enabled": false,
+    "intensity_enabled": false,
+    "volume_enabled": false
+  },
+  "weighting": {
+    "hierarchy": [
+      "sample",
+      "parent_frame",
+      "reference",
+      "candidate"
+    ],
+    "each_sample_total_weight": 1.0,
+    "training_fold_sample_weighting": "equal",
+    "raw_candidate_count_weighting_allowed": false
+  },
+  "expected_population": {
+    "samples": 27,
+    "references": 182996,
+    "alternatives": 1024536,
+    "candidate_rows": 1207532,
+    "candidate_rows_by_fold": {
+      "1": 285960,
+      "2": 595263,
+      "3": 326309
+    },
+    "candidate_rows_by_family": {
+      "44b6": 612949,
+      "6bba": 594583
+    },
+    "candidate_rows_by_route": {
+      "cfar_sidelobe/bipartite": 736500,
+      "components/greedy": 303520,
+      "local_maxima/motion_mutual": 167512
+    }
+  },
+  "reporting": {
+    "required_strata": [
+      "fold",
+      "family",
+      "route",
+      "sample",
+      "parent_frame"
+    ],
+    "pooled_metrics_require_route_breakdown": true,
+    "local_maxima_required_metric_caveat": "unproven generalization",
+    "local_maxima_development_samples": 1,
+    "local_maxima_development_fold": 3
+  },
+  "decision_contract": {
+    "population_must_match_exactly": true,
+    "one_reference_candidate_per_reference": true,
+    "candidate_ids_unique": true,
+    "reference_ids_match_source": true,
+    "reference_metrics_match_source": true,
+    "sample_weight_sum_tolerance": 1e-09,
+    "all_features_finite_when_available": true,
+    "all_source_graphs_zero_perturbation": true
+  },
+  "semantic_scoring_enabled": false,
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "production_graph_mutation_enabled": false,
+  "locked_validation_opened": false,
+  "full_199_authorized": false
+}

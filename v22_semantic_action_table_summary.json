@@ -1,0 +1,27 @@
+{
+  "actions": 268822,
+  "assignment_enabled": false,
+  "completed_folds": [
+    1,
+    2,
+    3
+  ],
+  "completed_samples": 27,
+  "contract": "v22_joint_semantic_assignment_development_v1",
+  "contract_sha256": "05c356d6a35c5fba04e2ead08eb47f5cd1a9754929d5f6fe602afc54165c5bdf",
+  "expected_development_actions": 268822,
+  "expected_official_tp_actions": 64,
+  "expected_samples": 27,
+  "full_development_complete": true,
+  "graph_mutated": false,
+  "official_labels": {
+    "not_evaluated": 265576,
+    "official_fp": 518,
+    "official_tp": 64,
+    "official_unsupported": 2664
+  },
+  "peak_sha256": "58c838d2fa4463c94f75dc0858e7fac239d880c9d91bed006d068e3e6caf1938",
+  "selected_for_official_scoring": 3246,
+  "semantic_scoring_enabled": false,
+  "source_zero_perturbation": true
+}

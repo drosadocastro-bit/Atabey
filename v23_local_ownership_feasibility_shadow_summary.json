@@ -1,0 +1,31 @@
+{
+  "assignment_safe_cases": 3,
+  "authorization": "semantic_scorer_research_only_not_assignment_integration",
+  "candidate_set_changed": false,
+  "clean_feasible_recoveries": 3,
+  "decision": "GO_TO_SEMANTIC_SCORER_RESEARCH_ONLY",
+  "family": {
+    "44b6": {
+      "clean": 1,
+      "eligible": 1,
+      "targets": 2
+    },
+    "6bba": {
+      "clean": 2,
+      "eligible": 2,
+      "targets": 2
+    }
+  },
+  "official_target_recovered": 3,
+  "population": {
+    "detector_only_quarantines": 1,
+    "eligible_cases": 3,
+    "mixed_missing_detection_targets": 1,
+    "protected_complete_forks": 3,
+    "target_cases": 4,
+    "unavailable_cases": 1
+  },
+  "source_graph_mutation": false,
+  "status": "read_only_v23_local_ownership_feasibility_shadow",
+  "zero_perturbation_all": true
+}

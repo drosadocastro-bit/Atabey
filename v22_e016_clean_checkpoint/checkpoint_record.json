@@ -1,0 +1,13 @@
+{
+  "checkpoint": "v22_e016_clean_checkpoint",
+  "checkpoint_sha256": "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03",
+  "fit_samples": 138,
+  "internal_validation_samples": 34,
+  "development_samples_held_out": 27,
+  "epochs_max": 25,
+  "max_iters_per_epoch": 100,
+  "patience": 5,
+  "min_delta": 0.0005,
+  "graph_mutation": false,
+  "assignment": false
+}

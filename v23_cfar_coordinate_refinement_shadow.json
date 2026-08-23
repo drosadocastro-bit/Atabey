@@ -1,0 +1,114 @@
+[
+  {
+    "baseline_action_count": 30718,
+    "baseline_official_7um_geometric_matches": 0,
+    "baseline_role_counts_7um": {
+      "daughter_1": 1,
+      "daughter_2": 1,
+      "parent": 0
+    },
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids_after": [],
+    "refined_action_count": 30292,
+    "refined_official_7um_geometric_matches": 0,
+    "refined_role_counts_7um": {
+      "daughter_1": 1,
+      "daughter_2": 1,
+      "parent": 0
+    },
+    "refinement_radius_voxels": [
+      1,
+      3,
+      3
+    ],
+    "sample_id": "44b6_706092f0",
+    "t": 49
+  },
+  {
+    "baseline_action_count": 13779,
+    "baseline_official_7um_geometric_matches": 0,
+    "baseline_role_counts_7um": {
+      "daughter_1": 0,
+      "daughter_2": 1,
+      "parent": 1
+    },
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids_after": [],
+    "refined_action_count": 13709,
+    "refined_official_7um_geometric_matches": 0,
+    "refined_role_counts_7um": {
+      "daughter_1": 0,
+      "daughter_2": 1,
+      "parent": 1
+    },
+    "refinement_radius_voxels": [
+      1,
+      3,
+      3
+    ],
+    "sample_id": "44b6_74d0c52e",
+    "t": 58
+  },
+  {
+    "baseline_action_count": 55641,
+    "baseline_official_7um_geometric_matches": 0,
+    "baseline_role_counts_7um": {
+      "daughter_1": 1,
+      "daughter_2": 1,
+      "parent": 1
+    },
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids_after": [],
+    "refined_action_count": 55627,
+    "refined_official_7um_geometric_matches": 0,
+    "refined_role_counts_7um": {
+      "daughter_1": 1,
+      "daughter_2": 1,
+      "parent": 1
+    },
+    "refinement_radius_voxels": [
+      1,
+      3,
+      3
+    ],
+    "sample_id": "44b6_aaf8b0ea",
+    "t": 61
+  },
+  {
+    "baseline_action_count": 29866,
+    "baseline_official_7um_geometric_matches": 0,
+    "baseline_role_counts_7um": {
+      "daughter_1": 0,
+      "daughter_2": 2,
+      "parent": 0
+    },
+    "candidate_set_changed": false,
+    "detector": "cfar_sidelobe",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "matching_action_ids_after": [],
+    "refined_action_count": 30020,
+    "refined_official_7um_geometric_matches": 0,
+    "refined_role_counts_7um": {
+      "daughter_1": 0,
+      "daughter_2": 2,
+      "parent": 0
+    },
+    "refinement_radius_voxels": [
+      1,
+      3,
+      3
+    ],
+    "sample_id": "6bba_57b7cc1e",
+    "t": 23
+  }
+]

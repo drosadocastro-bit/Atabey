@@ -1,0 +1,195 @@
+{
+  "candidate_set_changed": false,
+  "formation_class_counts": {
+    "daughter_detection_loss": 1,
+    "formed_but_official_match_loss": 2,
+    "official_tp_available": 40,
+    "pair_formation_loss": 2,
+    "parent_detection_loss": 1
+  },
+  "graph_mutation": false,
+  "official_metric_used": false,
+  "population": {
+    "cases": 46,
+    "families": [
+      "44b6",
+      "6bba"
+    ],
+    "routes": {
+      "cfar_sidelobe": 11,
+      "components": 34,
+      "local_maxima": 1
+    }
+  },
+  "status": "read_only_cfar_candidate_formation_audit",
+  "strata": {
+    "cfar_sidelobe/44b6": {
+      "cases": 5,
+      "daughter_1_distance_um": {
+        "max": 5.701990469344894,
+        "median": 4.598342554540481,
+        "min": 3.494694639736067,
+        "n": 2,
+        "p90": 5.481260886384011
+      },
+      "daughter_2_distance_um": {
+        "max": 5.58501412822743,
+        "median": 3.72334275215162,
+        "min": 1.86167137607581,
+        "n": 2,
+        "p90": 5.2126798530122676
+      },
+      "division_action_count": {
+        "max": 21678.0,
+        "median": 14033.0,
+        "min": 4431.0,
+        "n": 5,
+        "p90": 20656.0
+      },
+      "formation_class_counts": {
+        "official_tp_available": 2,
+        "pair_formation_loss": 2,
+        "parent_detection_loss": 1
+      },
+      "mean_frame_density": {
+        "max": 692.5,
+        "median": 516.0,
+        "min": 271.5,
+        "n": 5,
+        "p90": 689.7
+      },
+      "parent_distance_um": {
+        "max": 3.832554834897995,
+        "median": 2.6701168684128405,
+        "min": 1.7235727791422095,
+        "n": 4,
+        "p90": 3.6877953806729016
+      }
+    },
+    "cfar_sidelobe/6bba": {
+      "cases": 6,
+      "daughter_1_distance_um": {
+        "max": 3.72334275215162,
+        "median": 3.471001521535247,
+        "min": 1.6750116604071743,
+        "n": 5,
+        "p90": 3.6874498366658353
+      },
+      "daughter_2_distance_um": {
+        "max": 5.041429918683786,
+        "median": 3.65625,
+        "min": 1.6750116604071743,
+        "n": 5,
+        "p90": 4.689987450678706
+      },
+      "division_action_count": {
+        "max": 24351.0,
+        "median": 21329.0,
+        "min": 1247.0,
+        "n": 6,
+        "p90": 24212.5
+      },
+      "formation_class_counts": {
+        "daughter_detection_loss": 1,
+        "official_tp_available": 5
+      },
+      "mean_frame_density": {
+        "max": 868.5,
+        "median": 764.5,
+        "min": 133.5,
+        "n": 6,
+        "p90": 864.0
+      },
+      "parent_distance_um": {
+        "max": 3.0671202393287422,
+        "median": 1.826239204277819,
+        "min": 0.40625,
+        "n": 6,
+        "p90": 2.700424407242408
+      }
+    },
+    "components/6bba": {
+      "cases": 34,
+      "daughter_1_distance_um": {
+        "max": 6.625736987309412,
+        "median": 1.8168052317185792,
+        "min": 0.0,
+        "n": 34,
+        "p90": 5.041429918683786
+      },
+      "daughter_2_distance_um": {
+        "max": 3.494694639736067,
+        "median": 1.7235727791422095,
+        "min": 0.0,
+        "n": 34,
+        "p90": 3.292861084392237
+      },
+      "division_action_count": {
+        "max": 4403.0,
+        "median": 598.5,
+        "min": 0.0,
+        "n": 34,
+        "p90": 3217.0
+      },
+      "formation_class_counts": {
+        "formed_but_official_match_loss": 2,
+        "official_tp_available": 32
+      },
+      "mean_frame_density": {
+        "max": 295.0,
+        "median": 110.75,
+        "min": 44.0,
+        "n": 34,
+        "p90": 248.54999999999998
+      },
+      "parent_distance_um": {
+        "max": 5.296851954227152,
+        "median": 1.86167137607581,
+        "min": 0.0,
+        "n": 34,
+        "p90": 3.335133505135052
+      }
+    },
+    "local_maxima/44b6": {
+      "cases": 1,
+      "daughter_1_distance_um": {
+        "max": 1.86167137607581,
+        "median": 1.86167137607581,
+        "min": 1.86167137607581,
+        "n": 1,
+        "p90": 1.86167137607581
+      },
+      "daughter_2_distance_um": {
+        "max": 0.5745242597140698,
+        "median": 0.5745242597140698,
+        "min": 0.5745242597140698,
+        "n": 1,
+        "p90": 0.5745242597140698
+      },
+      "division_action_count": {
+        "max": 11317.0,
+        "median": 11317.0,
+        "min": 11317.0,
+        "n": 1,
+        "p90": 11317.0
+      },
+      "formation_class_counts": {
+        "official_tp_available": 1
+      },
+      "mean_frame_density": {
+        "max": 433.5,
+        "median": 433.5,
+        "min": 433.5,
+        "n": 1,
+        "p90": 433.5
+      },
+      "parent_distance_um": {
+        "max": 3.350023320814349,
+        "median": 3.350023320814349,
+        "min": 3.350023320814349,
+        "n": 1,
+        "p90": 3.350023320814349
+      }
+    }
+  }
+}

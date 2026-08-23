@@ -1,0 +1,51 @@
+{
+  "name": "v22_continuation_reference_availability_v1",
+  "status": "preregistered_read_only_audit",
+  "source_semantic_contract": "tests/fixtures/v22_joint_semantic_assignment_development.json",
+  "source_semantic_contract_sha256": "41414fba9208c66e70b6b03915cfc4aebcf96a2ec724382dcd3227a4ca128f61",
+  "source_division_fixture": "tests/fixtures/v22_unet_detection_development_46.json",
+  "source_division_fixture_sha256": "14d77a14c17224d84b5653b76efa39b962f5172628f155eb7e1a91de9ddc3fb8",
+  "max_timepoints": 100,
+  "reference_definition": {
+    "chain_frames": 3,
+    "edge_relation": "continuation",
+    "single_in_single_out": true,
+    "mutual_nearest": "motion_predicted_forward_raw_reverse",
+    "strict_tie_tolerance_um": 1e-06,
+    "local_action_radius_um": 14.0,
+    "exclude_within_frames_of_registered_division": 2,
+    "division_exclusion_scope": "any_chain_frame",
+    "reference_is_ground_truth": false
+  },
+  "reporting": {
+    "required_strata": [
+      "fold",
+      "family",
+      "route",
+      "sample",
+      "parent_frame"
+    ],
+    "report_top_sample_share": true,
+    "report_top_three_sample_share": true,
+    "report_effective_sample_size": true,
+    "report_alternative_target_distribution": true,
+    "pooled_metrics_require_route_breakdown": true,
+    "local_maxima_required_metric_caveat": "unproven generalization"
+  },
+  "decision_contract": {
+    "minimum_total_references": 1000,
+    "minimum_references_per_fold": 200,
+    "minimum_references_with_alternatives_per_fold": 100,
+    "minimum_samples_with_references_per_fold": 7,
+    "minimum_references_per_family": 100,
+    "minimum_references_per_observed_route": 25,
+    "maximum_top_sample_share": 0.2,
+    "maximum_top_three_sample_share": 0.45,
+    "both_families_required": true,
+    "all_source_graphs_zero_perturbation": true
+  },
+  "semantic_scoring_enabled": false,
+  "assignment_enabled": false,
+  "production_graph_mutation_enabled": false,
+  "full_199_authorized": false
+}

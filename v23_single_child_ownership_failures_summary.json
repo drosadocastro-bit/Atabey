@@ -1,0 +1,53 @@
+{
+  "candidate_set_changed": false,
+  "diagnosis_counts": {
+    "registered_parent_childless_daughter_claimed_elsewhere": 2,
+    "registered_parent_childless_missing_daughter_detection": 1,
+    "registered_parent_has_multiple_children": 5
+  },
+  "distinct_nearest_daughters": 6,
+  "family": {
+    "44b6": {
+      "diagnosis_counts": {
+        "registered_parent_childless_daughter_claimed_elsewhere": 1,
+        "registered_parent_childless_missing_daughter_detection": 1,
+        "registered_parent_has_multiple_children": 3
+      },
+      "events": 5,
+      "nearest_daughter_ownership_counts": {
+        "missing_detection": 3,
+        "owned_by_other_parent": 1,
+        "owned_by_registered_parent": 4,
+        "unowned": 2
+      }
+    },
+    "6bba": {
+      "diagnosis_counts": {
+        "registered_parent_childless_daughter_claimed_elsewhere": 1,
+        "registered_parent_has_multiple_children": 2
+      },
+      "events": 3,
+      "nearest_daughter_ownership_counts": {
+        "owned_by_other_parent": 1,
+        "owned_by_registered_parent": 3,
+        "unowned": 2
+      }
+    }
+  },
+  "graph_mutation": false,
+  "nearest_daughter_ownership_counts": {
+    "missing_detection": 3,
+    "owned_by_other_parent": 2,
+    "owned_by_registered_parent": 7,
+    "unowned": 4
+  },
+  "population": {
+    "events": 8,
+    "families": {
+      "44b6": 5,
+      "6bba": 3
+    }
+  },
+  "status": "read_only_v23_single_child_ownership_failures",
+  "zero_perturbation_all": true
+}
