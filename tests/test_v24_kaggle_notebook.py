@@ -23,10 +23,18 @@ def _source(cell: dict) -> str:
 def test_v24_kaggle_notebook_is_clean_and_syntactically_valid():
     notebook = _notebook()
     assert notebook["nbformat"] == 4
+    assert notebook["metadata"]["kernelspec"] == {
+        "display_name": "Python 3",
+        "language": "python",
+        "name": "python3",
+    }
     assert len(notebook["cells"]) == 11
     for index, cell in enumerate(notebook["cells"], start=1):
         assert cell["cell_type"] in {"code", "markdown"}
         assert cell.get("id"), index
+        expected_language = "python" if cell["cell_type"] == "code" else "markdown"
+        assert cell["metadata"]["language"] == expected_language
+        assert cell["metadata"]["id"] == cell["id"]
         assert cell.get("outputs", []) == []
         assert cell.get("execution_count") is None
         if cell["cell_type"] == "code":
