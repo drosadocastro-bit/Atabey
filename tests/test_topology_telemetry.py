@@ -25,6 +25,12 @@ def test_topology_telemetry_reports_frame_age_degree_and_support():
     assert report["connectivity"] == {"connected": 3, "isolated": 1}
     assert report["joint_histogram"]["isolated|age=1|degree=0|support=0"] == 1
     assert len(report["bounded_node_records"]) == 4
+    records = {record["node_id"]: record for record in report["bounded_node_records"]}
+    assert records["b"]["component_size"] == 3
+    assert records["b"]["frame_boundary"] == "interior"
+    assert records["b"]["incoming_relations"] == {"continuation": 1}
+    assert records["b"]["outgoing_relations"] == {"continuation": 1}
+    assert records["orphan"]["component_span"] == "single_frame"
 
 
 def test_topology_telemetry_handles_empty_graph():

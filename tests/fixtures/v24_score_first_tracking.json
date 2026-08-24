@@ -23,7 +23,7 @@
     "v24_2_shadow_module": "src/atabey/tracking/v24_2_shadow.py",
     "v24_2_shadow_module_sha256": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8",
     "topology_telemetry_module": "src/atabey/tracking/topology_telemetry.py",
-    "topology_telemetry_module_sha256": "02e5cc86ff1e7cdd7eab065af8f7d658da45b162fce23331ec7fcf7a96e82ebb",
+    "topology_telemetry_module_sha256": "39ffa2c485e330cb02dffa0b4e5e3b6ed7db0f17c980acb0212aa2ef19ebe4c7",
     "support_pack": "pilkwang/biohub-tracking-support-pack-50ep-v1",
     "predictor_runtime_sha256_required": true
   },
