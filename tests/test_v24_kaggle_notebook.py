@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_PATH = ROOT / "notebooks/V24_score_first_tracking_kaggle.ipynb"
-EXPECTED_COMMIT = "c52b8b63b72ee7b201c3c56993e880abe220f713"
+EXPECTED_COMMIT = "74108383ec962490a7d2fa7d5fd79a7b747540fc"
 EXPECTED_CHECKPOINT = (
     "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03"
 )
