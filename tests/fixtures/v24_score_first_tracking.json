@@ -19,11 +19,11 @@
     "unet_graph_module": "src/atabey/tracking/unet_graph.py",
     "unet_graph_module_sha256": "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7",
     "runner": "scripts/run_v24_score_first_tracking.py",
-    "runner_sha256": "b2a75818d9b5463c76876c226f4f58c7b6def2fc7555f73dbcd7918e3134835f",
+    "runner_sha256": "f793fc152fddc5b4ab8ec7316f9522ee50ab181c6f0331fa67b02c5fcd11481a",
     "v24_2_shadow_module": "src/atabey/tracking/v24_2_shadow.py",
     "v24_2_shadow_module_sha256": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8",
     "topology_telemetry_module": "src/atabey/tracking/topology_telemetry.py",
-    "topology_telemetry_module_sha256": "058b1e802a6e3751035a7abb8cabbb89280c036ccd8f70f780585c88cf0f1f60",
+    "topology_telemetry_module_sha256": "02e5cc86ff1e7cdd7eab065af8f7d658da45b162fce23331ec7fcf7a96e82ebb",
     "support_pack": "pilkwang/biohub-tracking-support-pack-50ep-v1",
     "predictor_runtime_sha256_required": true
   },

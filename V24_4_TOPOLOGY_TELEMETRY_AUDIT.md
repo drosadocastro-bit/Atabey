@@ -28,9 +28,10 @@ that isolated-node removal is not the remaining explanation, but its
 per-sample distributions do not identify which connected nodes cause the
 inflation.
 
-The next measurement should be bounded per-node or per-stratum telemetry that
-retains frame, age, degree, continuation support, and component identity, with
-sample-level counts rather than raw coordinates. Any suppression rule must be
+The next measurement is now implemented in the runner: a deterministic bounded
+per-node sample, exact per-stratum counts, and a side-by-side relink-versus-shadow
+comparison. It must be regenerated on Kaggle before interpretation; the prior
+ZIP does not contain these new bounded records. Any suppression rule must be
 shadow-only, preregistered, and rescored on the complete 27-sample cohort.
 
 The machine-readable report is `v24_4_topology_telemetry_27_report.json`.

@@ -29,7 +29,10 @@ from atabey.tracking.unet_graph import (
     relink_predictor_detections,
 )
 from atabey.tracking.v24_2_shadow import prune_interior_isolated_detections
-from atabey.tracking.topology_telemetry import summarize_node_topology
+from atabey.tracking.topology_telemetry import (
+    compare_node_topology,
+    summarize_node_topology,
+)
 from run_v21_division_recovery_shadow import _build_v19_prefirewall_with_route
 from run_v22_unet_detection_shadow import _load_public_predict_module
 
@@ -232,6 +235,9 @@ def _evaluate_sample(
         ARM_NATIVE: inference_runtime + native_runtime,
         ARM_V24_2: inference_runtime + relink_runtime,
     }
+    topology_reports = {
+        arm: summarize_node_topology(graph) for arm, graph in graphs.items()
+    }
     arm_rows: dict[str, Any] = {}
     for arm, graph in graphs.items():
         metric_started = time.perf_counter()
@@ -249,8 +255,12 @@ def _evaluate_sample(
             "shadow_edge_set_preserved": (
                 shadow_edge_set_preserved if arm == ARM_V24_2 else None
             ),
-            "node_topology_telemetry": summarize_node_topology(graph),
+            "node_topology_telemetry": topology_reports[arm],
         }
+
+    arm_rows[ARM_V24_2]["node_topology_comparison"] = compare_node_topology(
+        topology_reports[ARM_RELINK], topology_reports[ARM_V24_2]
+    )
 
     return {
         "sample_id": sample_id,

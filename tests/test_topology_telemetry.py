@@ -1,4 +1,7 @@
-from atabey.tracking.topology_telemetry import summarize_node_topology
+from atabey.tracking.topology_telemetry import (
+    compare_node_topology,
+    summarize_node_topology,
+)
 from atabey.types import Detection, LineageEdge, LineageGraph
 
 
@@ -21,6 +24,7 @@ def test_topology_telemetry_reports_frame_age_degree_and_support():
     assert report["continuation_support_histogram"] == {"0": 1, "1": 2, "2": 1}
     assert report["connectivity"] == {"connected": 3, "isolated": 1}
     assert report["joint_histogram"]["isolated|age=1|degree=0|support=0"] == 1
+    assert len(report["bounded_node_records"]) == 4
 
 
 def test_topology_telemetry_handles_empty_graph():
@@ -29,3 +33,20 @@ def test_topology_telemetry_handles_empty_graph():
     assert report["node_count"] == 0
     assert report["edge_count"] == 0
     assert report["by_frame"] == {}
+
+
+def test_topology_comparison_pairs_common_bounded_nodes_and_strata():
+    left = LineageGraph("sample")
+    right = LineageGraph("sample")
+    for graph in (left, right):
+        graph.add_detection(_detection("a", 0))
+        graph.add_detection(_detection("b", 1))
+    left.add_edge(LineageEdge("a", "b"))
+    right.add_edge(LineageEdge("a", "b", relation="division"))
+
+    comparison = compare_node_topology(
+        summarize_node_topology(left), summarize_node_topology(right)
+    )
+
+    assert comparison["bounded_common_node_count"] == 2
+    assert comparison["stratum_deltas_right_minus_left"]
