@@ -45,6 +45,9 @@ mechanism against the complete cohort with an explicit precision safeguard.
 The generated machine-readable report is
 `v24_1_node_inflation_27_report.json`.
 
+The approved follow-up is documented in
+`V24_2_INTERIOR_ORPHAN_SHADOW_PREREGISTRATION.md`.
+
 ## Boundaries
 
 - No inference, training, threshold selection, or graph construction occurs.

@@ -129,6 +129,8 @@ the relevant audit before promoting one.
   official result, node-inflation gate failure, and HOLD adjudication.
 - [V24.1 Node-Inflation Diagnostic](V24_1_NODE_INFLATION_DIAGNOSTIC.md): descriptive
   family/route audit; localized inflation found, but no suppression rule authorized.
+- [V24.2 Interior-Orphan Shadow Preregistration](V24_2_INTERIOR_ORPHAN_SHADOW_PREREGISTRATION.md):
+  bounded `6bba/components` post-link candidate with edge-preservation safeguards.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,

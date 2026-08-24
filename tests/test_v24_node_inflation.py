@@ -4,6 +4,8 @@ import io
 import pytest
 
 from scripts.audit_v24_node_inflation import analyze_rows
+from atabey.tracking.v24_2_shadow import prune_interior_isolated_detections
+from atabey.types import Detection, LineageEdge, LineageGraph
 
 
 def _rows() -> list[dict[str, str]]:
@@ -38,3 +40,48 @@ def test_analyze_rows_rejects_missing_numeric_fields():
 
     with pytest.raises(ValueError, match="e016_atabey_relink_predicted_nodes"):
         analyze_rows(rows)
+
+
+def _detection(node_id: str, frame: int) -> Detection:
+    return Detection(
+        node_id=node_id,
+        sample_id="sample",
+        t=frame,
+        z=0.0,
+        y=float(frame),
+        x=0.0,
+        z_um=0.0,
+        y_um=float(frame),
+        x_um=0.0,
+    )
+
+
+def test_prune_interior_isolated_detections_preserves_connected_graph():
+    graph = LineageGraph(sample_id="sample")
+    for node_id, frame in (("a", 0), ("b", 1), ("orphan", 1), ("c", 2)):
+        graph.add_detection(_detection(node_id, frame))
+    graph.add_edge(LineageEdge("a", "b"))
+    graph.add_edge(LineageEdge("b", "c"))
+
+    filtered = prune_interior_isolated_detections(graph)
+
+    assert [detection.node_id for detection in filtered.detections] == ["a", "b", "c"]
+    assert filtered.edges == graph.edges
+    assert [detection.node_id for detection in graph.detections] == [
+        "a",
+        "b",
+        "orphan",
+        "c",
+    ]
+
+
+def test_prune_keeps_boundary_singletons_and_empty_graph():
+    graph = LineageGraph(sample_id="sample")
+    graph.add_detection(_detection("first", 0))
+    graph.add_detection(_detection("last", 2))
+    graph.add_detection(_detection("middle", 1))
+
+    filtered = prune_interior_isolated_detections(graph)
+
+    assert [detection.node_id for detection in filtered.detections] == ["first", "last"]
+    assert prune_interior_isolated_detections(LineageGraph("empty")).detections == []
