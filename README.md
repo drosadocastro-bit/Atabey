@@ -127,6 +127,8 @@ the relevant audit before promoting one.
   held-out whole-sequence cohort, three isolated arms, official edge endpoint, and promotion gates.
 - [V24 Score-First Tracking Results](V24_SCORE_FIRST_TRACKING_RESULTS.md): frozen 27-sample
   official result, node-inflation gate failure, and HOLD adjudication.
+- [V24.1 Node-Inflation Diagnostic](V24_1_NODE_INFLATION_DIAGNOSTIC.md): descriptive
+  family/route audit; localized inflation found, but no suppression rule authorized.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
