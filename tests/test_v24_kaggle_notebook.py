@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_PATH = ROOT / "notebooks/V24_score_first_tracking_kaggle.ipynb"
-EXPECTED_COMMIT = "3ef5190ceaf6180096dc6893563944fc42cfd98b"
+EXPECTED_COMMIT = "5c83eca6267625c7dd90c5fa8b59e2915dc1a095"
 EXPECTED_CHECKPOINT = (
     "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03"
 )
@@ -65,8 +65,9 @@ def test_v24_kaggle_notebook_preserves_frozen_execution_gates():
     assert 'ROOT = Path("/kaggle/working/Atabey")' not in source
     assert '"--no-deps", *pinned_official_packages' in source
     assert 'f"{ROOT}[official-metrics]"' not in source
-    assert 'RUN_MODE = "full_27"' in source
-    assert "AUTHORIZE_FULL_27 = True" in source
+    assert 'RUN_MODE = "smoke"' in source
+    assert "AUTHORIZE_FULL_27 = False" in source
+    assert "v24_score_first_tracking_v24_2_" in source
     assert 'SAMPLE_SELECTOR = "smoke" if RUN_MODE == "smoke" else "all"' in source
     assert '"--verify-determinism"' in source
     assert "--max-timepoints" not in source

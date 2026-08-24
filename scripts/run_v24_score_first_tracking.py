@@ -28,6 +28,7 @@ from atabey.tracking.unet_graph import (
     native_graph_from_predictor_output,
     relink_predictor_detections,
 )
+from atabey.tracking.v24_2_shadow import prune_interior_isolated_detections
 from run_v21_division_recovery_shadow import _build_v19_prefirewall_with_route
 from run_v22_unet_detection_shadow import _load_public_predict_module
 
@@ -35,7 +36,8 @@ from run_v22_unet_detection_shadow import _load_public_predict_module
 ARM_V19 = "v19_frozen_reference"
 ARM_RELINK = "e016_atabey_relink"
 ARM_NATIVE = "e016_native_graph"
-ARMS = (ARM_V19, ARM_RELINK, ARM_NATIVE)
+ARM_V24_2 = "e016_atabey_relink_v24_2_shadow"
+ARMS = (ARM_V19, ARM_RELINK, ARM_NATIVE, ARM_V24_2)
 
 
 def _sha256(path: Path) -> str:
@@ -205,12 +207,29 @@ def _evaluate_sample(
     native_started = time.perf_counter()
     native = native_graph_from_predictor_output(sample_id, coordinates, native_edges)
     native_runtime = time.perf_counter() - native_started
+    shadow = relink
+    shadow_removed_nodes = 0
+    shadow_edge_set_preserved = True
+    if detector == "components" and sample_id.startswith("6bba_"):
+        shadow = prune_interior_isolated_detections(relink)
+        shadow_removed_nodes = len(relink.detections) - len(shadow.detections)
+        shadow_edge_set_preserved = {
+            (edge.source_id, edge.target_id, edge.relation) for edge in relink.edges
+        } == {
+            (edge.source_id, edge.target_id, edge.relation) for edge in shadow.edges
+        }
 
-    graphs = {ARM_V19: v19, ARM_RELINK: relink, ARM_NATIVE: native}
+    graphs = {
+        ARM_V19: v19,
+        ARM_RELINK: relink,
+        ARM_NATIVE: native,
+        ARM_V24_2: shadow,
+    }
     runtimes = {
         ARM_V19: v19_runtime,
         ARM_RELINK: inference_runtime + relink_runtime,
         ARM_NATIVE: inference_runtime + native_runtime,
+        ARM_V24_2: inference_runtime + relink_runtime,
     }
     arm_rows: dict[str, Any] = {}
     for arm, graph in graphs.items():
@@ -225,6 +244,10 @@ def _evaluate_sample(
             "graph_signature_sha256": hashlib.sha256(
                 repr(graph_signature(graph)).encode("utf-8")
             ).hexdigest(),
+            "shadow_removed_nodes": shadow_removed_nodes if arm == ARM_V24_2 else 0,
+            "shadow_edge_set_preserved": (
+                shadow_edge_set_preserved if arm == ARM_V24_2 else None
+            ),
         }
 
     return {
@@ -286,7 +309,7 @@ def _decision(
     reference = summaries[ARM_V19]
     outcomes: dict[str, Any] = {}
     passing: list[str] = []
-    for arm in (ARM_RELINK, ARM_NATIVE):
+    for arm in (ARM_RELINK, ARM_NATIVE, ARM_V24_2):
         challenger = summaries[arm]
         pooled_delta = _delta(
             challenger["overall"]["adjusted_edge_jaccard"],
@@ -393,6 +416,10 @@ def _write_csv(path: Path, records: list[dict[str, Any]]) -> None:
             row.update({f"{arm}_{key}": value for key, value in arm_row["metrics"].items()})
             row[f"{arm}_predicted_edges"] = arm_row["predicted_edges"]
             row[f"{arm}_runtime_seconds"] = arm_row["runtime_seconds"]
+            row[f"{arm}_shadow_removed_nodes"] = arm_row["shadow_removed_nodes"]
+            row[f"{arm}_shadow_edge_set_preserved"] = arm_row[
+                "shadow_edge_set_preserved"
+            ]
         rows.append(row)
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))

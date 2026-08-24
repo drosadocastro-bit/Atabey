@@ -35,6 +35,7 @@ def test_v24_sources_are_pinned_before_runner_implementation():
         ("unet_shadow_loader", "unet_shadow_loader_sha256"),
         ("unet_graph_module", "unet_graph_module_sha256"),
         ("runner", "runner_sha256"),
+        ("v24_2_shadow_module", "v24_2_shadow_module_sha256"),
     ):
         assert _sha256_normalized_text(ROOT / sources[path_key]) == sources[hash_key]
     assert sources["predictor_runtime_sha256_required"] is True
@@ -71,10 +72,15 @@ def test_v24_arms_separate_detector_and_linker_questions():
         "v19_frozen_reference",
         "e016_atabey_relink",
         "e016_native_graph",
+        "e016_atabey_relink_v24_2_shadow",
     }
     assert arms["e016_atabey_relink"]["linker"] == "motion_mutual_9um"
     assert arms["e016_atabey_relink"]["division_injection"] == "none"
     assert arms["e016_native_graph"]["linker"] == "pinned_public_native_edge_head"
+    assert (
+        arms["e016_atabey_relink_v24_2_shadow"]["division_injection"]
+        == "interior_isolated_detection_prune_on_6bba_components"
+    )
     assert contract["boundaries"]["hybrid_enabled"] is False
 
 

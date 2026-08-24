@@ -19,7 +19,9 @@
     "unet_graph_module": "src/atabey/tracking/unet_graph.py",
     "unet_graph_module_sha256": "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7",
     "runner": "scripts/run_v24_score_first_tracking.py",
-    "runner_sha256": "78d2140350041a553edd8bf2cef425d7984df49d90e908b85453b6b23cf8fa67",
+    "runner_sha256": "ab12397ddcace682445221c127621a23d8282f45af4db1a64860732ecbacd76a",
+    "v24_2_shadow_module": "src/atabey/tracking/v24_2_shadow.py",
+    "v24_2_shadow_module_sha256": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8",
     "support_pack": "pilkwang/biohub-tracking-support-pack-50ep-v1",
     "predictor_runtime_sha256_required": true
   },
@@ -90,6 +92,12 @@
       "detector": "e016_threshold_0.97_pool_5um",
       "linker": "pinned_public_native_edge_head",
       "division_injection": "native_only"
+    },
+    {
+      "name": "e016_atabey_relink_v24_2_shadow",
+      "detector": "e016_threshold_0.97_pool_5um",
+      "linker": "motion_mutual_9um",
+      "division_injection": "interior_isolated_detection_prune_on_6bba_components"
     }
   ],
   "evaluation": {
