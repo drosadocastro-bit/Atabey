@@ -1,0 +1,260 @@
+{
+  "arm": "e016_atabey_relink_v24_2_shadow",
+  "by_family": {
+    "44b6": {
+      "correlations_with_shadow_node_ratio": {
+        "age_one_fraction": 0.07107542168716194,
+        "continuation_support_zero_fraction": 0.2238075414277256,
+        "degree_one_fraction": -0.03607260468070317,
+        "degree_two_fraction": -0.030515080167312796,
+        "isolated_fraction": 0.2238075414277256
+      },
+      "highest_ratio_samples": [
+        {
+          "age_one_fraction": 0.23547935619314206,
+          "continuation_support_zero_fraction": 0.08728290603727973,
+          "degree_one_fraction": 0.29639290031172466,
+          "degree_two_fraction": 0.6163241936509956,
+          "family": "44b6",
+          "isolated_fraction": 0.08728290603727973,
+          "sample_id": "44b6_74d0c52e",
+          "shadow_node_ratio": 1.3267218095881161
+        },
+        {
+          "age_one_fraction": 0.12071473974150716,
+          "continuation_support_zero_fraction": 0.03654212868140405,
+          "degree_one_fraction": 0.16834522212020622,
+          "degree_two_fraction": 0.7951126491983898,
+          "family": "44b6",
+          "isolated_fraction": 0.03654212868140405,
+          "sample_id": "44b6_706092f0",
+          "shadow_node_ratio": 1.1875566142181366
+        },
+        {
+          "age_one_fraction": 0.19571431552152233,
+          "continuation_support_zero_fraction": 0.06507813967074927,
+          "degree_one_fraction": 0.2612723517015461,
+          "degree_two_fraction": 0.6736495086277047,
+          "family": "44b6",
+          "isolated_fraction": 0.06507813967074927,
+          "sample_id": "44b6_5f15d135",
+          "shadow_node_ratio": 1.0544762491474335
+        },
+        {
+          "age_one_fraction": 0.16971116886920232,
+          "continuation_support_zero_fraction": 0.06223230955082915,
+          "degree_one_fraction": 0.21495771863674634,
+          "degree_two_fraction": 0.7228099718124245,
+          "family": "44b6",
+          "isolated_fraction": 0.06223230955082915,
+          "sample_id": "44b6_aaf8b0ea",
+          "shadow_node_ratio": 0.9753284775778349
+        },
+        {
+          "age_one_fraction": 0.20622178445374703,
+          "continuation_support_zero_fraction": 0.06413855372240007,
+          "degree_one_fraction": 0.2841664614626939,
+          "degree_two_fraction": 0.6516949848149061,
+          "family": "44b6",
+          "isolated_fraction": 0.06413855372240007,
+          "sample_id": "44b6_c50204e0",
+          "shadow_node_ratio": 0.8616836178971043
+        }
+      ],
+      "inflated_samples": 1,
+      "median_shadow_node_ratio": 1.0544762491474335,
+      "sample_count": 5
+    },
+    "6bba": {
+      "correlations_with_shadow_node_ratio": {
+        "age_one_fraction": -0.22998515681056703,
+        "continuation_support_zero_fraction": -0.30838560659930686,
+        "degree_one_fraction": -0.12303536954668177,
+        "degree_two_fraction": 0.19098056793693893,
+        "isolated_fraction": -0.30838560659930686
+      },
+      "highest_ratio_samples": [
+        {
+          "age_one_fraction": 0.11683291770573566,
+          "continuation_support_zero_fraction": 0.0059850374064837905,
+          "degree_one_fraction": 0.22169576059850374,
+          "degree_two_fraction": 0.7723192019950125,
+          "family": "6bba",
+          "isolated_fraction": 0.0059850374064837905,
+          "sample_id": "6bba_9e23430b",
+          "shadow_node_ratio": 2.9047446577327056
+        },
+        {
+          "age_one_fraction": 0.0931961120640366,
+          "continuation_support_zero_fraction": 0.0029731275014293884,
+          "degree_one_fraction": 0.1804459691252144,
+          "degree_two_fraction": 0.8165809033733562,
+          "family": "6bba",
+          "isolated_fraction": 0.0029731275014293884,
+          "sample_id": "6bba_5c824876",
+          "shadow_node_ratio": 2.235619940349382
+        },
+        {
+          "age_one_fraction": 0.14893617021276595,
+          "continuation_support_zero_fraction": 0.010885700148441365,
+          "degree_one_fraction": 0.27610094012864916,
+          "degree_two_fraction": 0.7130133597229095,
+          "family": "6bba",
+          "isolated_fraction": 0.010885700148441365,
+          "sample_id": "6bba_fe670320",
+          "shadow_node_ratio": 1.5254749025034595
+        },
+        {
+          "age_one_fraction": 0.1295835407333665,
+          "continuation_support_zero_fraction": 0.0021569603451136554,
+          "degree_one_fraction": 0.2548531607765057,
+          "degree_two_fraction": 0.7429898788783806,
+          "family": "6bba",
+          "isolated_fraction": 0.0021569603451136554,
+          "sample_id": "6bba_6321a359",
+          "shadow_node_ratio": 1.4801080550098231
+        },
+        {
+          "age_one_fraction": 0.13275246566224966,
+          "continuation_support_zero_fraction": 0.0016336903249228535,
+          "degree_one_fraction": 0.2622375506746536,
+          "degree_two_fraction": 0.7361287590004235,
+          "family": "6bba",
+          "isolated_fraction": 0.0016336903249228535,
+          "sample_id": "6bba_87289e13",
+          "shadow_node_ratio": 1.4745717344753748
+        },
+        {
+          "age_one_fraction": 0.09813407049067036,
+          "continuation_support_zero_fraction": 0.002591568762957844,
+          "degree_one_fraction": 0.191085003455425,
+          "degree_two_fraction": 0.8063234277816171,
+          "family": "6bba",
+          "isolated_fraction": 0.002591568762957844,
+          "sample_id": "6bba_8b7818bf",
+          "shadow_node_ratio": 1.4287830165391262
+        },
+        {
+          "age_one_fraction": 0.07726671078755791,
+          "continuation_support_zero_fraction": 0.005790866975512905,
+          "degree_one_fraction": 0.14295168762409,
+          "degree_two_fraction": 0.851257445400397,
+          "family": "6bba",
+          "isolated_fraction": 0.005790866975512905,
+          "sample_id": "6bba_ef7b4f7e",
+          "shadow_node_ratio": 1.4261444077394998
+        },
+        {
+          "age_one_fraction": 0.1453689817448415,
+          "continuation_support_zero_fraction": 0.005223147334126287,
+          "degree_one_fraction": 0.2802916688214304,
+          "degree_two_fraction": 0.7144851838444433,
+          "family": "6bba",
+          "isolated_fraction": 0.005223147334126287,
+          "sample_id": "6bba_67ebd073",
+          "shadow_node_ratio": 1.425611913889708
+        }
+      ],
+      "inflated_samples": 14,
+      "median_shadow_node_ratio": 1.3222544657562119,
+      "sample_count": 22
+    }
+  },
+  "overall": {
+    "correlations_with_shadow_node_ratio": {
+      "age_one_fraction": -0.3181420829716036,
+      "continuation_support_zero_fraction": -0.38859473777535075,
+      "degree_one_fraction": -0.14877452809515743,
+      "degree_two_fraction": 0.2664901116548987,
+      "isolated_fraction": -0.38859473777535075
+    },
+    "highest_ratio_samples": [
+      {
+        "age_one_fraction": 0.11683291770573566,
+        "continuation_support_zero_fraction": 0.0059850374064837905,
+        "degree_one_fraction": 0.22169576059850374,
+        "degree_two_fraction": 0.7723192019950125,
+        "family": "6bba",
+        "isolated_fraction": 0.0059850374064837905,
+        "sample_id": "6bba_9e23430b",
+        "shadow_node_ratio": 2.9047446577327056
+      },
+      {
+        "age_one_fraction": 0.0931961120640366,
+        "continuation_support_zero_fraction": 0.0029731275014293884,
+        "degree_one_fraction": 0.1804459691252144,
+        "degree_two_fraction": 0.8165809033733562,
+        "family": "6bba",
+        "isolated_fraction": 0.0029731275014293884,
+        "sample_id": "6bba_5c824876",
+        "shadow_node_ratio": 2.235619940349382
+      },
+      {
+        "age_one_fraction": 0.14893617021276595,
+        "continuation_support_zero_fraction": 0.010885700148441365,
+        "degree_one_fraction": 0.27610094012864916,
+        "degree_two_fraction": 0.7130133597229095,
+        "family": "6bba",
+        "isolated_fraction": 0.010885700148441365,
+        "sample_id": "6bba_fe670320",
+        "shadow_node_ratio": 1.5254749025034595
+      },
+      {
+        "age_one_fraction": 0.1295835407333665,
+        "continuation_support_zero_fraction": 0.0021569603451136554,
+        "degree_one_fraction": 0.2548531607765057,
+        "degree_two_fraction": 0.7429898788783806,
+        "family": "6bba",
+        "isolated_fraction": 0.0021569603451136554,
+        "sample_id": "6bba_6321a359",
+        "shadow_node_ratio": 1.4801080550098231
+      },
+      {
+        "age_one_fraction": 0.13275246566224966,
+        "continuation_support_zero_fraction": 0.0016336903249228535,
+        "degree_one_fraction": 0.2622375506746536,
+        "degree_two_fraction": 0.7361287590004235,
+        "family": "6bba",
+        "isolated_fraction": 0.0016336903249228535,
+        "sample_id": "6bba_87289e13",
+        "shadow_node_ratio": 1.4745717344753748
+      },
+      {
+        "age_one_fraction": 0.09813407049067036,
+        "continuation_support_zero_fraction": 0.002591568762957844,
+        "degree_one_fraction": 0.191085003455425,
+        "degree_two_fraction": 0.8063234277816171,
+        "family": "6bba",
+        "isolated_fraction": 0.002591568762957844,
+        "sample_id": "6bba_8b7818bf",
+        "shadow_node_ratio": 1.4287830165391262
+      },
+      {
+        "age_one_fraction": 0.07726671078755791,
+        "continuation_support_zero_fraction": 0.005790866975512905,
+        "degree_one_fraction": 0.14295168762409,
+        "degree_two_fraction": 0.851257445400397,
+        "family": "6bba",
+        "isolated_fraction": 0.005790866975512905,
+        "sample_id": "6bba_ef7b4f7e",
+        "shadow_node_ratio": 1.4261444077394998
+      },
+      {
+        "age_one_fraction": 0.1453689817448415,
+        "continuation_support_zero_fraction": 0.005223147334126287,
+        "degree_one_fraction": 0.2802916688214304,
+        "degree_two_fraction": 0.7144851838444433,
+        "family": "6bba",
+        "isolated_fraction": 0.005223147334126287,
+        "sample_id": "6bba_67ebd073",
+        "shadow_node_ratio": 1.425611913889708
+      }
+    ],
+    "inflated_samples": 15,
+    "median_shadow_node_ratio": 1.2957906712172924,
+    "sample_count": 27
+  },
+  "ratio_ceiling": 1.25,
+  "ratio_definition": "e016_atabey_relink_v24_2_shadow_predicted_nodes / v19_frozen_reference_predicted_nodes",
+  "status": "v24_4_topology_telemetry_audit"
+}
