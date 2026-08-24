@@ -1,6 +1,6 @@
 # V24 Score-First Tracking Preregistration
 
-Status: **contract frozen; Kaggle smoke passed; frozen 27-sample evaluation authorized**.
+Status: **complete; HOLD after the frozen 27-sample evaluation**.
 
 ## Purpose
 
@@ -119,9 +119,13 @@ If both challengers pass, choose the larger adjusted-edge improvement. A differe
 
 ## Current Authorization
 
-The resumable three-arm runner, fail-closed graph conversion tests, and
-`notebooks/V24_score_first_tracking_kaggle.ipynb` are implemented. The three-sample smoke passed
-with deterministic replay; see `V24_SCORE_FIRST_TRACKING_SMOKE_RESULTS.md`. Authorized next: run
-the unchanged frozen 27-sample evaluation.
+The three-sample smoke and unchanged 27-sample full-sequence evaluation are
+complete; see `V24_SCORE_FIRST_TRACKING_SMOKE_RESULTS.md` and
+`V24_SCORE_FIRST_TRACKING_RESULTS.md`. E016 detections with Atabey relinking
+improved pooled adjusted edge Jaccard by `0.18131`, but its median predicted-node
+ratio was `1.35105`, above the frozen `1.25` ceiling. The binding decision is
+`HOLD_SCORE_GAIN_WITH_STRATUM_OR_INFLATION_CONCERN`.
 
-Not authorized: full 199 execution, hybrid construction, threshold tuning, retraining, submission, or production mutation.
+Not authorized: full-199 execution, hybrid construction, threshold tuning,
+retraining, submission, or production mutation. Any continuation requires a
+new bounded preregistration and may not retroactively alter this frozen result.

@@ -95,7 +95,7 @@ the relevant audit before promoting one.
 | V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Partial research result. The joint semantic Phase 0 extractor passed its fixed battery, but the preregistered availability gate failed at 13/46 development and 7/47 calibration positives. Calibrated scoring and constrained assignment are not authorized under the current formation path. |
 | V22 | Can public learned detections repair upstream division availability without weakening epistemic guardrails? | Mixed but promising. The conservative post-link second-child rule remained a standalone NO-GO, while the frozen temporal U-Net raised patched-official action availability from 13/46 to 39/46 with zero graph mutation. Semantic ranking plus coupled local ownership is now pre-registered on development only; locked validation and the full 199 remain closed. |
 | V23 | Can detector-native, radar-inspired, or parent-centered pair-field evidence rank division actions beyond explicit geometry? | Closed NO-GO for the learned pair-field path. Across three seeds the image model recovered only 6-10 of 29 events at Recall@10, while geometry-only recovered 26/29. Shuffled and static-image controls found no independent image contribution. CFAR and production graphs remain unchanged. |
-| V24 | Can a held-out temporal U-Net improve complete-sequence official edge tracking over frozen V19? | Active preregistration. Three isolated arms compare V19, U-Net detections with Atabey relinking, and the U-Net native graph on 27 checkpoint-held-out samples. Hybridization and the full 199 remain locked. |
+| V24 | Can a held-out temporal U-Net improve complete-sequence official edge tracking over frozen V19? | HOLD. Frozen Atabey relinking raised adjusted edge Jaccard from 0.51783 to 0.69914 across 27 held-out samples, but failed the median node-inflation gate (1.35105 vs 1.25). Full-199 validation remains locked. |
 
 ## Start Here
 
@@ -125,6 +125,8 @@ the relevant audit before promoting one.
   sample-blocked results and mandatory control comparison.
 - [V24 Score-First Tracking Preregistration](V24_SCORE_FIRST_TRACKING_PREREGISTRATION.md):
   held-out whole-sequence cohort, three isolated arms, official edge endpoint, and promotion gates.
+- [V24 Score-First Tracking Results](V24_SCORE_FIRST_TRACKING_RESULTS.md): frozen 27-sample
+  official result, node-inflation gate failure, and HOLD adjudication.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,

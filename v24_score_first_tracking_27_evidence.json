@@ -1,0 +1,79 @@
+{
+  "status": "v24_full_27_complete",
+  "kaggle_kernel": "drakus74/v24-score-first-tracking-held-out-audit",
+  "kaggle_version": 5,
+  "mode": "full_27",
+  "elapsed_seconds": 2856.1202249526978,
+  "atabey_commit": "3ef5190ceaf6180096dc6893563944fc42cfd98b",
+  "checkpoint_sha256": "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03",
+  "predictor_sha256": "c44e771ba5980b820f93091e03a303c25dfe8f3232e501f54dc9565731c234b9",
+  "cohort": {
+    "sample_count": 27,
+    "family_counts": {
+      "44b6": 5,
+      "6bba": 22
+    },
+    "fold_counts": {
+      "1": 10,
+      "2": 9,
+      "3": 8
+    },
+    "complete_sequences": true,
+    "contract": "tests/fixtures/v24_score_first_tracking.json"
+  },
+  "integrity": {
+    "exact_frozen_cohort": true,
+    "determinism_verified": true,
+    "raw_bundle_core_files_identical": true,
+    "assignment_enabled": false,
+    "hybrid_enabled": false,
+    "training_performed": false,
+    "production_graph_mutation": false
+  },
+  "arms": {
+    "v19_frozen_reference": {
+      "adjusted_edge_jaccard": 0.5178323703149015,
+      "edge_jaccard": 0.5131688714098439,
+      "node_recall": 0.7290589500272481
+    },
+    "e016_atabey_relink": {
+      "adjusted_edge_jaccard": 0.6991449366436226,
+      "adjusted_edge_delta": 0.18131256632872117,
+      "edge_jaccard": 0.7113835797571824,
+      "node_recall": 0.9727319744011608,
+      "improved_samples": 24,
+      "flat_samples": 0,
+      "regressed_samples": 3,
+      "median_node_ratio": 1.35105421686747,
+      "p90_node_ratio": 1.5789767021639178,
+      "failed_checks": [
+        "median_node_ratio"
+      ],
+      "regressions": [
+        {
+          "sample_id": "6bba_3c5691b6",
+          "adjusted_edge_delta": -0.11429895302421356
+        },
+        {
+          "sample_id": "6bba_2819ca14",
+          "adjusted_edge_delta": -0.047817630389246024
+        },
+        {
+          "sample_id": "6bba_6321a359",
+          "adjusted_edge_delta": -0.012118279564294565
+        }
+      ]
+    },
+    "e016_native_graph": {
+      "adjusted_edge_jaccard": 0.0,
+      "adjusted_edge_delta": -0.5178323703149015,
+      "edge_jaccard": 0.0,
+      "predicted_edges": 0,
+      "passed": false
+    }
+  },
+  "decision": "HOLD_SCORE_GAIN_WITH_STRATUM_OR_INFLATION_CONCERN",
+  "passing_arms": [],
+  "full_199_authorized": false,
+  "submission_authorized": false
+}
