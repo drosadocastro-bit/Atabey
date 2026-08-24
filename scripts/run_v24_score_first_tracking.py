@@ -29,6 +29,7 @@ from atabey.tracking.unet_graph import (
     relink_predictor_detections,
 )
 from atabey.tracking.v24_2_shadow import prune_interior_isolated_detections
+from atabey.tracking.topology_telemetry import summarize_node_topology
 from run_v21_division_recovery_shadow import _build_v19_prefirewall_with_route
 from run_v22_unet_detection_shadow import _load_public_predict_module
 
@@ -248,6 +249,7 @@ def _evaluate_sample(
             "shadow_edge_set_preserved": (
                 shadow_edge_set_preserved if arm == ARM_V24_2 else None
             ),
+            "node_topology_telemetry": summarize_node_topology(graph),
         }
 
     return {

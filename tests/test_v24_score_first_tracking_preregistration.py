@@ -36,6 +36,7 @@ def test_v24_sources_are_pinned_before_runner_implementation():
         ("unet_graph_module", "unet_graph_module_sha256"),
         ("runner", "runner_sha256"),
         ("v24_2_shadow_module", "v24_2_shadow_module_sha256"),
+        ("topology_telemetry_module", "topology_telemetry_module_sha256"),
     ):
         assert _sha256_normalized_text(ROOT / sources[path_key]) == sources[hash_key]
     assert sources["predictor_runtime_sha256_required"] is True
