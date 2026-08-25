@@ -257,7 +257,10 @@ def _evaluate_sample(
             "graph_signature_sha256": hashlib.sha256(
                 repr(graph_signature(graph)).encode("utf-8")
             ).hexdigest(),
-            "shadow_removed_nodes": shadow_removed_nodes if arm == ARM_V24_2 else 0,
+            "shadow_removed_nodes": shadow_removed_nodes if arm == ARM_V24_2 else (
+                len(shadow.detections) - len(short_fragment_shadow.detections)
+                if arm == ARM_V24_3 else 0
+            ),
             "shadow_edge_set_preserved": (
                 shadow_edge_set_preserved if arm == ARM_V24_2 else None
             ),
@@ -266,6 +269,9 @@ def _evaluate_sample(
 
     arm_rows[ARM_V24_2]["node_topology_comparison"] = compare_node_topology(
         topology_reports[ARM_RELINK], topology_reports[ARM_V24_2]
+    )
+    arm_rows[ARM_V24_3]["node_topology_comparison"] = compare_node_topology(
+        topology_reports[ARM_RELINK], topology_reports[ARM_V24_3]
     )
 
     return {
@@ -327,7 +333,7 @@ def _decision(
     reference = summaries[ARM_V19]
     outcomes: dict[str, Any] = {}
     passing: list[str] = []
-    for arm in (ARM_RELINK, ARM_NATIVE, ARM_V24_2):
+    for arm in (ARM_RELINK, ARM_NATIVE, ARM_V24_2, ARM_V24_3):
         challenger = summaries[arm]
         pooled_delta = _delta(
             challenger["overall"]["adjusted_edge_jaccard"],
