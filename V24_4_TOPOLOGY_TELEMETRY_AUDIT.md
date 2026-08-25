@@ -33,13 +33,14 @@ per-sample distributions do not identify which connected nodes cause the
 inflation.
 
 The next measurement is now implemented in the runner: a deterministic bounded
-per-node sample, exact per-stratum counts, and a side-by-side relink-versus-shadow
-comparison. Bounded node records include component size and span, temporal gap
-counts, frame boundary position, and incoming/outgoing relation counts. A
-component-level audit summarizes these bounded records, but cannot infer the
-unobserved population. It must be regenerated on Kaggle before interpretation;
-the prior ZIP does not contain these new fields. Any suppression rule must be
-shadow-only, preregistered, and rescored on the complete 27-sample cohort.
+per-node sample, exact per-stratum counts, bounded component records, and a
+side-by-side relink-versus-shadow comparison. Bounded component records include
+component size and span, temporal gap counts, and aggregate degree and relation
+patterns. A component-level audit summarizes these bounded records, but cannot
+infer the unobserved population. It must be regenerated on Kaggle before
+interpretation; the prior ZIP does not contain these new fields. Any suppression
+rule must be shadow-only, preregistered, and rescored on the complete 27-sample
+cohort.
 
 The machine-readable report is `v24_4_topology_telemetry_27_report.json`.
 Full-199 remains unauthorized.

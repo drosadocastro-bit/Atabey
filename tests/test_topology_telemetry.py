@@ -25,6 +25,8 @@ def test_topology_telemetry_reports_frame_age_degree_and_support():
     assert report["connectivity"] == {"connected": 3, "isolated": 1}
     assert report["joint_histogram"]["isolated|age=1|degree=0|support=0"] == 1
     assert len(report["bounded_node_records"]) == 4
+    assert report["component_count"] == 2
+    assert len(report["bounded_component_records"]) == 2
     records = {record["node_id"]: record for record in report["bounded_node_records"]}
     assert records["b"]["component_size"] == 3
     assert records["b"]["frame_boundary"] == "interior"
@@ -55,4 +57,7 @@ def test_topology_comparison_pairs_common_bounded_nodes_and_strata():
     )
 
     assert comparison["bounded_common_node_count"] == 2
+    assert comparison["component_count_left"] == 1
+    assert comparison["component_count_right"] == 1
+    assert comparison["bounded_common_component_count"] == 1
     assert comparison["stratum_deltas_right_minus_left"]
