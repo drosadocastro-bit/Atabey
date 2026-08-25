@@ -1,0 +1,13 @@
+{
+  "candidate_set_changed": false,
+  "correct_distinct_returns": 2,
+  "correct_non_tp_percentiles": [
+    0.6026951672862454,
+    0.08178438661710037
+  ],
+  "decision": "NO_GO_RANGE_RATE",
+  "events": 2,
+  "graph_mutation": false,
+  "status": "read_only_v23_echo_range_rate_coherence",
+  "zero_perturbation_all": true
+}

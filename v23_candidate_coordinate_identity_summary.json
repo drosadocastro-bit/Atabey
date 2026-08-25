@@ -1,0 +1,25 @@
+{
+  "candidate_set_changed": false,
+  "coordinate_quality_by_role": {
+    "daughter_1": {
+      "formation_radius_only": 2,
+      "official_radius": 2
+    },
+    "daughter_2": {
+      "official_radius": 4
+    },
+    "parent": {
+      "formation_radius_only": 1,
+      "no_candidate": 1,
+      "official_radius": 2
+    }
+  },
+  "graph_mutation": false,
+  "official_metric_used": false,
+  "population": {
+    "cases": 4,
+    "nearest_role_collisions": 2,
+    "role_rows": 12
+  },
+  "status": "read_only_v23_candidate_coordinate_identity_audit"
+}

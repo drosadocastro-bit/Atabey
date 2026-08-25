@@ -1,0 +1,495 @@
+{
+  "alternative_reference_rate": 0.8969540317821154,
+  "assignment_enabled": false,
+  "by_family": {
+    "44b6": {
+      "alternative_reference_rate": 0.9893399488798676,
+      "competing_source_reference_rate": 0.9887535708915952,
+      "per_sample_reference_distribution": {
+        "max": 27567.0,
+        "median": 13923.0,
+        "min": 3236.0,
+        "p90": 23291.0
+      },
+      "reference_share": 0.3634505672255131,
+      "references": 66510,
+      "references_with_alternatives": 65801,
+      "references_with_competing_sources": 65762,
+      "samples": 5,
+      "samples_with_references": 5
+    },
+    "6bba": {
+      "alternative_reference_rate": 0.8442044537540992,
+      "competing_source_reference_rate": 0.8433889051044761,
+      "per_sample_reference_distribution": {
+        "max": 16058.0,
+        "median": 3436.0,
+        "min": 1315.0,
+        "p90": 10304.6
+      },
+      "reference_share": 0.6365494327744868,
+      "references": 116486,
+      "references_with_alternatives": 98338,
+      "references_with_competing_sources": 98243,
+      "samples": 22,
+      "samples_with_references": 22
+    }
+  },
+  "by_fold": {
+    "1": {
+      "alternative_reference_rate": 0.8872757630673372,
+      "competing_source_reference_rate": 0.8863391093645008,
+      "per_sample_reference_distribution": {
+        "max": 16058.0,
+        "median": 3290.0,
+        "min": 2414.0,
+        "p90": 10138.000000000002
+      },
+      "reference_share": 0.268371986272924,
+      "references": 49111,
+      "references_with_alternatives": 43575,
+      "references_with_competing_sources": 43529,
+      "samples": 9,
+      "samples_with_references": 9
+    },
+    "2": {
+      "alternative_reference_rate": 0.92578195624661,
+      "competing_source_reference_rate": 0.9245551049926389,
+      "per_sample_reference_distribution": {
+        "max": 27567.0,
+        "median": 3412.0,
+        "min": 1315.0,
+        "p90": 16659.000000000004
+      },
+      "reference_share": 0.4231458611117183,
+      "references": 77434,
+      "references_with_alternatives": 71687,
+      "references_with_competing_sources": 71592,
+      "samples": 9,
+      "samples_with_references": 9
+    },
+    "3": {
+      "alternative_reference_rate": 0.8658305433030415,
+      "competing_source_reference_rate": 0.865954544649342,
+      "per_sample_reference_distribution": {
+        "max": 16877.0,
+        "median": 4249.0,
+        "min": 2928.0,
+        "p90": 11665.000000000002
+      },
+      "reference_share": 0.3084821526153577,
+      "references": 56451,
+      "references_with_alternatives": 48877,
+      "references_with_competing_sources": 48884,
+      "samples": 9,
+      "samples_with_references": 9
+    }
+  },
+  "by_fold_family": {
+    "1|44b6": {
+      "alternative_reference_rate": 0.953456956895493,
+      "competing_source_reference_rate": 0.9505096401817512,
+      "per_sample_reference_distribution": {
+        "max": 4907.0,
+        "median": 4071.5,
+        "min": 3236.0,
+        "p90": 4739.9
+      },
+      "reference_share": 0.044498240398697236,
+      "references": 8143,
+      "references_with_alternatives": 7764,
+      "references_with_competing_sources": 7740,
+      "samples": 2,
+      "samples_with_references": 2
+    },
+    "1|6bba": {
+      "alternative_reference_rate": 0.8741212653778558,
+      "competing_source_reference_rate": 0.8735842608865456,
+      "per_sample_reference_distribution": {
+        "max": 16058.0,
+        "median": 3290.0,
+        "min": 2414.0,
+        "p90": 11618.000000000004
+      },
+      "reference_share": 0.22387374587422676,
+      "references": 40968,
+      "references_with_alternatives": 35811,
+      "references_with_competing_sources": 35789,
+      "samples": 7,
+      "samples_with_references": 7
+    },
+    "2|44b6": {
+      "alternative_reference_rate": 0.9939744516751025,
+      "competing_source_reference_rate": 0.9940226560617016,
+      "per_sample_reference_distribution": {
+        "max": 27567.0,
+        "median": 20745.0,
+        "min": 13923.0,
+        "p90": 26202.6
+      },
+      "reference_share": 0.22672626724081402,
+      "references": 41490,
+      "references_with_alternatives": 41240,
+      "references_with_competing_sources": 41242,
+      "samples": 2,
+      "samples_with_references": 2
+    },
+    "2|6bba": {
+      "alternative_reference_rate": 0.8470676608056977,
+      "competing_source_reference_rate": 0.8443690184731805,
+      "per_sample_reference_distribution": {
+        "max": 13932.0,
+        "median": 3256.0,
+        "min": 1315.0,
+        "p90": 11445.600000000002
+      },
+      "reference_share": 0.19641959387090427,
+      "references": 35944,
+      "references_with_alternatives": 30447,
+      "references_with_competing_sources": 30350,
+      "samples": 7,
+      "samples_with_references": 7
+    },
+    "3|44b6": {
+      "alternative_reference_rate": 0.995259821058245,
+      "competing_source_reference_rate": 0.994252533033122,
+      "per_sample_reference_distribution": {
+        "max": 16877.0,
+        "median": 16877.0,
+        "min": 16877.0,
+        "p90": 16877.0
+      },
+      "reference_share": 0.09222605958600189,
+      "references": 16877,
+      "references_with_alternatives": 16797,
+      "references_with_competing_sources": 16780,
+      "samples": 1,
+      "samples_with_references": 1
+    },
+    "3|6bba": {
+      "alternative_reference_rate": 0.8106332440491232,
+      "competing_source_reference_rate": 0.8112397028351949,
+      "per_sample_reference_distribution": {
+        "max": 10362.0,
+        "median": 4165.5,
+        "min": 2928.0,
+        "p90": 7754.499999999999
+      },
+      "reference_share": 0.21625609302935583,
+      "references": 39574,
+      "references_with_alternatives": 32080,
+      "references_with_competing_sources": 32104,
+      "samples": 8,
+      "samples_with_references": 8
+    }
+  },
+  "by_fold_route": {
+    "1|cfar_sidelobe/bipartite": {
+      "alternative_reference_rate": 0.98214949795463,
+      "competing_source_reference_rate": 0.9810751621833809,
+      "per_sample_reference_distribution": {
+        "max": 16058.0,
+        "median": 4907.0,
+        "min": 3236.0,
+        "p90": 13827.800000000001
+      },
+      "reference_share": 0.13224879232332948,
+      "references": 24201,
+      "references_with_alternatives": 23769,
+      "references_with_competing_sources": 23743,
+      "samples": 3,
+      "samples_with_references": 3
+    },
+    "1|components/greedy": {
+      "alternative_reference_rate": 0.7951023685266961,
+      "competing_source_reference_rate": 0.7942994781212365,
+      "per_sample_reference_distribution": {
+        "max": 8658.0,
+        "median": 3125.5,
+        "min": 2414.0,
+        "p90": 6681.0
+      },
+      "reference_share": 0.13612319394959452,
+      "references": 24910,
+      "references_with_alternatives": 19806,
+      "references_with_competing_sources": 19786,
+      "samples": 6,
+      "samples_with_references": 6
+    },
+    "2|cfar_sidelobe/bipartite": {
+      "alternative_reference_rate": 0.992800692865649,
+      "competing_source_reference_rate": 0.9929630832521381,
+      "per_sample_reference_distribution": {
+        "max": 27567.0,
+        "median": 13932.0,
+        "min": 13923.0,
+        "p90": 24840.0
+      },
+      "reference_share": 0.3028590788869702,
+      "references": 55422,
+      "references_with_alternatives": 55023,
+      "references_with_competing_sources": 55032,
+      "samples": 3,
+      "samples_with_references": 3
+    },
+    "2|components/greedy": {
+      "alternative_reference_rate": 0.7570416136652734,
+      "competing_source_reference_rate": 0.7523169180447029,
+      "per_sample_reference_distribution": {
+        "max": 9788.0,
+        "median": 2691.0,
+        "min": 1315.0,
+        "p90": 6600.0
+      },
+      "reference_share": 0.12028678222474808,
+      "references": 22012,
+      "references_with_alternatives": 16664,
+      "references_with_competing_sources": 16560,
+      "samples": 6,
+      "samples_with_references": 6
+    },
+    "3|cfar_sidelobe/bipartite": {
+      "alternative_reference_rate": 0.9767004000941398,
+      "competing_source_reference_rate": 0.9757590021181455,
+      "per_sample_reference_distribution": {
+        "max": 4249.0,
+        "median": 4249.0,
+        "min": 4249.0,
+        "p90": 4249.0
+      },
+      "reference_share": 0.023219086755994666,
+      "references": 4249,
+      "references_with_alternatives": 4150,
+      "references_with_competing_sources": 4146,
+      "samples": 1,
+      "samples_with_references": 1
+    },
+    "3|components/greedy": {
+      "alternative_reference_rate": 0.7906581740976646,
+      "competing_source_reference_rate": 0.7914508138711961,
+      "per_sample_reference_distribution": {
+        "max": 10362.0,
+        "median": 4082.0,
+        "min": 2928.0,
+        "p90": 8127.000000000002
+      },
+      "reference_share": 0.19303700627336118,
+      "references": 35325,
+      "references_with_alternatives": 27930,
+      "references_with_competing_sources": 27958,
+      "samples": 7,
+      "samples_with_references": 7
+    },
+    "3|local_maxima/motion_mutual": {
+      "alternative_reference_rate": 0.995259821058245,
+      "competing_source_reference_rate": 0.994252533033122,
+      "per_sample_reference_distribution": {
+        "max": 16877.0,
+        "median": 16877.0,
+        "min": 16877.0,
+        "p90": 16877.0
+      },
+      "reference_share": 0.09222605958600189,
+      "references": 16877,
+      "references_with_alternatives": 16797,
+      "references_with_competing_sources": 16780,
+      "samples": 1,
+      "samples_with_references": 1
+    }
+  },
+  "by_route": {
+    "cfar_sidelobe/bipartite": {
+      "alternative_reference_rate": 0.9889116749332316,
+      "competing_source_reference_rate": 0.9886612933994658,
+      "per_sample_reference_distribution": {
+        "max": 27567.0,
+        "median": 13923.0,
+        "min": 3236.0,
+        "p90": 20661.600000000006
+      },
+      "reference_share": 0.45832695796629436,
+      "references": 83872,
+      "references_with_alternatives": 82942,
+      "references_with_competing_sources": 82921,
+      "samples": 7,
+      "samples_with_references": 7
+    },
+    "components/greedy": {
+      "alternative_reference_rate": 0.7830072829404112,
+      "competing_source_reference_rate": 0.7818400671149099,
+      "per_sample_reference_distribution": {
+        "max": 10362.0,
+        "median": 3290.0,
+        "min": 1315.0,
+        "p90": 8884.0
+      },
+      "reference_share": 0.44944698244770376,
+      "references": 82247,
+      "references_with_alternatives": 64400,
+      "references_with_competing_sources": 64304,
+      "samples": 19,
+      "samples_with_references": 19
+    },
+    "local_maxima/motion_mutual": {
+      "alternative_reference_rate": 0.995259821058245,
+      "competing_source_reference_rate": 0.994252533033122,
+      "per_sample_reference_distribution": {
+        "max": 16877.0,
+        "median": 16877.0,
+        "min": 16877.0,
+        "p90": 16877.0
+      },
+      "reference_share": 0.09222605958600189,
+      "references": 16877,
+      "references_with_alternatives": 16797,
+      "references_with_competing_sources": 16780,
+      "samples": 1,
+      "samples_with_references": 1
+    }
+  },
+  "competing_source_reference_rate": 0.8962217753393517,
+  "complete": true,
+  "completed_samples": 27,
+  "contract": "v22_continuation_reference_availability_v1",
+  "contract_sha256": "f23808b45a1c9d671ee8211988129d54bcc7cdbba664090310a20165f03cf079",
+  "decision": "GO_TO_CONTINUATION_TABLE_BUILD",
+  "expected_samples": 27,
+  "frame_concentration": {
+    "largest_frames": [
+      {
+        "frame": "6bba_3abfe10a:t49",
+        "references": 649
+      },
+      {
+        "frame": "6bba_3abfe10a:t48",
+        "references": 485
+      },
+      {
+        "frame": "6bba_3abfe10a:t65",
+        "references": 422
+      },
+      {
+        "frame": "6bba_3abfe10a:t61",
+        "references": 393
+      },
+      {
+        "frame": "6bba_3abfe10a:t70",
+        "references": 376
+      },
+      {
+        "frame": "6bba_3abfe10a:t71",
+        "references": 353
+      },
+      {
+        "frame": "6bba_57b7cc1e:t57",
+        "references": 350
+      },
+      {
+        "frame": "6bba_57b7cc1e:t87",
+        "references": 350
+      },
+      {
+        "frame": "44b6_706092f0:t5",
+        "references": 346
+      },
+      {
+        "frame": "44b6_706092f0:t6",
+        "references": 342
+      }
+    ],
+    "top_frame_share": 0.0035465256071170953,
+    "top_three_frame_share": 0.008502918096570417
+  },
+  "full_199_authorized": false,
+  "funnel": {
+    "central_single_ownership": 317102,
+    "consecutive_continuation_edges": 317102,
+    "eligible_references": 182996,
+    "graph_edges": 432718,
+    "inside_local_radius": 214845,
+    "outside_division_exclusion": 182996,
+    "strict_motion_mutual": 207993,
+    "three_frame_exclusive_chains": 214845
+  },
+  "gates": {
+    "all_source_graphs_zero_perturbation": true,
+    "both_families_required": true,
+    "maximum_top_sample_share": true,
+    "maximum_top_three_sample_share": true,
+    "minimum_references_per_family": true,
+    "minimum_references_per_fold": true,
+    "minimum_references_per_observed_route": true,
+    "minimum_references_with_alternatives_per_fold": true,
+    "minimum_samples_with_references_per_fold": true,
+    "minimum_total_references": true
+  },
+  "graph_mutated": false,
+  "local_maxima_reporting": {
+    "development_fold": 3,
+    "development_samples": 1,
+    "generalization_status": "unproven",
+    "heldout_round_training_route_status": "absent_zero_shot",
+    "pooled_metrics_require_route_breakdown": true,
+    "required_metric_caveat": "unproven generalization",
+    "rounds_without_heldout_route_evidence": 2
+  },
+  "reference_is_ground_truth": false,
+  "references": 182996,
+  "references_with_alternatives": 164139,
+  "references_with_competing_sources": 164005,
+  "rejection_reasons": {
+    "invalid_anchor_edge": 39665,
+    "missing_or_ambiguous_anchor": 62592,
+    "near_registered_division": 24997,
+    "noncontinuation_edge": 115616,
+    "not_strict_motion_mutual": 6852
+  },
+  "sample_concentration": {
+    "effective_sample_size": 15.061385249551398,
+    "largest_samples": [
+      {
+        "references": 27567,
+        "sample_id": "44b6_706092f0"
+      },
+      {
+        "references": 16877,
+        "sample_id": "44b6_5f15d135"
+      },
+      {
+        "references": 16058,
+        "sample_id": "6bba_3abfe10a"
+      },
+      {
+        "references": 13932,
+        "sample_id": "6bba_57b7cc1e"
+      },
+      {
+        "references": 13923,
+        "sample_id": "44b6_c50204e0"
+      },
+      {
+        "references": 10362,
+        "sample_id": "6bba_cdcfe533"
+      },
+      {
+        "references": 9788,
+        "sample_id": "6bba_d2b9fc0c"
+      },
+      {
+        "references": 8658,
+        "sample_id": "6bba_d3da753b"
+      },
+      {
+        "references": 6637,
+        "sample_id": "6bba_87289e13"
+      },
+      {
+        "references": 4907,
+        "sample_id": "44b6_aaf8b0ea"
+      }
+    ],
+    "top_sample_share": 0.15064263699753,
+    "top_three_sample_share": 0.3306192485081641
+  },
+  "semantic_scoring_enabled": false
+}

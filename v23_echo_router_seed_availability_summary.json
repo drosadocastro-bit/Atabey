@@ -1,0 +1,13 @@
+{
+  "broken_endpoint_path_available": 6,
+  "candidate_set_changed": false,
+  "graph_mutation": false,
+  "population": {
+    "cases": 11
+  },
+  "router_seed_available": 8,
+  "router_seed_missing": 3,
+  "status": "read_only_v23_echo_router_seed_availability",
+  "under_resolved_parent_path_available": 7,
+  "zero_perturbation_all": true
+}

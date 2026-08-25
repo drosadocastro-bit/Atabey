@@ -1,0 +1,18 @@
+{
+  "candidate_set_changed": false,
+  "control_failure_counts": {
+    "missing_daughter_1": 2,
+    "missing_parent": 4,
+    "no_distinct_daughter_pair": 1
+  },
+  "graph_mutation": false,
+  "missing_role_first_blocker_counts": {
+    "adaptive_threshold": 1,
+    "global_floor": 7
+  },
+  "narrow_shadow_recovered_cases": 0,
+  "population": {
+    "cases": 7
+  },
+  "status": "read_only_v23_raw_cfar_upstream_bottleneck"
+}

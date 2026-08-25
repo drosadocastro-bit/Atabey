@@ -1,0 +1,1290 @@
+[
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_706092f0-t49-p446000000015",
+    "control_failure": "missing_parent",
+    "family": "44b6",
+    "graph_mutated": false,
+    "narrow_shadow_recovered": false,
+    "sample_id": "44b6_706092f0",
+    "t": 49,
+    "variants": {
+      "control_1_5_5": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          5,
+          5
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 646,
+            "global_floor": 658,
+            "local_maxima": 1475,
+            "retained": 646
+          },
+          "parent": {
+            "adaptive_eligible": 648,
+            "global_floor": 658,
+            "local_maxima": 1489,
+            "retained": 648
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 1.625,
+              "global_floor": 1.625,
+              "local_maxima": 1.625,
+              "retained": 1.625
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 5.202538442914189,
+              "global_floor": 5.202538442914189,
+              "local_maxima": 5.202538442914189,
+              "retained": 5.202538442914189
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 3,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 21.070241529821153,
+              "global_floor": 21.070241529821153,
+              "local_maxima": 2.1877232028983924,
+              "retained": 21.070241529821153
+            }
+          }
+        }
+      },
+      "distinct_retention_1_3_3": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          3,
+          3
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 838,
+            "global_floor": 854,
+            "local_maxima": 3871,
+            "retained": 838
+          },
+          "parent": {
+            "adaptive_eligible": 853,
+            "global_floor": 865,
+            "local_maxima": 3857,
+            "retained": 853
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 2,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 1.625,
+              "global_floor": 1.625,
+              "local_maxima": 1.625,
+              "retained": 1.625
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 3,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 5.202538442914189,
+              "global_floor": 5.202538442914189,
+              "local_maxima": 1.21875,
+              "retained": 5.202538442914189
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 3,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 21.070241529821153,
+              "global_floor": 21.070241529821153,
+              "local_maxima": 2.1877232028983924,
+              "retained": 21.070241529821153
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_74d0c52e-t58-p296000000021",
+    "control_failure": "missing_daughter_1",
+    "family": "44b6",
+    "graph_mutated": false,
+    "narrow_shadow_recovered": false,
+    "sample_id": "44b6_74d0c52e",
+    "t": 58,
+    "variants": {
+      "control_1_5_5": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 1
+        },
+        "footprint": [
+          1,
+          5,
+          5
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 284,
+            "global_floor": 295,
+            "local_maxima": 934690,
+            "retained": 284
+          },
+          "parent": {
+            "adaptive_eligible": 287,
+            "global_floor": 299,
+            "local_maxima": 934707,
+            "retained": 287
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 1
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 2,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 7.66510966979599,
+              "global_floor": 7.66510966979599,
+              "local_maxima": 2.7252078475778685,
+              "retained": 7.66510966979599
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 2,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 6.550584420492571,
+              "global_floor": 6.550584420492571,
+              "local_maxima": 0.9084026158592896,
+              "retained": 6.550584420492571
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 2,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 6.039340428598143,
+              "global_floor": 6.039340428598143,
+              "local_maxima": 2.0714766773970688,
+              "retained": 6.039340428598143
+            }
+          }
+        }
+      },
+      "distinct_retention_1_3_3": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 1
+        },
+        "footprint": [
+          1,
+          3,
+          3
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 839,
+            "global_floor": 861,
+            "local_maxima": 969966,
+            "retained": 839
+          },
+          "parent": {
+            "adaptive_eligible": 827,
+            "global_floor": 849,
+            "local_maxima": 969991,
+            "retained": 827
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 1
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 3,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 7.66510966979599,
+              "global_floor": 7.66510966979599,
+              "local_maxima": 2.7252078475778685,
+              "retained": 7.66510966979599
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 2,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 6.550584420492571,
+              "global_floor": 6.550584420492571,
+              "local_maxima": 0.9084026158592896,
+              "retained": 6.550584420492571
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 2,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 6.039340428598143,
+              "global_floor": 6.039340428598143,
+              "local_maxima": 2.0714766773970688,
+              "retained": 6.039340428598143
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_aaf8b0ea-t61-p390000000000",
+    "control_failure": "no_distinct_daughter_pair",
+    "family": "44b6",
+    "graph_mutated": false,
+    "narrow_shadow_recovered": false,
+    "sample_id": "44b6_aaf8b0ea",
+    "t": 61,
+    "variants": {
+      "control_1_5_5": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "no_distinct_daughter_pair",
+          "formed_pairs": 0,
+          "parent_candidates": 1
+        },
+        "footprint": [
+          1,
+          5,
+          5
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 475,
+            "global_floor": 487,
+            "local_maxima": 3281,
+            "retained": 475
+          },
+          "parent": {
+            "adaptive_eligible": 458,
+            "global_floor": 469,
+            "local_maxima": 3294,
+            "retained": 458
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "no_distinct_daughter_pair",
+          "formed_pairs": 0,
+          "parent_candidates": 1
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 2,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 3.300390601883359,
+              "global_floor": 3.300390601883359,
+              "local_maxima": 3.300390601883359,
+              "retained": 3.300390601883359
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 1.625,
+              "global_floor": 1.625,
+              "local_maxima": 1.625,
+              "retained": 1.625
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 1.6750116604071745,
+              "global_floor": 1.6750116604071745,
+              "local_maxima": 1.6750116604071745,
+              "retained": 1.6750116604071745
+            }
+          }
+        }
+      },
+      "distinct_retention_1_3_3": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "no_distinct_daughter_pair",
+          "formed_pairs": 0,
+          "parent_candidates": 2
+        },
+        "footprint": [
+          1,
+          3,
+          3
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 1148,
+            "global_floor": 1164,
+            "local_maxima": 11646,
+            "retained": 900
+          },
+          "parent": {
+            "adaptive_eligible": 1144,
+            "global_floor": 1162,
+            "local_maxima": 11807,
+            "retained": 900
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "no_distinct_daughter_pair",
+          "formed_pairs": 0,
+          "parent_candidates": 2
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 2,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 3.300390601883359,
+              "global_floor": 3.300390601883359,
+              "local_maxima": 3.300390601883359,
+              "retained": 3.300390601883359
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 1.625,
+              "global_floor": 1.625,
+              "local_maxima": 1.625,
+              "retained": 1.625
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 2,
+              "global_floor": 2,
+              "local_maxima": 2,
+              "retained": 2
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 1.6750116604071745,
+              "global_floor": 1.6750116604071745,
+              "local_maxima": 1.6750116604071745,
+              "retained": 1.6750116604071745
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_3abfe10a-t81-p82001296",
+    "control_failure": "missing_parent",
+    "family": "6bba",
+    "graph_mutated": false,
+    "narrow_shadow_recovered": false,
+    "sample_id": "6bba_3abfe10a",
+    "t": 81,
+    "variants": {
+      "control_1_5_5": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          5,
+          5
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 627,
+            "global_floor": 641,
+            "local_maxima": 1032,
+            "retained": 627
+          },
+          "parent": {
+            "adaptive_eligible": 611,
+            "global_floor": 621,
+            "local_maxima": 1018,
+            "retained": 611
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 2.632800908728193,
+              "global_floor": 2.632800908728193,
+              "local_maxima": 2.632800908728193,
+              "retained": 2.632800908728193
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 3.494694639736067,
+              "global_floor": 3.494694639736067,
+              "local_maxima": 3.494694639736067,
+              "retained": 3.494694639736067
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 0
+            },
+            "first_blocker": "adaptive_threshold",
+            "nearest_um": {
+              "adaptive_eligible": 8.225935547097363,
+              "global_floor": 2.1877232028983924,
+              "local_maxima": 2.1877232028983924,
+              "retained": 8.225935547097363
+            }
+          }
+        }
+      },
+      "distinct_retention_1_3_3": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          3,
+          3
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 755,
+            "global_floor": 775,
+            "local_maxima": 1661,
+            "retained": 755
+          },
+          "parent": {
+            "adaptive_eligible": 724,
+            "global_floor": 739,
+            "local_maxima": 1650,
+            "retained": 724
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 1,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 2.632800908728193,
+              "global_floor": 2.632800908728193,
+              "local_maxima": 2.632800908728193,
+              "retained": 2.632800908728193
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 2,
+              "global_floor": 2,
+              "local_maxima": 2,
+              "retained": 2
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 3.494694639736067,
+              "global_floor": 3.494694639736067,
+              "local_maxima": 3.494694639736067,
+              "retained": 3.494694639736067
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 0
+            },
+            "first_blocker": "adaptive_threshold",
+            "nearest_um": {
+              "adaptive_eligible": 8.225935547097363,
+              "global_floor": 2.1877232028983924,
+              "local_maxima": 2.1877232028983924,
+              "retained": 8.225935547097363
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t23-p24000720",
+    "control_failure": "missing_parent",
+    "family": "6bba",
+    "graph_mutated": false,
+    "narrow_shadow_recovered": false,
+    "sample_id": "6bba_57b7cc1e",
+    "t": 23,
+    "variants": {
+      "control_1_5_5": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          5,
+          5
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 1316,
+            "global_floor": 1327,
+            "local_maxima": 1510,
+            "retained": 900
+          },
+          "parent": {
+            "adaptive_eligible": 1251,
+            "global_floor": 1264,
+            "local_maxima": 1457,
+            "retained": 900
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 2,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 10.663578858080433,
+              "global_floor": 10.663578858080433,
+              "local_maxima": 1.86167137607581,
+              "retained": 10.663578858080433
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 2,
+              "global_floor": 2,
+              "local_maxima": 3,
+              "retained": 2
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 4.908737426772795,
+              "global_floor": 4.908737426772795,
+              "local_maxima": 4.908737426772795,
+              "retained": 4.908737426772795
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 1,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 8.295859754268994,
+              "global_floor": 8.295859754268994,
+              "local_maxima": 2.6012692214570947,
+              "retained": 8.295859754268994
+            }
+          }
+        }
+      },
+      "distinct_retention_1_3_3": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          3,
+          3
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 2280,
+            "global_floor": 2297,
+            "local_maxima": 3125,
+            "retained": 900
+          },
+          "parent": {
+            "adaptive_eligible": 2062,
+            "global_floor": 2081,
+            "local_maxima": 2956,
+            "retained": 900
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 2,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 10.663578858080433,
+              "global_floor": 10.663578858080433,
+              "local_maxima": 1.86167137607581,
+              "retained": 10.663578858080433
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 2,
+              "global_floor": 2,
+              "local_maxima": 3,
+              "retained": 2
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 4.908737426772795,
+              "global_floor": 4.908737426772795,
+              "local_maxima": 4.908737426772795,
+              "retained": 4.908737426772795
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 1,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 8.295859754268994,
+              "global_floor": 8.295859754268994,
+              "local_maxima": 2.6012692214570947,
+              "retained": 8.295859754268994
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t77-p78002270",
+    "control_failure": "missing_parent",
+    "family": "6bba",
+    "graph_mutated": false,
+    "narrow_shadow_recovered": false,
+    "sample_id": "6bba_57b7cc1e",
+    "t": 77,
+    "variants": {
+      "control_1_5_5": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          5,
+          5
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 1169,
+            "global_floor": 1175,
+            "local_maxima": 1606,
+            "retained": 900
+          },
+          "parent": {
+            "adaptive_eligible": 1132,
+            "global_floor": 1140,
+            "local_maxima": 1624,
+            "retained": 900
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 1,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 10.96875,
+              "global_floor": 10.96875,
+              "local_maxima": 2.03125,
+              "retained": 10.96875
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 1,
+              "global_floor": 1,
+              "local_maxima": 1,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 3.917733121653388,
+              "global_floor": 3.917733121653388,
+              "local_maxima": 3.917733121653388,
+              "retained": 3.917733121653388
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 1,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 13.559259405476393,
+              "global_floor": 13.559259405476393,
+              "local_maxima": 2.632800908728193,
+              "retained": 13.559259405476393
+            }
+          }
+        }
+      },
+      "distinct_retention_1_3_3": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 3,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "footprint": [
+          1,
+          3,
+          3
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 2135,
+            "global_floor": 2152,
+            "local_maxima": 3801,
+            "retained": 900
+          },
+          "parent": {
+            "adaptive_eligible": 1992,
+            "global_floor": 2002,
+            "local_maxima": 3800,
+            "retained": 900
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 1,
+          "distinct_pairs": 0,
+          "failure": "missing_parent",
+          "formed_pairs": 0,
+          "parent_candidates": 0
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 6,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 10.96875,
+              "global_floor": 10.96875,
+              "local_maxima": 1.8168052317185792,
+              "retained": 10.96875
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 3,
+              "global_floor": 3,
+              "local_maxima": 3,
+              "retained": 1
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 3.917733121653388,
+              "global_floor": 3.917733121653388,
+              "local_maxima": 3.917733121653388,
+              "retained": 3.917733121653388
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 4,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 13.559259405476393,
+              "global_floor": 13.559259405476393,
+              "local_maxima": 2.632800908728193,
+              "retained": 13.559259405476393
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t24-p25000064",
+    "control_failure": "missing_daughter_1",
+    "family": "6bba",
+    "graph_mutated": false,
+    "narrow_shadow_recovered": false,
+    "sample_id": "6bba_fc5f39dc",
+    "t": 24,
+    "variants": {
+      "control_1_5_5": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 3
+        },
+        "footprint": [
+          1,
+          5,
+          5
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 131,
+            "global_floor": 140,
+            "local_maxima": 5442,
+            "retained": 131
+          },
+          "parent": {
+            "adaptive_eligible": 119,
+            "global_floor": 129,
+            "local_maxima": 5465,
+            "retained": 119
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 3
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 1,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 8.365199489551937,
+              "global_floor": 8.365199489551937,
+              "local_maxima": 5.202538442914189,
+              "retained": 8.365199489551937
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 2,
+              "global_floor": 2,
+              "local_maxima": 2,
+              "retained": 2
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 0.0,
+              "global_floor": 0.0,
+              "local_maxima": 0.0,
+              "retained": 0.0
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 3,
+              "global_floor": 3,
+              "local_maxima": 4,
+              "retained": 3
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 2.7252078475778685,
+              "global_floor": 2.7252078475778685,
+              "local_maxima": 2.7252078475778685,
+              "retained": 2.7252078475778685
+            }
+          }
+        }
+      },
+      "distinct_retention_1_3_3": {
+        "eligible_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 5
+        },
+        "footprint": [
+          1,
+          3,
+          3
+        ],
+        "frame_counts": {
+          "daughter": {
+            "adaptive_eligible": 173,
+            "global_floor": 186,
+            "local_maxima": 17272,
+            "retained": 173
+          },
+          "parent": {
+            "adaptive_eligible": 162,
+            "global_floor": 173,
+            "local_maxima": 17555,
+            "retained": 162
+          }
+        },
+        "retained_geometry": {
+          "available": false,
+          "daughter_1_candidates": 0,
+          "daughter_2_candidates": 2,
+          "distinct_pairs": 0,
+          "failure": "missing_daughter_1",
+          "formed_pairs": 0,
+          "parent_candidates": 5
+        },
+        "roles": {
+          "daughter_1": {
+            "counts_within_7um": {
+              "adaptive_eligible": 0,
+              "global_floor": 0,
+              "local_maxima": 2,
+              "retained": 0
+            },
+            "first_blocker": "global_floor",
+            "nearest_um": {
+              "adaptive_eligible": 8.365199489551937,
+              "global_floor": 8.365199489551937,
+              "local_maxima": 5.202538442914189,
+              "retained": 8.365199489551937
+            }
+          },
+          "daughter_2": {
+            "counts_within_7um": {
+              "adaptive_eligible": 2,
+              "global_floor": 2,
+              "local_maxima": 3,
+              "retained": 2
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 0.0,
+              "global_floor": 0.0,
+              "local_maxima": 0.0,
+              "retained": 0.0
+            }
+          },
+          "parent": {
+            "counts_within_7um": {
+              "adaptive_eligible": 5,
+              "global_floor": 5,
+              "local_maxima": 7,
+              "retained": 5
+            },
+            "first_blocker": "retained",
+            "nearest_um": {
+              "adaptive_eligible": 2.7252078475778685,
+              "global_floor": 2.7252078475778685,
+              "local_maxima": 2.7252078475778685,
+              "retained": 2.7252078475778685
+            }
+          }
+        }
+      }
+    }
+  }
+]

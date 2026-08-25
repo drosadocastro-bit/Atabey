@@ -1,0 +1,51 @@
+{
+  "candidate_set_changed": false,
+  "decision": "NO_GO",
+  "eligible_signals": [],
+  "graph_mutation": false,
+  "population": {
+    "events": 4
+  },
+  "signals": {
+    "best_pair_score": {
+      "family_joint_capture": {
+        "44b6": 0,
+        "6bba": 0
+      },
+      "joint_top25_seed_top10_pair": 0,
+      "pair_top_n_capture": {
+        "1": 0,
+        "10": 3,
+        "25": 3,
+        "5": 1
+      },
+      "seed_top_n_capture": {
+        "10": 0,
+        "25": 0,
+        "5": 0,
+        "50": 1
+      }
+    },
+    "density_penalized_pair_score": {
+      "family_joint_capture": {
+        "44b6": 1,
+        "6bba": 0
+      },
+      "joint_top25_seed_top10_pair": 1,
+      "pair_top_n_capture": {
+        "1": 0,
+        "10": 2,
+        "25": 3,
+        "5": 1
+      },
+      "seed_top_n_capture": {
+        "10": 1,
+        "25": 1,
+        "5": 0,
+        "50": 2
+      }
+    }
+  },
+  "status": "read_only_v23_pair_level_track_qualifier",
+  "zero_perturbation_all": true
+}

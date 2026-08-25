@@ -1,0 +1,201 @@
+{
+  "assignment_enabled": false,
+  "availability": {
+    "official_fp": 1.0,
+    "official_tp": 1.0,
+    "tp_crop_coverage": {
+      "median": 1.0,
+      "min": 0.55078125,
+      "p10": 0.5888671875
+    }
+  },
+  "crops_extracted": false,
+  "decision": "NO_GO_CURRENT_E016_PAIR_FIELD_TRAINING",
+  "fold_support": {
+    "1": {
+      "heldout": {
+        "44b6_events": 0,
+        "6bba_events": 14,
+        "cfar_events": 0
+      },
+      "training": {
+        "44b6_events": 3,
+        "6bba_events": 23,
+        "cfar_events": 7
+      }
+    },
+    "2": {
+      "heldout": {
+        "44b6_events": 2,
+        "6bba_events": 11,
+        "cfar_events": 4
+      },
+      "training": {
+        "44b6_events": 1,
+        "6bba_events": 26,
+        "cfar_events": 3
+      }
+    },
+    "3": {
+      "heldout": {
+        "44b6_events": 1,
+        "6bba_events": 12,
+        "cfar_events": 3
+      },
+      "training": {
+        "44b6_events": 2,
+        "6bba_events": 25,
+        "cfar_events": 4
+      }
+    }
+  },
+  "full_199_authorized": false,
+  "gates": {
+    "cfar_positive_samples_min": false,
+    "each_family_positive_samples_min": false,
+    "each_fold_heldout_44b6_events_min": false,
+    "each_fold_heldout_cfar_events_min": false,
+    "each_fold_training_44b6_events_min": false,
+    "each_fold_training_cfar_events_min": false,
+    "fp_representation_availability_min": true,
+    "tp_representation_availability_min": true
+  },
+  "graph_mutation": false,
+  "model_fitted": false,
+  "population": {
+    "actions": 211328,
+    "labeled_actions": 624,
+    "official_fp": {
+      "actions": 569,
+      "events": 40,
+      "samples": 23
+    },
+    "official_tp": {
+      "actions": 55,
+      "events": 40,
+      "samples": 24
+    }
+  },
+  "representation": {
+    "channels": [
+      "image_t",
+      "image_t_plus_1",
+      "parent_mask",
+      "symmetric_daughter_pair_mask",
+      "crop_coverage_mask"
+    ],
+    "coordinate_scalar_inputs": false,
+    "half_extent_um": 16.0,
+    "isotropic_spacing_um": 1.0,
+    "shape": [
+      33,
+      33,
+      33
+    ]
+  },
+  "status": "read_only_v23_pair_field_representation_availability",
+  "strata": {
+    "family": {
+      "44b6": {
+        "official_fp": {
+          "actions": 118,
+          "events": 3,
+          "samples": 2
+        },
+        "official_tp": {
+          "actions": 8,
+          "events": 3,
+          "samples": 2
+        }
+      },
+      "6bba": {
+        "official_fp": {
+          "actions": 451,
+          "events": 37,
+          "samples": 21
+        },
+        "official_tp": {
+          "actions": 47,
+          "events": 37,
+          "samples": 22
+        }
+      }
+    },
+    "fold": {
+      "1": {
+        "official_fp": {
+          "actions": 141,
+          "events": 13,
+          "samples": 7
+        },
+        "official_tp": {
+          "actions": 16,
+          "events": 14,
+          "samples": 8
+        }
+      },
+      "2": {
+        "official_fp": {
+          "actions": 162,
+          "events": 13,
+          "samples": 8
+        },
+        "official_tp": {
+          "actions": 18,
+          "events": 13,
+          "samples": 8
+        }
+      },
+      "3": {
+        "official_fp": {
+          "actions": 266,
+          "events": 14,
+          "samples": 8
+        },
+        "official_tp": {
+          "actions": 21,
+          "events": 13,
+          "samples": 8
+        }
+      }
+    },
+    "route": {
+      "cfar_sidelobe/bipartite": {
+        "official_fp": {
+          "actions": 101,
+          "events": 7,
+          "samples": 4
+        },
+        "official_tp": {
+          "actions": 11,
+          "events": 7,
+          "samples": 4
+        }
+      },
+      "components/greedy": {
+        "official_fp": {
+          "actions": 373,
+          "events": 32,
+          "samples": 18
+        },
+        "official_tp": {
+          "actions": 38,
+          "events": 32,
+          "samples": 19
+        }
+      },
+      "local_maxima/motion_mutual": {
+        "official_fp": {
+          "actions": 95,
+          "events": 1,
+          "samples": 1
+        },
+        "official_tp": {
+          "actions": 6,
+          "events": 1,
+          "samples": 1
+        }
+      }
+    }
+  }
+}

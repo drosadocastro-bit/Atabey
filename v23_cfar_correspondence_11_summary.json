@@ -1,0 +1,20 @@
+{
+  "candidate_set_changed": false,
+  "graph_mutation": false,
+  "nearest_daughter_collision_count": 2,
+  "official_metric_used": false,
+  "outcome_counts": {
+    "no_parent_within_14um": 1,
+    "official_geometric_candidate": 1,
+    "pair_exists_outside_official_7um": 9
+  },
+  "ownership_conflict_best_pair_count": 7,
+  "population": {
+    "cases": 11,
+    "families": {
+      "44b6": 5,
+      "6bba": 6
+    }
+  },
+  "status": "read_only_v23_cfar_correspondence_audit_11"
+}

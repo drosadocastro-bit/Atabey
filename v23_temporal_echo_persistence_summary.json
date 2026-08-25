@@ -1,0 +1,16 @@
+{
+  "candidate_set_changed": false,
+  "correct_distinct_returns": 2,
+  "decision": "NO_GO_TEMPORAL_ECHO",
+  "events": 2,
+  "graph_mutation": false,
+  "non_tp_distinct_return_rate": {
+    "mean": 0.9862918215613383,
+    "per_event": [
+      0.9986059479553904,
+      0.9739776951672863
+    ]
+  },
+  "status": "read_only_v23_temporal_echo_persistence",
+  "zero_perturbation_all": true
+}

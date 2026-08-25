@@ -1,0 +1,63 @@
+{
+  "actions": 2264,
+  "assignment_enabled": false,
+  "dataset_readiness": {
+    "by_family": {
+      "44b6": 9,
+      "6bba": 20
+    },
+    "by_outer_training_complement": {
+      "1": 20,
+      "2": 17,
+      "3": 21
+    },
+    "events_with_tp_and_fp": 29,
+    "gates": {
+      "events_with_tp_and_fp_overall": true,
+      "events_with_tp_and_fp_per_family": true,
+      "events_with_tp_and_fp_per_training_complement": true,
+      "exact_tp_action_variants": true,
+      "exact_tp_events": true
+    }
+  },
+  "decision": "GO_TO_BOUNDED_PAIR_FIELD_MODEL_IMPLEMENTATION",
+  "events": 29,
+  "full_199_authorized": false,
+  "graph_mutation": false,
+  "labels": {
+    "official_fp": 2174,
+    "official_tp": 90,
+    "official_unsupported": 0
+  },
+  "model_fitted": false,
+  "output_root": "D:\\Project-Atabey\\outputs\\v23_cfar_pair_field_v1",
+  "parent_fields": 54,
+  "prewrite_gates": {
+    "action_count_parity": true,
+    "events_with_tp_and_fp_overall": true,
+    "events_with_tp_and_fp_per_family": true,
+    "events_with_tp_and_fp_per_training_complement": true,
+    "exact_tp_action_variants": true,
+    "exact_tp_events": true,
+    "parent_field_count_parity": true,
+    "synthetic_tensor_harness": true
+  },
+  "selected_training_actions": 1603,
+  "status": "v23_locked_pair_field_dataset_result",
+  "tensor_manifest": {
+    "action_manifest": "actions.jsonl.gz",
+    "actions": 2264,
+    "actions_sha256": "39c49efdf3c93d2ac6c791e85db4c26fe79bf13bf34c76b27107ffa54096a72f",
+    "all_parent_tensors_valid": true,
+    "event_manifest": "events.jsonl.gz",
+    "events": 29,
+    "events_sha256": "d09275c827126adf869815d8c907c09f1e143a2f1d3f57cf70721110b4bcb1c2",
+    "graph_mutation": false,
+    "model_fitted": false,
+    "normalization_version": "v23_pair_field_norm_v1",
+    "parent_fields": 54,
+    "parent_manifest": "parents.json",
+    "parents_sha256": "d81aeb498135e87caf6ebffa05d7d6d3d3e8b50359762ff418e81c0b3c8c981d",
+    "status": "v23_locked_pair_field_dataset"
+  }
+}

@@ -16,3 +16,5 @@ kaggle_kernel/remote_output_*/
 !sample_submission.schema-notes.md
 *.geff/
 v22_semantic_action_shards/
+v22_continuation_reference_audit/
+v22_continuation_feature_shards/

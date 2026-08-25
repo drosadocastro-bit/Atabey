@@ -1,0 +1,28 @@
+{
+  "added_echo_per_event_frame": {
+    "max": 2082,
+    "median": 578.0,
+    "p90": 1771.2000000000003
+  },
+  "candidate_set_changed": false,
+  "control_geometry_available": 4,
+  "decision": "NO_GO_ROUTER_TOO_BROAD",
+  "echo_retention_fraction": {
+    "median": 0.9356287425149701,
+    "p90": 0.9971783248773185
+  },
+  "failure_geometry_available": 4,
+  "failure_recovered": 4,
+  "graph_mutation": false,
+  "population": {
+    "cases": 11,
+    "controls": 4,
+    "failures": 7
+  },
+  "roi_volume_fraction_estimate": {
+    "median": 0.6119893391927084,
+    "p90": 0.9498352050781251
+  },
+  "status": "read_only_v23_range_gated_echo",
+  "zero_perturbation_all": true
+}

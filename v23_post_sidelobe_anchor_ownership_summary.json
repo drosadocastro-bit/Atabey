@@ -1,0 +1,12 @@
+{
+  "candidate_set_changed": false,
+  "graph_mutation": false,
+  "outcome_counts": {
+    "official_action_available": 4
+  },
+  "population": {
+    "cases": 4
+  },
+  "status": "read_only_v23_post_sidelobe_anchor_ownership_audit",
+  "zero_perturbation_all": true
+}

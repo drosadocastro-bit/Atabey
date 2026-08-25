@@ -1,0 +1,116 @@
+﻿{
+  "name": "v22_positive_unlabeled_semantic_ranker_v1",
+  "status": "preregistered_training_not_run",
+  "source_action_features": "v22_semantic_action_appearance_features.csv.gz",
+  "source_action_features_sha256": "28a41035e8acdcb405b7e8b993d7677240a2036c737a4ca96f3ec76c47273dc3",
+  "source_evidence_summary": "v22_official_positive_semantic_evidence_audit_summary.json",
+  "source_evidence_summary_sha256": "4f1275c3844cb37f7dc87459221ad82448499777fda0b915446f76ff3c0a5317",
+  "source_evidence_contract": "tests/fixtures/v22_official_positive_semantic_evidence_audit.json",
+  "source_evidence_contract_sha256": "a121426c9b504a1485a52605163b54944d0177d643cfb8d8ff1366010b9a4d96",
+  "source_development_contract": "tests/fixtures/v22_joint_semantic_assignment_development.json",
+  "source_development_contract_sha256": "41414fba9208c66e70b6b03915cfc4aebcf96a2ec724382dcd3227a4ca128f61",
+  "population": {
+    "samples": 27,
+    "events": 46,
+    "positive_events": 39,
+    "actions": 268822,
+    "official_tp": 64,
+    "official_fp": 518,
+    "not_evaluated": 265576,
+    "official_unsupported": 2664,
+    "decision_route_official_tp": 60,
+    "local_maxima_official_tp": 4
+  },
+  "labels": {
+    "positive": "official_tp",
+    "reliable_negative": "official_fp",
+    "unknown": ["not_evaluated", "official_unsupported"],
+    "unknown_used_as_negative": false,
+    "unknown_in_heldout_ranking": true,
+    "sparse_absence_is_negative": false
+  },
+  "primary_features": [
+    "minimum_daughter_contrast",
+    "mean_daughter_contrast",
+    "contrast_conservation_error",
+    "daughter_mass_balance",
+    "mean_daughter_anisotropy"
+  ],
+  "prohibited_model_inputs": [
+    "sample_id", "event_id", "fold", "family", "route",
+    "action_id", "official_label", "registered_official_positive",
+    "distance", "angle", "velocity", "prediction_error",
+    "ownership_margin", "rank", "ground_truth_distance"
+  ],
+  "model": {
+    "type": "l2_regularized_within_event_pairwise_logistic_ranker",
+    "regularization_grid_c": [0.01, 0.1, 1.0, 10.0],
+    "pair_definition": "each_official_tp_preferred_to_each_same_event_official_fp",
+    "weighting": ["event", "positive", "reliable_negative_pair"],
+    "preprocessing": "training_folds_only_weighted_median_and_standardization",
+    "missing_masks": true,
+    "score_is_probability": false,
+    "calibration_enabled": false,
+    "nonlinear_model_decision_eligible": false
+  },
+  "validation": {
+    "outer_folds": [1, 2, 3],
+    "sample_blocked": true,
+    "inner_selection": "swap_the_two_outer_training_folds",
+    "inner_metric": "equal_event_positive_event_recall_at_50_over_all_actions",
+    "tie_break": "smaller_c_stronger_regularization",
+    "heldout_unknown_actions_ranked": true,
+    "rank_tie_policy": "pessimistic_all_equal_scores_count_ahead",
+    "report_k": [1, 5, 10, 50],
+    "required_strata": ["fold", "family", "route", "sample", "event"],
+    "decision_routes": ["cfar_sidelobe/bipartite", "components/greedy"],
+    "local_maxima": {
+      "decision_eligible": false,
+      "status": "zero_shot_only_in_fold_3_unproven_generalization",
+      "dedicated_training_or_calibration_allowed": false
+    }
+  },
+  "baselines": {
+    "mean_daughter_contrast": "direction_selected_inside_training_folds_only",
+    "mean_detection_confidence": "direction_selected_inside_training_folds_only"
+  },
+  "mandatory_ablations": {
+    "contrast_only": ["minimum_daughter_contrast", "mean_daughter_contrast", "contrast_conservation_error"],
+    "mass_shape_only": ["daughter_mass_balance", "mean_daughter_anisotropy"],
+    "raw_plus_confidence_diagnostic": [
+      "minimum_daughter_contrast", "mean_daughter_contrast",
+      "contrast_conservation_error", "daughter_mass_balance",
+      "mean_daughter_anisotropy", "mean_detection_confidence"
+    ]
+  },
+  "decision": {
+    "action_recall_at_50_min": 0.80,
+    "positive_event_recall_at_50_min": 0.85,
+    "per_fold_positive_event_recall_at_50_min": 0.70,
+    "cfar_action_recall_at_50_min": 0.60,
+    "cfar_event_recall_at_50_min": 0.70,
+    "components_action_recall_at_50_min": 0.80,
+    "components_event_recall_at_50_min": 0.85,
+    "each_family_event_recall_at_50_min": 0.70,
+    "event_recall_at_50_advantage_over_best_univariate_min": 0.03,
+    "maximum_fold_event_recall_at_50_spread": 0.20,
+    "maximum_route_event_recall_at_50_gap": 0.25,
+    "source_graph_mutations_required": 0,
+    "states": {
+      "GO_TO_LOCAL_CONSTRAINT_SHADOW_PREREGISTRATION": "all_retrieval_generalization_and_incremental_gates_pass",
+      "HOLD_SEMANTIC_RETRIEVAL_UNSTABLE": "pooled_retrieval_passes_but_fold_route_or_incremental_gate_fails",
+      "NO_GO_POSITIVE_UNLABELED_RANKER": "pooled_action_or_event_recall_at_50_fails"
+    }
+  },
+  "interpretation": {
+    "feature_selection_used_same_development_events": true,
+    "outer_cv_is_independent_feature_discovery_validation": false,
+    "official_action_retrieval_is_biological_probability": false,
+    "go_authorizes": "preregistered_read_only_local_constraint_shadow_only"
+  },
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "graph_mutation_enabled": false,
+  "locked_validation_opened": false,
+  "full_199_authorized": false
+}

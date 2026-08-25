@@ -1,0 +1,12 @@
+{
+  "candidate_set_changed": false,
+  "first_loss_stage_counts": {
+    "raw_cfar_peak_detection": 7
+  },
+  "graph_mutation": false,
+  "population": {
+    "cases": 7,
+    "unique_frames": 14
+  },
+  "status": "read_only_v23_cfar_detector_stage_decomposition"
+}

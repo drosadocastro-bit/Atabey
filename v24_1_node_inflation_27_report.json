@@ -1,0 +1,291 @@
+{
+  "by_family": {
+    "44b6": {
+      "improved_samples": 5,
+      "inflated_samples": 1,
+      "max_node_ratio": 1.3267218095881161,
+      "mean_adjusted_edge_delta": 0.4184173031454648,
+      "mean_node_ratio": 1.0811533536857252,
+      "median_node_ratio": 1.0544762491474335,
+      "min_node_ratio": 0.8616836178971043,
+      "regressed_samples": 0,
+      "sample_count": 5
+    },
+    "6bba": {
+      "improved_samples": 19,
+      "inflated_samples": 15,
+      "max_node_ratio": 3.023542194856936,
+      "mean_adjusted_edge_delta": 0.15795539767447517,
+      "mean_node_ratio": 1.441058964643056,
+      "median_node_ratio": 1.377457267166605,
+      "min_node_ratio": 0.9516496883077391,
+      "regressed_samples": 3,
+      "sample_count": 22
+    }
+  },
+  "by_inflation_status": {
+    "above_ceiling": {
+      "improved_samples": 13,
+      "inflated_samples": 16,
+      "max_node_ratio": 3.023542194856936,
+      "mean_adjusted_edge_delta": 0.16977690642632784,
+      "mean_node_ratio": 1.587013753786731,
+      "median_node_ratio": 1.4737351506466638,
+      "min_node_ratio": 1.2517862246356102,
+      "regressed_samples": 3,
+      "sample_count": 16
+    },
+    "within_ceiling": {
+      "improved_samples": 11,
+      "inflated_samples": 0,
+      "max_node_ratio": 1.2239717223650386,
+      "mean_adjusted_edge_delta": 0.25915225106768475,
+      "mean_node_ratio": 1.0651676299989237,
+      "median_node_ratio": 1.0544762491474335,
+      "min_node_ratio": 0.8616836178971043,
+      "regressed_samples": 0,
+      "sample_count": 11
+    }
+  },
+  "by_route": {
+    "cfar_sidelobe": {
+      "improved_samples": 7,
+      "inflated_samples": 1,
+      "max_node_ratio": 1.3267218095881161,
+      "mean_adjusted_edge_delta": 0.3636719442068909,
+      "mean_node_ratio": 1.071444845610671,
+      "median_node_ratio": 1.0181257231006555,
+      "min_node_ratio": 0.8616836178971043,
+      "regressed_samples": 0,
+      "sample_count": 7
+    },
+    "components": {
+      "improved_samples": 16,
+      "inflated_samples": 15,
+      "max_node_ratio": 3.023542194856936,
+      "mean_adjusted_edge_delta": 0.1434638650294826,
+      "mean_node_ratio": 1.5028670432712488,
+      "median_node_ratio": 1.4165235314324973,
+      "min_node_ratio": 0.9516496883077391,
+      "regressed_samples": 3,
+      "sample_count": 19
+    },
+    "local_maxima": {
+      "improved_samples": 1,
+      "inflated_samples": 0,
+      "max_node_ratio": 1.0544762491474335,
+      "mean_adjusted_edge_delta": 0.29558821955737263,
+      "mean_node_ratio": 1.0544762491474335,
+      "median_node_ratio": 1.0544762491474335,
+      "min_node_ratio": 1.0544762491474335,
+      "regressed_samples": 0,
+      "sample_count": 1
+    }
+  },
+  "overall": {
+    "improved_samples": 24,
+    "inflated_samples": 16,
+    "max_node_ratio": 3.023542194856936,
+    "mean_adjusted_edge_delta": 0.2061890838728066,
+    "mean_node_ratio": 1.3744097774287354,
+    "median_node_ratio": 1.35105421686747,
+    "min_node_ratio": 0.8616836178971043,
+    "regressed_samples": 3,
+    "sample_count": 27
+  },
+  "ratio_ceiling": 1.25,
+  "ratio_score_delta_pearson": 0.08239356349114144,
+  "sample_count": 27,
+  "samples": [
+    {
+      "family": "44b6",
+      "node_ratio": 1.0544762491474335,
+      "route": "local_maxima",
+      "sample_id": "44b6_5f15d135",
+      "score_delta": 0.29558821955737263
+    },
+    {
+      "family": "44b6",
+      "node_ratio": 1.1875566142181366,
+      "route": "cfar_sidelobe",
+      "sample_id": "44b6_706092f0",
+      "score_delta": 0.5914328040839529
+    },
+    {
+      "family": "44b6",
+      "node_ratio": 1.3267218095881161,
+      "route": "cfar_sidelobe",
+      "sample_id": "44b6_74d0c52e",
+      "score_delta": 0.39256880118466164
+    },
+    {
+      "family": "44b6",
+      "node_ratio": 0.9753284775778349,
+      "route": "cfar_sidelobe",
+      "sample_id": "44b6_aaf8b0ea",
+      "score_delta": 0.7151318351752447
+    },
+    {
+      "family": "44b6",
+      "node_ratio": 0.8616836178971043,
+      "route": "cfar_sidelobe",
+      "sample_id": "44b6_c50204e0",
+      "score_delta": 0.09736485572609233
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.3669890026545317,
+      "route": "components",
+      "sample_id": "6bba_2312ac41",
+      "score_delta": 0.23178504415564288
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.3822913028292,
+      "route": "components",
+      "sample_id": "6bba_2819ca14",
+      "score_delta": -0.047817630389246024
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.1319325899829296,
+      "route": "cfar_sidelobe",
+      "sample_id": "6bba_3abfe10a",
+      "score_delta": 0.22215410710072925
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.4165235314324973,
+      "route": "components",
+      "sample_id": "6bba_3c5691b6",
+      "score_delta": -0.11429895302421356
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 0.9516496883077391,
+      "route": "components",
+      "sample_id": "6bba_3fda6b25",
+      "score_delta": 0.27891929035647367
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 0.9987650869099213,
+      "route": "cfar_sidelobe",
+      "sample_id": "6bba_57b7cc1e",
+      "score_delta": 0.18144374474592045
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.4715382578766216,
+      "route": "components",
+      "sample_id": "6bba_5c039895",
+      "score_delta": 0.08120402085396239
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 2.2836812952705583,
+      "route": "components",
+      "sample_id": "6bba_5c824876",
+      "score_delta": 0.6250159373776826
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.5650785854616895,
+      "route": "components",
+      "sample_id": "6bba_6321a359",
+      "score_delta": -0.012118279564294565
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.492332645237393,
+      "route": "components",
+      "sample_id": "6bba_67ebd073",
+      "score_delta": 0.20071465240693037
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.2239717223650386,
+      "route": "components",
+      "sample_id": "6bba_7d3058ae",
+      "score_delta": 0.02526208290433196
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.5306923625981441,
+      "route": "components",
+      "sample_id": "6bba_87289e13",
+      "score_delta": 0.02408451282277957
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.4816094791409529,
+      "route": "components",
+      "sample_id": "6bba_8b7818bf",
+      "score_delta": 0.021401982996677726
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.35105421686747,
+      "route": "components",
+      "sample_id": "6bba_907271db",
+      "score_delta": 0.0019932522036588685
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 3.023542194856936,
+      "route": "components",
+      "sample_id": "6bba_9e23430b",
+      "score_delta": 0.3259336583660221
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.37262323150401,
+      "route": "components",
+      "sample_id": "6bba_cdcfe533",
+      "score_delta": 0.28281033826025914
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.15225868378427,
+      "route": "components",
+      "sample_id": "6bba_d2b9fc0c",
+      "score_delta": 0.047446936710398124
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.1610954766970967,
+      "route": "components",
+      "sample_id": "6bba_d3da753b",
+      "score_delta": 0.05032342395238154
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.2517862246356102,
+      "route": "components",
+      "sample_id": "6bba_debd7bfa",
+      "score_delta": 0.29983103989566723
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.475932043416706,
+      "route": "components",
+      "sample_id": "6bba_ef7b4f7e",
+      "score_delta": 0.35435194991252883
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.0181257231006555,
+      "route": "cfar_sidelobe",
+      "sample_id": "6bba_fc5f39dc",
+      "score_delta": 0.34560746143163495
+    },
+    {
+      "family": "6bba",
+      "node_ratio": 1.59982387721726,
+      "route": "components",
+      "sample_id": "6bba_fe670320",
+      "score_delta": 0.04897017536252635
+    }
+  ],
+  "status": "v24_1_node_inflation_diagnostic"
+}

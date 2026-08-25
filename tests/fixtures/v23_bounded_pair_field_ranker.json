@@ -1,0 +1,294 @@
+{
+  "name": "v23_bounded_pair_field_ranker_v1",
+  "status": "preregistered_model_not_implemented_or_fit",
+  "sources": {
+    "metadata_preflight_summary": "v23_pair_field_metadata_preflight_summary.json",
+    "metadata_preflight_summary_sha256": "8562467c4b011d0f8571cf38c1b059b6b35d2f703cbc87a90c0f66d202fcf2f9",
+    "extraction_validation_contract": "tests/fixtures/v23_cfar_pair_field_extraction_validation.json",
+    "extraction_validation_contract_sha256": "044200fdad6066748908666907b6f1cd981db61b0f487b00e5997adbca432d3c",
+    "pair_field_module": "src/atabey/tracking/pair_field.py",
+    "pair_field_module_sha256": "beafc5455a02c8171c1500c2f7f5c8ec4719ec1ec2f3f29defee11934ce2c080",
+    "official_metric_commit": "075fc5f5a52d11077f9dc2b074644618f26939e2",
+    "tracksdata_commit": "39dccf3a243e44274759468cb31b2ad9e7fc1d09"
+  },
+  "scope": {
+    "route": "cfar_sidelobe/bipartite",
+    "samples": 22,
+    "events": 29,
+    "parent_fields": 54,
+    "full_candidate_actions": 2264,
+    "official_tp_action_variants": 90,
+    "maximum_actions_per_event": 199,
+    "outer_folds": [
+      1,
+      2,
+      3
+    ],
+    "families": [
+      "44b6",
+      "6bba"
+    ],
+    "development_only": true
+  },
+  "dataset_readiness": {
+    "all_actions_must_be_relabelled_by_patched_official_scorer": true,
+    "positive": "patched_official_tp",
+    "reliable_negative": "patched_official_fp",
+    "unknown": [
+      "official_unsupported",
+      "not_evaluated"
+    ],
+    "unknown_used_in_supervised_loss": false,
+    "unknown_retained_in_heldout_ranking": true,
+    "sparse_absence_is_negative": false,
+    "minimum_events_with_tp_and_fp_overall": 18,
+    "minimum_events_with_tp_and_fp_per_family": 4,
+    "minimum_events_with_tp_and_fp_per_outer_training_complement": 10,
+    "exact_tp_event_count_required": 29,
+    "exact_tp_action_variant_count_required": 90,
+    "readiness_failure_outcome": "HOLD_DATASET_LABEL_SUPPORT"
+  },
+  "architecture": {
+    "type": "fixed_low_capacity_3d_pair_field_ranker",
+    "input_axes": "BCZYX",
+    "input_shape": [
+      5,
+      33,
+      33,
+      33
+    ],
+    "blocks": [
+      {
+        "type": "conv3d_groupnorm_silu",
+        "in_channels": 5,
+        "out_channels": 8,
+        "kernel_size": 3,
+        "stride": 1,
+        "padding": 1,
+        "bias": false,
+        "groupnorm_groups": 4
+      },
+      {
+        "type": "conv3d_groupnorm_silu",
+        "in_channels": 8,
+        "out_channels": 12,
+        "kernel_size": 3,
+        "stride": 2,
+        "padding": 1,
+        "bias": false,
+        "groupnorm_groups": 4
+      },
+      {
+        "type": "conv3d_groupnorm_silu",
+        "in_channels": 12,
+        "out_channels": 16,
+        "kernel_size": 3,
+        "stride": 2,
+        "padding": 1,
+        "bias": false,
+        "groupnorm_groups": 4
+      },
+      {
+        "type": "conv3d_groupnorm_silu",
+        "in_channels": 16,
+        "out_channels": 24,
+        "kernel_size": 3,
+        "stride": 2,
+        "padding": 1,
+        "bias": false,
+        "groupnorm_groups": 4
+      }
+    ],
+    "pooling": [
+      "adaptive_avg_pool3d_1",
+      "adaptive_max_pool3d_1"
+    ],
+    "head": [
+      {
+        "type": "linear",
+        "in_features": 48,
+        "out_features": 16,
+        "bias": true
+      },
+      {
+        "type": "silu"
+      },
+      {
+        "type": "dropout",
+        "p": 0.1
+      },
+      {
+        "type": "linear",
+        "in_features": 16,
+        "out_features": 1,
+        "bias": true
+      }
+    ],
+    "exact_trainable_parameters": 20145,
+    "trainable_parameter_max": 25000,
+    "architecture_search_allowed": false,
+    "pretrained_weights_allowed": false,
+    "output": "unbounded_ranking_score_not_probability",
+    "calibration_enabled": false,
+    "coordinate_family_route_sample_node_or_frame_inputs": false
+  },
+  "optimization": {
+    "objective": "within_event_pairwise_softplus_negative_score_difference",
+    "pair_definition": "each_official_tp_preferred_to_each_hash_sampled_same_event_official_fp",
+    "optimizer": "adamw",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.001,
+    "batch_size_pairs": 16,
+    "gradient_clip_norm": 1,
+    "maximum_epochs": 60,
+    "mixed_precision": true,
+    "augmentation": "deterministic_xy_d4_same_transform_all_channels",
+    "z_axis_permutation_or_rotation_allowed": false,
+    "time_channel_swap_allowed": false,
+    "intensity_jitter_allowed": false,
+    "fp_cap_per_event": 64,
+    "fp_hash_seed": "v23-pair-field-fp-v1",
+    "weighting_hierarchy": [
+      "sample",
+      "event",
+      "label_side",
+      "action"
+    ],
+    "raw_pair_weighting_allowed": false
+  },
+  "early_stopping": {
+    "selection_population": "inner_validation_fold_only",
+    "metric": "equal_event_weighted_pairwise_log_loss",
+    "direction": "minimize",
+    "patience_epochs": 8,
+    "minimum_delta": 0.0001,
+    "recall_metric_used_for_early_stopping": false,
+    "outer_heldout_fold_visible": false,
+    "final_refit_epochs": "floor_median_of_two_swap_best_epochs",
+    "final_refit_uses_both_outer_training_folds": true
+  },
+  "reproducibility": {
+    "seeds": [
+      314159,
+      271828,
+      161803
+    ],
+    "deterministic_torch_algorithms": true,
+    "cudnn_benchmark": false,
+    "deterministic_action_order_hash_seed": "v23-pair-field-action-order-v1",
+    "parent_tensor_sha256_verified_before_fit": true,
+    "environment_manifest_required": true
+  },
+  "outer_validation": {
+    "scheme": "three_sample_blocked_folds",
+    "inner_selection": "swap_the_two_outer_training_folds",
+    "heldout_fold_never_guides_architecture_epoch_threshold_or_control_definition": true,
+    "report_each_seed": true,
+    "decision_summary_seed_statistic": "median",
+    "minimum_seeds_passing_all_hard_gates": 2,
+    "catastrophic_seed_pooled_recall_at_10_below": 0.65,
+    "any_catastrophic_seed_blocks_go": true,
+    "rank_tie_policy": "pessimistic_all_equal_scores_count_ahead",
+    "primary_metric": "equal_event_weighted_recall_at_10_over_full_candidate_ranking",
+    "secondary_metrics": [
+      "equal_event_weighted_recall_at_1",
+      "equal_event_weighted_recall_at_5",
+      "equal_event_weighted_mrr",
+      "equal_event_weighted_tp_vs_official_fp_pairwise_accuracy"
+    ],
+    "unknown_candidates_participate_in_rank": true,
+    "unknown_candidates_count_as_false_positives": false,
+    "required_strata": [
+      "seed",
+      "fold",
+      "family",
+      "sample",
+      "event"
+    ],
+    "pooled_result_requires_all_strata": true
+  },
+  "controls": {
+    "nearest_distance": {
+      "training": "none",
+      "score": "negative_sum_of_two_parent_child_distances",
+      "strict_ties_fail": true
+    },
+    "geometry_only": {
+      "model": "l2_regularized_pairwise_logistic_ranker",
+      "features": [
+        "parent_child_distance_sum",
+        "daughter_separation",
+        "pair_midpoint_parent_offset",
+        "split_angle"
+      ],
+      "regularization_grid_c": [
+        0.01,
+        0.1,
+        1,
+        10
+      ],
+      "selection": "inner_folds_only"
+    },
+    "mask_only": {
+      "architecture": "same_fixed_3d_ranker",
+      "image_t_and_image_t_plus_1": "zero",
+      "training_schedule": "identical"
+    },
+    "image_shuffled": {
+      "model": "fitted_main_oof_checkpoint",
+      "perturbation": "fixed_parent_field_permutation_within_heldout_fold_family_crop_coverage_quartile",
+      "minimum_moved_event_fraction": 0.8,
+      "unmoved_events_reported": true
+    },
+    "static_image": {
+      "model": "fitted_main_oof_checkpoint",
+      "perturbation": "replace_image_t_plus_1_with_image_t"
+    }
+  },
+  "control_policy": {
+    "definitions_locked_before_results": true
+  },
+  "hard_gates": {
+    "pooled_recall_at_10_min": 0.8,
+    "each_fold_recall_at_10_min": 0.625,
+    "each_family_recall_at_10_min": 0.65,
+    "recall_at_10_max_fold_spread": 0.25,
+    "pooled_mrr_min": 0.4,
+    "pooled_tp_vs_official_fp_pairwise_accuracy_min": 0.75,
+    "recall_at_10_margin_over_best_nonimage_control_min": 0.1,
+    "recall_at_10_margin_over_image_shuffled_min": 0.1,
+    "recall_at_10_margin_over_static_image_min": 0.05,
+    "maximum_fold_event_regression_vs_best_nonimage_control": 1,
+    "minimum_seeds_passing_all_hard_gates": 2,
+    "catastrophic_seed_pooled_recall_at_10_below": 0.65,
+    "both_families_required": true,
+    "all_outer_folds_required": true,
+    "zero_source_graph_perturbation": true
+  },
+  "interpretation": {
+    "high_official_action_retrieval_is_biological_probability": false,
+    "image_gain_over_masks_proves_causal_mitosis_biology": false,
+    "temporal_gain_requires_static_image_margin": true,
+    "shuffled_image_gain_failure_means_image_identity_not_validated": true,
+    "go_authorizes": "read_only_local_assignment_shadow_preregistration_only",
+    "go_does_not_authorize": [
+      "production_graph_mutation",
+      "cfar_replacement",
+      "threshold_tuning",
+      "full_199_evaluation",
+      "kaggle_submission"
+    ]
+  },
+  "decision_states": {
+    "GO_TO_READ_ONLY_LOCAL_ASSIGNMENT_SHADOW_PREREGISTRATION": "dataset_readiness_and_all_hard_control_generalization_seed_gates_pass",
+    "HOLD_PAIR_FIELD_SIGNAL_INCONCLUSIVE": "absolute_quality_gates_pass_but_any_temporal_control_margin_seed_stability_or_shuffle_coverage_concern_fires",
+    "NO_GO_PAIR_FIELD_RANKER": "any_dataset_readiness_absolute_quality_fold_family_or_independent_image_signal_hard_gate_fails"
+  },
+  "real_tensor_extraction_enabled": false,
+  "model_implementation_enabled": false,
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "production_graph_mutation_enabled": false,
+  "locked_validation_opened": false,
+  "full_199_authorized": false
+}

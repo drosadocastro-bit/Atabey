@@ -1,0 +1,133 @@
+{
+  "name": "v22_route_robust_temporal_semantic_audit_v1",
+  "status": "preregistered_features_not_extracted",
+  "source_peaks": "v22_unet_detection_development_46_peaks.csv",
+  "source_peaks_sha256": "58c838d2fa4463c94f75dc0858e7fac239d880c9d91bed006d068e3e6caf1938",
+  "source_action_summary": "v22_semantic_action_table_summary.json",
+  "source_action_summary_sha256": "b15796c47f86fe03c86eb2b2d187ed7a5283625da0325bea11a22406868f8732",
+  "source_failed_ranker_summary": "v22_positive_unlabeled_semantic_ranker_summary.json",
+  "source_failed_ranker_summary_sha256": "1d94320523c9d94a694bcfd9d765724d723ada79d16b38967585e5858bd4da33",
+  "source_development_contract": "tests/fixtures/v22_joint_semantic_assignment_development.json",
+  "source_development_contract_sha256": "41414fba9208c66e70b6b03915cfc4aebcf96a2ec724382dcd3227a4ca128f61",
+  "population": {
+    "samples": 27,
+    "positive_events": 39,
+    "positive_events_with_t_minus_1_through_t_plus_2": 39,
+    "cfar_positive_events": 7,
+    "components_positive_events": 31,
+    "local_maxima_positive_events": 1,
+    "44b6_positive_events": 3,
+    "6bba_positive_events": 36
+  },
+  "temporal_frames": {
+    "parent_pre": -1,
+    "parent_event": 0,
+    "daughter_pre": 0,
+    "daughter_event": 1,
+    "daughter_persistence": 2,
+    "fixed_coordinate_sampling": true,
+    "future_peak_reassociation": false
+  },
+  "patch": {
+    "voxel_scale_um": [1.625, 0.40625, 0.40625],
+    "core_radius_um": 2.5,
+    "shell_inner_radius_um": 3.5,
+    "shell_outer_radius_um": 5.0,
+    "effective_volume_threshold_mad": 3.0
+  },
+  "location_descriptors": [
+    "patch_contrast",
+    "patch_signal_mass",
+    "patch_effective_volume",
+    "patch_anisotropy",
+    "patch_coverage"
+  ],
+  "temporal_feature_families": {
+    "parent_transition": [
+      "parent_contrast_retention",
+      "parent_mass_retention"
+    ],
+    "daughter_emergence": [
+      "minimum_daughter_contrast_emergence",
+      "minimum_daughter_mass_emergence",
+      "daughter_emergence_balance"
+    ],
+    "daughter_persistence": [
+      "minimum_daughter_contrast_persistence",
+      "minimum_daughter_mass_persistence",
+      "daughter_persistence_balance"
+    ],
+    "temporal_conservation": [
+      "temporal_mass_conservation_error",
+      "temporal_volume_conservation_error"
+    ],
+    "temporal_shape": [
+      "temporal_daughter_anisotropy_agreement"
+    ],
+    "quality": [
+      "temporal_full_coverage_fraction"
+    ]
+  },
+  "prohibited_predictive_inputs": [
+    "sample_id",
+    "event_id",
+    "fold",
+    "family",
+    "route",
+    "distance",
+    "daughter_separation",
+    "angle",
+    "velocity",
+    "prediction_error",
+    "turn_angle",
+    "step_ratio",
+    "density",
+    "ownership_margin",
+    "rank",
+    "assignment_state",
+    "teacher_score",
+    "ground_truth_distance"
+  ],
+  "labels": {
+    "positive": "official_tp",
+    "reliable_negative": "official_fp",
+    "unknown": ["official_unsupported", "not_evaluated"],
+    "unknown_used_as_negative": false,
+    "sparse_absence_is_negative": false
+  },
+  "evaluation": {
+    "outer_folds": [1, 2, 3],
+    "sample_blocked": true,
+    "metric": "equal_event_weighted_auc",
+    "feature_direction_selected_on_training_folds_only": true,
+    "required_strata": ["fold", "family", "route", "sample", "event"],
+    "decision_routes": ["cfar_sidelobe/bipartite", "components/greedy"],
+    "local_maxima_decision_eligible": false,
+    "multivariate_model_decision_eligible": false,
+    "static_baseline": "mean_daughter_contrast"
+  },
+  "decision": {
+    "official_tp_descriptor_completeness_min": 0.99,
+    "official_fp_descriptor_completeness_min": 0.99,
+    "temporal_feature_families_pooled_auc_min": 0.70,
+    "temporal_feature_families_passing_min": 2,
+    "same_feature_min_fold_auc": 0.60,
+    "same_feature_min_family_auc": 0.62,
+    "same_feature_cfar_auc_min": 0.62,
+    "same_feature_components_auc_min": 0.70,
+    "best_temporal_auc_advantage_over_static_baseline_min": 0.03,
+    "source_graph_mutations_required": 0,
+    "assignment_decisions_required": 0,
+    "states": {
+      "GO_TO_TEMPORAL_PU_RANKER_PREREGISTRATION": "all_availability_incremental_and_generalization_gates_pass",
+      "HOLD_TEMPORAL_SIGNAL_ROUTE_OR_FAMILY_UNSTABLE": "pooled_temporal_signal_exists_but_route_family_or_incremental_gate_fails",
+      "NO_GO_TEMPORAL_SEMANTIC_EVIDENCE": "availability_fails_or_fewer_than_two_temporal_feature_families_reach_the_pooled_floor"
+    }
+  },
+  "feature_extraction_enabled": false,
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "graph_mutation_enabled": false,
+  "locked_validation_opened": false,
+  "full_199_authorized": false
+}

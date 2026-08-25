@@ -1,0 +1,3254 @@
+{
+  "status": "read_only_route_census",
+  "cohort_samples": 199,
+  "cfar_route_policy": "merged_6bba_only",
+  "cfar_link_strategy": "bipartite",
+  "profile_timepoints_per_sample": 5,
+  "route_counts": {
+    "cfar_sidelobe/bipartite": 66,
+    "components/greedy": 108,
+    "local_maxima/motion_mutual": 25
+  },
+  "route_percentages": {
+    "cfar_sidelobe/bipartite": 33.165829145728644,
+    "components/greedy": 54.2713567839196,
+    "local_maxima/motion_mutual": 12.56281407035176
+  },
+  "family_route_counts": {
+    "44b6": {
+      "cfar_sidelobe/bipartite": 36,
+      "components/greedy": 18,
+      "local_maxima/motion_mutual": 17
+    },
+    "6bba": {
+      "cfar_sidelobe/bipartite": 30,
+      "components/greedy": 90,
+      "local_maxima/motion_mutual": 8
+    }
+  },
+  "local_maxima": {
+    "route": "local_maxima/motion_mutual",
+    "samples": 25,
+    "percentage": 12.56281407035176,
+    "sample_ids": [
+      "44b6_0b24845f",
+      "44b6_12dfb391",
+      "44b6_2f31fc2f",
+      "44b6_33b596bf",
+      "44b6_5740d24b",
+      "44b6_5f15d135",
+      "44b6_71a4179f",
+      "44b6_808952d6",
+      "44b6_949adeb1",
+      "44b6_a2bb48bb",
+      "44b6_c771cb04",
+      "44b6_c96cfa10",
+      "44b6_cf8fed6b",
+      "44b6_d78e09d9",
+      "44b6_e28840c6",
+      "44b6_e29f0176",
+      "44b6_f28707c6",
+      "6bba_55c70843",
+      "6bba_74686d6a",
+      "6bba_7af54fde",
+      "6bba_a90a0b9c",
+      "6bba_c328f2fd",
+      "6bba_cf35214c",
+      "6bba_d1acb6ff",
+      "6bba_fc83837d"
+    ],
+    "generalization_status": "unproven",
+    "reporting_status": "separate_zero_shot_transfer_only"
+  },
+  "records": [
+    {
+      "sample_id": "44b6_0113de3b",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 2511.0,
+      "median_foreground_fraction": 0.02255725860595703
+    },
+    {
+      "sample_id": "44b6_0b24845f",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 1636334.0,
+      "median_foreground_fraction": 0.3931598663330078
+    },
+    {
+      "sample_id": "44b6_0c582fdc",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 197097.0,
+      "median_foreground_fraction": 0.07360148429870605
+    },
+    {
+      "sample_id": "44b6_0db75fae",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 253478.0,
+      "median_foreground_fraction": 0.06215071678161621
+    },
+    {
+      "sample_id": "44b6_12dfb391",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 43021.0,
+      "median_foreground_fraction": 0.05298280715942383
+    },
+    {
+      "sample_id": "44b6_144b256d",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 227246.0,
+      "median_foreground_fraction": 0.08787870407104492
+    },
+    {
+      "sample_id": "44b6_1574802b",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 95855.0,
+      "median_foreground_fraction": 0.04589533805847168
+    },
+    {
+      "sample_id": "44b6_18ced818",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 465747.0,
+      "median_foreground_fraction": 0.1363973617553711
+    },
+    {
+      "sample_id": "44b6_1d530831",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 192769.0,
+      "median_foreground_fraction": 0.06531095504760742
+    },
+    {
+      "sample_id": "44b6_24264f12",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 86509.0,
+      "median_foreground_fraction": 0.037103891372680664
+    },
+    {
+      "sample_id": "44b6_267148e4",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 364138.0,
+      "median_foreground_fraction": 0.09024834632873535
+    },
+    {
+      "sample_id": "44b6_2a2eff9f",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 255986.0,
+      "median_foreground_fraction": 0.10619091987609863
+    },
+    {
+      "sample_id": "44b6_2f31fc2f",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 705300.0,
+      "median_foreground_fraction": 0.1709001064300537
+    },
+    {
+      "sample_id": "44b6_33b596bf",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 82220.0,
+      "median_foreground_fraction": 0.05024266242980957
+    },
+    {
+      "sample_id": "44b6_341df25f",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 31101.0,
+      "median_foreground_fraction": 0.021582841873168945
+    },
+    {
+      "sample_id": "44b6_3a861e03",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8108.0,
+      "median_foreground_fraction": 0.036199092864990234
+    },
+    {
+      "sample_id": "44b6_3bb3690f",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 525562.0,
+      "median_foreground_fraction": 0.14510035514831543
+    },
+    {
+      "sample_id": "44b6_40c45f5a",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 356588.0,
+      "median_foreground_fraction": 0.0933220386505127
+    },
+    {
+      "sample_id": "44b6_415c0a3a",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 157327.0,
+      "median_foreground_fraction": 0.07382011413574219
+    },
+    {
+      "sample_id": "44b6_53f95252",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 152812.0,
+      "median_foreground_fraction": 0.09162378311157227
+    },
+    {
+      "sample_id": "44b6_551a5dba",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 289047.0,
+      "median_foreground_fraction": 0.12288904190063477
+    },
+    {
+      "sample_id": "44b6_5740d24b",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 639479.0,
+      "median_foreground_fraction": 0.15397143363952637
+    },
+    {
+      "sample_id": "44b6_587a1e22",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 26987.0,
+      "median_foreground_fraction": 0.03272271156311035
+    },
+    {
+      "sample_id": "44b6_5f15d135",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 771657.0,
+      "median_foreground_fraction": 0.18813300132751465
+    },
+    {
+      "sample_id": "44b6_668e0cc7",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 115688.0,
+      "median_foreground_fraction": 0.06596922874450684
+    },
+    {
+      "sample_id": "44b6_66f9292d",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 177902.0,
+      "median_foreground_fraction": 0.11309313774108887
+    },
+    {
+      "sample_id": "44b6_706092f0",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 108161.0,
+      "median_foreground_fraction": 0.0634617805480957
+    },
+    {
+      "sample_id": "44b6_71a4179f",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 98802.0,
+      "median_foreground_fraction": 0.07006025314331055
+    },
+    {
+      "sample_id": "44b6_74d0c52e",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 494932.0,
+      "median_foreground_fraction": 0.1185615062713623
+    },
+    {
+      "sample_id": "44b6_7a302da0",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 162445.0,
+      "median_foreground_fraction": 0.08537793159484863
+    },
+    {
+      "sample_id": "44b6_7e557709",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 17551.0,
+      "median_foreground_fraction": 0.04444575309753418
+    },
+    {
+      "sample_id": "44b6_808952d6",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 101301.0,
+      "median_foreground_fraction": 0.04833483695983887
+    },
+    {
+      "sample_id": "44b6_81c256f0",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 56027.0,
+      "median_foreground_fraction": 0.027884483337402344
+    },
+    {
+      "sample_id": "44b6_87bba6c4",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 463343.0,
+      "median_foreground_fraction": 0.11809444427490234
+    },
+    {
+      "sample_id": "44b6_8cc6506c",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 588093.0,
+      "median_foreground_fraction": 0.14370083808898926
+    },
+    {
+      "sample_id": "44b6_8f5ab931",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 208100.0,
+      "median_foreground_fraction": 0.05345296859741211
+    },
+    {
+      "sample_id": "44b6_8f9ecab4",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 159968.0,
+      "median_foreground_fraction": 0.10004782676696777
+    },
+    {
+      "sample_id": "44b6_90724892",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 71328.0,
+      "median_foreground_fraction": 0.04462552070617676
+    },
+    {
+      "sample_id": "44b6_949adeb1",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 90283.0,
+      "median_foreground_fraction": 0.07468724250793457
+    },
+    {
+      "sample_id": "44b6_95029e92",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 6145.0,
+      "median_foreground_fraction": 0.014698028564453125
+    },
+    {
+      "sample_id": "44b6_97725144",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 563673.0,
+      "median_foreground_fraction": 0.15833640098571777
+    },
+    {
+      "sample_id": "44b6_996155de",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 66345.0,
+      "median_foreground_fraction": 0.021898508071899414
+    },
+    {
+      "sample_id": "44b6_9be80b04",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 525033.0,
+      "median_foreground_fraction": 0.1319265365600586
+    },
+    {
+      "sample_id": "44b6_9bfa6a0a",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 110385.0,
+      "median_foreground_fraction": 0.056978464126586914
+    },
+    {
+      "sample_id": "44b6_a21120c2",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 11866.0,
+      "median_foreground_fraction": 0.026286840438842773
+    },
+    {
+      "sample_id": "44b6_a2bb48bb",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 768536.0,
+      "median_foreground_fraction": 0.19687914848327637
+    },
+    {
+      "sample_id": "44b6_aaf8b0ea",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 204563.0,
+      "median_foreground_fraction": 0.056151390075683594
+    },
+    {
+      "sample_id": "44b6_abf82518",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 257216.0,
+      "median_foreground_fraction": 0.07196354866027832
+    },
+    {
+      "sample_id": "44b6_b2c44266",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 134932.0,
+      "median_foreground_fraction": 0.06257987022399902
+    },
+    {
+      "sample_id": "44b6_c15fded2",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 32267.0,
+      "median_foreground_fraction": 0.03867506980895996
+    },
+    {
+      "sample_id": "44b6_c50204e0",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 549786.0,
+      "median_foreground_fraction": 0.1519172191619873
+    },
+    {
+      "sample_id": "44b6_c771cb04",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 604287.0,
+      "median_foreground_fraction": 0.16484975814819336
+    },
+    {
+      "sample_id": "44b6_c8e2a523",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5998.0,
+      "median_foreground_fraction": 0.025455713272094727
+    },
+    {
+      "sample_id": "44b6_c96cfa10",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 81635.0,
+      "median_foreground_fraction": 0.05540323257446289
+    },
+    {
+      "sample_id": "44b6_cf2536e8",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 351398.0,
+      "median_foreground_fraction": 0.1680762767791748
+    },
+    {
+      "sample_id": "44b6_cf8fed6b",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 57561.0,
+      "median_foreground_fraction": 0.07922720909118652
+    },
+    {
+      "sample_id": "44b6_d29c9ab2",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 4914.0,
+      "median_foreground_fraction": 0.03160285949707031
+    },
+    {
+      "sample_id": "44b6_d2f34f90",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 502405.0,
+      "median_foreground_fraction": 0.12322783470153809
+    },
+    {
+      "sample_id": "44b6_d5e7d891",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 438354.0,
+      "median_foreground_fraction": 0.11040592193603516
+    },
+    {
+      "sample_id": "44b6_d754aa59",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 13453.0,
+      "median_foreground_fraction": 0.016580581665039062
+    },
+    {
+      "sample_id": "44b6_d78e09d9",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 117766.0,
+      "median_foreground_fraction": 0.03928422927856445
+    },
+    {
+      "sample_id": "44b6_db3c847b",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 99706.0,
+      "median_foreground_fraction": 0.03167152404785156
+    },
+    {
+      "sample_id": "44b6_ddf577ad",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 104847.0,
+      "median_foreground_fraction": 0.062281131744384766
+    },
+    {
+      "sample_id": "44b6_deabac95",
+      "family": "44b6",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 66429.0,
+      "median_foreground_fraction": 0.032251834869384766
+    },
+    {
+      "sample_id": "44b6_e28840c6",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 68217.0,
+      "median_foreground_fraction": 0.07692122459411621
+    },
+    {
+      "sample_id": "44b6_e29f0176",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 118942.0,
+      "median_foreground_fraction": 0.03755998611450195
+    },
+    {
+      "sample_id": "44b6_e31261b4",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 117592.0,
+      "median_foreground_fraction": 0.08716106414794922
+    },
+    {
+      "sample_id": "44b6_e35b117d",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 560822.0,
+      "median_foreground_fraction": 0.15729475021362305
+    },
+    {
+      "sample_id": "44b6_e57ff5c6",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 570340.0,
+      "median_foreground_fraction": 0.14159679412841797
+    },
+    {
+      "sample_id": "44b6_eb2880fc",
+      "family": "44b6",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 316163.0,
+      "median_foreground_fraction": 0.09665131568908691
+    },
+    {
+      "sample_id": "44b6_f28707c6",
+      "family": "44b6",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 56904.0,
+      "median_foreground_fraction": 0.05297565460205078
+    },
+    {
+      "sample_id": "6bba_05b6850b",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 12132.0,
+      "median_foreground_fraction": 0.01777195930480957
+    },
+    {
+      "sample_id": "6bba_05db0fb1",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 201885.0,
+      "median_foreground_fraction": 0.0774998664855957
+    },
+    {
+      "sample_id": "6bba_062c8d37",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 3387.0,
+      "median_foreground_fraction": 0.014660358428955078
+    },
+    {
+      "sample_id": "6bba_07477033",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 14293.0,
+      "median_foreground_fraction": 0.016455888748168945
+    },
+    {
+      "sample_id": "6bba_07e24132",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 271949.0,
+      "median_foreground_fraction": 0.06842613220214844
+    },
+    {
+      "sample_id": "6bba_085bf656",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 13383.0,
+      "median_foreground_fraction": 0.03060173988342285
+    },
+    {
+      "sample_id": "6bba_09961292",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 91269.0,
+      "median_foreground_fraction": 0.042143821716308594
+    },
+    {
+      "sample_id": "6bba_0c7fa718",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5657.0,
+      "median_foreground_fraction": 0.02025318145751953
+    },
+    {
+      "sample_id": "6bba_0e7c0d07",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 229340.0,
+      "median_foreground_fraction": 0.07476639747619629
+    },
+    {
+      "sample_id": "6bba_12665c0e",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 7229.0,
+      "median_foreground_fraction": 0.02054882049560547
+    },
+    {
+      "sample_id": "6bba_13f19531",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 15476.0,
+      "median_foreground_fraction": 0.02281022071838379
+    },
+    {
+      "sample_id": "6bba_15403b9a",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 10511.0,
+      "median_foreground_fraction": 0.01754140853881836
+    },
+    {
+      "sample_id": "6bba_1d0d8384",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 40348.0,
+      "median_foreground_fraction": 0.02862381935119629
+    },
+    {
+      "sample_id": "6bba_1ebfb80d",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 67937.0,
+      "median_foreground_fraction": 0.029613018035888672
+    },
+    {
+      "sample_id": "6bba_1f58c2f6",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 331425.0,
+      "median_foreground_fraction": 0.08814501762390137
+    },
+    {
+      "sample_id": "6bba_207c6aaf",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 270723.0,
+      "median_foreground_fraction": 0.0718836784362793
+    },
+    {
+      "sample_id": "6bba_20852818",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 7818.0,
+      "median_foreground_fraction": 0.016605377197265625
+    },
+    {
+      "sample_id": "6bba_2312ac41",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 35396.0,
+      "median_foreground_fraction": 0.03584170341491699
+    },
+    {
+      "sample_id": "6bba_23af9eeb",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 10693.0,
+      "median_foreground_fraction": 0.01407170295715332
+    },
+    {
+      "sample_id": "6bba_2540cd90",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5539.0,
+      "median_foreground_fraction": 0.011983871459960938
+    },
+    {
+      "sample_id": "6bba_2646afc7",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 13207.0,
+      "median_foreground_fraction": 0.016309261322021484
+    },
+    {
+      "sample_id": "6bba_268e1230",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 23757.0,
+      "median_foreground_fraction": 0.019727230072021484
+    },
+    {
+      "sample_id": "6bba_2819ca14",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 16575.0,
+      "median_foreground_fraction": 0.02242422103881836
+    },
+    {
+      "sample_id": "6bba_283bf9f1",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 29229.0,
+      "median_foreground_fraction": 0.04854297637939453
+    },
+    {
+      "sample_id": "6bba_312f0dc3",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 31194.0,
+      "median_foreground_fraction": 0.023506879806518555
+    },
+    {
+      "sample_id": "6bba_32db13fc",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 204116.0,
+      "median_foreground_fraction": 0.054422855377197266
+    },
+    {
+      "sample_id": "6bba_337b1b3a",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 6043.0,
+      "median_foreground_fraction": 0.027631759643554688
+    },
+    {
+      "sample_id": "6bba_372c8cb8",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 9647.0,
+      "median_foreground_fraction": 0.021310806274414062
+    },
+    {
+      "sample_id": "6bba_3a1849c2",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 21230.0,
+      "median_foreground_fraction": 0.022878170013427734
+    },
+    {
+      "sample_id": "6bba_3abfe10a",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 397169.0,
+      "median_foreground_fraction": 0.10341072082519531
+    },
+    {
+      "sample_id": "6bba_3c5691b6",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8552.0,
+      "median_foreground_fraction": 0.019252538681030273
+    },
+    {
+      "sample_id": "6bba_3db54e20",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 213292.0,
+      "median_foreground_fraction": 0.05953478813171387
+    },
+    {
+      "sample_id": "6bba_3fda6b25",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 39365.0,
+      "median_foreground_fraction": 0.022969722747802734
+    },
+    {
+      "sample_id": "6bba_43fea39d",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 10422.0,
+      "median_foreground_fraction": 0.019072771072387695
+    },
+    {
+      "sample_id": "6bba_474be664",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 275296.0,
+      "median_foreground_fraction": 0.07095146179199219
+    },
+    {
+      "sample_id": "6bba_48816121",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 10986.0,
+      "median_foreground_fraction": 0.0405118465423584
+    },
+    {
+      "sample_id": "6bba_4aa14c89",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 40634.0,
+      "median_foreground_fraction": 0.01848149299621582
+    },
+    {
+      "sample_id": "6bba_4f99ce20",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8018.0,
+      "median_foreground_fraction": 0.022420406341552734
+    },
+    {
+      "sample_id": "6bba_4ffd3da3",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 133113.0,
+      "median_foreground_fraction": 0.05102276802062988
+    },
+    {
+      "sample_id": "6bba_55b7eebe",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 9677.0,
+      "median_foreground_fraction": 0.014469623565673828
+    },
+    {
+      "sample_id": "6bba_55c70843",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 660371.0,
+      "median_foreground_fraction": 0.163604736328125
+    },
+    {
+      "sample_id": "6bba_57b7cc1e",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 374380.0,
+      "median_foreground_fraction": 0.13696789741516113
+    },
+    {
+      "sample_id": "6bba_5a4d9360",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 9623.0,
+      "median_foreground_fraction": 0.017420530319213867
+    },
+    {
+      "sample_id": "6bba_5b28472a",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5048.0,
+      "median_foreground_fraction": 0.01572251319885254
+    },
+    {
+      "sample_id": "6bba_5c039895",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 17804.0,
+      "median_foreground_fraction": 0.030202388763427734
+    },
+    {
+      "sample_id": "6bba_5c824876",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 48942.0,
+      "median_foreground_fraction": 0.04545331001281738
+    },
+    {
+      "sample_id": "6bba_5dfe9ad1",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 208818.0,
+      "median_foreground_fraction": 0.0694725513458252
+    },
+    {
+      "sample_id": "6bba_5f89039d",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 9965.0,
+      "median_foreground_fraction": 0.016770362854003906
+    },
+    {
+      "sample_id": "6bba_61dd1e0d",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 51773.0,
+      "median_foreground_fraction": 0.0249483585357666
+    },
+    {
+      "sample_id": "6bba_61ecbe65",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 11794.0,
+      "median_foreground_fraction": 0.021202564239501953
+    },
+    {
+      "sample_id": "6bba_6321a359",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 9205.0,
+      "median_foreground_fraction": 0.01698589324951172
+    },
+    {
+      "sample_id": "6bba_6479435d",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 216478.0,
+      "median_foreground_fraction": 0.057152748107910156
+    },
+    {
+      "sample_id": "6bba_67ebd073",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 30059.0,
+      "median_foreground_fraction": 0.028029680252075195
+    },
+    {
+      "sample_id": "6bba_6ca87370",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 15709.0,
+      "median_foreground_fraction": 0.02323150634765625
+    },
+    {
+      "sample_id": "6bba_6db0e9b4",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 150732.0,
+      "median_foreground_fraction": 0.05146026611328125
+    },
+    {
+      "sample_id": "6bba_6feb10f0",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 214486.0,
+      "median_foreground_fraction": 0.05309104919433594
+    },
+    {
+      "sample_id": "6bba_6feeb0b1",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8237.0,
+      "median_foreground_fraction": 0.017989397048950195
+    },
+    {
+      "sample_id": "6bba_705ec2c9",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 28212.0,
+      "median_foreground_fraction": 0.022469282150268555
+    },
+    {
+      "sample_id": "6bba_718b21f9",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 4656.0,
+      "median_foreground_fraction": 0.01253366470336914
+    },
+    {
+      "sample_id": "6bba_74686d6a",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 158632.0,
+      "median_foreground_fraction": 0.03950071334838867
+    },
+    {
+      "sample_id": "6bba_767a1e17",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 500008.0,
+      "median_foreground_fraction": 0.14415502548217773
+    },
+    {
+      "sample_id": "6bba_76db78c1",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 7851.0,
+      "median_foreground_fraction": 0.018157243728637695
+    },
+    {
+      "sample_id": "6bba_784a78c9",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 16324.0,
+      "median_foreground_fraction": 0.032505035400390625
+    },
+    {
+      "sample_id": "6bba_786893ac",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 428664.0,
+      "median_foreground_fraction": 0.11091184616088867
+    },
+    {
+      "sample_id": "6bba_789f8168",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8400.0,
+      "median_foreground_fraction": 0.018431663513183594
+    },
+    {
+      "sample_id": "6bba_78a7bd97",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 459121.0,
+      "median_foreground_fraction": 0.12340331077575684
+    },
+    {
+      "sample_id": "6bba_7af54fde",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 146745.0,
+      "median_foreground_fraction": 0.04238557815551758
+    },
+    {
+      "sample_id": "6bba_7b5d3b2c",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 6940.0,
+      "median_foreground_fraction": 0.015488624572753906
+    },
+    {
+      "sample_id": "6bba_7d3058ae",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5216.0,
+      "median_foreground_fraction": 0.017568588256835938
+    },
+    {
+      "sample_id": "6bba_7f87b3d8",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 62947.0,
+      "median_foreground_fraction": 0.03202962875366211
+    },
+    {
+      "sample_id": "6bba_80d12824",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 9098.0,
+      "median_foreground_fraction": 0.016471385955810547
+    },
+    {
+      "sample_id": "6bba_825bd1c6",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 18457.0,
+      "median_foreground_fraction": 0.01896834373474121
+    },
+    {
+      "sample_id": "6bba_87289e13",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5632.0,
+      "median_foreground_fraction": 0.01894068717956543
+    },
+    {
+      "sample_id": "6bba_8b7818bf",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 17049.0,
+      "median_foreground_fraction": 0.01767420768737793
+    },
+    {
+      "sample_id": "6bba_907271db",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 19115.0,
+      "median_foreground_fraction": 0.022072315216064453
+    },
+    {
+      "sample_id": "6bba_91951b3a",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 9795.0,
+      "median_foreground_fraction": 0.027151107788085938
+    },
+    {
+      "sample_id": "6bba_96833384",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 11971.0,
+      "median_foreground_fraction": 0.019769906997680664
+    },
+    {
+      "sample_id": "6bba_969618f6",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 160254.0,
+      "median_foreground_fraction": 0.05059981346130371
+    },
+    {
+      "sample_id": "6bba_971fa5e0",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 6079.0,
+      "median_foreground_fraction": 0.012848377227783203
+    },
+    {
+      "sample_id": "6bba_9a41d029",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 98396.0,
+      "median_foreground_fraction": 0.03254199028015137
+    },
+    {
+      "sample_id": "6bba_9e23430b",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 82654.0,
+      "median_foreground_fraction": 0.02220940589904785
+    },
+    {
+      "sample_id": "6bba_a5e926bb",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 12209.0,
+      "median_foreground_fraction": 0.02189493179321289
+    },
+    {
+      "sample_id": "6bba_a90a0b9c",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 179861.0,
+      "median_foreground_fraction": 0.04624819755554199
+    },
+    {
+      "sample_id": "6bba_ab78413d",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 235673.0,
+      "median_foreground_fraction": 0.05715322494506836
+    },
+    {
+      "sample_id": "6bba_acd782a8",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 13154.0,
+      "median_foreground_fraction": 0.03123188018798828
+    },
+    {
+      "sample_id": "6bba_ae82a791",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5634.0,
+      "median_foreground_fraction": 0.01813220977783203
+    },
+    {
+      "sample_id": "6bba_aeee7805",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8674.0,
+      "median_foreground_fraction": 0.016777992248535156
+    },
+    {
+      "sample_id": "6bba_af149c94",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 15170.0,
+      "median_foreground_fraction": 0.0314784049987793
+    },
+    {
+      "sample_id": "6bba_afb141ff",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 7024.0,
+      "median_foreground_fraction": 0.014351606369018555
+    },
+    {
+      "sample_id": "6bba_b1ae37b9",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 203574.0,
+      "median_foreground_fraction": 0.07760739326477051
+    },
+    {
+      "sample_id": "6bba_b204cac7",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5778.0,
+      "median_foreground_fraction": 0.012583255767822266
+    },
+    {
+      "sample_id": "6bba_b329af44",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 355163.0,
+      "median_foreground_fraction": 0.10692524909973145
+    },
+    {
+      "sample_id": "6bba_b693381b",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5316.0,
+      "median_foreground_fraction": 0.013878583908081055
+    },
+    {
+      "sample_id": "6bba_bb9f20c3",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 11403.0,
+      "median_foreground_fraction": 0.03044295310974121
+    },
+    {
+      "sample_id": "6bba_bbb708ca",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 11797.0,
+      "median_foreground_fraction": 0.02385091781616211
+    },
+    {
+      "sample_id": "6bba_c27cba08",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 17525.0,
+      "median_foreground_fraction": 0.02467823028564453
+    },
+    {
+      "sample_id": "6bba_c328f2fd",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 146763.0,
+      "median_foreground_fraction": 0.045969486236572266
+    },
+    {
+      "sample_id": "6bba_c73a1d11",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 197143.0,
+      "median_foreground_fraction": 0.053246498107910156
+    },
+    {
+      "sample_id": "6bba_cdcfe533",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5653.0,
+      "median_foreground_fraction": 0.02976059913635254
+    },
+    {
+      "sample_id": "6bba_cf35214c",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 58620.0,
+      "median_foreground_fraction": 0.058609962463378906
+    },
+    {
+      "sample_id": "6bba_cff5865f",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 21420.0,
+      "median_foreground_fraction": 0.044191837310791016
+    },
+    {
+      "sample_id": "6bba_d0fc38b5",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 10762.0,
+      "median_foreground_fraction": 0.01646113395690918
+    },
+    {
+      "sample_id": "6bba_d1acb6ff",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 62883.0,
+      "median_foreground_fraction": 0.05340003967285156
+    },
+    {
+      "sample_id": "6bba_d2b9fc0c",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 4224.0,
+      "median_foreground_fraction": 0.026006460189819336
+    },
+    {
+      "sample_id": "6bba_d3da753b",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 4704.0,
+      "median_foreground_fraction": 0.02246880531311035
+    },
+    {
+      "sample_id": "6bba_d5eae175",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 5042.0,
+      "median_foreground_fraction": 0.012655019760131836
+    },
+    {
+      "sample_id": "6bba_d6ecebbb",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 16761.0,
+      "median_foreground_fraction": 0.015262603759765625
+    },
+    {
+      "sample_id": "6bba_d82a4fc6",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 323624.0,
+      "median_foreground_fraction": 0.08310580253601074
+    },
+    {
+      "sample_id": "6bba_debd7bfa",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 10192.0,
+      "median_foreground_fraction": 0.0266876220703125
+    },
+    {
+      "sample_id": "6bba_df673a83",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 36811.0,
+      "median_foreground_fraction": 0.044539690017700195
+    },
+    {
+      "sample_id": "6bba_e16ffc58",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 10796.0,
+      "median_foreground_fraction": 0.01757669448852539
+    },
+    {
+      "sample_id": "6bba_e5e44988",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 15028.0,
+      "median_foreground_fraction": 0.022580385208129883
+    },
+    {
+      "sample_id": "6bba_ebdf3b34",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 232333.0,
+      "median_foreground_fraction": 0.07500171661376953
+    },
+    {
+      "sample_id": "6bba_ebff6e76",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 278583.0,
+      "median_foreground_fraction": 0.08289599418640137
+    },
+    {
+      "sample_id": "6bba_ed9377fd",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 12824.0,
+      "median_foreground_fraction": 0.016892671585083008
+    },
+    {
+      "sample_id": "6bba_edf14583",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 496879.0,
+      "median_foreground_fraction": 0.12561917304992676
+    },
+    {
+      "sample_id": "6bba_eebc57a5",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8846.0,
+      "median_foreground_fraction": 0.016148805618286133
+    },
+    {
+      "sample_id": "6bba_ef7b4f7e",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 16979.0,
+      "median_foreground_fraction": 0.015914201736450195
+    },
+    {
+      "sample_id": "6bba_f17befbc",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 309238.0,
+      "median_foreground_fraction": 0.07720494270324707
+    },
+    {
+      "sample_id": "6bba_f1fde7e0",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 63741.0,
+      "median_foreground_fraction": 0.02887248992919922
+    },
+    {
+      "sample_id": "6bba_f20478e9",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 11410.0,
+      "median_foreground_fraction": 0.021223783493041992
+    },
+    {
+      "sample_id": "6bba_f4ae811c",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 12294.0,
+      "median_foreground_fraction": 0.023568391799926758
+    },
+    {
+      "sample_id": "6bba_f8ffd5e7",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 366399.0,
+      "median_foreground_fraction": 0.10329222679138184
+    },
+    {
+      "sample_id": "6bba_fbc898dc",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 15350.0,
+      "median_foreground_fraction": 0.014431953430175781
+    },
+    {
+      "sample_id": "6bba_fc516dc6",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 8967.0,
+      "median_foreground_fraction": 0.015134096145629883
+    },
+    {
+      "sample_id": "6bba_fc5f39dc",
+      "family": "6bba",
+      "detector": "cfar_sidelobe",
+      "link_strategy": "bipartite",
+      "route": "cfar_sidelobe/bipartite",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 201517.0,
+      "median_foreground_fraction": 0.056632280349731445
+    },
+    {
+      "sample_id": "6bba_fc83837d",
+      "family": "6bba",
+      "detector": "local_maxima",
+      "link_strategy": "motion_mutual",
+      "route": "local_maxima/motion_mutual",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 111344.0,
+      "median_foreground_fraction": 0.03460693359375
+    },
+    {
+      "sample_id": "6bba_fe670320",
+      "family": "6bba",
+      "detector": "components",
+      "link_strategy": "greedy",
+      "route": "components/greedy",
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ],
+      "median_largest_component_voxels": 27286.0,
+      "median_foreground_fraction": 0.025660037994384766
+    }
+  ],
+  "development_actual_route_parity": {
+    "compared_samples": 27,
+    "mismatches": [],
+    "passed": true
+  }
+}

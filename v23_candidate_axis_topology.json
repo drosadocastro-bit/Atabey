@@ -1,0 +1,176 @@
+[
+  {
+    "candidate_set_changed": false,
+    "case_role": "repairable",
+    "correct_daughter_ids": [
+      "44b6_7a302da0:t91:cf140",
+      "44b6_7a302da0:t91:cf76"
+    ],
+    "correct_pair_features": {
+      "candidate_axis_topology_change": 0.6762989673502477,
+      "daughter_endpoint_balance": 0.8780460407644212,
+      "daughter_valley_depth": 0.46768907170026974,
+      "parent_center_dominance": 0.20860989564997795,
+      "static_endpoint_support": 0.6492081993763557
+    },
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "focal_parent_id": "44b6_7a302da0:t90:cf433",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "pair_count": 55,
+    "rank_delta_vs_static": 16,
+    "sample_id": "44b6_7a302da0",
+    "static_endpoint_percentile": 0.3090909090909091,
+    "static_endpoint_rank": 39,
+    "t": 90,
+    "topology_percentile": 0.6,
+    "topology_rank": 23,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "case_role": "protected_complete",
+    "correct_daughter_ids": [
+      "44b6_9be80b04:t78:cf18",
+      "44b6_9be80b04:t78:cf23"
+    ],
+    "correct_pair_features": {
+      "candidate_axis_topology_change": 1.2281820582056633,
+      "daughter_endpoint_balance": 0.8105956124396952,
+      "daughter_valley_depth": 0.7786859419326015,
+      "parent_center_dominance": 0.44949611627306185,
+      "static_endpoint_support": 0.9963531085205376
+    },
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "focal_parent_id": "44b6_9be80b04:t77:cf304",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "pair_count": 66,
+    "rank_delta_vs_static": -1,
+    "sample_id": "44b6_9be80b04",
+    "static_endpoint_percentile": 0.9696969696969697,
+    "static_endpoint_rank": 3,
+    "t": 77,
+    "topology_percentile": 0.9545454545454546,
+    "topology_rank": 4,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "case_role": "protected_complete",
+    "correct_daughter_ids": [
+      "44b6_c50204e0:t29:cf17",
+      "44b6_c50204e0:t29:cf86"
+    ],
+    "correct_pair_features": {
+      "candidate_axis_topology_change": 0.33488330103027936,
+      "daughter_endpoint_balance": 0.5938482229338625,
+      "daughter_valley_depth": 0.2977896471725555,
+      "parent_center_dominance": 0.03709365385772384,
+      "static_endpoint_support": 0.5214463205491198
+    },
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "focal_parent_id": "44b6_c50204e0:t28:cf287",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "pair_count": 55,
+    "rank_delta_vs_static": 24,
+    "sample_id": "44b6_c50204e0",
+    "static_endpoint_percentile": 0.018181818181818188,
+    "static_endpoint_rank": 55,
+    "t": 28,
+    "topology_percentile": 0.4545454545454546,
+    "topology_rank": 31,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "case_role": "protected_complete",
+    "correct_daughter_ids": [
+      "6bba_05db0fb1:t25:cf17",
+      "6bba_05db0fb1:t25:cf3"
+    ],
+    "correct_pair_features": {
+      "candidate_axis_topology_change": 0.8100406651282266,
+      "daughter_endpoint_balance": 0.8418910908890217,
+      "daughter_valley_depth": 0.5460565122536267,
+      "parent_center_dominance": 0.26398415287459986,
+      "static_endpoint_support": 0.8732437640458891
+    },
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "focal_parent_id": "6bba_05db0fb1:t24:cf76",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "pair_count": 21,
+    "rank_delta_vs_static": 0,
+    "sample_id": "6bba_05db0fb1",
+    "static_endpoint_percentile": 0.7619047619047619,
+    "static_endpoint_rank": 6,
+    "t": 24,
+    "topology_percentile": 0.7619047619047619,
+    "topology_rank": 6,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "case_role": "repairable",
+    "correct_daughter_ids": [
+      "6bba_207c6aaf:t42:cf147",
+      "6bba_207c6aaf:t42:cf148"
+    ],
+    "correct_pair_features": {
+      "candidate_axis_topology_change": 0.13317762214793502,
+      "daughter_endpoint_balance": 0.3800207183771105,
+      "daughter_valley_depth": 0.18179640701457564,
+      "parent_center_dominance": -0.04861878486664062,
+      "static_endpoint_support": 0.5630908213161505
+    },
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "focal_parent_id": "6bba_207c6aaf:t41:cf136",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "pair_count": 36,
+    "rank_delta_vs_static": -5,
+    "sample_id": "6bba_207c6aaf",
+    "static_endpoint_percentile": 0.41666666666666663,
+    "static_endpoint_rank": 22,
+    "t": 41,
+    "topology_percentile": 0.2777777777777778,
+    "topology_rank": 27,
+    "zero_perturbation": true
+  },
+  {
+    "candidate_set_changed": false,
+    "case_role": "repairable",
+    "correct_daughter_ids": [
+      "6bba_474be664:t64:cf44",
+      "6bba_474be664:t64:cf49"
+    ],
+    "correct_pair_features": {
+      "candidate_axis_topology_change": 0.4281084208235266,
+      "daughter_endpoint_balance": 0.5338530876828359,
+      "daughter_valley_depth": 0.24129384964137476,
+      "parent_center_dominance": 0.18681457118215183,
+      "static_endpoint_support": 0.5797261085596098
+    },
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "focal_parent_id": "6bba_474be664:t63:cf242",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "pair_count": 66,
+    "rank_delta_vs_static": 32,
+    "sample_id": "6bba_474be664",
+    "static_endpoint_percentile": 0.1515151515151515,
+    "static_endpoint_rank": 57,
+    "t": 63,
+    "topology_percentile": 0.6363636363636364,
+    "topology_rank": 25,
+    "zero_perturbation": true
+  }
+]

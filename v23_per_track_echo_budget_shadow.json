@@ -1,0 +1,629 @@
+[
+  {
+    "broken_seed_count": 136,
+    "budgets": {
+      "1": {
+        "available": false,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 244,
+          "assigned": 427,
+          "slot_count": 671
+        },
+        "full_new_echo_pool": 1306,
+        "parent_assignment": {
+          "abstained": 4,
+          "assigned": 132,
+          "slot_count": 136
+        },
+        "proposal_retention_fraction": 0.4280245022970903,
+        "recovered": false,
+        "selected_daughter_echoes": 427,
+        "selected_parent_echoes": 132,
+        "selected_total": 559
+      },
+      "2": {
+        "available": false,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 655,
+          "assigned": 502,
+          "slot_count": 1157
+        },
+        "full_new_echo_pool": 1306,
+        "parent_assignment": {
+          "abstained": 40,
+          "assigned": 232,
+          "slot_count": 272
+        },
+        "proposal_retention_fraction": 0.5620214395099541,
+        "recovered": false,
+        "selected_daughter_echoes": 502,
+        "selected_parent_echoes": 232,
+        "selected_total": 734
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_706092f0-t49-p446000000015",
+    "cohort": "failure",
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": false,
+    "sample_id": "44b6_706092f0",
+    "t": 49,
+    "under_resolved_seed_count": 539,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 96,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 13,
+          "assigned": 293,
+          "slot_count": 306
+        },
+        "full_new_echo_pool": 1815,
+        "parent_assignment": {
+          "abstained": 0,
+          "assigned": 96,
+          "slot_count": 96
+        },
+        "proposal_retention_fraction": 0.2143250688705234,
+        "recovered": true,
+        "selected_daughter_echoes": 293,
+        "selected_parent_echoes": 96,
+        "selected_total": 389
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 125,
+          "assigned": 596,
+          "slot_count": 721
+        },
+        "full_new_echo_pool": 1815,
+        "parent_assignment": {
+          "abstained": 3,
+          "assigned": 189,
+          "slot_count": 192
+        },
+        "proposal_retention_fraction": 0.4325068870523416,
+        "recovered": true,
+        "selected_daughter_echoes": 596,
+        "selected_parent_echoes": 189,
+        "selected_total": 785
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_74d0c52e-t58-p296000000021",
+    "cohort": "failure",
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": false,
+    "sample_id": "44b6_74d0c52e",
+    "t": 58,
+    "under_resolved_seed_count": 210,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 174,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 61,
+          "assigned": 408,
+          "slot_count": 469
+        },
+        "full_new_echo_pool": 1557,
+        "parent_assignment": {
+          "abstained": 2,
+          "assigned": 172,
+          "slot_count": 174
+        },
+        "proposal_retention_fraction": 0.3725112395632627,
+        "recovered": true,
+        "selected_daughter_echoes": 408,
+        "selected_parent_echoes": 172,
+        "selected_total": 580
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 427,
+          "assigned": 691,
+          "slot_count": 1118
+        },
+        "full_new_echo_pool": 1557,
+        "parent_assignment": {
+          "abstained": 24,
+          "assigned": 324,
+          "slot_count": 348
+        },
+        "proposal_retention_fraction": 0.6518946692357097,
+        "recovered": true,
+        "selected_daughter_echoes": 691,
+        "selected_parent_echoes": 324,
+        "selected_total": 1015
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_aaf8b0ea-t61-p390000000000",
+    "cohort": "failure",
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": false,
+    "sample_id": "44b6_aaf8b0ea",
+    "t": 61,
+    "under_resolved_seed_count": 297,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 224,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 383,
+          "assigned": 374,
+          "slot_count": 757
+        },
+        "full_new_echo_pool": 794,
+        "parent_assignment": {
+          "abstained": 28,
+          "assigned": 196,
+          "slot_count": 224
+        },
+        "proposal_retention_fraction": 0.7178841309823678,
+        "recovered": false,
+        "selected_daughter_echoes": 374,
+        "selected_parent_echoes": 196,
+        "selected_total": 570
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 1029,
+          "assigned": 395,
+          "slot_count": 1424
+        },
+        "full_new_echo_pool": 794,
+        "parent_assignment": {
+          "abstained": 152,
+          "assigned": 296,
+          "slot_count": 448
+        },
+        "proposal_retention_fraction": 0.8702770780856424,
+        "recovered": false,
+        "selected_daughter_echoes": 395,
+        "selected_parent_echoes": 296,
+        "selected_total": 691
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_c50204e0-t28-p171000000043",
+    "cohort": "control",
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": true,
+    "sample_id": "44b6_c50204e0",
+    "t": 28,
+    "under_resolved_seed_count": 561,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 304,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 425,
+          "assigned": 525,
+          "slot_count": 950
+        },
+        "full_new_echo_pool": 1148,
+        "parent_assignment": {
+          "abstained": 30,
+          "assigned": 274,
+          "slot_count": 304
+        },
+        "proposal_retention_fraction": 0.695993031358885,
+        "recovered": false,
+        "selected_daughter_echoes": 525,
+        "selected_parent_echoes": 274,
+        "selected_total": 799
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 1260,
+          "assigned": 582,
+          "slot_count": 1842
+        },
+        "full_new_echo_pool": 1148,
+        "parent_assignment": {
+          "abstained": 175,
+          "assigned": 433,
+          "slot_count": 608
+        },
+        "proposal_retention_fraction": 0.8841463414634146,
+        "recovered": false,
+        "selected_daughter_echoes": 582,
+        "selected_parent_echoes": 433,
+        "selected_total": 1015
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_c50204e0-t65-p208000000033",
+    "cohort": "control",
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": true,
+    "sample_id": "44b6_c50204e0",
+    "t": 65,
+    "under_resolved_seed_count": 676,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 160,
+    "budgets": {
+      "1": {
+        "available": false,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 355,
+          "assigned": 291,
+          "slot_count": 646
+        },
+        "full_new_echo_pool": 824,
+        "parent_assignment": {
+          "abstained": 23,
+          "assigned": 137,
+          "slot_count": 160
+        },
+        "proposal_retention_fraction": 0.5194174757281553,
+        "recovered": false,
+        "selected_daughter_echoes": 291,
+        "selected_parent_echoes": 137,
+        "selected_total": 428
+      },
+      "2": {
+        "available": false,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 692,
+          "assigned": 355,
+          "slot_count": 1047
+        },
+        "full_new_echo_pool": 824,
+        "parent_assignment": {
+          "abstained": 122,
+          "assigned": 198,
+          "slot_count": 320
+        },
+        "proposal_retention_fraction": 0.6711165048543689,
+        "recovered": false,
+        "selected_daughter_echoes": 355,
+        "selected_parent_echoes": 198,
+        "selected_total": 553
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_3abfe10a-t81-p82001296",
+    "cohort": "failure",
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": false,
+    "sample_id": "6bba_3abfe10a",
+    "t": 81,
+    "under_resolved_seed_count": 509,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 387,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 207,
+          "assigned": 898,
+          "slot_count": 1105
+        },
+        "full_new_echo_pool": 3342,
+        "parent_assignment": {
+          "abstained": 13,
+          "assigned": 374,
+          "slot_count": 387
+        },
+        "proposal_retention_fraction": 0.38061041292639136,
+        "recovered": false,
+        "selected_daughter_echoes": 898,
+        "selected_parent_echoes": 374,
+        "selected_total": 1272
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 1067,
+          "assigned": 1382,
+          "slot_count": 2449
+        },
+        "full_new_echo_pool": 3342,
+        "parent_assignment": {
+          "abstained": 90,
+          "assigned": 684,
+          "slot_count": 774
+        },
+        "proposal_retention_fraction": 0.6181926989826452,
+        "recovered": false,
+        "selected_daughter_echoes": 1382,
+        "selected_parent_echoes": 684,
+        "selected_total": 2066
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t12-p13000378",
+    "cohort": "control",
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": true,
+    "sample_id": "6bba_57b7cc1e",
+    "t": 12,
+    "under_resolved_seed_count": 731,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 374,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 132,
+          "assigned": 964,
+          "slot_count": 1096
+        },
+        "full_new_echo_pool": 3413,
+        "parent_assignment": {
+          "abstained": 2,
+          "assigned": 372,
+          "slot_count": 374
+        },
+        "proposal_retention_fraction": 0.391444476999707,
+        "recovered": true,
+        "selected_daughter_echoes": 964,
+        "selected_parent_echoes": 372,
+        "selected_total": 1336
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 986,
+          "assigned": 1424,
+          "slot_count": 2410
+        },
+        "full_new_echo_pool": 3413,
+        "parent_assignment": {
+          "abstained": 73,
+          "assigned": 675,
+          "slot_count": 748
+        },
+        "proposal_retention_fraction": 0.6150014649868151,
+        "recovered": true,
+        "selected_daughter_echoes": 1424,
+        "selected_parent_echoes": 675,
+        "selected_total": 2099
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t23-p24000720",
+    "cohort": "failure",
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": false,
+    "sample_id": "6bba_57b7cc1e",
+    "t": 23,
+    "under_resolved_seed_count": 724,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 374,
+    "budgets": {
+      "1": {
+        "available": false,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 150,
+          "assigned": 938,
+          "slot_count": 1088
+        },
+        "full_new_echo_pool": 4275,
+        "parent_assignment": {
+          "abstained": 2,
+          "assigned": 372,
+          "slot_count": 374
+        },
+        "proposal_retention_fraction": 0.3064327485380117,
+        "recovered": false,
+        "selected_daughter_echoes": 938,
+        "selected_parent_echoes": 372,
+        "selected_total": 1310
+      },
+      "2": {
+        "available": false,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 910,
+          "assigned": 1582,
+          "slot_count": 2492
+        },
+        "full_new_echo_pool": 4275,
+        "parent_assignment": {
+          "abstained": 45,
+          "assigned": 703,
+          "slot_count": 748
+        },
+        "proposal_retention_fraction": 0.5345029239766081,
+        "recovered": false,
+        "selected_daughter_echoes": 1582,
+        "selected_parent_echoes": 703,
+        "selected_total": 2285
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t77-p78002270",
+    "cohort": "failure",
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": false,
+    "sample_id": "6bba_57b7cc1e",
+    "t": 77,
+    "under_resolved_seed_count": 716,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 35,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 35,
+          "assigned": 89,
+          "slot_count": 124
+        },
+        "full_new_echo_pool": 288,
+        "parent_assignment": {
+          "abstained": 3,
+          "assigned": 32,
+          "slot_count": 35
+        },
+        "proposal_retention_fraction": 0.4201388888888889,
+        "recovered": true,
+        "selected_daughter_echoes": 89,
+        "selected_parent_echoes": 32,
+        "selected_total": 121
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 99,
+          "assigned": 130,
+          "slot_count": 229
+        },
+        "full_new_echo_pool": 288,
+        "parent_assignment": {
+          "abstained": 17,
+          "assigned": 53,
+          "slot_count": 70
+        },
+        "proposal_retention_fraction": 0.6354166666666666,
+        "recovered": true,
+        "selected_daughter_echoes": 130,
+        "selected_parent_echoes": 53,
+        "selected_total": 183
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t24-p25000064",
+    "cohort": "failure",
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": false,
+    "sample_id": "6bba_fc5f39dc",
+    "t": 24,
+    "under_resolved_seed_count": 92,
+    "zero_perturbation": true
+  },
+  {
+    "broken_seed_count": 62,
+    "budgets": {
+      "1": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 67,
+          "assigned": 169,
+          "slot_count": 236
+        },
+        "full_new_echo_pool": 455,
+        "parent_assignment": {
+          "abstained": 5,
+          "assigned": 57,
+          "slot_count": 62
+        },
+        "proposal_retention_fraction": 0.4967032967032967,
+        "recovered": false,
+        "selected_daughter_echoes": 169,
+        "selected_parent_echoes": 57,
+        "selected_total": 226
+      },
+      "2": {
+        "available": true,
+        "candidate_ownership_unique": true,
+        "daughter_assignment": {
+          "abstained": 253,
+          "assigned": 199,
+          "slot_count": 452
+        },
+        "full_new_echo_pool": 455,
+        "parent_assignment": {
+          "abstained": 21,
+          "assigned": 103,
+          "slot_count": 124
+        },
+        "proposal_retention_fraction": 0.6637362637362637,
+        "recovered": false,
+        "selected_daughter_echoes": 199,
+        "selected_parent_echoes": 103,
+        "selected_total": 302
+      }
+    },
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t54-p55000245",
+    "cohort": "control",
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "primary_geometry_available": true,
+    "sample_id": "6bba_fc5f39dc",
+    "t": 54,
+    "under_resolved_seed_count": 179,
+    "zero_perturbation": true
+  }
+]

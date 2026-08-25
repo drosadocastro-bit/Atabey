@@ -1,0 +1,168 @@
+[
+  {
+    "baseline_parent_rank": 109,
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_aaf8b0ea-t61-p390000000000",
+    "combined_parent_profile": {
+      "confidence": 0.1433544917730214,
+      "confidence_change": 0.0570640807738195,
+      "decoder_available": true,
+      "decoder_logit": -1.2086751,
+      "decoder_logit_change": 0.037593599999999894,
+      "density": 0.0,
+      "feature_percentiles": {
+        "confidence": 0.8387096774193549,
+        "confidence_change": 0.8888888888888888,
+        "decoder_logit": 0.3387096774193548,
+        "decoder_logit_change": 0.21212121212121213,
+        "inverse_density": 0.9556451612903226,
+        "track_age": 0.28225806451612906
+      },
+      "registered_parent_child": true,
+      "seed_id": "44b6_aaf8b0ea:t61:cf47",
+      "track_age": 2.0
+    },
+    "decoder_coverage": 1.0,
+    "detector": "cfar_sidelobe",
+    "family": "44b6",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "sample_id": "44b6_aaf8b0ea",
+    "seed_count": 124,
+    "signals": {
+      "appearance": {
+        "percentile": 0.75,
+        "rank": 32,
+        "score": 0.6387096774193548,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      },
+      "combined": {
+        "percentile": 0.6774193548387097,
+        "rank": 41,
+        "score": 0.5750859400456174,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      },
+      "confidence": {
+        "percentile": 0.8387096774193549,
+        "rank": 21,
+        "score": 0.8387096774193549,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      },
+      "decoder_logit": {
+        "percentile": 0.33870967741935487,
+        "rank": 83,
+        "score": 0.3387096774193548,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      },
+      "history": {
+        "percentile": 0.6048387096774194,
+        "rank": 50,
+        "score": 0.5516129032258066,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      },
+      "inverse_density": {
+        "percentile": 0.9596774193548387,
+        "rank": 6,
+        "score": 0.9556451612903226,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      },
+      "precursor_change": {
+        "percentile": 0.6451612903225806,
+        "rank": 45,
+        "score": 0.5505050505050505,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      },
+      "track_age": {
+        "percentile": 0.24193548387096775,
+        "rank": 95,
+        "score": 0.28225806451612906,
+        "seed_id": "44b6_aaf8b0ea:t61:cf47"
+      }
+    },
+    "t": 61,
+    "zero_perturbation": true
+  },
+  {
+    "baseline_parent_rank": 22,
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t24-p25000064",
+    "combined_parent_profile": {
+      "confidence": 0.1001616770987019,
+      "confidence_change": 0.006911055479876901,
+      "decoder_available": true,
+      "decoder_logit": -1.2821087,
+      "decoder_logit_change": 0.006385799999999886,
+      "density": 0.0,
+      "feature_percentiles": {
+        "confidence": 0.4098360655737705,
+        "confidence_change": 0.19230769230769232,
+        "decoder_logit": 0.7950819672131147,
+        "decoder_logit_change": 0.27884615384615385,
+        "inverse_density": 0.9508196721311475,
+        "track_age": 0.5
+      },
+      "registered_parent_child": true,
+      "seed_id": "6bba_fc5f39dc:t24:cf66",
+      "track_age": 4.0
+    },
+    "decoder_coverage": 1.0,
+    "detector": "cfar_sidelobe",
+    "family": "6bba",
+    "graph_mutated": false,
+    "link_strategy": "bipartite",
+    "sample_id": "6bba_fc5f39dc",
+    "seed_count": 61,
+    "signals": {
+      "appearance": {
+        "percentile": 0.5901639344262295,
+        "rank": 26,
+        "score": 0.5639344262295083,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      },
+      "combined": {
+        "percentile": 0.540983606557377,
+        "rank": 29,
+        "score": 0.5238942307692308,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      },
+      "confidence": {
+        "percentile": 0.4098360655737705,
+        "rank": 37,
+        "score": 0.4098360655737705,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      },
+      "decoder_logit": {
+        "percentile": 0.8032786885245902,
+        "rank": 13,
+        "score": 0.7950819672131147,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      },
+      "history": {
+        "percentile": 0.8360655737704918,
+        "rank": 11,
+        "score": 0.680327868852459,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      },
+      "inverse_density": {
+        "percentile": 0.9180327868852459,
+        "rank": 6,
+        "score": 0.9508196721311475,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      },
+      "precursor_change": {
+        "percentile": 0.049180327868852514,
+        "rank": 59,
+        "score": 0.23557692307692307,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      },
+      "track_age": {
+        "percentile": 0.47540983606557374,
+        "rank": 33,
+        "score": 0.5,
+        "seed_id": "6bba_fc5f39dc:t24:cf66"
+      }
+    },
+    "t": 24,
+    "zero_perturbation": true
+  }
+]

@@ -1,0 +1,1289 @@
+[
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_706092f0-t49-p446000000015",
+    "cohort": "failure",
+    "family": "44b6",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 1146,
+        "added_parent_candidates": 1191,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 1138,
+        "added_parent_candidates": 1186,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 1111,
+        "added_parent_candidates": 1167,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 894,
+        "added_parent_candidates": 941,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 889,
+        "added_parent_candidates": 937,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 870,
+        "added_parent_candidates": 921,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 700,
+        "added_parent_candidates": 717,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 695,
+        "added_parent_candidates": 713,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 680,
+        "added_parent_candidates": 701,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 526,
+        "added_parent_candidates": 540,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 521,
+        "added_parent_candidates": 537,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 508,
+        "added_parent_candidates": 527,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 360,
+        "added_parent_candidates": 371,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 355,
+        "added_parent_candidates": 368,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 342,
+        "added_parent_candidates": 359,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "44b6_706092f0",
+    "t": 49
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_74d0c52e-t58-p296000000021",
+    "cohort": "failure",
+    "family": "44b6",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 1319,
+        "added_parent_candidates": 1320,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 1311,
+        "added_parent_candidates": 1311,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 1295,
+        "added_parent_candidates": 1295,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 1026,
+        "added_parent_candidates": 1051,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 1018,
+        "added_parent_candidates": 1042,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 1003,
+        "added_parent_candidates": 1027,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 917,
+        "added_parent_candidates": 925,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 909,
+        "added_parent_candidates": 917,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 894,
+        "added_parent_candidates": 902,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 768,
+        "added_parent_candidates": 806,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 760,
+        "added_parent_candidates": 798,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 746,
+        "added_parent_candidates": 783,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 657,
+        "added_parent_candidates": 667,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 649,
+        "added_parent_candidates": 659,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 635,
+        "added_parent_candidates": 648,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "44b6_74d0c52e",
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_aaf8b0ea-t61-p390000000000",
+    "cohort": "failure",
+    "family": "44b6",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 958,
+        "added_parent_candidates": 973,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 954,
+        "added_parent_candidates": 970,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 941,
+        "added_parent_candidates": 953,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 871,
+        "added_parent_candidates": 881,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 867,
+        "added_parent_candidates": 878,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 855,
+        "added_parent_candidates": 863,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 816,
+        "added_parent_candidates": 827,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 812,
+        "added_parent_candidates": 824,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 800,
+        "added_parent_candidates": 809,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 769,
+        "added_parent_candidates": 782,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 765,
+        "added_parent_candidates": 779,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 754,
+        "added_parent_candidates": 764,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 735,
+        "added_parent_candidates": 750,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 732,
+        "added_parent_candidates": 747,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 722,
+        "added_parent_candidates": 733,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "44b6_aaf8b0ea",
+    "t": 61
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_c50204e0-t28-p171000000043",
+    "cohort": "control",
+    "family": "44b6",
+    "graph_mutated": false,
+    "primary_available": true,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 437,
+        "added_parent_candidates": 436,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 432,
+        "added_parent_candidates": 427,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 411,
+        "added_parent_candidates": 405,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 427,
+        "added_parent_candidates": 427,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 422,
+        "added_parent_candidates": 418,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 403,
+        "added_parent_candidates": 397,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 416,
+        "added_parent_candidates": 412,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 411,
+        "added_parent_candidates": 403,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 393,
+        "added_parent_candidates": 383,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 399,
+        "added_parent_candidates": 397,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 394,
+        "added_parent_candidates": 389,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 377,
+        "added_parent_candidates": 371,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 373,
+        "added_parent_candidates": 369,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 368,
+        "added_parent_candidates": 361,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 353,
+        "added_parent_candidates": 347,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "44b6_c50204e0",
+    "t": 28
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_c50204e0-t65-p208000000033",
+    "cohort": "control",
+    "family": "44b6",
+    "graph_mutated": false,
+    "primary_available": true,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 767,
+        "added_parent_candidates": 696,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 762,
+        "added_parent_candidates": 690,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 747,
+        "added_parent_candidates": 673,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 732,
+        "added_parent_candidates": 655,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 727,
+        "added_parent_candidates": 650,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 712,
+        "added_parent_candidates": 635,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 704,
+        "added_parent_candidates": 630,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 699,
+        "added_parent_candidates": 625,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 685,
+        "added_parent_candidates": 610,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 668,
+        "added_parent_candidates": 601,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 664,
+        "added_parent_candidates": 596,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 654,
+        "added_parent_candidates": 584,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 613,
+        "added_parent_candidates": 560,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 609,
+        "added_parent_candidates": 556,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 601,
+        "added_parent_candidates": 547,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "44b6_c50204e0",
+    "t": 65
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_3abfe10a-t81-p82001296",
+    "cohort": "failure",
+    "family": "6bba",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 646,
+        "added_parent_candidates": 625,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 639,
+        "added_parent_candidates": 620,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 620,
+        "added_parent_candidates": 604,
+        "available": false,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 530,
+        "added_parent_candidates": 520,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 523,
+        "added_parent_candidates": 515,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 505,
+        "added_parent_candidates": 499,
+        "available": false,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 438,
+        "added_parent_candidates": 416,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 431,
+        "added_parent_candidates": 414,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 415,
+        "added_parent_candidates": 399,
+        "available": false,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 339,
+        "added_parent_candidates": 297,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 333,
+        "added_parent_candidates": 295,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 317,
+        "added_parent_candidates": 282,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 236,
+        "added_parent_candidates": 213,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 230,
+        "added_parent_candidates": 211,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 215,
+        "added_parent_candidates": 198,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "6bba_3abfe10a",
+    "t": 81
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t12-p13000378",
+    "cohort": "control",
+    "family": "6bba",
+    "graph_mutated": false,
+    "primary_available": true,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 1982,
+        "added_parent_candidates": 1925,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 1973,
+        "added_parent_candidates": 1917,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 1943,
+        "added_parent_candidates": 1878,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 1917,
+        "added_parent_candidates": 1871,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 1908,
+        "added_parent_candidates": 1863,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 1882,
+        "added_parent_candidates": 1831,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 1841,
+        "added_parent_candidates": 1792,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 1833,
+        "added_parent_candidates": 1786,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 1815,
+        "added_parent_candidates": 1757,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 1711,
+        "added_parent_candidates": 1686,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 1703,
+        "added_parent_candidates": 1681,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 1687,
+        "added_parent_candidates": 1656,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 1500,
+        "added_parent_candidates": 1495,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 1493,
+        "added_parent_candidates": 1490,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 1486,
+        "added_parent_candidates": 1468,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "6bba_57b7cc1e",
+    "t": 12
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t23-p24000720",
+    "cohort": "failure",
+    "family": "6bba",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 2104,
+        "added_parent_candidates": 1932,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 2098,
+        "added_parent_candidates": 1921,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 2063,
+        "added_parent_candidates": 1884,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 2033,
+        "added_parent_candidates": 1864,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 2029,
+        "added_parent_candidates": 1854,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 1998,
+        "added_parent_candidates": 1821,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 1946,
+        "added_parent_candidates": 1781,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 1944,
+        "added_parent_candidates": 1772,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 1915,
+        "added_parent_candidates": 1748,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 1832,
+        "added_parent_candidates": 1661,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 1830,
+        "added_parent_candidates": 1653,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 1803,
+        "added_parent_candidates": 1632,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 1670,
+        "added_parent_candidates": 1468,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 1668,
+        "added_parent_candidates": 1460,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 1644,
+        "added_parent_candidates": 1443,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "6bba_57b7cc1e",
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t77-p78002270",
+    "cohort": "failure",
+    "family": "6bba",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 2648,
+        "added_parent_candidates": 2630,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 2644,
+        "added_parent_candidates": 2627,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 2611,
+        "added_parent_candidates": 2603,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 2525,
+        "added_parent_candidates": 2504,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 2521,
+        "added_parent_candidates": 2501,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 2492,
+        "added_parent_candidates": 2478,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 2328,
+        "added_parent_candidates": 2302,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 2324,
+        "added_parent_candidates": 2299,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 2300,
+        "added_parent_candidates": 2281,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 2045,
+        "added_parent_candidates": 1985,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 2041,
+        "added_parent_candidates": 1983,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 2020,
+        "added_parent_candidates": 1970,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 1664,
+        "added_parent_candidates": 1600,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 1661,
+        "added_parent_candidates": 1598,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 1644,
+        "added_parent_candidates": 1589,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "6bba_57b7cc1e",
+    "t": 77
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t24-p25000064",
+    "cohort": "failure",
+    "family": "6bba",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 208,
+        "added_parent_candidates": 204,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 200,
+        "added_parent_candidates": 197,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 191,
+        "added_parent_candidates": 189,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 194,
+        "added_parent_candidates": 187,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 186,
+        "added_parent_candidates": 181,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 178,
+        "added_parent_candidates": 173,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 158,
+        "added_parent_candidates": 168,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 150,
+        "added_parent_candidates": 162,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 144,
+        "added_parent_candidates": 154,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 125,
+        "added_parent_candidates": 129,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 118,
+        "added_parent_candidates": 123,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 112,
+        "added_parent_candidates": 116,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 97,
+        "added_parent_candidates": 94,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 90,
+        "added_parent_candidates": 88,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 85,
+        "added_parent_candidates": 82,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "6bba_fc5f39dc",
+    "t": 24
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t54-p55000245",
+    "cohort": "control",
+    "family": "6bba",
+    "graph_mutated": false,
+    "primary_available": false,
+    "profiles": {
+      "floor_0.25_k_0.50": {
+        "added_daughter_candidates": 316,
+        "added_parent_candidates": 352,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.5
+      },
+      "floor_0.25_k_0.80": {
+        "added_daughter_candidates": 309,
+        "added_parent_candidates": 350,
+        "available": true,
+        "floor": 0.25,
+        "k_sigma": 0.8
+      },
+      "floor_0.25_k_1.10": {
+        "added_daughter_candidates": 292,
+        "added_parent_candidates": 329,
+        "available": false,
+        "floor": 0.25,
+        "k_sigma": 1.1
+      },
+      "floor_0.30_k_0.50": {
+        "added_daughter_candidates": 294,
+        "added_parent_candidates": 335,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.5
+      },
+      "floor_0.30_k_0.80": {
+        "added_daughter_candidates": 288,
+        "added_parent_candidates": 333,
+        "available": true,
+        "floor": 0.3,
+        "k_sigma": 0.8
+      },
+      "floor_0.30_k_1.10": {
+        "added_daughter_candidates": 272,
+        "added_parent_candidates": 314,
+        "available": false,
+        "floor": 0.3,
+        "k_sigma": 1.1
+      },
+      "floor_0.35_k_0.50": {
+        "added_daughter_candidates": 236,
+        "added_parent_candidates": 291,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.5
+      },
+      "floor_0.35_k_0.80": {
+        "added_daughter_candidates": 230,
+        "added_parent_candidates": 289,
+        "available": true,
+        "floor": 0.35,
+        "k_sigma": 0.8
+      },
+      "floor_0.35_k_1.10": {
+        "added_daughter_candidates": 217,
+        "added_parent_candidates": 272,
+        "available": false,
+        "floor": 0.35,
+        "k_sigma": 1.1
+      },
+      "floor_0.40_k_0.50": {
+        "added_daughter_candidates": 197,
+        "added_parent_candidates": 243,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.5
+      },
+      "floor_0.40_k_0.80": {
+        "added_daughter_candidates": 191,
+        "added_parent_candidates": 241,
+        "available": true,
+        "floor": 0.4,
+        "k_sigma": 0.8
+      },
+      "floor_0.40_k_1.10": {
+        "added_daughter_candidates": 180,
+        "added_parent_candidates": 227,
+        "available": false,
+        "floor": 0.4,
+        "k_sigma": 1.1
+      },
+      "floor_0.45_k_0.50": {
+        "added_daughter_candidates": 149,
+        "added_parent_candidates": 185,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.5
+      },
+      "floor_0.45_k_0.80": {
+        "added_daughter_candidates": 143,
+        "added_parent_candidates": 183,
+        "available": true,
+        "floor": 0.45,
+        "k_sigma": 0.8
+      },
+      "floor_0.45_k_1.10": {
+        "added_daughter_candidates": 134,
+        "added_parent_candidates": 173,
+        "available": false,
+        "floor": 0.45,
+        "k_sigma": 1.1
+      }
+    },
+    "sample_id": "6bba_fc5f39dc",
+    "t": 54
+  }
+]

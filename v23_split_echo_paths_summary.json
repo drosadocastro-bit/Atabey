@@ -1,0 +1,25 @@
+{
+  "anchored": {
+    "decision": "NO_GO_ANCHORED_PATH",
+    "family_coverage": [
+      "6bba"
+    ],
+    "joint_seed25_counterpart10": 1
+  },
+  "candidate_set_changed": false,
+  "graph_mutation": false,
+  "quarantine": {
+    "decision": "QUARANTINED",
+    "events": 2,
+    "path_counts": {
+      "parent_missing_quarantine": 1,
+      "parent_present_link_identity_quarantine": 1
+    }
+  },
+  "population": {
+    "anchored_events": 2,
+    "quarantined_events": 2
+  },
+  "status": "read_only_v23_split_echo_paths",
+  "zero_perturbation_all": true
+}

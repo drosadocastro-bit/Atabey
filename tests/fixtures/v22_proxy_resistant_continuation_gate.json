@@ -1,0 +1,89 @@
+﻿{
+  "name": "v22_proxy_resistant_continuation_gate_v1",
+  "status": "preregistered_results_not_opened",
+  "source_head_contract": "tests/fixtures/v22_continuation_head_preregistration.json",
+  "source_head_contract_sha256": "b2651797b1621594250367bfbbb29e5b2f56fc6dce9024aaefd29a8c36073f5e",
+  "source_head_summary": "v22_continuation_head_oof_summary.json",
+  "source_head_summary_sha256": "18370ac29790bde7da002a148d0df08c2c04e86f09897e1b6bc230d75b5cca97",
+  "source_proxy_audit": "V22_CONTINUATION_TEACHER_PROXY_AUDIT.md",
+  "source_proxy_audit_sha256": "afd943ef4a99be5eeaff6598a99a8243214252a6235e4db61189e1c9f9e149f8",
+  "direct_teacher_features_removed": [
+    "prediction_error_um",
+    "forward_competitor_margin_um",
+    "reverse_competitor_margin_um",
+    "forward_rank_local_14um",
+    "reverse_rank_local_14um"
+  ],
+  "motion_reconstruction_features_removed": [
+    "anchor_parent_distance_um",
+    "parent_child_distance_um",
+    "step_distance_ratio",
+    "radial_speed_change_um_per_frame",
+    "turn_angle_deg"
+  ],
+  "density_ownership_features": [
+    "parent_density_10um",
+    "child_density_10um",
+    "local_target_count_14um",
+    "local_competing_source_count_14um"
+  ],
+  "models": {
+    "density_only": {
+      "features": "density_ownership_features",
+      "type": "l2_regularized_pairwise_logistic_ranker",
+      "role": "independent_signal_diagnostic"
+    },
+    "nearest_distance_baseline": {
+      "score": "negative_parent_child_distance_um",
+      "fitted": false,
+      "strict_ties_fail": true
+    },
+    "distance_plus_density": {
+      "features": [
+        "parent_child_distance_um",
+        "parent_density_10um",
+        "child_density_10um",
+        "local_target_count_14um",
+        "local_competing_source_count_14um"
+      ],
+      "type": "l2_regularized_pairwise_logistic_ranker",
+      "role": "incremental_signal_test"
+    }
+  },
+  "validation": {
+    "folds": [1, 2, 3],
+    "sample_blocked": true,
+    "regularization_grid_c": [0.01, 0.1, 1.0, 10.0],
+    "inner_selection": "swap_two_outer_training_folds",
+    "weighting": ["sample", "parent_frame", "reference", "pair"],
+    "decision_routes": ["cfar_sidelobe/bipartite", "components/greedy"],
+    "local_maxima_decision_eligible": false,
+    "tie_tolerance": 1e-12
+  },
+  "decision": {
+    "distance_plus_density_must_pass_existing_fold_and_route_hard_gates": true,
+    "distance_plus_density_must_have_no_existing_generalization_flags": true,
+    "pooled_top1_delta_over_nearest_min": 0.005,
+    "pooled_pairwise_delta_over_nearest_min": 0.0025,
+    "minimum_fold_top1_delta": -0.0025,
+    "minimum_route_top1_delta": -0.0025,
+    "folds_with_positive_top1_delta_min": 2,
+    "routes_with_nonnegative_top1_delta_min": 2,
+    "density_only_pairwise_accuracy_min": 0.6,
+    "density_only_top1_advantage_over_random_min": 0.05,
+    "states": {
+      "GO_INDEPENDENT_INCREMENTAL_DENSITY_SIGNAL": "all_incremental_and_generalization_gates_pass",
+      "HOLD_WEAK_OR_UNSTABLE_INCREMENTAL_SIGNAL": "positive_pooled_delta_but_any_practical_or_stability_gate_fails",
+      "NO_GO_INDEPENDENT_DENSITY_SIGNAL": "nonpositive_pooled_delta_or_existing_hard_generalization_gate_fails"
+    }
+  },
+  "interpretation": {
+    "weak_reference_prediction_is_biological_validation": false,
+    "go_authorizes": "development_only_joint_semantic_assignment_shadow",
+    "go_does_not_authorize": ["production_graph_mutation", "locked_validation", "full_199_evaluation"]
+  },
+  "model_fitting_enabled": false,
+  "assignment_enabled": false,
+  "graph_mutation_enabled": false,
+  "results_opened": false
+}

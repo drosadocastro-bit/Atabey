@@ -1,0 +1,30 @@
+{
+  "contract": "v23_parent_isolation_independent_v1",
+  "selection": "first GT division per sample; lexicographically first 10 eligible-source samples per family; discovery samples excluded",
+  "excluded_discovery_samples": [
+    "44b6_aaf8b0ea",
+    "6bba_fc5f39dc"
+  ],
+  "cases": [
+    {"sample_id":"44b6_267148e4","family":"44b6","t":3,"gt_parent_id":16000000001,"gt_child_ids":[17000000001,17000000002]},
+    {"sample_id":"44b6_2a2eff9f","family":"44b6","t":11,"gt_parent_id":160000000048,"gt_child_ids":[161000000049,161000000048]},
+    {"sample_id":"44b6_706092f0","family":"44b6","t":49,"gt_parent_id":446000000015,"gt_child_ids":[447000000015,447000000016]},
+    {"sample_id":"44b6_74d0c52e","family":"44b6","t":58,"gt_parent_id":296000000021,"gt_child_ids":[297000000022,297000000021]},
+    {"sample_id":"44b6_7a302da0","family":"44b6","t":90,"gt_parent_id":263000000019,"gt_child_ids":[264000000020,264000000019]},
+    {"sample_id":"44b6_9be80b04","family":"44b6","t":77,"gt_parent_id":476000000008,"gt_child_ids":[477000000009,477000000008]},
+    {"sample_id":"44b6_c50204e0","family":"44b6","t":28,"gt_parent_id":171000000043,"gt_child_ids":[172000000043,172000000044]},
+    {"sample_id":"44b6_d2f34f90","family":"44b6","t":51,"gt_parent_id":275000000002,"gt_child_ids":[276000000002,276000000003]},
+    {"sample_id":"44b6_d5e7d891","family":"44b6","t":12,"gt_parent_id":173000000010,"gt_child_ids":[174000000010,174000000011]},
+    {"sample_id":"44b6_eb2880fc","family":"44b6","t":72,"gt_parent_id":160000000048,"gt_child_ids":[161000000049,161000000048]},
+    {"sample_id":"6bba_05db0fb1","family":"6bba","t":24,"gt_parent_id":25000381,"gt_child_ids":[26000400,26000403]},
+    {"sample_id":"6bba_07e24132","family":"6bba","t":35,"gt_parent_id":36000309,"gt_child_ids":[37000317,37000318]},
+    {"sample_id":"6bba_0e7c0d07","family":"6bba","t":57,"gt_parent_id":58000343,"gt_child_ids":[59000348,59000349]},
+    {"sample_id":"6bba_207c6aaf","family":"6bba","t":41,"gt_parent_id":42000280,"gt_child_ids":[43000304,43000305]},
+    {"sample_id":"6bba_32db13fc","family":"6bba","t":5,"gt_parent_id":6000204,"gt_child_ids":[7000244,7000281]},
+    {"sample_id":"6bba_3abfe10a","family":"6bba","t":81,"gt_parent_id":82001296,"gt_child_ids":[83001334,83001350]},
+    {"sample_id":"6bba_3db54e20","family":"6bba","t":82,"gt_parent_id":83000724,"gt_child_ids":[84000737,84000738]},
+    {"sample_id":"6bba_474be664","family":"6bba","t":63,"gt_parent_id":64000351,"gt_child_ids":[65000355,65000356]},
+    {"sample_id":"6bba_4ffd3da3","family":"6bba","t":45,"gt_parent_id":46000256,"gt_child_ids":[47000265,47000266]},
+    {"sample_id":"6bba_57b7cc1e","family":"6bba","t":12,"gt_parent_id":13000378,"gt_child_ids":[14000412,14000426]}
+  ]
+}

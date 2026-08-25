@@ -1,0 +1,247 @@
+[
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_706092f0-t49-p446000000015",
+    "family": "44b6",
+    "first_loss_stage": "raw_cfar_peak_detection",
+    "graph_mutated": false,
+    "sample_id": "44b6_706092f0",
+    "stages": {
+      "post_sidelobe": {
+        "daughter_1_nearest_um": 1.625,
+        "daughter_2_nearest_um": 5.202538442914189,
+        "daughter_frame_count": 581,
+        "official_geometry_available": false,
+        "parent_frame_count": 602,
+        "parent_nearest_um": 21.051630401898212
+      },
+      "raw_cfar": {
+        "daughter_1_nearest_um": 1.625,
+        "daughter_2_nearest_um": 5.202538442914189,
+        "daughter_frame_count": 646,
+        "official_geometry_available": false,
+        "parent_frame_count": 648,
+        "parent_nearest_um": 21.070241529821153
+      },
+      "watershed": {
+        "daughter_1_nearest_um": 1.625,
+        "daughter_2_nearest_um": 5.202538442914189,
+        "daughter_frame_count": 646,
+        "official_geometry_available": false,
+        "parent_frame_count": 648,
+        "parent_nearest_um": 21.051630401898212
+      }
+    },
+    "t": 49
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_74d0c52e-t58-p296000000021",
+    "family": "44b6",
+    "first_loss_stage": "raw_cfar_peak_detection",
+    "graph_mutated": false,
+    "sample_id": "44b6_74d0c52e",
+    "stages": {
+      "post_sidelobe": {
+        "daughter_1_nearest_um": 8.04398082055187,
+        "daughter_2_nearest_um": 6.550584420492571,
+        "daughter_frame_count": 254,
+        "official_geometry_available": false,
+        "parent_frame_count": 268,
+        "parent_nearest_um": 6.039340428598143
+      },
+      "raw_cfar": {
+        "daughter_1_nearest_um": 7.66510966979599,
+        "daughter_2_nearest_um": 6.550584420492571,
+        "daughter_frame_count": 284,
+        "official_geometry_available": false,
+        "parent_frame_count": 287,
+        "parent_nearest_um": 6.039340428598143
+      },
+      "watershed": {
+        "daughter_1_nearest_um": 8.04398082055187,
+        "daughter_2_nearest_um": 6.550584420492571,
+        "daughter_frame_count": 284,
+        "official_geometry_available": false,
+        "parent_frame_count": 287,
+        "parent_nearest_um": 6.039340428598143
+      }
+    },
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-44b6_aaf8b0ea-t61-p390000000000",
+    "family": "44b6",
+    "first_loss_stage": "raw_cfar_peak_detection",
+    "graph_mutated": false,
+    "sample_id": "44b6_aaf8b0ea",
+    "stages": {
+      "post_sidelobe": {
+        "daughter_1_nearest_um": 3.300390601883359,
+        "daughter_2_nearest_um": 1.625,
+        "daughter_frame_count": 418,
+        "official_geometry_available": false,
+        "parent_frame_count": 397,
+        "parent_nearest_um": 1.6750116604071745
+      },
+      "raw_cfar": {
+        "daughter_1_nearest_um": 3.300390601883359,
+        "daughter_2_nearest_um": 1.625,
+        "daughter_frame_count": 475,
+        "official_geometry_available": false,
+        "parent_frame_count": 458,
+        "parent_nearest_um": 1.6750116604071745
+      },
+      "watershed": {
+        "daughter_1_nearest_um": 3.300390601883359,
+        "daughter_2_nearest_um": 1.625,
+        "daughter_frame_count": 475,
+        "official_geometry_available": false,
+        "parent_frame_count": 458,
+        "parent_nearest_um": 1.6750116604071745
+      }
+    },
+    "t": 61
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_3abfe10a-t81-p82001296",
+    "family": "6bba",
+    "first_loss_stage": "raw_cfar_peak_detection",
+    "graph_mutated": false,
+    "sample_id": "6bba_3abfe10a",
+    "stages": {
+      "post_sidelobe": {
+        "daughter_1_nearest_um": 2.4355901745522996,
+        "daughter_2_nearest_um": 1.4206429403193401,
+        "daughter_frame_count": 591,
+        "official_geometry_available": false,
+        "parent_frame_count": 585,
+        "parent_nearest_um": 7.596224818503468
+      },
+      "raw_cfar": {
+        "daughter_1_nearest_um": 2.632800908728193,
+        "daughter_2_nearest_um": 3.494694639736067,
+        "daughter_frame_count": 627,
+        "official_geometry_available": false,
+        "parent_frame_count": 611,
+        "parent_nearest_um": 8.225935547097363
+      },
+      "watershed": {
+        "daughter_1_nearest_um": 2.4355901745522996,
+        "daughter_2_nearest_um": 1.4206429403193401,
+        "daughter_frame_count": 627,
+        "official_geometry_available": false,
+        "parent_frame_count": 611,
+        "parent_nearest_um": 7.596224818503468
+      }
+    },
+    "t": 81
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t23-p24000720",
+    "family": "6bba",
+    "first_loss_stage": "raw_cfar_peak_detection",
+    "graph_mutated": false,
+    "sample_id": "6bba_57b7cc1e",
+    "stages": {
+      "post_sidelobe": {
+        "daughter_1_nearest_um": 11.222571980605567,
+        "daughter_2_nearest_um": 5.092979048468296,
+        "daughter_frame_count": 868,
+        "official_geometry_available": false,
+        "parent_frame_count": 868,
+        "parent_nearest_um": 7.962670804839413
+      },
+      "raw_cfar": {
+        "daughter_1_nearest_um": 10.663578858080433,
+        "daughter_2_nearest_um": 4.908737426772795,
+        "daughter_frame_count": 900,
+        "official_geometry_available": false,
+        "parent_frame_count": 900,
+        "parent_nearest_um": 8.295859754268994
+      },
+      "watershed": {
+        "daughter_1_nearest_um": 11.222571980605567,
+        "daughter_2_nearest_um": 5.092979048468296,
+        "daughter_frame_count": 900,
+        "official_geometry_available": false,
+        "parent_frame_count": 900,
+        "parent_nearest_um": 7.962670804839413
+      }
+    },
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_57b7cc1e-t77-p78002270",
+    "family": "6bba",
+    "first_loss_stage": "raw_cfar_peak_detection",
+    "graph_mutated": false,
+    "sample_id": "6bba_57b7cc1e",
+    "stages": {
+      "post_sidelobe": {
+        "daughter_1_nearest_um": 10.96875,
+        "daughter_2_nearest_um": 3.917733121653388,
+        "daughter_frame_count": 854,
+        "official_geometry_available": false,
+        "parent_frame_count": 853,
+        "parent_nearest_um": 13.559259405476393
+      },
+      "raw_cfar": {
+        "daughter_1_nearest_um": 10.96875,
+        "daughter_2_nearest_um": 3.917733121653388,
+        "daughter_frame_count": 900,
+        "official_geometry_available": false,
+        "parent_frame_count": 900,
+        "parent_nearest_um": 13.559259405476393
+      },
+      "watershed": {
+        "daughter_1_nearest_um": 10.96875,
+        "daughter_2_nearest_um": 3.917733121653388,
+        "daughter_frame_count": 900,
+        "official_geometry_available": false,
+        "parent_frame_count": 900,
+        "parent_nearest_um": 13.559259405476393
+      }
+    },
+    "t": 77
+  },
+  {
+    "candidate_set_changed": false,
+    "case_id": "DEV-6bba_fc5f39dc-t24-p25000064",
+    "family": "6bba",
+    "first_loss_stage": "raw_cfar_peak_detection",
+    "graph_mutated": false,
+    "sample_id": "6bba_fc5f39dc",
+    "stages": {
+      "post_sidelobe": {
+        "daughter_1_nearest_um": 8.154412575860645,
+        "daughter_2_nearest_um": 0.0,
+        "daughter_frame_count": 124,
+        "official_geometry_available": false,
+        "parent_frame_count": 110,
+        "parent_nearest_um": 2.7252078475778685
+      },
+      "raw_cfar": {
+        "daughter_1_nearest_um": 8.365199489551937,
+        "daughter_2_nearest_um": 0.0,
+        "daughter_frame_count": 131,
+        "official_geometry_available": false,
+        "parent_frame_count": 119,
+        "parent_nearest_um": 2.7252078475778685
+      },
+      "watershed": {
+        "daughter_1_nearest_um": 8.154412575860645,
+        "daughter_2_nearest_um": 0.0,
+        "daughter_frame_count": 131,
+        "official_geometry_available": false,
+        "parent_frame_count": 119,
+        "parent_nearest_um": 2.7252078475778685
+      }
+    },
+    "t": 24
+  }
+]

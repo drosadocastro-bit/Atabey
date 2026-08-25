@@ -1,0 +1,654 @@
+[
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf3",
+    "child_2_id": "44b6_74d0c52e:t59:cf13",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf3",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf1"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 8.04398082055187,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 6.039340428598143,
+    "parent_id": "44b6_74d0c52e:t58:cf24",
+    "rank_by_geometric_residual": 1,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 20.633905669642584,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf3",
+    "child_2_id": "44b6_74d0c52e:t59:cf13",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf3",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf1"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 8.04398082055187,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 7.632744530147724,
+    "parent_id": "44b6_74d0c52e:t58:cf20",
+    "rank_by_geometric_residual": 2,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 22.227309771192164,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf12",
+    "child_2_id": "44b6_74d0c52e:t59:cf13",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf12",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf12"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.435497640323849,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 11.633229613912038,
+    "parent_id": "44b6_74d0c52e:t58:cf12",
+    "rank_by_geometric_residual": 3,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 36.42433864390414,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf3",
+    "child_2_id": "44b6_74d0c52e:t59:cf26",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf3",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf1"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf26",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 14.178066797874807,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 6.039340428598143,
+    "parent_id": "44b6_74d0c52e:t58:cf24",
+    "rank_by_geometric_residual": 4,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 28.261388047024823,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf13",
+    "child_2_id": "44b6_74d0c52e:t59:cf26",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf26",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 14.178066797874807,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 6.039340428598143,
+    "parent_id": "44b6_74d0c52e:t58:cf24",
+    "rank_by_geometric_residual": 5,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 32.6529048667968,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf13",
+    "child_2_id": "44b6_74d0c52e:t59:cf26",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf26",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 14.178066797874807,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": false,
+    "parent_distance_um": 8.482749038489821,
+    "parent_id": "44b6_74d0c52e:t58:cf27",
+    "rank_by_geometric_residual": 6,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 35.09631347668848,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf13",
+    "child_2_id": "44b6_74d0c52e:t59:cf26",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf26",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 14.178066797874807,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 12.75650875533741,
+    "parent_id": "44b6_74d0c52e:t58:cf28",
+    "rank_by_geometric_residual": 7,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 39.37007319353607,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf13",
+    "child_2_id": "44b6_74d0c52e:t59:cf19",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf19",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 16.0095491523809,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 12.75650875533741,
+    "parent_id": "44b6_74d0c52e:t58:cf28",
+    "rank_by_geometric_residual": 8,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 35.316642328210875,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf19",
+    "child_2_id": "44b6_74d0c52e:t59:cf26",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf19",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf26",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 16.0095491523809,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": false,
+    "parent_distance_um": 12.75650875533741,
+    "parent_id": "44b6_74d0c52e:t58:cf28",
+    "rank_by_geometric_residual": 9,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 42.94412470559311,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_74d0c52e:t59:cf13",
+    "child_2_id": "44b6_74d0c52e:t59:cf37",
+    "child_claims": [
+      {
+        "child_id": "44b6_74d0c52e:t59:cf13",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_74d0c52e:t58:cf27"
+        ]
+      },
+      {
+        "child_id": "44b6_74d0c52e:t59:cf37",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 19.68950882608553,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 11.633229613912038,
+    "parent_id": "44b6_74d0c52e:t58:cf12",
+    "rank_by_geometric_residual": 10,
+    "sample_id": "44b6_74d0c52e",
+    "sum_role_distance_um": 43.75823608032141,
+    "t": 58
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_aaf8b0ea:t62:cf33",
+    "child_2_id": "44b6_aaf8b0ea:t62:cf19",
+    "child_claims": [
+      {
+        "child_id": "44b6_aaf8b0ea:t62:cf33",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "44b6_aaf8b0ea:t61:cf47"
+        ]
+      },
+      {
+        "child_id": "44b6_aaf8b0ea:t62:cf19",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "44b6_aaf8b0ea:t61:cf4"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 13.740621801796307,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 1.6750116604071745,
+    "parent_id": "44b6_aaf8b0ea:t61:cf47",
+    "rank_by_geometric_residual": 1,
+    "sample_id": "44b6_aaf8b0ea",
+    "sum_role_distance_um": 18.71602406408684,
+    "t": 61
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "44b6_aaf8b0ea:t62:cf72",
+    "child_2_id": "44b6_aaf8b0ea:t62:cf19",
+    "child_claims": [
+      {
+        "child_id": "44b6_aaf8b0ea:t62:cf72",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      },
+      {
+        "child_id": "44b6_aaf8b0ea:t62:cf19",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "44b6_aaf8b0ea:t61:cf4"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 19.052546975877764,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": false,
+    "parent_distance_um": 13.842339092888167,
+    "parent_id": "44b6_aaf8b0ea:t61:cf4",
+    "rank_by_geometric_residual": 2,
+    "sample_id": "44b6_aaf8b0ea",
+    "sum_role_distance_um": 49.31663470053472,
+    "t": 61
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf167",
+    "child_2_id": "6bba_57b7cc1e:t24:cf400",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf167",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf251"
+        ]
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf400",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.428379062770157,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 10.375913284304524,
+    "parent_id": "6bba_57b7cc1e:t23:cf18",
+    "rank_by_geometric_residual": 1,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 33.31261758364268,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf159",
+    "child_2_id": "6bba_57b7cc1e:t24:cf400",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf159",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf400",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.680049357747741,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": false,
+    "parent_distance_um": 10.375913284304524,
+    "parent_id": "6bba_57b7cc1e:t23:cf18",
+    "rank_by_geometric_residual": 2,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 35.48434170482242,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf122",
+    "child_2_id": "6bba_57b7cc1e:t24:cf174",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf122",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf174",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.73485384487335,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 11.52324699853073,
+    "parent_id": "6bba_57b7cc1e:t23:cf251",
+    "rank_by_geometric_residual": 3,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 32.889157376998085,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf167",
+    "child_2_id": "6bba_57b7cc1e:t24:cf174",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf167",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf251"
+        ]
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf174",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.73485384487335,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 10.375913284304524,
+    "parent_id": "6bba_57b7cc1e:t23:cf18",
+    "rank_by_geometric_residual": 4,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 33.61909236574587,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf167",
+    "child_2_id": "6bba_57b7cc1e:t24:cf174",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf167",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf251"
+        ]
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf174",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.73485384487335,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 11.52324699853073,
+    "parent_id": "6bba_57b7cc1e:t23:cf251",
+    "rank_by_geometric_residual": 5,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 34.76642607997208,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf159",
+    "child_2_id": "6bba_57b7cc1e:t24:cf174",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf159",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf174",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.73485384487335,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": false,
+    "parent_distance_um": 10.375913284304524,
+    "parent_id": "6bba_57b7cc1e:t23:cf18",
+    "rank_by_geometric_residual": 6,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 35.790816486925614,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf159",
+    "child_2_id": "6bba_57b7cc1e:t24:cf174",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf159",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf174",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf18"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 12.73485384487335,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 11.52324699853073,
+    "parent_id": "6bba_57b7cc1e:t23:cf251",
+    "rank_by_geometric_residual": 7,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 36.93815020115182,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf162",
+    "child_2_id": "6bba_57b7cc1e:t24:cf45",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf162",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf45",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf180"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 13.55646633559838,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 7.962670804839413,
+    "parent_id": "6bba_57b7cc1e:t23:cf46",
+    "rank_by_geometric_residual": 8,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 26.612116188906086,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf128",
+    "child_2_id": "6bba_57b7cc1e:t24:cf45",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf128",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf45",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf180"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 13.55646633559838,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 7.962670804839413,
+    "parent_id": "6bba_57b7cc1e:t23:cf46",
+    "rank_by_geometric_residual": 9,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 27.047319181561587,
+    "t": 23
+  },
+  {
+    "candidate_set_changed": false,
+    "child_1_id": "6bba_57b7cc1e:t24:cf162",
+    "child_2_id": "6bba_57b7cc1e:t24:cf45",
+    "child_claims": [
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf162",
+        "claimed_by_other_parent": false,
+        "incoming_parent_ids": []
+      },
+      {
+        "child_id": "6bba_57b7cc1e:t24:cf45",
+        "claimed_by_other_parent": true,
+        "incoming_parent_ids": [
+          "6bba_57b7cc1e:t23:cf180"
+        ]
+      }
+    ],
+    "graph_mutated": false,
+    "max_daughter_distance_um": 13.55646633559838,
+    "official_7um_geometric_match": false,
+    "ownership_conflict": true,
+    "parent_distance_um": 11.231239998116623,
+    "parent_id": "6bba_57b7cc1e:t23:cf622",
+    "rank_by_geometric_residual": 10,
+    "sample_id": "6bba_57b7cc1e",
+    "sum_role_distance_um": 29.880685382183295,
+    "t": 23
+  }
+]
