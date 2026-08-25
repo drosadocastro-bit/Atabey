@@ -37,9 +37,11 @@ def test_v24_sources_are_pinned_before_runner_implementation():
         ("runner", "runner_sha256"),
         ("v24_2_shadow_module", "v24_2_shadow_module_sha256"),
         ("topology_telemetry_module", "topology_telemetry_module_sha256"),
+        ("v24_3_shadow_module", "v24_3_shadow_module_sha256"),
     ):
         assert _sha256_normalized_text(ROOT / sources[path_key]) == sources[hash_key]
     assert sources["predictor_runtime_sha256_required"] is True
+    assert sources["v24_3_shadow_module_sha256"] != "TO_BE_PINNED"
 
 
 def test_v24_cohort_is_exactly_the_checkpoint_held_out_set():
@@ -74,6 +76,7 @@ def test_v24_arms_separate_detector_and_linker_questions():
         "e016_atabey_relink",
         "e016_native_graph",
         "e016_atabey_relink_v24_2_shadow",
+        "e016_atabey_relink_v24_3_short_fragment_shadow",
     }
     assert arms["e016_atabey_relink"]["linker"] == "motion_mutual_9um"
     assert arms["e016_atabey_relink"]["division_injection"] == "none"
@@ -81,6 +84,10 @@ def test_v24_arms_separate_detector_and_linker_questions():
     assert (
         arms["e016_atabey_relink_v24_2_shadow"]["division_injection"]
         == "interior_isolated_detection_prune_on_6bba_components"
+    )
+    assert (
+        arms["e016_atabey_relink_v24_3_short_fragment_shadow"]["division_injection"]
+        == "interior_nondivision_components_size_2_prune_after_v24_2"
     )
     assert contract["boundaries"]["hybrid_enabled"] is False
 
