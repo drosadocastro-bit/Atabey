@@ -20,6 +20,10 @@ V24.2 shadow arm using the exact inflation definition from the V24.3 audit:
 - The highest-ratio samples are connected-heavy `6bba` samples. Their pattern
   is not separable by the current aggregate histograms into weak versus
   legitimate nodes.
+- The richer bounded records add component context, but all sampled records
+  have zero temporal gaps; the highest-ratio samples are dominated by
+  multi-frame, large components rather than isolated or obviously broken
+  components. These are descriptive sample-level facts, not node labels.
 
 ## Decision
 
@@ -31,10 +35,11 @@ inflation.
 The next measurement is now implemented in the runner: a deterministic bounded
 per-node sample, exact per-stratum counts, and a side-by-side relink-versus-shadow
 comparison. Bounded node records include component size and span, temporal gap
-counts, frame boundary position, and incoming/outgoing relation counts. It must
-be regenerated on Kaggle before interpretation; the prior ZIP does not contain
-these new fields. Any suppression rule must be shadow-only, preregistered, and
-rescored on the complete 27-sample cohort.
+counts, frame boundary position, and incoming/outgoing relation counts. A
+component-level audit summarizes these bounded records, but cannot infer the
+unobserved population. It must be regenerated on Kaggle before interpretation;
+the prior ZIP does not contain these new fields. Any suppression rule must be
+shadow-only, preregistered, and rescored on the complete 27-sample cohort.
 
 The machine-readable report is `v24_4_topology_telemetry_27_report.json`.
 Full-199 remains unauthorized.
