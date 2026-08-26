@@ -1,6 +1,11 @@
 # V24.3 Short-Fragment Shadow Preregistration
 
-Status: **implemented; full-27 evaluation pending**.
+Status: **full-27 gates passed; frozen full-199 score validation authorized**.
+
+The authoritative result and provenance are recorded in
+`V24_3_SHORT_FRAGMENT_SHADOW_FULL_27_AUDIT.md`. This authorization remains
+limited to score validation; production mutation and submission are not
+authorized.
 
 This is a single shadow-only post-link rule applied after the V24.2
 interior-isolated detection shadow. It does not alter detection thresholds,
@@ -26,7 +31,8 @@ retained. The filtered graph preserves every edge whose endpoints remain.
 - Comparison arms: V19 reference, E016 relink, E016 native, and V24.2 shadow.
 - Primary endpoint: official adjusted edge Jaccard with the existing pooled,
   family, fold, regression, determinism, and node-inflation gates.
-- Full-199 remains unauthorized unless the complete gate set passes.
+- Full-199 score validation is authorized only after the complete gate set
+    passes; the authoritative full-27 artifact satisfied that condition.
 
 The minimum node reductions calculated from the prior V24.2 artifact are
 feasibility context only. They do not authorize selecting components to hit a
