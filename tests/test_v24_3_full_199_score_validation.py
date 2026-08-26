@@ -37,9 +37,9 @@ def test_full_199_contract_pins_authorization_sources_and_boundaries():
         "shard_count": 2,
         "partition": "sorted_sample_ids_stride_by_shard_index",
     }
-    assert _sha256(ROOT / contract["authorization"]["report_path"]) == contract[
-        "authorization"
-    ]["report_sha256"]
+    assert _normalized_text_sha256(
+        ROOT / contract["authorization"]["report_path"]
+    ) == contract["authorization"]["report_normalized_sha256"]
     for source in contract["sources"]:
         assert _normalized_text_sha256(ROOT / source["path"]) == source["sha256"]
     assert contract["boundaries"]["independent_generalization_claim"] is False
@@ -72,10 +72,12 @@ def test_validate_full_27_authorization_requires_exact_report(tmp_path):
         "cohort": {"complete": True, "expected_samples": 27, "observed_samples": 27},
     }
     report_path = tmp_path / "authorization.json"
-    report_path.write_text(json.dumps(report), encoding="utf-8")
+    report_path.write_bytes(
+        (json.dumps(report, indent=2) + "\n").replace("\n", "\r\n").encode("utf-8")
+    )
     contract = {
         "authorization": {
-            "report_sha256": _sha256(report_path),
+            "report_normalized_sha256": _normalized_text_sha256(report_path),
             "evaluation_commit": "frozen-commit",
             "evaluated_arm": "e016_atabey_relink_v24_3_short_fragment_shadow",
         }
@@ -85,7 +87,9 @@ def test_validate_full_27_authorization_requires_exact_report(tmp_path):
 
     report["authorization"]["submission"] = True
     report_path.write_text(json.dumps(report), encoding="utf-8")
-    contract["authorization"]["report_sha256"] = _sha256(report_path)
+    contract["authorization"]["report_normalized_sha256"] = _normalized_text_sha256(
+        report_path
+    )
     with pytest.raises(RuntimeError, match="boundary"):
         validate_full_27_authorization(report_path, contract)
 

@@ -62,11 +62,11 @@ def validate_full_27_authorization(
     report_path: Path, contract: dict[str, Any]
 ) -> dict[str, Any]:
     expected = contract["authorization"]
-    actual_hash = _sha256(report_path)
-    if actual_hash != expected["report_sha256"]:
+    actual_hash = _normalized_text_sha256(report_path)
+    if actual_hash != expected["report_normalized_sha256"]:
         raise RuntimeError(
             f"authorization report SHA-256 mismatch: {actual_hash} != "
-            f"{expected['report_sha256']}"
+            f"{expected['report_normalized_sha256']}"
         )
     report = json.loads(report_path.read_text(encoding="utf-8"))
     boundary_ok = (
@@ -158,7 +158,9 @@ def main() -> None:
     validate_frozen_sources(contract)
     authorization = validate_full_27_authorization(args.authorization_report, contract)
     base_contract_path = ROOT / contract["frozen_v24_contract"]["path"]
-    if _sha256(base_contract_path) != contract["frozen_v24_contract"]["sha256"]:
+    if _normalized_text_sha256(base_contract_path) != contract[
+        "frozen_v24_contract"
+    ]["normalized_sha256"]:
         raise RuntimeError("frozen V24 contract SHA-256 mismatch")
     base_contract = json.loads(base_contract_path.read_text(encoding="utf-8"))
 
@@ -186,7 +188,9 @@ def main() -> None:
             "predictor_path": str(predictor_path),
             "predictor_sha256": _sha256(predictor_path),
             "support_pack": base_contract["sources"]["support_pack"],
-            "authorization_report_sha256": _sha256(args.authorization_report),
+            "authorization_report_normalized_sha256": _normalized_text_sha256(
+                args.authorization_report
+            ),
             "authorization_evaluation_commit": authorization["evaluation_commit"],
             "population_sample_ids_sha256": hashlib.sha256(
                 "\n".join(all_sample_ids).encode("utf-8")
