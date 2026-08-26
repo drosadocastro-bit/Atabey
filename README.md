@@ -139,6 +139,8 @@ the relevant audit before promoting one.
   frozen size-two interior non-division component shadow.
 - [V24.3 Short-Fragment Full-27 Audit](V24_3_SHORT_FRAGMENT_SHADOW_FULL_27_AUDIT.md):
   all frozen gates passed; full-199 score validation authorized, with submission still blocked.
+- [V24.3 Full-199 Score Validation Preregistration](V24_3_FULL_199_SCORE_VALIDATION_PREREGISTRATION.md):
+  deterministic two-shard population validation with separate training-172 and held-out-27 interpretation.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
