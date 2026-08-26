@@ -2,6 +2,11 @@
 
 Status: **authorized; implementation ready for two frozen shards**.
 
+Notebook: `notebooks/V24_3_full_199_score_validation_kaggle.ipynb`.
+Run it first with `SHARD_INDEX = 0`, download the shard-0 archive, then run
+the same notebook with only `SHARD_INDEX = 1` changed. Preserve both archives
+for strict merge validation.
+
 The authoritative full-27 artifact passed every preregistered gate and authorized
 one bounded next step: full-199 score validation of the frozen V24.3 arm. This
 stage does not authorize submission or production graph mutation.
