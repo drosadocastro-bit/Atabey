@@ -7,11 +7,12 @@ from typing import Any
 from atabey.types import LineageGraph
 
 DEFAULT_NODE_RECORD_LIMIT = 256
+DEFAULT_COMPONENT_RECORD_LIMIT = 128
 
 
 def _node_facts(
     graph: LineageGraph,
-) -> list[dict[str, Any]]:
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     incoming: dict[str, list[str]] = defaultdict(list)
     outgoing: dict[str, list[str]] = defaultdict(list)
     incoming_relations: dict[str, Counter[str]] = defaultdict(Counter)
@@ -30,7 +31,8 @@ def _node_facts(
             continuation_support[edge.target_id] += 1
 
     node_frames = {detection.node_id: detection.t for detection in graph.detections}
-    component_stats: dict[str, tuple[int, int, int, int, str]] = {}
+    component_stats: dict[str, tuple[int, int, int, int, str, str]] = {}
+    component_records: list[dict[str, Any]] = []
     seen: set[str] = set()
     for detection in graph.detections:
         node_id = detection.node_id
@@ -53,16 +55,64 @@ def _node_facts(
         max_gap = max(gaps, default=0)
         gap_count = sum(gap > 1 for gap in gaps)
         boundary = "single_frame" if minimum == maximum else "multi_frame"
+        component_id = hashlib.sha256(
+            f"{graph.sample_id}|{'|'.join(sorted(visited))}".encode("utf-8")
+        ).hexdigest()[:16]
+        members = [
+            detection_member
+            for detection_member in graph.detections
+            if detection_member.node_id in visited
+        ]
+        component_records.append(
+            {
+                "component_id": component_id,
+                "component_size": len(visited),
+                "start_frame": minimum,
+                "end_frame": maximum,
+                "frame_span": maximum - minimum + 1,
+                "component_span": boundary,
+                "temporal_gap_count": gap_count,
+                "max_temporal_gap": max_gap,
+                "degree_histogram": dict(
+                    sorted(Counter(degree[member.node_id] for member in members).items())
+                ),
+                "continuation_support_histogram": dict(
+                    sorted(
+                        Counter(continuation_support[member.node_id] for member in members).items()
+                    )
+                ),
+                "incoming_relation_counts": dict(
+                    sorted(
+                        Counter(
+                            relation
+                            for member in members
+                            for relation, count in incoming_relations[member.node_id].items()
+                            for _ in range(count)
+                        ).items()
+                    )
+                ),
+                "outgoing_relation_counts": dict(
+                    sorted(
+                        Counter(
+                            relation
+                            for member in members
+                            for relation, count in outgoing_relations[member.node_id].items()
+                            for _ in range(count)
+                        ).items()
+                    )
+                ),
+            }
+        )
         for member in visited:
-            component_stats[member] = (len(visited), minimum, max_gap, gap_count, boundary)
+            component_stats[member] = (len(visited), minimum, max_gap, gap_count, boundary, component_id)
 
     facts: list[dict[str, Any]] = []
     for detection in graph.detections:
         node_id = detection.node_id
         node_degree = degree[node_id]
         support = continuation_support[node_id]
-        component_size, component_start, max_temporal_gap, temporal_gap_count, component_span = component_stats.get(
-            node_id, (1, detection.t, 0, 0, "single_frame")
+        component_size, component_start, max_temporal_gap, temporal_gap_count, component_span, component_id = component_stats.get(
+            node_id, (1, detection.t, 0, 0, "single_frame", "")
         )
         frame_boundary = (
             "first"
@@ -80,6 +130,7 @@ def _node_facts(
                 "continuation_support": support,
                 "connectivity": "connected" if node_degree else "isolated",
                 "component_size": component_size,
+                                "component_id": component_id,
                 "component_age": detection.t - component_start + 1,
                 "component_span": component_span,
                 "max_temporal_gap": max_temporal_gap,
@@ -89,15 +140,16 @@ def _node_facts(
                 "outgoing_relations": dict(sorted(outgoing_relations[node_id].items())),
             }
         )
-    return facts
+    return facts, component_records
 
 
 def summarize_node_topology(
     graph: LineageGraph,
     node_record_limit: int = DEFAULT_NODE_RECORD_LIMIT,
+    component_record_limit: int = DEFAULT_COMPONENT_RECORD_LIMIT,
 ) -> dict[str, Any]:
     """Return bounded node-topology distributions for an immutable graph."""
-    facts = _node_facts(graph)
+    facts, components = _node_facts(graph)
 
     by_frame: Counter[str] = Counter()
     track_age: Counter[str] = Counter()
@@ -138,6 +190,23 @@ def summarize_node_topology(
                 ).hexdigest(),
             )[: max(node_record_limit, 0)]
         ],
+        "component_count": len(components),
+        "component_size_histogram": dict(
+            sorted(Counter(component["component_size"] for component in components).items())
+        ),
+        "component_span_histogram": dict(
+            sorted(Counter(component["component_span"] for component in components).items())
+        ),
+        "bounded_component_record_limit": component_record_limit,
+        "bounded_component_records": [
+            component
+            for component in sorted(
+                components,
+                key=lambda item: hashlib.sha256(
+                    f"{graph.sample_id}|{item['component_id']}".encode("utf-8")
+                ).hexdigest(),
+            )[: max(component_record_limit, 0)]
+        ],
     }
 
 
@@ -148,6 +217,13 @@ def compare_node_topology(
     left_nodes = {record["node_id"]: record for record in left["bounded_node_records"]}
     right_nodes = {record["node_id"]: record for record in right["bounded_node_records"]}
     common = sorted(set(left_nodes) & set(right_nodes))
+    left_components = {
+        record["component_id"]: record for record in left["bounded_component_records"]
+    }
+    right_components = {
+        record["component_id"]: record for record in right["bounded_component_records"]
+    }
+    common_components = sorted(set(left_components) & set(right_components))
     strata = sorted(set(left["joint_histogram"]) | set(right["joint_histogram"]))
     return {
         "bounded_node_record_limit": min(
@@ -157,6 +233,21 @@ def compare_node_topology(
         "bounded_common_node_records": [
             {"node_id": node_id, "left": left_nodes[node_id], "right": right_nodes[node_id]}
             for node_id in common
+        ],
+        "component_count_left": left["component_count"],
+        "component_count_right": right["component_count"],
+        "bounded_component_record_limit": min(
+            left["bounded_component_record_limit"],
+            right["bounded_component_record_limit"],
+        ),
+        "bounded_common_component_count": len(common_components),
+        "bounded_common_component_records": [
+            {
+                "component_id": component_id,
+                "left": left_components[component_id],
+                "right": right_components[component_id],
+            }
+            for component_id in common_components
         ],
         "stratum_deltas_right_minus_left": {
             stratum: right["joint_histogram"].get(stratum, 0)

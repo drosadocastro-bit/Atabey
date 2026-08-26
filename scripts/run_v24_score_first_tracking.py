@@ -29,6 +29,7 @@ from atabey.tracking.unet_graph import (
     relink_predictor_detections,
 )
 from atabey.tracking.v24_2_shadow import prune_interior_isolated_detections
+from atabey.tracking.v24_3_shadow import prune_interior_short_fragments
 from atabey.tracking.topology_telemetry import (
     compare_node_topology,
     summarize_node_topology,
@@ -41,7 +42,8 @@ ARM_V19 = "v19_frozen_reference"
 ARM_RELINK = "e016_atabey_relink"
 ARM_NATIVE = "e016_native_graph"
 ARM_V24_2 = "e016_atabey_relink_v24_2_shadow"
-ARMS = (ARM_V19, ARM_RELINK, ARM_NATIVE, ARM_V24_2)
+ARM_V24_3 = "e016_atabey_relink_v24_3_short_fragment_shadow"
+ARMS = (ARM_V19, ARM_RELINK, ARM_NATIVE, ARM_V24_2, ARM_V24_3)
 
 
 def _sha256(path: Path) -> str:
@@ -212,10 +214,12 @@ def _evaluate_sample(
     native = native_graph_from_predictor_output(sample_id, coordinates, native_edges)
     native_runtime = time.perf_counter() - native_started
     shadow = relink
+    short_fragment_shadow = relink
     shadow_removed_nodes = 0
     shadow_edge_set_preserved = True
     if detector == "components" and sample_id.startswith("6bba_"):
         shadow = prune_interior_isolated_detections(relink)
+        short_fragment_shadow = prune_interior_short_fragments(shadow)
         shadow_removed_nodes = len(relink.detections) - len(shadow.detections)
         shadow_edge_set_preserved = {
             (edge.source_id, edge.target_id, edge.relation) for edge in relink.edges
@@ -228,12 +232,14 @@ def _evaluate_sample(
         ARM_RELINK: relink,
         ARM_NATIVE: native,
         ARM_V24_2: shadow,
+        ARM_V24_3: short_fragment_shadow,
     }
     runtimes = {
         ARM_V19: v19_runtime,
         ARM_RELINK: inference_runtime + relink_runtime,
         ARM_NATIVE: inference_runtime + native_runtime,
         ARM_V24_2: inference_runtime + relink_runtime,
+        ARM_V24_3: inference_runtime + relink_runtime,
     }
     topology_reports = {
         arm: summarize_node_topology(graph) for arm, graph in graphs.items()
@@ -251,7 +257,10 @@ def _evaluate_sample(
             "graph_signature_sha256": hashlib.sha256(
                 repr(graph_signature(graph)).encode("utf-8")
             ).hexdigest(),
-            "shadow_removed_nodes": shadow_removed_nodes if arm == ARM_V24_2 else 0,
+            "shadow_removed_nodes": shadow_removed_nodes if arm == ARM_V24_2 else (
+                len(shadow.detections) - len(short_fragment_shadow.detections)
+                if arm == ARM_V24_3 else 0
+            ),
             "shadow_edge_set_preserved": (
                 shadow_edge_set_preserved if arm == ARM_V24_2 else None
             ),
@@ -260,6 +269,9 @@ def _evaluate_sample(
 
     arm_rows[ARM_V24_2]["node_topology_comparison"] = compare_node_topology(
         topology_reports[ARM_RELINK], topology_reports[ARM_V24_2]
+    )
+    arm_rows[ARM_V24_3]["node_topology_comparison"] = compare_node_topology(
+        topology_reports[ARM_RELINK], topology_reports[ARM_V24_3]
     )
 
     return {
@@ -321,7 +333,7 @@ def _decision(
     reference = summaries[ARM_V19]
     outcomes: dict[str, Any] = {}
     passing: list[str] = []
-    for arm in (ARM_RELINK, ARM_NATIVE, ARM_V24_2):
+    for arm in (ARM_RELINK, ARM_NATIVE, ARM_V24_2, ARM_V24_3):
         challenger = summaries[arm]
         pooled_delta = _delta(
             challenger["overall"]["adjusted_edge_jaccard"],

@@ -43,6 +43,15 @@ def _sample_rows(archive: zipfile.ZipFile) -> list[dict[str, Any]]:
         telemetry = sample["arms"][ARM]["node_topology_telemetry"]
         csv_row = csv_rows[sample["sample_id"]]
         node_count = telemetry["node_count"]
+        bounded_records = telemetry.get("bounded_node_records", [])
+        component_sizes = [record["component_size"] for record in bounded_records]
+        multi_frame = sum(record["component_span"] == "multi_frame" for record in bounded_records)
+        temporal_gap_records = sum(
+            record["temporal_gap_count"] > 0 for record in bounded_records
+        )
+        terminal_records = sum(
+            record["frame_boundary"] != "interior" for record in bounded_records
+        )
         ratio = float(csv_row[f"{ARM}_predicted_nodes"]) / max(
             float(csv_row[f"{REFERENCE}_predicted_nodes"]), 1.0
         )
@@ -63,6 +72,16 @@ def _sample_rows(archive: zipfile.ZipFile) -> list[dict[str, Any]]:
                 / max(node_count, 1),
                 "age_one_fraction": telemetry["track_age_histogram"].get("1", 0)
                 / max(node_count, 1),
+                "bounded_record_count": len(bounded_records),
+                "bounded_multi_frame_fraction": multi_frame / max(len(bounded_records), 1),
+                "bounded_component_size_median": statistics.median(component_sizes)
+                if component_sizes
+                else 0,
+                "bounded_large_component_fraction": sum(size >= 10 for size in component_sizes)
+                / max(len(component_sizes), 1),
+                "bounded_temporal_gap_fraction": temporal_gap_records
+                / max(len(bounded_records), 1),
+                "bounded_terminal_fraction": terminal_records / max(len(bounded_records), 1),
             }
         )
     return rows
@@ -77,6 +96,11 @@ def _summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "degree_two_fraction",
         "continuation_support_zero_fraction",
         "age_one_fraction",
+        "bounded_multi_frame_fraction",
+        "bounded_component_size_median",
+        "bounded_large_component_fraction",
+        "bounded_temporal_gap_fraction",
+        "bounded_terminal_fraction",
     ):
         correlations[key] = _correlation(ratio, [row[key] for row in rows])
     return {

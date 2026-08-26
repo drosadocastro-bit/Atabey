@@ -19,11 +19,13 @@
     "unet_graph_module": "src/atabey/tracking/unet_graph.py",
     "unet_graph_module_sha256": "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7",
     "runner": "scripts/run_v24_score_first_tracking.py",
-    "runner_sha256": "f793fc152fddc5b4ab8ec7316f9522ee50ab181c6f0331fa67b02c5fcd11481a",
+    "runner_sha256": "557b564422e86be6f1952827eae2e2628b4d3d8c11c1d3a2896bcaeffbf63605",
     "v24_2_shadow_module": "src/atabey/tracking/v24_2_shadow.py",
     "v24_2_shadow_module_sha256": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8",
+    "v24_3_shadow_module": "src/atabey/tracking/v24_3_shadow.py",
+    "v24_3_shadow_module_sha256": "737aff38ad889e84630cd71b72e95062616a8726f23f0e9a767eb27bcb575eed",
     "topology_telemetry_module": "src/atabey/tracking/topology_telemetry.py",
-    "topology_telemetry_module_sha256": "39ffa2c485e330cb02dffa0b4e5e3b6ed7db0f17c980acb0212aa2ef19ebe4c7",
+    "topology_telemetry_module_sha256": "4f57a1c38fd9c0a31f376a9ab61ebd2f5e21b8088c67b1057467eb3182784a00",
     "support_pack": "pilkwang/biohub-tracking-support-pack-50ep-v1",
     "predictor_runtime_sha256_required": true
   },
@@ -100,6 +102,12 @@
       "detector": "e016_threshold_0.97_pool_5um",
       "linker": "motion_mutual_9um",
       "division_injection": "interior_isolated_detection_prune_on_6bba_components"
+    },
+    {
+      "name": "e016_atabey_relink_v24_3_short_fragment_shadow",
+      "detector": "e016_threshold_0.97_pool_5um",
+      "linker": "motion_mutual_9um",
+      "division_injection": "interior_nondivision_components_size_2_prune_after_v24_2"
     }
   ],
   "evaluation": {

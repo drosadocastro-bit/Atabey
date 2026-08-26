@@ -1,0 +1,60 @@
+{
+  "name": "v24_3_full_199_score_validation",
+  "status": "authorized_sharded_population_validation",
+  "authorization": {
+    "report_path": "v24_3_short_fragment_shadow_full_27_report.json",
+    "report_sha256": "13ecd6cedde8d1691b95c5f50075db97387f8e45f800c71ded60ccbbbca88e93",
+    "evaluation_commit": "905671f0ad1b7e2ab868e5a84a322c565d52f273",
+    "evaluated_arm": "e016_atabey_relink_v24_3_short_fragment_shadow"
+  },
+  "frozen_v24_contract": {
+    "path": "tests/fixtures/v24_score_first_tracking.json",
+    "sha256": "d7dbd5a0f4235b060dca7659b5dc14e2b1fdfb89e73d69a6e079d4332449fd88"
+  },
+  "population": {
+    "expected_samples": 199,
+    "checkpoint_training_samples": 172,
+    "held_out_samples": 27,
+    "shard_count": 2,
+    "partition": "sorted_sample_ids_stride_by_shard_index"
+  },
+  "sources": [
+    {
+      "path": "scripts/merge_v24_3_full_199_score_validation.py",
+      "sha256": "2448d822001fd650fa17d937b0e349703ca943f1e0acf8719dd578351a210462"
+    },
+    {
+      "path": "scripts/run_v24_3_full_199_score_validation.py",
+      "sha256": "58b1ae15f292c9a4f7dc45cfaba9094c75b709b394e825f388cc4bb6cec93742"
+    },
+    {
+      "path": "scripts/run_v24_score_first_tracking.py",
+      "sha256": "557b564422e86be6f1952827eae2e2628b4d3d8c11c1d3a2896bcaeffbf63605"
+    },
+    {
+      "path": "src/atabey/tracking/v24_2_shadow.py",
+      "sha256": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8"
+    },
+    {
+      "path": "src/atabey/tracking/v24_3_shadow.py",
+      "sha256": "737aff38ad889e84630cd71b72e95062616a8726f23f0e9a767eb27bcb575eed"
+    },
+    {
+      "path": "src/atabey/tracking/topology_telemetry.py",
+      "sha256": "4f57a1c38fd9c0a31f376a9ab61ebd2f5e21b8088c67b1057467eb3182784a00"
+    }
+  ],
+  "outputs": {
+    "shard_decision": "FULL_199_SCORE_VALIDATION_SHARD_COMPLETE",
+    "merged_decision": "FULL_199_SCORE_VALIDATION_COMPLETE"
+  },
+  "boundaries": {
+    "population_score_validation": true,
+    "independent_generalization_claim": false,
+    "threshold_tuning": false,
+    "model_retraining": false,
+    "hybrid_enabled": false,
+    "production_graph_mutation": false,
+    "submission_authorized": false
+  }
+}

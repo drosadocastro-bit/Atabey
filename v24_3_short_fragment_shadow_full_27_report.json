@@ -1,0 +1,56 @@
+{
+  "artifact": {
+    "filename": "v24_score_first_tracking_outputs (7).zip",
+    "sha256": "b180f98c6d80e714440e0dab3d5594abe2dd97fe4698abb1977bf4b883b727e9"
+  },
+  "authorization": {
+    "full_199_score_validation": true,
+    "production_graph_mutation": false,
+    "submission": false
+  },
+  "checkpoint_sha256": "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03",
+  "cohort": {
+    "complete": true,
+    "expected_samples": 27,
+    "extra_samples": [],
+    "missing_samples": [],
+    "observed_samples": 27
+  },
+  "decision": "GO_TO_FULL_199_SCORE_VALIDATION",
+  "determinism_verified": true,
+  "evaluated_arm": "e016_atabey_relink_v24_3_short_fragment_shadow",
+  "evaluation_commit": "905671f0ad1b7e2ab868e5a84a322c565d52f273",
+  "gates": {
+    "catastrophic_regressions": true,
+    "completed_samples": true,
+    "determinism": true,
+    "each_family": true,
+    "each_fold": true,
+    "improved_exceeds_regressed": true,
+    "median_node_ratio": true,
+    "p90_node_ratio": true,
+    "pooled_adjusted_edge_delta": true,
+    "pooled_total_score_delta": true
+  },
+  "metrics": {
+    "additional_nodes_removed_vs_v24_2": 9212,
+    "family_deltas": {
+      "44b6": 0.340127260892254,
+      "6bba": 0.2196859278253166
+    },
+    "flat_samples": 0,
+    "fold_deltas": {
+      "1": 0.24358714146072502,
+      "2": 0.2359125713500742,
+      "3": 0.19640479117902754
+    },
+    "improved_samples": 26,
+    "median_node_ratio": 1.221234939759036,
+    "p90_node_ratio": 1.4206420655985978,
+    "pooled_adjusted_edge_delta": 0.22651816563841465,
+    "pooled_total_score_delta": 0.22651816563841465,
+    "regressed_samples": 1
+  },
+  "no_training": true,
+  "support_pack": "pilkwang/biohub-tracking-support-pack-50ep-v1"
+}

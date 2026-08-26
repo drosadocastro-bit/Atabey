@@ -3,6 +3,7 @@ from atabey.tracking.topology_telemetry import (
     summarize_node_topology,
 )
 from atabey.types import Detection, LineageEdge, LineageGraph
+from atabey.tracking.v24_3_shadow import prune_interior_short_fragments
 
 
 def _detection(node_id: str, frame: int) -> Detection:
@@ -25,6 +26,8 @@ def test_topology_telemetry_reports_frame_age_degree_and_support():
     assert report["connectivity"] == {"connected": 3, "isolated": 1}
     assert report["joint_histogram"]["isolated|age=1|degree=0|support=0"] == 1
     assert len(report["bounded_node_records"]) == 4
+    assert report["component_count"] == 2
+    assert len(report["bounded_component_records"]) == 2
     records = {record["node_id"]: record for record in report["bounded_node_records"]}
     assert records["b"]["component_size"] == 3
     assert records["b"]["frame_boundary"] == "interior"
@@ -55,4 +58,21 @@ def test_topology_comparison_pairs_common_bounded_nodes_and_strata():
     )
 
     assert comparison["bounded_common_node_count"] == 2
+    assert comparison["component_count_left"] == 1
+    assert comparison["component_count_right"] == 1
+    assert comparison["bounded_common_component_count"] == 1
     assert comparison["stratum_deltas_right_minus_left"]
+
+
+def test_v24_3_prunes_only_interior_nondivision_two_node_components():
+    graph = LineageGraph("sample")
+    for node_id, frame in (("first", 0), ("a", 1), ("b", 1), ("last", 2), ("division_a", 1), ("division_b", 1)):
+        graph.add_detection(_detection(node_id, frame))
+    graph.add_edge(LineageEdge("a", "b"))
+    graph.add_edge(LineageEdge("division_a", "division_b", relation="division"))
+
+    filtered = prune_interior_short_fragments(graph)
+
+    assert {detection.node_id for detection in filtered.detections} == {
+        "first", "last", "division_a", "division_b"
+    }
