@@ -21,7 +21,7 @@
   "sources": [
     {
       "path": "scripts/merge_v24_3_full_199_score_validation.py",
-      "sha256": "2448d822001fd650fa17d937b0e349703ca943f1e0acf8719dd578351a210462"
+      "sha256": "3e9485f54e73eb40e8928d62f361139dbcd813687f08de762eb45b4d40617d66"
     },
     {
       "path": "scripts/run_v24_3_full_199_score_validation.py",

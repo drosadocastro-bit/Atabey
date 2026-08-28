@@ -1,6 +1,8 @@
 import hashlib
 import json
 from pathlib import Path
+import subprocess
+import sys
 
 import pytest
 
@@ -44,6 +46,21 @@ def test_full_199_contract_pins_authorization_sources_and_boundaries():
         assert _normalized_text_sha256(ROOT / source["path"]) == source["sha256"]
     assert contract["boundaries"]["independent_generalization_claim"] is False
     assert contract["boundaries"]["submission_authorized"] is False
+
+
+def test_merge_runner_is_directly_executable():
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts/merge_v24_3_full_199_score_validation.py"),
+            "--help",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "Merge two frozen V24.3" in result.stdout
 
 
 def test_discover_paired_samples_requires_exact_population(tmp_path):
