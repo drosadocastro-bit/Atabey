@@ -3,13 +3,13 @@
   "status": "authorized_sharded_population_validation",
   "authorization": {
     "report_path": "v24_3_short_fragment_shadow_full_27_report.json",
-    "report_sha256": "13ecd6cedde8d1691b95c5f50075db97387f8e45f800c71ded60ccbbbca88e93",
+    "report_normalized_sha256": "486a0a128f3d0f54b10e4c762425258f15d1fd4506c7e1feb566681434ca5bd4",
     "evaluation_commit": "905671f0ad1b7e2ab868e5a84a322c565d52f273",
     "evaluated_arm": "e016_atabey_relink_v24_3_short_fragment_shadow"
   },
   "frozen_v24_contract": {
     "path": "tests/fixtures/v24_score_first_tracking.json",
-    "sha256": "d7dbd5a0f4235b060dca7659b5dc14e2b1fdfb89e73d69a6e079d4332449fd88"
+    "normalized_sha256": "e040714eb89e32cff7088714079f320a7d0154b7e311284e496482a29f282ff1"
   },
   "population": {
     "expected_samples": 199,
@@ -21,11 +21,11 @@
   "sources": [
     {
       "path": "scripts/merge_v24_3_full_199_score_validation.py",
-      "sha256": "2448d822001fd650fa17d937b0e349703ca943f1e0acf8719dd578351a210462"
+      "sha256": "3e9485f54e73eb40e8928d62f361139dbcd813687f08de762eb45b4d40617d66"
     },
     {
       "path": "scripts/run_v24_3_full_199_score_validation.py",
-      "sha256": "58b1ae15f292c9a4f7dc45cfaba9094c75b709b394e825f388cc4bb6cec93742"
+      "sha256": "5defd919c4263c716f4e5197b77cf0415a106fca149a8d8d896fdb0041b9896c"
     },
     {
       "path": "scripts/run_v24_score_first_tracking.py",

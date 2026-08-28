@@ -1,6 +1,10 @@
 # V24.3 Full-199 Score Validation Preregistration
 
-Status: **authorized; implementation ready for two frozen shards**.
+Status: **complete; submission remains unauthorized**.
+
+The strict merged result is recorded in
+`V24_3_FULL_199_SCORE_VALIDATION_AUDIT.md` and
+`v24_3_full_199_score_validation_report.json`.
 
 Notebook: `notebooks/V24_3_full_199_score_validation_kaggle.ipynb`.
 Run it first with `SHARD_INDEX = 0`, download the shard-0 archive, then run
