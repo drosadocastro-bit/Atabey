@@ -143,6 +143,8 @@ the relevant audit before promoting one.
   deterministic two-shard population validation with separate training-172 and held-out-27 interpretation.
 - [V24.3 Full-199 Score Validation Audit](V24_3_FULL_199_SCORE_VALIDATION_AUDIT.md):
   complete 199-sample merge, population score context, regression audit, and preserved submission boundary.
+- [V24.3 Full-199 Regression Forensics](V24_3_FULL_199_REGRESSION_FORENSICS.md):
+  16-case edge-error decomposition and review-only containment analysis.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,

@@ -70,6 +70,8 @@ Jaccard. V24.3 removed 40,208 additional detections relative to V24.2.
 All four catastrophic V24.3 regressions versus V19 occurred in the
 checkpoint-training stratum. V24.3 improved each of those four samples relative
 to V24.2, so they are not regressions introduced by the short-fragment rule.
+The complete 16-case mechanism and containment analysis is recorded in
+`V24_3_FULL_199_REGRESSION_FORENSICS.md`.
 
 ## Adjudication
 
