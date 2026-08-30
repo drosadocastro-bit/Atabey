@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_PATH = ROOT / "notebooks/V24_7_route_90_commitment_ilp_kaggle.ipynb"
-EXPECTED_COMMIT = "da98e99b542b6f49a0ed95ca7b40eccbe7f3820d"
+EXPECTED_COMMIT = "07adb0eb9076cbe6b2e0618e35adde817db8db37"
 EXPECTED_CHECKPOINT = (
     "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03"
 )
@@ -71,6 +71,15 @@ def test_route_90_notebook_preserves_frozen_shadow_gates() -> None:
     assert "optimizer.load_state_dict" not in source
     assert "model.train(" not in source
     assert "submission.csv" not in source
+
+
+def test_route_90_notebook_runs_canary_before_full_cohort() -> None:
+    source = "\n".join(_source(cell) for cell in _notebook()["cells"])
+    assert '"--preflight-only"' in source
+    assert 'preflight_summary["status"] == "v24_7_route_90_preflight_complete"' in source
+    assert 'preflight_summary["sample_count"] == 1' in source
+    assert 'preflight_summary["graph_mutated"] is False' in source
+    assert source.index('"--preflight-only"') < source.index("subprocess.run(command")
 
 
 def test_route_90_notebook_probes_compiled_runtime_in_fresh_process() -> None:
