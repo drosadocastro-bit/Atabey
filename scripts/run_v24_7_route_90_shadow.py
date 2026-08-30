@@ -150,20 +150,59 @@ def _proposal_inapplicability(
     removed_edges: tuple[EdgeKey, ...],
     added_edges: tuple[EdgeKey, ...],
 ) -> tuple[str | None, tuple[EdgeKey, ...]]:
-    node_ids = {node.node_id for node in baseline.detections}
-    baseline_edges = {(edge.source_id, edge.target_id) for edge in baseline.edges}
-    absent_removals = tuple(sorted(set(removed_edges) - baseline_edges))
+    nodes = {node.node_id: node for node in baseline.detections}
+    baseline_edges = {
+        (edge.source_id, edge.target_id): edge for edge in baseline.edges
+    }
+    removals = set(removed_edges)
+    additions = set(added_edges)
+    absent_removals = tuple(sorted(removals - set(baseline_edges)))
     if absent_removals:
         return "removed_edge_absent", absent_removals
     absent_endpoints = tuple(
         sorted(
             edge
-            for edge in set(added_edges)
-            if edge[0] not in node_ids or edge[1] not in node_ids
+            for edge in additions
+            if edge[0] not in nodes or edge[1] not in nodes
         )
     )
     if absent_endpoints:
         return "added_edge_endpoint_absent", absent_endpoints
+    non_adjacent = tuple(
+        sorted(
+            edge
+            for edge in additions
+            if int(nodes[edge[1]].t) != int(nodes[edge[0]].t) + 1
+        )
+    )
+    if non_adjacent:
+        return "added_edge_non_adjacent", non_adjacent
+
+    retained = set(baseline_edges) - removals
+    duplicate_additions = tuple(sorted(retained.intersection(additions)))
+    if duplicate_additions:
+        return "added_edge_already_present", duplicate_additions
+    final_edges = retained | additions
+    continuations = {
+        edge
+        for edge in final_edges
+        if baseline_edges.get(edge, LineageEdge(*edge)).relation == "continuation"
+    }
+    by_source: dict[str, list[EdgeKey]] = {}
+    by_target: dict[str, list[EdgeKey]] = {}
+    for edge in sorted(continuations):
+        by_source.setdefault(edge[0], []).append(edge)
+        by_target.setdefault(edge[1], []).append(edge)
+    child_conflicts = tuple(
+        edge for edges in by_source.values() if len(edges) > 1 for edge in edges
+    )
+    if child_conflicts:
+        return "multiple_continuation_children", child_conflicts
+    parent_conflicts = tuple(
+        edge for edges in by_target.values() if len(edges) > 1 for edge in edges
+    )
+    if parent_conflicts:
+        return "multiple_continuation_parents", parent_conflicts
     return None, ()
 
 

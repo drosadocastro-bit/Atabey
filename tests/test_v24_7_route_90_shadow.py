@@ -147,6 +147,76 @@ def test_score_proposal_reports_endpoint_pruned_from_scoring_graph() -> None:
     assert result["edge_jaccard_delta"] is None
 
 
+def test_score_proposal_reports_post_pruning_parent_conflict() -> None:
+    graph = LineageGraph(sample_id="sample")
+    for node_id, frame in (("source-a", 0), ("source-b", 0), ("target", 1)):
+        graph.add_detection(
+            Detection(
+                node_id=node_id,
+                sample_id="sample",
+                t=frame,
+                z=0.0,
+                y=0.0,
+                x=0.0,
+                z_um=0.0,
+                y_um=0.0,
+                x_um=0.0,
+            )
+        )
+    graph.add_edge(LineageEdge(source_id="source-a", target_id="target"))
+
+    result = _score_proposal(
+        graph,
+        object(),
+        {"adjusted_edge_jaccard": 0.5, "edge_jaccard": 0.5},
+        removed_edges=(),
+        added_edges=(("source-b", "target"),),
+    )
+
+    assert result["scoring_status"] == "inapplicable_after_pruning"
+    assert result["inapplicability_reason"] == "multiple_continuation_parents"
+    assert result["inapplicable_edges"] == (
+        ("source-a", "target"),
+        ("source-b", "target"),
+    )
+    assert result["metrics"] is None
+
+
+def test_score_proposal_reports_post_pruning_child_conflict() -> None:
+    graph = LineageGraph(sample_id="sample")
+    for node_id, frame in (("source", 0), ("target-a", 1), ("target-b", 1)):
+        graph.add_detection(
+            Detection(
+                node_id=node_id,
+                sample_id="sample",
+                t=frame,
+                z=0.0,
+                y=0.0,
+                x=0.0,
+                z_um=0.0,
+                y_um=0.0,
+                x_um=0.0,
+            )
+        )
+    graph.add_edge(LineageEdge(source_id="source", target_id="target-a"))
+
+    result = _score_proposal(
+        graph,
+        object(),
+        {"adjusted_edge_jaccard": 0.5, "edge_jaccard": 0.5},
+        removed_edges=(),
+        added_edges=(("source", "target-b"),),
+    )
+
+    assert result["scoring_status"] == "inapplicable_after_pruning"
+    assert result["inapplicability_reason"] == "multiple_continuation_children"
+    assert result["inapplicable_edges"] == (
+        ("source", "target-a"),
+        ("source", "target-b"),
+    )
+    assert result["metrics"] is None
+
+
 def test_aggregate_excludes_inapplicable_rewrites_from_efficacy_counts() -> None:
     scored = {
         "proposal_class": "ownership_rewrite",
