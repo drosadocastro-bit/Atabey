@@ -83,6 +83,8 @@ V25 opens as read-only upstream-association forensics. It instruments the unchan
 motion-mutual path to distinguish candidate-generation failures from candidates that enter and lose,
 with V19 comparison and pruning survival exposed only as audit layers. It makes no score, selector,
 promotion, routing, or intervention claim.
+The [V25 Kaggle CUDA telemetry notebook](notebooks/V25_upstream_association_forensics_cuda_kaggle.ipynb)
+runs the frozen 16-case observer while recording separate NVML hardware-utilization evidence.
 
 ## Design Principles
 
