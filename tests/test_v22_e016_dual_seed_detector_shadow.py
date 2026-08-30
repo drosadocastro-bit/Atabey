@@ -1,6 +1,7 @@
-import hashlib
 import json
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,7 +19,7 @@ def test_dual_seed_shadow_pins_available_sources():
         ("source_action_contract", "source_action_contract_sha256"),
         ("source_peak_csv", "source_peak_sha256"),
     ]:
-        actual = hashlib.sha256((ROOT / c[path_key]).read_bytes()).hexdigest()
+        actual = canonical_text_sha256(ROOT / c[path_key])
         assert actual == c[hash_key]
 
 

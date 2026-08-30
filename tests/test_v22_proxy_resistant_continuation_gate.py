@@ -1,6 +1,7 @@
-﻿import hashlib
-import json
+﻿import json
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,7 +18,7 @@ def test_proxy_gate_pins_opened_sources():
         ("source_proxy_audit", "source_proxy_audit_sha256"),
     ]:
         path = ROOT / contract[path_key]
-        assert hashlib.sha256(path.read_bytes()).hexdigest() == contract[hash_key]
+        assert canonical_text_sha256(path) == contract[hash_key]
 
 
 def test_proxy_gate_removes_teacher_and_complete_motion_reconstruction_set():

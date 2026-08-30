@@ -1,10 +1,18 @@
-﻿import hashlib,json
+﻿import json
 from pathlib import Path
+
+import pytest
+
+from atabey.provenance import canonical_text_sha256, sha256_file
+
 ROOT=Path(__file__).resolve().parents[1]
 def _c(): return json.loads((ROOT/'tests/fixtures/v22_positive_unlabeled_semantic_ranker.json').read_text(encoding='utf-8-sig'))
 def test_pu_ranker_pins_sources():
  c=_c()
- for p,h in [('source_action_features','source_action_features_sha256'),('source_evidence_summary','source_evidence_summary_sha256'),('source_evidence_contract','source_evidence_contract_sha256'),('source_development_contract','source_development_contract_sha256')]: assert hashlib.sha256((ROOT/c[p]).read_bytes()).hexdigest()==c[h]
+ for p,h in [('source_evidence_summary','source_evidence_summary_sha256'),('source_evidence_contract','source_evidence_contract_sha256'),('source_development_contract','source_development_contract_sha256')]: assert canonical_text_sha256(ROOT/c[p])==c[h]
+ feature_path=ROOT/c['source_action_features']
+ if not feature_path.exists(): pytest.skip('External semantic action feature archive is not mounted')
+ assert sha256_file(feature_path)==c['source_action_features_sha256']
 def test_pu_ranker_preserves_unknown_label_boundary():
  c=_c(); assert c['labels']['unknown_used_as_negative'] is False; assert c['labels']['unknown_in_heldout_ranking'] is True; assert c['labels']['sparse_absence_is_negative'] is False
 def test_pu_ranker_freezes_audited_raw_features_and_prohibits_geometry():

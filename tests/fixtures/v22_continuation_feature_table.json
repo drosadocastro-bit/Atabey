@@ -2,9 +2,9 @@
   "name": "v22_continuation_feature_table_v1",
   "status": "preregistered_build_only",
   "source_reference_contract": "tests/fixtures/v22_continuation_reference_audit.json",
-  "source_reference_contract_sha256": "f23808b45a1c9d671ee8211988129d54bcc7cdbba664090310a20165f03cf079",
+  "source_reference_contract_sha256": "53413c23889ddc5ef9120c92589a8ed2db84997ede829b13cdf3dcc1b78bf198",
   "source_reference_summary": "v22_continuation_reference_audit_summary.json",
-  "source_reference_summary_sha256": "8c777cbe892b0ef7f5eab9dc75f9d5209c7c54afd6f713136bbe8991d61d60a0",
+  "source_reference_summary_sha256": "f7332917c571d92a84175564211fcc42db361dcc68d14d948e82a1b480ac9cf5",
   "source_reference_shards": "v22_continuation_reference_audit",
   "max_timepoints": 100,
   "candidate_definition": {

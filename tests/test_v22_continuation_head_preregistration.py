@@ -1,6 +1,7 @@
-import hashlib
 import json
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,10 +20,10 @@ def test_continuation_head_contract_pins_completed_feature_table():
     feature_contract = ROOT / contract["source_feature_contract"]
     feature_summary = ROOT / contract["source_feature_summary"]
 
-    assert hashlib.sha256(feature_contract.read_bytes()).hexdigest() == contract[
+    assert canonical_text_sha256(feature_contract) == contract[
         "source_feature_contract_sha256"
     ]
-    assert hashlib.sha256(feature_summary.read_bytes()).hexdigest() == contract[
+    assert canonical_text_sha256(feature_summary) == contract[
         "source_feature_summary_sha256"
     ]
     assert contract["outer_validation"]["folds"] == [1, 2, 3]

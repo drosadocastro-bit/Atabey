@@ -1,6 +1,7 @@
-import hashlib
 import json
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,7 +12,7 @@ def test_continuation_audit_contract_freezes_strata_and_shadow_boundaries():
     contract = json.loads(path.read_text(encoding="utf-8-sig"))
     source = ROOT / contract["source_semantic_contract"]
 
-    assert hashlib.sha256(source.read_bytes()).hexdigest() == contract[
+    assert canonical_text_sha256(source) == contract[
         "source_semantic_contract_sha256"
     ]
     assert contract["reporting"]["required_strata"] == [

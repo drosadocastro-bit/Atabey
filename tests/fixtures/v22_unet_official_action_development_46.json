@@ -1,7 +1,7 @@
 {
   "name": "v22_unet_official_action_development_46_v1",
   "source_fixture": "tests/fixtures/v22_unet_detection_development_46.json",
-  "source_fixture_sha256": "14d77a14c17224d84b5653b76efa39b962f5172628f155eb7e1a91de9ddc3fb8",
+  "source_fixture_sha256": "ac34986d47dc2412d718b01144c304576c7746255e52b518f0a76c9e13bb13e2",
   "parent_anchor_radius_um": 14.0,
   "daughter_formation_radius_um": 14.0,
   "official_match_radius_um": 7.0,

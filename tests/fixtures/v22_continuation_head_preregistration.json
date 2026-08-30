@@ -2,9 +2,9 @@
   "name": "v22_continuation_head_oof_v1",
   "status": "preregistered_training_not_run",
   "source_feature_contract": "tests/fixtures/v22_continuation_feature_table.json",
-  "source_feature_contract_sha256": "2a8a08e03f0a6ac0bbfb91f64385d214cf4449b3f2b66c636a565e959d77d457",
+  "source_feature_contract_sha256": "4d3f3ffe5a3d6aed27d7a6a9ebc8f0479c3436b7c3c423731fc0307d2c1ccec0",
   "source_feature_summary": "v22_continuation_feature_table_summary.json",
-  "source_feature_summary_sha256": "13bd11eee3a3619d9107256bc2f0bf07c9bdeb08e8a40a3febecc24520edf1d5",
+  "source_feature_summary_sha256": "3642be936ef7dd38ac553cbce4ca38770730f2dec840274c4caa0d27587e4fff",
   "source_feature_shards": "v22_continuation_feature_shards",
   "outer_validation": {
     "scheme": "three_sample_blocked_folds",
