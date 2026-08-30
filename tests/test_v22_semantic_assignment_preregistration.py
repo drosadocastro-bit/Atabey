@@ -1,7 +1,8 @@
-import hashlib
 import json
 from collections import Counter
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 
 project_root = Path(__file__).resolve().parent.parent
@@ -56,7 +57,7 @@ def test_v22_semantic_assignment_sources_and_epistemic_guards_are_frozen():
         ("source_contract", "source_contract_sha256"),
     ):
         source_path = project_root / fixture[path_key]
-        assert hashlib.sha256(source_path.read_bytes()).hexdigest() == fixture[hash_key]
+        assert canonical_text_sha256(source_path) == fixture[hash_key]
 
     labels = fixture["labels"]
     assert labels["negative"] == "patched_official_fp_only"

@@ -1,7 +1,7 @@
-import hashlib
 import json
 from pathlib import Path
 
+from atabey.provenance import canonical_text_sha256
 from atabey.tracking.continuation_features import CONTINUATION_FEATURE_NAMES
 
 
@@ -21,10 +21,10 @@ def test_continuation_feature_contract_pins_sources_and_population():
     reference_contract = ROOT / contract["source_reference_contract"]
     reference_summary = ROOT / contract["source_reference_summary"]
 
-    assert hashlib.sha256(reference_contract.read_bytes()).hexdigest() == contract[
+    assert canonical_text_sha256(reference_contract) == contract[
         "source_reference_contract_sha256"
     ]
-    assert hashlib.sha256(reference_summary.read_bytes()).hexdigest() == contract[
+    assert canonical_text_sha256(reference_summary) == contract[
         "source_reference_summary_sha256"
     ]
     population = contract["expected_population"]

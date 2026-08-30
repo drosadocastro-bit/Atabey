@@ -1,6 +1,7 @@
-﻿import hashlib
-import json
+﻿import json
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 ROOT=Path(__file__).resolve().parents[1]
 def _c(): return json.loads((ROOT/'tests/fixtures/v22_official_positive_semantic_evidence_audit.json').read_text(encoding='utf-8-sig'))
@@ -8,7 +9,7 @@ def _c(): return json.loads((ROOT/'tests/fixtures/v22_official_positive_semantic
 def test_semantic_evidence_audit_pins_sources():
     c=_c()
     for p,h in [('source_peak_csv','source_peak_sha256'),('source_action_summary','source_action_summary_sha256'),('source_development_contract','source_development_contract_sha256'),('source_proxy_audit','source_proxy_audit_sha256')]:
-        assert hashlib.sha256((ROOT/c[p]).read_bytes()).hexdigest()==c[h]
+        assert canonical_text_sha256(ROOT/c[p])==c[h]
 
 def test_semantic_evidence_audit_excludes_motion_and_unknown_negatives():
     c=_c(); assert c['population']['unknown_actions_remain_unknown'] is True

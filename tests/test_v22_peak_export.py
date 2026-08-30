@@ -1,7 +1,8 @@
-import hashlib
 import json
 import sys
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 project_root = Path(__file__).resolve().parent.parent
 scripts_dir = project_root / "scripts"
@@ -44,7 +45,7 @@ def test_official_action_contract_pins_the_unchanged_development_fixture():
     contract = json.loads(contract_path.read_text(encoding="utf-8-sig"))
     fixture_path = project_root / contract["source_fixture"]
 
-    assert hashlib.sha256(fixture_path.read_bytes()).hexdigest() == contract[
+    assert canonical_text_sha256(fixture_path) == contract[
         "source_fixture_sha256"
     ]
     assert contract["expected_cases"] == 46

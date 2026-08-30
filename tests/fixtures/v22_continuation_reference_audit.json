@@ -2,9 +2,9 @@
   "name": "v22_continuation_reference_availability_v1",
   "status": "preregistered_read_only_audit",
   "source_semantic_contract": "tests/fixtures/v22_joint_semantic_assignment_development.json",
-  "source_semantic_contract_sha256": "41414fba9208c66e70b6b03915cfc4aebcf96a2ec724382dcd3227a4ca128f61",
+  "source_semantic_contract_sha256": "3bfd8174e8ff7fac9366a75a0ba59c0d696b75d21223569ec270be588ee122d1",
   "source_division_fixture": "tests/fixtures/v22_unet_detection_development_46.json",
-  "source_division_fixture_sha256": "14d77a14c17224d84b5653b76efa39b962f5172628f155eb7e1a91de9ddc3fb8",
+  "source_division_fixture_sha256": "ac34986d47dc2412d718b01144c304576c7746255e52b518f0a76c9e13bb13e2",
   "max_timepoints": 100,
   "reference_definition": {
     "chain_frames": 3,

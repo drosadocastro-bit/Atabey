@@ -1,6 +1,7 @@
-import hashlib
 import json
 from pathlib import Path
+
+from atabey.provenance import canonical_text_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,7 +20,7 @@ def test_temporal_audit_pins_all_sources():
         ("source_failed_ranker_summary", "source_failed_ranker_summary_sha256"),
         ("source_development_contract", "source_development_contract_sha256"),
     ]:
-        actual = hashlib.sha256((ROOT / contract[path_key]).read_bytes()).hexdigest()
+        actual = canonical_text_sha256(ROOT / contract[path_key])
         assert actual == contract[hash_key]
 
 
