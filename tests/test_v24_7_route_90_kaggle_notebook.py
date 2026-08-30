@@ -73,6 +73,29 @@ def test_route_90_notebook_preserves_frozen_shadow_gates() -> None:
     assert "submission.csv" not in source
 
 
+def test_route_90_notebook_probes_compiled_runtime_in_fresh_process() -> None:
+    install_source = _code_cell_starting("pinned_official_packages = [")
+    assert '"numpy==2.2.6"' in install_source
+    assert '"scipy==1.16.3"' in install_source
+    assert "runtime_probe = subprocess.run(" in install_source
+    assert "from scipy.optimize import milp" in install_source
+    assert "runtime_probe.stdout" in install_source
+    tree = ast.parse(install_source)
+    top_level_imports = {
+        alias.name
+        for statement in tree.body
+        if isinstance(statement, ast.Import)
+        for alias in statement.names
+    }
+    top_level_from_imports = {
+        statement.module
+        for statement in tree.body
+        if isinstance(statement, ast.ImportFrom)
+    }
+    assert top_level_imports.isdisjoint({"numpy", "scipy", "torch"})
+    assert "scipy.optimize" not in top_level_from_imports
+
+
 def test_route_90_notebook_finds_deep_auxiliary_mounts(tmp_path: Path) -> None:
     input_root = tmp_path / "input"
     train_dir = input_root / "competitions/biohub/train"
