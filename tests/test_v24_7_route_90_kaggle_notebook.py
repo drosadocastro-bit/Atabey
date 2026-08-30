@@ -75,10 +75,15 @@ def test_route_90_notebook_preserves_frozen_shadow_gates() -> None:
 
 def test_route_90_notebook_probes_compiled_runtime_in_fresh_process() -> None:
     install_source = _code_cell_starting("pinned_official_packages = [")
+    assert '"https://download.pytorch.org/whl/cu126"' in install_source
+    assert '"torch==2.10.0+cu126"' in install_source
+    assert '"torchvision==0.25.0+cu126"' in install_source
     assert '"numpy==2.2.6"' in install_source
     assert '"scipy==1.16.3"' in install_source
     assert "runtime_probe = subprocess.run(" in install_source
     assert "from scipy.optimize import milp" in install_source
+    assert "torch.cuda.get_arch_list()" in install_source
+    assert 'torch.ones(1, device="cuda").relu().cpu().item()' in install_source
     assert "runtime_probe.stdout" in install_source
     tree = ast.parse(install_source)
     top_level_imports = {
