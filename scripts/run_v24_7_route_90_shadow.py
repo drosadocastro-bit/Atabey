@@ -144,6 +144,29 @@ def _metric_payload(result: object) -> dict[str, Any]:
     return asdict(result)
 
 
+def _proposal_inapplicability(
+    baseline: LineageGraph,
+    *,
+    removed_edges: tuple[EdgeKey, ...],
+    added_edges: tuple[EdgeKey, ...],
+) -> tuple[str | None, tuple[EdgeKey, ...]]:
+    node_ids = {node.node_id for node in baseline.detections}
+    baseline_edges = {(edge.source_id, edge.target_id) for edge in baseline.edges}
+    absent_removals = tuple(sorted(set(removed_edges) - baseline_edges))
+    if absent_removals:
+        return "removed_edge_absent", absent_removals
+    absent_endpoints = tuple(
+        sorted(
+            edge
+            for edge in set(added_edges)
+            if edge[0] not in node_ids or edge[1] not in node_ids
+        )
+    )
+    if absent_endpoints:
+        return "added_edge_endpoint_absent", absent_endpoints
+    return None, ()
+
+
 def _score_proposal(
     baseline: LineageGraph,
     ground_truth: object,
@@ -153,7 +176,14 @@ def _score_proposal(
     added_edges: tuple[EdgeKey, ...],
 ) -> dict[str, Any]:
     proposal_class = _proposal_class(removed_edges, added_edges)
-    if proposal_class == "exact_baseline":
+    reason, inapplicable_edges = _proposal_inapplicability(
+        baseline,
+        removed_edges=removed_edges,
+        added_edges=added_edges,
+    )
+    if reason is not None:
+        metrics = None
+    elif proposal_class == "exact_baseline":
         metrics = baseline_metrics
     else:
         proposed = apply_edge_proposal(
@@ -164,13 +194,18 @@ def _score_proposal(
         metrics = _metric_payload(evaluate_official_tracking(proposed, ground_truth))
     return {
         "proposal_class": proposal_class,
+        "scoring_status": "inapplicable_after_pruning" if reason else "scored",
+        "inapplicability_reason": reason,
+        "inapplicable_edges": inapplicable_edges,
         "removed_edges": removed_edges,
         "added_edges": added_edges,
         "metrics": metrics,
-        "adjusted_edge_jaccard_delta": (
-            metrics["adjusted_edge_jaccard"] - baseline_metrics["adjusted_edge_jaccard"]
-        ),
-        "edge_jaccard_delta": metrics["edge_jaccard"] - baseline_metrics["edge_jaccard"],
+        "adjusted_edge_jaccard_delta": None
+        if metrics is None
+        else metrics["adjusted_edge_jaccard"] - baseline_metrics["adjusted_edge_jaccard"],
+        "edge_jaccard_delta": None
+        if metrics is None
+        else metrics["edge_jaccard"] - baseline_metrics["edge_jaccard"],
     }
 
 
@@ -281,9 +316,14 @@ def _aggregate(records: list[dict[str, Any]]) -> dict[str, Any]:
             for item in windows
             if item["zero_penalty_diagnostic"]["proposal_class"] == "ownership_rewrite"
         ]
+        scoreable_diagnostic_rewrites = [
+            item
+            for item in diagnostic_rewrites
+            if item["zero_penalty_diagnostic"]["scoring_status"] == "scored"
+        ]
         deltas = [
             item["zero_penalty_diagnostic"]["adjusted_edge_jaccard_delta"]
-            for item in diagnostic_rewrites
+            for item in scoreable_diagnostic_rewrites
         ]
         output[name] = {
             "sample_count": len(members),
@@ -292,7 +332,20 @@ def _aggregate(records: list[dict[str, Any]]) -> dict[str, Any]:
             "primary_ownership_rewrite_count": sum(
                 item["primary"]["proposal_class"] == "ownership_rewrite" for item in windows
             ),
+            "primary_scoreable_ownership_rewrite_count": sum(
+                item["primary"]["proposal_class"] == "ownership_rewrite"
+                and item["primary"]["scoring_status"] == "scored"
+                for item in windows
+            ),
             "zero_penalty_ownership_rewrite_count": len(diagnostic_rewrites),
+            "zero_penalty_scoreable_ownership_rewrite_count": len(
+                scoreable_diagnostic_rewrites
+            ),
+            "inapplicable_after_pruning_count": sum(
+                proposal["scoring_status"] == "inapplicable_after_pruning"
+                for item in windows
+                for proposal in (item["primary"], item["zero_penalty_diagnostic"])
+            ),
             "zero_penalty_rewrite_improved_count": sum(delta > 0 for delta in deltas),
             "zero_penalty_rewrite_regressed_count": sum(delta < 0 for delta in deltas),
             "zero_penalty_rewrite_mean_adjusted_delta": statistics.fmean(deltas) if deltas else None,
@@ -319,6 +372,7 @@ def main() -> None:
     parser.add_argument("--unet-batch-size", type=int, default=4)
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--verify-determinism", action="store_true")
+    parser.add_argument("--preflight-only", action="store_true")
     args = parser.parse_args()
 
     import torch
@@ -356,14 +410,15 @@ def main() -> None:
     else:
         _atomic_json(provenance_path, provenance)
 
+    execution_sample_ids = sample_ids[:1] if args.preflight_only else sample_ids
     records = []
-    for index, sample_id in enumerate(sample_ids, start=1):
+    for index, sample_id in enumerate(execution_sample_ids, start=1):
         path = sample_dir / f"{sample_id}.json"
         if args.resume and path.exists():
             record = json.loads(path.read_text(encoding="utf-8"))
-            print(f"[{index}/90] {sample_id}: resumed", flush=True)
+            print(f"[{index}/{len(execution_sample_ids)}] {sample_id}: resumed", flush=True)
         else:
-            print(f"[{index}/90] {sample_id}: running", flush=True)
+            print(f"[{index}/{len(execution_sample_ids)}] {sample_id}: running", flush=True)
             record = _evaluate_sample(
                 sample_id=sample_id,
                 is_regression=sample_id in regressions,
@@ -415,10 +470,15 @@ def main() -> None:
         )
 
     summary = {
-        "status": "v24_7_route_90_shadow_complete",
+        "status": "v24_7_route_90_preflight_complete"
+        if args.preflight_only
+        else "v24_7_route_90_shadow_complete",
         "sample_count": len(records),
         "expected_sample_count": shadow_contract["cohort"]["expected_samples"],
-        "complete_cohort": len(records) == shadow_contract["cohort"]["expected_samples"],
+        "complete_cohort": not args.preflight_only
+        and len(records) == shadow_contract["cohort"]["expected_samples"],
+        "preflight_only": args.preflight_only,
+        "graph_mutated": any(record["graph_mutated"] for record in records),
         "determinism_verified": determinism_verified,
         **shadow_contract["boundaries"],
         "aggregate": _aggregate(records),

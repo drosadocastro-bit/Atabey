@@ -69,6 +69,18 @@ the pinned official tracking evaluator. The source graph must retain its exact
 signature. Add-only, remove-only, ownership-rewrite, and exact-baseline proposals
 are reported separately.
 
+Because the commitment and ILP stages operate on the pre-pruning relink graph,
+a proposal can reference an endpoint removed by V24.2 or V24.3. Such a proposal
+is retained with its original class and reported as
+`inapplicable_after_pruning`; it is not altered, scored, or included in efficacy
+deltas. This is compatibility telemetry, not evidence for restoring a pruned
+node.
+
+Before route-90 execution, the first ordered sample must complete the entire
+inference, pruning, commitment, ILP, official-scoring, serialization, aggregation,
+immutability, and deterministic-replay path under `--preflight-only`. The full
+cohort starts only after that one-sample summary passes its fixed checks.
+
 ## Frozen Endpoints
 
 Report separately for the regression-16, route-control-74, and complete route-90:
@@ -81,6 +93,7 @@ Report separately for the regression-16, route-control-74, and complete route-90
 6. solver budget, timeout, infeasible, and error counts;
 7. inference and total runtime;
 8. deterministic replay and graph-immutability checks.
+9. post-pruning inapplicable proposal counts and reasons.
 
 ## Interpretation Rules
 

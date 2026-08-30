@@ -3,7 +3,9 @@ from pathlib import Path
 
 from atabey.types import Detection, LineageEdge, LineageGraph
 from scripts.run_v24_7_route_90_shadow import (
+    _aggregate,
     _canonical_text_sha256,
+    _score_proposal,
     apply_edge_proposal,
 )
 
@@ -109,3 +111,76 @@ def test_apply_edge_proposal_rejects_invalid_edges() -> None:
         assert "absent baseline edge" in str(error)
     else:
         raise AssertionError("Missing removal must fail closed")
+
+
+def test_score_proposal_reports_endpoint_pruned_from_scoring_graph() -> None:
+    graph = LineageGraph(sample_id="sample")
+    graph.add_detection(
+        Detection(
+            node_id="source",
+            sample_id="sample",
+            t=0,
+            z=0.0,
+            y=0.0,
+            x=0.0,
+            z_um=0.0,
+            y_um=0.0,
+            x_um=0.0,
+        )
+    )
+    baseline_metrics = {"adjusted_edge_jaccard": 0.5, "edge_jaccard": 0.5}
+
+    result = _score_proposal(
+        graph,
+        object(),
+        baseline_metrics,
+        removed_edges=(),
+        added_edges=(("source", "pruned-target"),),
+    )
+
+    assert result["proposal_class"] == "add_only"
+    assert result["scoring_status"] == "inapplicable_after_pruning"
+    assert result["inapplicability_reason"] == "added_edge_endpoint_absent"
+    assert result["inapplicable_edges"] == (("source", "pruned-target"),)
+    assert result["metrics"] is None
+    assert result["adjusted_edge_jaccard_delta"] is None
+    assert result["edge_jaccard_delta"] is None
+
+
+def test_aggregate_excludes_inapplicable_rewrites_from_efficacy_counts() -> None:
+    scored = {
+        "proposal_class": "ownership_rewrite",
+        "scoring_status": "scored",
+        "adjusted_edge_jaccard_delta": 0.1,
+    }
+    inapplicable = {
+        "proposal_class": "ownership_rewrite",
+        "scoring_status": "inapplicable_after_pruning",
+        "adjusted_edge_jaccard_delta": None,
+    }
+    records = [
+        {
+            "retrospective_v24_3_regression": False,
+            "counterfactuals": [
+                {
+                    "reconverged": False,
+                    "primary": inapplicable,
+                    "zero_penalty_diagnostic": inapplicable,
+                },
+                {
+                    "reconverged": True,
+                    "primary": scored,
+                    "zero_penalty_diagnostic": scored,
+                },
+            ],
+        }
+    ]
+
+    aggregate = _aggregate(records)["route_90"]
+
+    assert aggregate["primary_ownership_rewrite_count"] == 2
+    assert aggregate["primary_scoreable_ownership_rewrite_count"] == 1
+    assert aggregate["zero_penalty_ownership_rewrite_count"] == 2
+    assert aggregate["zero_penalty_scoreable_ownership_rewrite_count"] == 1
+    assert aggregate["inapplicable_after_pruning_count"] == 2
+    assert aggregate["zero_penalty_rewrite_improved_count"] == 1
