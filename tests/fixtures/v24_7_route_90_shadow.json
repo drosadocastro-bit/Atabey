@@ -1,0 +1,73 @@
+{
+  "name": "v24_7_commitment_ilp_route_90_shadow_v1",
+  "status": "preregistered_gpu_shadow",
+  "sources": {
+    "route_inventory": "v22_route_prevalence_199.json",
+    "route_inventory_sha256": "b460493ce2c510046a618fc274e2762caca1c2a7b99562fc0fd27967f327f6a3",
+    "regression_forensics": "V24_3_FULL_199_REGRESSION_FORENSICS.md",
+    "regression_forensics_sha256": "57ea3b00c375759c2566e82504ea477078b7a27eb6c80b11d53be962455b03e4",
+    "checkpoint_contract": "tests/fixtures/v24_score_first_tracking.json",
+    "predictor_sha256": "c44e771ba5980b820f93091e03a303c25dfe8f3232e501f54dc9565731c234b9"
+  },
+  "cohort": {
+    "expected_samples": 90,
+    "route": {
+      "family": "6bba",
+      "v19_reference_detector": "components",
+      "v19_reference_link_strategy": "greedy"
+    },
+    "sample_ids": [
+      "6bba_05b6850b", "6bba_062c8d37", "6bba_07477033", "6bba_085bf656",
+      "6bba_09961292", "6bba_0c7fa718", "6bba_12665c0e", "6bba_13f19531",
+      "6bba_15403b9a", "6bba_1d0d8384", "6bba_1ebfb80d", "6bba_20852818",
+      "6bba_2312ac41", "6bba_23af9eeb", "6bba_2540cd90", "6bba_2646afc7",
+      "6bba_268e1230", "6bba_2819ca14", "6bba_283bf9f1", "6bba_312f0dc3",
+      "6bba_337b1b3a", "6bba_372c8cb8", "6bba_3a1849c2", "6bba_3c5691b6",
+      "6bba_3fda6b25", "6bba_43fea39d", "6bba_48816121", "6bba_4aa14c89",
+      "6bba_4f99ce20", "6bba_55b7eebe", "6bba_5a4d9360", "6bba_5b28472a",
+      "6bba_5c039895", "6bba_5c824876", "6bba_5f89039d", "6bba_61dd1e0d",
+      "6bba_61ecbe65", "6bba_6321a359", "6bba_67ebd073", "6bba_6ca87370",
+      "6bba_6feeb0b1", "6bba_705ec2c9", "6bba_718b21f9", "6bba_76db78c1",
+      "6bba_784a78c9", "6bba_789f8168", "6bba_7b5d3b2c", "6bba_7d3058ae",
+      "6bba_7f87b3d8", "6bba_80d12824", "6bba_825bd1c6", "6bba_87289e13",
+      "6bba_8b7818bf", "6bba_907271db", "6bba_91951b3a", "6bba_96833384",
+      "6bba_971fa5e0", "6bba_9a41d029", "6bba_9e23430b", "6bba_a5e926bb",
+      "6bba_acd782a8", "6bba_ae82a791", "6bba_aeee7805", "6bba_af149c94",
+      "6bba_afb141ff", "6bba_b204cac7", "6bba_b693381b", "6bba_bb9f20c3",
+      "6bba_bbb708ca", "6bba_c27cba08", "6bba_cdcfe533", "6bba_cff5865f",
+      "6bba_d0fc38b5", "6bba_d2b9fc0c", "6bba_d3da753b", "6bba_d5eae175",
+      "6bba_d6ecebbb", "6bba_debd7bfa", "6bba_df673a83", "6bba_e16ffc58",
+      "6bba_e5e44988", "6bba_ed9377fd", "6bba_eebc57a5", "6bba_ef7b4f7e",
+      "6bba_f1fde7e0", "6bba_f20478e9", "6bba_f4ae811c", "6bba_fbc898dc",
+      "6bba_fc516dc6", "6bba_fe670320"
+    ],
+    "regression_sample_ids": [
+      "6bba_05b6850b", "6bba_23af9eeb", "6bba_2540cd90", "6bba_2646afc7",
+      "6bba_372c8cb8", "6bba_3c5691b6", "6bba_5b28472a", "6bba_5f89039d",
+      "6bba_718b21f9", "6bba_76db78c1", "6bba_96833384", "6bba_b204cac7",
+      "6bba_d0fc38b5", "6bba_d5eae175", "6bba_ed9377fd", "6bba_fc516dc6"
+    ]
+  },
+  "shadow": {
+    "max_counterfactual_edges": 64,
+    "commitment_horizon_frames": 2,
+    "max_ilp_windows": 16,
+    "baseline_change_penalty_um": 2.0,
+    "minimum_improvement_um": 0.5,
+    "max_variables": 512,
+    "time_limit_seconds": 5.0
+  },
+  "execution": {
+    "max_timepoints": null,
+    "unet_batch_size": 4,
+    "verify_determinism": true,
+    "resume": true
+  },
+  "boundaries": {
+    "assignment_enabled": false,
+    "selector_enabled": false,
+    "production_graph_mutation": false,
+    "submission_authorized": false,
+    "threshold_tuning": false
+  }
+}

@@ -49,7 +49,7 @@ in [OFFICIAL_EVALUATOR_PARITY_INVENTORY.md](OFFICIAL_EVALUATOR_PARITY_INVENTORY.
 research status and full set of preserved and withdrawn claims remain in
 [V21_SESSION_SYNTHESIS_2026-07-22.md](V21_SESSION_SYNTHESIS_2026-07-22.md).
 
-### Active V24 Containment Hypotheses
+### V24 Containment Hypotheses and Result
 
 Frozen V24.3 has completed full-199 score validation. It reached adjusted edge Jaccard `0.721056`,
 a `+0.235028` delta over V19, with 183 improved and 16 regressed samples. All 16 regressions are in
@@ -57,7 +57,7 @@ the `6bba` family on the V19 `components + greedy` route. Forensics localize the
 E016 detections plus motion-mutual relinking; V24.2 and V24.3 improve every regression over their
 immediate predecessors. Submission, automatic fallback, and further pruning remain unauthorized.
 
-The current shadow-only containment work tests three linked hypotheses:
+The shadow-only containment work tested three linked hypotheses:
 
 1. **Commitment intervention:** removing one accepted predecessor contribution can expose
   assignments whose downstream motion history is path-dependent. This is inspired by ROOT's
@@ -67,12 +67,13 @@ The current shadow-only containment work tests three linked hypotheses:
 3. **Combined precision funnel:** commitment persistence should select a narrower and more useful
   set of ILP windows than ambiguity or optimization alone.
 
-The first local two-sample composition is promising but not efficacy evidence. Across six
-commitment-changed windows, the only persistent window produced the only complete unpenalized ILP
-rewrite (`1/1` persistent versus `0/5` reconverging). The frozen containment contract accepted
-`0/6` changes. Two reconverging windows produced add-only extensions and were correctly rejected.
-The next expensive step is a fixed-cohort GPU shadow replay under this unchanged contract after
-compute quota resets; no threshold should be changed from the opened two-sample result.
+The fixed route-90 GPU replay is complete and does not support the combined hypothesis. ROOT found
+631 commitment-changed windows, of which 84 were persistent. The contained primary accepted 55
+ownership alternatives, but 46 were incompatible with the pruned V24.3 scoring graph and all 9
+scoreable rewrites were metric-neutral. The zero-penalty diagnostic had 3 improved, 38 neutral, and
+1 regressed scoreable rewrites; all four nonzero outcomes were reconverging rather than persistent.
+V24.7 is therefore a **NO-GO for promotion**. The V24.3 baseline remains unchanged, and neither
+threshold tuning nor automatic selection is authorized from this opened-label evidence.
 
 ## Design Principles
 
@@ -120,7 +121,7 @@ the relevant audit before promoting one.
 | V21 | Can recovery, confidence routing, continuity, or local exclusivity rescue divisions safely? | Partial research result. The joint semantic Phase 0 extractor passed its fixed battery, but the preregistered availability gate failed at 13/46 development and 7/47 calibration positives. Calibrated scoring and constrained assignment are not authorized under the current formation path. |
 | V22 | Can public learned detections repair upstream division availability without weakening epistemic guardrails? | Mixed but promising. The conservative post-link second-child rule remained a standalone NO-GO, while the frozen temporal U-Net raised patched-official action availability from 13/46 to 39/46 with zero graph mutation. Semantic ranking plus coupled local ownership is now pre-registered on development only; locked validation and the full 199 remain closed. |
 | V23 | Can detector-native, radar-inspired, or parent-centered pair-field evidence rank division actions beyond explicit geometry? | Closed NO-GO for the learned pair-field path. Across three seeds the image model recovered only 6-10 of 29 events at Recall@10, while geometry-only recovered 26/29. Shuffled and static-image controls found no independent image contribution. CFAR and production graphs remain unchanged. |
-| V24 | Can a held-out temporal U-Net improve complete-sequence official edge tracking over frozen V19? | Full-199 score validation complete, submission not authorized. Frozen V24.3 reached 0.72106 adjusted edge Jaccard (`+0.23503` vs V19), with 183 improvements and 16 regressions. Current V24.5-V24.7 work tests ROOT-inspired commitment intervention plus bounded ILP as a shadow-only regression-containment funnel. |
+| V24 | Can a held-out temporal U-Net improve complete-sequence official edge tracking over frozen V19? | Full-199 score validation complete, submission not authorized. Frozen V24.3 reached 0.72106 adjusted edge Jaccard (`+0.23503` vs V19), with 183 improvements and 16 regressions. The route-90 V24.7 commitment-plus-ILP funnel is a promotion NO-GO: its 9 scoreable contained rewrites were neutral, while the zero-penalty diagnostic included one regression. |
 
 ## Start Here
 
@@ -176,6 +177,10 @@ the relevant audit before promoting one.
   assignment optimization and explicit baseline-change containment.
 - [V24.7 Combined Commitment plus ILP Shadow](V24_7_COMMITMENT_ILP_COMBINED_SHADOW_LOCAL_2.md):
   six-window funnel comparison, proposal classification, and fixed-contract abstention result.
+- [V24.7 Route-90 GPU Shadow Preregistration](V24_7_ROUTE_90_GPU_SHADOW_PREREGISTRATION.md):
+  fixed 90-sample cohort, runtime contract, endpoints, and interpretation rules.
+- [V24.7 Route-90 GPU Shadow Results](V24_7_ROUTE_90_GPU_SHADOW_RESULTS.md): complete evidence,
+  compatibility attrition, official-metric outcomes, and promotion NO-GO.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
