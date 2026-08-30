@@ -1,0 +1,67 @@
+{
+  "name": "v24_8_independent_cohort_eligibility_audit_v1",
+  "date": "2026-08-30",
+  "status": "complete_no_eligible_cohort",
+  "sources": {
+    "labeled_manifest": {
+      "path": "v22_e016_clean_checkpoint_manifest.json",
+      "canonical_sha256": "b016678e77133bc9bcabfca031f5229538837b929bc50cac01f2b8173cc604a9"
+    },
+    "internal_split": {
+      "path": "dataset_splits_v22_e016_clean.json",
+      "canonical_sha256": "6c27e5455df397c45669d456dce1b94a93b90f8befc2832014af3dc987af979d"
+    },
+    "full_population_report": {
+      "path": "v24_3_full_199_score_validation_report.json",
+      "canonical_sha256": "977896b8a53e9de1203c46933a676197e027a02f06ba563c271d7a042fa3ef1a",
+      "population_sample_ids_sha256": "9dcf4f774e02c9d818227ba25831ff4a29eafb4749418c862c3dd42a1c8a0dcb"
+    }
+  },
+  "inventory": {
+    "labeled_samples": 199,
+    "checkpoint_training_samples": 172,
+    "held_out_development_samples": 27,
+    "opened_full_population_samples": 199,
+    "labeled_samples_not_opened": 0,
+    "historical_internal_validation_samples": 34,
+    "historical_internal_validation_within_checkpoint_training": 34,
+    "eligible_labeled_repository_samples": 0
+  },
+  "candidate_assessments": [
+    {
+      "candidate": "checkpoint_training_172",
+      "eligible": false,
+      "reason": "used to fit the frozen checkpoint and scored in the V24.3 full-population evaluation"
+    },
+    {
+      "candidate": "held_out_development_27",
+      "eligible": false,
+      "reason": "opened in V24 development and scored in the V24.3 full-population evaluation"
+    },
+    {
+      "candidate": "historical_internal_validation_34",
+      "eligible": false,
+      "reason": "entirely contained within checkpoint_training_172; the split name does not denote independent competition evidence"
+    },
+    {
+      "candidate": "route_90",
+      "eligible": false,
+      "reason": "subset of the opened labeled population and explicitly evaluated in V24.7"
+    },
+    {
+      "candidate": "competition_hidden_test",
+      "eligible": false,
+      "reason": "labels and per-sample official outcomes are not locally available or auditable; no immutable labeled source manifest can be frozen"
+    }
+  ],
+  "decision": "NO_QUALIFYING_INDEPENDENT_COHORT_AVAILABLE",
+  "next_admissible_action": "obtain new labeled samples under an immutable source manifest or keep V24.8 execution blocked",
+  "boundaries": {
+    "implementation_authorized": false,
+    "execution_authorized": false,
+    "threshold_tuning_authorized": false,
+    "selector_authorized": false,
+    "production_graph_mutation": false,
+    "submission_authorized": false
+  }
+}

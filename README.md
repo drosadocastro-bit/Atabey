@@ -74,8 +74,10 @@ scoreable rewrites were metric-neutral. The zero-penalty diagnostic had 3 improv
 1 regressed scoreable rewrites; all four nonzero outcomes were reconverging rather than persistent.
 V24.7 is therefore a **NO-GO for promotion**. The V24.3 baseline remains unchanged, and neither
 threshold tuning nor automatic selection is authorized from this opened-label evidence.
-V24.8 is limited to a draft post-pruning contract: execution remains blocked until a genuinely
-independent cohort and immutable source manifest are available.
+The V24.8 independent-cohort inventory accounts for all 199 labeled samples and finds zero unopened
+candidates; the historical 34-sample internal split is part of the checkpoint-training 172. V24.8
+therefore remains blocked until genuinely new labeled evidence and an immutable source manifest are
+available.
 
 ## Design Principles
 
@@ -184,7 +186,9 @@ the relevant audit before promoting one.
 - [V24.7 Route-90 GPU Shadow Results](V24_7_ROUTE_90_GPU_SHADOW_RESULTS.md): complete evidence,
   compatibility attrition, official-metric outcomes, and promotion NO-GO.
 - [V24.8 Post-Pruning Commitment plus ILP Preregistration](V24_8_POST_PRUNING_COMMITMENT_ILP_PREREGISTRATION.md):
-  draft graph-aligned contract; implementation and execution blocked pending independent evidence.
+  graph-aligned contract; implementation and execution blocked pending genuinely new labeled evidence.
+- [V24.8 Independent Cohort Eligibility Audit](V24_8_INDEPENDENT_COHORT_ELIGIBILITY_AUDIT.md):
+  complete inventory proving that no unopened labeled repository cohort remains.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,

@@ -2,7 +2,7 @@
 
 Date: 2026-08-30
 
-Status: **DRAFT; EXECUTION BLOCKED PENDING INDEPENDENT EVIDENCE**.
+Status: **INDEPENDENT-COHORT INVENTORY COMPLETE; EXECUTION BLOCKED**.
 
 This document fixes the next admissible question after the V24.7 route-90
 promotion NO-GO. It does not authorize implementation, execution, threshold
@@ -135,5 +135,13 @@ Add-only proposals remain separate and do not count as ownership-rewrite evidenc
 
 ## Current Decision
 
-V24.8 is authorized only for contract design. Implementation and execution remain
-blocked because no qualifying independent cohort manifest has been frozen.
+The completed
+[independent-cohort eligibility audit](V24_8_INDEPENDENT_COHORT_ELIGIBILITY_AUDIT.md)
+accounts for all 199 labeled samples and finds zero unopened candidates. The
+historical 34-sample internal-validation split is entirely contained within the
+checkpoint-training 172 and is not independent evidence. Competition hidden-test
+labels and per-sample outcomes are not locally available or auditable.
+
+V24.8 remains authorized only for contract design. Implementation and execution
+remain blocked until genuinely new labeled samples can be frozen under an
+immutable source manifest satisfying the eligibility gate.
