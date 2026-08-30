@@ -3,9 +3,9 @@
   "status": "preregistered_gpu_shadow",
   "sources": {
     "route_inventory": "v22_route_prevalence_199.json",
-    "route_inventory_sha256": "e513c6b341f9f6ad77cd380546d5f9fdb0af0c5a9470e7ee720c8982b7a153e3",
+    "route_inventory_sha256": "b460493ce2c510046a618fc274e2762caca1c2a7b99562fc0fd27967f327f6a3",
     "regression_forensics": "V24_3_FULL_199_REGRESSION_FORENSICS.md",
-    "regression_forensics_sha256": "9a9e70a91410bf9cb266d115032c00f5e426215319305b49d39db689ecf7e728",
+    "regression_forensics_sha256": "57ea3b00c375759c2566e82504ea477078b7a27eb6c80b11d53be962455b03e4",
     "checkpoint_contract": "tests/fixtures/v24_score_first_tracking.json",
     "predictor_sha256": "c44e771ba5980b820f93091e03a303c25dfe8f3232e501f54dc9565731c234b9"
   },

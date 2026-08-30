@@ -2,7 +2,10 @@ import json
 from pathlib import Path
 
 from atabey.types import Detection, LineageEdge, LineageGraph
-from scripts.run_v24_7_route_90_shadow import apply_edge_proposal
+from scripts.run_v24_7_route_90_shadow import (
+    _canonical_text_sha256,
+    apply_edge_proposal,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,6 +48,18 @@ def test_route_90_contract_is_fixed_and_bounded() -> None:
         "submission_authorized": False,
         "threshold_tuning": False,
     }
+
+
+def test_route_90_provenance_hash_is_platform_stable(tmp_path: Path) -> None:
+    lf_path = tmp_path / "lf.txt"
+    crlf_path = tmp_path / "crlf.txt"
+    changed_path = tmp_path / "changed.txt"
+    lf_path.write_bytes(b"route\nrecord\n")
+    crlf_path.write_bytes(b"route\r\nrecord\r\n")
+    changed_path.write_bytes(b"route\nchanged\n")
+
+    assert _canonical_text_sha256(lf_path) == _canonical_text_sha256(crlf_path)
+    assert _canonical_text_sha256(lf_path) != _canonical_text_sha256(changed_path)
 
 
 def test_apply_edge_proposal_returns_new_graph() -> None:

@@ -35,6 +35,12 @@ from run_v24_score_first_tracking import (
 EdgeKey = tuple[str, str]
 
 
+def _canonical_text_sha256(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")
+    canonical = text.replace("\r\n", "\n").replace("\r", "\n")
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
 def _atomic_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
@@ -107,9 +113,9 @@ def _validate_contract(contract: dict[str, Any]) -> tuple[list[str], set[str]]:
         raise RuntimeError("Route-90 ordering or regression subset contract failed")
     route_path = ROOT / contract["sources"]["route_inventory"]
     forensic_path = ROOT / contract["sources"]["regression_forensics"]
-    if _sha256(route_path) != contract["sources"]["route_inventory_sha256"]:
+    if _canonical_text_sha256(route_path) != contract["sources"]["route_inventory_sha256"]:
         raise RuntimeError("Route inventory hash mismatch")
-    if _sha256(forensic_path) != contract["sources"]["regression_forensics_sha256"]:
+    if _canonical_text_sha256(forensic_path) != contract["sources"]["regression_forensics_sha256"]:
         raise RuntimeError("Regression forensics hash mismatch")
     route_records = json.loads(route_path.read_text(encoding="utf-8"))["records"]
     derived = sorted(
