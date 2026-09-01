@@ -79,6 +79,13 @@ candidates; the historical 34-sample internal split is part of the checkpoint-tr
 therefore remains blocked until genuinely new labeled evidence and an immutable source manifest are
 available.
 
+V25 opens as read-only upstream-association forensics. It instruments the unchanged E016 plus
+motion-mutual path to distinguish candidate-generation failures from candidates that enter and lose,
+with V19 comparison and pruning survival exposed only as audit layers. It makes no score, selector,
+promotion, routing, or intervention claim.
+The [V25 Kaggle CUDA telemetry notebook](notebooks/V25_upstream_association_forensics_cuda_kaggle.ipynb)
+runs the frozen 16-case observer while recording separate NVML hardware-utilization evidence.
+
 ## Design Principles
 
 - **Streaming first:** process timepoints and bounded local volumes without assuming the full 4D
@@ -189,6 +196,10 @@ the relevant audit before promoting one.
   graph-aligned contract; implementation and execution blocked pending genuinely new labeled evidence.
 - [V24.8 Independent Cohort Eligibility Audit](V24_8_INDEPENDENT_COHORT_ELIGIBILITY_AUDIT.md):
   complete inventory proving that no unopened labeled repository cohort remains.
+- [V25 Upstream Association Forensics Preregistration](V25_UPSTREAM_ASSOCIATION_FORENSICS_PREREGISTRATION.md):
+  frozen observability contract for the 16 known V24.3 regressions.
+- [V25 Failure Taxonomy Audit](V25_FAILURE_TAXONOMY_AUDIT.md): initial evidence classes,
+  preserved negative findings, and the unresolved candidate-generation-versus-ranking question.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,

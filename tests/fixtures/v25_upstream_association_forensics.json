@@ -1,0 +1,86 @@
+{
+  "name": "v25_upstream_association_forensics_v1",
+  "date": "2026-08-30",
+  "status": "preregistered_observability_only_not_executed",
+  "question": "When V24.3 regresses, did the correct association never enter the candidate set, or did it enter and lose?",
+  "frozen_baseline": {
+    "name": "V24.3",
+    "checkpoint_sha256": "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03",
+    "predictor_sha256": "c44e771ba5980b820f93091e03a303c25dfe8f3232e501f54dc9565731c234b9",
+    "merged_archive_sha256": "569a6045aca41d6c70efd3e980ecd087b097563dd7b70c35bf0d12c61f5660ae",
+    "merged_csv_sha256": "78aacb11c1bf155230dadfac2ef5ab6b234fd6991e1d4366f708df54859592fb",
+    "merged_summary_sha256": "424902ed276ea941fb72eda6658cc57fb1bff412b53890c121a6be3639efa019",
+    "population_sample_ids_sha256": "9dcf4f774e02c9d818227ba25831ff4a29eafb4749418c862c3dd42a1c8a0dcb",
+    "sample_count": 199,
+    "adjusted_edge_jaccard": 0.7210557494830292
+  },
+  "sources": {
+    "association_forensics": ["src/atabey/tracking/association_forensics.py", "a86af2238aabbaea4fe0cf25b6980cc7e7544b528df7dc30416b69612054a70e"],
+    "official_association_forensics": ["src/atabey/evaluation/official_association_forensics.py", "15594b97797d0fb6c3b86407b6eb47c4f0e62f7adcde9e4d38e7b9da31c1f3ab"],
+    "runner": ["scripts/run_v25_upstream_association_forensics.py", "9c151ca23a9d41a24b748e9e1ed3edd6f929b255e3881db178ec3d5e4ee27302"],
+    "motion_mutual_linker": ["src/atabey/tracking/nearest_neighbor.py", "1ecb2da86da4d1efd4ed2ce513fd9746282d3788e8428c5f1445f7e1c9d6410f"],
+    "unet_graph": ["src/atabey/tracking/unet_graph.py", "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7"],
+    "v24_2_pruning": ["src/atabey/tracking/v24_2_shadow.py", "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8"],
+    "v24_3_pruning": ["src/atabey/tracking/v24_3_shadow.py", "737aff38ad889e84630cd71b72e95062616a8726f23f0e9a767eb27bcb575eed"],
+    "full_199_report": ["v24_3_full_199_score_validation_report.json", "977896b8a53e9de1203c46933a676197e027a02f06ba563c271d7a042fa3ef1a"],
+    "full_199_audit": ["V24_3_FULL_199_SCORE_VALIDATION_AUDIT.md", "d1b303cc719f174736837c31ac6223f91beeaf7ee0797e9c8dc363658efd11c2"],
+    "regression_forensics": ["V24_3_FULL_199_REGRESSION_FORENSICS.md", "57ea3b00c375759c2566e82504ea477078b7a27eb6c80b11d53be962455b03e4"],
+    "v24_7_results": ["V24_7_ROUTE_90_GPU_SHADOW_RESULTS.md", "51c24b3ac6ec4b966b6c994ced6abd47fece6837fb428f2c8f012db083e80c99"],
+    "v24_8_preregistration": ["V24_8_POST_PRUNING_COMMITMENT_ILP_PREREGISTRATION.md", "39fb8ce8cb5528ca737432dc72762790423a7e8dc589e1825143658d02c48856"],
+    "v24_8_eligibility_audit": ["V24_8_INDEPENDENT_COHORT_ELIGIBILITY_AUDIT.md", "d95dc9aa243a565a2d60f170c686c2b62e7fef4e44220940ae88b509f61220fd"]
+  },
+  "cohort": {
+    "selection": "all_16_opened_v24_3_regressions_vs_v19",
+    "sample_count": 16,
+    "catastrophic_count": 4,
+    "mild_count": 12,
+    "family": "6bba",
+    "v19_detector": "components",
+    "v19_linker": "greedy",
+    "sample_ids": [
+      "6bba_05b6850b", "6bba_23af9eeb", "6bba_2540cd90", "6bba_2646afc7",
+      "6bba_372c8cb8", "6bba_3c5691b6", "6bba_5b28472a", "6bba_5f89039d",
+      "6bba_718b21f9", "6bba_76db78c1", "6bba_96833384", "6bba_b204cac7",
+      "6bba_d0fc38b5", "6bba_d5eae175", "6bba_ed9377fd", "6bba_fc516dc6"
+    ]
+  },
+  "telemetry": [
+    "nearest_second_distance_margin_um",
+    "candidate_count_per_source",
+    "mutuality_conflict",
+    "unmatched_detection",
+    "edge_length_um",
+    "velocity_um",
+    "motion_prediction_error_um",
+    "local_source_density",
+    "local_target_density",
+    "crossing_competitor_count",
+    "candidate_edge_pruning_survival"
+  ],
+  "failure_classes": [
+    "candidate_generation_failure",
+    "candidate_selection_ranking_failure",
+    "post_link_pruning_interaction",
+    "metric_node_adjustment_only_effect",
+    "unresolved_insufficient_telemetry"
+  ],
+  "initial_taxonomy": {
+    "adjustment_only": ["6bba_b204cac7", "6bba_ed9377fd"],
+    "unresolved_pending_telemetry": [
+      "6bba_05b6850b", "6bba_23af9eeb", "6bba_2540cd90", "6bba_2646afc7",
+      "6bba_372c8cb8", "6bba_3c5691b6", "6bba_5b28472a", "6bba_5f89039d",
+      "6bba_718b21f9", "6bba_76db78c1", "6bba_96833384", "6bba_d0fc38b5",
+      "6bba_d5eae175", "6bba_fc516dc6"
+    ]
+  },
+  "boundaries": {
+    "opened_labels_descriptive_only": true,
+    "score_claim": false,
+    "promotion_claim": false,
+    "selector_claim": false,
+    "automatic_v19_v24_routing": false,
+    "threshold_or_penalty_tuning": false,
+    "graph_mutation": false,
+    "submission_authorized": false
+  }
+}
