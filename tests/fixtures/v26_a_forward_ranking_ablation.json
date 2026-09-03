@@ -7,7 +7,25 @@
     "path": "v25_upstream_forensics_outputs.zip",
     "sha256": "e0d765d513890261c0214f12071e236a3191d29d306c58b91b537304459a006c",
     "bytes": 16331934,
-    "entries": 27
+    "entries": 27,
+    "alternate_containers": [
+      {
+        "origin": "kaggle_kernel_native_output",
+        "sha256": "0984e11446817f83b678612c5f79a4ed9c9a7fb94aa150f250e28149e9199d21",
+        "bytes": 16306805,
+        "entries": 27
+      }
+    ],
+    "scientific_equivalence": {
+      "validated_sample_count": 16,
+      "identical_fields": "all_except_inference_runtime_seconds",
+      "operational_files_allowed_to_differ": [
+        "notebook_run_record.json",
+        "v25_cuda_telemetry.csv",
+        "v25_cuda_telemetry.json",
+        "v25_cuda_telemetry.png"
+      ]
+    }
   },
   "v25_attribution": {
     "selection_losses": 704,
@@ -73,7 +91,7 @@
     "official_metric": ["src/atabey/evaluation/official_tracking_metric.py", "8b7979ee635d853e32bf08c62dc72f637b911ae929307fffc05a462d815cf679"],
     "v25_result": ["v25_upstream_association_forensics_results.json", "516cc5554dea48266133052d407deb27271dff82d4340dd9519dfc860bc82cdd"],
     "v26_a_shadow": ["src/atabey/tracking/v26_a_forward_ranking_shadow.py", "0ce59c8b203297970ab56e79ad2b023249aa8df546bcac9789ba45ee24cdc891"],
-    "runner": ["scripts/run_v26_a_forward_ranking_ablation.py", "c2c33ccdd05ebbebd5c56b991735aa048460a4050d1bb088e5f09b1e83a515e7"]
+    "runner": ["scripts/run_v26_a_forward_ranking_ablation.py", "176ffffd5aefd8273555f768d566690e6e77f8a1d3ed14d08a1b1a56b8d76aea"]
   },
   "boundaries": {
     "opened_labels_descriptive_only": true,

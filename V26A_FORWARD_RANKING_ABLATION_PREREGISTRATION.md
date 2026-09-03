@@ -48,6 +48,12 @@ coordinates must reproduce all 16 relink, V24.2, and V24.3 graph hashes before
 the intervention runs. Ground truth is used only through the pinned official
 evaluator.
 
+Two container hashes are accepted: the retained browser/download bundle and the
+Kaggle kernel-native ZIP. Both contain the same 27 paths. Decompressed comparison
+of all 16 sample records found identical scientific fields; only the operational
+`inference_runtime_seconds` field differs. The kernel run record and CUDA
+telemetry files may also differ. No unpinned container is accepted.
+
 These labels are opened and retrospective. Results are descriptive intervention
 sensitivity evidence, not independent generalization evidence.
 

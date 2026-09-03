@@ -1,0 +1,91 @@
+{
+  "name": "v26a_forward_ranking_ablation_results_v1",
+  "date": "2026-09-03",
+  "status": "V26A_INTERVENTION_SENSITIVITY_COMPLETE",
+  "decision": "NO_GO",
+  "source_archive": {
+    "path": "v26a_forward_ranking_ablation_outputs.zip",
+    "sha256": "36f0559d09f213e675a83df285a8b8f5d53cd0957b67b27053b39d0acb919b39",
+    "bytes": 45397,
+    "entries": 19
+  },
+  "provenance": {
+    "atabey_commit": "dd2598dc3f5fb1dc7352f844749b307195b13c12",
+    "v25_archive_sha256": "0984e11446817f83b678612c5f79a4ed9c9a7fb94aa150f250e28149e9199d21",
+    "v25_archive_bytes": 16306805,
+    "sample_count": 16,
+    "scientific_replay_deterministic": true,
+    "production_tuning_authorized": false,
+    "submission_authorized": false
+  },
+  "intervention": {
+    "name": "forward_step_distance_ranking",
+    "frozen": [
+      "e016_detections",
+      "prediction_9um_gate",
+      "step_9um_gate",
+      "reverse_mutuality",
+      "greedy_uniqueness",
+      "prediction_error_confidence",
+      "v24_2_pruning",
+      "v24_3_pruning",
+      "official_metric"
+    ]
+  },
+  "edge_transitions": {
+    "incorrect_edge_semantics": "prediction edges officially unmatched under sparse ground truth; not proof of biological falsehood",
+    "recovered_v19_credited_edges": 148,
+    "forward_prediction_ranking_loss": 108,
+    "reverse_mutuality_conflict": 18,
+    "candidate_generation_failure": 4,
+    "post_link_pruning_interaction": 8,
+    "metric_node_adjustment_only_effect": 10,
+    "newly_credited_edges": 179,
+    "displaced_v24_3_credited_edges": 107,
+    "net_association_delta": 72,
+    "newly_incorrect_edges": 1658,
+    "removed_incorrect_edges": 867,
+    "net_incorrect_edge_delta": 791,
+    "new_incorrect_edges_per_forward_recovery": 15.351851851851851
+  },
+  "official_metric": {
+    "baseline_adjusted_edge_jaccard": 0.7793146489491217,
+    "ablation_adjusted_edge_jaccard": 0.7825865856052103,
+    "adjusted_edge_jaccard_delta": 0.003271936656088603,
+    "baseline_edge_jaccard": 0.7856578115117014,
+    "ablation_edge_jaccard": 0.7894778356207603,
+    "edge_jaccard_delta": 0.003820024109058906,
+    "node_recall_delta": 0.001826520905380824,
+    "pooled_edge_tp_delta": 72,
+    "pooled_edge_fp_delta": 30,
+    "pooled_edge_fn_delta": -72,
+    "predicted_nodes_delta": 584,
+    "samples_improved": 9,
+    "samples_regressed": 7,
+    "samples_flat": 0,
+    "worst_sample_id": "6bba_2646afc7",
+    "worst_sample_adjusted_edge_jaccard_delta": -0.010703946272662246
+  },
+  "pruning_behavior": {
+    "v24_2_removed_nodes": {"baseline": 3726, "ablation": 3534, "delta": -192},
+    "v24_2_removed_edges": {"baseline": 0, "ablation": 0, "delta": 0},
+    "v24_3_removed_nodes": {"baseline": 3344, "ablation": 2952, "delta": -392},
+    "v24_3_removed_edges": {"baseline": 1672, "ablation": 1476, "delta": -196}
+  },
+  "operational_telemetry": {
+    "relink_runtime_seconds_total": 27.34384100300008,
+    "relink_runtime_seconds_mean": 1.708990062687505,
+    "relink_runtime_seconds_max": 2.7014220510000087,
+    "peak_python_tracemalloc_bytes_max": 1431248
+  },
+  "interest_gate": {
+    "minimum_forward_ranking_recoveries": true,
+    "positive_net_association_delta": true,
+    "bounded_net_incorrect_edge_delta": false,
+    "bounded_new_incorrect_edge_ratio": false,
+    "bounded_per_sample_adjusted_edge_regression": true,
+    "deterministic_replay": true,
+    "passed": false
+  },
+  "interpretation": "Physical-step ranking recovered associations and slightly improved the opened-cohort official metric, but collateral officially unmatched-edge growth was far beyond the preregistered bounds. The intervention is a NO-GO; no tuning or production action is authorized."
+}

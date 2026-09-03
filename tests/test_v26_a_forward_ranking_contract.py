@@ -35,6 +35,20 @@ def test_v26_a_freezes_one_intervention_and_the_v25_cohort() -> None:
     assert intervention["max_prediction_error_um"] == 9.0
     assert intervention["max_step_distance_um"] == 9.0
     assert intervention["parameter_sweep"] is False
+    archive = contract["frozen_v25_archive"]
+    assert archive["alternate_containers"] == [
+        {
+            "origin": "kaggle_kernel_native_output",
+            "sha256": "0984e11446817f83b678612c5f79a4ed9c9a7fb94aa150f250e28149e9199d21",
+            "bytes": 16306805,
+            "entries": 27,
+        }
+    ]
+    assert archive["scientific_equivalence"]["validated_sample_count"] == 16
+    assert (
+        archive["scientific_equivalence"]["identical_fields"]
+        == "all_except_inference_runtime_seconds"
+    )
 
 
 def test_v26_a_interest_gate_is_stronger_than_score_improvement() -> None:

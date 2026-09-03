@@ -352,7 +352,15 @@ def _validate_contract(contract: dict[str, Any], archive_path: Path) -> list[str
     if len(sample_ids) != 16 or len(set(sample_ids)) != 16:
         raise RuntimeError("V26A cohort must contain 16 unique samples")
     archive = contract["frozen_v25_archive"]
-    if archive_path.stat().st_size != archive["bytes"] or _sha256(archive_path) != archive["sha256"]:
+    accepted_containers = [archive, *archive.get("alternate_containers", [])]
+    actual_identity = {
+        "bytes": archive_path.stat().st_size,
+        "sha256": _sha256(archive_path),
+    }
+    if not any(
+        actual_identity == {"bytes": item["bytes"], "sha256": item["sha256"]}
+        for item in accepted_containers
+    ):
         raise RuntimeError("V26A frozen V25 archive mismatch")
     for path, expected_hash in contract["sources"].values():
         if canonical_text_sha256(ROOT / path) != expected_hash:
