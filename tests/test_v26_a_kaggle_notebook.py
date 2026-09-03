@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_PATH = ROOT / "notebooks/V26A_forward_ranking_ablation_kaggle.ipynb"
 CONTRACT_PATH = ROOT / "tests/fixtures/v26_a_forward_ranking_ablation.json"
-EXPECTED_COMMIT = "0f442c11ecfb234b39d7b230698cb13e3755f806"
+EXPECTED_COMMIT = "dd2598dc3f5fb1dc7352f844749b307195b13c12"
 
 
 def _notebook() -> dict:
@@ -37,6 +37,10 @@ def test_v26_a_notebook_pins_source_archive_runtime_and_cohort() -> None:
     assert EXPECTED_COMMIT in notebook_source
     assert contract["frozen_v25_archive"]["sha256"] in notebook_source
     assert str(contract["frozen_v25_archive"]["bytes"]) in notebook_source.replace("_", "")
+    alternate = contract["frozen_v25_archive"]["alternate_containers"][0]
+    assert alternate["sha256"] in notebook_source
+    assert str(alternate["bytes"]) in notebook_source.replace("_", "")
+    assert "archive_identity in ACCEPTED_V25_ARCHIVES" in notebook_source
     assert "numpy==2.2.6" in notebook_source
     assert "scipy==1.16.3" in notebook_source
     assert "39dccf3a243e44274759468cb31b2ad9e7fc1d09" in notebook_source
@@ -64,6 +68,8 @@ def test_v26_a_notebook_covers_audit_and_replay_contract() -> None:
     assert "scientific_payload" in notebook_source
     assert 'clean.pop("runtime_seconds", None)' in notebook_source
     assert 'clean.pop("peak_python_tracemalloc_bytes", None)' in notebook_source
+    assert '"v25_archive_bytes": archive_identity[0]' in notebook_source
+    assert '"v25_archive_sha256": archive_identity[1]' in notebook_source
     assert "interest_gate" in notebook_source
     assert "duplicate_or_orphan_records" in notebook_source
 
