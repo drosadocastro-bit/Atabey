@@ -96,6 +96,11 @@ generation, reverse mutuality, pruning, routing, confidence inputs, and official
 inference-free replay must recover frozen V25 graph hashes before intervention. Its multi-condition
 gate tests recovery against displaced correct associations, newly incorrect associations, mixed-sample
 effects, determinism, and official-metric side effects; passing cannot authorize production tuning.
+The completed run is a **NO-GO**: it recovered 108 of 436 forward-ranking losses and improved
+opened-cohort adjusted edge Jaccard by 0.00327, but introduced 1,658 officially unmatched edges while
+removing 867, for a binding net collateral increase of 791. Sparse labels do not establish biological
+falsehood, but the preregistered collateral gate is binding. No ranking blend, threshold tuning,
+selector, or production action is authorized.
 
 ## Design Principles
 
@@ -218,6 +223,10 @@ the relevant audit before promoting one.
   non-production interest gate.
 - [V26A Kaggle Replay Notebook](notebooks/V26A_forward_ranking_ablation_kaggle.ipynb):
   inference-free frozen-artifact reconstruction, official comparison, deterministic replay, and export.
+- [V26A Forward Ranking Ablation Results](V26A_FORWARD_RANKING_ABLATION_RESULTS.md): completed
+  recovery/collateral audit, mixed-sample effects, pruning interaction, and binding NO-GO.
+- [V26A Forward Ranking Machine Result](v26a_forward_ranking_ablation_results.json): compact
+  provenance, aggregate transitions, official metrics, pruning behavior, and interest-gate outcome.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
