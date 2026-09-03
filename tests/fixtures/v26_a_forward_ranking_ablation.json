@@ -1,0 +1,90 @@
+{
+  "name": "v26_a_forward_ranking_ablation_v1",
+  "date": "2026-09-03",
+  "status": "preregistered_not_executed",
+  "question": "Does physical-step forward ranking recover a meaningful fraction of the 436 forward motion-prediction ranking losses without unbounded collateral associations?",
+  "frozen_v25_archive": {
+    "path": "v25_upstream_forensics_outputs.zip",
+    "sha256": "e0d765d513890261c0214f12071e236a3191d29d306c58b91b537304459a006c",
+    "bytes": 16331934,
+    "entries": 27
+  },
+  "v25_attribution": {
+    "selection_losses": 704,
+    "forward_prediction_ranking_losses": 436,
+    "reverse_mutuality_conflicts": 268,
+    "method": "exact_pinned_scipy_ckdtree_replay"
+  },
+  "cohort": {
+    "selection": "same_16_opened_v24_3_regressions_as_v25",
+    "sample_count": 16,
+    "family": "6bba",
+    "sample_ids": [
+      "6bba_05b6850b", "6bba_23af9eeb", "6bba_2540cd90", "6bba_2646afc7",
+      "6bba_372c8cb8", "6bba_3c5691b6", "6bba_5b28472a", "6bba_5f89039d",
+      "6bba_718b21f9", "6bba_76db78c1", "6bba_96833384", "6bba_b204cac7",
+      "6bba_d0fc38b5", "6bba_d5eae175", "6bba_ed9377fd", "6bba_fc516dc6"
+    ]
+  },
+  "intervention": {
+    "name": "forward_step_distance_ranking",
+    "baseline_forward_rank_key": "motion_prediction_error_um",
+    "ablation_forward_rank_key": "physical_step_distance_um",
+    "forward_tie_break": "original_target_index",
+    "max_prediction_error_um": 9.0,
+    "max_step_distance_um": 9.0,
+    "reverse_mutuality": "raw_physical_nearest_pinned_scipy_ckdtree",
+    "greedy_uniqueness_frozen": true,
+    "edge_confidence_input": "motion_prediction_error_um",
+    "recursive_motion_history": true,
+    "parameter_sweep": false
+  },
+  "required_metrics": [
+    "recovered_v19_credited_edges",
+    "displaced_v24_3_credited_edges",
+    "newly_credited_edges",
+    "newly_incorrect_edges",
+    "removed_incorrect_edges",
+    "net_association_delta",
+    "net_incorrect_edge_delta",
+    "recovered_mechanisms",
+    "pruning_behavior",
+    "official_metric_delta",
+    "mixed_mechanism_sample_behavior",
+    "deterministic_replay",
+    "runtime_seconds",
+    "peak_python_tracemalloc_bytes"
+  ],
+  "interest_gate": {
+    "minimum_forward_ranking_recoveries": 44,
+    "require_positive_net_association_delta": true,
+    "maximum_net_incorrect_edge_delta": 0,
+    "maximum_new_incorrect_edges_per_forward_recovery": 0.25,
+    "maximum_per_sample_adjusted_edge_jaccard_regression": 0.10,
+    "require_deterministic_replay": true,
+    "passing_authorizes_production": false
+  },
+  "sources": {
+    "motion_mutual_linker": ["src/atabey/tracking/nearest_neighbor.py", "1ecb2da86da4d1efd4ed2ce513fd9746282d3788e8428c5f1445f7e1c9d6410f"],
+    "unet_graph": ["src/atabey/tracking/unet_graph.py", "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7"],
+    "v24_2_pruning": ["src/atabey/tracking/v24_2_shadow.py", "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8"],
+    "v24_3_pruning": ["src/atabey/tracking/v24_3_shadow.py", "737aff38ad889e84630cd71b72e95062616a8726f23f0e9a767eb27bcb575eed"],
+    "official_correspondence": ["src/atabey/evaluation/official_association_forensics.py", "15594b97797d0fb6c3b86407b6eb47c4f0e62f7adcde9e4d38e7b9da31c1f3ab"],
+    "official_metric": ["src/atabey/evaluation/official_tracking_metric.py", "8b7979ee635d853e32bf08c62dc72f637b911ae929307fffc05a462d815cf679"],
+    "v25_result": ["v25_upstream_association_forensics_results.json", "516cc5554dea48266133052d407deb27271dff82d4340dd9519dfc860bc82cdd"],
+    "v26_a_shadow": ["src/atabey/tracking/v26_a_forward_ranking_shadow.py", "0ce59c8b203297970ab56e79ad2b023249aa8df546bcac9789ba45ee24cdc891"],
+    "runner": ["scripts/run_v26_a_forward_ranking_ablation.py", "c2c33ccdd05ebbebd5c56b991735aa048460a4050d1bb088e5f09b1e83a515e7"]
+  },
+  "boundaries": {
+    "opened_labels_descriptive_only": true,
+    "independent_generalization_claim": false,
+    "production_tuning_authorized": false,
+    "selector_claim": false,
+    "automatic_routing": false,
+    "threshold_or_weight_tuning": false,
+    "candidate_expansion": false,
+    "mutuality_change": false,
+    "pruning_change": false,
+    "submission_authorized": false
+  }
+}

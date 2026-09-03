@@ -90,6 +90,13 @@ reverse-mutuality conflicts; this remains retrospective mechanism evidence, not 
 The [V25 Kaggle CUDA telemetry notebook](notebooks/V25_upstream_association_forensics_cuda_kaggle.ipynb)
 runs the frozen 16-case observer while recording separate NVML hardware-utilization evidence.
 
+V26A is preregistered as a single forward-ranking ablation on the same opened 16-case evidence.
+It replaces motion-prediction-error ordering with physical-step ordering while freezing candidate
+generation, reverse mutuality, pruning, routing, confidence inputs, and official metric logic. The
+inference-free replay must recover frozen V25 graph hashes before intervention. Its multi-condition
+gate tests recovery against displaced correct associations, newly incorrect associations, mixed-sample
+effects, determinism, and official-metric side effects; passing cannot authorize production tuning.
+
 ## Design Principles
 
 - **Streaming first:** process timepoints and bounded local volumes without assuming the full 4D
@@ -206,6 +213,11 @@ the relevant audit before promoting one.
   taxonomy, exact-linker replay decomposition, and preserved intervention boundary.
 - [V25 Upstream Association Forensics Machine Result](v25_upstream_association_forensics_results.json):
   compact provenance, per-sample counts, replay validation, and CUDA telemetry summary.
+- [V26A Forward Ranking Ablation Preregistration](V26A_FORWARD_RANKING_ABLATION_PREREGISTRATION.md):
+  one-variable physical-step ranking intervention, frozen 16-case replay, collateral ledger, and
+  non-production interest gate.
+- [V26A Kaggle Replay Notebook](notebooks/V26A_forward_ranking_ablation_kaggle.ipynb):
+  inference-free frozen-artifact reconstruction, official comparison, deterministic replay, and export.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
