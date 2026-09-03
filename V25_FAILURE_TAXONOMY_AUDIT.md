@@ -1,26 +1,63 @@
 # V25 Failure Taxonomy Audit
 
-Date: 2026-08-30
+Date: 2026-09-03
 
-Status: **INITIAL CLASSIFICATION FROM RETAINED EVIDENCE; TELEMETRY PENDING**.
+Status: **CUDA TELEMETRY COMPLETE; DESCRIPTIVE MECHANISM AUDIT CLOSED**.
 
 The fixed cohort is the 16 samples where V24.3 regressed against V19. Existing
-artifacts contain aggregate official metrics but not edge coordinates or
-candidate margins. They therefore cannot answer whether a correct association
-was absent from the candidate set or entered and lost.
+The frozen Kaggle run completed all 16 full sequences. It emitted 16 sample
+records, deterministic association payloads, official correspondence, and
+separate hardware telemetry without mutating a graph.
 
-## Initial Classification
+## Direct Answer
 
-| Stratum | Samples | Current V25 class | Evidence |
-| --- | ---: | --- | --- |
-| Catastrophic association loss | 4 | `unresolved_insufficient_telemetry` | Adjusted delta below -0.10; correct-candidate presence is unknown. |
-| Mild association loss | 2 | `unresolved_insufficient_telemetry` | TP falls and FP rises; correct-candidate presence is unknown. |
-| Precision tradeoff | 8 | `unresolved_insufficient_telemetry` | TP and FP both rise; individual wrong-edge mechanisms are unknown. |
-| Adjustment-only tradeoff | 2 | `metric_node_adjustment_only_effect` | Raw edge Jaccard improves; official node adjustment reverses the result. |
+Across 1,069 V19-credited ground-truth edges lost by V24.3:
+
+| Edge-level class | Count | Share |
+| --- | ---: | ---: |
+| `candidate_selection_ranking_failure` | 704 | 65.86% |
+| `candidate_generation_failure` | 243 | 22.73% |
+| `metric_node_adjustment_only_effect` | 99 | 9.26% |
+| `post_link_pruning_interaction` | 23 | 2.15% |
+| `unresolved_insufficient_telemetry` | 0 | 0.00% |
+
+The dominant answer is therefore **the correct association entered and lost**,
+not that it never entered. This is an edge-level statement: 14 non-adjustment
+samples contain mixed generation and selection mechanisms and must not be
+collapsed to one sample-level cause.
+
+## Mechanism Decomposition
+
+Of the 243 generation failures, 63 have at least one missing E016 endpoint
+match. The remaining 180 have both endpoints but fail the fixed 9 um geometric
+candidate gates: 109 fail motion prediction only, 9 fail physical step only,
+and 62 fail both.
+
+Exact replay of the pinned SciPy `cKDTree` choices separates the 704 selection
+losses into:
+
+| Selection subtype | Count | Selection share |
+| --- | ---: | ---: |
+| Correct target loses forward motion-prediction rank | 436 | 61.93% |
+| Correct rank-1 target fails reverse mutuality | 268 | 38.07% |
+
+Selection dominates every non-adjustment sample. `6bba_fc516dc6` is the only
+sample where reverse-mutuality losses exceed forward-ranking losses; it still
+contains both mechanisms.
 
 The two adjustment-only samples are `6bba_b204cac7` and `6bba_ed9377fd`.
 The four catastrophic samples are `6bba_2646afc7`, `6bba_2540cd90`,
 `6bba_76db78c1`, and `6bba_d5eae175`.
+
+## Replay And Observer Boundary
+
+Replaying the frozen linker from recorded physical coordinates reproduced all
+86,778 relink edges exactly, with zero missing or extra edges. The observer's
+NumPy ordering marked 23 rejected candidates as rank-1 mutual even though the
+executed SciPy path did not accept them. Quantized nearest-neighbor ties account
+for a visible subset. Consequently, high-level candidate presence and
+acceptance remain valid, but forward-versus-reverse subtyping uses exact pinned
+`cKDTree` replay rather than observer rank labels.
 
 ## Preserved Negative Findings
 
@@ -33,10 +70,12 @@ The four catastrophic samples are `6bba_2646afc7`, `6bba_2540cd90`,
   the regressions without many false positives.
 - V24.7 commitment plus ILP does not supply a rescue mechanism.
 
-## Pending Answer
+## Decision
 
-For 14 of 16 samples, the key V25 question remains unanswered. The first V25
-telemetry run must classify local official edge losses using direct candidate
-presence, acceptance, and pruning-survival evidence. Until then, replacing
-`unresolved_insufficient_telemetry` with generation or ranking failure would be
-an unsupported claim.
+V25 observability is complete. The evidence supports studying upstream
+association selection before further pruning work, but it does not identify a
+safe intervention. No threshold tuning, V19/V24 selector, automatic routing,
+graph mutation, promotion, or submission is authorized. Any intervention
+requires a separate frozen preregistration and independent evidence.
+
+Machine result: `v25_upstream_association_forensics_results.json`.

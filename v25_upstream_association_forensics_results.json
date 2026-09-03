@@ -1,0 +1,85 @@
+{
+  "name": "v25_upstream_association_forensics_results_v1",
+  "date": "2026-09-03",
+  "status": "V25_OBSERVABILITY_COMPLETE",
+  "scope": "retrospective_descriptive_only",
+  "source_archive": {
+    "path": "v25_upstream_forensics_outputs.zip",
+    "sha256": "e0d765d513890261c0214f12071e236a3191d29d306c58b91b537304459a006c",
+    "bytes": 16331934,
+    "entries": 27
+  },
+  "provenance": {
+    "atabey_commit": "34e24aec4f1d53b387da978febda93a3aa863013",
+    "checkpoint_sha256": "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03",
+    "predictor_sha256": "c44e771ba5980b820f93091e03a303c25dfe8f3232e501f54dc9565731c234b9",
+    "sample_count": 16,
+    "complete_sequences": true,
+    "unet_batch_size": 4,
+    "graph_mutation": false,
+    "score_claim": false,
+    "selector_claim": false,
+    "submission_authorized": false
+  },
+  "lost_edge_taxonomy": {
+    "total": 1069,
+    "candidate_generation_failure": 243,
+    "candidate_selection_ranking_failure": 704,
+    "post_link_pruning_interaction": 23,
+    "metric_node_adjustment_only_effect": 99,
+    "unresolved_insufficient_telemetry": 0
+  },
+  "candidate_generation_decomposition": {
+    "both_endpoints_missing": 14,
+    "source_missing": 24,
+    "target_missing": 25,
+    "prediction_9um_gate_failed": 109,
+    "step_9um_gate_failed": 9,
+    "both_9um_gates_failed": 62
+  },
+  "candidate_selection_decomposition": {
+    "forward_prediction_ranking_loss": 436,
+    "reverse_mutuality_conflict": 268,
+    "method": "exact_pinned_scipy_ckdtree_replay"
+  },
+  "per_sample": {
+    "6bba_05b6850b": {"candidate_generation_failure": 34, "candidate_selection_ranking_failure": 56, "post_link_pruning_interaction": 3, "forward_prediction_ranking_loss": 37, "reverse_mutuality_conflict": 19},
+    "6bba_23af9eeb": {"candidate_generation_failure": 17, "candidate_selection_ranking_failure": 31, "post_link_pruning_interaction": 2, "forward_prediction_ranking_loss": 17, "reverse_mutuality_conflict": 14},
+    "6bba_2540cd90": {"candidate_generation_failure": 6, "candidate_selection_ranking_failure": 40, "post_link_pruning_interaction": 1, "forward_prediction_ranking_loss": 30, "reverse_mutuality_conflict": 10},
+    "6bba_2646afc7": {"candidate_generation_failure": 28, "candidate_selection_ranking_failure": 69, "post_link_pruning_interaction": 1, "forward_prediction_ranking_loss": 43, "reverse_mutuality_conflict": 26},
+    "6bba_372c8cb8": {"candidate_generation_failure": 31, "candidate_selection_ranking_failure": 50, "post_link_pruning_interaction": 2, "forward_prediction_ranking_loss": 31, "reverse_mutuality_conflict": 19},
+    "6bba_3c5691b6": {"candidate_generation_failure": 14, "candidate_selection_ranking_failure": 55, "post_link_pruning_interaction": 3, "forward_prediction_ranking_loss": 32, "reverse_mutuality_conflict": 23},
+    "6bba_5b28472a": {"candidate_generation_failure": 9, "candidate_selection_ranking_failure": 31, "post_link_pruning_interaction": 0, "forward_prediction_ranking_loss": 23, "reverse_mutuality_conflict": 8},
+    "6bba_5f89039d": {"candidate_generation_failure": 25, "candidate_selection_ranking_failure": 52, "post_link_pruning_interaction": 3, "forward_prediction_ranking_loss": 34, "reverse_mutuality_conflict": 18},
+    "6bba_718b21f9": {"candidate_generation_failure": 10, "candidate_selection_ranking_failure": 49, "post_link_pruning_interaction": 0, "forward_prediction_ranking_loss": 29, "reverse_mutuality_conflict": 20},
+    "6bba_76db78c1": {"candidate_generation_failure": 17, "candidate_selection_ranking_failure": 51, "post_link_pruning_interaction": 0, "forward_prediction_ranking_loss": 36, "reverse_mutuality_conflict": 15},
+    "6bba_96833384": {"candidate_generation_failure": 16, "candidate_selection_ranking_failure": 58, "post_link_pruning_interaction": 3, "forward_prediction_ranking_loss": 42, "reverse_mutuality_conflict": 16},
+    "6bba_b204cac7": {"metric_node_adjustment_only_effect": 44},
+    "6bba_d0fc38b5": {"candidate_generation_failure": 9, "candidate_selection_ranking_failure": 79, "post_link_pruning_interaction": 2, "forward_prediction_ranking_loss": 46, "reverse_mutuality_conflict": 33},
+    "6bba_d5eae175": {"candidate_generation_failure": 8, "candidate_selection_ranking_failure": 38, "post_link_pruning_interaction": 0, "forward_prediction_ranking_loss": 20, "reverse_mutuality_conflict": 18},
+    "6bba_ed9377fd": {"metric_node_adjustment_only_effect": 55},
+    "6bba_fc516dc6": {"candidate_generation_failure": 19, "candidate_selection_ranking_failure": 45, "post_link_pruning_interaction": 3, "forward_prediction_ranking_loss": 16, "reverse_mutuality_conflict": 29}
+  },
+  "replay_validation": {
+    "recorded_edges": 86778,
+    "replayed_edges": 86778,
+    "missing_from_replay": 0,
+    "extra_in_replay": 0,
+    "observer_rank1_mutual_unaccepted_cases": 23,
+    "interpretation": "Use exact cKDTree replay for forward-versus-reverse selection subtypes; NumPy observer ordering is ambiguous on quantized ties."
+  },
+  "hardware_telemetry": {
+    "gpu_model": "Tesla T4",
+    "device_count": 2,
+    "cuda_runtime": "12.6",
+    "compute_capability": [7, 5],
+    "elapsed_seconds": 1089.9550230503082,
+    "sample_count": 1080,
+    "gpu_utilization_percent_mean": 14.789814814814815,
+    "gpu_utilization_percent_max": 79.0,
+    "memory_used_mib_max": 1259.1875,
+    "temperature_c_max": 79.0,
+    "power_draw_w_max": 104.389
+  },
+  "decision": "OBSERVABILITY_COMPLETE_NO_INTERVENTION_AUTHORIZED"
+}

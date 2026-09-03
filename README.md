@@ -83,6 +83,10 @@ V25 opens as read-only upstream-association forensics. It instruments the unchan
 motion-mutual path to distinguish candidate-generation failures from candidates that enter and lose,
 with V19 comparison and pruning survival exposed only as audit layers. It makes no score, selector,
 promotion, routing, or intervention claim.
+The completed 16-sample audit classified 1,069 V19-credited lost edges: 704 selection losses, 243
+candidate-generation failures, 23 post-link pruning interactions, and 99 adjustment-only effects.
+Selection is dominant, split by exact linker replay into 436 forward motion-ranking losses and 268
+reverse-mutuality conflicts; this remains retrospective mechanism evidence, not an intervention claim.
 The [V25 Kaggle CUDA telemetry notebook](notebooks/V25_upstream_association_forensics_cuda_kaggle.ipynb)
 runs the frozen 16-case observer while recording separate NVML hardware-utilization evidence.
 
@@ -198,8 +202,10 @@ the relevant audit before promoting one.
   complete inventory proving that no unopened labeled repository cohort remains.
 - [V25 Upstream Association Forensics Preregistration](V25_UPSTREAM_ASSOCIATION_FORENSICS_PREREGISTRATION.md):
   frozen observability contract for the 16 known V24.3 regressions.
-- [V25 Failure Taxonomy Audit](V25_FAILURE_TAXONOMY_AUDIT.md): initial evidence classes,
-  preserved negative findings, and the unresolved candidate-generation-versus-ranking question.
+- [V25 Failure Taxonomy Audit](V25_FAILURE_TAXONOMY_AUDIT.md): completed 1,069-edge mechanism
+  taxonomy, exact-linker replay decomposition, and preserved intervention boundary.
+- [V25 Upstream Association Forensics Machine Result](v25_upstream_association_forensics_results.json):
+  compact provenance, per-sample counts, replay validation, and CUDA telemetry summary.
 - [Official Evaluator Parity Inventory](OFFICIAL_EVALUATOR_PARITY_INVENTORY.md): authoritative
   classification of official, diagnostic, experimental, and invariant evaluation surfaces.
 - [Official Division Metric Integration](OFFICIAL_DIVISION_METRIC_INTEGRATION.md): host pins,
