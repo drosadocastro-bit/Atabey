@@ -1,0 +1,9 @@
+{
+  "completed_samples": [],
+  "error": "V27 frame validity failure in 6bba_05b6850b t=38: [{'source_id': 'unet:6bba_05b6850b:n00003034', 'check': 'h_m0_gate_mismatch'}]",
+  "error_type": "RuntimeError",
+  "production_tuning_authorized": false,
+  "status": "INVALID_EXECUTION",
+  "submission_authorized": false,
+  "v26a_decision_preserved": "NO_GO"
+}
