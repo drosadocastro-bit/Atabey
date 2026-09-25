@@ -102,6 +102,62 @@ removing 867, for a binding net collateral increase of 791. Sparse labels do not
 falsehood, but the preregistered collateral gate is binding. No ranking blend, threshold tuning,
 selector, or production action is authorized.
 
+The subsequent [V26A gate-order audit](V26A_GATE_ORDER_AUDIT_RESULTS.md) qualifies
+the ranking-only interpretation: the baseline selects before applying its gates,
+whereas V26A filters first. On frozen baseline histories, 229 source decisions
+have a feasible alternative after the original choice fails its physical-step
+gate; local V26A accepts 200. This descriptive exposure does not apportion the
+recursive outcome or change the NO-GO. Historical contracts and results remain
+preserved; the additive audit records the discrepancy and its limits.
+
+[V27 is proposed](V27_ASSOCIATION_CAUSAL_DECOMPOSITION_PREREGISTRATION.md) as a
+local decision decomposition: a two-by-two order/ranking design with common
+forward ties, frozen baseline histories and an exact historical reference.
+The [V26A lesson](docs/V26A_LESSONS_LEARNED.md) is recorded explicitly.
+[V27A is now implemented and synthetically validated](V27_IMPLEMENTATION_REVIEW.md)
+with 71 passing tests and a content-pinned manifest.
+Following human review, the exact V27A payload was frozen and executed. The
+[first run stopped with INVALID_EXECUTION](V27A_EXECUTION_FAILURE_AUDIT.md) at
+an exact forward tie whose two targets have different physical-step eligibility.
+No sample completed; the failed unchanged-gate-outcome criterion and raw partial
+evidence are preserved. Recursive-history work remains a separate phase.
+
+[V27A.1 is implemented as an explicit amendment](V27A1_IMPLEMENTATION_REVIEW.md):
+the unchanged candidate-wise gates may yield different outcomes when exact ties
+select different targets. The original decisions and failures remain visible.
+After its 93-test combined battery and explicit human approval, the new payload
+was frozen and [V27A.1 completed all 16 samples](V27A1_ASSOCIATION_DECOMPOSITION_RESULTS.md)
+with `VALID_MECHANISM_RESULT`: 99,167 fixed-history source decisions, identical
+replay pairs, and 48 reproduced reference signatures. Prefiltering adds 202 local
+links under motion ranking and 34 under physical-step ranking, an acceptance
+interaction of -168. Twenty exact-tie selections have different candidate
+eligibility, with the original criterion failures preserved explicitly. These
+local counts establish no tracking-quality improvement; V26A remains NO-GO and
+recursive-history work remains a separate phase.
+
+[V27B now has a separate proposed contract](V27B_RECURSIVE_HISTORY_PREREGISTRATION.md)
+for all five arms on the same 16 samples. It compares each arm's own recursive
+history against its frozen-history decisions and records RAW, V24.2 and V24.3
+graph stages. Same-history probes validate tie behavior without misclassifying
+later differences caused by divergent histories. New official rematching and
+scoring require a subsequent contract.
+[V27B is now implemented and validated](V27B_IMPLEMENTATION_REVIEW.md): its
+combined battery passed 133 tests, including recursive-history divergence,
+pruning non-feedback, deterministic replay and approval-boundary checks. The
+103-source candidate was reviewed and explicitly approved by the human authority.
+The [approved V27B manifest](v27b_freeze_approved_20260924.json) was frozen and
+[V27B completed all 16 samples](V27B_RECURSIVE_HISTORY_RESULTS.md) with
+`VALID_RECURSIVE_MECHANISM_RESULT`: 99,167 source decisions, identical replay
+pairs and 240 graph stages. Recursive M1 retains its frozen-history link count
+while changing 28 accepted outcomes; unchanged pruning increases the motion-order
+net edge difference from +197 in RAW to +242 in P3. These are mechanism results,
+not tracking-quality evidence. Official rematching/scoring remains a separate
+contract, and V26A remains NO-GO.
+
+The [V27 publication scope](docs/V27_PUBLICATION_SCOPE.md) distinguishes the
+published regression evidence and manifests from the complete local run archives
+required for cohort replay and full artifact verification.
+
 ## Design Principles
 
 - **Streaming first:** process timepoints and bounded local volumes without assuming the full 4D

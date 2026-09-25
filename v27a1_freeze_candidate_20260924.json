@@ -1,0 +1,735 @@
+{
+  "human_execution_authorization": null,
+  "payload": {
+    "builder": "Codex",
+    "canonical_sources": {
+      "V26A_GATE_ORDER_AUDIT_PROTOCOL.md": "946dedb88f97e055a66729fa365f8c1ddb187d77d2479535b3e56c347973e09d",
+      "V26A_GATE_ORDER_AUDIT_RESULTS.md": "fa7888144a42d2549ac8851a2dfc3874bdb0e2d67721eb9484e9eb6707835f2f",
+      "V27A1_TIE_GATE_AMENDMENT.md": "f9ba78099c977308e4d34d714d4b1852dd423e003c43f364ac51102fe59f1458",
+      "V27A_EXECUTION_FAILURE_AUDIT.md": "8ffbd14ab3be0c21cbd31c1a9e07506d40b4e4fe1c05d567575418468309945b",
+      "V27_ASSOCIATION_CAUSAL_DECOMPOSITION_PREREGISTRATION.md": "3440b63931a13d803a53efd02bae3fb9f3f7ad3107d171ccf2ba90242a3c4422",
+      "docs/V26A_LESSONS_LEARNED.md": "9e0a3fd62ea8a6f64e479a476e2eeba4d7d5751b7cada8500f0b4a2ae41b6496",
+      "pyproject.toml": "8b003ee5de00dd4a41a0cbf025612cf76386a1b7051e6ef2faa6b487d5a1d775",
+      "scripts/run_hybrid_submission.py": "24df5d2657bb27520d03b41a5fd4f70b9d532204aa69b35582ce627c96e129c6",
+      "scripts/run_hybrid_train_evaluation.py": "d5c6c6e8dd118af9584887c54dfed88f1755848de56229036f1c96df2305fba1",
+      "scripts/run_v20_quality_score_ablation.py": "6a46273d066f09964969e05d72209c1fd4c7b28b26db3366f4100da2c1e672a3",
+      "scripts/run_v21_division_recovery_shadow.py": "0474b452319bc03d6ba01af989020619571a8b0f186896127527b96e4d044637",
+      "scripts/run_v22_unet_detection_shadow.py": "99a3311f29f7af4000b736e61ae3c0ad221c1c34a26609d1490c735b684e418d",
+      "scripts/run_v24_score_first_tracking.py": "557b564422e86be6f1952827eae2e2628b4d3d8c11c1d3a2896bcaeffbf63605",
+      "scripts/run_v25_upstream_association_forensics.py": "9c151ca23a9d41a24b748e9e1ed3edd6f929b255e3881db178ec3d5e4ee27302",
+      "scripts/run_v26_a_forward_ranking_ablation.py": "176ffffd5aefd8273555f768d566690e6e77f8a1d3ed14d08a1b1a56b8d76aea",
+      "scripts/run_v26_a_gate_order_audit.py": "e9208e724e7122985e8c11a666cb12aaea6ad10a86412e60be8a3631f402cff8",
+      "scripts/run_v27_association_decomposition.py": "b60c9220b950ba9134008a73c4da819044b73426cf1ce43cabf26f1fbf4fac4a",
+      "scripts/run_v27a1_association_decomposition.py": "a1e9ead9e0ecaff59e24da460fcb47ea5ede2f8b084913d7b525e987069069e5",
+      "src/atabey/__init__.py": "371e6a096d75deab69b67170516056584487cebb441900b7dddc5ed198ceaaf4",
+      "src/atabey/baseline.py": "b77257a661cd688c06b16a68e05cb85110317410cf3ba57c5f32c6f0c6a48fd8",
+      "src/atabey/constants.py": "d64b633826d0934d80256812bf38bec37a10d5c7b80411e1d4f7204363e02582",
+      "src/atabey/detection/__init__.py": "0004c9923bb412f04e20d92e1186b9fe5450609a9664d8c142df73aa662bbe9f",
+      "src/atabey/detection/adaptive.py": "bfd7f09157648a2cb6cfd059c6457cea5fcaa837096c777da8f5e2e774c42b4c",
+      "src/atabey/detection/baseline.py": "2bfe5a454c3490667794011887608900e856071169a8d6897338e3c17a4c84c4",
+      "src/atabey/detection/cfar_bounded.py": "1814a99fb867ba3bb0898059dd694639ee99c308d3d503b7bef5603bc55f5f85",
+      "src/atabey/detection/cfar_watershed.py": "0cf727c402dd67d12f79d025feaf881a0fab7736a8cf683d2e76cef2b416f4a0",
+      "src/atabey/diagnostics/__init__.py": "89e445f1df6d36731e164798410a4281f4f222527c72afc1611640f8eec92ad0",
+      "src/atabey/diagnostics/intensity.py": "38255ac8d4b63a76563e1355898959f56e16b3c4a9e2aecc36b04479d2f7dbe4",
+      "src/atabey/diagnostics/sun_check.py": "3afc95117cb57cebc51426aed67a67c91a631eced02b431dd650addfdb9f51d8",
+      "src/atabey/evaluation/__init__.py": "e1eea2c88a19bd50d2d5d16b3c14f2ec5378423f83055ee7f3790cb13861f18a",
+      "src/atabey/evaluation/agreement_maps.py": "f5541a2530ccbec201b647cc6a11d0d9624e02997db7311b0a5b77c81b1ed3d0",
+      "src/atabey/evaluation/detection_availability.py": "ecbe9db2383e89fdc57bc9951b504ece3e2a7d5a4f41322d0148f48782cf3625",
+      "src/atabey/evaluation/official_association_forensics.py": "15594b97797d0fb6c3b86407b6eb47c4f0e62f7adcde9e4d38e7b9da31c1f3ab",
+      "src/atabey/evaluation/official_division_metric.py": "a93b0a93fd4abcc92ff252ab7655449f50da4f4c2b2369c45e6ea0f79c75fdb2",
+      "src/atabey/evaluation/official_tracking_metric.py": "8b7979ee635d853e32bf08c62dc72f637b911ae929307fffc05a462d815cf679",
+      "src/atabey/evaluation/semantic_positive_availability.py": "3108b6db25cb665df9aff177f0be5708d932a68c5c219f5ba657701bbfb38abd",
+      "src/atabey/evaluation/sparse_ground_truth.py": "fe8538d941da399b01714993ef47621d7d4e97a9539ca7ad9af9f2fa5736e1e7",
+      "src/atabey/evaluation/sparse_ground_truth_v19_experimental.py": "35279b57ba8b878bca0b4b015061c397af902da7bea69e2ad50fa545cb94e325",
+      "src/atabey/experiments/__init__.py": "326f7e29e46de74390a0fc50805f8b6a70dbf291a2cb1be497b06d12f196e4bf",
+      "src/atabey/experiments/cnn_advisor.py": "660e516216081fca8180cfcb885f430790ad199ee85a41ff06e21fe5f926318e",
+      "src/atabey/hybrid_config.py": "b9c1284dece7ab3405bcf99ad47cc9b67268e2fb78e3062910b12b343673ff41",
+      "src/atabey/io/__init__.py": "029db6bc341c3f60f8aa8af6482601e03ae3a098be42d012fd7f642aca9479c7",
+      "src/atabey/io/geff_reader.py": "5ee9ff9eec4d3a31766504174aa239527d83b1c27f8473debe9a731a7e2f654a",
+      "src/atabey/io/zarr_reader.py": "1ecddac77f7dc73611e2e535eb7bbda93a8475fbf3557d26cdb8832528c89a88",
+      "src/atabey/lineage/__init__.py": "b4ba1d88f2ff71169b30ecfaed918b7e5c26336f80a08b80f35563616c7deea3",
+      "src/atabey/provenance.py": "5c69a602c79d039ba18786095c390c94ed0f6825f77fa88799293a1dbd1af2c2",
+      "src/atabey/state/__init__.py": "f8829823d107101794b43e6695fb8cc2cb144890b731a24ec9ed621e0983cb1a",
+      "src/atabey/state/cell_state.py": "638f026cbd2cb150df374db4be5567aab2da49197bf7f85ad76eef5cf2d61ce3",
+      "src/atabey/submission/__init__.py": "e9b031b7009c2691040d82c8faa9bf3a50fe5388d5a9fa69a82c180a8f284f95",
+      "src/atabey/submission/writer.py": "47176d196c32d00b2bab55dcf91daa26d3a9998f11d3073d4633d8d026a62569",
+      "src/atabey/tracking/__init__.py": "e3447a44492db692dfaa277e20af97c06851ef51821291236b07e9261fcc6a7e",
+      "src/atabey/tracking/adaptive_pruning_evidence_shadow.py": "6a9d5f9286e21833df9946a8293a346c2b8e68de9ef46aae982dadc375171310",
+      "src/atabey/tracking/adaptive_pruning_shadow.py": "46f474f935a79f6e331478e0bc27750011d5167bd0508790d070eeac11866d8e",
+      "src/atabey/tracking/association_factorial_audit.py": "1b1d85c267bdbd6efa226fc878a32610d37199b8dd9ecc78cd94721667739581",
+      "src/atabey/tracking/association_factorial_audit_v27a1.py": "3a14f534af0eaceca91e183289c369ad5b85a484c732c944ab704f3afcb026f8",
+      "src/atabey/tracking/association_forensics.py": "a86af2238aabbaea4fe0cf25b6980cc7e7544b528df7dc30416b69612054a70e",
+      "src/atabey/tracking/bounded_ilp_shadow.py": "f958ef5ef5da1b2117d60b746285ce6725eedb5682dec545b54aa3cb3c2a7406",
+      "src/atabey/tracking/commitment_ilp_shadow.py": "8c5db0628c42815e0b5a6c366633b67f90e69fab60b45f03deb9f78b36d0c9e2",
+      "src/atabey/tracking/commitment_shadow.py": "cc032ae33da52d9587301ff2a050bbef2613a35c6aa00390511550134803cc03",
+      "src/atabey/tracking/continuation_features.py": "f50999a8fa6c747120b0a43b02b4100ea08a542399ed0c7ac41e7a8c190aee94",
+      "src/atabey/tracking/continuation_head.py": "fce81f58924d508c862b43bd1f21ed678ffcc70b01e13002f304e3011c8d7410",
+      "src/atabey/tracking/continuation_reference.py": "7d104ff1ad6612f3f19a3aa0d6a31212c60332b9a6601fb1d3e22b963970f17c",
+      "src/atabey/tracking/correlation_active.py": "6d63dd4042872670705227e2c9406a63313ce3e2d64466380cfa862104451e26",
+      "src/atabey/tracking/correlation_shadow.py": "f29b103dc8fcf9d13897000dc19dff539956307e81894be239cf6a2959c13642",
+      "src/atabey/tracking/division_firewall.py": "6d2977d2b5912f27cf7a74fd705ec6f309dff1c66657959510826e3b745f211c",
+      "src/atabey/tracking/division_recovery_shadow.py": "833f5d9d19a30e9cccf27b4a0fdd98548c556a6c73a9c55a48c2908a814dfeea",
+      "src/atabey/tracking/event_shadow.py": "ba3cf0e4a7d0304b20a7dafa69877c6fab1fc7ad40f8079efc6ad55ed26055f3",
+      "src/atabey/tracking/global_window_optimizer.py": "7df7342d6367106fdca4ab92c43aa2787ed55a208a4bd60c5bce25c1fdb48355",
+      "src/atabey/tracking/joint_semantic_shadow.py": "0fc4d1bcd33e9096ac729751989ddf93f64888470ab3c48be871848277a888bf",
+      "src/atabey/tracking/kinematic_recovery.py": "61f5238d43c0ccfc35d1d173a1aceb7626486f306226ca09d70da43a29b9c39b",
+      "src/atabey/tracking/local_assignment_shadow.py": "00c96817b35c09567c2eb337c907af88ded94a1b10b6e65c65fb67deee7cad17",
+      "src/atabey/tracking/nearest_neighbor.py": "1ecb2da86da4d1efd4ed2ce513fd9746282d3788e8428c5f1445f7e1c9d6410f",
+      "src/atabey/tracking/pair_field.py": "beafc5455a02c8171c1500c2f7f5c8ec4719ec1ec2f3f29defee11934ce2c080",
+      "src/atabey/tracking/pair_field_ranker.py": "0864800832da122a2dc7bf1fb2c5620d7ce7bcce0e3cac6aace10127ee6d4d30",
+      "src/atabey/tracking/safe_division_shadow.py": "3c2f69751e35e5c177122c5536f90435851de2b00a75a6790744db9e0ad53f78",
+      "src/atabey/tracking/semantic_patch_features.py": "00556ae7d8ed1847717fbd5c3e4a99c9ed01397f8ab6b7b82724fa64eec9a4f7",
+      "src/atabey/tracking/topology_telemetry.py": "4f57a1c38fd9c0a31f376a9ab61ebd2f5e21b8088c67b1057467eb3182784a00",
+      "src/atabey/tracking/track_quality_shadow.py": "d44ea639d076b93bf56327b6aa39e682e1170d83a56e17d5ce2425ca8bf62d84",
+      "src/atabey/tracking/unet_action_availability.py": "74c612a78f91e03cf73680f02c7fc37baedb5eb3fa89442d9cb6d9526e1e0baf",
+      "src/atabey/tracking/unet_graph.py": "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7",
+      "src/atabey/tracking/unet_semantic_dataset.py": "f2eb8de23e066114f9bcaf07f528b9e7049d328bcafe8821965e6aea137bb15a",
+      "src/atabey/tracking/unet_semantic_features.py": "6a317a74853e31919a31b2ccf9e9280f124a09f752c4c44feb37f8a05e1faaf7",
+      "src/atabey/tracking/v24_2_shadow.py": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8",
+      "src/atabey/tracking/v24_3_shadow.py": "737aff38ad889e84630cd71b72e95062616a8726f23f0e9a767eb27bcb575eed",
+      "src/atabey/tracking/v26_a_forward_ranking_shadow.py": "0ce59c8b203297970ab56e79ad2b023249aa8df546bcac9789ba45ee24cdc891",
+      "src/atabey/types.py": "ebe1414bcd3926bb504a9b1dc48d754a543afc798487db64e9f71fb8224abbe5",
+      "tests/fixtures/v25_upstream_association_forensics.json": "209d64cc2dd6ba0bc83d3e28b4df74891f938dc23cf851515ef03682b64d95eb",
+      "tests/fixtures/v26_a_forward_ranking_ablation.json": "25c08bf24ab83f4e30c311dbe5119091570da1e1d0d9d59167ddfb6f23ef2c30",
+      "tests/fixtures/v27_association_causal_decomposition.json": "7e07583e7693d6fb1b27dbf8855d5dae0d15e8591aea50ade22f61618012f6f1",
+      "tests/fixtures/v27a1_exact_tie_gate_witness.json": "0dee68f4ca56fb96e8c5362f47d9abd3a106d62cfdba054ee68000bd76d85956",
+      "tests/fixtures/v27a1_tie_gate_amendment.json": "9869a129b037500ac5c09a7a5d01c04c19dd3d369fef384fa0d91e8278dcb845",
+      "tests/test_v27_association_factorial_audit.py": "a5e5afbdfa8bc7c77dd5fbdedc5ba411fe87ae57197ae64838e355f5b419c5c7",
+      "tests/test_v27_association_runner.py": "b97773e4c82f8423c1427d2cb181679228ef2d7c85ea357fb2c190efa23cc456",
+      "tests/test_v27a1_tie_gate_amendment.py": "7d18bc4b51254ad6837c1d43c3738387bdab11143ef0a504c0a32ee6e8a9a3ac",
+      "v25_upstream_association_forensics_results.json": "516cc5554dea48266133052d407deb27271dff82d4340dd9519dfc860bc82cdd",
+      "v26a_forward_ranking_ablation_results.json": "c2e54421c579b7831ce6b73be26827f1d6188ff1a736f7de20a08d85ef2cd640",
+      "v27a_execution_failure_review_20260924.json": "64eff933c8b134090e9a8114e7e086dafdcd2ea9541f6e63cab3492b0f2136e1"
+    },
+    "contract_path": "tests/fixtures/v27a1_tie_gate_amendment.json",
+    "inputs": {
+      "gate_order_audit": {
+        "bytes": 238564,
+        "sha256": "fc33a35293834bba4f710c52fbc967f52b17be15cd350b5bcafaad2847f1261f"
+      },
+      "parent_approved_manifest": {
+        "bytes": 21774,
+        "sha256": "1011ace2bf79da1e044188c742880eae1694bed6b5a4fe15cc1d551109af3b49"
+      },
+      "parent_invalid_execution": {
+        "bytes": 351,
+        "sha256": "cbcd557fd2cf62f86b60241605bec908d87373d316389ef56537b7aed7f68bc7"
+      },
+      "parent_partial_frame_stream": {
+        "bytes": 3383326,
+        "sha256": "4bc89a688438a1002a3b45d59b83b3a10941c4d7ac5383e219b921bfb01ea3f3"
+      },
+      "v25_archive": {
+        "bytes": 16331934,
+        "sha256": "e0d765d513890261c0214f12071e236a3191d29d306c58b91b537304459a006c"
+      },
+      "v26a_archive": {
+        "bytes": 45397,
+        "sha256": "36f0559d09f213e675a83df285a8b8f5d53cd0957b67b27053b39d0acb919b39"
+      }
+    },
+    "runtime": {
+      "implementation": "CPython",
+      "packages": [
+        [
+          "ImageIO",
+          "2.37.3"
+        ],
+        [
+          "Jinja2",
+          "3.1.6"
+        ],
+        [
+          "Markdown",
+          "3.10.2"
+        ],
+        [
+          "MarkupSafe",
+          "3.0.3"
+        ],
+        [
+          "PySCIPOpt",
+          "6.2.1"
+        ],
+        [
+          "PyYAML",
+          "6.0.3"
+        ],
+        [
+          "Pygments",
+          "2.20.0"
+        ],
+        [
+          "SQLAlchemy",
+          "2.0.51"
+        ],
+        [
+          "Werkzeug",
+          "3.1.8"
+        ],
+        [
+          "absl-py",
+          "2.5.0"
+        ],
+        [
+          "annotated-doc",
+          "0.0.5"
+        ],
+        [
+          "annotated-types",
+          "0.8.0"
+        ],
+        [
+          "anyio",
+          "4.14.2"
+        ],
+        [
+          "asttokens",
+          "3.0.2"
+        ],
+        [
+          "astunparse",
+          "1.6.3"
+        ],
+        [
+          "bidict",
+          "0.23.1"
+        ],
+        [
+          "blosc2",
+          "4.9.1"
+        ],
+        [
+          "cellpose",
+          "4.2.1.1"
+        ],
+        [
+          "certifi",
+          "2026.6.17"
+        ],
+        [
+          "charset-normalizer",
+          "3.4.7"
+        ],
+        [
+          "click",
+          "8.4.2"
+        ],
+        [
+          "cloudpickle",
+          "3.1.2"
+        ],
+        [
+          "colorama",
+          "0.4.6"
+        ],
+        [
+          "comm",
+          "0.2.3"
+        ],
+        [
+          "contourpy",
+          "1.3.3"
+        ],
+        [
+          "csbdeep",
+          "0.8.2"
+        ],
+        [
+          "cycler",
+          "0.12.1"
+        ],
+        [
+          "dask",
+          "2026.7.1"
+        ],
+        [
+          "debugpy",
+          "1.8.21"
+        ],
+        [
+          "donfig",
+          "0.8.1.post1"
+        ],
+        [
+          "executing",
+          "2.2.1"
+        ],
+        [
+          "fastremap",
+          "1.20.0"
+        ],
+        [
+          "filelock",
+          "3.29.5"
+        ],
+        [
+          "fill_voids",
+          "2.1.2"
+        ],
+        [
+          "flatbuffers",
+          "25.12.19"
+        ],
+        [
+          "fonttools",
+          "4.63.0"
+        ],
+        [
+          "fsspec",
+          "2026.6.0"
+        ],
+        [
+          "gast",
+          "0.7.0"
+        ],
+        [
+          "geff",
+          "1.3.0.1.2"
+        ],
+        [
+          "geff-spec",
+          "1.2.0"
+        ],
+        [
+          "google-crc32c",
+          "1.8.0"
+        ],
+        [
+          "google-pasta",
+          "0.2.0"
+        ],
+        [
+          "greenlet",
+          "3.5.4"
+        ],
+        [
+          "grpcio",
+          "1.81.1"
+        ],
+        [
+          "h11",
+          "0.16.0"
+        ],
+        [
+          "h2",
+          "4.4.0"
+        ],
+        [
+          "h5py",
+          "3.14.0"
+        ],
+        [
+          "hpack",
+          "4.2.0"
+        ],
+        [
+          "httpcore",
+          "1.0.9"
+        ],
+        [
+          "httpx",
+          "0.28.1"
+        ],
+        [
+          "hyperframe",
+          "6.1.0"
+        ],
+        [
+          "idna",
+          "3.18"
+        ],
+        [
+          "ilpy",
+          "0.6.0"
+        ],
+        [
+          "imagecodecs",
+          "2026.6.26"
+        ],
+        [
+          "iniconfig",
+          "2.3.0"
+        ],
+        [
+          "ipykernel",
+          "7.3.0"
+        ],
+        [
+          "ipython",
+          "9.17.0"
+        ],
+        [
+          "ipython_pygments_lexers",
+          "1.1.1"
+        ],
+        [
+          "jedi",
+          "0.20.0"
+        ],
+        [
+          "jupyter_client",
+          "8.10.0"
+        ],
+        [
+          "jupyter_core",
+          "5.9.1"
+        ],
+        [
+          "keras",
+          "3.15.0"
+        ],
+        [
+          "kiwisolver",
+          "1.5.0"
+        ],
+        [
+          "lazy-loader",
+          "0.5"
+        ],
+        [
+          "libclang",
+          "18.1.1"
+        ],
+        [
+          "llvmlite",
+          "0.48.0"
+        ],
+        [
+          "locket",
+          "1.0.0"
+        ],
+        [
+          "markdown-it-py",
+          "4.2.0"
+        ],
+        [
+          "matplotlib",
+          "3.11.0"
+        ],
+        [
+          "matplotlib-inline",
+          "0.2.2"
+        ],
+        [
+          "mdurl",
+          "0.1.2"
+        ],
+        [
+          "ml_dtypes",
+          "0.5.4"
+        ],
+        [
+          "mpmath",
+          "1.3.0"
+        ],
+        [
+          "msgpack",
+          "1.2.1"
+        ],
+        [
+          "namex",
+          "0.1.0"
+        ],
+        [
+          "natsort",
+          "8.4.0"
+        ],
+        [
+          "ndindex",
+          "1.10.1"
+        ],
+        [
+          "nest-asyncio2",
+          "1.7.2"
+        ],
+        [
+          "networkx",
+          "3.6.1"
+        ],
+        [
+          "numba",
+          "0.66.0"
+        ],
+        [
+          "numcodecs",
+          "0.16.5"
+        ],
+        [
+          "numexpr",
+          "2.14.2"
+        ],
+        [
+          "numpy",
+          "2.4.6"
+        ],
+        [
+          "opencv-python-headless",
+          "5.0.0.93"
+        ],
+        [
+          "opt_einsum",
+          "3.4.0"
+        ],
+        [
+          "optree",
+          "0.19.1"
+        ],
+        [
+          "packaging",
+          "26.2"
+        ],
+        [
+          "pandas",
+          "3.0.3"
+        ],
+        [
+          "parso",
+          "0.8.7"
+        ],
+        [
+          "partd",
+          "1.4.2"
+        ],
+        [
+          "pillow",
+          "12.3.0"
+        ],
+        [
+          "pip",
+          "26.1.2"
+        ],
+        [
+          "platformdirs",
+          "4.11.5"
+        ],
+        [
+          "pluggy",
+          "1.6.0"
+        ],
+        [
+          "polars",
+          "1.36.1"
+        ],
+        [
+          "polars-runtime-32",
+          "1.36.1"
+        ],
+        [
+          "project-atabey",
+          "0.1.0"
+        ],
+        [
+          "prompt_toolkit",
+          "3.0.53"
+        ],
+        [
+          "protobuf",
+          "7.35.1"
+        ],
+        [
+          "psutil",
+          "7.2.2"
+        ],
+        [
+          "psygnal",
+          "0.15.1"
+        ],
+        [
+          "pure_eval",
+          "0.2.3"
+        ],
+        [
+          "pyarrow",
+          "25.0.0"
+        ],
+        [
+          "pydantic",
+          "2.13.4"
+        ],
+        [
+          "pydantic_core",
+          "2.46.4"
+        ],
+        [
+          "pyparsing",
+          "3.3.2"
+        ],
+        [
+          "pytest",
+          "9.1.1"
+        ],
+        [
+          "python-dateutil",
+          "2.9.0.post0"
+        ],
+        [
+          "pyzmq",
+          "27.2.0"
+        ],
+        [
+          "requests",
+          "2.34.2"
+        ],
+        [
+          "rich",
+          "15.0.0"
+        ],
+        [
+          "roifile",
+          "2026.2.10"
+        ],
+        [
+          "rustworkx",
+          "0.18.1"
+        ],
+        [
+          "scikit-image",
+          "0.26.0"
+        ],
+        [
+          "scipy",
+          "1.18.0"
+        ],
+        [
+          "segment-anything",
+          "1.0"
+        ],
+        [
+          "setuptools",
+          "81.0.0"
+        ],
+        [
+          "shellingham",
+          "1.5.4"
+        ],
+        [
+          "six",
+          "1.17.0"
+        ],
+        [
+          "stack-data",
+          "0.6.3"
+        ],
+        [
+          "stardist",
+          "0.9.2"
+        ],
+        [
+          "stickytape",
+          "0.2.1"
+        ],
+        [
+          "sympy",
+          "1.14.0"
+        ],
+        [
+          "tensorboard",
+          "2.21.0"
+        ],
+        [
+          "tensorboard-data-server",
+          "0.7.2"
+        ],
+        [
+          "tensorflow",
+          "2.21.0"
+        ],
+        [
+          "termcolor",
+          "3.3.0"
+        ],
+        [
+          "threadpoolctl",
+          "3.6.0"
+        ],
+        [
+          "tifffile",
+          "2026.6.1"
+        ],
+        [
+          "toolz",
+          "1.1.0"
+        ],
+        [
+          "torch",
+          "2.12.1"
+        ],
+        [
+          "torchvision",
+          "0.27.1"
+        ],
+        [
+          "tornado",
+          "6.5.8"
+        ],
+        [
+          "tqdm",
+          "4.68.3"
+        ],
+        [
+          "tracking-cellmot",
+          "0.1.0"
+        ],
+        [
+          "tracksdata",
+          "0.1.0rc7"
+        ],
+        [
+          "traitlets",
+          "5.16.1"
+        ],
+        [
+          "typer",
+          "0.27.0"
+        ],
+        [
+          "typing-inspection",
+          "0.4.2"
+        ],
+        [
+          "typing_extensions",
+          "4.16.0"
+        ],
+        [
+          "tzdata",
+          "2026.2"
+        ],
+        [
+          "urllib3",
+          "2.7.0"
+        ],
+        [
+          "wcwidth",
+          "0.8.3"
+        ],
+        [
+          "wheel",
+          "0.47.0"
+        ],
+        [
+          "wrapt",
+          "2.2.2"
+        ],
+        [
+          "zarr",
+          "3.2.1"
+        ]
+      ],
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.13.14"
+    },
+    "scope": "V27A1_FIXED_HISTORY_CANDIDATE_WISE_GATES",
+    "test_report": {
+      "errors": 0,
+      "failures": 0,
+      "path": "outputs/v27a1_validation_20260924.xml",
+      "sha256": "5480e8d8abf92c0450682ab50d1796183754209e778794e30fcc77b81e93b256",
+      "skipped": 0,
+      "tests": 93
+    }
+  },
+  "payload_sha256": "2e95327df40245deb2a885265b5ccef88aafb44e52fe6fd32408e4a2bcd19913",
+  "review": null,
+  "status": "READY_FOR_HUMAN_REVIEW"
+}

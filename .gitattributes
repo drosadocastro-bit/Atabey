@@ -9,3 +9,6 @@
 *.prof binary
 *.pth binary
 *.zip binary
+
+# Preserve the byte-pinned post-run verifier recorded by V27B results.
+outputs/v27b_verify_artifacts_20260924.py -text whitespace=cr-at-eol
