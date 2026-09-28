@@ -1,0 +1,59 @@
+{
+  "completed_at_utc": "2026-09-28T20:09:08.130433+00:00",
+  "coordinate_comparison_performed": false,
+  "coordinate_files_verified": 398,
+  "focus_loss_count": 25,
+  "focus_union_count": 28,
+  "graph_replay_performed": false,
+  "inference_performed": false,
+  "inference_records_verified": 398,
+  "package_members_verified": 81,
+  "preparation_script": {
+    "bytes": 10140,
+    "path": "outputs/prepare_v30_diagnostic_20260928.py",
+    "sha256": "7e5aedac65e12746147f50beb54dbda4b5c3c49a74b715c5a64483ea4ea6153c"
+  },
+  "proposal": {
+    "bytes": 332631,
+    "path": "v30_diagnostic_proposal_20260928.json",
+    "sha256": "1d6a30c426b934102ed3ef09a8750ba1e93a812fdd6326bf50830eea91d0ec48"
+  },
+  "release_checks": {
+    "v28_release_freeze_20260928.json": {
+      "artifacts_verified": 76,
+      "identity": {
+        "bytes": 18751,
+        "path": "v28_release_freeze_20260928.json",
+        "sha256": "1e8ed2c78153624c8042a41936ae7b297216ce9fec55833d0c860ee036317037"
+      }
+    },
+    "v29a_release_freeze_20260928.json": {
+      "artifacts_verified": 479,
+      "identity": {
+        "bytes": 108387,
+        "path": "v29a_release_freeze_20260928.json",
+        "sha256": "835a819963e62e3e85eeff4ba87687756cfcbe88b5f41cb218ffdd5229e0dd79"
+      }
+    }
+  },
+  "runtime_verified": {
+    "machine": "AMD64",
+    "packages": {
+      "geff": "1.3.0.1.2",
+      "numpy": "2.4.6",
+      "polars": "1.36.1",
+      "scipy": "1.18.0",
+      "torch": "2.12.1",
+      "tracking-cellmot": "0.1.0",
+      "tracksdata": "0.1.0rc7",
+      "zarr": "3.2.1"
+    },
+    "python": "3.13.14",
+    "system": "Windows"
+  },
+  "sample_pairs": 199,
+  "scoring_performed": false,
+  "source_files_verified": 76,
+  "started_at_utc": "2026-09-28T20:09:07.188639+00:00",
+  "status": "PREPARATION_INPUT_IDENTITIES_VERIFIED"
+}

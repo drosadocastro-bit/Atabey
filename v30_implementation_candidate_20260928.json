@@ -1,0 +1,91 @@
+{
+  "artifacts": [
+    {
+      "bytes": 12573,
+      "path": "V30_DIAGNOSTIC_CONTRACT.md",
+      "sha256": "08cb0a7a4d11d14d3787f8910ce58944b9f5c8de5d1585418c893556d11c9435"
+    },
+    {
+      "bytes": 3812,
+      "path": "V30_REVIEW.md",
+      "sha256": "c99d3178b651f61d21b9d0c723f386691bba03870ec1806fe46c0bc0cc2c772e"
+    },
+    {
+      "bytes": 332631,
+      "path": "v30_diagnostic_proposal_20260928.json",
+      "sha256": "1d6a30c426b934102ed3ef09a8750ba1e93a812fdd6326bf50830eea91d0ec48"
+    },
+    {
+      "bytes": 1804,
+      "path": "outputs/v30_preparation_20260928/input_audit.json",
+      "sha256": "71d1549777d4a5e1e01150ae41aec7b45ab707dfe4f6fee8ef9eacd9fe01398f"
+    },
+    {
+      "bytes": 10140,
+      "path": "outputs/prepare_v30_diagnostic_20260928.py",
+      "sha256": "7e5aedac65e12746147f50beb54dbda4b5c3c49a74b715c5a64483ea4ea6153c"
+    },
+    {
+      "bytes": 6836,
+      "path": "V30_IMPLEMENTATION_REVIEW.md",
+      "sha256": "3fbaa50a3c685ffe16762ffa280ea68e410a07d3b10ac3e7e716bc47db4c3365"
+    },
+    {
+      "bytes": 17526,
+      "path": "src/atabey/tracking/v30_diagnostic.py",
+      "sha256": "6ed97ef60f45213ed93b845491a7ac09aa431ee95390bcf8e0e38d67b65cec85"
+    },
+    {
+      "bytes": 21363,
+      "path": "scripts/run_v30_diagnostic.py",
+      "sha256": "ca507e823e447c80bded24a446ac9dedea41aeafe8b9487ead97323cf478325a"
+    },
+    {
+      "bytes": 15603,
+      "path": "tests/test_v30_diagnostic.py",
+      "sha256": "6710c5b345ea2d4875f4e1f9256812126a03f1a53fda68a8de64eef99986637f"
+    },
+    {
+      "bytes": 4761,
+      "path": "outputs/v30_implementation_20260928/tests_initial.xml",
+      "sha256": "e574bf9f4f9822f0f783fbed9dd869727cc2b47116cdb4e3f2c40fc1e9862d1c"
+    },
+    {
+      "bytes": 10556,
+      "path": "outputs/v30_implementation_20260928/tests.xml",
+      "sha256": "06fdce2e0a675348d0f4182dbe6ab393c73c44a138f824cd002964dd28a8b783"
+    },
+    {
+      "bytes": 10556,
+      "path": "outputs/v30_implementation_20260928/tests_final.xml",
+      "sha256": "426525911ce6cfb79d06446d9f56f3236152b0677e0eea8ae0a26a7585f706aa"
+    },
+    {
+      "bytes": 10556,
+      "path": "outputs/v30_implementation_20260928/tests_release.xml",
+      "sha256": "92160363f8faed57e023cf21c8f9f06529715e6b1e40278d7d20a6e68fa65323"
+    }
+  ],
+  "authority": "Danny",
+  "base_commit": "4328cdfab7460ca3aad758c3275b8ab0af6a6185",
+  "budget_seconds": 7200,
+  "builder": "Codex",
+  "cohort_pairs": 199,
+  "created_at_utc": "2026-09-28T20:49:20.430206+00:00",
+  "execution_authorized": false,
+  "execution_scope": "ONE_CPU_SAVED_COORDINATE_DIAGNOSTIC_NO_SCORING",
+  "focus_samples": 28,
+  "independent_validation": false,
+  "new_scoring_authorized": false,
+  "protected_preexisting_v25_sha256": "f9f13081e96b1925903e1ccb5ae464744b0eb5cc0daf3774f45ba33ce86c33e1",
+  "protocol": "V30_SAVED_COORDINATE_DIAGNOSTIC_V1",
+  "requires_separate_approved_receipt": true,
+  "reviewer": "Danny",
+  "status": "IMPLEMENTED_AWAITING_REVIEW",
+  "submission_authorized": false,
+  "tests": {
+    "passed": 84,
+    "report": "outputs/v30_implementation_20260928/tests_release.xml",
+    "v30_tests": 42
+  }
+}
