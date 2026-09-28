@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-09-28T06:27:59.968061+00:00",
+  "ref": 56631581,
+  "status_property": "SubmissionStatus.PENDING",
+  "public_score": "",
+  "raw_to_dict": {
+    "ref": 56631581,
+    "totalBytes": 0,
+    "date": "2026-09-28T06:27:39.480Z",
+    "description": "V28 frozen V24.3 E016 delivery: motion_mutual 9um; image-only 6bba/components P2 then P3. Offline package fb7fde61dd8a; exact parity verified; no policy tuning.",
+    "fileName": "submission.csv",
+    "submittedBy": "drakus74",
+    "submittedByRef": "drakus74",
+    "teamName": "Atabey",
+    "url": "/code/drakus74/atabey-v28-submission?scriptVersionId=353502941"
+  }
+}

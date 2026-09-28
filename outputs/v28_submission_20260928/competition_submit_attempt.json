@@ -1,0 +1,9 @@
+{
+  "competition": "biohub-cell-tracking-during-development",
+  "kernel": "drakus74/atabey-v28-submission",
+  "kernel_version": 1,
+  "file_name": "submission.csv",
+  "message": "V28 frozen V24.3 E016 delivery: motion_mutual 9um; image-only 6bba/components P2 then P3. Offline package fb7fde61dd8a; exact parity verified; no policy tuning.",
+  "attempted_at_utc": "2026-09-28T06:27:30.168294+00:00",
+  "candidate_payload_sha256": "217541a10e28652eda5ccc79c81683c7f9684ae28449a0559c9d7efb0e35e87d"
+}

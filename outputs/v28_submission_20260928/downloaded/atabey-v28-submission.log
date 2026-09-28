@@ -1,0 +1,171 @@
+[{"stream_name":"stderr","time":6.59541476,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.5961829210000005,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.596190015,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.596194315,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.174370975,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.174397856,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.174403157,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.174407616,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":14.307392175,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_doc-0.0.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.320563214,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_types-0.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.329797294,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/bidict-0.23.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.338670213,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/blosc2-4.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.367886679,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/certifi-2026.6.17-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.376843635,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.388010529,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/click-8.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.40925553,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/cloudpickle-3.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.418158019,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/dask-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.435562121,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/deprecated-1.3.1-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.445783854,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/donfig-0.8.1.post1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.455849296,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/fsspec-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.488335681,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff-1.2.0.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.500129129,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff_spec-1.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.509715556,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/google_crc32c-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.51027577,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_doc-0.0.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510286657,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_types-0.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510290815,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/bidict-0.23.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.51029471,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/blosc2-4.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.5103021,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/certifi-2026.6.17-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510305301,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.51030893,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/click-8.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510311351,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/cloudpickle-3.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510313919,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/dask-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510316331,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/deprecated-1.3.1-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510318827999999,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/donfig-0.8.1.post1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510321848,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/fsspec-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510335469,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff-1.2.0.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.510339815,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff_spec-1.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.519169694,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/greenlet-3.5.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.530740546,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/idna-3.18-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.540984886,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ilpy-0.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.55036705,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imagecodecs-2026.6.26-cp312-abi3-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.637385953999999,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imageio-2.37.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.659809112,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/lazy_loader-0.5-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.668903729,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/llvmlite-0.47.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.711975267,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/google_crc32c-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.712005479,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/greenlet-3.5.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.712011239,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/idna-3.18-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.712019232,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ilpy-0.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.712023338,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imagecodecs-2026.6.26-cp312-abi3-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.712027342,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imageio-2.37.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.712031029,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/lazy_loader-0.5-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.712034742,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/llvmlite-0.47.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.824086331,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/locket-1.0.0-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.833684667,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/markdown_it_py-4.2.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.845793772,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/mdurl-0.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.854575752,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/msgpack-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.864536593,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ndindex-1.10.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.875133058,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/networkx-3.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.897041572,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numba-0.65.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.920070421,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numcodecs-0.15.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.955326446,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numexpr-2.14.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.965654516,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.023981984,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/packaging-26.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.025866944,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/locket-1.0.0-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.02588248,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/markdown_it_py-4.2.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.025887065,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/mdurl-0.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.025894497,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/msgpack-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.025898312,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ndindex-1.10.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.025911231,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/networkx-3.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.025915857,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numba-0.65.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.025920677,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numcodecs-0.15.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.025924962,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numexpr-2.14.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.025929291,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.025933419,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/packaging-26.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.034570245,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/partd-1.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.043448534,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.075304043,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars-1.42.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.092929361,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars_runtime_32-1.42.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.236478308,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/partd-1.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.236499226,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.236513008,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars-1.42.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.236517751,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars_runtime_32-1.42.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.252018274,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/psygnal-0.15.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.264363585,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyarrow-24.0.0-cp312-cp312-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.40392887,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic-2.13.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.417468308,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.434332711,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pygments-2.20.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.448294111,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyscipopt-6.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.453930895,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/psygnal-0.15.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.453947828,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyarrow-24.0.0-cp312-cp312-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.45395268,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic-2.13.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.453956669,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.453960763,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pygments-2.20.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.453964445,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyscipopt-6.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.505239721,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.516615550000001,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/requests-2.34.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.526503928,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rich-15.0.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.536900537,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rustworkx-0.18.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.554562284,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.608233118,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.706960009,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.706977749,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/requests-2.34.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.706982518,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rich-15.0.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.706986644,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rustworkx-0.18.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.706990686,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.706994809,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.724098546,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/shellingham-1.5.4-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.732550306,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/sqlalchemy-2.0.51-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.759291544,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/threadpoolctl-3.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.768502745,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tifffile-2026.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.783188651,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/toolz-1.1.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.792269521,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tqdm-4.68.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.803374531,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typer-0.26.8-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.81306194,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_extensions-4.15.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.822019421,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_inspection-0.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.830662793,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/urllib3-2.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.84055249,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/wrapt-2.2.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.849907548000001,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/zarr-3.2.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.861364854,"data":"Processing ./v28_submission_package/extra_wheels/tracksdata-0.1.0rc7-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.92587024,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/shellingham-1.5.4-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925896516,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/sqlalchemy-2.0.51-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.92590167,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/threadpoolctl-3.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925905711,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tifffile-2026.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925909669,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/toolz-1.1.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925913366,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tqdm-4.68.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925917404,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typer-0.26.8-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925921304,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_extensions-4.15.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925925154,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_inspection-0.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925929299,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/urllib3-2.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925933165,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/wrapt-2.2.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":15.925937904,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/zarr-3.2.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.925941657,"data":"Processing ./v28_submission_package/extra_wheels/tracksdata-0.1.0rc7-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":15.957247385,"data":"Installing collected packages: zarr, wrapt, urllib3, typing-inspection, typing-extensions, typer, tracksdata, tqdm, toolz, tifffile, threadpoolctl, sqlalchemy, shellingham, scipy, scikit-image, rustworkx, rich, requests, pyyaml, pyscipopt, pygments, pydantic-core, pydantic, pyarrow, psygnal, polars-runtime-32, polars, pillow, partd, packaging, numpy, numexpr, numcodecs, numba, networkx, ndindex, msgpack, mdurl, markdown-it-py, locket, llvmlite, lazy-loader, imageio, imagecodecs, ilpy, idna, greenlet, google-crc32c, geff-spec, geff, fsspec, donfig, deprecated, dask, cloudpickle, click, charset-normalizer, certifi, blosc2, bidict, annotated-types, annotated-doc\n"}
+,{"stream_name":"stdout","time":16.159038184,"data":"Installing collected packages: zarr, wrapt, urllib3, typing-inspection, typing-extensions, typer, tracksdata, tqdm, toolz, tifffile, threadpoolctl, sqlalchemy, shellingham, scipy, scikit-image, rustworkx, rich, requests, pyyaml, pyscipopt, pygments, pydantic-core, pydantic, pyarrow, psygnal, polars-runtime-32, polars, pillow, partd, packaging, numpy, numexpr, numcodecs, numba, networkx, ndindex, msgpack, mdurl, markdown-it-py, locket, llvmlite, lazy-loader, imageio, imagecodecs, ilpy, idna, greenlet, google-crc32c, geff-spec, geff, fsspec, donfig, deprecated, dask, cloudpickle, click, charset-normalizer, certifi, blosc2, bidict, annotated-types, annotated-doc\n"}
+,{"stream_name":"stdout","time":42.413445652,"data":"Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 bidict-0.23.1 blosc2-4.7.0 certifi-2026.6.17 charset-normalizer-3.4.7 click-8.4.2 cloudpickle-3.1.2 dask-2026.6.0 deprecated-1.3.1 donfig-0.8.1.post1 fsspec-2026.6.0 geff-1.2.0.1.1 geff-spec-1.1.1 google-crc32c-1.8.0 greenlet-3.5.3 idna-3.18 ilpy-0.6.0 imagecodecs-2026.6.26 imageio-2.37.3 lazy-loader-0.5 llvmlite-0.47.0 locket-1.0.0 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.1 ndindex-1.10.1 networkx-3.6.1 numba-0.65.1 numcodecs-0.15.1 numexpr-2.14.1 numpy-2.4.6 packaging-26.2 partd-1.4.2 pillow-12.2.0 polars-1.42.0 polars-runtime-32-1.42.0 psygnal-0.15.1 pyarrow-24.0.0 pydantic-2.13.4 pydantic-core-2.46.4 pygments-2.20.0 pyscipopt-6.2.1 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 rustworkx-0.18.0 scikit-image-0.26.0 scipy-1.18.0 shellingham-1.5.4 sqlalchemy-2.0.51 threadpoolctl-3.6.0 tifffile-2026.6.1 toolz-1.1.0 tqdm-4.68.3 tracksdata-0.1.0rc7 typer-0.26.8 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.7.0 wrapt-2.2.2 zarr-3.2.1\n"}
+,{"stream_name":"stdout","time":42.623134272,"data":"Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 bidict-0.23.1 blosc2-4.7.0 certifi-2026.6.17 charset-normalizer-3.4.7 click-8.4.2 cloudpickle-3.1.2 dask-2026.6.0 deprecated-1.3.1 donfig-0.8.1.post1 fsspec-2026.6.0 geff-1.2.0.1.1 geff-spec-1.1.1 google-crc32c-1.8.0 greenlet-3.5.3 idna-3.18 ilpy-0.6.0 imagecodecs-2026.6.26 imageio-2.37.3 lazy-loader-0.5 llvmlite-0.47.0 locket-1.0.0 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.1 ndindex-1.10.1 networkx-3.6.1 numba-0.65.1 numcodecs-0.15.1 numexpr-2.14.1 numpy-2.4.6 packaging-26.2 partd-1.4.2 pillow-12.2.0 polars-1.42.0 polars-runtime-32-1.42.0 psygnal-0.15.1 pyarrow-24.0.0 pydantic-2.13.4 pydantic-core-2.46.4 pygments-2.20.0 pyscipopt-6.2.1 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 rustworkx-0.18.0 scikit-image-0.26.0 scipy-1.18.0 shellingham-1.5.4 sqlalchemy-2.0.51 threadpoolctl-3.6.0 tifffile-2026.6.1 toolz-1.1.0 tqdm-4.68.3 tracksdata-0.1.0rc7 typer-0.26.8 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.7.0 wrapt-2.2.2 zarr-3.2.1\n"}
+,{"stream_name":"stderr","time":57.431409549,"data":"/kaggle/working/v28_submission_deps/dask/array/image.py:7: FutureWarning: `find_available_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":57.43143622,"data":"  from skimage.io import imread as sk_imread\n"}
+,{"stream_name":"stderr","time":57.4362836,"data":"/usr/lib/python3.12/importlib/__init__.py:90: FutureWarning: `reset_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":57.436304998,"data":"  return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stderr","time":57.63341793,"data":"/kaggle/working/v28_submission_deps/dask/array/image.py:7: FutureWarning: `find_available_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":57.633447087,"data":"  from skimage.io import imread as sk_imread\n"}
+,{"stream_name":"stderr","time":57.633452419,"data":"/usr/lib/python3.12/importlib/__init__.py:90: FutureWarning: `reset_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":57.633457318,"data":"  return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stderr","time":57.633461579,"data":"\n"}
+,{"stream_name":"stderr","time":57.633464911,"data":"/kaggle/working/v28_submission_deps/dask/array/image.py:7: FutureWarning: `find_available_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":57.633482841,"data":"  from skimage.io import imread as sk_imread\n"}
+,{"stream_name":"stderr","time":57.633489747,"data":"/usr/lib/python3.12/importlib/__init__.py:90: FutureWarning: `reset_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":57.633492614,"data":"  return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stdout","time":86.713820295,"data":"{\"sample\": \"44b6_0113de3b\", \"rows\": 50743, \"seconds\": 28.745882389999963}\n"}
+,{"stream_name":"stdout","time":86.928327197,"data":"{\"sample\": \"44b6_0113de3b\", \"rows\": 50743, \"seconds\": 28.745882389999963}\n"}
+,{"stream_name":"stdout","time":124.782768731,"data":"{\"sample\": \"44b6_0b24845f\", \"rows\": 109189, \"seconds\": 38.06366981599996}\n"}
+,{"stream_name":"stdout","time":124.993176883,"data":"{\"sample\": \"44b6_0b24845f\", \"rows\": 109189, \"seconds\": 38.06366981599996}\n"}
+,{"stream_name":"stdout","time":145.920167195,"data":"{\"sample\": \"6bba_05b6850b\", \"rows\": 13810, \"seconds\": 21.125798377000024}\n"}
+,{"stream_name":"stdout","time":146.122529524,"data":"{\"sample\": \"6bba_05b6850b\", \"rows\": 13810, \"seconds\": 21.125798377000024}\n"}
+,{"stream_name":"stdout","time":191.073614248,"data":"{\"sample\": \"6bba_05db0fb1\", \"rows\": 137441, \"seconds\": 45.15168541300005}\n"}
+,{"stream_name":"stdout","time":191.283696193,"data":"{\"sample\": \"6bba_05db0fb1\", \"rows\": 137441, \"seconds\": 45.15168541300005}\n"}
+,{"stream_name":"stdout","time":197.385766738,"data":"{\n"}
+,{"stream_name":"stdout","time":197.385802315,"data":"  \"status\": \"SUBMISSION_CSV_COMPLETE\",\n"}
+,{"stream_name":"stdout","time":197.385806919,"data":"  \"wall_seconds\": 186.142042845,\n"}
+,{"stream_name":"stdout","time":197.38581018,"data":"  \"package_manifest_sha256\": \"fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3\"\n"}
+,{"stream_name":"stdout","time":197.385813558,"data":"}\n"}
+,{"stream_name":"stderr","time":199.629690609,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":199.629720503,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":199.774310195,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":199.774330503,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":200.426217748,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":200.719463469,"data":"[NbConvertApp] Writing 626363 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":203.128417949,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":203.918987939,"data":"[NbConvertApp] Writing 916117 bytes to __results__.html\n"}
+]

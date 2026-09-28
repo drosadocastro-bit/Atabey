@@ -1,0 +1,255 @@
+{
+  "base_commit": "d0f0b5adef737d669473c595f1e941facfa6616f",
+  "builder": "Codex",
+  "contract": {
+    "bytes": 6862,
+    "path": "tests/fixtures/v28a_submission_readiness.json",
+    "sha256": "91838a2a0d0cd798c31c9b39278f0e6936352b303c6265476dd2b95fab1d7787"
+  },
+  "evidence": [
+    {
+      "bytes": 2595,
+      "path": "outputs/v28a_readiness_20260928/submissions.stdout.json",
+      "sha256": "0591a37cacb7edf5728c35bd49b88c2c0f20a827b1a8faed6c744e357e350a17"
+    },
+    {
+      "bytes": 637,
+      "path": "outputs/v28a_readiness_20260928/remote_baseline/kernel-metadata.json",
+      "sha256": "430e8a3a1c1d47632b352b7ae5892f5250401dd37a5aff9e9060866cdb127ae3"
+    },
+    {
+      "bytes": 56519,
+      "path": "outputs/v28a_readiness_20260928/remote_baseline/atabey-adaptive-baseline.py",
+      "sha256": "a105ab6f15efcd393a08f41816b82ab8673ae0b72b986c0687b6c7e6643187ac"
+    },
+    {
+      "bytes": 251,
+      "path": "outputs/v28a_readiness_20260928/baseline_files.json",
+      "sha256": "b8fc331b631bcca920eff5c1ef7cd3e9bc51c6a72c116b72fedc7d4983915993"
+    },
+    {
+      "bytes": 353,
+      "path": "outputs/v28a_readiness_20260928/checkpoint_files.json",
+      "sha256": "62a81afcaf184c0b5fa48772cef0d1b01be691ee7d4d74676b834de8294f0950"
+    },
+    {
+      "bytes": 13135,
+      "path": "outputs/v28a_readiness_20260928/support_files.json",
+      "sha256": "36a4181448738bca0bd15777892be360013329efc622e9918f6e2f82fcc2d56c"
+    },
+    {
+      "bytes": 8357783,
+      "path": "outputs/v28a_readiness_20260928/remote_checkpoint/edge_predictor_best.pth",
+      "sha256": "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03"
+    },
+    {
+      "bytes": 165,
+      "path": "outputs/v28a_readiness_20260928/remote_checkpoint/config.json",
+      "sha256": "e9b4e396c58081bca08adf8275bd0bd1c2d3fd6eb091a1912a5116cb6de7b50a"
+    },
+    {
+      "bytes": 26008,
+      "path": "outputs/v28a_readiness_20260928/support_predictor/predict_unet_transformer.py",
+      "sha256": "c44e771ba5980b820f93091e03a303c25dfe8f3232e501f54dc9565731c234b9"
+    },
+    {
+      "bytes": 3363,
+      "path": "v24_3_full_199_score_validation_report.json",
+      "sha256": "113ada200edddded93684685b7c1baabfd7b91785bf0906727457fa0b0ba52f6"
+    },
+    {
+      "bytes": 19715150,
+      "path": "v24_3_full_199_merged_outputs.zip",
+      "sha256": "569a6045aca41d6c70efd3e980ecd087b097563dd7b70c35bf0d12c61f5660ae"
+    },
+    {
+      "bytes": 2713,
+      "path": "V24_8_INDEPENDENT_COHORT_ELIGIBILITY_AUDIT.md",
+      "sha256": "d95dc9aa243a565a2d60f170c686c2b62e7fef4e44220940ae88b509f61220fd"
+    }
+  ],
+  "historical_evaluation_commit": "2af9cbf3f192171e669db223967f8ba8eedb6d81",
+  "implementation_findings": {
+    "existing_writer_available": true,
+    "new_offline_test_runner_required": true,
+    "observed_pruning_eligible_records": 90,
+    "predictor_imports_training_and_evaluation_helpers": true,
+    "predictor_uses_two_frame_streaming_windows": true,
+    "pruning_route_gated": true,
+    "route_only_optimization_requires_parity": true,
+    "v24_evaluation_notebook_requires_online_setup": true,
+    "v24_evaluation_notebook_requires_train_GEFF": true
+  },
+  "local_identity_checks": {
+    "canonical_sources": {
+      "scripts/run_hybrid_submission.py": {
+        "canonical_sha256": "24df5d2657bb27520d03b41a5fd4f70b9d532204aa69b35582ce627c96e129c6",
+        "matches_v24_evaluation_commit": true
+      },
+      "scripts/run_v21_division_recovery_shadow.py": {
+        "canonical_sha256": "0474b452319bc03d6ba01af989020619571a8b0f186896127527b96e4d044637",
+        "matches_v24_evaluation_commit": true
+      },
+      "scripts/run_v24_score_first_tracking.py": {
+        "canonical_sha256": "557b564422e86be6f1952827eae2e2628b4d3d8c11c1d3a2896bcaeffbf63605",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/constants.py": {
+        "canonical_sha256": "d64b633826d0934d80256812bf38bec37a10d5c7b80411e1d4f7204363e02582",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/detection/adaptive.py": {
+        "canonical_sha256": "bfd7f09157648a2cb6cfd059c6457cea5fcaa837096c777da8f5e2e774c42b4c",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/hybrid_config.py": {
+        "canonical_sha256": "b9c1284dece7ab3405bcf99ad47cc9b67268e2fb78e3062910b12b343673ff41",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/io/zarr_reader.py": {
+        "canonical_sha256": "1ecddac77f7dc73611e2e535eb7bbda93a8475fbf3557d26cdb8832528c89a88",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/submission/writer.py": {
+        "canonical_sha256": "47176d196c32d00b2bab55dcf91daa26d3a9998f11d3073d4633d8d026a62569",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/nearest_neighbor.py": {
+        "canonical_sha256": "1ecb2da86da4d1efd4ed2ce513fd9746282d3788e8428c5f1445f7e1c9d6410f",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/unet_graph.py": {
+        "canonical_sha256": "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/v24_2_shadow.py": {
+        "canonical_sha256": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/v24_3_shadow.py": {
+        "canonical_sha256": "737aff38ad889e84630cd71b72e95062616a8726f23f0e9a767eb27bcb575eed",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/types.py": {
+        "canonical_sha256": "ebe1414bcd3926bb504a9b1dc48d754a543afc798487db64e9f71fb8224abbe5",
+        "matches_v24_evaluation_commit": true
+      }
+    },
+    "checkpoint_matches": true,
+    "downloaded_checkpoint_matches": true,
+    "downloaded_predictor_matches": true,
+    "downloaded_runtime_config_matches": true,
+    "local_config_differs_only_CRLF_vs_LF": true,
+    "local_config_raw_sha256": "329706a54464bbab2eb48f11a301ec64ee57b598164454402c57d510c6110640",
+    "merged_archive_and_summary_hashes_match": true
+  },
+  "not_performed": [
+    "package_implementation",
+    "GPU_execution",
+    "scientific_reexecution",
+    "training",
+    "scoring",
+    "remote_publication",
+    "submission",
+    "final_selection",
+    "commit",
+    "push"
+  ],
+  "recorded_at_utc": "2026-09-28T00:57:05.165575+00:00",
+  "remote_observations": {
+    "GPU_quota_verified": false,
+    "backup": {
+      "date": "2026-07-12T21:43:29.140000",
+      "description": "V19 watershed refinement: profile-based routing, 6bba-only CFAR+sidelobe cap 900, with centroid watershed refinement.",
+      "fileName": "submission.csv",
+      "privateScore": "",
+      "publicScore": "0.515",
+      "ref": 54622713,
+      "status": "SubmissionStatus.COMPLETE"
+    },
+    "final_selection_flags_exposed": false,
+    "latest_baseline_metadata": {
+      "code_file": "atabey-adaptive-baseline.py",
+      "competition_sources": [
+        "biohub-cell-tracking-during-development"
+      ],
+      "dataset_sources": [],
+      "docker_image": "gcr.io/kaggle-images/python@sha256:dafd4ce5668bbf1ad422e4c109e0f18c9623c3a7c7f48b0235f13142755c40b9",
+      "enable_gpu": false,
+      "enable_internet": false,
+      "enable_tpu": false,
+      "id": "drakus74/atabey-adaptive-baseline",
+      "id_no": 125545993,
+      "is_private": true,
+      "kernel_sources": [],
+      "kernel_type": "script",
+      "keywords": [],
+      "language": "python",
+      "machine_shape": "None",
+      "model_sources": [],
+      "title": "Atabey Adaptive Baseline"
+    },
+    "latest_baseline_source_is_proven_submitted_version": false,
+    "latest_baseline_source_matches_local_bytes": true,
+    "method": "authenticated_read_only_Kaggle_CLI_and_API",
+    "offline_install_compatibility_verified": false,
+    "page_size": 200,
+    "submissions_returned": 8,
+    "support_wheels_listed": 62
+  },
+  "runtime_context": {
+    "excludes": [
+      "V19_route_profiling",
+      "V24_2_and_V24_3_pruning",
+      "CSV_serialization",
+      "environment_startup",
+      "Kaggle_queue",
+      "official_metrics"
+    ],
+    "includes": [
+      "public_predict_video_including_native_edge_head",
+      "Atabey_relink"
+    ],
+    "is_full_submission_runtime": false,
+    "is_hidden_runtime_guarantee": false,
+    "max_seconds": 41.033801883004344,
+    "median_seconds": 17.7317085199993,
+    "p95_nearest_lower_seconds": 32.88817859000028,
+    "sample_count": 199,
+    "source": "saved_199_sample_arm_runtime_seconds",
+    "sum_hours": 1.1044997399252858,
+    "sum_seconds": 3976.199063731029
+  },
+  "scientific_boundaries": {
+    "V26A_decision": "NO_GO",
+    "V27_new_policy_selected": false,
+    "catastrophic_cases": [
+      {
+        "adjusted_edge_delta_vs_v19": -0.21728637655422778,
+        "checkpoint_usage": "checkpoint_training_172",
+        "sample_id": "6bba_2646afc7"
+      },
+      {
+        "adjusted_edge_delta_vs_v19": -0.18507418580762935,
+        "checkpoint_usage": "checkpoint_training_172",
+        "sample_id": "6bba_2540cd90"
+      },
+      {
+        "adjusted_edge_delta_vs_v19": -0.13690942765143976,
+        "checkpoint_usage": "checkpoint_training_172",
+        "sample_id": "6bba_76db78c1"
+      },
+      {
+        "adjusted_edge_delta_vs_v19": -0.10668767787000688,
+        "checkpoint_usage": "checkpoint_training_172",
+        "sample_id": "6bba_d5eae175"
+      }
+    ],
+    "fresh_independent_labeled_samples": 0,
+    "full_population_regressions": 16,
+    "new_inference_or_scoring_performed": false,
+    "opened_held_out_development_samples": 27,
+    "training_samples": 172
+  },
+  "status": "AUDIT_COMPLETE_IMPLEMENTATION_NOT_READY_FOR_EXECUTION"
+}

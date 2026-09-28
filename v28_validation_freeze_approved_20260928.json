@@ -1,0 +1,179 @@
+{
+  "approval_scope": "VALIDATION_ONLY",
+  "candidate_identity": {
+    "bytes": 5479,
+    "path": "v28_validation_candidate_20260928.json",
+    "sha256": "12db8b02412349bbef99b856ac38a47fba060a5c5f159d40981e7bb8ee5dfc8b"
+  },
+  "dispatch": {
+    "accelerator_requested": "NvidiaTeslaT4",
+    "metadata": {
+      "bytes": 555,
+      "path": "outputs/v28_validation_20260928/dispatch/kernel-metadata.json",
+      "sha256": "c7f6b10998e0f5665585366284f873d1a3eeae46338b17fdc6063a5eb090d1da"
+    },
+    "notebook": {
+      "bytes": 612764,
+      "path": "outputs/v28_validation_20260928/dispatch/V28_validation_offline_kaggle.ipynb",
+      "sha256": "81193365855b7a05073a2d70fd15ef7ea75a82641b0191d2a42856f94cde785b"
+    },
+    "outer_timeout_seconds": 7200
+  },
+  "execution_receipt": {
+    "approval_context": "Approval of the reviewed V28 validation-only package and maximum 7200-second offline GPU trial; no competition submission authorized.",
+    "approved_candidate_payload_sha256": "b8ffbf925731d54de4e99b89b89b6f3be29fef32255f07f1a787d8f820a55750",
+    "authority": "Danny",
+    "builder": "Codex",
+    "package_manifest_sha256": "fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3",
+    "record": "me parece bn baby",
+    "recorded_at_utc": "2026-09-28T01:27:29.144825+00:00",
+    "reviewer": "Danny",
+    "scope": "V28_VALIDATION",
+    "status": "APPROVED"
+  },
+  "frozen_at_utc": "2026-09-28T01:27:29.171994+00:00",
+  "payload": {
+    "Kaggle_offline_install_verified": false,
+    "artifacts": [
+      {
+        "bytes": 8309,
+        "path": "V28_IMPLEMENTATION_REVIEW.md",
+        "sha256": "d7f7fc6190aaa5d2e29d114746223dfc132621a07c40c728691920d77c26a3e2"
+      },
+      {
+        "bytes": 8705,
+        "path": "src/atabey/submission/v28.py",
+        "sha256": "3bb7a6418ea974f5660a7a46d80971359bb0a69dcec0a839dc050e2a84ba262a"
+      },
+      {
+        "bytes": 13025,
+        "path": "scripts/run_v28_submission.py",
+        "sha256": "c12075954d55318bd8e882314883e57593f42b0f13c199a3a81b8ea8a3e48a31"
+      },
+      {
+        "bytes": 10526,
+        "path": "scripts/build_v28_notebooks.py",
+        "sha256": "17ffc2bbedea26317afa575452693b05cfad18233a5050139a233662468c9f35"
+      },
+      {
+        "bytes": 3909,
+        "path": "scripts/audit_v28_local_parity.py",
+        "sha256": "2b3a30a4b939b4c7da298a18dc6777a7c178897c3ce64c67aa6561a65b79338c"
+      },
+      {
+        "bytes": 10489,
+        "path": "tests/test_v28_submission.py",
+        "sha256": "08ffb8f6f848324aac61735054a57e9b95d5a9302c1c438127fa3ebb2a7dd9d9"
+      },
+      {
+        "bytes": 2548,
+        "path": "tests/test_v28_notebooks.py",
+        "sha256": "e30f118704bb68ed9878ba4febd42c2673e41c4fa6e3d2a3dd9eb82ba8f43977"
+      },
+      {
+        "bytes": 612430,
+        "path": "notebooks/V28_validation_offline_kaggle.ipynb",
+        "sha256": "640e8edabb9baabfe71ee9237e00b04af81a43114cace6ebfad031b99641cb30"
+      },
+      {
+        "bytes": 612430,
+        "path": "notebooks/V28_submission_offline_kaggle.ipynb",
+        "sha256": "0bcdfd5e6b63364a728ccc8d05c1efdffa25004e8d864a97497a09b5b420f2e2"
+      },
+      {
+        "bytes": 6862,
+        "path": "tests/fixtures/v28a_submission_readiness.json",
+        "sha256": "91838a2a0d0cd798c31c9b39278f0e6936352b303c6265476dd2b95fab1d7787"
+      },
+      {
+        "bytes": 11613,
+        "path": "V28A_SUBMISSION_READINESS_CONTRACT.md",
+        "sha256": "9dfd17fba947ebbfafe3d5aae72e1718f886a07f5eae01cfaf8cf46f2b9506bb"
+      },
+      {
+        "bytes": 27288,
+        "path": "outputs/v28_implementation_20260928/package_r3/package_manifest.json",
+        "sha256": "fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3"
+      },
+      {
+        "bytes": 454893,
+        "path": "outputs/v28_implementation_20260928/package_r3/v28_source_bundle.zip",
+        "sha256": "5d72392c361d73f8debf519fb1a52012327b7c1c4a3cfb5b20d5cdb8fd92d290"
+      },
+      {
+        "bytes": 555,
+        "path": "outputs/v28_implementation_20260928/package_r3/dispatch_validation/kernel-metadata.json",
+        "sha256": "c7f6b10998e0f5665585366284f873d1a3eeae46338b17fdc6063a5eb090d1da"
+      },
+      {
+        "bytes": 555,
+        "path": "outputs/v28_implementation_20260928/package_r3/dispatch_submission/kernel-metadata.json",
+        "sha256": "753e755b5279ee231861cb113f57b8039bc20769d5ec412073145d4e0e7e25f5"
+      },
+      {
+        "bytes": 8550,
+        "path": "outputs/v28_implementation_20260928/unit_initial.xml",
+        "sha256": "df35aff8fc67de75993f4b41d111264fa3ea54366d6d23876b454aa34dffaf5b"
+      },
+      {
+        "bytes": 10808,
+        "path": "outputs/v28_implementation_20260928/validation_r2.xml",
+        "sha256": "eceff7d8cb0692bc99e279cca19ba7675726986b206860d10166e87e68ddc381"
+      },
+      {
+        "bytes": 117647,
+        "path": "outputs/v28_implementation_20260928/local_parity/parity.json",
+        "sha256": "73efa2fddaa6e2ae6279c4b6c5a00c9478c8da509ea8e9708793b2b5a8621ec8"
+      },
+      {
+        "bytes": 282,
+        "path": "outputs/v28_implementation_20260928/local_import_model_check.json",
+        "sha256": "33240e314bd4939cb7c9754fbb87e3c222705853946c3154872f1ac76ec0fb4c"
+      },
+      {
+        "bytes": 13168,
+        "path": "outputs/v28_implementation_20260928/offline_dependency_closure.json",
+        "sha256": "6a6b6a4f51a000947a7d2e6f7cf142c6becdde6072525fdcab04005350f915e9"
+      },
+      {
+        "bytes": 1369,
+        "path": "outputs/v28_implementation_20260928/visible_metadata_check.json",
+        "sha256": "98b2695ec977b974964964ded2917f14737b69b5c15a95a0863aeb5ee69888c0"
+      }
+    ],
+    "base_commit": "d0f0b5adef737d669473c595f1e941facfa6616f",
+    "builder": "Codex",
+    "fresh_GPU_inference_verified": false,
+    "package_manifest_sha256": "fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3",
+    "passed_tests": 83,
+    "proposed_validation": [
+      "199_image_only_pruning_predicates",
+      "7_complete_sequence_inference_and_historical_graph_checks",
+      "one_repeat_inference",
+      "all_visible_test_samples",
+      "streaming_CSV_roundtrip",
+      "runtime_projection_gate"
+    ],
+    "real_graph_parity_count": 16,
+    "real_route_parity_count": 199,
+    "remote_actions_performed": false,
+    "resource_budget": {
+      "actual_GPU_count_and_charge_rate_verified": false,
+      "outer_Kaggle_timeout_required": 7200,
+      "single_GPU_intended": true,
+      "user_reported_GPU_hours_available": 45,
+      "validation_wall_seconds_cap": 7200
+    },
+    "scope": "V28_BOUNDED_OFFLINE_GPU_VALIDATION_ONLY",
+    "submission_authorized": false
+  },
+  "payload_sha256": "b8ffbf925731d54de4e99b89b89b6f3be29fef32255f07f1a787d8f820a55750",
+  "review": {
+    "approved_payload_sha256": "b8ffbf925731d54de4e99b89b89b6f3be29fef32255f07f1a787d8f820a55750",
+    "authority": "Danny",
+    "record": "me parece bn baby",
+    "reviewer": "Danny"
+  },
+  "status": "FROZEN",
+  "submission_authorized": false
+}

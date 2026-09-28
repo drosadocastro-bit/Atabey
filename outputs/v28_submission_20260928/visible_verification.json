@@ -1,0 +1,59 @@
+{
+  "all_visible_graphs_and_csv_identical_to_validation": true,
+  "artifacts": [
+    {
+      "bytes": 34356,
+      "path": "outputs/v28_submission_20260928/downloaded/atabey-v28-submission.log",
+      "sha256": "2f55295c01280a552982b626ff0ec8a3398d66878157b6bc7ece394c1f54af1c"
+    },
+    {
+      "bytes": 15911178,
+      "path": "outputs/v28_submission_20260928/downloaded/submission.csv",
+      "sha256": "f9ed84aa3c55de186c7b750861d3e869d028107540e16d5e8ca1e77e01106924"
+    },
+    {
+      "bytes": 709,
+      "path": "outputs/v28_submission_20260928/downloaded/v28_submission_receipt.json",
+      "sha256": "9a3d32a4b086885fa3a924e2c1ae0d1710072e9bcc5187059d7940446f41a979"
+    },
+    {
+      "bytes": 1296,
+      "path": "outputs/v28_submission_20260928/downloaded/v28_submission_run/44b6_0113de3b.record.json",
+      "sha256": "a6a70e57838bcf80fd423c5652eaec4d4497d29deb2561f39af11c672655957c"
+    },
+    {
+      "bytes": 1288,
+      "path": "outputs/v28_submission_20260928/downloaded/v28_submission_run/44b6_0b24845f.record.json",
+      "sha256": "ac4ca6a76d73d93bf09e9e661f0f14ca618ecf365c9bb0098561def246281907"
+    },
+    {
+      "bytes": 1289,
+      "path": "outputs/v28_submission_20260928/downloaded/v28_submission_run/6bba_05b6850b.record.json",
+      "sha256": "0cb262cbde4f5e81f3cdb3b89fd62b7bb50348ae922819f151d5fe77861944e3"
+    },
+    {
+      "bytes": 1275,
+      "path": "outputs/v28_submission_20260928/downloaded/v28_submission_run/6bba_05db0fb1.record.json",
+      "sha256": "fcdf0b04c6827bc1fe4c96fc6cbb1e5375e0eb435d5c03262c014dadde75baa5"
+    },
+    {
+      "bytes": 36504,
+      "path": "outputs/v28_submission_20260928/downloaded/v28_submission_run/summary.json",
+      "sha256": "4f80b2f447ec0bc751d66a7d9d78231fcca026698307f90076fdc0db57321219"
+    }
+  ],
+  "builder_verification_not_independent_review": true,
+  "competition_submission_authorized": true,
+  "competition_submission_performed": false,
+  "csv_bytes": 15911178,
+  "csv_rows": 311183,
+  "csv_sha256": "f9ed84aa3c55de186c7b750861d3e869d028107540e16d5e8ca1e77e01106924",
+  "gpu": "Tesla T4",
+  "hidden_runtime_verified": false,
+  "new_inference_in_local_verifier": false,
+  "new_scoring": false,
+  "package_manifest_sha256": "fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3",
+  "sample_count": 4,
+  "status": "PASS",
+  "wall_seconds": 186.142042845
+}

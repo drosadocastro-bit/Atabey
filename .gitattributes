@@ -16,3 +16,14 @@ outputs/v27b_verify_artifacts_20260924.py -text whitespace=cr-at-eol
 # Preserve original V27C evidence bytes, including captured CRLF line endings.
 outputs/v27c_execution_20260927.stdout.log -text whitespace=cr-at-eol
 outputs/v27c_instrument_initial_20260927.xml -text whitespace=cr-at-eol
+
+# Preserve V28 frozen artifact bytes, including original CRLF where present.
+V28*.md -text whitespace=cr-at-eol
+v28*.json -text whitespace=cr-at-eol
+notebooks/V28*.ipynb -text whitespace=cr-at-eol
+src/atabey/submission/v28.py -text whitespace=cr-at-eol
+scripts/*v28*.py -text whitespace=cr-at-eol
+tests/test_v28*.py -text whitespace=cr-at-eol
+tests/fixtures/v28*.json -text whitespace=cr-at-eol
+outputs/v28*/** -text whitespace=cr-at-eol
+outputs/verify_v28*.py -text whitespace=cr-at-eol

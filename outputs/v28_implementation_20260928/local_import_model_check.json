@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "Windows local imports and CPU checkpoint deserialization only",
+  "torch": "2.12.1+cpu",
+  "window": 2,
+  "downsample": [
+    1,
+    4,
+    4
+  ],
+  "new_inference": false,
+  "CUDA_verified": false,
+  "Kaggle_Linux_verified": false
+}

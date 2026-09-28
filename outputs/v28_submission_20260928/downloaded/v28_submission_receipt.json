@@ -1,0 +1,12 @@
+{
+  "status": "APPROVED",
+  "scope": "V28_SUBMISSION",
+  "package_manifest_sha256": "fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3",
+  "builder": "Codex",
+  "reviewer": "Danny",
+  "authority": "Danny",
+  "record": "acabo de leerlo amor, y esta solido y honesto, aprobado para congelacion y someter a kaggle",
+  "approval_context": "Freeze the exact reviewed V28 submission package; authorize one visible notebook version and one competition submission of that version after output verification; no final-selection changes.",
+  "approved_candidate_payload_sha256": "217541a10e28652eda5ccc79c81683c7f9684ae28449a0559c9d7efb0e35e87d",
+  "recorded_at_utc": "2026-09-28T06:19:01.527833+00:00"
+}
