@@ -1,0 +1,12 @@
+{
+  "comparison_counts_independently_resummed": true,
+  "frozen_sources_verified": 112,
+  "identical_pass_file_pairs": 881,
+  "inventory_files_verified": 1767,
+  "metric_count_totals_independently_resummed": true,
+  "new_matching_or_scoring_performed": false,
+  "status": "POST_RUN_ARTIFACT_CHECKS_PASSED",
+  "unique_cells_parsed": 240,
+  "unique_ledgers_parsed": 624,
+  "verifier_sha256": "1595edab5b9abd89e627186386cd7bfbb7f67cc9de604b08f76b369245e50168"
+}

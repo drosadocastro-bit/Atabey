@@ -1,0 +1,45 @@
+{
+  "builder": "Codex",
+  "checks": {
+    "distinct_graphs_verified": 240,
+    "ground_truth_files_verified": 336,
+    "ground_truth_metadata_estimates_positive": 16,
+    "ground_truth_trees_verified": 16,
+    "historical_H_graph_anchors_verified": 48,
+    "historical_S1_P3_graph_anchors_verified": 16,
+    "historical_metric_values_recorded_without_new_scoring": 32,
+    "parent_pass_summaries_verified": 32,
+    "parent_source_identities_verified": 103,
+    "physical_graph_copies_verified": 480,
+    "pruning_subset_and_attribute_comparisons_verified": 240,
+    "scope_and_null_authorization_verified": true
+  },
+  "contract": {
+    "bytes": 332332,
+    "path": "tests/fixtures/v27c_official_graph_evaluation.json",
+    "sha256": "b4b5a85f1b2186a0cb991a9912dd0f5c24ee8eb08ca0f9c6e50bc3deae71bcf9"
+  },
+  "execution_ready": false,
+  "independent_reviewer": null,
+  "not_performed": [
+    "cohort_matching",
+    "cohort_scoring",
+    "evaluator_implementation",
+    "implementation_tests",
+    "human_review",
+    "execution_freeze",
+    "scientific_run",
+    "independent_validation"
+  ],
+  "protocol": {
+    "canonical_sha256": "0dbb99aa751edf5ba3c930b06159233f184108eab253edba79af97616652c748",
+    "path": "V27C_OFFICIAL_GRAPH_EVALUATION_PREREGISTRATION.md"
+  },
+  "recorded_at_utc": "2026-09-27T20:18:38.940364+00:00",
+  "repository_head": "e16c2b6f34712dfaceca4c4de2b57fbe3e9fc152",
+  "status": "PROPOSAL_INPUT_AND_DESIGN_CHECKS_PASSED",
+  "validator": {
+    "path": "outputs/validate_v27c_proposal_20260927.py",
+    "sha256": "ec6512d2da54b542f478d84284e9e02ba14a99aac7d0efbcc6200124623dba3a"
+  }
+}
