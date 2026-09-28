@@ -1,0 +1,12 @@
+{
+  "approval_context": "Approval of the reviewed V28 validation-only package and maximum 7200-second offline GPU trial; no competition submission authorized.",
+  "approved_candidate_payload_sha256": "b8ffbf925731d54de4e99b89b89b6f3be29fef32255f07f1a787d8f820a55750",
+  "authority": "Danny",
+  "builder": "Codex",
+  "package_manifest_sha256": "fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3",
+  "record": "me parece bn baby",
+  "recorded_at_utc": "2026-09-28T01:27:29.144825+00:00",
+  "reviewer": "Danny",
+  "scope": "V28_VALIDATION",
+  "status": "APPROVED"
+}

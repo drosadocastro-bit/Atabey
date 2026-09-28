@@ -1,0 +1,9 @@
+{
+  "candidate_artifacts_verified": 19,
+  "checked_at_utc": "2026-09-28T11:46:49.383625+00:00",
+  "competition_submission_authorized": false,
+  "dispatch_metadata_sha256": "dbcef6252dade05ca1718b5c3f2185a7f12747758700c14da547b92207e86fe3",
+  "dispatch_notebook_sha256": "353d03aa426e51f5c7314d16075fe7741e16fc80dc9c6a9f17027f9e6ed1d448",
+  "receipt_only_notebook_change": true,
+  "remaining_gpu_hours": 44.789679166666666
+}

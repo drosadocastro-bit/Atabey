@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-09-28T19:45:22.650901+00:00",
+  "selected": [
+    {
+      "ref": 56631581,
+      "totalBytes": 234937107,
+      "date": "2026-09-28T06:27:39.480Z",
+      "description": "V28 frozen V24.3 E016 delivery: motion_mutual 9um; image-only 6bba/components P2 then P3. Offline package fb7fde61dd8a; exact parity verified; no policy tuning.",
+      "fileName": "submission.csv",
+      "publicScore": "0.728",
+      "status": "COMPLETE",
+      "submittedBy": "drakus74",
+      "submittedByRef": "drakus74",
+      "teamName": "Atabey",
+      "url": "/code/drakus74/atabey-v28-submission?scriptVersionId=353502941"
+    },
+    {
+      "ref": 54622713,
+      "totalBytes": 206364078,
+      "date": "2026-07-12T21:43:29.140Z",
+      "description": "V19 watershed refinement: profile-based routing, 6bba-only CFAR+sidelobe cap 900, with centroid watershed refinement.",
+      "fileName": "submission.csv",
+      "publicScore": "0.515",
+      "status": "COMPLETE",
+      "submittedBy": "drakus74",
+      "submittedByRef": "drakus74",
+      "teamName": "Atabey",
+      "url": "/code/drakus74/atabey-adaptive-baseline?scriptVersionId=334646717"
+    }
+  ],
+  "selection_changes_performed": false,
+  "v28_release_artifacts_verified": 76,
+  "protected_v25_sha256": "f9f13081e96b1925903e1ccb5ae464744b0eb5cc0daf3774f45ba33ce86c33e1",
+  "research_outcome": "NO_GO",
+  "new_submission_performed": false
+}

@@ -1,0 +1,16 @@
+{
+  "assumed_voxel_frames": 83466649600,
+  "assumption": "hidden_voxel_frames_at_most_observed_199_training_voxel_frames",
+  "gate_seconds": 36000,
+  "hidden_runtime_verified": false,
+  "limitations": [
+    "node_density_and_filesystem_cost_may_scale_non_linearly",
+    "hardware_is_specific_to_this_job",
+    "hidden_shapes_and_sample_count_are_unknown"
+  ],
+  "measured_samples": 11,
+  "measured_work_multiplier": 2,
+  "passes": true,
+  "projected_seconds": 18090.06133173305,
+  "startup_and_io_reserve_seconds": 600
+}

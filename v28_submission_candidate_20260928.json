@@ -1,0 +1,44 @@
+{
+  "authority": null,
+  "builder": "Codex",
+  "payload": {
+    "at_approval": "Create a separate V28_SUBMISSION receipt; modify only the receipt line in a new dispatch copy, preserve this template and record resulting raw hashes; check quota and rules before dispatch; verify actual image before submission; no retries or policy edits without review.",
+    "backup_submission_ref": "54622713",
+    "catastrophic_case_parity_does_not_repair_regressions": true,
+    "execution_count": "one visible commit run plus one competition rerun",
+    "final_selection_changes_authorized": false,
+    "hidden_runtime_verified": false,
+    "historical_regressions_remain": 16,
+    "package_manifest_sha256": "fb7fde61dd8a1499cc68530cd0a0e3bc8293a803acfaf86edd2f4c67b5e097c3",
+    "per_execution_wall_cap_seconds": 39600,
+    "possible_two_gpu_quota_bound_hours": 44,
+    "remaining_quota_hours_observed": 44.846509166666664,
+    "requested_accelerator": "NvidiaTeslaT4",
+    "scientific_changes_from_validated_bundle": false,
+    "scope": "ONE_V28_SUBMISSION_NOTEBOOK_VERSION_AND_ONE_COMPETITION_SUBMISSION",
+    "submission_file": "submission.csv",
+    "submission_metadata": {
+      "bytes": 764,
+      "path": "outputs/v28_submission_review_20260928/kernel-metadata.json",
+      "sha256": "d20cd043feecae7951cdc3fd1d59f15771af7118ee5ff64f25a119532abe0b1a"
+    },
+    "submission_notebook": {
+      "bytes": 612430,
+      "path": "outputs/v28_submission_review_20260928/V28_submission_offline_kaggle.ipynb",
+      "sha256": "0bcdfd5e6b63364a728ccc8d05c1efdffa25004e8d864a97497a09b5b420f2e2"
+    },
+    "telemetry_gaps_disclosed": [
+      "CPU model not recorded; platform/architecture recorded",
+      "GPU device count not recorded; requested machine shape and used device identity recorded"
+    ],
+    "validated_docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+    "validation_result": {
+      "bytes": 16305,
+      "path": "v28_validation_results_20260928.json",
+      "sha256": "a75f73cc672198a01d18bd4d35f84da731b93859cbccbfaf406b3cf7f3509d7a"
+    }
+  },
+  "payload_sha256": "217541a10e28652eda5ccc79c81683c7f9684ae28449a0559c9d7efb0e35e87d",
+  "reviewer": null,
+  "status": "PROPOSED_NOT_APPROVED"
+}

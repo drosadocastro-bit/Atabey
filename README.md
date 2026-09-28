@@ -24,9 +24,65 @@ Sparse ground truth creates an important boundary: an unsupported prediction is 
 automatically a false biological event and not evidence of a true one. Claims in this repository are
 therefore tied to the evaluator, sample set, and experimental window that produced them.
 
-## Current Research Status
+## Current Result: V28 on Kaggle
 
-The most important current finding is methodological. Atabey's earlier local Division Jaccard
+**V28 completed Kaggle evaluation with a public leaderboard score of `0.728`.**
+The account result was verified on September 28, 2026. The exact submitted version
+is frozen; V19 remains the accepted backup.
+
+| Submission | Public score | Kaggle status | Reference |
+|---|---:|---|---|
+| V28: frozen V24.3 delivery | **0.728** | COMPLETE | [56631581 / notebook version 1](https://www.kaggle.com/code/drakus74/atabey-v28-submission?scriptVersionId=353502941) |
+| V19: accepted backup | 0.515 | COMPLETE | [54622713](https://www.kaggle.com/code/drakus74/atabey-adaptive-baseline?scriptVersionId=334646717) |
+
+The public-score increase is **+0.213 points**. It is not the final private score
+or a claim of biological certainty. A later authenticated check on September 28,
+recorded in the V29A closure evidence, confirmed that V28 and V19 were selected
+for final judging. No selection change was made.
+
+V28 delivers the previously evaluated V24.3 policy: clean E016 detections,
+physical-coordinate `motion_mutual` linking at 9 microns, then V24.2 isolated-node
+and V24.3 short-fragment pruning only for image-routed `6bba_` / `components`
+samples. It introduces no V27 association arm, new threshold, fallback or training.
+
+Before submission, the offline GPU validation reproduced all 199 pruning
+decisions, all seven historical graph signatures and a repeated inference.
+The submission-mode run produced the same four visible graphs and a byte-identical,
+valid 311,183-row CSV. These visible samples establish delivery parity, not fresh
+generalization. Kaggle subsequently completed the hidden evaluation and reported
+the score above. The 16 known local regressions, including four catastrophic
+cases, remain part of the record.
+
+See the [verified Kaggle result and release freeze](V28_KAGGLE_RESULT.md),
+[offline validation](V28_VALIDATION_RESULTS.md),
+[submission execution receipt](V28_SUBMISSION_EXECUTION.md) and
+[publication/reproducibility scope](docs/V28_PUBLICATION_SCOPE.md).
+Earlier proposal and pending-status documents are preserved as dated evidence;
+the completed result above supersedes their operational status.
+
+### V29A: Completed TTA Research, NO_GO
+
+The frozen four-view XY detection experiment completed all 199 paired samples.
+The official **local development score** increased from `0.721056` to `0.735928`
+(`+0.014872`), with 134 improved and 65 regressed samples. Both families and all
+specified subgroup aggregates improved. This is not a new Kaggle score or
+independent validation: all 199 labeled samples were previously opened.
+
+V29A nevertheless failed two predeclared protections: 25 samples lost more than
+`0.020` (worst loss `0.106430`), and one of four protected historical cases lost
+`0.045538`. The result is **NO_GO for submission under its frozen contract**.
+The execution and official baseline parity were valid; the quality gates did
+their job. V28 remains the frozen submitted result.
+
+The lesson is to preserve sample-level and protected-case evidence alongside
+aggregate gains, and to keep decision rules fixed after observing outcomes.
+See [V29A results](V29A_RESULTS.md), [lessons learned](V29A_LESSONS_LEARNED.md),
+[release freeze](v29a_release_freeze_20260928.json), and
+[publication scope](docs/V29A_PUBLICATION_SCOPE.md).
+
+## Research History and Interpretation
+
+A foundational methodological finding remains relevant. Atabey's earlier local Division Jaccard
 evaluator was neither the old exploitable host implementation nor the patched official metric. The
 repository now calls the pinned official division scorer directly and has parity coverage against the
 host regression suite.
@@ -55,7 +111,9 @@ Frozen V24.3 has completed full-199 score validation. It reached adjusted edge J
 a `+0.235028` delta over V19, with 183 improved and 16 regressed samples. All 16 regressions are in
 the `6bba` family on the V19 `components + greedy` route. Forensics localize the loss upstream to
 E016 detections plus motion-mutual relinking; V24.2 and V24.3 improve every regression over their
-immediate predecessors. Submission, automatic fallback, and further pruning remain unauthorized.
+immediate predecessors. Submission was subsequently authorized under the separate
+V28 delivery contract and completed as reported above. Automatic fallback and
+further pruning remain outside that frozen policy.
 
 The shadow-only containment work tested three linked hypotheses:
 

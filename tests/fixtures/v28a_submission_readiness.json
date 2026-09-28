@@ -1,0 +1,192 @@
+{
+  "authority": {
+    "approved_payload_sha256": null,
+    "builder": "Codex",
+    "execution_authorized": false,
+    "planned_authority": "Danny",
+    "planned_reviewer": "Danny",
+    "review_record": null,
+    "submission_authorized": false
+  },
+  "backup": {
+    "final_selection_verified": false,
+    "public_score_observed": "0.515",
+    "status_observed": "SubmissionStatus.COMPLETE",
+    "submission_ref": 54622713,
+    "submitted_notebook_version": null
+  },
+  "candidate": {
+    "arm": "e016_atabey_relink_v24_3_short_fragment_shadow",
+    "checkpoint_dataset": "drakus74/v22-e016-clean-checkpoint",
+    "checkpoint_sha256": "02e1d65756c3dc5928f68a66a8b0ef99be2a6905fa7bc017aa1d87dbe632fd03",
+    "historical_sources": {
+      "scripts/run_hybrid_submission.py": {
+        "canonical_sha256": "24df5d2657bb27520d03b41a5fd4f70b9d532204aa69b35582ce627c96e129c6",
+        "matches_v24_evaluation_commit": true
+      },
+      "scripts/run_v21_division_recovery_shadow.py": {
+        "canonical_sha256": "0474b452319bc03d6ba01af989020619571a8b0f186896127527b96e4d044637",
+        "matches_v24_evaluation_commit": true
+      },
+      "scripts/run_v24_score_first_tracking.py": {
+        "canonical_sha256": "557b564422e86be6f1952827eae2e2628b4d3d8c11c1d3a2896bcaeffbf63605",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/constants.py": {
+        "canonical_sha256": "d64b633826d0934d80256812bf38bec37a10d5c7b80411e1d4f7204363e02582",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/detection/adaptive.py": {
+        "canonical_sha256": "bfd7f09157648a2cb6cfd059c6457cea5fcaa837096c777da8f5e2e774c42b4c",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/hybrid_config.py": {
+        "canonical_sha256": "b9c1284dece7ab3405bcf99ad47cc9b67268e2fb78e3062910b12b343673ff41",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/io/zarr_reader.py": {
+        "canonical_sha256": "1ecddac77f7dc73611e2e535eb7bbda93a8475fbf3557d26cdb8832528c89a88",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/submission/writer.py": {
+        "canonical_sha256": "47176d196c32d00b2bab55dcf91daa26d3a9998f11d3073d4633d8d026a62569",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/nearest_neighbor.py": {
+        "canonical_sha256": "1ecb2da86da4d1efd4ed2ce513fd9746282d3788e8428c5f1445f7e1c9d6410f",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/unet_graph.py": {
+        "canonical_sha256": "34088e3869129edf7179753fabba7aadcd3cdaa38ebe0b08d5e69d26fcafc1f7",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/v24_2_shadow.py": {
+        "canonical_sha256": "41e5482e99b0b6f9cb534c41f235dae5ad23bf708a5009206740b8805b280fd8",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/tracking/v24_3_shadow.py": {
+        "canonical_sha256": "737aff38ad889e84630cd71b72e95062616a8726f23f0e9a767eb27bcb575eed",
+        "matches_v24_evaluation_commit": true
+      },
+      "src/atabey/types.py": {
+        "canonical_sha256": "ebe1414bcd3926bb504a9b1dc48d754a543afc798487db64e9f71fb8224abbe5",
+        "matches_v24_evaluation_commit": true
+      }
+    },
+    "linker": "motion_mutual",
+    "max_link_distance_um": 9.0,
+    "model_config": {
+      "downsample": [
+        1,
+        4,
+        4
+      ],
+      "pool_kernel_um": 5.0,
+      "unet_layers": [
+        32,
+        64,
+        128
+      ],
+      "unet_out_channels": 32,
+      "window_size": 2
+    },
+    "other_routes": "unchanged_e016_relink",
+    "predict_config": {
+      "det_threshold": 0.97,
+      "det_tta": false,
+      "edge_activation": "softmax",
+      "ilp_appearance_weight": 0.1,
+      "ilp_disappearance_weight": 0.1,
+      "ilp_division_weight": 1.0,
+      "ilp_edge_weight": -1.0,
+      "max_children_per_node": 2,
+      "max_parents_per_node": 1,
+      "pool_kernel_um": 5.0,
+      "threshold": 0.5,
+      "use_ilp": false
+    },
+    "predictor_sha256": "c44e771ba5980b820f93091e03a303c25dfe8f3232e501f54dc9565731c234b9",
+    "pruning_order": [
+      "prune_interior_isolated_detections",
+      "prune_interior_short_fragments"
+    ],
+    "pruning_predicate": "sample_id.startswith('6bba_') and frozen_v19_detector == 'components'",
+    "runtime_config_sha256": "e9b4e396c58081bca08adf8275bd0bd1c2d3fd6eb091a1912a5116cb6de7b50a",
+    "runtime_contract": {
+      "max_timepoints": null,
+      "unet_batch_size": 4
+    },
+    "support_pack": "pilkwang/biohub-tracking-support-pack-50ep-v1",
+    "voxel_scale_um": [
+      1.625,
+      0.40625,
+      0.40625
+    ]
+  },
+  "delivery": {
+    "competition": "biohub-cell-tracking-during-development",
+    "deadline_utc": "2026-09-29T23:59:00Z",
+    "final_selection_limit": null,
+    "final_selection_requires_receipt": true,
+    "first_submission_target_utc": "2026-09-28T23:59:00Z",
+    "internet_enabled": false,
+    "last_fresh_run_target_utc": "2026-09-29T05:59:00Z",
+    "notebook_only": true,
+    "official_runtime_limit_hours": 12,
+    "output_path": "/kaggle/working/submission.csv",
+    "per_sample_fallback": false,
+    "selection_target_utc": "2026-09-29T17:59:00Z",
+    "submission_candidates": [
+      "e016_atabey_relink_v24_3_short_fragment_shadow",
+      "existing_V19_submission_54622713"
+    ],
+    "targets_are_guarantees": false
+  },
+  "name": "V28A_FROZEN_V24_3_SUBMISSION_READINESS",
+  "prohibited": [
+    "new_training",
+    "new_thresholds",
+    "V27_arm_promotion",
+    "sample_id_selector",
+    "additional_pruning",
+    "partial_test_processing",
+    "test_prediction_from_training_outputs",
+    "leaderboard_parameter_search"
+  ],
+  "protocol_canonical_sha256": "9dfd17fba947ebbfafe3d5aae72e1718f886a07f5eae01cfaf8cf46f2b9506bb",
+  "protocol_path": "V28A_SUBMISSION_READINESS_CONTRACT.md",
+  "status": "PROPOSED",
+  "unresolved_before_freeze": [
+    "offline_source_and_dependency_closure",
+    "dataset_version_pins",
+    "implementation_manifest",
+    "GPU_and_quota",
+    "real_graph_and_inference_parity",
+    "offline_visible_test_run",
+    "conservative_full_runtime_projection",
+    "exact_package_human_review"
+  ],
+  "validation": {
+    "catastrophic_parity_ids": [
+      "6bba_2646afc7",
+      "6bba_2540cd90",
+      "6bba_76db78c1",
+      "6bba_d5eae175"
+    ],
+    "new_scoring": false,
+    "new_threshold_selection": false,
+    "new_training": false,
+    "offline_visible_test_complete_required": true,
+    "original_smoke_ids": [
+      "44b6_5f15d135",
+      "44b6_74d0c52e",
+      "6bba_3c5691b6"
+    ],
+    "partial_outputs_allowed_as_submission": false,
+    "repeat_inference_samples": 1,
+    "route_parity_reference_count": 199,
+    "runtime_projection_gate_hours": 10,
+    "runtime_stress_measured_work_multiplier": 2,
+    "runtime_workload_assumption_required": true
+  }
+}

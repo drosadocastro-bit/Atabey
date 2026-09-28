@@ -1,0 +1,57 @@
+{
+  "coordinates": {
+    "bytes": 67376,
+    "path": "coordinates/6bba_4aa14c89.npy",
+    "sha256": "5ac50f9df8f50b500868073518d77b12dc0895ec0d8a1dee0a680a8293d4a894"
+  },
+  "edges": 6893,
+  "export_rows_sha256": "f10d792096c2dd5ac1fe1fb1261e26d6d8e900ee9a0ed5aeaa4979687c25d9a7",
+  "export_seconds": 0.14551795400075207,
+  "graph_signature_sha256": "308b0cbea6e1f1cde2fc13d536f83b7b3dd7fabb7f1acd0ff8f3309d763f53a0",
+  "inference_seconds": 17.588012868998703,
+  "linking_seconds": 0.5907475879994308,
+  "native_edges_discarded": 0,
+  "nodes": 7647,
+  "peak_gpu_allocated_bytes": 455790080,
+  "peak_gpu_reserved_bytes": 767557632,
+  "pruning_seconds": 0.027045918999647256,
+  "quantiles": {
+    "0.001": 11.000000000000021,
+    "0.999": 1445.666666666722
+  },
+  "raw_edges": 7079,
+  "raw_nodes": 8406,
+  "rounded_nodes": 0,
+  "route": {
+    "adaptive_detector": "components",
+    "apply_pruning": true,
+    "profile": {
+      "median_component_count": 222.0,
+      "median_foreground_fraction": 0.01848149299621582,
+      "median_kept_component_count": 61.0,
+      "median_largest_component_voxels": 40634.0,
+      "sampled_timepoints": [
+        0,
+        25,
+        50,
+        75,
+        99
+      ]
+    },
+    "seconds": 0.9901168630003667
+  },
+  "rows": 14540,
+  "sample_id": "6bba_4aa14c89",
+  "scale": [
+    1.0,
+    1.625,
+    0.40625,
+    0.40625
+  ],
+  "shape": [
+    100,
+    64,
+    256,
+    256
+  ]
+}

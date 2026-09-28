@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-09-28T19:27:15.431786+00:00",
+  "command": [
+    "D:\\Project-Atabey\\.venv\\Scripts\\python.exe",
+    "-u",
+    "D:\\Project-Atabey\\scripts\\evaluate_v29a_tta.py",
+    "--package-dir",
+    "D:\\Project-Atabey\\outputs\\v29a_preparation_20260928\\package_r1",
+    "--inference-dir",
+    "D:\\Project-Atabey\\outputs\\v29a_execution_20260928\\downloaded\\v29a_run",
+    "--output-dir",
+    "D:\\Project-Atabey\\outputs\\v29a_execution_20260928\\local_evaluation",
+    "--receipt",
+    "D:\\Project-Atabey\\outputs\\v29a_execution_20260928\\execution_receipt.json"
+  ],
+  "outer_timeout_seconds": 10800
+}

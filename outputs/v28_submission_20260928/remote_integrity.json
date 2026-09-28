@@ -1,0 +1,10 @@
+{
+  "verified_at_utc": "2026-09-28T06:19:40.380741+00:00",
+  "cell_sources_match_approved_dispatch": true,
+  "docker_image_matches_validation": true,
+  "internet_disabled": true,
+  "gpu_enabled": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "version": 1,
+  "kernel_id": 136216285
+}

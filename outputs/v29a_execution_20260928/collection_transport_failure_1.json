@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-09-28T19:15:19.950906+00:00",
+  "type": "requests.exceptions.HTTPError",
+  "http_status": 429,
+  "message": "Too Many Requests while paginating ListKernelSessionOutput in KaggleApi.kernels_output(page_size=100)",
+  "downloaded_file_count": 0,
+  "remote_status": "COMPLETE",
+  "scientific_execution_retried": false,
+  "local_scoring_started": false,
+  "next_action": "Read-only output retrieval using larger pages with explicit pacing and preserved HTTP failures"
+}

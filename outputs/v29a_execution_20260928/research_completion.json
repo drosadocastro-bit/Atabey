@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE_VERIFIED_NO_GO",
+  "completed_at_utc": "2026-09-28T19:47:10.592295+00:00",
+  "paired_samples": 199,
+  "failed_gates": [
+    "bounded_individual_loss",
+    "four_catastrophic_noninferiority"
+  ],
+  "new_submission_performed": false,
+  "heartbeat_status": "PAUSED",
+  "artifacts": [
+    {
+      "path": "V29A_RESULTS.md",
+      "sha256": "9936e016e070fc6f9fd3ff61b852fe80cadce25b85180b0c44fc340ad689130f"
+    },
+    {
+      "path": "V29A_EXECUTION.md",
+      "sha256": "be2d5319cea3fb98c90e54252ac10aed75af4eea6b6c856da26d1819937eb163"
+    },
+    {
+      "path": "outputs/v29a_execution_20260928/final_evidence_verification.json",
+      "sha256": "d60bd3f307da86cd00957133dc5fb8da4b1fd4dce96768b4d9f313a5dfedc60e"
+    },
+    {
+      "path": "outputs/v29a_execution_20260928/closure_verification.json",
+      "sha256": "1c95ac20602ede634e974c84d4477899df382e5f1a380f55f9705ccdc1ef287e"
+    },
+    {
+      "path": "outputs/v29a_execution_20260928/local_evaluation/result.json",
+      "sha256": "d0cad67e4f8f0ad4f9ecbd29784fced7fc31ae2c03652911c56da7723e879d22"
+    }
+  ]
+}

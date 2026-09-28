@@ -1,0 +1,4381 @@
+{
+  "graphs": [
+    {
+      "csv_validation": {
+        "bytes": 667567,
+        "rows": 13810,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_05b6850b",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 414857,
+        "rows": 8684,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_23af9eeb",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 332204,
+        "rows": 6946,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_2540cd90",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 554083,
+        "rows": 11495,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_2646afc7",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 678589,
+        "rows": 13999,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_372c8cb8",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 686641,
+        "rows": 14185,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_3c5691b6",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 584984,
+        "rows": 12126,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_5b28472a",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 426599,
+        "rows": 8877,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_5f89039d",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 381349,
+        "rows": 7959,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_718b21f9",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 551622,
+        "rows": 11450,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_76db78c1",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 506980,
+        "rows": 10533,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_96833384",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 579105,
+        "rows": 12014,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_b204cac7",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 617082,
+        "rows": 12762,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_d0fc38b5",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 395543,
+        "rows": 8252,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_d5eae175",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 415152,
+        "rows": 8643,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_ed9377fd",
+      "v24_signature_match": true
+    },
+    {
+      "csv_validation": {
+        "bytes": 788507,
+        "rows": 16277,
+        "samples": 1,
+        "status": "VALID"
+      },
+      "full_saved_graph_match": true,
+      "rounded_nodes": 0,
+      "sample_id": "6bba_fc516dc6",
+      "v24_signature_match": true
+    }
+  ],
+  "new_inference": false,
+  "new_scoring": false,
+  "routes": [
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 253.0,
+        "median_foreground_fraction": 0.02255725860595703,
+        "median_kept_component_count": 204.0,
+        "median_largest_component_voxels": 2511.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_0113de3b",
+      "seconds": 1.701191000000108
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 5423.0,
+        "median_foreground_fraction": 0.3931598663330078,
+        "median_kept_component_count": 781.0,
+        "median_largest_component_voxels": 1636334.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_0b24845f",
+      "seconds": 0.5531667999966885
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 751.0,
+        "median_foreground_fraction": 0.07360148429870605,
+        "median_kept_component_count": 122.0,
+        "median_largest_component_voxels": 197097.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_0c582fdc",
+      "seconds": 0.5181455999991158
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 302.0,
+        "median_foreground_fraction": 0.06215071678161621,
+        "median_kept_component_count": 55.0,
+        "median_largest_component_voxels": 253478.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_0db75fae",
+      "seconds": 0.5534331000017119
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 489.0,
+        "median_foreground_fraction": 0.05298280715942383,
+        "median_kept_component_count": 295.0,
+        "median_largest_component_voxels": 43021.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_12dfb391",
+      "seconds": 0.608542199999647
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2524.0,
+        "median_foreground_fraction": 0.08787870407104492,
+        "median_kept_component_count": 519.0,
+        "median_largest_component_voxels": 227246.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_144b256d",
+      "seconds": 0.5784664999991946
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 575.0,
+        "median_foreground_fraction": 0.04589533805847168,
+        "median_kept_component_count": 102.0,
+        "median_largest_component_voxels": 95855.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_1574802b",
+      "seconds": 0.5565616000021691
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1698.0,
+        "median_foreground_fraction": 0.1363973617553711,
+        "median_kept_component_count": 310.0,
+        "median_largest_component_voxels": 465747.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_18ced818",
+      "seconds": 0.6187931999993452
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 487.0,
+        "median_foreground_fraction": 0.06531095504760742,
+        "median_kept_component_count": 140.0,
+        "median_largest_component_voxels": 192769.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_1d530831",
+      "seconds": 0.5750029999981052
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 260.0,
+        "median_foreground_fraction": 0.037103891372680664,
+        "median_kept_component_count": 105.0,
+        "median_largest_component_voxels": 86509.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_24264f12",
+      "seconds": 0.5200144000009459
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 859.0,
+        "median_foreground_fraction": 0.09024834632873535,
+        "median_kept_component_count": 107.0,
+        "median_largest_component_voxels": 364138.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_267148e4",
+      "seconds": 0.5069604999989679
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2989.0,
+        "median_foreground_fraction": 0.10619091987609863,
+        "median_kept_component_count": 543.0,
+        "median_largest_component_voxels": 255986.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_2a2eff9f",
+      "seconds": 0.5568903000021237
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2125.0,
+        "median_foreground_fraction": 0.1709001064300537,
+        "median_kept_component_count": 235.0,
+        "median_largest_component_voxels": 705300.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_2f31fc2f",
+      "seconds": 0.6463919999987411
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 636.0,
+        "median_foreground_fraction": 0.05024266242980957,
+        "median_kept_component_count": 134.0,
+        "median_largest_component_voxels": 82220.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_33b596bf",
+      "seconds": 0.5694445000008272
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 304.0,
+        "median_foreground_fraction": 0.021582841873168945,
+        "median_kept_component_count": 54.0,
+        "median_largest_component_voxels": 31101.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_341df25f",
+      "seconds": 0.6071577000002435
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 377.0,
+        "median_foreground_fraction": 0.036199092864990234,
+        "median_kept_component_count": 260.0,
+        "median_largest_component_voxels": 8108.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_3a861e03",
+      "seconds": 0.5098923000005016
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 651.0,
+        "median_foreground_fraction": 0.14510035514831543,
+        "median_kept_component_count": 91.0,
+        "median_largest_component_voxels": 525562.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_3bb3690f",
+      "seconds": 0.4965846999984933
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 408.0,
+        "median_foreground_fraction": 0.0933220386505127,
+        "median_kept_component_count": 108.0,
+        "median_largest_component_voxels": 356588.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_40c45f5a",
+      "seconds": 0.5056656000015209
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1452.0,
+        "median_foreground_fraction": 0.07382011413574219,
+        "median_kept_component_count": 329.0,
+        "median_largest_component_voxels": 157327.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_415c0a3a",
+      "seconds": 0.48605740000130027
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1399.0,
+        "median_foreground_fraction": 0.09162378311157227,
+        "median_kept_component_count": 248.0,
+        "median_largest_component_voxels": 152812.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_53f95252",
+      "seconds": 0.49399179999818443
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 564.0,
+        "median_foreground_fraction": 0.12288904190063477,
+        "median_kept_component_count": 173.0,
+        "median_largest_component_voxels": 289047.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_551a5dba",
+      "seconds": 0.5073802000006253
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1141.0,
+        "median_foreground_fraction": 0.15397143363952637,
+        "median_kept_component_count": 113.0,
+        "median_largest_component_voxels": 639479.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_5740d24b",
+      "seconds": 0.47687299999961397
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 289.0,
+        "median_foreground_fraction": 0.03272271156311035,
+        "median_kept_component_count": 94.0,
+        "median_largest_component_voxels": 26987.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_587a1e22",
+      "seconds": 0.49031310000282247
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2856.0,
+        "median_foreground_fraction": 0.18813300132751465,
+        "median_kept_component_count": 373.0,
+        "median_largest_component_voxels": 771657.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_5f15d135",
+      "seconds": 0.5216651000009733
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 952.0,
+        "median_foreground_fraction": 0.06596922874450684,
+        "median_kept_component_count": 253.0,
+        "median_largest_component_voxels": 115688.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_668e0cc7",
+      "seconds": 0.5068742999974347
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 3358.0,
+        "median_foreground_fraction": 0.11309313774108887,
+        "median_kept_component_count": 546.0,
+        "median_largest_component_voxels": 177902.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_66f9292d",
+      "seconds": 0.5281041999987792
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 936.0,
+        "median_foreground_fraction": 0.0634617805480957,
+        "median_kept_component_count": 298.0,
+        "median_largest_component_voxels": 108161.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_706092f0",
+      "seconds": 0.564921700002742
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 882.0,
+        "median_foreground_fraction": 0.07006025314331055,
+        "median_kept_component_count": 300.0,
+        "median_largest_component_voxels": 98802.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_71a4179f",
+      "seconds": 0.4968148000007204
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1440.0,
+        "median_foreground_fraction": 0.1185615062713623,
+        "median_kept_component_count": 185.0,
+        "median_largest_component_voxels": 494932.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_74d0c52e",
+      "seconds": 0.4898001000001386
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 487.0,
+        "median_foreground_fraction": 0.08537793159484863,
+        "median_kept_component_count": 185.0,
+        "median_largest_component_voxels": 162445.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_7a302da0",
+      "seconds": 0.5075116999978491
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 546.0,
+        "median_foreground_fraction": 0.04444575309753418,
+        "median_kept_component_count": 324.0,
+        "median_largest_component_voxels": 17551.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_7e557709",
+      "seconds": 0.5497843000011926
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1221.0,
+        "median_foreground_fraction": 0.04833483695983887,
+        "median_kept_component_count": 205.0,
+        "median_largest_component_voxels": 101301.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_808952d6",
+      "seconds": 0.6289335000001302
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 361.0,
+        "median_foreground_fraction": 0.027884483337402344,
+        "median_kept_component_count": 76.0,
+        "median_largest_component_voxels": 56027.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_81c256f0",
+      "seconds": 0.6224813000007998
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1866.0,
+        "median_foreground_fraction": 0.11809444427490234,
+        "median_kept_component_count": 231.0,
+        "median_largest_component_voxels": 463343.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_87bba6c4",
+      "seconds": 0.5760665000016161
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 788.0,
+        "median_foreground_fraction": 0.14370083808898926,
+        "median_kept_component_count": 112.0,
+        "median_largest_component_voxels": 588093.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_8cc6506c",
+      "seconds": 0.5857383000002301
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 433.0,
+        "median_foreground_fraction": 0.05345296859741211,
+        "median_kept_component_count": 96.0,
+        "median_largest_component_voxels": 208100.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_8f5ab931",
+      "seconds": 0.5488151000026846
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1388.0,
+        "median_foreground_fraction": 0.10004782676696777,
+        "median_kept_component_count": 401.0,
+        "median_largest_component_voxels": 159968.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_8f9ecab4",
+      "seconds": 0.5161996999995608
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 430.0,
+        "median_foreground_fraction": 0.04462552070617676,
+        "median_kept_component_count": 126.0,
+        "median_largest_component_voxels": 71328.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_90724892",
+      "seconds": 0.4844164999994973
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1256.0,
+        "median_foreground_fraction": 0.07468724250793457,
+        "median_kept_component_count": 218.0,
+        "median_largest_component_voxels": 90283.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_949adeb1",
+      "seconds": 0.48563409999769647
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 265.0,
+        "median_foreground_fraction": 0.014698028564453125,
+        "median_kept_component_count": 53.0,
+        "median_largest_component_voxels": 6145.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_95029e92",
+      "seconds": 0.5405986000005214
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 3416.0,
+        "median_foreground_fraction": 0.15833640098571777,
+        "median_kept_component_count": 471.0,
+        "median_largest_component_voxels": 563673.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_97725144",
+      "seconds": 0.5519832999998471
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 281.0,
+        "median_foreground_fraction": 0.021898508071899414,
+        "median_kept_component_count": 43.0,
+        "median_largest_component_voxels": 66345.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_996155de",
+      "seconds": 0.509358200000861
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 694.0,
+        "median_foreground_fraction": 0.1319265365600586,
+        "median_kept_component_count": 184.0,
+        "median_largest_component_voxels": 525033.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_9be80b04",
+      "seconds": 0.5189339000025939
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 626.0,
+        "median_foreground_fraction": 0.056978464126586914,
+        "median_kept_component_count": 314.0,
+        "median_largest_component_voxels": 110385.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_9bfa6a0a",
+      "seconds": 0.5105693000004976
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 197.0,
+        "median_foreground_fraction": 0.026286840438842773,
+        "median_kept_component_count": 127.0,
+        "median_largest_component_voxels": 11866.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_a21120c2",
+      "seconds": 0.4871856000027037
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1503.0,
+        "median_foreground_fraction": 0.19687914848327637,
+        "median_kept_component_count": 258.0,
+        "median_largest_component_voxels": 768536.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_a2bb48bb",
+      "seconds": 0.5086735999975645
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2739.0,
+        "median_foreground_fraction": 0.056151390075683594,
+        "median_kept_component_count": 465.0,
+        "median_largest_component_voxels": 204563.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_aaf8b0ea",
+      "seconds": 0.8615601999990758
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1237.0,
+        "median_foreground_fraction": 0.07196354866027832,
+        "median_kept_component_count": 172.0,
+        "median_largest_component_voxels": 257216.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_abf82518",
+      "seconds": 0.5926696999995329
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 486.0,
+        "median_foreground_fraction": 0.06257987022399902,
+        "median_kept_component_count": 226.0,
+        "median_largest_component_voxels": 134932.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_b2c44266",
+      "seconds": 0.5305842000016128
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 677.0,
+        "median_foreground_fraction": 0.03867506980895996,
+        "median_kept_component_count": 141.0,
+        "median_largest_component_voxels": 32267.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_c15fded2",
+      "seconds": 0.5421163999999408
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2416.0,
+        "median_foreground_fraction": 0.1519172191619873,
+        "median_kept_component_count": 421.0,
+        "median_largest_component_voxels": 549786.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_c50204e0",
+      "seconds": 0.6162642999988748
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1973.0,
+        "median_foreground_fraction": 0.16484975814819336,
+        "median_kept_component_count": 283.0,
+        "median_largest_component_voxels": 604287.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_c771cb04",
+      "seconds": 0.5209138000027451
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 249.0,
+        "median_foreground_fraction": 0.025455713272094727,
+        "median_kept_component_count": 202.0,
+        "median_largest_component_voxels": 5998.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_c8e2a523",
+      "seconds": 0.5099286000004213
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 367.0,
+        "median_foreground_fraction": 0.05540323257446289,
+        "median_kept_component_count": 173.0,
+        "median_largest_component_voxels": 81635.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_c96cfa10",
+      "seconds": 0.512172599999758
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 5245.0,
+        "median_foreground_fraction": 0.1680762767791748,
+        "median_kept_component_count": 713.0,
+        "median_largest_component_voxels": 351398.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_cf2536e8",
+      "seconds": 0.5090319000009913
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1821.0,
+        "median_foreground_fraction": 0.07922720909118652,
+        "median_kept_component_count": 539.0,
+        "median_largest_component_voxels": 57561.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_cf8fed6b",
+      "seconds": 0.4992296999989776
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 368.0,
+        "median_foreground_fraction": 0.03160285949707031,
+        "median_kept_component_count": 290.0,
+        "median_largest_component_voxels": 4914.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_d29c9ab2",
+      "seconds": 0.4972505000005185
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1041.0,
+        "median_foreground_fraction": 0.12322783470153809,
+        "median_kept_component_count": 123.0,
+        "median_largest_component_voxels": 502405.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_d2f34f90",
+      "seconds": 0.4889376999999513
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 672.0,
+        "median_foreground_fraction": 0.11040592193603516,
+        "median_kept_component_count": 126.0,
+        "median_largest_component_voxels": 438354.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_d5e7d891",
+      "seconds": 0.575029399999039
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 340.0,
+        "median_foreground_fraction": 0.016580581665039062,
+        "median_kept_component_count": 68.0,
+        "median_largest_component_voxels": 13453.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_d754aa59",
+      "seconds": 0.5422835999997915
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 235.0,
+        "median_foreground_fraction": 0.03928422927856445,
+        "median_kept_component_count": 84.0,
+        "median_largest_component_voxels": 117766.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_d78e09d9",
+      "seconds": 0.5365928999999596
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 538.0,
+        "median_foreground_fraction": 0.03167152404785156,
+        "median_kept_component_count": 98.0,
+        "median_largest_component_voxels": 99706.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_db3c847b",
+      "seconds": 0.5801453000021866
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 839.0,
+        "median_foreground_fraction": 0.062281131744384766,
+        "median_kept_component_count": 259.0,
+        "median_largest_component_voxels": 104847.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_ddf577ad",
+      "seconds": 0.7226742999991984
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 310.0,
+        "median_foreground_fraction": 0.032251834869384766,
+        "median_kept_component_count": 76.0,
+        "median_largest_component_voxels": 66429.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_deabac95",
+      "seconds": 0.660283299999719
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1369.0,
+        "median_foreground_fraction": 0.07692122459411621,
+        "median_kept_component_count": 430.0,
+        "median_largest_component_voxels": 68217.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_e28840c6",
+      "seconds": 0.5969272000002093
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 924.0,
+        "median_foreground_fraction": 0.03755998611450195,
+        "median_kept_component_count": 135.0,
+        "median_largest_component_voxels": 118942.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_e29f0176",
+      "seconds": 0.5934388999994553
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1531.0,
+        "median_foreground_fraction": 0.08716106414794922,
+        "median_kept_component_count": 483.0,
+        "median_largest_component_voxels": 117592.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_e31261b4",
+      "seconds": 0.5484719000014593
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 3628.0,
+        "median_foreground_fraction": 0.15729475021362305,
+        "median_kept_component_count": 544.0,
+        "median_largest_component_voxels": 560822.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_e35b117d",
+      "seconds": 0.5828483999976015
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1918.0,
+        "median_foreground_fraction": 0.14159679412841797,
+        "median_kept_component_count": 200.0,
+        "median_largest_component_voxels": 570340.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_e57ff5c6",
+      "seconds": 0.5187549000002036
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2247.0,
+        "median_foreground_fraction": 0.09665131568908691,
+        "median_kept_component_count": 396.0,
+        "median_largest_component_voxels": 316163.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_eb2880fc",
+      "seconds": 0.6097191000008024
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 830.0,
+        "median_foreground_fraction": 0.05297565460205078,
+        "median_kept_component_count": 136.0,
+        "median_largest_component_voxels": 56904.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "44b6_f28707c6",
+      "seconds": 0.5163783999996667
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 72.0,
+        "median_foreground_fraction": 0.01777195930480957,
+        "median_kept_component_count": 42.0,
+        "median_largest_component_voxels": 12132.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_05b6850b",
+      "seconds": 0.4918822000036016
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 723.0,
+        "median_foreground_fraction": 0.0774998664855957,
+        "median_kept_component_count": 279.0,
+        "median_largest_component_voxels": 201885.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_05db0fb1",
+      "seconds": 0.5636942999990424
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 90.0,
+        "median_foreground_fraction": 0.014660358428955078,
+        "median_kept_component_count": 48.0,
+        "median_largest_component_voxels": 3387.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_062c8d37",
+      "seconds": 0.5624561000004178
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 141.0,
+        "median_foreground_fraction": 0.016455888748168945,
+        "median_kept_component_count": 37.0,
+        "median_largest_component_voxels": 14293.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_07477033",
+      "seconds": 0.5219843000013498
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1553.0,
+        "median_foreground_fraction": 0.06842613220214844,
+        "median_kept_component_count": 319.0,
+        "median_largest_component_voxels": 271949.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_07e24132",
+      "seconds": 0.5094878999989305
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 247.0,
+        "median_foreground_fraction": 0.03060173988342285,
+        "median_kept_component_count": 59.0,
+        "median_largest_component_voxels": 13383.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_085bf656",
+      "seconds": 0.5126017000002321
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 600.0,
+        "median_foreground_fraction": 0.042143821716308594,
+        "median_kept_component_count": 176.0,
+        "median_largest_component_voxels": 91269.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_09961292",
+      "seconds": 0.5787531999994826
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 184.0,
+        "median_foreground_fraction": 0.02025318145751953,
+        "median_kept_component_count": 83.0,
+        "median_largest_component_voxels": 5657.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_0c7fa718",
+      "seconds": 0.5243116999990889
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 487.0,
+        "median_foreground_fraction": 0.07476639747619629,
+        "median_kept_component_count": 60.0,
+        "median_largest_component_voxels": 229340.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_0e7c0d07",
+      "seconds": 0.5356659999997646
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 203.0,
+        "median_foreground_fraction": 0.02054882049560547,
+        "median_kept_component_count": 65.0,
+        "median_largest_component_voxels": 7229.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_12665c0e",
+      "seconds": 0.5505722999987483
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 232.0,
+        "median_foreground_fraction": 0.02281022071838379,
+        "median_kept_component_count": 45.0,
+        "median_largest_component_voxels": 15476.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_13f19531",
+      "seconds": 0.5476472999980615
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 84.0,
+        "median_foreground_fraction": 0.01754140853881836,
+        "median_kept_component_count": 56.0,
+        "median_largest_component_voxels": 10511.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_15403b9a",
+      "seconds": 0.580418000001373
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 516.0,
+        "median_foreground_fraction": 0.02862381935119629,
+        "median_kept_component_count": 133.0,
+        "median_largest_component_voxels": 40348.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_1d0d8384",
+      "seconds": 0.574970999998186
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 572.0,
+        "median_foreground_fraction": 0.029613018035888672,
+        "median_kept_component_count": 89.0,
+        "median_largest_component_voxels": 67937.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_1ebfb80d",
+      "seconds": 0.6001662999988184
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1784.0,
+        "median_foreground_fraction": 0.08814501762390137,
+        "median_kept_component_count": 337.0,
+        "median_largest_component_voxels": 331425.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_1f58c2f6",
+      "seconds": 0.5689325999992434
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2774.0,
+        "median_foreground_fraction": 0.0718836784362793,
+        "median_kept_component_count": 348.0,
+        "median_largest_component_voxels": 270723.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_207c6aaf",
+      "seconds": 0.5871995000015886
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 153.0,
+        "median_foreground_fraction": 0.016605377197265625,
+        "median_kept_component_count": 69.0,
+        "median_largest_component_voxels": 7818.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_20852818",
+      "seconds": 0.6070852000011655
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 611.0,
+        "median_foreground_fraction": 0.03584170341491699,
+        "median_kept_component_count": 111.0,
+        "median_largest_component_voxels": 35396.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_2312ac41",
+      "seconds": 0.5261693000029481
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 52.0,
+        "median_foreground_fraction": 0.01407170295715332,
+        "median_kept_component_count": 22.0,
+        "median_largest_component_voxels": 10693.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_23af9eeb",
+      "seconds": 0.5303467000012461
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 43.0,
+        "median_foreground_fraction": 0.011983871459960938,
+        "median_kept_component_count": 28.0,
+        "median_largest_component_voxels": 5539.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_2540cd90",
+      "seconds": 0.5296615000006568
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 71.0,
+        "median_foreground_fraction": 0.016309261322021484,
+        "median_kept_component_count": 38.0,
+        "median_largest_component_voxels": 13207.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_2646afc7",
+      "seconds": 0.5475525000001653
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 187.0,
+        "median_foreground_fraction": 0.019727230072021484,
+        "median_kept_component_count": 41.0,
+        "median_largest_component_voxels": 23757.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_268e1230",
+      "seconds": 0.52465310000116
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 190.0,
+        "median_foreground_fraction": 0.02242422103881836,
+        "median_kept_component_count": 55.0,
+        "median_largest_component_voxels": 16575.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_2819ca14",
+      "seconds": 0.5473968000005698
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 753.0,
+        "median_foreground_fraction": 0.04854297637939453,
+        "median_kept_component_count": 150.0,
+        "median_largest_component_voxels": 29229.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_283bf9f1",
+      "seconds": 0.5574522999995679
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 182.0,
+        "median_foreground_fraction": 0.023506879806518555,
+        "median_kept_component_count": 66.0,
+        "median_largest_component_voxels": 31194.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_312f0dc3",
+      "seconds": 0.5944343000010122
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 680.0,
+        "median_foreground_fraction": 0.054422855377197266,
+        "median_kept_component_count": 131.0,
+        "median_largest_component_voxels": 204116.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_32db13fc",
+      "seconds": 0.5731741000017792
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 289.0,
+        "median_foreground_fraction": 0.027631759643554688,
+        "median_kept_component_count": 213.0,
+        "median_largest_component_voxels": 6043.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_337b1b3a",
+      "seconds": 0.6078256000000692
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 193.0,
+        "median_foreground_fraction": 0.021310806274414062,
+        "median_kept_component_count": 64.0,
+        "median_largest_component_voxels": 9647.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_372c8cb8",
+      "seconds": 0.5473827999994683
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 393.0,
+        "median_foreground_fraction": 0.022878170013427734,
+        "median_kept_component_count": 73.0,
+        "median_largest_component_voxels": 21230.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_3a1849c2",
+      "seconds": 0.5084409000010055
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 734.0,
+        "median_foreground_fraction": 0.10341072082519531,
+        "median_kept_component_count": 167.0,
+        "median_largest_component_voxels": 397169.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_3abfe10a",
+      "seconds": 0.5354665999984718
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 189.0,
+        "median_foreground_fraction": 0.019252538681030273,
+        "median_kept_component_count": 56.0,
+        "median_largest_component_voxels": 8552.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_3c5691b6",
+      "seconds": 0.5611429999989923
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 675.0,
+        "median_foreground_fraction": 0.05953478813171387,
+        "median_kept_component_count": 95.0,
+        "median_largest_component_voxels": 213292.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_3db54e20",
+      "seconds": 0.6848591999987548
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 516.0,
+        "median_foreground_fraction": 0.022969722747802734,
+        "median_kept_component_count": 114.0,
+        "median_largest_component_voxels": 39365.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_3fda6b25",
+      "seconds": 0.6678922999999486
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 243.0,
+        "median_foreground_fraction": 0.019072771072387695,
+        "median_kept_component_count": 44.0,
+        "median_largest_component_voxels": 10422.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_43fea39d",
+      "seconds": 0.5451159000003827
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 304.0,
+        "median_foreground_fraction": 0.07095146179199219,
+        "median_kept_component_count": 76.0,
+        "median_largest_component_voxels": 275296.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_474be664",
+      "seconds": 0.5720346000016434
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 364.0,
+        "median_foreground_fraction": 0.0405118465423584,
+        "median_kept_component_count": 149.0,
+        "median_largest_component_voxels": 10986.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_48816121",
+      "seconds": 0.5614079000006313
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 222.0,
+        "median_foreground_fraction": 0.01848149299621582,
+        "median_kept_component_count": 61.0,
+        "median_largest_component_voxels": 40634.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_4aa14c89",
+      "seconds": 0.5611037999988184
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 306.0,
+        "median_foreground_fraction": 0.022420406341552734,
+        "median_kept_component_count": 72.0,
+        "median_largest_component_voxels": 8018.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_4f99ce20",
+      "seconds": 0.547915400002239
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1558.0,
+        "median_foreground_fraction": 0.05102276802062988,
+        "median_kept_component_count": 218.0,
+        "median_largest_component_voxels": 133113.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_4ffd3da3",
+      "seconds": 0.5287582000019029
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 63.0,
+        "median_foreground_fraction": 0.014469623565673828,
+        "median_kept_component_count": 33.0,
+        "median_largest_component_voxels": 9677.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_55b7eebe",
+      "seconds": 0.5104363999998895
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1849.0,
+        "median_foreground_fraction": 0.163604736328125,
+        "median_kept_component_count": 232.0,
+        "median_largest_component_voxels": 660371.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_55c70843",
+      "seconds": 0.5398593999998411
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 9351.0,
+        "median_foreground_fraction": 0.13696789741516113,
+        "median_kept_component_count": 1430.0,
+        "median_largest_component_voxels": 374380.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_57b7cc1e",
+      "seconds": 0.6230504000013752
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 147.0,
+        "median_foreground_fraction": 0.017420530319213867,
+        "median_kept_component_count": 56.0,
+        "median_largest_component_voxels": 9623.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_5a4d9360",
+      "seconds": 0.5655258000006143
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 87.0,
+        "median_foreground_fraction": 0.01572251319885254,
+        "median_kept_component_count": 49.0,
+        "median_largest_component_voxels": 5048.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_5b28472a",
+      "seconds": 0.5567983000000822
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 326.0,
+        "median_foreground_fraction": 0.030202388763427734,
+        "median_kept_component_count": 77.0,
+        "median_largest_component_voxels": 17804.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_5c039895",
+      "seconds": 0.578134699997463
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 358.0,
+        "median_foreground_fraction": 0.04545331001281738,
+        "median_kept_component_count": 110.0,
+        "median_largest_component_voxels": 48942.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_5c824876",
+      "seconds": 0.5468756000009307
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1155.0,
+        "median_foreground_fraction": 0.0694725513458252,
+        "median_kept_component_count": 210.0,
+        "median_largest_component_voxels": 208818.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_5dfe9ad1",
+      "seconds": 0.5791605000013078
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 96.0,
+        "median_foreground_fraction": 0.016770362854003906,
+        "median_kept_component_count": 33.0,
+        "median_largest_component_voxels": 9965.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_5f89039d",
+      "seconds": 0.6460636000010709
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 127.0,
+        "median_foreground_fraction": 0.0249483585357666,
+        "median_kept_component_count": 37.0,
+        "median_largest_component_voxels": 51773.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_61dd1e0d",
+      "seconds": 0.6226137999983621
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 207.0,
+        "median_foreground_fraction": 0.021202564239501953,
+        "median_kept_component_count": 62.0,
+        "median_largest_component_voxels": 11794.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_61ecbe65",
+      "seconds": 0.5898111000024073
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 143.0,
+        "median_foreground_fraction": 0.01698589324951172,
+        "median_kept_component_count": 39.0,
+        "median_largest_component_voxels": 9205.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_6321a359",
+      "seconds": 0.5454595000010158
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 952.0,
+        "median_foreground_fraction": 0.057152748107910156,
+        "median_kept_component_count": 197.0,
+        "median_largest_component_voxels": 216478.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_6479435d",
+      "seconds": 0.5211202999998932
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 413.0,
+        "median_foreground_fraction": 0.028029680252075195,
+        "median_kept_component_count": 85.0,
+        "median_largest_component_voxels": 30059.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_67ebd073",
+      "seconds": 0.8017263999972783
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 187.0,
+        "median_foreground_fraction": 0.02323150634765625,
+        "median_kept_component_count": 51.0,
+        "median_largest_component_voxels": 15709.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_6ca87370",
+      "seconds": 0.6507404000003589
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 918.0,
+        "median_foreground_fraction": 0.05146026611328125,
+        "median_kept_component_count": 176.0,
+        "median_largest_component_voxels": 150732.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_6db0e9b4",
+      "seconds": 0.6160234999988461
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1440.0,
+        "median_foreground_fraction": 0.05309104919433594,
+        "median_kept_component_count": 185.0,
+        "median_largest_component_voxels": 214486.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_6feb10f0",
+      "seconds": 0.644687600000907
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 144.0,
+        "median_foreground_fraction": 0.017989397048950195,
+        "median_kept_component_count": 66.0,
+        "median_largest_component_voxels": 8237.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_6feeb0b1",
+      "seconds": 0.641014400000131
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 437.0,
+        "median_foreground_fraction": 0.022469282150268555,
+        "median_kept_component_count": 70.0,
+        "median_largest_component_voxels": 28212.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_705ec2c9",
+      "seconds": 0.5897746000009647
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 81.0,
+        "median_foreground_fraction": 0.01253366470336914,
+        "median_kept_component_count": 43.0,
+        "median_largest_component_voxels": 4656.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_718b21f9",
+      "seconds": 0.5314106000005268
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 452.0,
+        "median_foreground_fraction": 0.03950071334838867,
+        "median_kept_component_count": 53.0,
+        "median_largest_component_voxels": 158632.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_74686d6a",
+      "seconds": 0.5353991000010865
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1367.0,
+        "median_foreground_fraction": 0.14415502548217773,
+        "median_kept_component_count": 196.0,
+        "median_largest_component_voxels": 500008.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_767a1e17",
+      "seconds": 0.5541951000013796
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 104.0,
+        "median_foreground_fraction": 0.018157243728637695,
+        "median_kept_component_count": 36.0,
+        "median_largest_component_voxels": 7851.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_76db78c1",
+      "seconds": 0.5768065999982355
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 440.0,
+        "median_foreground_fraction": 0.032505035400390625,
+        "median_kept_component_count": 119.0,
+        "median_largest_component_voxels": 16324.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_784a78c9",
+      "seconds": 0.6083623999984411
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1087.0,
+        "median_foreground_fraction": 0.11091184616088867,
+        "median_kept_component_count": 220.0,
+        "median_largest_component_voxels": 428664.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_786893ac",
+      "seconds": 0.6043872000009287
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 192.0,
+        "median_foreground_fraction": 0.018431663513183594,
+        "median_kept_component_count": 60.0,
+        "median_largest_component_voxels": 8400.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_789f8168",
+      "seconds": 0.6517069000001356
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1177.0,
+        "median_foreground_fraction": 0.12340331077575684,
+        "median_kept_component_count": 137.0,
+        "median_largest_component_voxels": 459121.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_78a7bd97",
+      "seconds": 0.6259411999999429
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 823.0,
+        "median_foreground_fraction": 0.04238557815551758,
+        "median_kept_component_count": 135.0,
+        "median_largest_component_voxels": 146745.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_7af54fde",
+      "seconds": 0.6085081000019272
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 57.0,
+        "median_foreground_fraction": 0.015488624572753906,
+        "median_kept_component_count": 34.0,
+        "median_largest_component_voxels": 6940.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_7b5d3b2c",
+      "seconds": 0.5663795000000391
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 123.0,
+        "median_foreground_fraction": 0.017568588256835938,
+        "median_kept_component_count": 63.0,
+        "median_largest_component_voxels": 5216.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_7d3058ae",
+      "seconds": 0.5874915999993391
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 1017.0,
+        "median_foreground_fraction": 0.03202962875366211,
+        "median_kept_component_count": 204.0,
+        "median_largest_component_voxels": 62947.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_7f87b3d8",
+      "seconds": 0.5790962999999465
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 104.0,
+        "median_foreground_fraction": 0.016471385955810547,
+        "median_kept_component_count": 54.0,
+        "median_largest_component_voxels": 9098.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_80d12824",
+      "seconds": 0.5847935000019788
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 142.0,
+        "median_foreground_fraction": 0.01896834373474121,
+        "median_kept_component_count": 67.0,
+        "median_largest_component_voxels": 18457.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_825bd1c6",
+      "seconds": 0.5826412999995227
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 170.0,
+        "median_foreground_fraction": 0.01894068717956543,
+        "median_kept_component_count": 102.0,
+        "median_largest_component_voxels": 5632.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_87289e13",
+      "seconds": 0.6163629000002402
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 79.0,
+        "median_foreground_fraction": 0.01767420768737793,
+        "median_kept_component_count": 41.0,
+        "median_largest_component_voxels": 17049.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_8b7818bf",
+      "seconds": 0.5791317000002891
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 217.0,
+        "median_foreground_fraction": 0.022072315216064453,
+        "median_kept_component_count": 71.0,
+        "median_largest_component_voxels": 19115.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_907271db",
+      "seconds": 0.5412285999991582
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 388.0,
+        "median_foreground_fraction": 0.027151107788085938,
+        "median_kept_component_count": 121.0,
+        "median_largest_component_voxels": 9795.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_91951b3a",
+      "seconds": 0.5703064000008453
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 179.0,
+        "median_foreground_fraction": 0.019769906997680664,
+        "median_kept_component_count": 44.0,
+        "median_largest_component_voxels": 11971.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_96833384",
+      "seconds": 0.5807423000005656
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1116.0,
+        "median_foreground_fraction": 0.05059981346130371,
+        "median_kept_component_count": 164.0,
+        "median_largest_component_voxels": 160254.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_969618f6",
+      "seconds": 0.5858950000001641
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 93.0,
+        "median_foreground_fraction": 0.012848377227783203,
+        "median_kept_component_count": 52.0,
+        "median_largest_component_voxels": 6079.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_971fa5e0",
+      "seconds": 0.6480379999993602
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 426.0,
+        "median_foreground_fraction": 0.03254199028015137,
+        "median_kept_component_count": 109.0,
+        "median_largest_component_voxels": 98396.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_9a41d029",
+      "seconds": 0.5294670999974187
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 129.0,
+        "median_foreground_fraction": 0.02220940589904785,
+        "median_kept_component_count": 28.0,
+        "median_largest_component_voxels": 82654.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_9e23430b",
+      "seconds": 0.5074585000002116
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 323.0,
+        "median_foreground_fraction": 0.02189493179321289,
+        "median_kept_component_count": 85.0,
+        "median_largest_component_voxels": 12209.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_a5e926bb",
+      "seconds": 0.5422236000013072
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 335.0,
+        "median_foreground_fraction": 0.04624819755554199,
+        "median_kept_component_count": 89.0,
+        "median_largest_component_voxels": 179861.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_a90a0b9c",
+      "seconds": 0.5484440000000177
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 931.0,
+        "median_foreground_fraction": 0.05715322494506836,
+        "median_kept_component_count": 144.0,
+        "median_largest_component_voxels": 235673.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_ab78413d",
+      "seconds": 0.651113500000065
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 344.0,
+        "median_foreground_fraction": 0.03123188018798828,
+        "median_kept_component_count": 139.0,
+        "median_largest_component_voxels": 13154.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_acd782a8",
+      "seconds": 0.5651828000009118
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 211.0,
+        "median_foreground_fraction": 0.01813220977783203,
+        "median_kept_component_count": 73.0,
+        "median_largest_component_voxels": 5634.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_ae82a791",
+      "seconds": 0.5433693999984825
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 115.0,
+        "median_foreground_fraction": 0.016777992248535156,
+        "median_kept_component_count": 35.0,
+        "median_largest_component_voxels": 8674.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_aeee7805",
+      "seconds": 0.5358258999985992
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 515.0,
+        "median_foreground_fraction": 0.0314784049987793,
+        "median_kept_component_count": 123.0,
+        "median_largest_component_voxels": 15170.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_af149c94",
+      "seconds": 0.5863963000010699
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 99.0,
+        "median_foreground_fraction": 0.014351606369018555,
+        "median_kept_component_count": 44.0,
+        "median_largest_component_voxels": 7024.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_afb141ff",
+      "seconds": 0.5892951999994693
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1068.0,
+        "median_foreground_fraction": 0.07760739326477051,
+        "median_kept_component_count": 141.0,
+        "median_largest_component_voxels": 203574.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_b1ae37b9",
+      "seconds": 0.6093185999998241
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 52.0,
+        "median_foreground_fraction": 0.012583255767822266,
+        "median_kept_component_count": 37.0,
+        "median_largest_component_voxels": 5778.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_b204cac7",
+      "seconds": 0.539976399999432
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1244.0,
+        "median_foreground_fraction": 0.10692524909973145,
+        "median_kept_component_count": 301.0,
+        "median_largest_component_voxels": 355163.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_b329af44",
+      "seconds": 0.5378569000022253
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 109.0,
+        "median_foreground_fraction": 0.013878583908081055,
+        "median_kept_component_count": 53.0,
+        "median_largest_component_voxels": 5316.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_b693381b",
+      "seconds": 0.550203099999635
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 292.0,
+        "median_foreground_fraction": 0.03044295310974121,
+        "median_kept_component_count": 148.0,
+        "median_largest_component_voxels": 11403.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_bb9f20c3",
+      "seconds": 0.5612005999973917
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 203.0,
+        "median_foreground_fraction": 0.02385091781616211,
+        "median_kept_component_count": 56.0,
+        "median_largest_component_voxels": 11797.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_bbb708ca",
+      "seconds": 0.6063806999991357
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 240.0,
+        "median_foreground_fraction": 0.02467823028564453,
+        "median_kept_component_count": 39.0,
+        "median_largest_component_voxels": 17525.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_c27cba08",
+      "seconds": 0.608919700000115
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 665.0,
+        "median_foreground_fraction": 0.045969486236572266,
+        "median_kept_component_count": 161.0,
+        "median_largest_component_voxels": 146763.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_c328f2fd",
+      "seconds": 0.5290512999999919
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 2507.0,
+        "median_foreground_fraction": 0.053246498107910156,
+        "median_kept_component_count": 406.0,
+        "median_largest_component_voxels": 197143.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_c73a1d11",
+      "seconds": 0.5402585999981966
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 352.0,
+        "median_foreground_fraction": 0.02976059913635254,
+        "median_kept_component_count": 225.0,
+        "median_largest_component_voxels": 5653.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_cdcfe533",
+      "seconds": 0.5503118000015093
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 767.0,
+        "median_foreground_fraction": 0.058609962463378906,
+        "median_kept_component_count": 273.0,
+        "median_largest_component_voxels": 58620.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_cf35214c",
+      "seconds": 0.5637121999970987
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 462.0,
+        "median_foreground_fraction": 0.044191837310791016,
+        "median_kept_component_count": 268.0,
+        "median_largest_component_voxels": 21420.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_cff5865f",
+      "seconds": 0.5726523000012094
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 147.0,
+        "median_foreground_fraction": 0.01646113395690918,
+        "median_kept_component_count": 56.0,
+        "median_largest_component_voxels": 10762.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_d0fc38b5",
+      "seconds": 0.5285647999990033
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1343.0,
+        "median_foreground_fraction": 0.05340003967285156,
+        "median_kept_component_count": 171.0,
+        "median_largest_component_voxels": 62883.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_d1acb6ff",
+      "seconds": 0.518105099999957
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 230.0,
+        "median_foreground_fraction": 0.026006460189819336,
+        "median_kept_component_count": 175.0,
+        "median_largest_component_voxels": 4224.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_d2b9fc0c",
+      "seconds": 0.5443601000006311
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 224.0,
+        "median_foreground_fraction": 0.02246880531311035,
+        "median_kept_component_count": 164.0,
+        "median_largest_component_voxels": 4704.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_d3da753b",
+      "seconds": 0.5466445999991265
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 50.0,
+        "median_foreground_fraction": 0.012655019760131836,
+        "median_kept_component_count": 35.0,
+        "median_largest_component_voxels": 5042.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_d5eae175",
+      "seconds": 0.5591832999998587
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 96.0,
+        "median_foreground_fraction": 0.015262603759765625,
+        "median_kept_component_count": 33.0,
+        "median_largest_component_voxels": 16761.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_d6ecebbb",
+      "seconds": 0.5841189999991911
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1126.0,
+        "median_foreground_fraction": 0.08310580253601074,
+        "median_kept_component_count": 153.0,
+        "median_largest_component_voxels": 323624.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_d82a4fc6",
+      "seconds": 0.624723199998698
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 390.0,
+        "median_foreground_fraction": 0.0266876220703125,
+        "median_kept_component_count": 94.0,
+        "median_largest_component_voxels": 10192.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_debd7bfa",
+      "seconds": 0.543651800002408
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 597.0,
+        "median_foreground_fraction": 0.044539690017700195,
+        "median_kept_component_count": 119.0,
+        "median_largest_component_voxels": 36811.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_df673a83",
+      "seconds": 0.5713675999977568
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 117.0,
+        "median_foreground_fraction": 0.01757669448852539,
+        "median_kept_component_count": 55.0,
+        "median_largest_component_voxels": 10796.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_e16ffc58",
+      "seconds": 0.6627267000003485
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 251.0,
+        "median_foreground_fraction": 0.022580385208129883,
+        "median_kept_component_count": 54.0,
+        "median_largest_component_voxels": 15028.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_e5e44988",
+      "seconds": 0.6512388000010105
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1176.0,
+        "median_foreground_fraction": 0.07500171661376953,
+        "median_kept_component_count": 339.0,
+        "median_largest_component_voxels": 232333.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_ebdf3b34",
+      "seconds": 0.6774705999996513
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 3846.0,
+        "median_foreground_fraction": 0.08289599418640137,
+        "median_kept_component_count": 756.0,
+        "median_largest_component_voxels": 278583.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_ebff6e76",
+      "seconds": 0.6220620999993116
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 64.0,
+        "median_foreground_fraction": 0.016892671585083008,
+        "median_kept_component_count": 36.0,
+        "median_largest_component_voxels": 12824.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_ed9377fd",
+      "seconds": 0.5617133000014292
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1688.0,
+        "median_foreground_fraction": 0.12561917304992676,
+        "median_kept_component_count": 306.0,
+        "median_largest_component_voxels": 496879.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_edf14583",
+      "seconds": 0.6194792999995116
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 118.0,
+        "median_foreground_fraction": 0.016148805618286133,
+        "median_kept_component_count": 59.0,
+        "median_largest_component_voxels": 8846.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_eebc57a5",
+      "seconds": 0.5793468000010762
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 93.0,
+        "median_foreground_fraction": 0.015914201736450195,
+        "median_kept_component_count": 40.0,
+        "median_largest_component_voxels": 16979.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_ef7b4f7e",
+      "seconds": 0.5665984000006574
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1005.0,
+        "median_foreground_fraction": 0.07720494270324707,
+        "median_kept_component_count": 151.0,
+        "median_largest_component_voxels": 309238.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_f17befbc",
+      "seconds": 0.5224114000011468
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 788.0,
+        "median_foreground_fraction": 0.02887248992919922,
+        "median_kept_component_count": 126.0,
+        "median_largest_component_voxels": 63741.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_f1fde7e0",
+      "seconds": 0.5046394000019063
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 322.0,
+        "median_foreground_fraction": 0.021223783493041992,
+        "median_kept_component_count": 72.0,
+        "median_largest_component_voxels": 11410.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_f20478e9",
+      "seconds": 0.5364197000017157
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 297.0,
+        "median_foreground_fraction": 0.023568391799926758,
+        "median_kept_component_count": 66.0,
+        "median_largest_component_voxels": 12294.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_f4ae811c",
+      "seconds": 0.5399010000000999
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1528.0,
+        "median_foreground_fraction": 0.10329222679138184,
+        "median_kept_component_count": 198.0,
+        "median_largest_component_voxels": 366399.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_f8ffd5e7",
+      "seconds": 0.5465903999975126
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 82.0,
+        "median_foreground_fraction": 0.014431953430175781,
+        "median_kept_component_count": 31.0,
+        "median_largest_component_voxels": 15350.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_fbc898dc",
+      "seconds": 0.5462139999981446
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 77.0,
+        "median_foreground_fraction": 0.015134096145629883,
+        "median_kept_component_count": 50.0,
+        "median_largest_component_voxels": 8967.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_fc516dc6",
+      "seconds": 0.58791470000142
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 1615.0,
+        "median_foreground_fraction": 0.056632280349731445,
+        "median_kept_component_count": 187.0,
+        "median_largest_component_voxels": 201517.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_fc5f39dc",
+      "seconds": 0.5115594999988389
+    },
+    {
+      "adaptive_detector": "local_maxima",
+      "apply_pruning": false,
+      "expected_pruning": false,
+      "match": true,
+      "profile": {
+        "median_component_count": 671.0,
+        "median_foreground_fraction": 0.03460693359375,
+        "median_kept_component_count": 106.0,
+        "median_largest_component_voxels": 111344.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_fc83837d",
+      "seconds": 0.5052799000004597
+    },
+    {
+      "adaptive_detector": "components",
+      "apply_pruning": true,
+      "expected_pruning": true,
+      "match": true,
+      "profile": {
+        "median_component_count": 393.0,
+        "median_foreground_fraction": 0.025660037994384766,
+        "median_kept_component_count": 91.0,
+        "median_largest_component_voxels": 27286.0,
+        "sampled_timepoints": [
+          0,
+          25,
+          50,
+          75,
+          99
+        ]
+      },
+      "sample_id": "6bba_fe670320",
+      "seconds": 0.5420755000013742
+    }
+  ],
+  "status": "PASS",
+  "wall_seconds": 125.54898469999898
+}
