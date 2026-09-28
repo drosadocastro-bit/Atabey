@@ -2,7 +2,9 @@
 
 This publication records the V26A gate-order audit, the original failed V27A
 execution, the V27A.1 amendment and fixed-history results, and the V27B recursive
-history results. It does not change any frozen scientific source, contract,
+history results. The V27 closure additionally records V27C's approved official
+evaluation of all saved V27B graphs, with exact replay and its retrospective
+interpretation limits. It does not change any frozen scientific source, contract,
 approval, parameter or result, and does not authorize a new experiment.
 
 The repository includes the implementations, regression tests, contracts,
@@ -21,6 +23,18 @@ The complete V27A.1 and V27B output directories remain local under
 `v27b_recursive_history_results.json`. Upstream input archives, competition
 volumes, model checkpoints and unrelated local logs are not included here.
 
+V27C's protocol, design and implementation reviews, instrument, runner, tests,
+candidate/approved manifests, results report and machine result are included.
+Selected original XML reports preserve both the initial failed synthetic test
+and the passing 193-test battery. Proposal construction/verification helpers,
+the post-run verifier and its verification record, and execution stdout/stderr
+are retained at their original paths. Byte-pinned evidence is not normalized.
+
+The complete `outputs/v27c_frozen_20260927/` directory remains local: 1,768 files,
+302,249,558 bytes, including its inventory. Its identities and verification
+records are embedded in `v27c_official_graph_evaluation_results.json`. No GEFF
+labels, image volumes or full cell/ledger output archive are added to Git.
+
 A fresh clone can inspect the published records and run the included regression
 tests after installing the project and test dependencies. It cannot independently
 replay the cohort or perform the full artifact audit from Git alone: those steps
@@ -32,3 +46,8 @@ a pinned validation report as a substitute for the original.
 V26A remains **NO_GO**, the original V27A remains **INVALID_EXECUTION**, and the
 completed V27A.1 and V27B runs establish bounded mechanism observations. They do
 not establish improved biological tracking accuracy or official Kaggle score.
+V27C completed 480 evaluations with `VALID_RETROSPECTIVE_EVALUATION_RESULT`.
+Its official-host metrics describe the same 16 opened samples. They authorize
+no winner selection, release of the independent-data block, production change
+or submission. V27 is closed as a diagnostic research sequence; V28 has not
+been implemented or authorized by this publication.

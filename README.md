@@ -154,6 +154,19 @@ net edge difference from +197 in RAW to +242 in P3. These are mechanism results,
 not tracking-quality evidence. Official rematching/scoring remains a separate
 contract, and V26A remains NO-GO.
 
+[V27C's separate contract](V27C_OFFICIAL_GRAPH_EVALUATION_PREREGISTRATION.md)
+defines fresh official matching for every saved V27B arm/stage graph, separating
+official FP, sparse-GT unevaluated edges and host-filtered edges. Following
+[193 passing implementation tests](V27C_IMPLEMENTATION_REVIEW.md), human review
+and exact-payload approval, [V27C completed](V27C_OFFICIAL_GRAPH_EVALUATION_RESULTS.md)
+all 480 evaluations with `VALID_RETROSPECTIVE_EVALUATION_RESULT`, exact two-pass
+replay and reproduced historical metric anchors. After P3, M0 -> M1 gains 13 GT
+credits with one additional official FP, despite 242 extra prediction edges;
+adjusted edge Jaccard rises by 0.00085998 in aggregate but declines in five
+samples. H's RAW -> P2 pruning removes no edges yet gains 358 GT credits under
+fresh matching. These retrospective results select no winner, release no
+independent-data block and preserve V26A's NO-GO.
+
 The [V27 publication scope](docs/V27_PUBLICATION_SCOPE.md) distinguishes the
 published regression evidence and manifests from the complete local run archives
 required for cohort replay and full artifact verification.

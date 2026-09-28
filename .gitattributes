@@ -12,3 +12,7 @@
 
 # Preserve the byte-pinned post-run verifier recorded by V27B results.
 outputs/v27b_verify_artifacts_20260924.py -text whitespace=cr-at-eol
+
+# Preserve original V27C evidence bytes, including captured CRLF line endings.
+outputs/v27c_execution_20260927.stdout.log -text whitespace=cr-at-eol
+outputs/v27c_instrument_initial_20260927.xml -text whitespace=cr-at-eol
