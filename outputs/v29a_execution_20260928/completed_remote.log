@@ -1,0 +1,570 @@
+[{"stream_name":"stderr","time":6.073861078,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.07392669,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.073931547,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.073934069,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.633294612,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.63332754,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.633332753,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.633336543,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.982184242,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_doc-0.0.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":12.994315001,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_types-0.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.003215046,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/bidict-0.23.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.011709232,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/blosc2-4.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.040789005,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/certifi-2026.6.17-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.048917294,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.058688966,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/click-8.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.079624109,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/cloudpickle-3.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.088510222,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/dask-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.105869852,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/deprecated-1.3.1-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.115030313,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/donfig-0.8.1.post1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.124722312,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/fsspec-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.157702689,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff-1.2.0.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.168542052,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff_spec-1.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.177453332,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/google_crc32c-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.18489631,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_doc-0.0.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184915107,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/annotated_types-0.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184920138,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/bidict-0.23.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184924435,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/blosc2-4.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.184928872,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/certifi-2026.6.17-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184933185,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.184937803,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/click-8.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184941944,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/cloudpickle-3.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.1849457,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/dask-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184951175,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/deprecated-1.3.1-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184958468,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/donfig-0.8.1.post1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184961035,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/fsspec-2026.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.18496348,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff-1.2.0.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184970968,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff_spec-1.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.184973861,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/google_crc32c-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.186233824,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/greenlet-3.5.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.197714425,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/idna-3.18-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.206739046,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ilpy-0.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.215843007,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imagecodecs-2026.6.26-cp312-abi3-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.304169275,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imageio-2.37.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.326073709,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/lazy_loader-0.5-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.334931448,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/llvmlite-0.47.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.388337054,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/greenlet-3.5.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.388359329,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/idna-3.18-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.388363699,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ilpy-0.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.388367859,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imagecodecs-2026.6.26-cp312-abi3-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.388372072,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/imageio-2.37.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.388375701,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/lazy_loader-0.5-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.388379429,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/llvmlite-0.47.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.491061101,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/locket-1.0.0-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.504943359,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/markdown_it_py-4.2.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.516887535,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/mdurl-0.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.525107901,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/msgpack-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.535327695,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ndindex-1.10.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.547913294,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/networkx-3.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.573250093,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numba-0.65.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.602021707,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numcodecs-0.15.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.641445119,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numexpr-2.14.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.653559982,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.693244625,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/locket-1.0.0-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.693263835,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/markdown_it_py-4.2.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.693268159,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/mdurl-0.1.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.693272037,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/msgpack-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.693275962,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ndindex-1.10.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.693279939,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/networkx-3.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.693283572,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numba-0.65.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.693304868,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numcodecs-0.15.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.693308822,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numexpr-2.14.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.693312787,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.718586065,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/packaging-26.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.728026257,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/partd-1.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.738318686,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.771076249,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars-1.42.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.789263555,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars_runtime_32-1.42.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.920327733,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/packaging-26.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.920346028,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/partd-1.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.920351249,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.920355258,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars-1.42.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":13.92035897,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/polars_runtime_32-1.42.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.948833328,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/psygnal-0.15.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":13.960617672,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyarrow-24.0.0-cp312-cp312-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.108000499,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic-2.13.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.143737461,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.15064599,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/psygnal-0.15.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.150663518,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyarrow-24.0.0-cp312-cp312-manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.150671479,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic-2.13.4-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.150674386,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.16650006,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pygments-2.20.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.196018143,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyscipopt-6.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.250846317,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.266989671,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/requests-2.34.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.276121848,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rich-15.0.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.291588619,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rustworkx-0.18.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.308316459,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.361136879,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.368287384,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pygments-2.20.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.368303985,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyscipopt-6.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.368319692,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.368323861,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/requests-2.34.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.368327607,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rich-15.0.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.368331297,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rustworkx-0.18.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.368335143,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.368339112,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.475648486,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/shellingham-1.5.4-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.484087836,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/sqlalchemy-2.0.51-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.510296349,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/threadpoolctl-3.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.518747749,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tifffile-2026.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.531443877,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/toolz-1.1.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.539706598,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tqdm-4.68.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.550231855,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typer-0.26.8-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.559311256,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_extensions-4.15.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.567613352,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_inspection-0.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.576239575,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/urllib3-2.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.585622603000001,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/wrapt-2.2.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.594594964,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/zarr-3.2.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.60749187,"data":"Processing ./v29a_package/extra_wheels/tracksdata-0.1.0rc7-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677718439,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/shellingham-1.5.4-py2.py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677737839,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/sqlalchemy-2.0.51-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.677753352,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/threadpoolctl-3.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677757757,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tifffile-2026.6.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677761979,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/toolz-1.1.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677765796,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tqdm-4.68.3-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677769486,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typer-0.26.8-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677773317,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_extensions-4.15.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.67777715,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/typing_inspection-0.4.2-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677780968,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/urllib3-2.7.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677784728,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/wrapt-2.2.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl\n"}
+,{"stream_name":"stdout","time":14.677788715,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/zarr-3.2.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.677792405,"data":"Processing ./v29a_package/extra_wheels/tracksdata-0.1.0rc7-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":14.704418653,"data":"Installing collected packages: zarr, wrapt, urllib3, typing-inspection, typing-extensions, typer, tracksdata, tqdm, toolz, tifffile, threadpoolctl, sqlalchemy, shellingham, scipy, scikit-image, rustworkx, rich, requests, pyyaml, pyscipopt, pygments, pydantic-core, pydantic, pyarrow, psygnal, polars-runtime-32, polars, pillow, partd, packaging, numpy, numexpr, numcodecs, numba, networkx, ndindex, msgpack, mdurl, markdown-it-py, locket, llvmlite, lazy-loader, imageio, imagecodecs, ilpy, idna, greenlet, google-crc32c, geff-spec, geff, fsspec, donfig, deprecated, dask, cloudpickle, click, charset-normalizer, certifi, blosc2, bidict, annotated-types, annotated-doc\n"}
+,{"stream_name":"stdout","time":14.90656108,"data":"Installing collected packages: zarr, wrapt, urllib3, typing-inspection, typing-extensions, typer, tracksdata, tqdm, toolz, tifffile, threadpoolctl, sqlalchemy, shellingham, scipy, scikit-image, rustworkx, rich, requests, pyyaml, pyscipopt, pygments, pydantic-core, pydantic, pyarrow, psygnal, polars-runtime-32, polars, pillow, partd, packaging, numpy, numexpr, numcodecs, numba, networkx, ndindex, msgpack, mdurl, markdown-it-py, locket, llvmlite, lazy-loader, imageio, imagecodecs, ilpy, idna, greenlet, google-crc32c, geff-spec, geff, fsspec, donfig, deprecated, dask, cloudpickle, click, charset-normalizer, certifi, blosc2, bidict, annotated-types, annotated-doc\n"}
+,{"stream_name":"stdout","time":41.763604119,"data":"Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 bidict-0.23.1 blosc2-4.7.0 certifi-2026.6.17 charset-normalizer-3.4.7 click-8.4.2 cloudpickle-3.1.2 dask-2026.6.0 deprecated-1.3.1 donfig-0.8.1.post1 fsspec-2026.6.0 geff-1.2.0.1.1 geff-spec-1.1.1 google-crc32c-1.8.0 greenlet-3.5.3 idna-3.18 ilpy-0.6.0 imagecodecs-2026.6.26 imageio-2.37.3 lazy-loader-0.5 llvmlite-0.47.0 locket-1.0.0 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.1 ndindex-1.10.1 networkx-3.6.1 numba-0.65.1 numcodecs-0.15.1 numexpr-2.14.1 numpy-2.4.6 packaging-26.2 partd-1.4.2 pillow-12.2.0 polars-1.42.0 polars-runtime-32-1.42.0 psygnal-0.15.1 pyarrow-24.0.0 pydantic-2.13.4 pydantic-core-2.46.4 pygments-2.20.0 pyscipopt-6.2.1 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 rustworkx-0.18.0 scikit-image-0.26.0 scipy-1.18.0 shellingham-1.5.4 sqlalchemy-2.0.51 threadpoolctl-3.6.0 tifffile-2026.6.1 toolz-1.1.0 tqdm-4.68.3 tracksdata-0.1.0rc7 typer-0.26.8 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.7.0 wrapt-2.2.2 zarr-3.2.1\n"}
+,{"stream_name":"stdout","time":41.976632361,"data":"Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 bidict-0.23.1 blosc2-4.7.0 certifi-2026.6.17 charset-normalizer-3.4.7 click-8.4.2 cloudpickle-3.1.2 dask-2026.6.0 deprecated-1.3.1 donfig-0.8.1.post1 fsspec-2026.6.0 geff-1.2.0.1.1 geff-spec-1.1.1 google-crc32c-1.8.0 greenlet-3.5.3 idna-3.18 ilpy-0.6.0 imagecodecs-2026.6.26 imageio-2.37.3 lazy-loader-0.5 llvmlite-0.47.0 locket-1.0.0 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.1 ndindex-1.10.1 networkx-3.6.1 numba-0.65.1 numcodecs-0.15.1 numexpr-2.14.1 numpy-2.4.6 packaging-26.2 partd-1.4.2 pillow-12.2.0 polars-1.42.0 polars-runtime-32-1.42.0 psygnal-0.15.1 pyarrow-24.0.0 pydantic-2.13.4 pydantic-core-2.46.4 pygments-2.20.0 pyscipopt-6.2.1 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 rustworkx-0.18.0 scikit-image-0.26.0 scipy-1.18.0 shellingham-1.5.4 sqlalchemy-2.0.51 threadpoolctl-3.6.0 tifffile-2026.6.1 toolz-1.1.0 tqdm-4.68.3 tracksdata-0.1.0rc7 typer-0.26.8 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.7.0 wrapt-2.2.2 zarr-3.2.1\n"}
+,{"stream_name":"stderr","time":64.313818986,"data":"/kaggle/working/v29a_deps/dask/array/image.py:7: FutureWarning: `find_available_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":64.313852708,"data":"  from skimage.io import imread as sk_imread\n"}
+,{"stream_name":"stderr","time":64.318732341,"data":"/usr/lib/python3.12/importlib/__init__.py:90: FutureWarning: `reset_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":64.31875519,"data":"  return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stderr","time":64.515962407,"data":"/kaggle/working/v29a_deps/dask/array/image.py:7: FutureWarning: `find_available_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":64.515986811,"data":"  from skimage.io import imread as sk_imread\n"}
+,{"stream_name":"stderr","time":64.515993078,"data":"/usr/lib/python3.12/importlib/__init__.py:90: FutureWarning: `reset_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":64.51599909,"data":"  return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stderr","time":64.516004105,"data":"\n"}
+,{"stream_name":"stderr","time":64.516008841,"data":"/kaggle/working/v29a_deps/dask/array/image.py:7: FutureWarning: `find_available_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":64.51602417,"data":"  from skimage.io import imread as sk_imread\n"}
+,{"stream_name":"stderr","time":64.51602827,"data":"/usr/lib/python3.12/importlib/__init__.py:90: FutureWarning: `reset_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":64.516032827,"data":"  return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stdout","time":784.378326976,"data":"{\"sample\": \"44b6_0113de3b\", \"rows\": 48099, \"seconds\": 61.94216882699993}\n"}
+,{"stream_name":"stdout","time":784.588973086,"data":"{\"sample\": \"44b6_0113de3b\", \"rows\": 48099, \"seconds\": 61.94216882699993}\n"}
+,{"stream_name":"stdout","time":858.997755078,"data":"{\"sample\": \"44b6_0b24845f\", \"rows\": 105015, \"seconds\": 74.61458916599997}\n"}
+,{"stream_name":"stdout","time":859.2123974,"data":"{\"sample\": \"44b6_0b24845f\", \"rows\": 105015, \"seconds\": 74.61458916599997}\n"}
+,{"stream_name":"stdout","time":917.535954011,"data":"{\"sample\": \"6bba_05b6850b\", \"rows\": 12577, \"seconds\": 58.52785428200002}\n"}
+,{"stream_name":"stdout","time":917.746454971,"data":"{\"sample\": \"6bba_05b6850b\", \"rows\": 12577, \"seconds\": 58.52785428200002}\n"}
+,{"stream_name":"stdout","time":997.085877815,"data":"{\"sample\": \"6bba_05db0fb1\", \"rows\": 135121, \"seconds\": 79.54795212499994}\n"}
+,{"stream_name":"stdout","time":997.296325684,"data":"{\"sample\": \"6bba_05db0fb1\", \"rows\": 135121, \"seconds\": 79.54795212499994}\n"}
+,{"stream_name":"stdout","time":1081.637496361,"data":"{\"completed\": 8, \"sample\": \"44b6_0113de3b\"}\n"}
+,{"stream_name":"stdout","time":1081.849259415,"data":"{\"completed\": 8, \"sample\": \"44b6_0113de3b\"}\n"}
+,{"stream_name":"stdout","time":1187.508560379,"data":"{\"completed\": 9, \"sample\": \"44b6_0b24845f\"}\n"}
+,{"stream_name":"stdout","time":1187.719600882,"data":"{\"completed\": 9, \"sample\": \"44b6_0b24845f\"}\n"}
+,{"stream_name":"stdout","time":1274.095047317,"data":"{\"completed\": 10, \"sample\": \"44b6_0c582fdc\"}\n"}
+,{"stream_name":"stdout","time":1274.305897844,"data":"{\"completed\": 10, \"sample\": \"44b6_0c582fdc\"}\n"}
+,{"stream_name":"stdout","time":1350.595475865,"data":"{\"completed\": 11, \"sample\": \"44b6_0db75fae\"}\n"}
+,{"stream_name":"stdout","time":1350.806510443,"data":"{\"completed\": 11, \"sample\": \"44b6_0db75fae\"}\n"}
+,{"stream_name":"stdout","time":1451.447995609,"data":"{\"completed\": 12, \"sample\": \"44b6_12dfb391\"}\n"}
+,{"stream_name":"stdout","time":1451.658679819,"data":"{\"completed\": 12, \"sample\": \"44b6_12dfb391\"}\n"}
+,{"stream_name":"stdout","time":1566.512067158,"data":"{\"completed\": 13, \"sample\": \"44b6_144b256d\"}\n"}
+,{"stream_name":"stdout","time":1566.724361801,"data":"{\"completed\": 13, \"sample\": \"44b6_144b256d\"}\n"}
+,{"stream_name":"stdout","time":1644.121088209,"data":"{\"completed\": 14, \"sample\": \"44b6_1574802b\"}\n"}
+,{"stream_name":"stdout","time":1644.333230428,"data":"{\"completed\": 14, \"sample\": \"44b6_1574802b\"}\n"}
+,{"stream_name":"stdout","time":1772.186112921,"data":"{\"completed\": 15, \"sample\": \"44b6_18ced818\"}\n"}
+,{"stream_name":"stdout","time":1772.397549465,"data":"{\"completed\": 15, \"sample\": \"44b6_18ced818\"}\n"}
+,{"stream_name":"stdout","time":1862.372361542,"data":"{\"completed\": 16, \"sample\": \"44b6_1d530831\"}\n"}
+,{"stream_name":"stdout","time":1862.583411928,"data":"{\"completed\": 16, \"sample\": \"44b6_1d530831\"}\n"}
+,{"stream_name":"stdout","time":1943.142476599,"data":"{\"completed\": 17, \"sample\": \"44b6_24264f12\"}\n"}
+,{"stream_name":"stdout","time":1943.360097331,"data":"{\"completed\": 17, \"sample\": \"44b6_24264f12\"}\n"}
+,{"stream_name":"stdout","time":2021.400056394,"data":"{\"completed\": 18, \"sample\": \"44b6_267148e4\"}\n"}
+,{"stream_name":"stdout","time":2021.612981469,"data":"{\"completed\": 18, \"sample\": \"44b6_267148e4\"}\n"}
+,{"stream_name":"stdout","time":2123.589396896,"data":"{\"completed\": 19, \"sample\": \"44b6_2a2eff9f\"}\n"}
+,{"stream_name":"stdout","time":2123.806964179,"data":"{\"completed\": 19, \"sample\": \"44b6_2a2eff9f\"}\n"}
+,{"stream_name":"stdout","time":2210.82985452,"data":"{\"completed\": 20, \"sample\": \"44b6_2f31fc2f\"}\n"}
+,{"stream_name":"stdout","time":2211.041651934,"data":"{\"completed\": 20, \"sample\": \"44b6_2f31fc2f\"}\n"}
+,{"stream_name":"stdout","time":2291.407558564,"data":"{\"completed\": 21, \"sample\": \"44b6_33b596bf\"}\n"}
+,{"stream_name":"stdout","time":2291.619168597,"data":"{\"completed\": 21, \"sample\": \"44b6_33b596bf\"}\n"}
+,{"stream_name":"stdout","time":2363.604489586,"data":"{\"completed\": 22, \"sample\": \"44b6_341df25f\"}\n"}
+,{"stream_name":"stdout","time":2363.816088382,"data":"{\"completed\": 22, \"sample\": \"44b6_341df25f\"}\n"}
+,{"stream_name":"stdout","time":2451.45954519,"data":"{\"completed\": 23, \"sample\": \"44b6_3a861e03\"}\n"}
+,{"stream_name":"stdout","time":2451.674828676,"data":"{\"completed\": 23, \"sample\": \"44b6_3a861e03\"}\n"}
+,{"stream_name":"stdout","time":2541.038742368,"data":"{\"completed\": 24, \"sample\": \"44b6_3bb3690f\"}\n"}
+,{"stream_name":"stdout","time":2541.257352052,"data":"{\"completed\": 24, \"sample\": \"44b6_3bb3690f\"}\n"}
+,{"stream_name":"stdout","time":2631.826748653,"data":"{\"completed\": 25, \"sample\": \"44b6_40c45f5a\"}\n"}
+,{"stream_name":"stdout","time":2632.038159586,"data":"{\"completed\": 25, \"sample\": \"44b6_40c45f5a\"}\n"}
+,{"stream_name":"stdout","time":2736.139260384,"data":"{\"completed\": 26, \"sample\": \"44b6_415c0a3a\"}\n"}
+,{"stream_name":"stdout","time":2736.350466666,"data":"{\"completed\": 26, \"sample\": \"44b6_415c0a3a\"}\n"}
+,{"stream_name":"stdout","time":2828.889404637,"data":"{\"completed\": 27, \"sample\": \"44b6_53f95252\"}\n"}
+,{"stream_name":"stdout","time":2829.107805463,"data":"{\"completed\": 27, \"sample\": \"44b6_53f95252\"}\n"}
+,{"stream_name":"stdout","time":2935.133378771,"data":"{\"completed\": 28, \"sample\": \"44b6_551a5dba\"}\n"}
+,{"stream_name":"stdout","time":2935.344952858,"data":"{\"completed\": 28, \"sample\": \"44b6_551a5dba\"}\n"}
+,{"stream_name":"stdout","time":3018.509963988,"data":"{\"completed\": 29, \"sample\": \"44b6_5740d24b\"}\n"}
+,{"stream_name":"stdout","time":3018.722787265,"data":"{\"completed\": 29, \"sample\": \"44b6_5740d24b\"}\n"}
+,{"stream_name":"stdout","time":3097.451553985,"data":"{\"completed\": 30, \"sample\": \"44b6_587a1e22\"}\n"}
+,{"stream_name":"stdout","time":3097.451613401,"data":"{\"completed\": 30, \"sample\": \"44b6_5f15d135\"}\n"}
+,{"stream_name":"stdout","time":3097.671223871,"data":"{\"completed\": 30, \"sample\": \"44b6_587a1e22\"}\n"}
+,{"stream_name":"stdout","time":3097.671258851,"data":"{\"completed\": 30, \"sample\": \"44b6_5f15d135\"}\n"}
+,{"stream_name":"stdout","time":3187.612922304,"data":"{\"completed\": 31, \"sample\": \"44b6_668e0cc7\"}\n"}
+,{"stream_name":"stdout","time":3187.825053219,"data":"{\"completed\": 31, \"sample\": \"44b6_668e0cc7\"}\n"}
+,{"stream_name":"stdout","time":3290.706772535,"data":"{\"completed\": 32, \"sample\": \"44b6_66f9292d\"}\n"}
+,{"stream_name":"stdout","time":3290.918686241,"data":"{\"completed\": 32, \"sample\": \"44b6_66f9292d\"}\n"}
+,{"stream_name":"stdout","time":3405.306199144,"data":"{\"completed\": 33, \"sample\": \"44b6_706092f0\"}\n"}
+,{"stream_name":"stdout","time":3405.517545335,"data":"{\"completed\": 33, \"sample\": \"44b6_706092f0\"}\n"}
+,{"stream_name":"stdout","time":3518.685539652,"data":"{\"completed\": 34, \"sample\": \"44b6_71a4179f\"}\n"}
+,{"stream_name":"stdout","time":3518.685576862,"data":"{\"completed\": 34, \"sample\": \"44b6_74d0c52e\"}\n"}
+,{"stream_name":"stdout","time":3518.897617248,"data":"{\"completed\": 34, \"sample\": \"44b6_71a4179f\"}\n"}
+,{"stream_name":"stdout","time":3518.897648435,"data":"{\"completed\": 34, \"sample\": \"44b6_74d0c52e\"}\n"}
+,{"stream_name":"stdout","time":3635.907390036,"data":"{\"completed\": 35, \"sample\": \"44b6_7a302da0\"}\n"}
+,{"stream_name":"stdout","time":3636.125845696,"data":"{\"completed\": 35, \"sample\": \"44b6_7a302da0\"}\n"}
+,{"stream_name":"stdout","time":3740.067792078,"data":"{\"completed\": 36, \"sample\": \"44b6_7e557709\"}\n"}
+,{"stream_name":"stdout","time":3740.279721369,"data":"{\"completed\": 36, \"sample\": \"44b6_7e557709\"}\n"}
+,{"stream_name":"stdout","time":3822.890870359,"data":"{\"completed\": 37, \"sample\": \"44b6_808952d6\"}\n"}
+,{"stream_name":"stdout","time":3823.102769651,"data":"{\"completed\": 37, \"sample\": \"44b6_808952d6\"}\n"}
+,{"stream_name":"stdout","time":3901.36072025,"data":"{\"completed\": 38, \"sample\": \"44b6_81c256f0\"}\n"}
+,{"stream_name":"stdout","time":3901.572501192,"data":"{\"completed\": 38, \"sample\": \"44b6_81c256f0\"}\n"}
+,{"stream_name":"stdout","time":3993.458492946,"data":"{\"completed\": 39, \"sample\": \"44b6_87bba6c4\"}\n"}
+,{"stream_name":"stdout","time":3993.670226706,"data":"{\"completed\": 39, \"sample\": \"44b6_87bba6c4\"}\n"}
+,{"stream_name":"stdout","time":4090.76038702,"data":"{\"completed\": 40, \"sample\": \"44b6_8cc6506c\"}\n"}
+,{"stream_name":"stdout","time":4090.972321116,"data":"{\"completed\": 40, \"sample\": \"44b6_8cc6506c\"}\n"}
+,{"stream_name":"stdout","time":4179.387295697,"data":"{\"completed\": 41, \"sample\": \"44b6_8f5ab931\"}\n"}
+,{"stream_name":"stdout","time":4179.608025213,"data":"{\"completed\": 41, \"sample\": \"44b6_8f5ab931\"}\n"}
+,{"stream_name":"stdout","time":4300.091352961,"data":"{\"completed\": 42, \"sample\": \"44b6_8f9ecab4\"}\n"}
+,{"stream_name":"stdout","time":4300.303540877,"data":"{\"completed\": 42, \"sample\": \"44b6_8f9ecab4\"}\n"}
+,{"stream_name":"stdout","time":4385.113719583,"data":"{\"completed\": 43, \"sample\": \"44b6_90724892\"}\n"}
+,{"stream_name":"stdout","time":4385.325485353,"data":"{\"completed\": 43, \"sample\": \"44b6_90724892\"}\n"}
+,{"stream_name":"stdout","time":4478.995675122,"data":"{\"completed\": 44, \"sample\": \"44b6_949adeb1\"}\n"}
+,{"stream_name":"stdout","time":4479.208638682,"data":"{\"completed\": 44, \"sample\": \"44b6_949adeb1\"}\n"}
+,{"stream_name":"stdout","time":4550.441405261,"data":"{\"completed\": 45, \"sample\": \"44b6_95029e92\"}\n"}
+,{"stream_name":"stdout","time":4550.654468048,"data":"{\"completed\": 45, \"sample\": \"44b6_95029e92\"}\n"}
+,{"stream_name":"stdout","time":4646.842223509,"data":"{\"completed\": 46, \"sample\": \"44b6_97725144\"}\n"}
+,{"stream_name":"stdout","time":4647.060303673,"data":"{\"completed\": 46, \"sample\": \"44b6_97725144\"}\n"}
+,{"stream_name":"stdout","time":4720.82394021,"data":"{\"completed\": 47, \"sample\": \"44b6_996155de\"}\n"}
+,{"stream_name":"stdout","time":4721.03571828,"data":"{\"completed\": 47, \"sample\": \"44b6_996155de\"}\n"}
+,{"stream_name":"stdout","time":4826.845352005,"data":"{\"completed\": 48, \"sample\": \"44b6_9be80b04\"}\n"}
+,{"stream_name":"stdout","time":4827.058575333,"data":"{\"completed\": 48, \"sample\": \"44b6_9be80b04\"}\n"}
+,{"stream_name":"stdout","time":4929.371862512,"data":"{\"completed\": 49, \"sample\": \"44b6_9bfa6a0a\"}\n"}
+,{"stream_name":"stdout","time":4929.584971413,"data":"{\"completed\": 49, \"sample\": \"44b6_9bfa6a0a\"}\n"}
+,{"stream_name":"stdout","time":5006.683399448,"data":"{\"completed\": 50, \"sample\": \"44b6_a21120c2\"}\n"}
+,{"stream_name":"stdout","time":5006.895765931,"data":"{\"completed\": 50, \"sample\": \"44b6_a21120c2\"}\n"}
+,{"stream_name":"stdout","time":5129.15434518,"data":"{\"completed\": 51, \"sample\": \"44b6_a2bb48bb\"}\n"}
+,{"stream_name":"stdout","time":5129.366793858,"data":"{\"completed\": 51, \"sample\": \"44b6_a2bb48bb\"}\n"}
+,{"stream_name":"stdout","time":5211.00729334,"data":"{\"completed\": 52, \"sample\": \"44b6_aaf8b0ea\"}\n"}
+,{"stream_name":"stdout","time":5211.225679999,"data":"{\"completed\": 52, \"sample\": \"44b6_aaf8b0ea\"}\n"}
+,{"stream_name":"stdout","time":5300.665382934,"data":"{\"completed\": 53, \"sample\": \"44b6_abf82518\"}\n"}
+,{"stream_name":"stdout","time":5300.883961419,"data":"{\"completed\": 53, \"sample\": \"44b6_abf82518\"}\n"}
+,{"stream_name":"stdout","time":5404.904769927,"data":"{\"completed\": 54, \"sample\": \"44b6_b2c44266\"}\n"}
+,{"stream_name":"stdout","time":5405.117070839,"data":"{\"completed\": 54, \"sample\": \"44b6_b2c44266\"}\n"}
+,{"stream_name":"stdout","time":5485.748898466,"data":"{\"completed\": 55, \"sample\": \"44b6_c15fded2\"}\n"}
+,{"stream_name":"stdout","time":5485.966091457,"data":"{\"completed\": 55, \"sample\": \"44b6_c15fded2\"}\n"}
+,{"stream_name":"stdout","time":5594.236131522,"data":"{\"completed\": 56, \"sample\": \"44b6_c50204e0\"}\n"}
+,{"stream_name":"stdout","time":5594.449894256,"data":"{\"completed\": 56, \"sample\": \"44b6_c50204e0\"}\n"}
+,{"stream_name":"stdout","time":5707.715374627,"data":"{\"completed\": 57, \"sample\": \"44b6_c771cb04\"}\n"}
+,{"stream_name":"stdout","time":5707.927837071,"data":"{\"completed\": 57, \"sample\": \"44b6_c771cb04\"}\n"}
+,{"stream_name":"stdout","time":5794.982585124,"data":"{\"completed\": 58, \"sample\": \"44b6_c8e2a523\"}\n"}
+,{"stream_name":"stdout","time":5795.195490552,"data":"{\"completed\": 58, \"sample\": \"44b6_c8e2a523\"}\n"}
+,{"stream_name":"stdout","time":5891.345510938,"data":"{\"completed\": 59, \"sample\": \"44b6_c96cfa10\"}\n"}
+,{"stream_name":"stdout","time":5891.558939166,"data":"{\"completed\": 59, \"sample\": \"44b6_c96cfa10\"}\n"}
+,{"stream_name":"stdout","time":5999.63695038,"data":"{\"completed\": 60, \"sample\": \"44b6_cf2536e8\"}\n"}
+,{"stream_name":"stdout","time":5999.849847921,"data":"{\"completed\": 60, \"sample\": \"44b6_cf2536e8\"}\n"}
+,{"stream_name":"stdout","time":6096.515589771,"data":"{\"completed\": 61, \"sample\": \"44b6_cf8fed6b\"}\n"}
+,{"stream_name":"stdout","time":6096.728408545,"data":"{\"completed\": 61, \"sample\": \"44b6_cf8fed6b\"}\n"}
+,{"stream_name":"stdout","time":6183.525089698,"data":"{\"completed\": 62, \"sample\": \"44b6_d29c9ab2\"}\n"}
+,{"stream_name":"stdout","time":6183.738059481,"data":"{\"completed\": 62, \"sample\": \"44b6_d29c9ab2\"}\n"}
+,{"stream_name":"stdout","time":6267.352967727,"data":"{\"completed\": 63, \"sample\": \"44b6_d2f34f90\"}\n"}
+,{"stream_name":"stdout","time":6267.56638468,"data":"{\"completed\": 63, \"sample\": \"44b6_d2f34f90\"}\n"}
+,{"stream_name":"stdout","time":6377.512811363,"data":"{\"completed\": 64, \"sample\": \"44b6_d5e7d891\"}\n"}
+,{"stream_name":"stdout","time":6377.726666945,"data":"{\"completed\": 64, \"sample\": \"44b6_d5e7d891\"}\n"}
+,{"stream_name":"stdout","time":6448.931131946,"data":"{\"completed\": 65, \"sample\": \"44b6_d754aa59\"}\n"}
+,{"stream_name":"stdout","time":6449.146047651,"data":"{\"completed\": 65, \"sample\": \"44b6_d754aa59\"}\n"}
+,{"stream_name":"stdout","time":6528.045619541,"data":"{\"completed\": 66, \"sample\": \"44b6_d78e09d9\"}\n"}
+,{"stream_name":"stdout","time":6528.267289847,"data":"{\"completed\": 66, \"sample\": \"44b6_d78e09d9\"}\n"}
+,{"stream_name":"stdout","time":6606.50179718,"data":"{\"completed\": 67, \"sample\": \"44b6_db3c847b\"}\n"}
+,{"stream_name":"stdout","time":6606.715434384,"data":"{\"completed\": 67, \"sample\": \"44b6_db3c847b\"}\n"}
+,{"stream_name":"stdout","time":6705.813407877,"data":"{\"completed\": 68, \"sample\": \"44b6_ddf577ad\"}\n"}
+,{"stream_name":"stdout","time":6706.03284424,"data":"{\"completed\": 68, \"sample\": \"44b6_ddf577ad\"}\n"}
+,{"stream_name":"stdout","time":6781.616121279,"data":"{\"completed\": 69, \"sample\": \"44b6_deabac95\"}\n"}
+,{"stream_name":"stdout","time":6781.838194469,"data":"{\"completed\": 69, \"sample\": \"44b6_deabac95\"}\n"}
+,{"stream_name":"stdout","time":6896.243574476,"data":"{\"completed\": 70, \"sample\": \"44b6_e28840c6\"}\n"}
+,{"stream_name":"stdout","time":6896.460512478,"data":"{\"completed\": 70, \"sample\": \"44b6_e28840c6\"}\n"}
+,{"stream_name":"stdout","time":6972.829094508,"data":"{\"completed\": 71, \"sample\": \"44b6_e29f0176\"}\n"}
+,{"stream_name":"stdout","time":6973.041871776,"data":"{\"completed\": 71, \"sample\": \"44b6_e29f0176\"}\n"}
+,{"stream_name":"stdout","time":7086.803425626,"data":"{\"completed\": 72, \"sample\": \"44b6_e31261b4\"}\n"}
+,{"stream_name":"stdout","time":7087.023898832,"data":"{\"completed\": 72, \"sample\": \"44b6_e31261b4\"}\n"}
+,{"stream_name":"stdout","time":7184.881473697,"data":"{\"completed\": 73, \"sample\": \"44b6_e35b117d\"}\n"}
+,{"stream_name":"stdout","time":7185.103341098,"data":"{\"completed\": 73, \"sample\": \"44b6_e35b117d\"}\n"}
+,{"stream_name":"stdout","time":7273.387699599,"data":"{\"completed\": 74, \"sample\": \"44b6_e57ff5c6\"}\n"}
+,{"stream_name":"stdout","time":7273.600672559,"data":"{\"completed\": 74, \"sample\": \"44b6_e57ff5c6\"}\n"}
+,{"stream_name":"stdout","time":7373.853005438,"data":"{\"completed\": 75, \"sample\": \"44b6_eb2880fc\"}\n"}
+,{"stream_name":"stdout","time":7374.066675849,"data":"{\"completed\": 75, \"sample\": \"44b6_eb2880fc\"}\n"}
+,{"stream_name":"stdout","time":7456.338035035,"data":"{\"completed\": 76, \"sample\": \"44b6_f28707c6\"}\n"}
+,{"stream_name":"stdout","time":7456.556316211,"data":"{\"completed\": 76, \"sample\": \"44b6_f28707c6\"}\n"}
+,{"stream_name":"stdout","time":7527.179840642,"data":"{\"completed\": 77, \"sample\": \"6bba_05b6850b\"}\n"}
+,{"stream_name":"stdout","time":7527.394043598,"data":"{\"completed\": 77, \"sample\": \"6bba_05b6850b\"}\n"}
+,{"stream_name":"stdout","time":7640.43186838,"data":"{\"completed\": 78, \"sample\": \"6bba_05db0fb1\"}\n"}
+,{"stream_name":"stdout","time":7640.645930189,"data":"{\"completed\": 78, \"sample\": \"6bba_05db0fb1\"}\n"}
+,{"stream_name":"stdout","time":7711.217395524,"data":"{\"completed\": 79, \"sample\": \"6bba_062c8d37\"}\n"}
+,{"stream_name":"stdout","time":7711.430788637,"data":"{\"completed\": 79, \"sample\": \"6bba_062c8d37\"}\n"}
+,{"stream_name":"stdout","time":7781.451475808,"data":"{\"completed\": 80, \"sample\": \"6bba_07477033\"}\n"}
+,{"stream_name":"stdout","time":7781.665009098,"data":"{\"completed\": 80, \"sample\": \"6bba_07477033\"}\n"}
+,{"stream_name":"stdout","time":7870.15055978,"data":"{\"completed\": 81, \"sample\": \"6bba_07e24132\"}\n"}
+,{"stream_name":"stdout","time":7870.365612497,"data":"{\"completed\": 81, \"sample\": \"6bba_07e24132\"}\n"}
+,{"stream_name":"stdout","time":7951.24011787,"data":"{\"completed\": 82, \"sample\": \"6bba_085bf656\"}\n"}
+,{"stream_name":"stdout","time":7951.459867035,"data":"{\"completed\": 82, \"sample\": \"6bba_085bf656\"}\n"}
+,{"stream_name":"stdout","time":8032.255704161,"data":"{\"completed\": 83, \"sample\": \"6bba_09961292\"}\n"}
+,{"stream_name":"stdout","time":8032.470319098,"data":"{\"completed\": 83, \"sample\": \"6bba_09961292\"}\n"}
+,{"stream_name":"stdout","time":8106.40697256,"data":"{\"completed\": 84, \"sample\": \"6bba_0c7fa718\"}\n"}
+,{"stream_name":"stdout","time":8106.621167098,"data":"{\"completed\": 84, \"sample\": \"6bba_0c7fa718\"}\n"}
+,{"stream_name":"stdout","time":8194.758151846,"data":"{\"completed\": 85, \"sample\": \"6bba_0e7c0d07\"}\n"}
+,{"stream_name":"stdout","time":8194.971574103,"data":"{\"completed\": 85, \"sample\": \"6bba_0e7c0d07\"}\n"}
+,{"stream_name":"stdout","time":8293.980414344,"data":"{\"completed\": 86, \"sample\": \"6bba_12665c0e\"}\n"}
+,{"stream_name":"stdout","time":8294.194999059,"data":"{\"completed\": 86, \"sample\": \"6bba_12665c0e\"}\n"}
+,{"stream_name":"stdout","time":8364.791881536,"data":"{\"completed\": 87, \"sample\": \"6bba_13f19531\"}\n"}
+,{"stream_name":"stdout","time":8365.005988838,"data":"{\"completed\": 87, \"sample\": \"6bba_13f19531\"}\n"}
+,{"stream_name":"stdout","time":8434.655350931,"data":"{\"completed\": 88, \"sample\": \"6bba_15403b9a\"}\n"}
+,{"stream_name":"stdout","time":8434.869126584,"data":"{\"completed\": 88, \"sample\": \"6bba_15403b9a\"}\n"}
+,{"stream_name":"stdout","time":8510.828979539,"data":"{\"completed\": 89, \"sample\": \"6bba_1d0d8384\"}\n"}
+,{"stream_name":"stdout","time":8511.044429652,"data":"{\"completed\": 89, \"sample\": \"6bba_1d0d8384\"}\n"}
+,{"stream_name":"stdout","time":8584.46347589,"data":"{\"completed\": 90, \"sample\": \"6bba_1ebfb80d\"}\n"}
+,{"stream_name":"stdout","time":8584.677077713,"data":"{\"completed\": 90, \"sample\": \"6bba_1ebfb80d\"}\n"}
+,{"stream_name":"stdout","time":8671.215307021,"data":"{\"completed\": 91, \"sample\": \"6bba_1f58c2f6\"}\n"}
+,{"stream_name":"stdout","time":8671.429935329,"data":"{\"completed\": 91, \"sample\": \"6bba_1f58c2f6\"}\n"}
+,{"stream_name":"stdout","time":8750.270389814,"data":"{\"completed\": 92, \"sample\": \"6bba_207c6aaf\"}\n"}
+,{"stream_name":"stdout","time":8750.486255776,"data":"{\"completed\": 92, \"sample\": \"6bba_207c6aaf\"}\n"}
+,{"stream_name":"stdout","time":8826.754319363,"data":"{\"completed\": 93, \"sample\": \"6bba_20852818\"}\n"}
+,{"stream_name":"stdout","time":8826.968283008,"data":"{\"completed\": 93, \"sample\": \"6bba_20852818\"}\n"}
+,{"stream_name":"stdout","time":8903.541555689,"data":"{\"completed\": 94, \"sample\": \"6bba_2312ac41\"}\n"}
+,{"stream_name":"stdout","time":8903.755620024,"data":"{\"completed\": 94, \"sample\": \"6bba_2312ac41\"}\n"}
+,{"stream_name":"stdout","time":8977.469008846,"data":"{\"completed\": 95, \"sample\": \"6bba_23af9eeb\"}\n"}
+,{"stream_name":"stdout","time":8977.469254835,"data":"{\"completed\": 95, \"sample\": \"6bba_2540cd90\"}\n"}
+,{"stream_name":"stdout","time":8977.469281596,"data":"{\"completed\": 95, \"sample\": \"6bba_2646afc7\"}\n"}
+,{"stream_name":"stdout","time":8977.692657789,"data":"{\"completed\": 95, \"sample\": \"6bba_23af9eeb\"}\n"}
+,{"stream_name":"stdout","time":8977.692694928,"data":"{\"completed\": 95, \"sample\": \"6bba_2540cd90\"}\n"}
+,{"stream_name":"stdout","time":8977.692703381,"data":"{\"completed\": 95, \"sample\": \"6bba_2646afc7\"}\n"}
+,{"stream_name":"stdout","time":9049.854610545,"data":"{\"completed\": 96, \"sample\": \"6bba_268e1230\"}\n"}
+,{"stream_name":"stdout","time":9050.069492695,"data":"{\"completed\": 96, \"sample\": \"6bba_268e1230\"}\n"}
+,{"stream_name":"stdout","time":9121.061594362,"data":"{\"completed\": 97, \"sample\": \"6bba_2819ca14\"}\n"}
+,{"stream_name":"stdout","time":9121.28251177,"data":"{\"completed\": 97, \"sample\": \"6bba_2819ca14\"}\n"}
+,{"stream_name":"stdout","time":9199.589789657,"data":"{\"completed\": 98, \"sample\": \"6bba_283bf9f1\"}\n"}
+,{"stream_name":"stdout","time":9199.810236044,"data":"{\"completed\": 98, \"sample\": \"6bba_283bf9f1\"}\n"}
+,{"stream_name":"stdout","time":9271.530584892,"data":"{\"completed\": 99, \"sample\": \"6bba_312f0dc3\"}\n"}
+,{"stream_name":"stdout","time":9271.7448615,"data":"{\"completed\": 99, \"sample\": \"6bba_312f0dc3\"}\n"}
+,{"stream_name":"stdout","time":9365.41776037,"data":"{\"completed\": 100, \"sample\": \"6bba_32db13fc\"}\n"}
+,{"stream_name":"stdout","time":9365.63228613,"data":"{\"completed\": 100, \"sample\": \"6bba_32db13fc\"}\n"}
+,{"stream_name":"stdout","time":9448.125959454,"data":"{\"completed\": 101, \"sample\": \"6bba_337b1b3a\"}\n"}
+,{"stream_name":"stdout","time":9448.339658971,"data":"{\"completed\": 101, \"sample\": \"6bba_337b1b3a\"}\n"}
+,{"stream_name":"stdout","time":9520.217744771,"data":"{\"completed\": 102, \"sample\": \"6bba_372c8cb8\"}\n"}
+,{"stream_name":"stdout","time":9520.433846755,"data":"{\"completed\": 102, \"sample\": \"6bba_372c8cb8\"}\n"}
+,{"stream_name":"stdout","time":9592.131981799,"data":"{\"completed\": 103, \"sample\": \"6bba_3a1849c2\"}\n"}
+,{"stream_name":"stdout","time":9592.347456301,"data":"{\"completed\": 103, \"sample\": \"6bba_3a1849c2\"}\n"}
+,{"stream_name":"stdout","time":9702.656422706,"data":"{\"completed\": 104, \"sample\": \"6bba_3abfe10a\"}\n"}
+,{"stream_name":"stdout","time":9702.656469367,"data":"{\"completed\": 104, \"sample\": \"6bba_3c5691b6\"}\n"}
+,{"stream_name":"stdout","time":9702.871994883,"data":"{\"completed\": 104, \"sample\": \"6bba_3abfe10a\"}\n"}
+,{"stream_name":"stdout","time":9702.872029456,"data":"{\"completed\": 104, \"sample\": \"6bba_3c5691b6\"}\n"}
+,{"stream_name":"stdout","time":9785.868488113,"data":"{\"completed\": 105, \"sample\": \"6bba_3db54e20\"}\n"}
+,{"stream_name":"stdout","time":9786.08254006,"data":"{\"completed\": 105, \"sample\": \"6bba_3db54e20\"}\n"}
+,{"stream_name":"stdout","time":9868.762569805,"data":"{\"completed\": 106, \"sample\": \"6bba_3fda6b25\"}\n"}
+,{"stream_name":"stdout","time":9868.986916004,"data":"{\"completed\": 106, \"sample\": \"6bba_3fda6b25\"}\n"}
+,{"stream_name":"stdout","time":9946.379129227,"data":"{\"completed\": 107, \"sample\": \"6bba_43fea39d\"}\n"}
+,{"stream_name":"stdout","time":9946.594611938,"data":"{\"completed\": 107, \"sample\": \"6bba_43fea39d\"}\n"}
+,{"stream_name":"stdout","time":10041.927330166,"data":"{\"completed\": 108, \"sample\": \"6bba_474be664\"}\n"}
+,{"stream_name":"stdout","time":10042.14319136,"data":"{\"completed\": 108, \"sample\": \"6bba_474be664\"}\n"}
+,{"stream_name":"stdout","time":10123.025968845,"data":"{\"completed\": 109, \"sample\": \"6bba_48816121\"}\n"}
+,{"stream_name":"stdout","time":10123.245408739,"data":"{\"completed\": 109, \"sample\": \"6bba_48816121\"}\n"}
+,{"stream_name":"stdout","time":10195.6225562,"data":"{\"completed\": 110, \"sample\": \"6bba_4aa14c89\"}\n"}
+,{"stream_name":"stdout","time":10195.845876613,"data":"{\"completed\": 110, \"sample\": \"6bba_4aa14c89\"}\n"}
+,{"stream_name":"stdout","time":10267.834809241,"data":"{\"completed\": 111, \"sample\": \"6bba_4f99ce20\"}\n"}
+,{"stream_name":"stdout","time":10268.049932888,"data":"{\"completed\": 111, \"sample\": \"6bba_4f99ce20\"}\n"}
+,{"stream_name":"stdout","time":10346.110837833,"data":"{\"completed\": 112, \"sample\": \"6bba_4ffd3da3\"}\n"}
+,{"stream_name":"stdout","time":10346.325672064,"data":"{\"completed\": 112, \"sample\": \"6bba_4ffd3da3\"}\n"}
+,{"stream_name":"stdout","time":10417.967719866,"data":"{\"completed\": 113, \"sample\": \"6bba_55b7eebe\"}\n"}
+,{"stream_name":"stdout","time":10418.18850538,"data":"{\"completed\": 113, \"sample\": \"6bba_55b7eebe\"}\n"}
+,{"stream_name":"stdout","time":10510.013483092,"data":"{\"completed\": 114, \"sample\": \"6bba_55c70843\"}\n"}
+,{"stream_name":"stdout","time":10510.23487265,"data":"{\"completed\": 114, \"sample\": \"6bba_55c70843\"}\n"}
+,{"stream_name":"stdout","time":10635.154755732,"data":"{\"completed\": 115, \"sample\": \"6bba_57b7cc1e\"}\n"}
+,{"stream_name":"stdout","time":10635.381846035,"data":"{\"completed\": 115, \"sample\": \"6bba_57b7cc1e\"}\n"}
+,{"stream_name":"stdout","time":10708.863490958,"data":"{\"completed\": 116, \"sample\": \"6bba_5a4d9360\"}\n"}
+,{"stream_name":"stdout","time":10709.077721809,"data":"{\"completed\": 116, \"sample\": \"6bba_5a4d9360\"}\n"}
+,{"stream_name":"stdout","time":10779.421357543,"data":"{\"completed\": 117, \"sample\": \"6bba_5b28472a\"}\n"}
+,{"stream_name":"stdout","time":10779.63893357,"data":"{\"completed\": 117, \"sample\": \"6bba_5b28472a\"}\n"}
+,{"stream_name":"stdout","time":10854.579905515,"data":"{\"completed\": 118, \"sample\": \"6bba_5c039895\"}\n"}
+,{"stream_name":"stdout","time":10854.794804825,"data":"{\"completed\": 118, \"sample\": \"6bba_5c039895\"}\n"}
+,{"stream_name":"stdout","time":10935.22131903,"data":"{\"completed\": 119, \"sample\": \"6bba_5c824876\"}\n"}
+,{"stream_name":"stdout","time":10935.435685643,"data":"{\"completed\": 119, \"sample\": \"6bba_5c824876\"}\n"}
+,{"stream_name":"stdout","time":11018.807826794,"data":"{\"completed\": 120, \"sample\": \"6bba_5dfe9ad1\"}\n"}
+,{"stream_name":"stdout","time":11019.023000491,"data":"{\"completed\": 120, \"sample\": \"6bba_5dfe9ad1\"}\n"}
+,{"stream_name":"stdout","time":11090.277006396,"data":"{\"completed\": 121, \"sample\": \"6bba_5f89039d\"}\n"}
+,{"stream_name":"stdout","time":11090.498574912,"data":"{\"completed\": 121, \"sample\": \"6bba_5f89039d\"}\n"}
+,{"stream_name":"stdout","time":11167.639532124,"data":"{\"completed\": 122, \"sample\": \"6bba_61dd1e0d\"}\n"}
+,{"stream_name":"stdout","time":11167.854515341,"data":"{\"completed\": 122, \"sample\": \"6bba_61dd1e0d\"}\n"}
+,{"stream_name":"stdout","time":11243.837083684,"data":"{\"completed\": 123, \"sample\": \"6bba_61ecbe65\"}\n"}
+,{"stream_name":"stdout","time":11244.054648444,"data":"{\"completed\": 123, \"sample\": \"6bba_61ecbe65\"}\n"}
+,{"stream_name":"stdout","time":11316.339706691,"data":"{\"completed\": 124, \"sample\": \"6bba_6321a359\"}\n"}
+,{"stream_name":"stdout","time":11316.554521392,"data":"{\"completed\": 124, \"sample\": \"6bba_6321a359\"}\n"}
+,{"stream_name":"stdout","time":11397.364608461,"data":"{\"completed\": 125, \"sample\": \"6bba_6479435d\"}\n"}
+,{"stream_name":"stdout","time":11397.580517562,"data":"{\"completed\": 125, \"sample\": \"6bba_6479435d\"}\n"}
+,{"stream_name":"stdout","time":11480.796379134,"data":"{\"completed\": 126, \"sample\": \"6bba_67ebd073\"}\n"}
+,{"stream_name":"stdout","time":11481.010768304,"data":"{\"completed\": 126, \"sample\": \"6bba_67ebd073\"}\n"}
+,{"stream_name":"stdout","time":11558.110710526,"data":"{\"completed\": 127, \"sample\": \"6bba_6ca87370\"}\n"}
+,{"stream_name":"stdout","time":11558.326206599,"data":"{\"completed\": 127, \"sample\": \"6bba_6ca87370\"}\n"}
+,{"stream_name":"stdout","time":11645.782664348,"data":"{\"completed\": 128, \"sample\": \"6bba_6db0e9b4\"}\n"}
+,{"stream_name":"stdout","time":11646.00829411,"data":"{\"completed\": 128, \"sample\": \"6bba_6db0e9b4\"}\n"}
+,{"stream_name":"stdout","time":11724.52368996,"data":"{\"completed\": 129, \"sample\": \"6bba_6feb10f0\"}\n"}
+,{"stream_name":"stdout","time":11724.738553191,"data":"{\"completed\": 129, \"sample\": \"6bba_6feb10f0\"}\n"}
+,{"stream_name":"stdout","time":11797.550845825,"data":"{\"completed\": 130, \"sample\": \"6bba_6feeb0b1\"}\n"}
+,{"stream_name":"stdout","time":11797.766903695,"data":"{\"completed\": 130, \"sample\": \"6bba_6feeb0b1\"}\n"}
+,{"stream_name":"stdout","time":11867.597385416,"data":"{\"completed\": 131, \"sample\": \"6bba_705ec2c9\"}\n"}
+,{"stream_name":"stdout","time":11867.813367736,"data":"{\"completed\": 131, \"sample\": \"6bba_705ec2c9\"}\n"}
+,{"stream_name":"stdout","time":11937.082387631,"data":"{\"completed\": 132, \"sample\": \"6bba_718b21f9\"}\n"}
+,{"stream_name":"stdout","time":11937.299356933,"data":"{\"completed\": 132, \"sample\": \"6bba_718b21f9\"}\n"}
+,{"stream_name":"stdout","time":12021.97274504,"data":"{\"completed\": 133, \"sample\": \"6bba_74686d6a\"}\n"}
+,{"stream_name":"stdout","time":12022.189043602,"data":"{\"completed\": 133, \"sample\": \"6bba_74686d6a\"}\n"}
+,{"stream_name":"stdout","time":12121.348365835,"data":"{\"completed\": 134, \"sample\": \"6bba_767a1e17\"}\n"}
+,{"stream_name":"stdout","time":12121.34867361,"data":"{\"completed\": 134, \"sample\": \"6bba_76db78c1\"}\n"}
+,{"stream_name":"stdout","time":12121.56387073,"data":"{\"completed\": 134, \"sample\": \"6bba_767a1e17\"}\n"}
+,{"stream_name":"stdout","time":12121.563901874,"data":"{\"completed\": 134, \"sample\": \"6bba_76db78c1\"}\n"}
+,{"stream_name":"stdout","time":12204.072422579,"data":"{\"completed\": 135, \"sample\": \"6bba_784a78c9\"}\n"}
+,{"stream_name":"stdout","time":12204.288854141,"data":"{\"completed\": 135, \"sample\": \"6bba_784a78c9\"}\n"}
+,{"stream_name":"stdout","time":12317.316395443,"data":"{\"completed\": 136, \"sample\": \"6bba_786893ac\"}\n"}
+,{"stream_name":"stdout","time":12317.535974441,"data":"{\"completed\": 136, \"sample\": \"6bba_786893ac\"}\n"}
+,{"stream_name":"stdout","time":12392.416431708,"data":"{\"completed\": 137, \"sample\": \"6bba_789f8168\"}\n"}
+,{"stream_name":"stdout","time":12392.638352279,"data":"{\"completed\": 137, \"sample\": \"6bba_789f8168\"}\n"}
+,{"stream_name":"stdout","time":12486.002046733,"data":"{\"completed\": 138, \"sample\": \"6bba_78a7bd97\"}\n"}
+,{"stream_name":"stdout","time":12486.217545753,"data":"{\"completed\": 138, \"sample\": \"6bba_78a7bd97\"}\n"}
+,{"stream_name":"stdout","time":12560.290250007,"data":"{\"completed\": 139, \"sample\": \"6bba_7af54fde\"}\n"}
+,{"stream_name":"stdout","time":12560.507933632,"data":"{\"completed\": 139, \"sample\": \"6bba_7af54fde\"}\n"}
+,{"stream_name":"stdout","time":12631.605025968,"data":"{\"completed\": 140, \"sample\": \"6bba_7b5d3b2c\"}\n"}
+,{"stream_name":"stdout","time":12631.82013112,"data":"{\"completed\": 140, \"sample\": \"6bba_7b5d3b2c\"}\n"}
+,{"stream_name":"stdout","time":12702.568109086,"data":"{\"completed\": 141, \"sample\": \"6bba_7d3058ae\"}\n"}
+,{"stream_name":"stdout","time":12702.784194285,"data":"{\"completed\": 141, \"sample\": \"6bba_7d3058ae\"}\n"}
+,{"stream_name":"stdout","time":12776.530669648,"data":"{\"completed\": 142, \"sample\": \"6bba_7f87b3d8\"}\n"}
+,{"stream_name":"stdout","time":12776.746289456,"data":"{\"completed\": 142, \"sample\": \"6bba_7f87b3d8\"}\n"}
+,{"stream_name":"stdout","time":12851.14792785,"data":"{\"completed\": 143, \"sample\": \"6bba_80d12824\"}\n"}
+,{"stream_name":"stdout","time":12851.365086657,"data":"{\"completed\": 143, \"sample\": \"6bba_80d12824\"}\n"}
+,{"stream_name":"stdout","time":12924.143907766,"data":"{\"completed\": 144, \"sample\": \"6bba_825bd1c6\"}\n"}
+,{"stream_name":"stdout","time":12924.364336773,"data":"{\"completed\": 144, \"sample\": \"6bba_825bd1c6\"}\n"}
+,{"stream_name":"stdout","time":13002.71056021,"data":"{\"completed\": 145, \"sample\": \"6bba_87289e13\"}\n"}
+,{"stream_name":"stdout","time":13002.928080875,"data":"{\"completed\": 145, \"sample\": \"6bba_87289e13\"}\n"}
+,{"stream_name":"stdout","time":13077.386168822,"data":"{\"completed\": 146, \"sample\": \"6bba_8b7818bf\"}\n"}
+,{"stream_name":"stdout","time":13077.602952959,"data":"{\"completed\": 146, \"sample\": \"6bba_8b7818bf\"}\n"}
+,{"stream_name":"stdout","time":13152.247702296,"data":"{\"completed\": 147, \"sample\": \"6bba_907271db\"}\n"}
+,{"stream_name":"stdout","time":13152.463461134,"data":"{\"completed\": 147, \"sample\": \"6bba_907271db\"}\n"}
+,{"stream_name":"stdout","time":13234.960023742,"data":"{\"completed\": 148, \"sample\": \"6bba_91951b3a\"}\n"}
+,{"stream_name":"stdout","time":13235.175958851,"data":"{\"completed\": 148, \"sample\": \"6bba_91951b3a\"}\n"}
+,{"stream_name":"stdout","time":13310.836041059,"data":"{\"completed\": 149, \"sample\": \"6bba_96833384\"}\n"}
+,{"stream_name":"stdout","time":13311.051345746,"data":"{\"completed\": 149, \"sample\": \"6bba_96833384\"}\n"}
+,{"stream_name":"stdout","time":13388.138478793,"data":"{\"completed\": 150, \"sample\": \"6bba_969618f6\"}\n"}
+,{"stream_name":"stdout","time":13388.360745701,"data":"{\"completed\": 150, \"sample\": \"6bba_969618f6\"}\n"}
+,{"stream_name":"stdout","time":13465.556417165,"data":"{\"completed\": 151, \"sample\": \"6bba_971fa5e0\"}\n"}
+,{"stream_name":"stdout","time":13465.772307085,"data":"{\"completed\": 151, \"sample\": \"6bba_971fa5e0\"}\n"}
+,{"stream_name":"stdout","time":13547.181034344,"data":"{\"completed\": 152, \"sample\": \"6bba_9a41d029\"}\n"}
+,{"stream_name":"stdout","time":13547.408625121,"data":"{\"completed\": 152, \"sample\": \"6bba_9a41d029\"}\n"}
+,{"stream_name":"stdout","time":13620.573618052,"data":"{\"completed\": 153, \"sample\": \"6bba_9e23430b\"}\n"}
+,{"stream_name":"stdout","time":13620.79533912,"data":"{\"completed\": 153, \"sample\": \"6bba_9e23430b\"}\n"}
+,{"stream_name":"stdout","time":13698.388085978,"data":"{\"completed\": 154, \"sample\": \"6bba_a5e926bb\"}\n"}
+,{"stream_name":"stdout","time":13698.605085159,"data":"{\"completed\": 154, \"sample\": \"6bba_a5e926bb\"}\n"}
+,{"stream_name":"stdout","time":13789.673792305,"data":"{\"completed\": 155, \"sample\": \"6bba_a90a0b9c\"}\n"}
+,{"stream_name":"stdout","time":13789.896101839,"data":"{\"completed\": 155, \"sample\": \"6bba_a90a0b9c\"}\n"}
+,{"stream_name":"stdout","time":13877.792175264,"data":"{\"completed\": 156, \"sample\": \"6bba_ab78413d\"}\n"}
+,{"stream_name":"stdout","time":13878.007738467,"data":"{\"completed\": 156, \"sample\": \"6bba_ab78413d\"}\n"}
+,{"stream_name":"stdout","time":13963.182963115,"data":"{\"completed\": 157, \"sample\": \"6bba_acd782a8\"}\n"}
+,{"stream_name":"stdout","time":13963.408693931,"data":"{\"completed\": 157, \"sample\": \"6bba_acd782a8\"}\n"}
+,{"stream_name":"stdout","time":14035.236651489,"data":"{\"completed\": 158, \"sample\": \"6bba_ae82a791\"}\n"}
+,{"stream_name":"stdout","time":14035.453703664,"data":"{\"completed\": 158, \"sample\": \"6bba_ae82a791\"}\n"}
+,{"stream_name":"stdout","time":14107.858222703,"data":"{\"completed\": 159, \"sample\": \"6bba_aeee7805\"}\n"}
+,{"stream_name":"stdout","time":14108.075752473,"data":"{\"completed\": 159, \"sample\": \"6bba_aeee7805\"}\n"}
+,{"stream_name":"stdout","time":14180.941971114,"data":"{\"completed\": 160, \"sample\": \"6bba_af149c94\"}\n"}
+,{"stream_name":"stdout","time":14181.168666809,"data":"{\"completed\": 160, \"sample\": \"6bba_af149c94\"}\n"}
+,{"stream_name":"stdout","time":14250.174714674,"data":"{\"completed\": 161, \"sample\": \"6bba_afb141ff\"}\n"}
+,{"stream_name":"stdout","time":14250.391357104,"data":"{\"completed\": 161, \"sample\": \"6bba_afb141ff\"}\n"}
+,{"stream_name":"stdout","time":14328.003838614,"data":"{\"completed\": 162, \"sample\": \"6bba_b1ae37b9\"}\n"}
+,{"stream_name":"stdout","time":14328.221193041,"data":"{\"completed\": 162, \"sample\": \"6bba_b1ae37b9\"}\n"}
+,{"stream_name":"stdout","time":14397.722745611,"data":"{\"completed\": 163, \"sample\": \"6bba_b204cac7\"}\n"}
+,{"stream_name":"stdout","time":14397.942370397,"data":"{\"completed\": 163, \"sample\": \"6bba_b204cac7\"}\n"}
+,{"stream_name":"stdout","time":14510.01162361,"data":"{\"completed\": 164, \"sample\": \"6bba_b329af44\"}\n"}
+,{"stream_name":"stdout","time":14510.228137279,"data":"{\"completed\": 164, \"sample\": \"6bba_b329af44\"}\n"}
+,{"stream_name":"stdout","time":14580.529613968,"data":"{\"completed\": 165, \"sample\": \"6bba_b693381b\"}\n"}
+,{"stream_name":"stdout","time":14580.746650322,"data":"{\"completed\": 165, \"sample\": \"6bba_b693381b\"}\n"}
+,{"stream_name":"stdout","time":14658.317740966,"data":"{\"completed\": 166, \"sample\": \"6bba_bb9f20c3\"}\n"}
+,{"stream_name":"stdout","time":14658.535907367,"data":"{\"completed\": 166, \"sample\": \"6bba_bb9f20c3\"}\n"}
+,{"stream_name":"stdout","time":14730.031904279,"data":"{\"completed\": 167, \"sample\": \"6bba_bbb708ca\"}\n"}
+,{"stream_name":"stdout","time":14730.253543079,"data":"{\"completed\": 167, \"sample\": \"6bba_bbb708ca\"}\n"}
+,{"stream_name":"stdout","time":14802.420702436,"data":"{\"completed\": 168, \"sample\": \"6bba_c27cba08\"}\n"}
+,{"stream_name":"stdout","time":14802.638129785,"data":"{\"completed\": 168, \"sample\": \"6bba_c27cba08\"}\n"}
+,{"stream_name":"stdout","time":14889.269853114,"data":"{\"completed\": 169, \"sample\": \"6bba_c328f2fd\"}\n"}
+,{"stream_name":"stdout","time":14889.486929116,"data":"{\"completed\": 169, \"sample\": \"6bba_c328f2fd\"}\n"}
+,{"stream_name":"stdout","time":14974.408981807,"data":"{\"completed\": 170, \"sample\": \"6bba_c73a1d11\"}\n"}
+,{"stream_name":"stdout","time":14974.624940934,"data":"{\"completed\": 170, \"sample\": \"6bba_c73a1d11\"}\n"}
+,{"stream_name":"stdout","time":15058.43149599,"data":"{\"completed\": 171, \"sample\": \"6bba_cdcfe533\"}\n"}
+,{"stream_name":"stdout","time":15058.649035099,"data":"{\"completed\": 171, \"sample\": \"6bba_cdcfe533\"}\n"}
+,{"stream_name":"stdout","time":15144.285156471,"data":"{\"completed\": 172, \"sample\": \"6bba_cf35214c\"}\n"}
+,{"stream_name":"stdout","time":15144.501877478,"data":"{\"completed\": 172, \"sample\": \"6bba_cf35214c\"}\n"}
+,{"stream_name":"stdout","time":15238.6652962,"data":"{\"completed\": 173, \"sample\": \"6bba_cff5865f\"}\n"}
+,{"stream_name":"stdout","time":15238.883216336,"data":"{\"completed\": 173, \"sample\": \"6bba_cff5865f\"}\n"}
+,{"stream_name":"stdout","time":15313.036455657,"data":"{\"completed\": 174, \"sample\": \"6bba_d0fc38b5\"}\n"}
+,{"stream_name":"stdout","time":15313.254134673,"data":"{\"completed\": 174, \"sample\": \"6bba_d0fc38b5\"}\n"}
+,{"stream_name":"stdout","time":15391.14974847,"data":"{\"completed\": 175, \"sample\": \"6bba_d1acb6ff\"}\n"}
+,{"stream_name":"stdout","time":15391.366137625,"data":"{\"completed\": 175, \"sample\": \"6bba_d1acb6ff\"}\n"}
+,{"stream_name":"stdout","time":15468.635644631,"data":"{\"completed\": 176, \"sample\": \"6bba_d2b9fc0c\"}\n"}
+,{"stream_name":"stdout","time":15468.853520696,"data":"{\"completed\": 176, \"sample\": \"6bba_d2b9fc0c\"}\n"}
+,{"stream_name":"stdout","time":15546.417841465,"data":"{\"completed\": 177, \"sample\": \"6bba_d3da753b\"}\n"}
+,{"stream_name":"stdout","time":15546.417892585,"data":"{\"completed\": 177, \"sample\": \"6bba_d5eae175\"}\n"}
+,{"stream_name":"stdout","time":15546.640999125,"data":"{\"completed\": 177, \"sample\": \"6bba_d3da753b\"}\n"}
+,{"stream_name":"stdout","time":15546.641032719,"data":"{\"completed\": 177, \"sample\": \"6bba_d5eae175\"}\n"}
+,{"stream_name":"stdout","time":15625.230872336,"data":"{\"completed\": 178, \"sample\": \"6bba_d6ecebbb\"}\n"}
+,{"stream_name":"stdout","time":15625.447172427,"data":"{\"completed\": 178, \"sample\": \"6bba_d6ecebbb\"}\n"}
+,{"stream_name":"stdout","time":15717.538982814,"data":"{\"completed\": 179, \"sample\": \"6bba_d82a4fc6\"}\n"}
+,{"stream_name":"stdout","time":15717.757066918,"data":"{\"completed\": 179, \"sample\": \"6bba_d82a4fc6\"}\n"}
+,{"stream_name":"stdout","time":15795.616041059,"data":"{\"completed\": 180, \"sample\": \"6bba_debd7bfa\"}\n"}
+,{"stream_name":"stdout","time":15795.843884306,"data":"{\"completed\": 180, \"sample\": \"6bba_debd7bfa\"}\n"}
+,{"stream_name":"stdout","time":15875.672795953,"data":"{\"completed\": 181, \"sample\": \"6bba_df673a83\"}\n"}
+,{"stream_name":"stdout","time":15875.889959688,"data":"{\"completed\": 181, \"sample\": \"6bba_df673a83\"}\n"}
+,{"stream_name":"stdout","time":15947.883264394,"data":"{\"completed\": 182, \"sample\": \"6bba_e16ffc58\"}\n"}
+,{"stream_name":"stdout","time":15948.101985286,"data":"{\"completed\": 182, \"sample\": \"6bba_e16ffc58\"}\n"}
+,{"stream_name":"stdout","time":16019.65273169,"data":"{\"completed\": 183, \"sample\": \"6bba_e5e44988\"}\n"}
+,{"stream_name":"stdout","time":16019.873232005,"data":"{\"completed\": 183, \"sample\": \"6bba_e5e44988\"}\n"}
+,{"stream_name":"stdout","time":16123.174356131,"data":"{\"completed\": 184, \"sample\": \"6bba_ebdf3b34\"}\n"}
+,{"stream_name":"stdout","time":16123.392822627,"data":"{\"completed\": 184, \"sample\": \"6bba_ebdf3b34\"}\n"}
+,{"stream_name":"stdout","time":16226.926757441,"data":"{\"completed\": 185, \"sample\": \"6bba_ebff6e76\"}\n"}
+,{"stream_name":"stdout","time":16227.145010656,"data":"{\"completed\": 185, \"sample\": \"6bba_ebff6e76\"}\n"}
+,{"stream_name":"stdout","time":16298.417149757,"data":"{\"completed\": 186, \"sample\": \"6bba_ed9377fd\"}\n"}
+,{"stream_name":"stdout","time":16298.633789051,"data":"{\"completed\": 186, \"sample\": \"6bba_ed9377fd\"}\n"}
+,{"stream_name":"stdout","time":16401.729710994,"data":"{\"completed\": 187, \"sample\": \"6bba_edf14583\"}\n"}
+,{"stream_name":"stdout","time":16401.946712254,"data":"{\"completed\": 187, \"sample\": \"6bba_edf14583\"}\n"}
+,{"stream_name":"stdout","time":16474.671573302,"data":"{\"completed\": 188, \"sample\": \"6bba_eebc57a5\"}\n"}
+,{"stream_name":"stdout","time":16474.888957872,"data":"{\"completed\": 188, \"sample\": \"6bba_eebc57a5\"}\n"}
+,{"stream_name":"stdout","time":16544.77932085,"data":"{\"completed\": 189, \"sample\": \"6bba_ef7b4f7e\"}\n"}
+,{"stream_name":"stdout","time":16544.997751967,"data":"{\"completed\": 189, \"sample\": \"6bba_ef7b4f7e\"}\n"}
+,{"stream_name":"stdout","time":16623.585316881,"data":"{\"completed\": 190, \"sample\": \"6bba_f17befbc\"}\n"}
+,{"stream_name":"stdout","time":16623.803323644,"data":"{\"completed\": 190, \"sample\": \"6bba_f17befbc\"}\n"}
+,{"stream_name":"stdout","time":16695.034050124,"data":"{\"completed\": 191, \"sample\": \"6bba_f1fde7e0\"}\n"}
+,{"stream_name":"stdout","time":16695.25226427,"data":"{\"completed\": 191, \"sample\": \"6bba_f1fde7e0\"}\n"}
+,{"stream_name":"stdout","time":16765.411903273,"data":"{\"completed\": 192, \"sample\": \"6bba_f20478e9\"}\n"}
+,{"stream_name":"stdout","time":16765.630368196,"data":"{\"completed\": 192, \"sample\": \"6bba_f20478e9\"}\n"}
+,{"stream_name":"stdout","time":16840.817897478,"data":"{\"completed\": 193, \"sample\": \"6bba_f4ae811c\"}\n"}
+,{"stream_name":"stdout","time":16841.035862987,"data":"{\"completed\": 193, \"sample\": \"6bba_f4ae811c\"}\n"}
+,{"stream_name":"stdout","time":16933.28155582,"data":"{\"completed\": 194, \"sample\": \"6bba_f8ffd5e7\"}\n"}
+,{"stream_name":"stdout","time":16933.505319297,"data":"{\"completed\": 194, \"sample\": \"6bba_f8ffd5e7\"}\n"}
+,{"stream_name":"stdout","time":17015.383474729,"data":"{\"completed\": 195, \"sample\": \"6bba_fbc898dc\"}\n"}
+,{"stream_name":"stdout","time":17015.600590093,"data":"{\"completed\": 195, \"sample\": \"6bba_fbc898dc\"}\n"}
+,{"stream_name":"stdout","time":17102.375673671,"data":"{\"completed\": 196, \"sample\": \"6bba_fc516dc6\"}\n"}
+,{"stream_name":"stdout","time":17102.593294764,"data":"{\"completed\": 196, \"sample\": \"6bba_fc516dc6\"}\n"}
+,{"stream_name":"stdout","time":17185.406415034,"data":"{\"completed\": 197, \"sample\": \"6bba_fc5f39dc\"}\n"}
+,{"stream_name":"stdout","time":17185.623538046,"data":"{\"completed\": 197, \"sample\": \"6bba_fc5f39dc\"}\n"}
+,{"stream_name":"stdout","time":17273.098291815,"data":"{\"completed\": 198, \"sample\": \"6bba_fc83837d\"}\n"}
+,{"stream_name":"stdout","time":17273.315979623,"data":"{\"completed\": 198, \"sample\": \"6bba_fc83837d\"}\n"}
+,{"stream_name":"stdout","time":17358.788550637,"data":"{\"completed\": 199, \"sample\": \"6bba_fe670320\"}\n"}
+,{"stream_name":"stdout","time":17359.009977232,"data":"{\"completed\": 199, \"sample\": \"6bba_fe670320\"}\n"}
+,{"stream_name":"stdout","time":17359.748316728,"data":"{\"status\": \"INFERENCE_COMPLETE\", \"wall_seconds\": 17350.063760169003}\n"}
+,{"stream_name":"stdout","time":17359.950792376,"data":"{\"status\": \"INFERENCE_COMPLETE\", \"wall_seconds\": 17350.063760169003}\n"}
+,{"stream_name":"stdout","time":17363.484478848,"data":"{\n"}
+,{"stream_name":"stdout","time":17363.484517998,"data":"  \"status\": \"INFERENCE_COMPLETE\",\n"}
+,{"stream_name":"stdout","time":17363.484522657,"data":"  \"wall_seconds\": 17350.063760169003\n"}
+,{"stream_name":"stdout","time":17363.484525939,"data":"}\n"}
+,{"stream_name":"stderr","time":17366.399130478,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":17366.399160956,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":17366.65165796,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":17366.651688123,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":17367.906648491,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":17368.221419102,"data":"[NbConvertApp] Writing 700570 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":17371.203595615,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":17372.226523305,"data":"[NbConvertApp] Writing 990872 bytes to __results__.html\n"}
+]

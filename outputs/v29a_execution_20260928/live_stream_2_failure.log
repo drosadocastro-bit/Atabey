@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 822, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\response.py", line 1088, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\response.py", line 1248, in read_chunked
+    self._update_chunk_length()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\response.py", line 1178, in _update_chunk_length
+    raise ProtocolError("Response ended prematurely") from None
+urllib3.exceptions.ProtocolError: Response ended prematurely
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\kaggle\api\kaggle_api_extended.py", line 5345, in kernels_logs_stream
+    yield from self._iter_sse_events(response)
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\kaggle\api\kaggle_api_extended.py", line 5353, in _iter_sse_events
+    for raw_line in response.iter_lines(decode_unicode=True):
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 871, in iter_lines
+    for chunk in self.iter_content(
+                 ~~~~~~~~~~~~~~~~~^
+        chunk_size=chunk_size, decode_unicode=decode_unicode
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\utils.py", line 559, in stream_decode_response_unicode
+    for chunk in iterator:
+                 ^^^^^^^^
+  File "C:\Users\draku\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 824, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: Response ended prematurely

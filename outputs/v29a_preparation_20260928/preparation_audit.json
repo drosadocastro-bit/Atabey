@@ -1,0 +1,17 @@
+{
+  "base_commit": "ba0663f4f485b48164012af3634dec7e597f23e2",
+  "checked_at_utc": "2026-09-28T11:40:10.518346+00:00",
+  "execution_approved": false,
+  "gt_files_verified": 4179,
+  "gt_trees_verified": 199,
+  "inference_performed": false,
+  "official_host_and_runtime_verified": true,
+  "official_scoring_performed": false,
+  "package_manifest_sha256": "7d93749e50dfe95fa1643dceb39e870f9111850ce994c14c30ca1496ddd4dc67",
+  "protected_v25_sha256": "f9f13081e96b1925903e1ccb5ae464744b0eb5cc0daf3774f45ba33ce86c33e1",
+  "sample_metadata_verified": 199,
+  "source_members": 81,
+  "status": "PREPARATION_IDENTITIES_VERIFIED",
+  "tests_passed": 110,
+  "v28_release_artifacts_verified": 76
+}

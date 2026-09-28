@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-09-28T11:17:59.093309+00:00",
+  "source": "Kaggle authenticated API SUBMISSION_GROUP_SELECTED",
+  "selected": [
+    {
+      "ref": 56631581,
+      "totalBytes": 234937107,
+      "date": "2026-09-28T06:27:39.480Z",
+      "description": "V28 frozen V24.3 E016 delivery: motion_mutual 9um; image-only 6bba/components P2 then P3. Offline package fb7fde61dd8a; exact parity verified; no policy tuning.",
+      "fileName": "submission.csv",
+      "publicScore": "0.728",
+      "status": "COMPLETE",
+      "submittedBy": "drakus74",
+      "submittedByRef": "drakus74",
+      "teamName": "Atabey",
+      "url": "/code/drakus74/atabey-v28-submission?scriptVersionId=353502941",
+      "explicit_status": "SubmissionStatus.COMPLETE"
+    },
+    {
+      "ref": 54622713,
+      "totalBytes": 206364078,
+      "date": "2026-07-12T21:43:29.140Z",
+      "description": "V19 watershed refinement: profile-based routing, 6bba-only CFAR+sidelobe cap 900, with centroid watershed refinement.",
+      "fileName": "submission.csv",
+      "publicScore": "0.515",
+      "status": "COMPLETE",
+      "submittedBy": "drakus74",
+      "submittedByRef": "drakus74",
+      "teamName": "Atabey",
+      "url": "/code/drakus74/atabey-adaptive-baseline?scriptVersionId=334646717",
+      "explicit_status": "SubmissionStatus.COMPLETE"
+    }
+  ],
+  "selection_changes_performed": false
+}

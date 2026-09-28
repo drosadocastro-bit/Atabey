@@ -1,0 +1,139 @@
+{
+  "approval_record": "User approval in this chat: me parece solido baby aprobado congelado y ejecuta mi vida!",
+  "authority": "Danny",
+  "builder": "Codex",
+  "candidate_file_sha256": "f032878efcf33f654c0f95a86c51d5a22454ef4ccb558cec255e9bb5f8ad0397",
+  "created_at_utc": "2026-09-28T11:40:38.727439+00:00",
+  "frozen_at_utc": "2026-09-28T11:46:49.383625+00:00",
+  "payload": {
+    "artifacts": [
+      {
+        "bytes": 7507,
+        "path": "V29A_TTA_RESEARCH_CONTRACT.md",
+        "sha256": "5a080d3af9d7b88e3cb758b443d11578100af0909be657d3130fb234218e38c9"
+      },
+      {
+        "bytes": 5805,
+        "path": "V29A_IMPLEMENTATION_REVIEW.md",
+        "sha256": "f6704ae38848d3b9837689c44dd2a9f1304f6371acb887ea86b1e4c275895816"
+      },
+      {
+        "bytes": 172829,
+        "path": "tests/fixtures/v29a_tta.json",
+        "sha256": "7be67598b48d14f0fa4fa679b0a8cf7fd5b60d52f38f97b561f5d060653442fc"
+      },
+      {
+        "bytes": 5219,
+        "path": "src/atabey/submission/v29a.py",
+        "sha256": "30ddbc9382af0b01cda746bb002cc058ea9b690712414b1dfa2ecd9a3fa1ba72"
+      },
+      {
+        "bytes": 7823,
+        "path": "scripts/run_v29a_tta.py",
+        "sha256": "3ffcad705de4b4ce4c8686929f287c28b56ee4c53e9b27a27c9d5bf621006f6a"
+      },
+      {
+        "bytes": 11689,
+        "path": "scripts/evaluate_v29a_tta.py",
+        "sha256": "455880a0777d1e71a2092ff3455930754554f512d4180dd674e15508689801bf"
+      },
+      {
+        "bytes": 6732,
+        "path": "scripts/build_v29a_notebook.py",
+        "sha256": "419cb841fd9fbf9db5460cba038349d7ab3658298b774e101d1e5b8ecea3a26f"
+      },
+      {
+        "bytes": 6844,
+        "path": "tests/test_v29a_tta.py",
+        "sha256": "73092572c4b7739ec931567d616ad3e78b32b4ae190e7d29660832a5e103b176"
+      },
+      {
+        "bytes": 2409,
+        "path": "tests/test_v29a_notebook.py",
+        "sha256": "054251cc2b895785e728bb9cb89881469109aa72b73fa4e4058239c532435533"
+      },
+      {
+        "bytes": 674569,
+        "path": "notebooks/V29A_tta_research_offline_kaggle.ipynb",
+        "sha256": "aadf18af685d8f3c9fa647ee0b5bf7bfe4ce7c9ea179fe74647d84f787d9a36b"
+      },
+      {
+        "bytes": 750,
+        "path": "outputs/v29a_preparation_20260928/package_r1/kernel-metadata.json",
+        "sha256": "dbcef6252dade05ca1718b5c3f2185a7f12747758700c14da547b92207e86fe3"
+      },
+      {
+        "bytes": 28041,
+        "path": "outputs/v29a_preparation_20260928/package_r1/package_manifest.json",
+        "sha256": "7d93749e50dfe95fa1643dceb39e870f9111850ce994c14c30ca1496ddd4dc67"
+      },
+      {
+        "bytes": 501694,
+        "path": "outputs/v29a_preparation_20260928/package_r1/v29a_source_bundle.zip",
+        "sha256": "f42171458ca20374d370be06fb5ccbbaf3276d63e620d66b31d06ca9ed4d7d3d"
+      },
+      {
+        "bytes": 674569,
+        "path": "outputs/v29a_preparation_20260928/package_r1/V29A_tta_research_offline_kaggle.ipynb",
+        "sha256": "aadf18af685d8f3c9fa647ee0b5bf7bfe4ce7c9ea179fe74647d84f787d9a36b"
+      },
+      {
+        "bytes": 1414,
+        "path": "outputs/v29a_preparation_20260928/final_selection_check.json",
+        "sha256": "167ea11d1f2a499ff852485211e57e9edb07ccc047a0d6fc1f408a2549cf2e1e"
+      },
+      {
+        "bytes": 17374,
+        "path": "outputs/v29a_preparation_20260928/tests_initial.xml",
+        "sha256": "b5b04e1329c114dd86dc6e76dfb5ba5b724a78275f2f1f6204015859b047df19"
+      },
+      {
+        "bytes": 14443,
+        "path": "outputs/v29a_preparation_20260928/tests_r2.xml",
+        "sha256": "7d7a855e762a7b16fc2acd92c7955defb88e625c735a8665933f3c063ae3d791"
+      },
+      {
+        "bytes": 685,
+        "path": "outputs/v29a_preparation_20260928/preparation_audit.json",
+        "sha256": "7d6c64371f3d04eaaded0fcbae92d491a7b7befa01a8ce2ae1a13fdf3fda0d4d"
+      },
+      {
+        "bytes": 4132,
+        "path": "outputs/v29a_preparation_20260928/verify_preparation.py",
+        "sha256": "23e611b81d5ddf09ff0f4c17d38d453e001d9f332a50075238107956cba2d42b"
+      }
+    ],
+    "at_approval": "Revalidate every artifact, quota and deadline; create a separate approved V29A_RESEARCH receipt and dispatch copy changing only its receipt; retain template, record dispatch hashes, verify actual Kaggle image; enforce GPU/setup and local scoring outer timeouts; preserve partial evidence on failure.",
+    "base_commit": "ba0663f4f485b48164012af3634dec7e597f23e2",
+    "budgets": {
+      "gpu_seconds": 21600,
+      "hidden_runtime_projection_gate_seconds": 36000,
+      "local_scoring_seconds": 10800,
+      "maximum_two_device_quota_hours": 12
+    },
+    "execution_count": "One offline Kaggle research version followed conditionally by one local paired official evaluation",
+    "final_selection_changes_authorized": false,
+    "package_manifest_sha256": "7d93749e50dfe95fa1643dceb39e870f9111850ce994c14c30ca1496ddd4dc67",
+    "publication_authorized": false,
+    "quality_gates": {
+      "comparison_epsilon": 1e-12,
+      "maximum_individual_score_loss": 0.02,
+      "maximum_node_recall_loss": 0.002,
+      "minimum_score_gain": 0.003,
+      "required_samples": 199,
+      "stratum_counts": {
+        "checkpoint_training_172": 172,
+        "family_44b6": 71,
+        "family_6bba": 128,
+        "held_out_27": 27,
+        "historical_regressions_16": 16
+      }
+    },
+    "retry_authorized": false,
+    "scope": "V29A_RESEARCH",
+    "submission_authorized": false
+  },
+  "payload_sha256": "c4edda67ad121bd34c7e4bba6e29f432de039401d3a20fe94846412d0890d25f",
+  "reviewer": "Danny",
+  "status": "APPROVED_FROZEN"
+}

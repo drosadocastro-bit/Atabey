@@ -1,0 +1,5 @@
+{
+  "type": "requests.exceptions.ChunkedEncodingError",
+  "message": "Response ended prematurely",
+  "scope": "local read-only telemetry connection; scientific run remains RUNNING"
+}

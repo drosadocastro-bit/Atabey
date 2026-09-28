@@ -1,0 +1,6 @@
+{
+  "accelerator": "NvidiaTeslaT4",
+  "retries_authorized": false,
+  "session_timeout_seconds": 21600,
+  "started_at_utc": "2026-09-28T11:46:49.406149+00:00"
+}

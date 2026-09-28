@@ -27,3 +27,15 @@ tests/test_v28*.py -text whitespace=cr-at-eol
 tests/fixtures/v28*.json -text whitespace=cr-at-eol
 outputs/v28*/** -text whitespace=cr-at-eol
 outputs/verify_v28*.py -text whitespace=cr-at-eol
+
+# Preserve the original V29A contracts, implementation and research evidence.
+V29A*.md -text whitespace=cr-at-eol
+v29a*.json -text whitespace=cr-at-eol
+docs/V29A*.md -text whitespace=cr-at-eol
+notebooks/V29A*.ipynb -text whitespace=cr-at-eol
+src/atabey/submission/v29a.py -text whitespace=cr-at-eol
+scripts/*v29a*.py -text whitespace=cr-at-eol
+tests/test_v29a*.py -text whitespace=cr-at-eol
+tests/fixtures/v29a*.json -text whitespace=cr-at-eol
+outputs/v29a*/** -text whitespace=cr-at-eol
+outputs/*v29a*.py -text whitespace=cr-at-eol

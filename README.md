@@ -36,8 +36,9 @@ is frozen; V19 remains the accepted backup.
 | V19: accepted backup | 0.515 | COMPLETE | [54622713](https://www.kaggle.com/code/drakus74/atabey-adaptive-baseline?scriptVersionId=334646717) |
 
 The public-score increase is **+0.213 points**. It is not the final private score
-or a claim of biological certainty. Final-selection flags have not been verified
-or changed by this publication.
+or a claim of biological certainty. A later authenticated check on September 28,
+recorded in the V29A closure evidence, confirmed that V28 and V19 were selected
+for final judging. No selection change was made.
 
 V28 delivers the previously evaluated V24.3 policy: clean E016 detections,
 physical-coordinate `motion_mutual` linking at 9 microns, then V24.2 isolated-node
@@ -58,6 +59,26 @@ See the [verified Kaggle result and release freeze](V28_KAGGLE_RESULT.md),
 [publication/reproducibility scope](docs/V28_PUBLICATION_SCOPE.md).
 Earlier proposal and pending-status documents are preserved as dated evidence;
 the completed result above supersedes their operational status.
+
+### V29A: Completed TTA Research, NO_GO
+
+The frozen four-view XY detection experiment completed all 199 paired samples.
+The official **local development score** increased from `0.721056` to `0.735928`
+(`+0.014872`), with 134 improved and 65 regressed samples. Both families and all
+specified subgroup aggregates improved. This is not a new Kaggle score or
+independent validation: all 199 labeled samples were previously opened.
+
+V29A nevertheless failed two predeclared protections: 25 samples lost more than
+`0.020` (worst loss `0.106430`), and one of four protected historical cases lost
+`0.045538`. The result is **NO_GO for submission under its frozen contract**.
+The execution and official baseline parity were valid; the quality gates did
+their job. V28 remains the frozen submitted result.
+
+The lesson is to preserve sample-level and protected-case evidence alongside
+aggregate gains, and to keep decision rules fixed after observing outcomes.
+See [V29A results](V29A_RESULTS.md), [lessons learned](V29A_LESSONS_LEARNED.md),
+[release freeze](v29a_release_freeze_20260928.json), and
+[publication scope](docs/V29A_PUBLICATION_SCOPE.md).
 
 ## Research History and Interpretation
 
