@@ -1,0 +1,18 @@
+{
+  "approval_record": "esto esta bien estructurado  baby , aprobado para congelar y ejecutar",
+  "authority": "Danny",
+  "automatic_retry_authorized": false,
+  "budget_seconds": 7200,
+  "builder": "Codex",
+  "candidate_sha256": "3b902b1d9547c1c2403fd4f7cb25442598c70cc500d2a6af5a66cf1ff93f8cf0",
+  "commit_push_authorized": false,
+  "execution_id": "v30_execution_20260928",
+  "frozen_at_utc": "2026-09-28T20:51:50.324273+00:00",
+  "new_scoring_authorized": false,
+  "output_directory": "D:\\Project-Atabey\\outputs\\v30_execution_20260928",
+  "protocol": "V30_SAVED_COORDINATE_DIAGNOSTIC_V1",
+  "reviewer": "Danny",
+  "scope": "ONE_CPU_SAVED_COORDINATE_DIAGNOSTIC_NO_SCORING",
+  "status": "APPROVED_FROZEN",
+  "submission_authorized": false
+}

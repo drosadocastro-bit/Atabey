@@ -1,0 +1,144 @@
+{
+  "causal_attribution": false,
+  "coordinate_counts": {
+    "baseline": {
+      "EXACT": 2091027,
+      "NEAR_AMBIGUOUS": 1452,
+      "NEAR_ISOLATED": 1761493,
+      "NO_NEAR_COUNTERPART": 1646526
+    },
+    "tta": {
+      "EXACT": 2091027,
+      "NEAR_AMBIGUOUS": 949,
+      "NEAR_ISOLATED": 1761493,
+      "NO_NEAR_COUNTERPART": 1460104
+    }
+  },
+  "new_scoring_performed": false,
+  "source_result_sha256": "51524270fad715d9103621e8ddd0e155ac39d7031f27c99e9b5f4f54c577275a",
+  "source_verification_sha256": "1530fe2a7c5284d619604a9e4cb9a79eb4cdfb25b4675342531df5aa630ed07f",
+  "stage_totals": {
+    "baseline": {
+      "P2": {
+        "edges": 4630145,
+        "nodes": 5462732
+      },
+      "P3": {
+        "edges": 4610041,
+        "nodes": 5422524
+      },
+      "RAW": {
+        "edges": 4630145,
+        "nodes": 5500498
+      }
+    },
+    "tta": {
+      "P2": {
+        "edges": 4515336,
+        "nodes": 5282877
+      },
+      "P3": {
+        "edges": 4498426,
+        "nodes": 5249057
+      },
+      "RAW": {
+        "edges": 4515336,
+        "nodes": 5313573
+      }
+    }
+  },
+  "status": "DESCRIPTIVE_READOUT_FROM_VERIFIED_OUTPUT",
+  "strong_loss_context": {
+    "count": 25,
+    "edge_jaccard_worse": 25,
+    "node_adjustment_improved": 24,
+    "node_recall_improved": 6,
+    "node_recall_unchanged": 3,
+    "node_recall_worse": 16,
+    "pruning_disabled": 19
+  },
+  "views": {
+    "EXACT_ONLY": {
+      "edges": {
+        "P2": {
+          "baseline_only": 25631,
+          "baseline_unmapped_endpoint": 3767160,
+          "common": 837354,
+          "confidence_only_changes": 371945,
+          "tta_only": 28817,
+          "tta_unmapped_endpoint": 3649165
+        },
+        "P3": {
+          "baseline_only": 26622,
+          "baseline_unmapped_endpoint": 3749400,
+          "common": 834019,
+          "confidence_only_changes": 370636,
+          "tta_only": 29717,
+          "tta_unmapped_endpoint": 3634690
+        },
+        "RAW": {
+          "baseline_only": 25631,
+          "baseline_unmapped_endpoint": 3767160,
+          "common": 837354,
+          "confidence_only_changes": 371945,
+          "tta_only": 28817,
+          "tta_unmapped_endpoint": 3649165
+        }
+      },
+      "history": {
+        "DIFFERENT_CHAIN": 334481,
+        "SAME_CHAIN": 254122,
+        "UNRESOLVED": 1502424
+      },
+      "outgoing": {
+        "BASELINE_ONLY_OUTGOING": 16802,
+        "DIFFERENT_MAPPED_SUCCESSOR": 1544,
+        "NEITHER": 166378,
+        "SAME_MAPPED_SUCCESSOR": 837354,
+        "TTA_ONLY_OUTGOING": 18540,
+        "UNRESOLVED": 1050409
+      }
+    },
+    "EXACT_PLUS_NEAR": {
+      "edges": {
+        "P2": {
+          "baseline_only": 111297,
+          "baseline_unmapped_endpoint": 2021912,
+          "common": 2496936,
+          "confidence_only_changes": 1688556,
+          "tta_only": 126470,
+          "tta_unmapped_endpoint": 1891930
+        },
+        "P3": {
+          "baseline_only": 113941,
+          "baseline_unmapped_endpoint": 2008787,
+          "common": 2487313,
+          "confidence_only_changes": 1682385,
+          "tta_only": 128926,
+          "tta_unmapped_endpoint": 1882187
+        },
+        "RAW": {
+          "baseline_only": 111297,
+          "baseline_unmapped_endpoint": 2021912,
+          "common": 2496936,
+          "confidence_only_changes": 1688556,
+          "tta_only": 126470,
+          "tta_unmapped_endpoint": 1891930
+        }
+      },
+      "history": {
+        "DIFFERENT_CHAIN": 1070257,
+        "SAME_CHAIN": 783027,
+        "UNRESOLVED": 1999236
+      },
+      "outgoing": {
+        "BASELINE_ONLY_OUTGOING": 72986,
+        "DIFFERENT_MAPPED_SUCCESSOR": 16161,
+        "NEITHER": 299678,
+        "SAME_MAPPED_SUCCESSOR": 2496936,
+        "TTA_ONLY_OUTGOING": 81462,
+        "UNRESOLVED": 885297
+      }
+    }
+  }
+}

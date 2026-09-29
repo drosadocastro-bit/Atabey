@@ -1,0 +1,205 @@
+{
+  "status": "READY_FOR_AUTHORIZED_DOCUMENTARY_PUBLICATION",
+  "checked_at_utc": "2026-09-29T11:40:31.257153+00:00",
+  "authority": "Danny",
+  "approval_record": "gracias baby vamos a commit y push",
+  "scope": "DOCUMENTARY_CLOSURE_ONLY",
+  "base_commit": "9339b4e3a2b62f19a83b43d60209f55ea7ae6de3",
+  "publication_paths": [
+    "README.md",
+    "docs/ATABEY_DOCUMENTARY_CLOSURE_20260929.md",
+    "docs/archive/README_before_documentary_close_20260929.md",
+    "outputs/atabey_documentary_closure_20260929/publication_verification.json"
+  ],
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 15707,
+      "sha256": "c89ec66ef4609996a9bea60c4063f697d33354cbfd435cf3c3b8a95079d08cc9"
+    },
+    {
+      "path": "docs/ATABEY_DOCUMENTARY_CLOSURE_20260929.md",
+      "bytes": 5141,
+      "sha256": "714d2a6e2d806ad876c1fc206ee6a2e91b20321a4f6952c3edebd6553846b34f"
+    },
+    {
+      "path": "docs/archive/README_before_documentary_close_20260929.md",
+      "bytes": 29738,
+      "sha256": "78e5f03b769831dbaae00e96c24708123573335ac61bc0b63426619e5a316281"
+    }
+  ],
+  "local_link_checks": [
+    {
+      "document": "README.md",
+      "target": "V28_KAGGLE_RESULT.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V28_VALIDATION_RESULTS.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V28_SUBMISSION_EXECUTION.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/V28_PUBLICATION_SCOPE.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "src/atabey/detection/baseline.py",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/CFAR_BOUNDED_REFORMULATION.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V23_CFAR_PRE_POST_SIDELOBE_11_RESULTS.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V23_RAW_CFAR_UPSTREAM_BOTTLENECK_AUDIT.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "src/atabey/detection/cfar_watershed.py",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/V19_CFAR_Z_BIAS_ROOT_CAUSE.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/V19_CFAR_WATERSHED_GO.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V22_UNET_DEVELOPMENT_46_RESULTS.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V25_FAILURE_TAXONOMY_AUDIT.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V26A_GATE_ORDER_AUDIT_RESULTS.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "OFFICIAL_EVALUATOR_PARITY_INVENTORY.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V24_3_FULL_199_SCORE_VALIDATION_AUDIT.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V27C_OFFICIAL_GRAPH_EVALUATION_RESULTS.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V29A_RESULTS.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V30_RESULTS.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/V26A_LESSONS_LEARNED.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "V29A_LESSONS_LEARNED.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/ATABEY_DOCUMENTARY_CLOSURE_20260929.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "src/atabey/",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "scripts/",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "tests/",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/archive/README_before_documentary_close_20260929.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/V28_PUBLICATION_SCOPE.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/V29A_PUBLICATION_SCOPE.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/V27_PUBLICATION_SCOPE.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "docs/ATABEY_DOCUMENTARY_CLOSURE_20260929.md",
+      "target": "archive/README_before_documentary_close_20260929.md",
+      "published_or_in_this_commit": true
+    },
+    {
+      "document": "docs/ATABEY_DOCUMENTARY_CLOSURE_20260929.md",
+      "target": "../outputs/atabey_documentary_closure_20260929/publication_verification.json",
+      "published_or_in_this_commit": true
+    }
+  ],
+  "original_readme_matches_historical_git_bytes": true,
+  "historical_release_comparisons": {
+    "v28_release_freeze_20260928.json": 76,
+    "v29a_release_freeze_20260928.json": 479,
+    "v30_release_freeze_20260928.json": 231
+  },
+  "historical_readme_comparison": {
+    "original_path": "README.md",
+    "comparison_path": "docs/archive/README_before_documentary_close_20260929.md",
+    "explicit_relocation": true,
+    "current_readme_matches_historical_hash": false
+  },
+  "historical_manifests_unchanged": true,
+  "unrelated_v25_notebook_unchanged": true,
+  "new_scientific_runs": 0,
+  "repository_archive_requested": false,
+  "tests": "Documentation-only change: link targets, bytes, manifest identities and git diff --check; no scientific suite rerun."
+}
